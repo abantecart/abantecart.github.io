@@ -3,6 +3,7 @@
     {% for section in site.sections %}
         {% assign attr = section[0] %}
         {% assign label = section[1] %}
+                <li class="nav-header">{{ label }}</li>
 
         {% for page in site.categories[attr] %}
             {% if forloop.first %}
