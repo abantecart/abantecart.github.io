@@ -4,7 +4,10 @@
         {% assign attr = section[0] %}
         {% assign label = section[1] %}
                 <li class="nav-header">{{ label }}</li>
-{{ page.title }}
+
+{{ page.url }}
+
+
         {% for page in site.categories[attr] %}
             {% if forloop.first %}
                 <li class="nav-header">{{ label }}</li>
