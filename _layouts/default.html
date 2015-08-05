@@ -26,24 +26,33 @@
 			</div>
 		</div>
 
-		<div class="rotator background-5 rotator-dark ">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<div class="rotator-text"> The best open source 
-							<span class="green_text">eCommerce</span> explained in here.
-						</div>
-						<div class="page-info-buttons helper center">
-							<a href="https://github.com/abantecart/abantecart-src/archive/master.zip"><span class="button green stroke large">Download</span></a>
-							<a href="https://github.com/abantecart/abantecart-src"><span class="button stroke large">GitHub</span></a>
+		<div class="page-info page-info-background background-2 page-info-small">
+			<div class="page-info-container">
+				<div class="container ">
+					<div class="row">
+						<div class="col-md-12">
+							<h1 class="page-title">{{ page.title }}</h1>
+							<h2 class="page-description">{{ page.description }}</h2>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-
 		<div id="content">
-		{{ content }}
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="layout with-left-sidebar">
+							<div class="left-sidebar">
+								{% include side_menu.html %}
+							</div>
+							<div class="main-content with-left-sidebar main-content-full">
+								{{ content }}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 
 {% include footer.html %}
