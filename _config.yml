@@ -1,6 +1,6 @@
 # Site title and subtitle. This is used in _includes/header.html
-title: 'AbanteCart Documentation'
-subtitle: 'Painless documentation for your projects'
+title: 'AbanteCart - Open Source Ecommerce Platform Documentations'
+subtitle: ''
 
 # if you wish to integrate disqus on pages set your shortname here
 disqus_shortname: ''
@@ -23,11 +23,6 @@ sections: [
     ['developer_api', 'Developers API']
 ]
 
-categories: [
-    ['user_manual', '/documents/user_manual/test.html'],
-    ['developer_api', '/documents/developer_api/test.html']
-]
-
 
 # Keep as an empty string if served up at the root. If served up at a specific
 # path (e.g. on GitHub pages) leave off the trailing slash, e.g. /my-project
@@ -44,17 +39,3 @@ future: true
 
 # Exclude non-site files
 exclude: ['bin', 'README.md']
-
-# Use the redcarpet Markdown renderer
-markdown: redcarpet
-redcarpet:
-    extensions: [
-        'no_intra_emphasis',
-        'fenced_code_blocks',
-        'autolink',
-        'strikethrough',
-        'superscript',
-        'with_toc_data',
-        'tables',
-        'hardwrap'
-    ]
