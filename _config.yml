@@ -15,7 +15,7 @@ sections: [
 ]
 
 baseurl: "http://docs.abantecart.com/"
-permalink: pretty
+permalink: none
 
 # Syntax highlighting
 highlighter: pygments
