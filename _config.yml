@@ -8,12 +8,6 @@ disqus_shortname: ''
 # if you use google analytics, add your tracking id here
 google_analytics_id: 'UA-26192520-5'
 
-# Enable/show navigation. There are there options:
-#   0 - always hide
-#   1 - always show
-#   2 - show only if posts are present
-navigation: 1
-
 # URL to source code, used in _includes/footer.html
 codeurl: 'https://github.com/abantecart/abantecart.github.io'
 
@@ -22,7 +16,6 @@ sections: [
     ['user_manual', 'User Manuals'],
     ['developer_api', 'Developers API']
 ]
-
 
 # Keep as an empty string if served up at the root. If served up at a specific
 # path (e.g. on GitHub pages) leave off the trailing slash, e.g. /my-project

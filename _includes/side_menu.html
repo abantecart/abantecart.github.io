@@ -327,30 +327,13 @@
    - End of Search -->
     <!-- Tags -->
     <ul class="tags">
+    {% for stag in page.tags %}
+        {% assign tag = stag[0] %}
+        {% assign label = stag[1] %}
     	<li class="tag-item">
-    		<a href="#">html</a>
+    		<a href="pages/install/{{ tag }}.html">{{ label }}</a>
     	</li>
-    	<li class="tag-item">
-    		<a href="#">css</a>
-    	</li>
-    	<li class="tag-item">
-    		<a href="#">javascript</a>
-    	</li>
-    	<li class="tag-item">
-    		<a href="#">jquery</a>
-    	</li>
-    	<li class="tag-item">
-    		<a href="#">less</a>
-    	</li>
-    	<li class="tag-item">
-    		<a href="#">sass</a>
-    	</li>
-    	<li class="tag-item">
-    		<a href="#">haml</a>
-    	</li>
-    	<li class="tag-item">
-    		<a href="#">gulp</a>
-    	</li>
+    {% endfor %}
     </ul>
     <!-- End of Tags -->
 </nav>
