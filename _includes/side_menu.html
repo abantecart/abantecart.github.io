@@ -1,12 +1,10 @@
 
 
-    {% for p in site.html_pages %}
-        {% assign tag = p[layout] %}
-        {% assign label = p[title] %}
-    	<li class="tag-item">
-    		{{ tag }} {{ label }} 
-    	</li>
-    {% endfor %}
+      {% for p in site.pages %}
+        <li>
+          <a href="{{ p.url }}">{{ p.title }}</a>
+        </li>
+      {% endfor %}
 
 <nav class="js-menu-fixed menu-vertical-wrapper">
     <ul class="menu-vertical  js-menu-vertical">
