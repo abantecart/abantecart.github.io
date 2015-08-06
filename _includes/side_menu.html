@@ -326,6 +326,7 @@
     </div>
    - End of Search -->
     <!-- Tags -->
+    {% if page.tags %}
     <ul class="tags">
     {% for stag in page.tags %}
         {% assign tag = stag[0] %}
@@ -335,5 +336,6 @@
     	</li>
     {% endfor %}
     </ul>
+    {% endif %}
     <!-- End of Tags -->
 </nav>
