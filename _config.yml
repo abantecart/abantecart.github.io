@@ -22,7 +22,7 @@ sections: [
 baseurl: ''
 
 # Dates are not included in permalinks
-permalink: pretty
+permalink: none
 
 # Syntax highlighting
 highlighter: pygments
