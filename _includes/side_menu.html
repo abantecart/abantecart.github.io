@@ -16,11 +16,12 @@
 
 <nav class="js-menu-fixed menu-vertical-wrapper">
     <ul class="menu-vertical  js-menu-vertical">
-    	<li class="selected">
-    		<a href="#">Tutorials</a>
+    	<li {% if page.url contains '/install/' %}class="selected"{% endif %}>
+    		<a href="#">Install</a>
     		<ul>
-    			<li>
-    				<a href="#">Instalation</a>
+    			{% assign url = '/pages/install/index.html' %}
+    			<li {% if page.url contains url %}class="selected"{% endif %}>
+    				<a href="{{url}}">Installation Options</a>
     				<ul>
     					<li>
     						<a href="#">Manually</a>
