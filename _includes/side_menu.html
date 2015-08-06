@@ -1,3 +1,13 @@
+
+
+    {% for p in site.pages %}
+        {% assign tag = p[0] %}
+        {% assign label = p[1] %}
+    	<li class="tag-item">
+    		{{ tag }} {{ label }} 
+    	</li>
+    {% endfor %}
+
 <nav class="js-menu-fixed menu-vertical-wrapper">
     <ul class="menu-vertical  js-menu-vertical">
     	<li class="selected">
