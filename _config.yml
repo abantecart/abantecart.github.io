@@ -14,7 +14,7 @@ sections: [
     ['developer_api', 'Developers API']
 ]
 
-baseurl: "http://abantecart.github.io/"
+baseurl: "http://docs.abantecart.com/"
 permalink: pretty
 
 # Syntax highlighting
