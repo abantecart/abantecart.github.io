@@ -34,4 +34,4 @@ future: true
 exclude: ['bin', 'README.md']
 
 gems:
-  - /tags/install
+  - jekyll-redirect-from
