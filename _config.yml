@@ -2,9 +2,6 @@
 title: 'AbanteCart - Open Source Ecommerce Platform Documentations'
 subtitle: ''
 
-# if you wish to integrate disqus on pages set your shortname here
-disqus_shortname: ''
-
 # if you use google analytics, add your tracking id here
 google_analytics_id: 'UA-26192520-5'
 
@@ -17,12 +14,8 @@ sections: [
     ['developer_api', 'Developers API']
 ]
 
-# Keep as an empty string if served up at the root. If served up at a specific
-# path (e.g. on GitHub pages) leave off the trailing slash, e.g. /my-project
-baseurl: ''
-
-# Dates are not included in permalinks
-permalink: none
+baseurl: "http://abantecart.github.io/"
+permalink: pretty
 
 # Syntax highlighting
 highlighter: pygments
