@@ -326,7 +326,7 @@
     </div>
    - End of Search -->
     <!-- Tags -->
-    {% if page.tags %}
+    {% if page.tags.size > 0  %}
     <ul class="tags">
     {% for stag in page.tags %}
         {% assign tag = stag[0] %}
