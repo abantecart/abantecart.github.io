@@ -2,9 +2,13 @@
   level: /pages/install/
   subitems:
     - text: Installation Options
-      url: /pages/install/index.html
+      url: /pages/install/installation_options.html
     - text: System requirements
       url: /pages/install/system_requirements.html
+    - text: Regular installation
+      url: /pages/install/regular_installation.html
+    - text: Download
+      url: /pages/install/download.html
 - text: Getting Started
   level: /pages/quickstart/
   subitems:
