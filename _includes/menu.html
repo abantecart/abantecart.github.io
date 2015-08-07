@@ -1,6 +1,6 @@
 {% assign navurl = page.url | remove: 'index.html' %}
 <ul>
-{% for item in include.menu %}
+{% for item in include.nav %}
     <li>
         <a href="{{ item.url }}">
             {% if item.url == navurl %}
@@ -10,8 +10,8 @@
             {% endif %}
         </a>
     </li>
-    {% if item.subitems and navurl contains item.url %}
-        {% include menu.html menu=item.subitems %}
+    {% if item.subitems %}
+        {% include menu.html nav=item.subitems %}
     {% endif %}
 {% endfor %}
 </ul>
