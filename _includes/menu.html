@@ -1,4 +1,4 @@
-<ul>
+<ul {{include.class}}>
 {% for item in include.nav %}
 	{% if item.level %}
     <li {% if page.url contains item.level %}class="selected"{% endif %}>
