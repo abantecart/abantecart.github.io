@@ -4,7 +4,7 @@
     <li {% if page.url contains item.level %}class="active-menu selected"{% endif %}>
     	<a href="#">{{ item.text }}</a>
     {% else %}
-    <li {% if page.url contains item.url %}class="selected"{% endif %}>    
+    <li {% if page.url contains item.url %}class="active-menu selected"{% endif %}>    
         <a href="{{ item.url }}">{{ item.text }}</a>
     {% endif %}
     {% if item.subitems %}
