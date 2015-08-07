@@ -3,7 +3,7 @@
 	{% if item.level %}
     <li {% if page.url contains item.level %}class="selected"{% endif %}>
     	<a href="#">{{ item.text }}</a>
-    {% elsif item.url == 'bob' %}
+    {% else %}
     <li {% if page.url contains item.url %}class="selected"{% endif %}>    
         <a href="{{ item.url }}">{{ item.text }}</a>
     {% endif %}
