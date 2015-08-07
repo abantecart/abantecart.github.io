@@ -1,7 +1,7 @@
 <ul {{include.class}}>
 {% for item in include.nav %}
 	{% if item.level %}
-    <li {% if page.url contains item.level %}class="selected"{% endif %}>
+    <li {% if page.url contains item.level %}class="active-menu selected"{% endif %}>
     	<a href="#">{{ item.text }}</a>
     {% else %}
     <li {% if page.url contains item.url %}class="selected"{% endif %}>    
