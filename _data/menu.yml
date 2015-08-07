@@ -1,13 +1,14 @@
-- text: First menu
-  url: /first-menu/
+- text: Installation
+  level: /pages/install/
   subitems:
-    - text: First menu (sub)
-      url: /first-menu/first-menu-sub/
-      subitems:
-        - text: First menu (sub-sub)
-          url: /first-menu/first-menu-sub/first-menu-sub-sub/
-- text: Second menu
-  url: /second-menu/
+    - text: Installation Options
+      url: /pages/install/index.html
+    - text: System requirements
+      url: /pages/install/system_requirements.html
+- text: Getting Started
+  level: /pages/quickstart/
   subitems:
-    - text: Second menu (sub)
-      url: /second-menu/second-menu-sub/
+    - text: Basic Setup Checklist
+      url: /pages/quickstart/checklist.html
+    - text: Common Store settings
+      url: /pages/quickstart/settings.html      
