@@ -28,8 +28,6 @@
       url: /pages/quickstart/setup_taxes.html
   	- text: Enable Payments
       url: /pages/quickstart/enable_payment.html
-    - text: Enable Shipping
-      url: /pages/quickstart/enable_shipping.html
 - text: Managing Products
   level: /pages/products/
   subitems:
