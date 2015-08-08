@@ -12,6 +12,14 @@
 - text: Getting Started
   level: /pages/quickstart/
   subitems:
+    - text: Basic Setup Checklist
+      url: /pages/quickstart/checklist.html
+    - text: Common Store settings
+      url: /pages/quickstart/settings.html      
+    - text: Email settings
+      url: /pages/quickstart/email_settings.html
+    - text: Language settings
+      url: /pages/quickstart/language_settings.html
     - text: Currency settings
       url: /pages/quickstart/currency_settings.html
     - text: Region settings
