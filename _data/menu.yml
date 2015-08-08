@@ -18,18 +18,6 @@
       url: /pages/quickstart/settings.html      
     - text: Email settings
       url: /pages/quickstart/email_settings.html
-    - text: Language settings
-      url: /pages/quickstart/language_settings.html
-    - text: Currency settings
-      url: /pages/quickstart/currency_settings.html
-    - text: Region settings
-      url: /pages/quickstart/region_settings.html
-    - text: Enable Taxes
-      url: /pages/quickstart/setup_taxes.html
-  	- text: Enable Payments
-      url: /pages/quickstart/enable_payment.html
-    - text: Enable Shipping
-      url: /pages/quickstart/enable_shipping.html
 - text: Managing Products
   level: /pages/products/
   subitems:
