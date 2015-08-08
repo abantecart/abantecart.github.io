@@ -26,8 +26,141 @@
       url: /pages/quickstart/region_settings.html
     - text: Enable Taxes
       url: /pages/quickstart/setup_taxes.html
-- text: Managing Products
-  level: /pages/products/
+    - text: Enable Payments
+      url: /pages/quickstart/enable_payment.html
+    - text: Enable Shipping
+      url: /pages/quickstart/enable_shipping.html
+- text: Managing Product Catalog
+  level: /pages/catalog/
   subitems:
     - text: Manage Categories
-      url: /pages/products/categories.html
+      level: /pages/catalog/categories/
+      subitems:
+       - text: List & search categories
+         url: /pages/catalog/categories/search.html      
+       - text: Add & edit categories
+         url: /pages/catalog/categories/edit.html      
+    - text: Manage Products
+      level: /pages/catalog/products/
+      subitems:
+       - text: List & search products
+         url: /pages/catalog/products/search.html      
+       - text: Add & edit products
+         url: /pages/catalog/products/edit.html      
+       - text: Add & edit attributes
+         url: /pages/catalog/products/attributes.html      
+       - text: Add & edit files
+         url: /pages/catalog/products/files.html      
+    - text: Manage Manufacturers
+      level: /pages/catalog/manufacturers/
+      subitems:
+       - text: List & search Manufacturers
+         url: /pages/catalog/manufacturers/search.html      
+       - text: Add & edit Manufacturers
+         url: /pages/catalog/manufacturers/edit.html      
+    - text: Global Attributes
+      url: /pages/catalog/global_attributes.html
+    - text: Product Reviews
+      url: /pages/catalog/product_reviews.html
+    - text: Resource Library
+      url: /pages/catalog/resource_library.html
+    - text: Page Layout
+      url: /pages/catalog/page_layout.html
+- text: Managing Promotions
+  level: /pages/promotions/
+  subitems:
+    - text: Manage Specials
+      url: /pages/promotions/specials.html      
+    - text: Set Quantity discounts
+      url: /pages/promotions/discounts.html      
+    - text: Set Features Products
+      url: /pages/promotions/featured.html      
+    - text: Place banners
+      url: /pages/promotions/banners.html      
+    - text: Manage Coupons
+      url: /pages/promotions/coupons.html      
+- text: Managing Customers
+  level: /pages/customers/
+  subitems:
+    - text: List & search customers
+      url: /pages/customers/search.html      
+    - text: Add & edit customer
+      url: /pages/customers/edit.html      
+    - text: Add & edit address
+      url: /pages/customers/address.html      
+    - text: Customer Groups
+      url: /pages/customers/groups.html      
+- text: Managing Orders
+  level: /pages/orders/
+  subitems:
+    - text: View Orders
+      url: /pages/orders/view.html      
+    - text: Search and filter
+      url: /pages/orders/search.html
+    - text: Modify Orders
+      url: /pages/orders/modify.html
+- text: Store Reports
+  level: /pages/reports/
+  subitems:
+    - text: Sales Report
+      url: /pages/reports/sales.html      
+    - text: Customers Report
+      url: /pages/reports/customers.html      
+    - text: Products Report
+      url: /pages/reports/products.html      
+- text: Design Guide
+  level: /pages/design/
+  subitems:
+    - text: Templates
+      level: /pages/design/templates/
+      subitems:
+       - text: Select template
+         url: /pages/catalog/templates/select.html      
+       - text: Edit template
+         url: /pages/catalog/templates/edit.html      
+       - text: Template files
+         url: /pages/catalog/templates/files.html      
+    - text: Templates
+      url: /pages/reports/templates.html      
+    - text: Layouts
+      url: /pages/reports/layouts.html      
+    - text: Blocks
+      url: /pages/reports/blocks.html      
+    - text: Menu
+      url: /pages/reports/menu.html      
+    - text: Content Pages
+      url: /pages/reports/content_pages.html      
+    - text: Banners
+      url: /pages/reports/banners.html      
+    - text: Forms
+      url: /pages/reports/forms.html      
+- text: System Settings
+  level: /pages/settings/
+  subitems:
+    - text: Settings
+      url: /pages/settings/settings.html
+- text: Extend Functionally
+  level: /pages/extensions/
+  subitems:
+    - text: Find extension
+      url: /pages/extensions/find.html      
+    - text: Install new extension
+      url: /pages/extensions/install.html      
+    - text: Managing extensions
+      url: /pages/extensions/edit.html      
+- text: Helpful Tips
+  level: /pages/tips/
+  subitems:
+    - text: Global search
+      url: /pages/tips/global_search.html      
+    - text: Side Panel for new orders and customers 
+      url: /pages/tips/global_search.html      
+    - text: Getting more help 
+      url: /pages/tips/more_help.html
+- text: Developer Guide 
+  level: /pages/developer/
+  subitems:
+    - text: AbanteCart Architecture
+      url: /pages/developer/architecture.html      
+    - text: Extension Development
+      url: /pages/developer/architecture.html      
