@@ -1,5 +1,6 @@
 - text: Installation
   level: /pages/install/
+  icon: '<i class="fa fa-cloud-download fa-fw"></i>'
   subitems:
     - text: Installation Options
       url: /pages/install/installation_options.html
@@ -11,6 +12,7 @@
       url: /pages/install/download.html
 - text: Getting Started
   level: /pages/quickstart/
+  icon: '<i class="fa fa-bicycle fa-fw"></i>'
   subitems:
     - text: Basic Setup Checklist
       url: /pages/quickstart/checklist.html
@@ -32,6 +34,7 @@
       url: /pages/quickstart/enable_shipping.html
 - text: Managing Product Catalog
   level: /pages/catalog/
+  icon: '<i class="fa fa-cubes fa-fw"></i>'
   subitems:
     - text: Manage Categories
       level: /pages/catalog/categories/
@@ -68,6 +71,7 @@
       url: /pages/catalog/page_layout.html
 - text: Managing Promotions
   level: /pages/promotions/
+  icon: '<i class="fa fa-tags fa-fw"></i>'
   subitems:
     - text: Manage Specials
       url: /pages/promotions/specials.html      
@@ -81,6 +85,7 @@
       url: /pages/promotions/coupons.html      
 - text: Managing Customers
   level: /pages/customers/
+  icon: '<i class="fa fa-users fa-fw"></i>'
   subitems:
     - text: List & search customers
       url: /pages/customers/search.html      
@@ -92,6 +97,7 @@
       url: /pages/customers/groups.html      
 - text: Managing Orders
   level: /pages/orders/
+  icon: '<i class="fa fa-money fa-fw"></i>'
   subitems:
     - text: View Orders
       url: /pages/orders/view.html      
@@ -101,6 +107,7 @@
       url: /pages/orders/modify.html
 - text: Store Reports
   level: /pages/reports/
+  icon: '<i class="fa fa-file-text fa-fw"></i>'
   subitems:
     - text: Sales Report
       url: /pages/reports/sales.html      
@@ -110,6 +117,7 @@
       url: /pages/reports/products.html      
 - text: Design Guide
   level: /pages/design/
+  icon: '<i class="fa fa-tint fa-fw"></i>'
   subitems:
     - text: Templates
       level: /pages/design/templates/
@@ -136,11 +144,13 @@
       url: /pages/reports/forms.html      
 - text: System Settings
   level: /pages/settings/
+  icon: '<i class="fa fa-wrench fa-fw"></i>'
   subitems:
     - text: Settings
       url: /pages/settings/settings.html
 - text: Extend Functionally
   level: /pages/extensions/
+  icon: '<i class="fa fa-puzzle-piece fa-fw"></i>'
   subitems:
     - text: Find extension
       url: /pages/extensions/find.html      
@@ -150,6 +160,7 @@
       url: /pages/extensions/edit.html      
 - text: Helpful Tips
   level: /pages/tips/
+  icon: '<i class="fa fa-life-ring fa-fw"></i>'
   subitems:
     - text: Global search
       url: /pages/tips/global_search.html      
@@ -159,6 +170,7 @@
       url: /pages/tips/more_help.html
 - text: Developer Guide 
   level: /pages/developer/
+  icon: '<i class="fa fa-code fa-fw"></i>'
   subitems:
     - text: AbanteCart Architecture
       url: /pages/developer/architecture.html      
