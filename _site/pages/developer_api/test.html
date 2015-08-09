@@ -133,6 +133,33 @@
 							<div class="left-sidebar">
 								<nav class="js-menu-fixed menu-vertical-wrapper">
 
+    <div class="search">
+<!--
+		//conflict of css and google button
+		<script>
+		  (function() {
+		    var cx = '015077254431814821964:ia6eg4e1ow4';
+		    var gcse = document.createElement('script');
+		    gcse.type = 'text/javascript';
+		    gcse.async = true;
+		    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+		        '//cse.google.com/cse.js?cx=' + cx;
+		    var s = document.getElementsByTagName('script')[0];
+		    s.parentNode.insertBefore(gcse, s);
+		  })();
+		</script>
+		<gcse:search></gcse:search>
+-->
+		<form name="cse" id="google_search" action="https://www.google.com/cse">
+		  <input type="hidden" name="cx" value="015077254431814821964:ia6eg4e1ow4" />
+		  <input type="hidden" name="ie" value="utf-8" />
+		  <input type="hidden" name="hl" value="" />
+		  <input name="q" type="text" size="40" class="search-input form-control" placeholder="Documents search" />
+		  <a href="#" onclick="document.getElementById('google_search').submit();"><i class="fa fa-search search-icon"></i></a>
+		</form>
+		                         
+    </div>
+
 	<ul class="menu-vertical js-menu-vertical">
 
 	
@@ -727,17 +754,7 @@
 </ul>
 
     <div class="separator"></div>	
-    <!-- Search -
-    <div class="search">
-    	<form action="#">
-    		<input type="text" class="search-input form-control" placeholder="search">
-    		<i class="fa fa-search search-icon"></i>
-    	</form>
-    </div>
-   - End of Search -->
-    <!-- Tags -->
-    
-    <!-- End of Tags -->
+
 </nav>
 							</div>
 							<div class="main-content with-left-sidebar main-content-full">
@@ -745,6 +762,9 @@
 
 
 
+
+
+								    
 
 							</div>
 						</div>

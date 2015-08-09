@@ -1,0 +1,11 @@
+    {% if page.tags.size > 0  %}
+    <ul class="tags">
+    {% for stag in page.tags %}
+        {% assign tag = stag[0] %}
+        {% assign label = stag[1] %}
+    	<li class="tag-item">
+    		<a href="/tag/{{ tag }}.html">{{ label }}</a>
+    	</li>
+    {% endfor %}
+    </ul>
+    {% endif %}
