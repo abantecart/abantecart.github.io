@@ -59,7 +59,7 @@ redirect_from: "/tag/install.html"
 										<i class="fa fa-minus"></i> Collapse all</li>
 								</ul>
 							</div>
-							<ul class="file-tree-list js-file-tree" data-expanded="">
+							<ul class="file-tree-list js-file-tree" data-expanded="true">
 							<li class="is-folder">public_html -
 								<span class="file-tree-description">AbanteCart installation files</span>
 									<ul>
@@ -161,7 +161,10 @@ redirect_from: "/tag/install.html"
 						</div>
 						<!-- End of Caregory Info -->
 						<!-- Note -->
-						<div class="note js-note ">
+						<div class="note js-note note-bounce">
+							<span class="note-close js-close">
+								<i class="fa fa-times"></i>
+							</span>
 							<h4 class="note-title"> FTP software required </h4>
 							<p class="note-description"> Upload all the files to your server by FTP software, e. g. <a href="http://filezilla-project.org" target="_blank">FileZilla</a>. </p>
 						</div>
@@ -176,7 +179,7 @@ redirect_from: "/tag/install.html"
 						</div>
 						<!-- End of Caregory Info -->
 						<!-- Note -->
-						<div class="note js-note ">
+						<div class="note js-note green">
 							<h4 class="note-title"> FTP software  </h4>
 							<p class="note-description"> If you do not have terminal access to your server, you can change file access permissions using an FTP client. Most of them have the "Change permissions" or "Change mode" functions. With the help of the function you are to set the permissions for the 'config.php' file and the directories listed above. The 'chmod 666 config.php' command means that you must set 666 permissions (in other words, read, write and execute permissions for the file user, group and other) for the 'config.php' file. Other commands (e.g. 'chmod -R 777 catalog') mean that you must set the same 777 permissions for the directory, its sub-directories and all the files under these directories. Please refer to your FTP client documentation for more detailed instructions on setting file permissions </p>
 						</div>
@@ -200,3 +203,57 @@ chmod 0777 admin/system/backup/
 chmod 0777 resources/
 </code></pre> </div>
 						<!-- End of HTML Highlight -->
+						<!-- Category Info -->
+						<div class="category-info ">
+							<h4 class="category-description">For Windows based server make sure the following folders and files allow Read and Write.</h4>
+						</div>
+						<!-- End of Caregory Info -->
+						<!-- HTML Highlight -->
+						<div class="code-highlight">
+							<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">system/config.php
+system/
+system/cache/
+system/logs/
+image/
+image/data/
+image/thumbnails/
+download/
+resources/
+</code></pre> </div>
+						<!-- End of HTML Highlight -->
+						
+						
+						
+						
+						
+						
+						<!-- Category Info -->
+						<div class="category-info ">
+							<h3 class="category-title">Create a MySQL database</h3>
+							<h4 class="category-description">Create a MySQL database (you may need to create a MySQL user before that) via your website control panel. Remember the MySQL name, host, user name, and password; they will be required at the next installation step.</h4>
+						</div>
+						<!-- End of Caregory Info -->
+						
+						
+						
+						
+						<!-- Category Info -->
+						<div class="category-info ">
+							<h3 class="category-title">Run Installation Wizard</h3>
+							<h4 class="category-description">Point your favorite web browser to run the installation script.</h4>
+						</div>
+						<!-- End of Caregory Info -->
+						<!-- Steps -->
+						<ul class="steps">
+							<li class="step">
+								<span class="step-number">*</span>
+								<h4 class="step-title"> If you placed the AbanteCart files directly in the web root, open http://www.yourdomainname.com/</h4>
+								<div class="step-content"> Make sure to replace the www.yourdomainname.com part from the examples with your true domain name. </div>
+							</li>
+							<li class="step">
+								<span class="step-number">*</span>
+								<h4 class="step-title">	If you placed the AbanteCart files to a subdirectory like web_root/store/, open http://www.yourdomainname.com/store/</h4>
+								<div class="step-content"> Make sure to replace the www.yourdomainname.com/store/ part from the examples with your true domain name and subfolder name </div>
+							</li>
+						</ul>
+						<!-- End of Steps -->
