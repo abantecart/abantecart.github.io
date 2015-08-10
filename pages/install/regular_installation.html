@@ -294,7 +294,29 @@ resources/
 							<li class="step">
 								<span class="step-number">3</span>
 								<h4 class="step-title">	Host And Database Configuration</h4>
-								<div class="step-content"> Provide the details of your web server host and MySQL server as well as specify your database parameters.</div>
+								<div class="step-content"> Provide the details of your web server host and MySQL server as well as specify your database parameters.
+								You should fill in the following fields:<br>
+								<strong>Database Driver:</strong> AbanteCart uses a MySQL database but you might have to use an MySQLi driver<br> 
+								<strong>Database Host:</strong> Usually it is named 'localhost', but in order to be certain, refer to the Databases page in your website control panel or contact your hosting provider<br> 
+								<strong>Database Username:</strong> Username for your MySQL user account<br>
+								<strong>Database Password:</strong> MySQL user account password<br>
+								<strong>Database Name:</strong> MySQL database name<br>
+								<strong>Database Table Names Prefix:</strong> MySQL database prefix. Leave it blank if you have not. Some database tables has a name which consists of two parts: a table prefix and the specific database name itself. The use of prefix allows several web applications to utilize one database.<br>
+						<!-- Note -->
+						<div class="note js-note ">
+							<span class="note-close js-close">
+								<i class="fa fa-times"></i>
+							</span>
+							<h4 class="note-title"> Database info </h4>
+							<p class="note-description"> Database info varies by hosting provider and is out of the scope of this document. Consult your provider's support/documentation for instructions. </p>
+						</div>
+						<!-- End of Note -->
+								  
+								 <strong>Admin section unique key:</strong> Will be used in the following address: http://www.yourdomainname.com/index.php?s=your_admin where yourdomainname.com is the name of your new online store. This brings you to your Admin Login Panel. Only administrators needs to know this to access control panel of the shopping cart application.<br>
+								  <strong>Admin username:</strong> login name to your Admin Panel;<br> <strong>Password:</strong> password to your Admin Panel;<br>
+								  <strong>Admin E-Mail:</strong> Enter a real e-mail into the field. The default administrator e-mail, company e-mail (of Order, Support, etc. departments) and contact form recipient's email will be used the value of this field.	
+								
+								</div>
 							</li>
 							<li class="step">
 								<span class="step-number">4</span>
@@ -307,7 +329,7 @@ resources/
 								<div class="step-content"> Once the installation is complete, it is strongly recommended that you bookmark or remember your control panel link and keep secure key save
 								
 								<!-- Note -->
-						<div class="note js-note note-bounce">
+						<div class="note js-note ">
 							<span class="note-close js-close">
 								<i class="fa fa-times"></i>
 							</span>
