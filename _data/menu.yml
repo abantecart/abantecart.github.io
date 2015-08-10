@@ -4,6 +4,8 @@
   subitems:
     - text: Installation Options
       url: /pages/install/installation_options.html
+    - text: Core Ugrade
+      url: /pages/install/core_upgrade.html
     - text: System requirements
       url: /pages/install/system_requirements.html
     - text: Regular installation
