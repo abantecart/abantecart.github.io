@@ -4,12 +4,19 @@
   subitems:
     - text: Installation Options
       url: /pages/install/installation_options.html
-    - text: Regular installation
-      url: /pages/install/regular_installation.html
-    - text: Cpanel installation
-      url: /pages/install/cpanel_installation.html
-    - text: Core Upgrade
-      url: /pages/install/core_upgrade.html
+      level: /pages/install/options/
+      icon: '<i class="fa fa-magic fa-fw"></i>'
+      subitems:
+       - text: Click Installation
+         url: /pages/install/options/click_installation.html    
+       - text: Cpanel Installation
+         url: /pages/install/options/cpanel_installation.html    
+       - text: Cloud Installation
+         url: /pages/install/options/cloud_installation.html    
+       - text: Localhost Installation
+         url: /pages/install/options/localhost_installation.html    
+       - text: Regular installation
+         url: /pages/install/options/regular_installation.html    
     - text: System requirements
       url: /pages/install/system_requirements.html
     - text: Download
