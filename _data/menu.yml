@@ -7,7 +7,7 @@
     - text: Regular installation
       url: /pages/install/regular_installation.html
     - text: Cpanel installation
-      url: /pages/install/regular_installation.html
+      url: /pages/install/cpanel_installation.html
     - text: Core Upgrade
       url: /pages/install/core_upgrade.html
     - text: System requirements
