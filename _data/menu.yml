@@ -6,12 +6,12 @@
       url: /pages/install/installation_options.html
     - text: Regular installation
       url: /pages/install/regular_installation.html
+    - text: Cpanel installation
+      url: /pages/install/regular_installation.html
     - text: Core Upgrade
       url: /pages/install/core_upgrade.html
     - text: System requirements
       url: /pages/install/system_requirements.html
-    - text: Regular installation
-      url: /pages/install/regular_installation.html
     - text: Download
       url: /pages/install/download.html
 - text: Getting Started
