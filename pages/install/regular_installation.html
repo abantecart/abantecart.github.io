@@ -45,8 +45,8 @@ redirect_from: "/tag/install.html"
 						<!-- End of Caregory Info -->
 						<!-- Note -->
 						<div class="note js-note ">
-							<h4 class="note-title"> jQuery required </h4>
-							<p class="note-description"> Please note that all JavaScript plugins require jQuery to be included, as shown in the starter template. Consult our bower.json to see which versions of jQuery are supported. </p>
+							<h4 class="note-title"> Archive software required </h4>
+							<p class="note-description"> Uncompress the distribution package on your local computer using any TAR- or ZIP-compatible archive software, e.g. WinRAR or 7-zip </p>
 						</div>
 						<!-- End of Note -->
 						<!-- File Tree -->
@@ -151,3 +151,52 @@ redirect_from: "/tag/install.html"
 							</ul>
 						</div>
 						<!-- End of FIle Tree -->
+						
+						
+						
+						<!-- Category Info -->
+						<div class="category-info ">
+							<h3 class="category-title">Upload</h3>
+							<h4 class="category-description">Upload all the files and folders from public_html directory to the required directory on your web server</h4>
+						</div>
+						<!-- End of Caregory Info -->
+						<!-- Note -->
+						<div class="note js-note ">
+							<h4 class="note-title"> FTP software required </h4>
+							<p class="note-description"> Upload all the files to your server by FTP software, e. g. <a href="http://filezilla-project.org" target="_blank">FileZilla</a>. </p>
+						</div>
+						<!-- End of Note -->
+						
+						
+						
+						<!-- Category Info -->
+						<div class="category-info ">
+							<h3 class="category-title">Adjusting file permissions</h3>
+							<h4 class="category-description">Now, you need to set the proper file permissions.</h4>
+						</div>
+						<!-- End of Caregory Info -->
+						<!-- Note -->
+						<div class="note js-note ">
+							<h4 class="note-title"> FTP software  </h4>
+							<p class="note-description"> If you do not have terminal access to your server, you can change file access permissions using an FTP client. Most of them have the "Change permissions" or "Change mode" functions. With the help of the function you are to set the permissions for the 'config.php' file and the directories listed above. The 'chmod 666 config.php' command means that you must set 666 permissions (in other words, read, write and execute permissions for the file user, group and other) for the 'config.php' file. Other commands (e.g. 'chmod -R 777 catalog') mean that you must set the same 777 permissions for the directory, its sub-directories and all the files under these directories. Please refer to your FTP client documentation for more detailed instructions on setting file permissions </p>
+						</div>
+						<!-- End of Note -->
+						<!-- Category Info -->
+						<div class="category-info ">
+							<h4 class="category-description">For Linux/Unix based server make sure the following folders and files are writable.</h4>
+						</div>
+						<!-- End of Caregory Info -->
+						<!-- HTML Highlight -->
+						<div class="code-highlight">
+							<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">chmod 0777 system/config.php
+chmod 0777 system/
+chmod 0777 system/cache/
+chmod 0777 system/logs/
+chmod 0777 image/
+chmod 0777 image/thumbnails/
+chmod 0777 download/
+chmod 0777 extensions/
+chmod 0777 admin/system/backup/
+chmod 0777 resources/
+</code></pre> </div>
+						<!-- End of HTML Highlight -->
