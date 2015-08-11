@@ -16,30 +16,40 @@ redirect_from: "/tag/install.html"
 						<!-- Steps -->
 							<ul class="steps">
 								<li class="step">
-									<span class="step-number">*</span>
-									<h4 class="step-title">Warning: Some file or directory does not have write permission.</h4>
-									<div class="step-content"> You change file permissions right but Warning: Some file or directory does not have write permission appear again
+									<span class="step-number">.</span>
+									<h4 class="step-title">Error: Can't connect to ftp-server </h4>
+									<div class="step-content"> Solution: Double check FTP Host and password; Note that SFTP is not supported; Modify the permissions in your hosting account using the File Manager cPanel tool </div>
+								</li>
+								<li class="step">
+									<span class="step-number">.</span>
+									<h4 class="step-title">You change file permissions right but Warning: Some file or directory does not have write permission appear again</h4>
+									<div class="step-content"> 
 Solution: Change write permissions for directory where file is located. </div>
-                                    <div class="helper center">
-                                        <img src="../../img/pages/abantecart-core-upgrade-1.png" class="image isolated" alt="AbanteCart Upgrade"> </div>
 								</li>
 								<li class="step">
-									<span class="step-number">2</span>
-									<h4 class="step-title">Follow the link</h4>
-									<div class="step-content"> In notification message click on upgrade link. </div>
-                                    <div class="helper center">
-                                        <img src="../../img/pages/abantecart-core-upgrade-2v2.png" class="image isolated" alt="AbanteCart Upgrade"> </div>
-                                    <div class="step-content"> You can also use key abantecart_upgrade_123 (abantecart_upgrade_version) to submit to extension install section. </div>
-                                    <div class="helper center">
-                                        <img src="../../img/pages/abantecart-core-upgrade-3.png" class="image isolated" alt="AbanteCart Upgrade"> </div>
-                                        <p>This will install and run upgrade process and it will automatically backup your AbanteCart before updates. </p>
+									<span class="step-number">.</span>
+									<h4 class="step-title">Error: There has been a critical error processing your request.</h4>
+									<div class="step-content"> Solution: Please check AbanteCart and webserver error logs for more details.  </div>
 								</li>
 								<li class="step">
-									<span class="step-number">3</span>
-									<h4 class="step-title">Fix file permissions</h4>
-									<div class="step-content"> If you have files or directories that do not have write permissions, you will be asked to do upgrade using FTP. You can change permissions on required files to be writable (777) or just make all files and directories writable for upgrade process. This can be and recommended changed back after upgrade. If you encounter issues or do not feel comfortable with permissions, do manual upgrade in next step instead.  </div>
-                                    <div class="helper center">
-                                        <img src="../../img/pages/abantecart-core-upgrade-4.png" class="image isolated" alt="AbanteCart Upgrade"> </div>
+									<span class="step-number">.</span>
+									<h4 class="step-title">Error: cannot to pack</h4>
+									<div class="step-content"> Solution: Backup and Upgrade manually. Some more info at forum  </div>
+								</li>
+								<li class="step">
+									<span class="step-number">.</span>
+									<h4 class="step-title">Error: Can not install extensions from the marketplace. This store is not authenticated/connected.</h4>
+									<div class="step-content"> Solution: Go to Extensions -> All extensions. You will see orange connect button. Follow instructions to connect.  </div>
+								</li>
+								<li class="step">
+									<span class="step-number">.</span>
+									<h4 class="step-title">warning: AbanteCart core v.1.2 mysql_query(): is not a valid MySQL-Link resource in ..</h4>
+									<div class="step-content"> Solution: <a href="http://forum.abantecart.com/index.php/topic,3576" target="_blank">http://forum.abantecart.com/index.php/topic,3576</a>  </div>
+								</li>
+																<li class="step">
+									<span class="step-number">.</span>
+									<h4 class="step-title">I have downloaded the abantecart_1.2_upgrade_only.tar.gz file but cannot unarchive it</h4>
+									<div class="step-content"> Solution: Re-download file to avoid corrupted download issue; Update your archiver; Try 7-Zip open source file archiver;  </div>
 								</li>
 								
 							</ul>
