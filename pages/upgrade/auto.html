@@ -9,71 +9,54 @@ tags: [
 redirect_from: "/tag/install.html"
 ---
 
-
-<div class="category-info ">
-    <h3 class="category-title">Installation</h3>
-    <h4 class="category-description">You can choose different AbanteCart installation options, depending on your need and technical experience. Installation can be done with simple click to more advanced options.</h4>
-</div>
-
-<div class="grid-view js-grid-view">
-    <div class="row">
-    	<div class="col-md-4">
-    		<div class="grid-view-elem js-grid-view-elem">
-    			<h3 class="grid-view-elem-title">
-    				<a href="options/click_installation.html">Click Install</a>
-    				<span class="grid-view-title-descr"></span>
-    			</h3>
-    			<p class="grid-view-elem-description"> Create a personal trial store. If you decide to make your personal site live, you can do it and any time, with no hassle migration to hosted account.</p>
-    		</div>
-    	</div>
-    	<div class="col-md-4">
-    		<div class="grid-view-elem js-grid-view-elem">
-    			<h3 class="grid-view-elem-title">
-    				<a href="options/cpanel_installation.html">Cpanel Installation</a>
-    				<span class="grid-view-title-descr"></span>
-    			</h3>
-    			<p class="grid-view-elem-description"> cPanel is a Linux based web hosting control panel that provides a graphical interface and automation tools designed to simplify the process of hosting a web site. </p>
-    		</div>
-    	</div>
-    	<div class="col-md-4">
-    		<div class="grid-view-elem js-grid-view-elem">
-    			<h3 class="grid-view-elem-title">
-    				<a href="https://bitnami.com/stack/abantecart/cloud" target="_blank">Cloud Installation</a>
-    				<span class="grid-view-title-descr"></span>
-    			</h3>
-    			<p class="grid-view-elem-description"> Bitnami Cloud Hosting. Launch AbanteCart app in the cloud with one click and have them automatically backed up and monitored. </p>
-    		</div>
-    	</div>
-    	
-    </div>
-    
-    <div class="row">
-    	<div class="col-md-4">
-    		<div class="grid-view-elem js-grid-view-elem">
-    			<h3 class="grid-view-elem-title">
-    				<a href="options/localhost_installation.html">Localhost installation</a>
-    				<span class="grid-view-title-descr"></span>
-    			</h3>
-    			<p class="grid-view-elem-description"> If you want to test or develop with AbanteCart, you can install it on your own computer. </p>
-    		</div>
-    	</div>
-    	<div class="col-md-4">
-    		<div class="grid-view-elem js-grid-view-elem">
-    			<h3 class="grid-view-elem-title">
-    				<a href="options/regular_installation.html">Regular Installation</a>
-    				<span class="grid-view-title-descr"></span>
-    			</h3>
-    			<p class="grid-view-elem-description"> The instructions are about AbanteCart Manual installation on a hosting server accessible on the Internet. </p>
-    		</div>
-    	</div>
-    	<div class="col-md-4">
-    		<div class="grid-view-elem js-grid-view-elem">
-    			<h3 class="grid-view-elem-title">
-    				<a href="">Custom Install</a>
-    				<span class="grid-view-title-descr"></span>
-    			</h3>
-    			<p class="grid-view-elem-description"> AbanteCart can be installed with specific configuration for higher security and better performance. This is usually done for larger sites. Technical knowledge is required. </p>
-    		</div>
-    	</div>
-    </div>
-</div>
+						<!-- Category Info -->
+						<div class="category-info ">
+							<h3 class="category-title">AbanteCart upgrade</h3>
+							<h4 class="category-description">If there is a new version available for your AbanteCart, you will have a notification in your message box of AbanteCart administration. In addition, you might see a message to show latest version in the right top corner of the administration screen.</h4>
+							
+							<p>Installation of the updates is carried via standard AbanteCart installation interface and reflected in Install/Upgrade History.</p>
+						</div>
+						<!-- End of Caregory Info -->
+						<!-- Note -->
+						<div class="note js-note note-bounce">
+							<span class="note-close js-close">
+								<i class="fa fa-times"></i>
+							</span>
+							<h4 class="note-title"> Before upgrade </h4>
+							<p class="note-description"> Recommended that you DO NOT upgrade AbanteCart on live site. Depending on your server or OS configuration upgrades might not go all the way through and you will need more time for manual upgrade. We suggest you upgrade your test site first and always create backups.<br>
+Upgrades are available only from prior version to next. If you do not upgrade for long time, you will need to run all upgrades in between.</p>
+						</div>
+						<!-- End of Note -->
+						
+						
+						
+						<!-- Steps -->
+							<ul class="steps">
+								<li class="step">
+									<span class="step-number">1</span>
+									<h4 class="step-title">Update notification.</h4>
+									<div class="step-content"> You will see an update notification once you login to the admin. It will show in your message box. </div>
+                                    <div class="helper center">
+                                        <img src="../../img/pages/abantecart-core-upgrade-1.png" class="image isolated" alt="AbanteCart Upgrade"> </div>
+								</li>
+								<li class="step">
+									<span class="step-number">2</span>
+									<h4 class="step-title">Follow the link</h4>
+									<div class="step-content"> In notification message click on upgrade link. </div>
+                                    <div class="helper center">
+                                        <img src="../../img/pages/abantecart-core-upgrade-2v2.png" class="image isolated" alt="AbanteCart Upgrade"> </div>
+                                    <div class="step-content"> You can also use key abantecart_upgrade_123 (abantecart_upgrade_version) to submit to extension install section. </div>
+                                    <div class="helper center">
+                                        <img src="../../img/pages/abantecart-core-upgrade-3.png" class="image isolated" alt="AbanteCart Upgrade"> </div>
+                                        <p>This will install and run upgrade process and it will automatically backup your AbanteCart before updates. </p>
+								</li>
+								<li class="step">
+									<span class="step-number">3</span>
+									<h4 class="step-title">Fix file permissions</h4>
+									<div class="step-content"> If you have files or directories that do not have write permissions, you will be asked to do upgrade using FTP. You can change permissions on required files to be writable (777) or just make all files and directories writable for upgrade process. This can be and recommended changed back after upgrade. If you encounter issues or do not feel comfortable with permissions, do manual upgrade in next step instead.  </div>
+                                    <div class="helper center">
+                                        <img src="../../img/pages/abantecart-core-upgrade-4" class="image isolated" alt="AbanteCart Upgrade"> </div>
+								</li>
+								
+							</ul>
+							<!-- End of Steps -->
