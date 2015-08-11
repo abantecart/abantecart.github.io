@@ -12,30 +12,12 @@ redirect_from: "/tag/install.html"
 						<div class="category-info ">
 							<h3 class="category-title">Download application</h3>
 							<h4 class="category-description">Download Latest AbanteCart archive or extract source code from GitHub.</h4>
-						</div>
-						<!-- End of Caregory Info -->
-						<!-- Boxes -->
-						<div class="row">
-							<div class="col-md-5">
-								<!-- Box -->
-								<div class="box ">
-									<h4 class="box-title">Download archive</h4>
-									<p class="box-description">Latest released AbanteCart package for installation</p>
-									<a class="button green " href="https://github.com/abantecart/abantecart-src/archive/master.zip">Download Archive</a>
-								</div>
-								<!-- End of Box -->
-							</div>
-							<div class="col-md-7">
-								<!-- Box -->
-								<div class="box ">
-									<h4 class="box-title">Extract source from GitHub</h4>
-									<p class="box-description">Stable (production) version sources code is located on Master Branch. There will be one or more branches for new versions in working state.</p>
-									<a class="button green " href="https://github.com/abantecart/abantecart-src" target="_blank">Download source</a>
-								</div>
-								<!-- End of Box -->
-							</div>
 							
+							<div class="button-list helper">
+							<a href="../download.html" class="button stroke small blue">Download AbanteCart</a>
+							</div>
 						</div>
+						<!-- End of Caregory Info -->					
 						
 						<!-- Category Info -->
 						<div class="category-info ">
@@ -162,9 +144,6 @@ redirect_from: "/tag/install.html"
 						<!-- End of Caregory Info -->
 						<!-- Note -->
 						<div class="note js-note note-bounce">
-							<span class="note-close js-close">
-								<i class="fa fa-times"></i>
-							</span>
 							<h4 class="note-title"> FTP software required </h4>
 							<p class="note-description"> Upload all the files to your server by FTP software, e. g. <a href="http://filezilla-project.org" target="_blank">FileZilla</a>. </p>
 						</div>
@@ -179,7 +158,10 @@ redirect_from: "/tag/install.html"
 						</div>
 						<!-- End of Caregory Info -->
 						<!-- Note -->
-						<div class="note js-note green">
+						<div class="note js-note blue">
+							<span class="note-close ">
+								<i class="fa fa-times"></i>
+							</span>
 							<h4 class="note-title"> FTP software  </h4>
 							<p class="note-description"> If you do not have terminal access to your server, you can change file access permissions using an FTP client. Most of them have the "Change permissions" or "Change mode" functions. With the help of the function you are to set the permissions for the 'config.php' file and the directories listed above. The 'chmod 666 config.php' command means that you must set 666 permissions (in other words, read, write and execute permissions for the file user, group and other) for the 'config.php' file. Other commands (e.g. 'chmod -R 777 catalog') mean that you must set the same 777 permissions for the directory, its sub-directories and all the files under these directories. Please refer to your FTP client documentation for more detailed instructions on setting file permissions </p>
 						</div>
@@ -306,10 +288,7 @@ resources/
                                     <div class="helper center">
                                         <img src="../../../img/pages/abantecart-install-key32.png" class="image isolated" alt="AbanteCart Installation"> </div>
 						<!-- Note -->
-						<div class="note js-note ">
-							<span class="note-close js-close">
-								<i class="fa fa-times"></i>
-							</span>
+						<div class="note js-note note-bounce">
 							<h4 class="note-title"> Secure key </h4>
 							<p class="note-description"> Important to keep secure key in save place. If you somehow changed salt key in configuration file all passwords will not work. </p>
 						</div>
