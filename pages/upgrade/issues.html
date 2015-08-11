@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Run upgrade in admin
+title: Known Upgrade Issues
 description: Upgrade your AbanteCart eCommerce application core version once in a while, since important fixes or new features will be released.
 tags: [
     ['regular_install', 'Regular Installation'],
@@ -9,33 +9,17 @@ tags: [
 redirect_from: "/tag/install.html"
 ---
 
-						<!-- Category Info -->
-						<div class="category-info ">
-							<h3 class="category-title">AbanteCart upgrade</h3>
-							<h4 class="category-description">If there is a new version available for your AbanteCart, you will have a notification in your message box of AbanteCart administration. In addition, you might see a message to show latest version in the right top corner of the administration screen.</h4>
-							
-							<p>Installation of the updates is carried via standard AbanteCart installation interface and reflected in Install/Upgrade History.</p>
-						</div>
-						<!-- End of Caregory Info -->
-						<!-- Note -->
-						<div class="note js-note note-bounce">
-							<span class="note-close js-close">
-								<i class="fa fa-times"></i>
-							</span>
-							<h4 class="note-title"> Before upgrade </h4>
-							<p class="note-description"> Recommended that you DO NOT upgrade AbanteCart on live site. Depending on your server or OS configuration upgrades might not go all the way through and you will need more time for manual upgrade. We suggest you upgrade your test site first and always create backups.<br>
-Upgrades are available only from prior version to next. If you do not upgrade for long time, you will need to run all upgrades in between.</p>
-						</div>
-						<!-- End of Note -->
+
 						
 						
 						
 						<!-- Steps -->
 							<ul class="steps">
 								<li class="step">
-									<span class="step-number">1</span>
-									<h4 class="step-title">Update notification.</h4>
-									<div class="step-content"> You will see an update notification once you login to the admin. It will show in your message box. </div>
+									<span class="step-number">*</span>
+									<h4 class="step-title">Warning: Some file or directory does not have write permission.</h4>
+									<div class="step-content"> You change file permissions right but Warning: Some file or directory does not have write permission appear again
+Solution: Change write permissions for directory where file is located. </div>
                                     <div class="helper center">
                                         <img src="../../img/pages/abantecart-core-upgrade-1.png" class="image isolated" alt="AbanteCart Upgrade"> </div>
 								</li>

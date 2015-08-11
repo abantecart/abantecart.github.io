@@ -28,7 +28,9 @@
     - text: Run Upgrade in admin
       url: /pages/upgrade/auto.html
     - text: Upgrade manually
-      url: /pages/upgrade/manual.html      
+      url: /pages/upgrade/manual.html
+    - text: Known Issues
+      url: /pages/upgrade/issues.html      
 - text: Getting Started
   level: /pages/quickstart/
   icon: '<i class="fa fa-bicycle fa-fw"></i>'
