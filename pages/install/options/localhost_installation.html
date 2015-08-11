@@ -1,0 +1,205 @@
+---
+layout: default
+title: Localhost Installation
+description: The instructions below are about AbanteCart eCommerce application installation on a offline local server.
+tags: [
+    ['regular_install', 'Regular Installation'],
+    ['system_requirements', 'System Requirements']
+]
+redirect_from: "/tag/install.html"
+---
+
+<div class="category-info ">
+    <h3 class="category-title">Installation on local computer</h3>
+    <h4 class="category-description">You do not need to get hosting account to test run or develop with AbanteCart application. If you want to test or develop with AbanteCart, you can install it on your own computer and get convenience of accessing web site and code locally. 
+There are 3 most popular third party applications available that provide virtual layer with web server and database functionality. All are free. Bitnami the simpliest way and support few OS, XAMPP is available for MAC, WIN and Linux.</h4>
+</div>
+
+<div class="grid-view js-grid-view">
+    <div class="row">
+    	<div class="col-md-4">
+    		<div class="grid-view-elem js-grid-view-elem">
+    			<h3 class="grid-view-elem-title">
+    				<a href="#Bitnami">Bitnami Stack</a>
+    				<span class="grid-view-title-descr"></span>
+    			</h3>
+    			<p class="grid-view-elem-description"> Bitnami AbanteCart Stack provides a one-click install solution for AbanteCart.</p>
+    		</div>
+    	</div>
+    	<div class="col-md-4">
+    		<div class="grid-view-elem js-grid-view-elem">
+    			<h3 class="grid-view-elem-title">
+    				<a href="options/cpanel_installation.html">XAMPP</a>
+    				<span class="grid-view-title-descr"></span>
+    			</h3>
+    			<p class="grid-view-elem-description"> XAMPP is a completely free, easy to install Apache distribution containing MySQL, PHP, and Perl. </p>
+    		</div>
+    	</div>
+    	<div class="col-md-4">
+    		<div class="grid-view-elem js-grid-view-elem">
+    			<h3 class="grid-view-elem-title">
+    				<a href="https://bitnami.com/stack/abantecart/cloud" target="_blank">Denwer</a>
+    				<span class="grid-view-title-descr"></span>
+    			</h3>
+    			<p class="grid-view-elem-description"> Denwer is more for russian speaking developers and community.  </p>
+    		</div>
+    	</div>
+    	
+    </div>
+    
+    
+</div>
+						
+						<!-- Category Info -->
+						<div class="category-info ">
+							<a name="Bitnami"></a> <h3 class="category-title">Bitnami AbanteCart Stack</h3>
+							<h4 class="category-description"> Bitnami AbanteCart Stack 
+								<div class="button-list helper">
+								<a target="_blank" href="https://bitnami.com/stack/abantecart" class="button button-icon stroke small green">
+								<i class="fa fa-home"></i>https://bitnami.com/stack/abantecart </a></div>
+							
+							<br>Bitnami AbanteCart Stack provides a <strong>one-click install solution for AbanteCart</strong>. <a href="https://bitnami.com/stack/abantecart/installer" target="_blank">Bitnami native installers</a> automate the setup of a Bitnami AbanteCart application stack on Windows, OS X or Linux. Each installer includes all of the software necessary to run out of the box (the stack). The process is simple; just download, click next-next-next and you are done! Bitnami stacks are completely self contained and will not interfere with other software on your system.
+							</h4>
+						</div>
+						<!-- End of Caregory Info -->
+						<!-- Note -->
+						<div class="note js-note ">
+							<h4 class="note-title"> Blocking software  </h4>
+							<p class="note-description"> turn OFF antivirus and Skype during installation. You can leave default settings asked by Bitnami installer. </p>
+						</div>
+						<!-- End of Note -->
+						<!-- Category Info -->
+						<div class="category-info ">
+							<h4 class="category-description">For Linux/Unix based server make sure the following folders and files are writable.</h4>
+						</div>
+						<!-- End of Caregory Info -->
+						<!-- HTML Highlight -->
+						<div class="code-highlight">
+							<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">chmod 0777 system/config.php
+chmod 0777 system/
+chmod 0777 system/cache/
+chmod 0777 system/logs/
+chmod 0777 image/
+chmod 0777 image/thumbnails/
+chmod 0777 download/
+chmod 0777 extensions/
+chmod 0777 admin/system/backup/
+chmod 0777 resources/
+</code></pre> </div>
+						<!-- End of HTML Highlight -->
+						<!-- Category Info -->
+						<div class="category-info ">
+							<h4 class="category-description">For Windows based server make sure the following folders and files allow Read and Write.</h4>
+						</div>
+						<!-- End of Caregory Info -->
+						<!-- HTML Highlight -->
+						<div class="code-highlight">
+							<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">system/config.php
+system/
+system/cache/
+system/logs/
+image/
+image/data/
+image/thumbnails/
+download/
+resources/
+</code></pre> </div>
+						<!-- End of HTML Highlight -->
+						
+						
+						
+						
+						
+						
+						<!-- Category Info -->
+						<div class="category-info ">
+							<h3 class="category-title">Create a MySQL database</h3>
+							<h4 class="category-description">Create a MySQL database (you may need to create a MySQL user before that) via your website control panel. Remember the MySQL name, host, user name, and password; they will be required at the next installation step.</h4>
+						</div>
+						<!-- End of Caregory Info -->
+						
+						
+						
+						
+						<!-- Category Info -->
+						<div class="category-info ">
+							<h3 class="category-title">Run Installation Wizard</h3>
+							<h4 class="category-description">Point your favorite web browser to run the installation script.</h4>
+						
+						<!-- End of Caregory Info -->
+								<h4 class="category-description">If you placed the AbanteCart files directly in the web root, open http://www.yourdomainname.com/</h4>
+							<p>Make sure to replace the www.yourdomainname.com part from the examples with your true domain name.</p>
+
+								<h4 class="category-description">If you placed the AbanteCart files to a subdirectory like web_root/store/, open http://www.yourdomainname.com/store/</h4>
+							<p>Make sure to replace the www.yourdomainname.com/store/ part from the examples with your true domain name and subfolder name</p>
+						</div>
+						
+						
+						
+
+						
+						
+						<!-- Steps -->
+						<ul class="steps">
+							<li class="step">
+								<span class="step-number">1</span>
+								<h4 class="step-title"> License Agreement</h4>
+								<div class="step-content"> Please read the license agreement. If you accept its statements, select the 'I agree to the license' check box and click on the Continue button. </div>
+							</li>
+							<li class="step">
+								<span class="step-number">2</span>
+								<h4 class="step-title">	Compatibility Validation</h4>
+								<div class="step-content"> This phase checks your PHP configuration, MySQL configuration, checks for PHP CURL, ZIP & GD support on your server and Write permissions. 
+								If all tests are passed, you should click the Continue button. Otherwise, contact your server administrator or hosting support.</div>
+							</li>
+							<li class="step">
+								<span class="step-number">3</span>
+								<h4 class="step-title">	Host And Database Configuration</h4>
+								<div class="step-content"> Provide the details of your web server host and MySQL server as well as specify your database parameters.
+								You should fill in the following fields:<br>
+								<strong>Database Driver:</strong> AbanteCart uses a MySQL database but you might have to use an MySQLi driver<br> 
+								<strong>Database Host:</strong> Usually it is named 'localhost', but in order to be certain, refer to the Databases page in your website control panel or contact your hosting provider<br> 
+								<strong>Database Username:</strong> Username for your MySQL user account<br>
+								<strong>Database Password:</strong> MySQL user account password<br>
+								<strong>Database Name:</strong> MySQL database name<br>
+								<strong>Database Table Names Prefix:</strong> MySQL database prefix. Leave it blank if you have not. Some database tables has a name which consists of two parts: a table prefix and the specific database name itself. The use of prefix allows several web applications to utilize one database.<br>
+						<!-- Note -->
+						<div class="note js-note blue">
+							<span class="note-close js-close">
+								<i class="fa fa-times"></i>
+							</span>
+							<h4 class="note-title"> Database info </h4>
+							<p class="note-description"> Database info varies by hosting provider and is out of the scope of this document. Consult your provider's support/documentation for instructions. </p>
+						</div>
+						<!-- End of Note -->  
+								 <strong>Admin section unique key:</strong> Will be used in the following address: http://www.yourdomainname.com/index.php?s=your_admin where yourdomainname.com is the name of your new online store. This brings you to your Admin Login Panel. Only administrators needs to know this to access control panel of the shopping cart application.<br>
+								  <strong>Admin username:</strong> login name to your Admin Panel;<br> <strong>Password:</strong> password to your Admin Panel;<br>
+								  <strong>Admin E-Mail:</strong> Enter a real e-mail into the field. The default administrator e-mail, company e-mail (of Order, Support, etc. departments) and contact form recipient's email will be used the value of this field.	
+								
+								</div>
+							</li>
+							<li class="step">
+								<span class="step-number">4</span>
+								<h4 class="step-title">	Data load</h4>
+								<div class="step-content"> Click Install Demo Data if you want to install demo products, orders, categories, banners etc.</div>
+							</li>
+							<li class="step">
+								<span class="step-number">5</span>
+								<h4 class="step-title">	After the Installation</h4>
+								<div class="step-content"> Once the installation is complete, it is strongly recommended that you bookmark or remember your control panel link and keep secure key save. Delete <em>install</em> directory from your AbanteCart installation!
+                                    <div class="helper center">
+                                        <img src="../../../img/pages/abantecart-install-key32.png" class="image isolated" alt="AbanteCart Installation"> </div>
+						<!-- Note -->
+						<div class="note js-note ">
+							<span class="note-close js-close">
+								<i class="fa fa-times"></i>
+							</span>
+							<h4 class="note-title"> Secure key </h4>
+							<p class="note-description"> Important to keep secure key in save place. If you somehow changed salt key in configuration file all passwords will not work. </p>
+						</div>
+						<!-- End of Note -->
+								
+								</div>
+							</li>
+						</ul>
+						<!-- End of Steps -->
