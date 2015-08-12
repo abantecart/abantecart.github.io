@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Email Settings
-description: Upgrade your AbanteCart eCommerce application core version once in a while, since important fixes or new features will be released.
+description: Setting up Mail in your AbanteCart eCommerce application.
 tags: [
     ['regular_install', 'Regular Installation'],
     ['system_requirements', 'System Requirements']
@@ -148,7 +148,7 @@ The parameters can be used to pass additional flags as command line options to t
 
 
 
-						<a href="#gmail-smtp"></a>
+						<a name="gmail"></a>
 						<div class="category-info ">
 							<h3 class="category-title">Example of gmail SMTP settings</h3>
 							<h4 class="category-description">Working with Google’s SMTP Server </h4>
@@ -212,3 +212,29 @@ Gmail send email “Suspicious sign in prevented” and after login in gmail ask
 							<p class="note-description"> Also please check with your hosting provider for any firewall on your server that blocks outgoing connections. </p>
 						</div>
 						<!-- End of Note -->
+						
+						
+						
+
+
+
+
+						<!-- Steps -->
+							<ul class="steps">
+								<li class="step">
+									<span class="step-number"><i class="fa fa-exclamation fa-fw"></i></span>
+									<h4 class="step-title">Warnings in the log: fsockopen() [function.fsockopen]: unable to connect.. </h4>
+									<div class="step-content"> Your PHP was configured without ssl socket transport support. Contact your server administrator and ask him to enable it on your server.</div>
+								</li>
+								<li class="step">
+									<span class="step-number"><i class="fa fa-exclamation fa-fw"></i></span>
+									<h4 class="step-title">when I go to System > Mail I get the following:
+
+Method Not Implemented
+
+GET to /index.php not supported. </h4>
+									<div class="step-content"> Contact your server administrator and ask him to change mod_security rule on your server.</div>
+								</li>
+								
+							</ul>
+							<!-- End of Steps -->
