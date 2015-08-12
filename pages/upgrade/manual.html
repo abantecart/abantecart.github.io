@@ -11,17 +11,12 @@ redirect_from: "/tag/install.html"
 
 						<!-- Category Info -->
 						<div class="category-info ">
-							<h3 class="category-title">AbanteCart upgrade</h3>
-							<h4 class="category-description">If there is a new version available for your AbanteCart, you will have a notification in your message box of AbanteCart administration. In addition, you might see a message to show latest version in the right top corner of the administration screen.</h4>
-							
-							<p>Installation of the updates is carried via standard AbanteCart installation interface and reflected in Install/Upgrade History.</p>
+							<h3 class="category-title">Upgrade manually</h3>
+							<h4 class="category-description">If there is a new version available for your AbanteCart, you will have a notification in your message box of AbanteCart administration.</h4>
 						</div>
 						<!-- End of Caregory Info -->
 						<!-- Note -->
 						<div class="note js-note note-bounce">
-							<span class="note-close js-close">
-								<i class="fa fa-times"></i>
-							</span>
 							<h4 class="note-title"> Before upgrade </h4>
 							<p class="note-description"> Recommended that you DO NOT upgrade AbanteCart on live site. Depending on your server or OS configuration upgrades might not go all the way through and you will need more time for manual upgrade. We suggest you upgrade your test site first and always create backups.<br>
 Upgrades are available only from prior version to next. If you do not upgrade for long time, you will need to run all upgrades in between.</p>
@@ -34,28 +29,123 @@ Upgrades are available only from prior version to next. If you do not upgrade fo
 							<ul class="steps">
 								<li class="step">
 									<span class="step-number">1</span>
-									<h4 class="step-title">Update notification.</h4>
-									<div class="step-content"> You will see an update notification once you login to the admin. It will show in your message box. </div>
-                                    <div class="helper center">
-                                        <img src="../../img/pages/abantecart-core-upgrade-1.png" class="image isolated" alt="AbanteCart Upgrade"> </div>
+									<h4 class="step-title">Download upgrade package</h4>
+									<div class="step-content"> Download upgrade package from&nbsp;<a href="https://drive.google.com/folderview?id=0B64_ELUMJQjJfms3U2Y5WDZycmQ2bXFkY2JxNmY1Qkp6QmpNUGo2ck5UYWF0ek44bnBiNVE&amp;usp=drive_web#list" target="_blank">Google Drive</a> or for older versions <a href="http://sourceforge.net/projects/abantecart/files/" target="_blank">http://sourceforge.net/projects/abantecart/files/</a> and <a href="http://code.google.com/p/abantecart/downloads/list" target="_blank">http://code.google.com/p/abantecart/downloads/list</a>. </div>
+            
 								</li>
 								<li class="step">
 									<span class="step-number">2</span>
-									<h4 class="step-title">Follow the link</h4>
-									<div class="step-content"> In notification message click on upgrade link. </div>
-                                    <div class="helper center">
-                                        <img src="../../img/pages/abantecart-core-upgrade-2v2.png" class="image isolated" alt="AbanteCart Upgrade"> </div>
-                                    <div class="step-content"> You can also use key abantecart_upgrade_123 (abantecart_upgrade_version) to submit to extension install section. </div>
-                                    <div class="helper center">
-                                        <img src="../../img/pages/abantecart-core-upgrade-3.png" class="image isolated" alt="AbanteCart Upgrade"> </div>
-                                        <p>This will install and run upgrade process and it will automatically backup your AbanteCart before updates. </p>
+									<h4 class="step-title">Backup AbanteCart</h4>
+									<div class="step-content"> Back up AbanteCart database and code</div>
+                                        <p>There are several backup approach: The Backup Wizard interface in your hosting CPanel, AbanteCart buit-in backup, Manually backup all AbanteCart files and MySQL Database via phpMyAdmin. </p>
 								</li>
 								<li class="step">
 									<span class="step-number">3</span>
-									<h4 class="step-title">Fix file permissions</h4>
-									<div class="step-content"> If you have files or directories that do not have write permissions, you will be asked to do upgrade using FTP. You can change permissions on required files to be writable (777) or just make all files and directories writable for upgrade process. This can be and recommended changed back after upgrade. If you encounter issues or do not feel comfortable with permissions, do manual upgrade in next step instead.  </div>
+									<h4 class="step-title">Decompress the upgrade package</h4>
+									<div class="step-content"> Open archive and copy all contents of "code" directory to your AbanteCart directory. You need to override directories and files if your copy process request confirmation.  </div>
+                                
+                                						<!-- File Tree -->
+						<div class="file-tree">
+							<div class="file-tree-title"> AbanteCart file hierarchy
+								<ul class="file-tree-buttons">
+									<li class="js-expand">
+										<i class="fa fa-plus"></i> Expand all</li>
+									<li class="js-collapse">
+										<i class="fa fa-minus"></i> Collapse all</li>
+								</ul>
+							</div>
+							<ul class="file-tree-list js-file-tree" data-expanded="">
+
+								<li class="is-folder">admin -
+									<span class="file-tree-description"></span>
+									<ul>
+										<li class="is-folder">controller -
+											<span class="file-tree-description"></span>
+										</li>
+										<li class="is-file">index.php -
+										<span class="file-tree-description"></span>
+										</li>
+										<li class="is-file">... -
+										<span class="file-tree-description"></span>
+										</li>
+									</ul>
+								</li>
+								<li class="is-folder">core -
+									<span class="file-tree-description"></span>
+				
+								</li>
+								<li class="is-folder">download -
+									<span class="file-tree-description"></span>
+									
+								</li>
+								<li class="is-folder">extensions -
+									<span class="file-tree-description"></span>
+								
+								</li>
+								<li class="is-folder">image -
+									<span class="file-tree-description"></span>
+									
+								</li>
+								<li class="is-folder">install -
+									<span class="file-tree-description">folder should be removed when AbanteCart is installed.</span>
+									<ul>
+										<li class="is-file">abantecart_database.sql -
+											<span class="file-tree-description"></span>
+										</li>
+										<li class="is-file">... -
+										<span class="file-tree-description"></span>
+										</li>
+									</ul>
+								</li>
+								<li class="is-file">index.php -
+									<span class="file-tree-description"></span>
+								</li>
+								<li class="is-file">license.txt -
+									<span class="file-tree-description"></span>
+								</li>
+								<li class="is-file">php.ini -
+									<span class="file-tree-description"></span>
+								</li>
+								<li class="is-folder">resources -
+									<span class="file-tree-description"></span>
+								</li>
+								<li class="is-file">robots.txt -
+									<span class="file-tree-description"></span>
+								</li>
+								<li class="is-folder">static_pages -
+									<span class="file-tree-description"></span>
+								</li>
+								<li class="is-folder">storefront -
+									<span class="file-tree-description"></span>
+								</li>
+								<li class="is-folder">system -
+									<span class="file-tree-description"></span>
+								</li>
+								<li class="is-file">task.php -
+									<span class="file-tree-description"></span>
+								</li>
+								<li class="is-file">... -
+									<span class="file-tree-description"></span>
+								</li>
+								
+							
+							</ul>
+						</div>
+						<!-- End of FIle Tree -->   
+								</li>
+								
+								<li class="step">
+									<span class="step-number">4</span>
+									<h4 class="step-title">Change MySQL database tables prefix</h4>
+									<div class="step-content"> Open upgrade.sql file in text editor and replace beginning of table names (prefix) "ac_" with your tables prefix selected at original installation. To check prefix, you can open your database and check beginning of all AbanteCart tables. If you did not use prefix, replace with empty.  </div>
                                     <div class="helper center">
-                                        <img src="../../img/pages/abantecart-core-upgrade-4.png" class="image isolated" alt="AbanteCart Upgrade"> </div>
+                                        <img src="../../img/pages/abantecart-database-prefix.png" class="image isolated" alt="AbanteCart Upgrade"> </div>
+								</li>
+								<li class="step">
+									<span class="step-number">5</span>
+									<h4 class="step-title">Run modified upgrade.sql </h4>
+									<div class="step-content"> Finally run modified upgrade.sql file in MySQL (command line, phpMyAdmin or other ) 
+</div>
 								</li>
 								
 							</ul>
