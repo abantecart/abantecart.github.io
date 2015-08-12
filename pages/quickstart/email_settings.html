@@ -56,7 +56,20 @@ redirect_from: "/tag/install.html"
 								<div class="box box-small-icon">
 									<img src="http://placehold.it/32x32" class="box-icon" alt="box icon">
 									<h4 class="box-title">Mail Protocol: Mail</h4>
-									<p class="box-description">This is the fourth example of boxes with Title, Content and a small image-icon. Icon is aligned left.</p>
+									<p class="box-description">When using 'Mail', additional mail parameters can be added here 
+(e.g. "-fwebmaster@example.com")
+The parameters can be used to pass additional flags as command line options to the program configured to be used when sending mail, as defined by the sendmail_path configuration setting. For example, this can be used to set the envelope sender address when using sendmail with the -f sendmail option. 
+-f will set the From address, -r will override the default Return-path that sendmail generates (typically the From address gets used). If you want your bouncebacks to go to a different address than the from address, try using both flags at once: "-f myfromemail@example.com -r mybounceemail@example.com"
+						<!-- Note -->
+						<div class="note js-note blue">
+							<span class="note-close js-close">
+								<i class="fa fa-times"></i>
+							</span>
+							<h4 class="note-title"> Note </h4>
+							<p class="note-description"> This setting for experts only and may not work on certain servers. </p>
+						</div>
+						<!-- End of Note -->
+</p>
 								</div>
 								<!-- End of Box -->
 							</div>
@@ -65,7 +78,30 @@ redirect_from: "/tag/install.html"
 								<div class="box box-small-icon">
 									<img src="http://placehold.it/32x32" class="box-icon" alt="box icon">
 									<h4 class="box-title">Mail Protocol: SMTP</h4>
-									<p class="box-description">This is the fifth example of boxes with Title, Content and a small image-icon. Icon is aligned left.</p>
+									<p class="box-description">Once you select Mail Protocol: SMTP the additional smtp settings fields appear:<br>
+
+SMTP Host: If your host requires you to use SMTP mail, get this from your web host.
+<br>
+SMTP Username: If your host requires you to use SMTP mail, get this from your web host.
+<br>
+SMTP Password: If your host requires you to use SMTP mail, get this from your web host.
+<br>
+SMTP Port: If your host requires you to use SMTP mail, get this from your web host. Default value 25.
+<br>
+SMTP Timeout: If your host requires you to use SMTP mail, get this from your web host. Default value 5.
+
+
+						<!-- Note -->
+						<div class="note js-note blue">
+							<span class="note-close js-close">
+								<i class="fa fa-times"></i>
+							</span>
+							<h4 class="note-title"> SMTP Note </h4>
+							<p class="note-description"> Shared hosting companies usually limit the amount of SMTP e-mails you can send. </p>
+						</div>
+						<!-- End of Note -->
+
+</p>
 								</div>
 								<!-- End of Box -->
 							</div>
