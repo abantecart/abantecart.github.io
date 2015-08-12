@@ -57,7 +57,7 @@ redirect_from: "/tag/install.html"
 									<img src="http://placehold.it/32x32" class="box-icon" alt="box icon">
 									<h4 class="box-title">Mail Protocol: Mail</h4>
 									<p class="box-description">When using 'Mail', additional mail parameters can be added here 
-(e.g. "-fwebmaster@example.com")
+(e.g. "-fwebmaster@example.com")</p><p>
 The parameters can be used to pass additional flags as command line options to the program configured to be used when sending mail, as defined by the sendmail_path configuration setting. For example, this can be used to set the envelope sender address when using sendmail with the -f sendmail option. 
 -f will set the From address, -r will override the default Return-path that sendmail generates (typically the From address gets used). If you want your bouncebacks to go to a different address than the from address, try using both flags at once: "-f myfromemail@example.com -r mybounceemail@example.com"
 						<!-- Note -->
@@ -78,7 +78,7 @@ The parameters can be used to pass additional flags as command line options to t
 								<div class="box box-small-icon">
 									<img src="http://placehold.it/32x32" class="box-icon" alt="box icon">
 									<h4 class="box-title">Mail Protocol: SMTP</h4>
-									<p class="box-description">Once you select Mail Protocol: SMTP the additional smtp settings fields appear:<br>
+									<p class="box-description">Once you select Mail Protocol: SMTP the additional smtp settings fields appear:</p><p>
 
 SMTP Host: If your host requires you to use SMTP mail, get this from your web host.
 <br>
@@ -108,3 +108,56 @@ SMTP Timeout: If your host requires you to use SMTP mail, get this from your web
 							
 						</div>
 						<!-- Category Info -->
+						
+
+
+
+
+
+
+
+
+
+						<div class="category-info ">
+							<h3 class="category-title">Example of gmail SMTP settings</h3>
+							<h4 class="category-description">Working with Google’s SMTP Server </h4>
+						</div>
+						<!-- End of Caregory Info -->
+						<div class="row">
+							<div class="col-md-4">
+								<!-- Table -->
+								<div class="table-responsive">
+									<table class="table table-striped">
+										<thead>
+											<tr>
+												<th>Setting</th>
+												<th>Value</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr class="">
+												<th scope="row">Mail Protocol</th>
+												<td>SMTP</td>
+											</tr>
+											<tr class="">
+												<th scope="row">SMTP Host</th>
+												<td>ssl://smtp.gmail.com</td>
+											</tr>
+											<tr class="">
+												<th scope="row">SMTP Username</th>
+												<td>your username (aka username if your email is username@gmail.com)</td>
+											</tr>
+											<tr class="">
+												<th scope="row">SMTP Password</th>
+												<td>your gmail password</td>
+											</tr>
+											<tr class="">
+												<th scope="row">SMTP Port</th>
+												<td>465</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<!-- End of Table -->
+							</div>
+						</div>
