@@ -24,19 +24,14 @@ redirect_from: "/tag/install.html"
 								</li>
 								<li class="step">
 									<span class="step-number"><i class="fa fa-exclamation fa-fw"></i></span>
-									<h4 class="step-title">customer tax class</h4>
-									<div class="step-content"> 
-A customer tax class is an identifier that is assigned to a customer. This defines the tax class for a customer. For example, a customer tax class can be "Default" or "Wholesale". </div>
-								</li>
-								<li class="step">
-									<span class="step-number"><i class="fa fa-exclamation fa-fw"></i></span>
 									<h4 class="step-title">tax rate</h4>
-									<div class="step-content"> A tax rate is a number in percentage or absolute fixed amount, with which taxes are calculated. For example, we can set a tax rate to 8.25% for the sales tax of California.  </div>
+									<div class="step-content"> A tax rate is a number in percentage or absolute fixed amount, with which taxes are calculated.For example, we can set a tax rate to 8.25% for the sales tax of California.
+									Tax Rate is a 'Tax Rule' assigned to Tax Class.   </div>
 								</li>
 								<li class="step">
 									<span class="step-number"><i class="fa fa-exclamation fa-fw"></i></span>
-									<h4 class="step-title">Location Zone assigned to Tax Rate</h4>
-									<div class="step-content"> If you want to apply specific Tax to specific State, Territories, Province you need to create Tax Rate and assign it to this State or in other words to Location Zone </div>
+									<h4 class="step-title">Location and Location's Zone</h4>
+									<div class="step-content"> If you want to apply specific Tax to specific State, Territories, Province you need to create Tax Rate and assign it to this State or in other words to Location Zone. </div>
 								</li>
 								
 							</ul>
@@ -131,7 +126,7 @@ A customer tax class is an identifier that is assigned to a customer. This defin
 								<i class="fa fa-times"></i>
 							</span>
 							<h4 class="note-title"> Test Taxes </h4>
-							<p class="note-description"> Be sure to make test purchases with a fake customer account from each Locations to be sure tax is set up correctly! </p>
+							<p class="note-description"> Be sure to make test purchases with a fake customer account from each Locations to be sure tax is set up correctly! Put a product in cart, and try to change the delivery address to a different state or country.</p>
 						</div>
 						<!-- End of Note -->
 						
@@ -150,19 +145,9 @@ A customer tax class is an identifier that is assigned to a customer. This defin
 								<!-- Box -->
 								<div class="box box-small-icon">
 									<div class="box-icon"><i class="fa fa-home fa-2x"></i></div>
-									<h4 class="box-title">Default Storefront Currency</h4>
-									<p class="box-description">System > Settings > Details<br>
-									Will determine what currency will be displayed on the front of site by default.</p>
-									
-									<!-- Note -->
-						<div class="note js-note blue">
-						<span class="note-close js-close">
-								<i class="fa fa-times"></i>
-							</span>
-							<h4 class="note-title"> Product Prices </h4>
-							<p class="note-description"> Changing default currency does not convert all product prices</p>
-						</div>
-						<!-- End of Note -->
+									<h4 class="box-title">Default Store Tax Rate</h4>
+									<p class="box-description">System > Settings > Checkout<br>
+									</p>
 								</div>
 								<!-- End of Box -->
 							</div>
@@ -170,8 +155,32 @@ A customer tax class is an identifier that is assigned to a customer. This defin
 								<!-- Box -->
 								<div class="box box-small-icon">
 									<div class="box-icon"><i class="fa fa-reply-all  fa-2x"></i></div>
-									<h4 class="box-title">Auto Update Currency</h4>
-									<p class="box-description">System > Settings > Details. <br>If set to yes your store will automatically get currency rates and update the values daily (Yahoo server used). Logout and Login again to Admin front to see changes.</p>
+									<h4 class="box-title">Display Prices With Tax</h4>
+									<p class="box-description">System > Settings > Checkout.</p>
+								</div>
+								<!-- End of Box -->
+							</div>
+						</div>
+						
+						<div class="row">
+							<div class="col-md-6">
+								<!-- Box -->
+								<div class="box box-small-icon">
+									<div class="box-icon"><i class="fa fa-home fa-2x"></i></div>
+									<h4 class="box-title">Use Customer Tax Address</h4>
+									<p class="box-description">System > Settings > Checkout<br>
+									Select customer address to apply tax rates. Shipping Address is recommended.</p>
+									
+								</div>
+								<!-- End of Box -->
+							</div>
+							<div class="col-md-6">
+								<!-- Box -->
+								<div class="box box-small-icon">
+									<div class="box-icon"><i class="fa fa-reply-all  fa-2x"></i></div>
+									<h4 class="box-title">Shipping and Tax Estimate</h4>
+									<p class="box-description">System > Settings > Checkout. <br>
+									Allow customers to get quick shipping and tax estimate in the shopping cart.</p>
 								</div>
 								<!-- End of Box -->
 							</div>
