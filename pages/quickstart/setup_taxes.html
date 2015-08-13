@@ -12,7 +12,7 @@ redirect_from: "/tag/install.html"
 						<!-- Category Info -->
 						<div class="category-info ">
 							<h3 class="category-title">Understanding tax rules</h3>
-							<h4 class="category-description">Taxes in your store are controlled by "Tax rules". There are few important variables that define a tax rule applied</h4>
+							<h4 class="category-description">Sales tax is a complex subject. Taxes in your store are controlled by "Tax rules". There are few important variables that define a tax rule applied</h4>
 						</div>
 						<!-- End of Caregory Info -->
 							<!-- Steps -->
@@ -20,13 +20,13 @@ redirect_from: "/tag/install.html"
 								<li class="step">
 									<span class="step-number"><i class="fa fa-exclamation fa-fw"></i></span>
 									<h4 class="step-title">product tax class </h4>
-									<div class="step-content"> A product tax class is an identifier that is assigned to a product. This defines the tax class for a product. For example, a product tax class can be "Taxable Goods" or "None (Tax-free)". </div>
+									<div class="step-content"> A product tax class is an identifier that is assigned to a product. This defines the tax class for a product. In most cases, you want to use the default “Taxable Goods” class. If you sell goods that require a different tax class you can add the classes in System > Localization > Tax Classes. For example, a product tax class can be "Taxable Goods" or "None (Tax-free)". </div>
 								</li>
 								<li class="step">
 									<span class="step-number"><i class="fa fa-exclamation fa-fw"></i></span>
 									<h4 class="step-title">tax rate</h4>
-									<div class="step-content"> A tax rate is a number in percentage or absolute fixed amount, with which taxes are calculated.For example, we can set a tax rate to 8.25% for the sales tax of California.
-									Tax Rate is a 'Tax Rule' assigned to Tax Class.   </div>
+									<div class="step-content"> A tax rate is a number in percentage or absolute fixed amount, with which taxes are calculated. For example, we can set a tax rate to 8.25% for the sales tax of California.
+									Tax Rates control which taxes are applied to specific geographic areas (Locations).   </div>
 								</li>
 								<li class="step">
 									<span class="step-number"><i class="fa fa-exclamation fa-fw"></i></span>
@@ -37,6 +37,16 @@ redirect_from: "/tag/install.html"
 							</ul>
 							<p>Taxes can be applied both to shipping methods and store products.</p>
 							<!-- End of Steps -->
+						
+						<!-- Note -->
+						<div class="note js-note blue">
+							<span class="note-close js-close">
+								<i class="fa fa-times"></i>
+							</span>
+							<h4 class="note-title"> Note </h4>
+							<p class="note-description"> When creating taxes and tax rules, make sure you are adhering to the tax laws of your country and locality. </p>
+						</div>
+						<!-- End of Note -->
 
 
 
@@ -96,7 +106,8 @@ redirect_from: "/tag/install.html"
 											</tr>
 											<tr class="">
 												<th scope="row">Location's zone</th>
-												<td>select Location's zone or click on all location zones checkbox if you want to use All location zones of selected Location. (New Zones can be added in the System-> Localization-> Zones)</td>
+												<td>If this rate will only apply to a specific state (or other Location Zone designation) uncheck 'all location zones' and then locate the state (or Location Zone).<br>
+											 (New Zones can be added in the System-> Localization-> Zones)</td>
 											</tr>
 											<tr class="">
 												<th scope="row">Description</th>
