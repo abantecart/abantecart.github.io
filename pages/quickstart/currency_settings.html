@@ -14,13 +14,26 @@ redirect_from: "/tag/install.html"
 							<h4 class="category-description">System > Localization > Currencies</h4>
 						</div>
 						<!-- End of Caregory Info -->
+						<p> list of currencies that are in use in the store. As a rule, multiple currencies are used to display prices on the storefront while payments are usually accepted in the store primary currency only. However, if your payment gateway is configured to accept payments in different currencies, customers that use this gateway will be charged in an alternative (not primary) currency. And the order total will be calculated according to the store currency exchange rate that you define here.</p>
 						<div class="helper center">
                                         <img src="../../../img/pages/abantecart-currency-grid.png" class="image isolated" alt="AbanteCart Installation"> </div>
                         <p>If you have more than one currency, a select Currency drop-down will appear on the storefront pages, through which your customers can choose their preferred currency method.</p>
 						<!-- Note -->
 						<div class="note js-note note-bounce">
-							<h4 class="note-title"> Default Base Currency </h4>
-							<p class="note-description"> If the currency you are entering is going to be your default currency you should set the value to 1.00000 </p>
+							<h4 class="note-title"> Base Currency </h4>
+							<p class="note-description"> If the currency you are entering is going to be your primary currency you should set the value to 1.00000 </p>
+						</div>
+						<!-- End of Note -->
+						
+						
+						
+						<!-- Note -->
+						<div class="note js-note blue">
+							<span class="note-close js-close">
+								<i class="fa fa-times"></i>
+							</span>
+							<h4 class="note-title"> Note </h4>
+							<p class="note-description"> All prices that you enter in the Administration panel are assumed to be in the primary currency. </p>
 						</div>
 						<!-- End of Note -->
 						
@@ -35,6 +48,52 @@ redirect_from: "/tag/install.html"
 							<h4 class="category-description">To add a new Currency click the + button in the Currencies list System > Localization > Currencies</h4>
 						</div>
 						<!-- End of Caregory Info -->
+						<div class="col-md-12">
+								<!-- Table -->
+								<div class="table-responsive">
+									<table class="table table-striped">
+										<thead>
+											<tr>
+												<th>Setting</th>
+												<th>Value</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr class="">
+												<th scope="row">Status</th>
+												<td>Currency status will determine if the currency is displayed on the front of site.</td>
+											</tr>
+											<tr class="">
+												<th scope="row">Currency Title</th>
+												<td>Name of the currency as it appears on the storefront</td>
+											</tr>
+											<tr class="">
+												<th scope="row">Code</th>
+												<td>Unique code of the currency. You can find a <a target="_blank" href="https://en.wikipedia.org/wiki/ISO_4217#Active_codes">list of codes here</a>. All currency codes must be in uppercase.</td>
+											</tr>
+											<tr class="">
+												<th scope="row">Symbol Left</th>
+												<td>The left currency symbol if the currency has one. An example would be the pound sign (&pound;) for pound sterling.</td>
+											</tr>
+											<tr class="">
+												<th scope="row">Symbol Right</th>
+												<td>The right currency symbol if the currency has one. An example would be the euro sign (&euro;).</td>
+											</tr>
+											<tr class="">
+												<th scope="row">Decimal Places</th>
+												<td>The number of decimal places used for a particular currency. Some currencies use more than 2 decimal places such as the Kuwaiti Dinar.</td>
+											</tr>
+											<tr class="">
+												<th scope="row">Value</th>
+												<td>The exchange rate to convert store prices from the primary currency to this currency. If the currency you are entering is going to be your default currency you should set the value to 1.00000. The currency value will change automatically if you have auto update currency set to yes.</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<!-- End of Table -->
+							</div>
+						
+						
 						<!-- Note -->
 						<div class="note js-note blue">
 						<span class="note-close js-close">
