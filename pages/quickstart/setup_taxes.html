@@ -52,32 +52,28 @@ redirect_from: "/tag/install.html"
 										</thead>
 										<tbody>
 											<tr class="">
-												<th scope="row">Status</th>
-												<td>Currency status will determine if the currency is displayed on the front of site.</td>
+												<th scope="row">Location</th>
+												<td>select specific Location (New Location can be added in the System-> Localization-> Locations)</td>
 											</tr>
 											<tr class="">
-												<th scope="row">Currency Title</th>
-												<td>Name of the currency as it appears on the storefront</td>
+												<th scope="row">Location's zone</th>
+												<td>select Location's zone or click on all location zones checkbox if you want to use All location zones of selected Location. (New Zones can be added in the System-> Localization-> Zones)</td>
 											</tr>
 											<tr class="">
-												<th scope="row">Code</th>
-												<td>Unique code of the currency. You can find a <a target="_blank" href="https://en.wikipedia.org/wiki/ISO_4217#Active_codes">list of codes here</a>. All currency codes must be in uppercase.</td>
+												<th scope="row">Description</th>
+												<td>Description of the Tax Rate. You can define this as anything you like.</td>
 											</tr>
 											<tr class="">
-												<th scope="row">Symbol Left</th>
-												<td>The left currency symbol if the currency has one. An example would be the pound sign (&pound;) for pound sterling.</td>
+												<th scope="row">Tax Rate</th>
+												<td>The percentage tax rate. Tax rate can be set to either PERCENTAGE or ABSOLUTE AMOUNT.  You can designate this under the drop-down menu. </td>
 											</tr>
 											<tr class="">
-												<th scope="row">Symbol Right</th>
-												<td>The right currency symbol if the currency has one. An example would be the euro sign (&euro;).</td>
+												<th scope="row">Tax Apply Condition</th>
+												<td>Apply this tax only if, taxed amount (product, shipping, subtotal, etc.) is corresponds to condition.</td>
 											</tr>
 											<tr class="">
-												<th scope="row">Decimal Places</th>
-												<td>The number of decimal places used for a particular currency. Some currencies use more than 2 decimal places such as the Kuwaiti Dinar.</td>
-											</tr>
-											<tr class="">
-												<th scope="row">Value</th>
-												<td>The exchange rate to convert store prices from the primary currency to this currency. If the currency you are entering is going to be your default currency you should set the value to 1.00000. The currency value will change automatically if you have auto update currency set to yes.</td>
+												<th scope="row">Priority</th>
+												<td>Set the priority of the tax rate. This will determine which tax rate will be used if tax rate location overlap other.</td>
 											</tr>
 										</tbody>
 									</table>
