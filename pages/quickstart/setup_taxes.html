@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Currency Settings
-description: Setting up Currencies in your AbanteCart eCommerce application.
+title: Setup Taxes
+description: Manage and customize tax settings in your store.
 tags: [
     ['regular_install', 'Regular Installation'],
     ['system_requirements', 'System Requirements']
@@ -10,18 +10,19 @@ redirect_from: "/tag/install.html"
 ---
 						<!-- Category Info -->
 						<div class="category-info ">
-							<h3 class="category-title">List of Currencies</h3>
-							<h4 class="category-description">System > Localization > Currencies</h4>
+							<h3 class="category-title">List of Taxes</h3>
+							<h4 class="category-description">System > Localization > Taxes</h4>
 						</div>
 						<!-- End of Caregory Info -->
-						<p> List of currencies that are in use in the store. As a rule, multiple currencies are used to display prices on the storefront while payments are usually accepted in the store primary currency only. However, if your payment gateway is configured to accept payments in different currencies, customers that use this gateway will be charged in an alternative (not primary) currency. And the order total will be calculated according to the store currency exchange rate that you define here.</p>
+						<p> By default, AbanteCart include one Product Tax Class: Taxable Goods. If you have different Tax Rules that will apply to storefront, you will want to create a new Product Tax Class or Edit default. </p>
 						<div class="helper center">
-                                        <img src="../../../img/pages/abantecart-currency-grid.png" class="image isolated" alt="AbanteCart Installation"> </div>
+                                        <img src="../../../img/pages/abantecart-tax-rates-grid.png" class="image isolated" alt="AbanteCart Installation"> </div>
                         <p>If you have more than one currency, a select Currency drop-down will appear on the storefront pages, through which your customers can choose their preferred currency method.</p>
 						<!-- Note -->
 						<div class="note js-note note-bounce">
-							<h4 class="note-title"> Base Currency </h4>
-							<p class="note-description"> If the currency you are entering is going to be your primary currency you should set the value to 1.00000 </p>
+							<h4 class="note-title">Create Locations first </h4>
+							<p class="note-description"> If you plan to reach customers from different geo locations and would like to apply custom tax rates for each location please create required locations in System > Localization > Locations.<br>
+							Locations are created to help define a geographical "location" of the earth to be used for taxation. Locations can be comprised from a single country or zone, or multiple countries and zones </p>
 						</div>
 						<!-- End of Note -->
 						
