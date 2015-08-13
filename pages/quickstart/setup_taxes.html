@@ -240,7 +240,7 @@ redirect_from: "/tag/install.html"
 						<!-- Category Info -->
 						<div class="category-info ">
 							<h3 class="category-title">Tax Example</h3>
-							<h4 class="category-description">This will walk you through the process of how to set up sales tax. Say your want to set up Tax UK VAT zone and VAT Free zone. </h4>
+							<h4 class="category-description">This will walk you through the process of how to set up sales tax. Say your want to set up Tax UK VAT zone. </h4>
 						</div>
 						<!-- End of Caregory Info -->
 							<!-- Steps -->
@@ -249,25 +249,23 @@ redirect_from: "/tag/install.html"
 									<span class="step-number">1</span>
 									<h4 class="step-title">Create Location </h4>
 									<div class="step-content">  Go to System > Localisation > Locations > click Add<br>
-									Enter the Location Name "UK" and Description.<br>
-									Click Add Location Zone and select United Kingdom for the Country and select all zones for the Zone.
+									Enter the Location Name "UK VAT Zone" and Description.<br>
+									Click Add Location Zone and select United Kingdom for the Country and select zones required VAT taxation for the Zone(s).
 									 </div>
 								</li>
 								<li class="step">
 									<span class="step-number">2</span>
-									<h4 class="step-title">Create Location Zone</h4>
+									<h4 class="step-title">Set the tax rate</h4>
 									<div class="step-content"> 
-Solution: Change write permissions for directory where file is located. </div>
-								</li>
-								<li class="step">
-									<span class="step-number">3</span>
-									<h4 class="step-title">Add Tax Rate to Tax Class</h4>
-									<div class="step-content"> Solution: Please check AbanteCart and webserver error logs for more details.  </div>
+Go to System > Localization > Taxes Classes > Edit Tax Class > Tax Rates > click Add button.<br>
+Enter the Tax rate Description and Tax Rate. Make sure to set the Type to Percentage and Location to "UK VAT ZONE".<br>
+Check "all location zones"
+ </div>
 								</li>
 								<li class="step">
 									<span class="step-number">4</span>
 									<h4 class="step-title">Set Product Tax Class</h4>
-									<div class="step-content"> Solution: Please check AbanteCart and webserver error logs for more details.  </div>
+									<div class="step-content"> Change the Tax Class if needed for each product you want to apply this tax. By default all products already assigned to "Taxable Goods" class   </div>
 								</li>
 								
 							</ul>
