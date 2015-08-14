@@ -66,6 +66,10 @@
          url: /pages/quickstart/payments/paypal_payments.html
        - text: Cheque / Money Order
          url: /pages/quickstart/payments/check_money_order.html    
+       - text: Authorize.Net (AIM)
+         url: /pages/quickstart/payments/authorize_net.html 
+       - text: Payza
+         url: /pages/quickstart/payments/payza.html    
        - text: Cash on Delivery
          url: /pages/quickstart/payments/cash_on_delivery.html  
     - text: Enable Shipping
