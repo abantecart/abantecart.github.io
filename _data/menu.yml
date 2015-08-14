@@ -51,6 +51,13 @@
       url: /pages/quickstart/setup_taxes.html
     - text: Enable Payments
       url: /pages/quickstart/enable_payment.html
+      level: /pages/quickstart/payments/
+      icon: '<i class="fa fa-magic fa-fw"></i>'
+      subitems:
+       - text: Cheque / Money Order
+         url: /pages/install/options/check_money_order.html    
+       - text: Cash on Delivery
+         url: /pages/install/options/cash_on_delivery.html  
     - text: Enable Shipping
       url: /pages/quickstart/enable_shipping.html
 - text: Managing Product Catalog
