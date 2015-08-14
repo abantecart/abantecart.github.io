@@ -69,7 +69,15 @@
        - text: Authorize.Net (AIM)
          url: /pages/quickstart/payments/authorize_net.html 
        - text: Payza
-         url: /pages/quickstart/payments/payza.html    
+         url: /pages/quickstart/payments/payza.html  
+       - text: Realex
+         url: /pages/quickstart/payments/realex.html    
+       - text: LIQPAY
+         url: /pages/quickstart/payments/liqpay.html 
+       - text: WorldPay
+         url: /pages/quickstart/payments/worldpay.html
+       - text: 2Checkout
+         url: /pages/quickstart/payments/2co.html    
        - text: Cash on Delivery
          url: /pages/quickstart/payments/cash_on_delivery.html  
     - text: Enable Shipping
