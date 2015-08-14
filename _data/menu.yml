@@ -84,10 +84,14 @@
          url: /pages/quickstart/payments/paypoint.html  
        - text: Paymate
          url: /pages/quickstart/payments/paymate.html 
+       - text: CashFlows
+         url: /pages/quickstart/payments/cashflows.html 
        - text: Skrill
          url: /pages/quickstart/payments/skrill.html   
        - text: Cash on Delivery
          url: /pages/quickstart/payments/cash_on_delivery.html  
+       - text: Bank Transfer
+         url: /pages/quickstart/payments/banktransfer.html  
     - text: Enable Shipping
       url: /pages/quickstart/enable_shipping.html
 - text: Managing Product Catalog
