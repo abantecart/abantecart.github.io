@@ -77,7 +77,9 @@
        - text: WorldPay
          url: /pages/quickstart/payments/worldpay.html
        - text: 2Checkout
-         url: /pages/quickstart/payments/2co.html    
+         url: /pages/quickstart/payments/2co.html
+       - text: SagePay Payments
+         url: /pages/quickstart/payments/sagepay_payments.html    
        - text: Cash on Delivery
          url: /pages/quickstart/payments/cash_on_delivery.html  
     - text: Enable Shipping
