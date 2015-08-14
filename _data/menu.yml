@@ -79,7 +79,13 @@
        - text: 2Checkout
          url: /pages/quickstart/payments/2co.html
        - text: SagePay Payments
-         url: /pages/quickstart/payments/sagepay_payments.html    
+         url: /pages/quickstart/payments/sagepay_payments.html 
+       - text: PayPoint
+         url: /pages/quickstart/payments/paypoint.html  
+       - text: Paymate
+         url: /pages/quickstart/payments/paymate.html 
+       - text: Skrill
+         url: /pages/quickstart/payments/skrill.html   
        - text: Cash on Delivery
          url: /pages/quickstart/payments/cash_on_delivery.html  
     - text: Enable Shipping
