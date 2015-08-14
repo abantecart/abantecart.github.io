@@ -217,6 +217,18 @@
          url: /pages/settings/details.html      
        - text: General
          url: /pages/settings/general.html
+       - text: Checkout
+         url: /pages/settings/checkout.html
+       - text: Appearance
+         url: /pages/settings/appearance.html
+       - text: Mail
+         url: /pages/settings/mail.html
+       - text: API
+         url: /pages/settings/api.html
+       - text: System
+         url: /pages/settings/system.html
+       - text: Create new store
+         url: /pages/settings/create_new_store.html
 - text: Extend Functionally
   level: /pages/extensions/
   icon: '<i class="fa fa-puzzle-piece fa-fw"></i>'
