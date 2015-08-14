@@ -54,10 +54,20 @@
       level: /pages/quickstart/payments/
       icon: '<i class="fa fa-money fa-fw"></i>'
       subitems:
+       - text: Stripe
+         url: /pages/quickstart/payments/stripe.html
+       - text: PayPal Payments Standard
+         url: /pages/quickstart/payments/paypal_payments.html
+       - text: PayPal Payments Pro
+         url: /pages/quickstart/payments/paypal_payments.html
+       - text: PayPal Payments Pro (UK)
+         url: /pages/quickstart/payments/paypal_payments.html
+       - text: PayPal Express Checkout
+         url: /pages/quickstart/payments/paypal_payments.html
        - text: Cheque / Money Order
-         url: /pages/install/options/check_money_order.html    
+         url: /pages/quickstart/payments/check_money_order.html    
        - text: Cash on Delivery
-         url: /pages/install/options/cash_on_delivery.html  
+         url: /pages/quickstart/payments/cash_on_delivery.html  
     - text: Enable Shipping
       url: /pages/quickstart/enable_shipping.html
 - text: Managing Product Catalog
