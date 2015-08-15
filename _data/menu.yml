@@ -204,14 +204,14 @@
       url: /pages/reports/banners.html      
     - text: Forms
       url: /pages/reports/forms.html      
-- text: System Settings
+- text: Settings & Tools
   level: /pages/settings/
   icon: '<i class="fa fa-wrench fa-fw"></i>'
   subitems:
     - text: Settings
       url: /pages/settings/settings.html
       level: /pages/settings/
-      icon: '<i class="fa fa-wrench fa-fw"></i>'
+      icon: '<i class="fa fa-cog fa-fw"></i>'
       subitems:
        - text: Details
          url: /pages/settings/details.html      

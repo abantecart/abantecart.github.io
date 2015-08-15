@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Run Upgrade manually</title>
+	<meta name="description" content="Upgrade your AbanteCart eCommerce application core version once in a while, since important fixes or new features will be released.">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/png" href="/img/favicons/favicon-16x16.png" sizes="16x16">
+	<link rel="icon" type="image/png" href="/img/favicons/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="/img/favicons/favicon-96x96.png" sizes="96x96">
+	<link rel="apple-touch-icon" sizes="57x57" href="/img/favicons/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/img/favicons/apple-touch-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/img/favicons/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/img/favicons/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/img/favicons/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/img/favicons/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/img/favicons/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/img/favicons/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/img/favicons/apple-touch-icon-180x180.png">
+	<link rel="stylesheet" href="/css/style.css">
+	<script src="/js/modernizr.js"></script>
+</head>
+
+<body>
+	<!--[if lt IE 8]>
+	    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+	<![endif]-->
+	<div class="page">
+		<div class="header header-over large">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3 col-sm-6 col-xs-6">
+						<a href="/index.html" class="logo-image">
+							<img src="/img/logos/logo.png" alt="AbanteCart open source ecommerce">
+						</a>
+						<a href="/index.html" class="languages">
+						<span class="language-active js-language-active">AbanteCart Docs</span>
+						</a>
+					</div>
+					<div class="col-md-9 col-sm-6 col-xs-6">
+					<nav class="right helper">
+    					<ul class="menu sf-menu js-menu">
+						<li>
+    <a href="/pages/install/installation_options.html">Install</a>
+    <ul>
+    	<li>
+    		<a href="/pages/install/installation_options.html">Installation Options</a>
+    	</li>
+    	<li>
+    		<a href="/pages/install/system_requirements.html">System requirements</a>
+    	</li>
+    	<li>
+    		<a href="/pages/install/download.html">Download</a>
+    	</li>
+    </ul>
+</li>
+<li>
+    <a href="/pages/start/index.html">Getting Started</a>
+    <ul>
+    	<li>
+    		<a href="/pages/start/settings.html">Basic configurations</a>
+    	</li>
+    	<li>
+    		<a href="/pages/start/">...</a>
+    	</li>
+    </ul>
+</li>
+<li>
+    <a href="/pages/user_manual/index.html">User Manual
+    	<span class="menu-label">v1.2.3</span>
+    </a>
+    <ul>
+    	<li>
+    		<a href="/pages/user_manual/prodcuts.htm">Managing Products</a>
+    	</li>
+    	<li>
+    		<a href="/pages/user_manual/order.htm">Managing Order</a>
+    	</li>
+    	<li>
+    		<a href="/pages/user_manual/order.htm">...</a>
+    	</li>
+    </ul>
+</li>
+<li>
+    <a href="/pages/design_guide/index.html">Design Guide</a>
+    <ul>
+    	<li>
+    		<a href="/pages/design_guide/template.html">Managing Templates</a>
+    	</li>
+    	<li>
+    		<a href="/pages/design_guide/template.html">...</a>
+    	</li>
+    </ul>
+</li>
+<li>
+    <a href="/pages/developer_guide/index.html">Developer Guide</a>
+    <ul>
+    	<li>
+    		<a href="/pages/developer_guide/architecture.html">Architecture</a>
+    	</li>
+    	<li>
+    		<a href="/pages/developer_guide/architecture.html">...</a>
+    	</li>
+    </ul>
+</li>
+
+						</u>
+					</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="page-info page-info-background background-2 page-info-small">
+			<div class="page-info-container">
+				<div class="container ">
+					<div class="row">
+						<div class="col-md-12">
+							<h1 class="page-title">Run Upgrade manually</h1>
+							<h2 class="page-description">Upgrade your AbanteCart eCommerce application core version once in a while, since important fixes or new features will be released.</h2>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="content">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="layout with-left-sidebar">
+							<div class="left-sidebar">
+								<nav class="js-menu-fixed menu-vertical-wrapper">
+
+    <div class="search">
+<!--
+		//conflict of css and google button
+		<script>
+		  (function() {
+		    var cx = '015077254431814821964:ia6eg4e1ow4';
+		    var gcse = document.createElement('script');
+		    gcse.type = 'text/javascript';
+		    gcse.async = true;
+		    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+		        '//cse.google.com/cse.js?cx=' + cx;
+		    var s = document.getElementsByTagName('script')[0];
+		    s.parentNode.insertBefore(gcse, s);
+		  })();
+		</script>
+		<gcse:search></gcse:search>
+-->
+		<form name="cse" id="google_search" action="https://www.google.com/cse">
+		  <input type="hidden" name="cx" value="015077254431814821964:ia6eg4e1ow4" />
+		  <input type="hidden" name="ie" value="utf-8" />
+		  <input type="hidden" name="hl" value="" />
+		  <input name="q" type="text" size="40" class="search-input form-control" placeholder="Documents search" />
+		  <a href="#" onclick="document.getElementById('google_search').submit();"><i class="fa fa-search search-icon"></i></a>
+		</form>
+		                         
+    </div>
+
+	<ul class="menu-vertical js-menu-vertical">
+
+	
+    <li >
+    	 <a class="sub_menu_link" href="#"><i class="fa fa-cloud-download fa-fw"></i> Installation</a>
+    
+    
+        <ul >
+
+	
+    <li >
+    	 <a class="sub_menu_link" href="/pages/install/installation_options.html"><i class="fa fa-magic fa-fw"></i> Installation Options</a>
+    
+    
+        <ul >
+
+	
+    <li >    
+         <a href="/pages/install/options/click_installation.html"> Click Installation</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/install/options/cpanel_installation.html"> Cpanel Installation</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/install/options/cloud_installation.html"> Cloud Installation</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/install/options/localhost_installation.html"> Localhost Installation</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/install/options/regular_installation.html"> Regular installation</a>
+    
+    
+    </li>
+
+</ul>
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/install/system_requirements.html"> System requirements</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/install/download.html"> Download</a>
+    
+    
+    </li>
+
+</ul>
+    
+    </li>
+
+	
+    <li class="active-menu active-submenu selected">
+    	 <a class="sub_menu_link" href="#"><i class="fa fa-sign-in fa-fw"></i> Core Upgrade</a>
+    
+    
+        <ul >
+
+	
+    <li >    
+         <a href="/pages/upgrade/auto.html"> Run Upgrade in admin</a>
+    
+    
+    </li>
+
+	
+    <li class="active-menu selected">    
+         <a href="/pages/upgrade/manual.html"> Upgrade manually</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/upgrade/issues.html"> Known Issues</a>
+    
+    
+    </li>
+
+</ul>
+    
+    </li>
+
+	
+    <li >
+    	 <a class="sub_menu_link" href="#"><i class="fa fa-bicycle fa-fw"></i> Getting Started</a>
+    
+    
+        <ul >
+
+	
+    <li >    
+         <a href="/pages/quickstart/checklist.html"> Basic Setup Checklist</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/quickstart/settings.html"> Common Store settings</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/quickstart/email_settings.html"> Email settings</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/quickstart/language_settings.html"> Language settings</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/quickstart/currency_settings.html"> Currency settings</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/quickstart/region_settings.html"> Region settings</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/quickstart/setup_taxes.html"> Enable Taxes</a>
+    
+    
+    </li>
+
+	
+    <li >
+    	 <a class="sub_menu_link" href="/pages/quickstart/enable_payment.html"><i class="fa fa-money fa-fw"></i> Enable Payments</a>
+    
+    
+        <ul >
+
+	
+    <li >    
+         <a href="/pages/quickstart/payments/stripe.html"> Stripe</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/quickstart/payments/paypal_payments.html"> PayPal Payments Standard</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/quickstart/payments/paypal_payments.html"> PayPal Payments Pro</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/quickstart/payments/paypal_payments.html"> PayPal Payments Pro (UK)</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/quickstart/payments/paypal_payments.html"> PayPal Express Checkout</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/quickstart/payments/check_money_order.html"> Cheque / Money Order</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/quickstart/payments/authorize_net.html"> Authorize.Net (AIM)</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/quickstart/payments/payza.html"> Payza</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/quickstart/payments/realex.html"> Realex</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/quickstart/payments/liqpay.html"> LIQPAY</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/quickstart/payments/worldpay.html"> WorldPay</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/quickstart/payments/2co.html"> 2Checkout</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/quickstart/payments/sagepay_payments.html"> SagePay Payments</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/quickstart/payments/paypoint.html"> PayPoint</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/quickstart/payments/paymate.html"> Paymate</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/quickstart/payments/cashflows.html"> CashFlows</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/quickstart/payments/skrill.html"> Skrill</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/quickstart/payments/cash_on_delivery.html"> Cash on Delivery</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/quickstart/payments/banktransfer.html"> Bank Transfer</a>
+    
+    
+    </li>
+
+</ul>
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/quickstart/enable_shipping.html"> Enable Shipping</a>
+    
+    
+    </li>
+
+</ul>
+    
+    </li>
+
+	
+    <li >
+    	 <a class="sub_menu_link" href="#"><i class="fa fa-cubes fa-fw"></i> Managing Product Catalog</a>
+    
+    
+        <ul >
+
+	
+    <li >
+    	 <a class="sub_menu_link" href="#"> Manage Categories</a>
+    
+    
+        <ul >
+
+	
+    <li >    
+         <a href="/pages/catalog/categories/search.html"> List & search categories</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/catalog/categories/edit.html"> Add & edit categories</a>
+    
+    
+    </li>
+
+</ul>
+    
+    </li>
+
+	
+    <li >
+    	 <a class="sub_menu_link" href="#"> Manage Products</a>
+    
+    
+        <ul >
+
+	
+    <li >    
+         <a href="/pages/catalog/products/search.html"> List & search products</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/catalog/products/edit.html"> Add & edit products</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/catalog/products/attributes.html"> Add & edit attributes</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/catalog/products/files.html"> Add & edit files</a>
+    
+    
+    </li>
+
+</ul>
+    
+    </li>
+
+	
+    <li >
+    	 <a class="sub_menu_link" href="#"> Manage Manufacturers</a>
+    
+    
+        <ul >
+
+	
+    <li >    
+         <a href="/pages/catalog/manufacturers/search.html"> List & search Manufacturers</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/catalog/manufacturers/edit.html"> Add & edit Manufacturers</a>
+    
+    
+    </li>
+
+</ul>
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/catalog/global_attributes.html"> Global Attributes</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/catalog/product_reviews.html"> Product Reviews</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/catalog/resource_library.html"> Resource Library</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/catalog/page_layout.html"> Page Layout</a>
+    
+    
+    </li>
+
+</ul>
+    
+    </li>
+
+	
+    <li >
+    	 <a class="sub_menu_link" href="#"><i class="fa fa-tags fa-fw"></i> Managing Promotions</a>
+    
+    
+        <ul >
+
+	
+    <li >    
+         <a href="/pages/promotions/specials.html"> Manage Specials</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/promotions/discounts.html"> Set Quantity discounts</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/promotions/featured.html"> Set Features Products</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/promotions/banners.html"> Place banners</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/promotions/coupons.html"> Manage Coupons</a>
+    
+    
+    </li>
+
+</ul>
+    
+    </li>
+
+	
+    <li >
+    	 <a class="sub_menu_link" href="#"><i class="fa fa-users fa-fw"></i> Managing Customers</a>
+    
+    
+        <ul >
+
+	
+    <li >    
+         <a href="/pages/customers/search.html"> List & search customers</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/customers/edit.html"> Add & edit customer</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/customers/address.html"> Add & edit address</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/customers/groups.html"> Customer Groups</a>
+    
+    
+    </li>
+
+</ul>
+    
+    </li>
+
+	
+    <li >
+    	 <a class="sub_menu_link" href="#"><i class="fa fa-money fa-fw"></i> Managing Orders</a>
+    
+    
+        <ul >
+
+	
+    <li >    
+         <a href="/pages/orders/view.html"> View Orders</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/orders/search.html"> Search and filter</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/orders/modify.html"> Modify Orders</a>
+    
+    
+    </li>
+
+</ul>
+    
+    </li>
+
+	
+    <li >
+    	 <a class="sub_menu_link" href="#"><i class="fa fa-file-text fa-fw"></i> Store Reports</a>
+    
+    
+        <ul >
+
+	
+    <li >    
+         <a href="/pages/reports/sales.html"> Sales Report</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/reports/customers.html"> Customers Report</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/reports/products.html"> Products Report</a>
+    
+    
+    </li>
+
+</ul>
+    
+    </li>
+
+	
+    <li >
+    	 <a class="sub_menu_link" href="#"><i class="fa fa-tint fa-fw"></i> Design Guide</a>
+    
+    
+        <ul >
+
+	
+    <li >
+    	 <a class="sub_menu_link" href="#"> Templates</a>
+    
+    
+        <ul >
+
+	
+    <li >    
+         <a href="/pages/catalog/templates/select.html"> Select template</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/catalog/templates/edit.html"> Edit template</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/catalog/templates/files.html"> Template files</a>
+    
+    
+    </li>
+
+</ul>
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/reports/templates.html"> Templates</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/reports/layouts.html"> Layouts</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/reports/blocks.html"> Blocks</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/reports/menu.html"> Menu</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/reports/content_pages.html"> Content Pages</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/reports/banners.html"> Banners</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/reports/forms.html"> Forms</a>
+    
+    
+    </li>
+
+</ul>
+    
+    </li>
+
+	
+    <li >
+    	 <a class="sub_menu_link" href="#"><i class="fa fa-wrench fa-fw"></i> Settings & Tools</a>
+    
+    
+        <ul >
+
+	
+    <li >
+    	 <a class="sub_menu_link" href="/pages/settings/settings.html"><i class="fa fa-cog fa-fw"></i> Settings</a>
+    
+    
+        <ul >
+
+	
+    <li >    
+         <a href="/pages/settings/details.html"> Details</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/settings/general.html"> General</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/settings/checkout.html"> Checkout</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/settings/appearance.html"> Appearance</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/settings/mail.html"> Mail</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/settings/api.html"> API</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/settings/system.html"> System</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/settings/create_new_store.html"> Create new store</a>
+    
+    
+    </li>
+
+</ul>
+    
+    </li>
+
+</ul>
+    
+    </li>
+
+	
+    <li >
+    	 <a class="sub_menu_link" href="#"><i class="fa fa-puzzle-piece fa-fw"></i> Extend Functionally</a>
+    
+    
+        <ul >
+
+	
+    <li >    
+         <a href="/pages/extensions/find.html"> Find extension</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/extensions/install.html"> Install new extension</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/extensions/edit.html"> Managing extensions</a>
+    
+    
+    </li>
+
+</ul>
+    
+    </li>
+
+	
+    <li >
+    	 <a class="sub_menu_link" href="#"><i class="fa fa-life-ring fa-fw"></i> Helpful Tips</a>
+    
+    
+        <ul >
+
+	
+    <li >    
+         <a href="/pages/tips/global_search.html"> Global search</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/tips/global_search.html"> Side Panel for new orders and customers</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/tips/more_help.html"> Getting more help</a>
+    
+    
+    </li>
+
+</ul>
+    
+    </li>
+
+	
+    <li >
+    	 <a class="sub_menu_link" href="#"><i class="fa fa-code fa-fw"></i> Developer Guide</a>
+    
+    
+        <ul >
+
+	
+    <li >    
+         <a href="/pages/developer/architecture.html"> AbanteCart Architecture</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/developer/architecture.html"> Extension Development</a>
+    
+    
+    </li>
+
+</ul>
+    
+    </li>
+
+</ul>
+
+    <div class="separator"></div>	
+
+</nav>
+							</div>
+							<div class="main-content with-left-sidebar main-content-full">
+														<!-- Category Info -->
+						<div class="category-info ">
+							<h3 class="category-title">Upgrade manually</h3>
+							<h4 class="category-description">If there is a new version available for your AbanteCart, you will have a notification in your message box of AbanteCart administration.</h4>
+						</div>
+						<!-- End of Caregory Info -->
+						<!-- Note -->
+						<div class="note js-note note-bounce">
+							<h4 class="note-title"> Before upgrade </h4>
+							<p class="note-description"> Recommended that you DO NOT upgrade AbanteCart on live site. Depending on your server or OS configuration upgrades might not go all the way through and you will need more time for manual upgrade. We suggest you upgrade your test site first and always create backups.<br>
+Upgrades are available only from prior version to next. If you do not upgrade for long time, you will need to run all upgrades in between.<br>
+If you are made Core modifications in any of the files that changed, they may need to be redone.
+</p>
+						</div>
+						<!-- End of Note -->
+						
+						
+						
+						<!-- Steps -->
+							<ul class="steps">
+								<li class="step">
+									<span class="step-number">1</span>
+									<h4 class="step-title">Download upgrade package</h4>
+									<div class="step-content"> Download upgrade package from&nbsp;<a href="https://drive.google.com/folderview?id=0B64_ELUMJQjJfms3U2Y5WDZycmQ2bXFkY2JxNmY1Qkp6QmpNUGo2ck5UYWF0ek44bnBiNVE&amp;usp=drive_web#list" target="_blank">Google Drive</a> or for older versions <a href="http://sourceforge.net/projects/abantecart/files/" target="_blank">http://sourceforge.net/projects/abantecart/files/</a> and <a href="http://code.google.com/p/abantecart/downloads/list" target="_blank">http://code.google.com/p/abantecart/downloads/list</a>. </div>
+            
+								</li>
+								<li class="step">
+									<span class="step-number">2</span>
+									<h4 class="step-title">Backup AbanteCart</h4>
+									<div class="step-content"> Back up AbanteCart database and code</div>
+                                        <p>There are several backup approach: The Backup Wizard interface in your hosting CPanel, AbanteCart buit-in backup, Manually backup all AbanteCart files and MySQL Database via phpMyAdmin. </p>
+								</li>
+								<li class="step">
+									<span class="step-number">3</span>
+									<h4 class="step-title">Decompress the upgrade package</h4>
+									<div class="step-content"> Open archive and copy all contents of "code" directory to your AbanteCart directory. You need to override directories and files if your copy process request confirmation.  </div>
+                                
+                                						<!-- File Tree -->
+						<div class="file-tree">
+							<div class="file-tree-title"> AbanteCart file hierarchy - if you see this files you are in right place
+								<ul class="file-tree-buttons">
+									<li class="js-expand">
+										<i class="fa fa-plus"></i> Expand all</li>
+									<li class="js-collapse">
+										<i class="fa fa-minus"></i> Collapse all</li>
+								</ul>
+							</div>
+							<ul class="file-tree-list js-file-tree" data-expanded="">
+
+								<li class="is-folder">admin -
+									<span class="file-tree-description"> Admin panel files</span>
+									<ul>
+										<li class="is-folder">controller -
+											<span class="file-tree-description"></span>
+										</li>
+										<li class="is-file">index.php -
+										<span class="file-tree-description"></span>
+										</li>
+										<li class="is-file">... -
+										<span class="file-tree-description"></span>
+										</li>
+									</ul>
+								</li>
+								<li class="is-folder">core 
+									<span class="file-tree-description"></span>
+				
+								</li>
+								<li class="is-folder">download 
+									<span class="file-tree-description"></span>
+									
+								</li>
+								<li class="is-folder">extensions -
+									<span class="file-tree-description"> All AbanteCart extensions are located in this folder.</span>
+								
+								</li>
+								<li class="is-folder">image 
+									<span class="file-tree-description"></span>
+									
+								</li>
+								<li class="is-folder">install -
+									<span class="file-tree-description">folder should be removed when AbanteCart is installed.</span>
+									<ul>
+										<li class="is-file">abantecart_database.sql 
+											<span class="file-tree-description"></span>
+										</li>
+										<li class="is-file">... 
+										<span class="file-tree-description"></span>
+										</li>
+									</ul>
+								</li>
+								<li class="is-file">index.php -
+									<span class="file-tree-description"> do not edit or add to this file.</span>
+								</li>
+								<li class="is-file">license.txt -
+									<span class="file-tree-description"> a software license</span>
+								</li>
+								<li class="is-file">php.ini -
+									<span class="file-tree-description"> file is where you declare changes to your PHP settings.</span>
+								</li>
+								<li class="is-folder">resources -
+									<span class="file-tree-description"> resource library media files</span>
+								</li>
+								<li class="is-file">robots.txt -
+									<span class="file-tree-description"> is a text file to instruct search engine robots how to crawl and index pages on their website.</span>
+								</li>
+								<li class="is-folder">static_pages 
+									<span class="file-tree-description"></span>
+								</li>
+								<li class="is-folder">storefront -
+									<span class="file-tree-description"> storefront template files</span>
+								</li>
+								<li class="is-folder">system 
+									<span class="file-tree-description"></span>
+								</li>
+								<li class="is-file">task.php 
+									<span class="file-tree-description"></span>
+								</li>
+								<li class="is-file">... 
+									<span class="file-tree-description"></span>
+								</li>
+								
+							
+							</ul>
+						</div>
+						<!-- End of FIle Tree -->   
+								</li>
+								
+								<li class="step">
+									<span class="step-number">4</span>
+									<h4 class="step-title">Change MySQL database tables prefix</h4>
+									<div class="step-content"> Open upgrade.sql file in text editor and replace beginning of table names (prefix) "ac_" with your tables prefix selected at original installation. Easiest way to replace all "ac_" instances with your table prefix via your text editor's Find&Replace tool. To check prefix, you can open your database and check beginning of all AbanteCart tables. If you did not use prefix, replace with empty.  </div>
+                                    <div class="helper center">
+                                        <img src="../../img/pages/abantecart-database-prefix.png" class="image isolated" alt="AbanteCart Upgrade"> </div>
+								</li>
+								<li class="step">
+									<span class="step-number">5</span>
+									<h4 class="step-title">Run modified upgrade.sql </h4>
+									<div class="step-content"> Finally run modified upgrade.sql file in MySQL (command line, phpMyAdmin or other ) 
+</div>
+								</li>
+								
+							</ul>
+							<!-- End of Steps -->
+
+								    
+    <ul class="tags">
+    
+        
+        
+    	<li class="tag-item">
+    		<a href="/tag/regular_install.html">Regular Installation</a>
+    	</li>
+    
+        
+        
+    	<li class="tag-item">
+    		<a href="/tag/system_requirements.html">System Requirements</a>
+    	</li>
+    
+    </ul>
+    
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3 col-sm-3 col-xs-12">
+						<div class="footer-logo-wrapper">
+
+							<a href="index.html" class="logo-image ">
+								<img src="/img/logos/logo.png" alt="logo">
+							</a>
+
+							<p class="slogan"> Learn.
+								<br>Create.
+								<br>Impress. 
+							</p>
+
+						</div>
+					</div>
+					<div class="col-md-9 col-sm-9 col-xs-12">
+						<div class="footer-wrapper">
+
+							<span class="scroll-top js-scroll-top">
+								<i class="fa fa-angle-up"></i>
+							</span>
+
+							<div class="docs-version js-docs-version">
+								<span class="docs-current-version js-docs-current-version">v1.2.3</span>
+								<ul class="js-docs-version-list">
+									<li>
+										<a href="#">v1.2.3</a>
+									</li>
+								</ul>
+							</div>
+
+							<ul class="footer-menu helper right">
+								<li>
+									<a href="http://www.abantecart.com"> AbanteCart main site </a>
+								</li>
+								<li>
+									<a href="http://marketplace.abantecart.com"> Market Place </a>
+								</li>
+								<li>
+									<a href="http://forum.abantecart.com"> Community Forum </a>
+								</li>
+								<li>
+									<a href="http://pages.github.com">Published with GitHub Pages</a>
+								</li>
+								<li>
+									<a href="https://github.com/abantecart/abantecart.github.io">Modify This Site</a>
+								</li>
+							</ul>
+
+							<p class="copyright helper right"> AbanteCart, all rights reserved. 2015 &copy; </p>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<script src="/js/all.js"></script>
+	<script src="/js/custom.js"></script>
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-26192520-5', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</body>
+
+</html>
