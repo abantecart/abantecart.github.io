@@ -53,8 +53,11 @@
 							<div class="main-content with-left-sidebar main-content-full">
 								{{ content }}
 
-								{% include tags.html %}
-
+								<div class="note js-note blue-light">
+									<h4 class="note-title"> Related pages: </h4>
+									{% include tags.html %}
+								</div>
+								
 							</div>
 						</div>
 					</div>
