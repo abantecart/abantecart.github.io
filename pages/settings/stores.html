@@ -1,0 +1,91 @@
+---
+layout: default
+title: Setting up a new store
+description: Ceate a new store and manage store settings.
+tags: [
+    ['setting_listing', 'All Settings']
+]
+redirect_from: "/tag/stores.html"
+---
+
+<div>
+<p>To setup multi-store first of all setup your main store with main domain name.</p>
+<p>if You need to create multistore you DON’T NEED to install cart again or anything do with files. Only you need is two things:<br /> 1. setup additional domain (addon domain) or subdomain in your hosting provider admin panel<br /> 2. set up second store in the admin of main store. At the end you should have 1 cart admin and 2 (or more) storefronts <br /> Please note: the first step is not AbanteCart related. If you have problems please contact with your hosting provider.</p>
+<p> </p>
+<p class="heading_gray">set up your hosting Cpanel</p>
+<div class="padding">
+<p>Set up two or more domains in your hosting service control panel. This is very important to make sure that the second domain is routed to the correct folder.</p>
+<p>There is several ways in Cpanel - subdomain or addon domain.</p>
+<div id="CollapsiblePanel1zzz" class="CollapsiblePanelzzz">
+<div class="CollapsiblePanelTabzzz" style="cursor: pointer;">
+<h3 class="heading_gray"><img src="/img/other/toggle-collapse.png" border="0" /> Here is short example for subdomain way</h3>
+</div>
+<div class="CollapsiblePanelContent">
+<div class="padding">
+<p>In your Cpanel click on subdomains icon</p>
+<img src="/img/other/abantecart-multistore-cpanel1.png" border="0" width="501" />
+<p>Create a subdomain</p>
+<img src="/img/other/abantecart-multistore-cpanel2.png" border="0" width="736" />
+<p>Note: very important - Document Root value should be same with main domain!!! If you have AbanteCart installed in some folder for example /public_html/somefolder/mycartfolder/ subdomain Root should be the same. Also a lot of other problems here not AbanteCart related:<br />• some hosting provider limit or don't allow subdomains<br />• if you are using a content delivery network you should edit A record in DNS zone editor manually and/or modify additional settings</p>
+<p> </p>
+</div>
+</div>
+</div>
+</div>
+<p>Anyway a lot of beginners have issues here because:<br /> • Due to DNS propagation, the subdomain can take up to 24 hours and more to start working</p>
+<p>• make sure to link the subdomain to the path where the default store was installed to</p>
+<p>• make sure there is no redirection setup for new subdomain/domain</p>
+<p>• usually user may need to clear browser cache and DNS cache on local computer to resolve new or reconfigured domains/subdomains</p>
+<p>• also possible some settings in .htacess file or file permissions issue prevent correct work </p>
+<p>Please contact with your hosting service provider to make sure your domain/subdomain configured correctly</p>
+</div>
+<p class="heading_gray">set up your AbanteCart admin panel</p>
+<div class="padding">
+<p>in AbanteCart admin go to System » Settings</p>
+<p>click on <strong>Create New Store</strong> button</p>
+<br /><a class="jcepopup" href="/img/other/multistore1.png"><img src="/img/other/multistore1.png" border="0" width="400" /></a>
+<p> </p>
+<p>fill in the at least following fields:</p>
+<div class="padding">
+<p><strong>Store Name:</strong></p>
+<p><strong>Store URL:</strong> Include the full URL to your store. Make sure to add '/' at the end. Example: http://www.second.yourdomain.com/store/</p>
+</div>
+<a class="jcepopup" href="/img/other/multistore2.png"><img src="/img/other/multistore2.png" border="0" width="400" /></a>
+<p>Starting from AbanteCart v1.1.0 you able to copy all setting from already created store. At least from your default store.</p>
+<a class="jcepopup" href="/img/other/multistore3.png"><img src="/img/other/multistore3.png" border="0" width="400" /></a>
+<p>click <strong>Save</strong> button, the page will reload and you will be able to edit all other store settings.</p>
+<p> </p>
+</div>
+<div>
+<p class="heading_gray">Once setup complete you can use multistore in several ways:</p>
+<div class="padding">
+<ul>
+<li>one backend to manage all stores</li>
+</ul>
+<ul>
+<li>use different templates on each store</li>
+</ul>
+<ul>
+<li>display different products/categories on each storefront</li>
+</ul>
+<ul>
+<li>display different blocks, banners... layout (by modify store's template)</li>
+</ul>
+<ul>
+<li>localize each store by setting a different default language, currency.</li>
+</ul>
+<ul>
+<li>setting different shipping and payment methods.</li>
+</ul>
+</div>
+<p class="heading_gray">To delete store:</p>
+<div class="padding">
+<p>Go to Admin-System-Settings</p>
+<p>select store in the <em>Edit Settings:</em> dropdown</p>
+<p>click <em>Edit Store</em> button</p>
+<img src="/img/other/multistore4.png" border="0"  /><br />
+<p>the trash bin icon appear, click on it to completely remove store</p>
+<img src="/img/other/multistore5.png" border="0"  /></div>
+</div>
+
+

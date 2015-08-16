@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Checkout</title>
+	<meta name="description" content="Checkout Settings">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/png" href="/img/favicons/favicon-16x16.png" sizes="16x16">
+	<link rel="icon" type="image/png" href="/img/favicons/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="/img/favicons/favicon-96x96.png" sizes="96x96">
+	<link rel="apple-touch-icon" sizes="57x57" href="/img/favicons/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/img/favicons/apple-touch-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/img/favicons/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/img/favicons/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/img/favicons/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/img/favicons/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/img/favicons/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/img/favicons/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/img/favicons/apple-touch-icon-180x180.png">
+	<link rel="stylesheet" href="/css/style.css">
+	<script src="/js/modernizr.js"></script>
+</head>
+
+<body>
+	<!--[if lt IE 8]>
+	    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+	<![endif]-->
+	<div class="page">
+		<div class="header header-over large">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3 col-sm-6 col-xs-6">
+						<a href="/index.html" class="logo-image">
+							<img src="/img/logos/logo.png" alt="AbanteCart open source ecommerce">
+						</a>
+						<a href="/index.html" class="languages">
+						<span class="language-active js-language-active">AbanteCart Docs</span>
+						</a>
+					</div>
+					<div class="col-md-9 col-sm-6 col-xs-6">
+					<nav class="right helper">
+    					<ul class="menu sf-menu js-menu">
+						<li>
+    <a href="/pages/install/installation_options.html">Install</a>
+    <ul>
+    	<li>
+    		<a href="/pages/install/installation_options.html">Installation Options</a>
+    	</li>
+    	<li>
+    		<a href="/pages/install/system_requirements.html">System requirements</a>
+    	</li>
+    	<li>
+    		<a href="/pages/install/download.html">Download</a>
+    	</li>
+    </ul>
+</li>
+<li>
+    <a href="/pages/start/index.html">Getting Started</a>
+    <ul>
+    	<li>
+    		<a href="/pages/start/settings.html">Basic configurations</a>
+    	</li>
+    	<li>
+    		<a href="/pages/start/">...</a>
+    	</li>
+    </ul>
+</li>
+<li>
+    <a href="/pages/user_manual/index.html">User Manual
+    	<span class="menu-label">v1.2.3</span>
+    </a>
+    <ul>
+    	<li>
+    		<a href="/pages/user_manual/prodcuts.htm">Managing Products</a>
+    	</li>
+    	<li>
+    		<a href="/pages/user_manual/order.htm">Managing Order</a>
+    	</li>
+    	<li>
+    		<a href="/pages/user_manual/order.htm">...</a>
+    	</li>
+    </ul>
+</li>
+<li>
+    <a href="/pages/design_guide/index.html">Design Guide</a>
+    <ul>
+    	<li>
+    		<a href="/pages/design_guide/template.html">Managing Templates</a>
+    	</li>
+    	<li>
+    		<a href="/pages/design_guide/template.html">...</a>
+    	</li>
+    </ul>
+</li>
+<li>
+    <a href="/pages/developer_guide/index.html">Developer Guide</a>
+    <ul>
+    	<li>
+    		<a href="/pages/developer_guide/architecture.html">Architecture</a>
+    	</li>
+    	<li>
+    		<a href="/pages/developer_guide/architecture.html">...</a>
+    	</li>
+    </ul>
+</li>
+
+						</u>
+					</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="page-info page-info-background background-2 page-info-small">
+			<div class="page-info-container">
+				<div class="container ">
+					<div class="row">
+						<div class="col-md-12">
+							<h1 class="page-title">Checkout</h1>
+							<h2 class="page-description">Checkout Settings</h2>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="content">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="layout with-left-sidebar">
+							<div class="left-sidebar">
+								<nav class="js-menu-fixed menu-vertical-wrapper">
+
+    <div class="search">
+<!--
+		//conflict of css and google button
+		<script>
+		  (function() {
+		    var cx = '015077254431814821964:ia6eg4e1ow4';
+		    var gcse = document.createElement('script');
+		    gcse.type = 'text/javascript';
+		    gcse.async = true;
+		    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+		        '//cse.google.com/cse.js?cx=' + cx;
+		    var s = document.getElementsByTagName('script')[0];
+		    s.parentNode.insertBefore(gcse, s);
+		  })();
+		</script>
+		<gcse:search></gcse:search>
+-->
+		<form name="cse" id="google_search" action="https://www.google.com/cse">
+		  <input type="hidden" name="cx" value="015077254431814821964:ia6eg4e1ow4" />
+		  <input type="hidden" name="ie" value="utf-8" />
+		  <input type="hidden" name="hl" value="" />
+		  <input name="q" type="text" size="40" class="search-input form-control" placeholder="Documents search" />
+		  <a href="#" onclick="document.getElementById('google_search').submit();"><i class="fa fa-search search-icon"></i></a>
+		</form>
+		                         
+    </div>
+
+	<ul class="menu-vertical js-menu-vertical">
+
+	
+    <li >
+    	 <a class="sub_menu_link" href="#"><i class="fa fa-cloud-download fa-fw"></i> Installation</a>
+    
+    
+        <ul >
+
+	
+    <li >
+    	 <a class="sub_menu_link" href="/pages/install/installation_options.html"><i class="fa fa-magic fa-fw"></i> Installation Options</a>
+    
+    
+        <ul >
+
+	
+    <li >    
+         <a href="/pages/install/options/click_installation.html"> Click Installation</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/install/options/cpanel_installation.html"> Cpanel Installation</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/install/options/cloud_installation.html"> Cloud Installation</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/install/options/localhost_installation.html"> Localhost Installation</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/install/options/regular_installation.html"> Regular installation</a>
+    
+    
+    </li>
+
+</ul>
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/install/system_requirements.html"> System requirements</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/install/download.html"> Download</a>
+    
+    
+    </li>
+
+</ul>
+    
+    </li>
+
+	
+    <li >
+    	 <a class="sub_menu_link" href="#"><i class="fa fa-sign-in fa-fw"></i> Core Upgrade</a>
+    
+    
+        <ul >
+
+	
+    <li >    
+         <a href="/pages/upgrade/auto.html"> Run Upgrade in admin</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/upgrade/manual.html"> Upgrade manually</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/upgrade/issues.html"> Known Issues</a>
+    
+    
+    </li>
+
+</ul>
+    
+    </li>
+
+	
+    <li >
+    	 <a class="sub_menu_link" href="#"><i class="fa fa-bicycle fa-fw"></i> Getting Started</a>
+    
+    
+        <ul >
+
+	
+    <li >    
+         <a href="/pages/quickstart/checklist.html"> Basic Setup Checklist</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/quickstart/settings.html"> Common Store settings</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/quickstart/email_settings.html"> Email settings</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/quickstart/language_settings.html"> Language settings</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/quickstart/currency_settings.html"> Currency settings</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/quickstart/region_settings.html"> Region settings</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/quickstart/setup_taxes.html"> Enable Taxes</a>
+    
+    
+    </li>
+
+	
+    <li >
+    	 <a class="sub_menu_link" href="/pages/quickstart/enable_payment.html"><i class="fa fa-money fa-fw"></i> Enable Payments</a>
+    
+    
+        <ul >
+
+	
+    <li >    
+         <a href="/pages/quickstart/payments/stripe.html"> Stripe</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/quickstart/payments/paypal_payments.html"> PayPal Payments Standard</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/quickstart/payments/paypal_payments.html"> PayPal Payments Pro</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/quickstart/payments/paypal_payments.html"> PayPal Payments Pro (UK)</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/quickstart/payments/paypal_payments.html"> PayPal Express Checkout</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/quickstart/payments/check_money_order.html"> Cheque / Money Order</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/quickstart/payments/authorize_net.html"> Authorize.Net (AIM)</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/quickstart/payments/payza.html"> Payza</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/quickstart/payments/realex.html"> Realex</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/quickstart/payments/liqpay.html"> LIQPAY</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/quickstart/payments/worldpay.html"> WorldPay</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/quickstart/payments/2co.html"> 2Checkout</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/quickstart/payments/sagepay_payments.html"> SagePay Payments</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/quickstart/payments/paypoint.html"> PayPoint</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/quickstart/payments/paymate.html"> Paymate</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/quickstart/payments/cashflows.html"> CashFlows</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/quickstart/payments/skrill.html"> Skrill</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/quickstart/payments/cash_on_delivery.html"> Cash on Delivery</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/quickstart/payments/banktransfer.html"> Bank Transfer</a>
+    
+    
+    </li>
+
+</ul>
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/quickstart/enable_shipping.html"> Enable Shipping</a>
+    
+    
+    </li>
+
+</ul>
+    
+    </li>
+
+	
+    <li >
+    	 <a class="sub_menu_link" href="#"><i class="fa fa-cubes fa-fw"></i> Managing Product Catalog</a>
+    
+    
+        <ul >
+
+	
+    <li >
+    	 <a class="sub_menu_link" href="#"> Manage Categories</a>
+    
+    
+        <ul >
+
+	
+    <li >    
+         <a href="/pages/catalog/categories/search.html"> List & search categories</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/catalog/categories/edit.html"> Add & edit categories</a>
+    
+    
+    </li>
+
+</ul>
+    
+    </li>
+
+	
+    <li >
+    	 <a class="sub_menu_link" href="#"> Manage Products</a>
+    
+    
+        <ul >
+
+	
+    <li >    
+         <a href="/pages/catalog/products/search.html"> List & search products</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/catalog/products/edit.html"> Add & edit products</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/catalog/products/attributes.html"> Add & edit attributes</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/catalog/products/files.html"> Add & edit files</a>
+    
+    
+    </li>
+
+</ul>
+    
+    </li>
+
+	
+    <li >
+    	 <a class="sub_menu_link" href="#"> Manage Manufacturers</a>
+    
+    
+        <ul >
+
+	
+    <li >    
+         <a href="/pages/catalog/manufacturers/search.html"> List & search Manufacturers</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/catalog/manufacturers/edit.html"> Add & edit Manufacturers</a>
+    
+    
+    </li>
+
+</ul>
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/catalog/global_attributes.html"> Global Attributes</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/catalog/product_reviews.html"> Product Reviews</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/catalog/resource_library.html"> Resource Library</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/catalog/page_layout.html"> Page Layout</a>
+    
+    
+    </li>
+
+</ul>
+    
+    </li>
+
+	
+    <li >
+    	 <a class="sub_menu_link" href="#"><i class="fa fa-tags fa-fw"></i> Managing Promotions</a>
+    
+    
+        <ul >
+
+	
+    <li >    
+         <a href="/pages/promotions/specials.html"> Manage Specials</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/promotions/discounts.html"> Set Quantity discounts</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/promotions/featured.html"> Set Features Products</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/promotions/banners.html"> Place banners</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/promotions/coupons.html"> Manage Coupons</a>
+    
+    
+    </li>
+
+</ul>
+    
+    </li>
+
+	
+    <li >
+    	 <a class="sub_menu_link" href="#"><i class="fa fa-users fa-fw"></i> Managing Customers</a>
+    
+    
+        <ul >
+
+	
+    <li >    
+         <a href="/pages/customers/search.html"> List & search customers</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/customers/edit.html"> Add & edit customer</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/customers/address.html"> Add & edit address</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/customers/groups.html"> Customer Groups</a>
+    
+    
+    </li>
+
+</ul>
+    
+    </li>
+
+	
+    <li >
+    	 <a class="sub_menu_link" href="#"><i class="fa fa-money fa-fw"></i> Managing Orders</a>
+    
+    
+        <ul >
+
+	
+    <li >    
+         <a href="/pages/orders/view.html"> View Orders</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/orders/search.html"> Search and filter</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/orders/modify.html"> Modify Orders</a>
+    
+    
+    </li>
+
+</ul>
+    
+    </li>
+
+	
+    <li >
+    	 <a class="sub_menu_link" href="#"><i class="fa fa-file-text fa-fw"></i> Store Reports</a>
+    
+    
+        <ul >
+
+	
+    <li >    
+         <a href="/pages/reports/sales.html"> Sales Report</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/reports/customers.html"> Customers Report</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/reports/products.html"> Products Report</a>
+    
+    
+    </li>
+
+</ul>
+    
+    </li>
+
+	
+    <li >
+    	 <a class="sub_menu_link" href="#"><i class="fa fa-tint fa-fw"></i> Design Guide</a>
+    
+    
+        <ul >
+
+	
+    <li >
+    	 <a class="sub_menu_link" href="#"> Templates</a>
+    
+    
+        <ul >
+
+	
+    <li >    
+         <a href="/pages/catalog/templates/select.html"> Select template</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/catalog/templates/edit.html"> Edit template</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/catalog/templates/files.html"> Template files</a>
+    
+    
+    </li>
+
+</ul>
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/reports/templates.html"> Templates</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/reports/layouts.html"> Layouts</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/reports/blocks.html"> Blocks</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/reports/menu.html"> Menu</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/reports/content_pages.html"> Content Pages</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/reports/banners.html"> Banners</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/reports/forms.html"> Forms</a>
+    
+    
+    </li>
+
+</ul>
+    
+    </li>
+
+	
+    <li class="active-menu active-submenu selected">
+    	 <a class="sub_menu_link" href="#"><i class="fa fa-wrench fa-fw"></i> Settings & Tools</a>
+    
+    
+        <ul >
+
+	
+    <li class="active-menu active-submenu selected">
+    	 <a class="sub_menu_link" href="/pages/settings/settings.html"><i class="fa fa-cog fa-fw"></i> Settings</a>
+    
+    
+        <ul >
+
+	
+    <li >    
+         <a href="/pages/settings/details.html"> Details</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/settings/general.html"> General</a>
+    
+    
+    </li>
+
+	
+    <li class="active-menu selected">    
+         <a href="/pages/settings/checkout.html"> Checkout</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/settings/appearance.html"> Appearance</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/settings/mail.html"> Mail</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/settings/api.html"> API</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/settings/system.html"> System</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/settings/stores.html"> Manage Multiple Stores</a>
+    
+    
+    </li>
+
+</ul>
+    
+    </li>
+
+</ul>
+    
+    </li>
+
+	
+    <li >
+    	 <a class="sub_menu_link" href="#"><i class="fa fa-puzzle-piece fa-fw"></i> Extend Functionally</a>
+    
+    
+        <ul >
+
+	
+    <li >    
+         <a href="/pages/extensions/find.html"> Find extension</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/extensions/install.html"> Install new extension</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/extensions/edit.html"> Managing extensions</a>
+    
+    
+    </li>
+
+</ul>
+    
+    </li>
+
+	
+    <li >
+    	 <a class="sub_menu_link" href="#"><i class="fa fa-life-ring fa-fw"></i> Helpful Tips</a>
+    
+    
+        <ul >
+
+	
+    <li >    
+         <a href="/pages/tips/global_search.html"> Global search</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/tips/global_search.html"> Side Panel for new orders and customers</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/tips/more_help.html"> Getting more help</a>
+    
+    
+    </li>
+
+</ul>
+    
+    </li>
+
+	
+    <li >
+    	 <a class="sub_menu_link" href="#"><i class="fa fa-code fa-fw"></i> Developer Guide</a>
+    
+    
+        <ul >
+
+	
+    <li >    
+         <a href="/pages/developer/architecture.html"> AbanteCart Architecture</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/developer/architecture.html"> Extension Development</a>
+    
+    
+    </li>
+
+</ul>
+    
+    </li>
+
+</ul>
+
+    <div class="separator"></div>	
+
+</nav>
+							</div>
+							<div class="main-content with-left-sidebar main-content-full">
+								<p><strong>Display Prices With Tax :</strong> turn it On if you are required to display prices with tax. If set to Off then taxes will only be included in the order totals on the checkout confirmation page. <br /> <em>By default Guest users with unknown shipping address will see Prices with Tax rate applied to default store address. Please check your <a class="crosslink" href="ecommerce-documentation/admin-user-manual/system/localization#Tax Classes" target="_blank">Tax</a> and <a class="crosslink" href="ecommerce-documentation/admin-user-manual/system/localization#Locations" target="_blank">Location</a> settings if you setting not work for you.</em></p>
+<p><strong>Default Store Tax Rate :</strong> Select "Store Default Zone" to apply store address Tax rate for unknown not requested users.</p>
+<p><strong>Use Customer Tax Address :</strong> select customers Address to use in tax calculations. Shipping or Payment address.</p>
+<p><strong>Invoice Start No. :</strong> Set the starting number the invoices will begin from. The next invoice you create will have the new invoice number.</p>
+<p><strong>Invoice Prefix :</strong> Set the invoice prefix e.g. IN/001. Invoice ID's will start at 1 for each unique prefix.</p>
+<p><strong>Customer Group:</strong> Default <a class="crosslink" href="ecommerce-documentation/user-manual/admin-user-manual/sales-menu/customer-groups" target="_blank">customer group.</a> Can change if, for example, you only sell to wholesale, employees, or other group you have created. Once a user register new customer account on your site he will be automatically assigned to default customer group.</p>
+<p><strong>Login Display Prices:</strong> Set to OFF to show prices only when a customer is logged in. If Guest users going to the product page they get the message "Please login or register to see price or to order.</p>
+<p><strong>Approve New Customers :</strong> Don't allow new customer to login until their account has been approved by store owner. Once approved customers will receive a confirmation e-mail</p>
+<p><strong>Require login name:</strong> To improve security, require customers to create unique login name instead of using email address as login name. If set to ON, existing customers will be asked to create new login name at the first login. If OFF, login name is set as customer email address.</p>
+<p><strong>Guest Checkout :</strong> Allow customers to choose between login required checkout and checkout without creating an account. This will not be available when a <a class="crosslink" href="ecommerce-documentation/user-manual/admin-user-manual/catalog-menu/downloads" target="_blank">downloadable product</a> is in the shopping cart.</p>
+<p><strong>Account Terms :</strong> Forces people to agree to terms before an account can be created. To create new one or edit exiting go to Admin-Design-<a class="crosslink" href="ecommerce-documentation/admin-user-manual/design/content-manager" target="_blank">Content</a>.</p>
+<p><strong>Checkout Terms :</strong> Forces people to agree to terms before an a customer can checkout. These appear as checkbox that the customer must click to proceed checkout.</p>
+<p><strong>Stock Checkout :</strong> Allow customers to still checkout if the products they are ordering are not in stock (Product quantity 0). Read more about <a class="crosslink" href="ecommerce-documentation/admin-user-manual/specific-manuals/stock-processing-configurations" target="_blank">Stock processing configurations</a>.</p>
+<p><strong>Maximum order amount allowed :</strong> Prevent checkout with large order sub-total amounts. 0 = NO LIMIT. Please note you can set Maximum Quantity (maximum ordered amount) for each product separately on Product edit page.</p>
+<p><strong>Minimum order amount :</strong> Prevent checkout if order sub-total does not reach minimum amount set. 0 = NO MINIMUM. Please note you can set Minimum Quantity (minimum ordered amount) for each product separately on Product edit page.</p>
+<p><strong>Order Status :</strong> Set the default order status when an order is processed. See also System -&gt; Localization -&gt; <a class="crosslink" href="ecommerce-documentation/user-manual/admin-user-manual/system/localization#Orders%20Statuses" target="_blank">Order Status</a>.<br /><em>Note: some <a class="crosslink" href="ecommerce-documentation/admin-user-manual/extensions-menu/payments" target="_blank">Payment methods</a> have the same separate setting which one can override this.</em></p>
+<p><strong>Display Weight on Cart Page :</strong> Show the cart weight on the cart page.</p>
+<p><strong>Use Shipping Session :</strong> Saves shipping quotes to session to avoid re-quoting unnecessarily. Quotes will only be re-quoted if cart or address is changed.</p>
+<p><strong>Same Page Add To Cart :</strong> This will enable AJAX add to cart feature. Product can be added to cart without redirecting to cart page. <em>Note: this feature working only for products without options.</em></p>
+<p><strong>Show Zero Customer Balance :</strong> Enable/disable display of balance message if customer account balance is 0.</p>
+<p><strong>Shipping and Tax Estimate:</strong> Allow customers to get quick shipping and tax estimate block in the shopping cart page. (HTML5 template)</p>
+<p><strong>Coupon on shopping cart page:</strong> Allow customers to enter coupon code and see discount in the shopping cart page. (HTML5 Template). When disabled customer able to enter Coupon code during checkout.</p>
+<p>After you have made your changes, select the save button</p>
+
+
+								<div class="note js-note blue-light">
+									<h4 class="note-title"> Related pages: </h4>
+									    
+    <ul class="tags">
+    
+        
+        
+    	<li class="tag-item">
+    		<a href="/tag/details.html">Details</a>
+    	</li>
+    
+        
+        
+    	<li class="tag-item">
+    		<a href="/tag/general.html">General</a>
+    	</li>
+    
+        
+        
+    	<li class="tag-item">
+    		<a href="/tag/system.html">System</a>
+    	</li>
+    
+    </ul>
+    
+								</div>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3 col-sm-3 col-xs-12">
+						<div class="footer-logo-wrapper">
+
+							<a href="index.html" class="logo-image ">
+								<img src="/img/logos/logo.png" alt="logo">
+							</a>
+
+							<p class="slogan"> Learn.
+								<br>Create.
+								<br>Impress. 
+							</p>
+
+						</div>
+					</div>
+					<div class="col-md-9 col-sm-9 col-xs-12">
+						<div class="footer-wrapper">
+
+							<span class="scroll-top js-scroll-top">
+								<i class="fa fa-angle-up"></i>
+							</span>
+
+							<div class="docs-version js-docs-version">
+								<span class="docs-current-version js-docs-current-version">v1.2.3</span>
+								<ul class="js-docs-version-list">
+									<li>
+										<a href="#">v1.2.3</a>
+									</li>
+								</ul>
+							</div>
+
+							<ul class="footer-menu helper right">
+								<li>
+									<a href="http://www.abantecart.com"> AbanteCart main site </a>
+								</li>
+								<li>
+									<a href="http://marketplace.abantecart.com"> Market Place </a>
+								</li>
+								<li>
+									<a href="http://forum.abantecart.com"> Community Forum </a>
+								</li>
+								<li>
+									<a href="http://pages.github.com">Published with GitHub Pages</a>
+								</li>
+								<li>
+									<a href="https://github.com/abantecart/abantecart.github.io">Modify This Site</a>
+								</li>
+							</ul>
+
+							<p class="copyright helper right"> AbanteCart, all rights reserved. 2015 &copy; </p>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<script src="/js/all.js"></script>
+	<script src="/js/custom.js"></script>
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-26192520-5', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</body>
+
+</html>

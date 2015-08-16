@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
-	<title>Cloud Installation</title>
-	<meta name="description" content="Deploy your own AbanteCart server in the cloud!">
+	<title>General Settings</title>
+	<meta name="description" content="General Store Settings">
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -118,8 +118,8 @@
 				<div class="container ">
 					<div class="row">
 						<div class="col-md-12">
-							<h1 class="page-title">Cloud Installation</h1>
-							<h2 class="page-description">Deploy your own AbanteCart server in the cloud!</h2>
+							<h1 class="page-title">General Settings</h1>
+							<h2 class="page-description">General Store Settings</h2>
 						</div>
 					</div>
 				</div>
@@ -163,14 +163,14 @@
 	<ul class="menu-vertical js-menu-vertical">
 
 	
-    <li class="active-menu active-submenu selected">
+    <li >
     	 <a class="sub_menu_link" href="#"><i class="fa fa-cloud-download fa-fw"></i> Installation</a>
     
     
         <ul >
 
 	
-    <li class="active-menu active-submenu selected">
+    <li >
     	 <a class="sub_menu_link" href="/pages/install/installation_options.html"><i class="fa fa-magic fa-fw"></i> Installation Options</a>
     
     
@@ -191,7 +191,7 @@
     </li>
 
 	
-    <li class="active-menu selected">    
+    <li >    
          <a href="/pages/install/options/cloud_installation.html"> Cloud Installation</a>
     
     
@@ -846,14 +846,14 @@
     </li>
 
 	
-    <li >
+    <li class="active-menu active-submenu selected">
     	 <a class="sub_menu_link" href="#"><i class="fa fa-wrench fa-fw"></i> Settings & Tools</a>
     
     
         <ul >
 
 	
-    <li >
+    <li class="active-menu active-submenu selected">
     	 <a class="sub_menu_link" href="/pages/settings/settings.html"><i class="fa fa-cog fa-fw"></i> Settings</a>
     
     
@@ -867,7 +867,7 @@
     </li>
 
 	
-    <li >    
+    <li class="active-menu selected">    
          <a href="/pages/settings/general.html"> General</a>
     
     
@@ -1019,37 +1019,24 @@
 </nav>
 							</div>
 							<div class="main-content with-left-sidebar main-content-full">
-								<div class="category-info ">
-    <h3 class="category-title">AbanteCart Cloud Hosting</h3>
-    <h4 class="category-description">Run AbanteCart in a cloud computing environment. This option is recommended if you need to run test or production servers that need to be accessible from the internet.</h4>
-</div>
-
-<div class="grid-view js-grid-view">
-    <div class="row">
-    	<div class="col-md-6">
-    		<div class="grid-view-elem js-grid-view-elem">
-    			<h3 class="grid-view-elem-title">
-    				<a href="https://bitnami.com/stack/abantecart/cloud" target="_blank"><div class="helper center"><img src="../../../img/logos/bitnami_logo.png" class="image isolated" width="200" alt="AbanteCart Installation"></div>Bitnami Cloud Hosting</a>
-    				<span class="grid-view-title-descr"></span>
-    			</h3>
-    			<p class="grid-view-elem-description"> Bitnami Cloud Images extend stack appliances to run in a cloud computing environment. You can run Bitnami applications on a pay-as-you-go basis, programmatically starting and stopping them.</p>
-    		</div>
-    	</div>
-    	<div class="col-md-6">
-    		<div class="grid-view-elem js-grid-view-elem">
-    			<h3 class="grid-view-elem-title">
-    				<a href="http://www.webuzo.com/apps/ecommerce/AbanteCart" target="_blank"><div class="helper center"><img src="../../../img/logos/webuzo_logo.gif" class="image isolated" width="200" alt="AbanteCart Installation"></div>Webuzo</a>
-    				<span class="grid-view-title-descr"></span>
-    			</h3>
-    			<p class="grid-view-elem-description"> Webuzo is a Single User Control Panel which helps users deploy AbanteCart App on virtual machines or in the Cloud. Webuzo can be integrated into your Private Cloud or a Public Cloud.</p>
-    		</div>
-    	</div>
-    	
-    	
-    </div>
-    
-    
-</div>			
+								<p><strong>Default Items per Page (Storefront):</strong> Sets how many storefront items are shown per page. Used in all Storefront listings (Category Listing, Search results, Specials page)</p>
+<p><strong>Default Items per Page (Admin):</strong> Sets how many admin items are shown per page in listing grids (products, manufacturers, orders, customers, etc)</p>
+<p><strong>Number of Items In Bestseller Block:</strong> Determines how many items are shown in bestsellers block (Store front)</p>
+<p><strong>Number of Items In Featured Block :</strong> Determines how many items are shown in Featured block (Store front). To set product to appear as featured in your store go to <a class="crosslink" href="ecommerce-documentation/admin-user-manual/catalog-menu/products#General Tab" target="_blank">product's edit page</a></p>
+<p><strong>Number of Items In Latest Block :</strong> Determines how many items are shown in Latest block (Store front)</p>
+<p><strong>Number of Items In Special Block :</strong> Determines how many items are shown in Special block (Store front). To set product to appear as special in your store go to <a class="crosslink" href="ecommerce-documentation/admin-user-manual/catalog-menu/products#Promotions Tab" target="_blank">product's edit page Promotions Tab</a></p>
+<p><strong>Sort Products as default by :</strong> Select default products sort method on Store front</p>
+<p><strong>Display Stock :</strong> Display stock quantity on the product page.</p>
+<p><strong>No Stock Auto Disable :</strong> Disable your product or option value for view if stock drops to 0. Message notification will be send.</p>
+<p><strong>Stock Status :</strong> Default setting for out of stock status message for product. Used on product edit page. <br /> <em>Applies for new products only.</em> See also System -&gt; Localization -&gt; <a class="crosslink" href="ecommerce-documentation/user-manual/admin-user-manual/system/localization#Stock%20Statuses" target="_blank">Stock Statuses</a>.</p>
+<div class="padding">read more about <a class="crosslink" href="ecommerce-documentation/admin-user-manual/specific-manuals/stock-processing-configurations" target="_blank">Stock processing configurations</a>.</div>
+<p><strong>Allow Reviews :</strong> Enable/Disable new review entry and display of existing reviews. This will hide all existing reviews on StoreFront.</p>
+<p><strong>Allow Downloads :</strong> Set your store to allow downloads. If customers make orders with that have downloadable products this setting will stop them from being able to access their <a class="crosslink" href="ecommerce-documentation/user-manual/admin-user-manual/catalog-menu/downloads" target="_blank">downloads</a>.</p>
+<p><strong>Help Links :</strong> If you want to see Help Icons and links to AbanteCart site. This will help you learn about features and how to use them. If you advanced user and do not want to see these help icons, you can disable.</p>
+<p><strong>Enable Tree Grid :</strong> Enables admin grids to show parent/children types in one grid listing. NOTE: Pagination and multi-actions are disabled for these grids. Recommended value in ON.</p>
+<p><strong>Embed Click Action :</strong> Change the way embed store open.</p>
+<p><strong>Google Analytics Account Number :</strong> Google Analytics is powerful, easy-to-use reporting platform lets you measure sales and conversions, but also gives you fresh insights into how visitors use your site, how they arrived on your site and how you can keep them coming back. Easy connect GA - add your <a href="https://support.google.com/analytics/answer/1032385?hl=en&amp;ref_topic=1008082" target="_blank">Google Analytics Account Number</a> to enable site activity tracking. This also enables ecommerce activity tracking. You must enable ecommerce tracking in Google on the profile settings page for your website.</p>
+<p>After you have made your changes, select the save button</p>
 
 								<div class="note js-note blue-light">
 									<h4 class="note-title"> Related pages: </h4>
@@ -1059,13 +1046,13 @@
         
         
     	<li class="tag-item">
-    		<a href="/tag/regular_install.html">Regular Installation</a>
+    		<a href="/tag/details.html">Details</a>
     	</li>
     
         
         
     	<li class="tag-item">
-    		<a href="/tag/system_requirements.html">System Requirements</a>
+    		<a href="/tag/system.html">System</a>
     	</li>
     
     </ul>
