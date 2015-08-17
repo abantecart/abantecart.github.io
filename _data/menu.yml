@@ -133,7 +133,7 @@
     - text: Search and filter
       url: /pages/orders/search.html
     - text: View Orders
-      level: /pages/orders/view
+      level: /pages/orders/view/
       icon: '<i class="fa fa-file-text fa-fw"></i>'
       subitems:
         - text: Order Details
@@ -142,6 +142,8 @@
           url: /pages/orders/view/order_shipping.html
         - text: Order Payment Details
           url: /pages/orders/view/order_payment.html
+        - text: Order Files
+          url: /pages/orders/view/order_files.html
         - text: Order History
           url: /pages/orders/view/order_history.html      
     - text: Modify Orders
