@@ -79,10 +79,8 @@
          url: /pages/catalog/products/files.html 
        - text: Manage product relations
          url: /pages/catalog/products/relations.html 
-       - text: Manage product promotions
-         url: /pages/catalog/products/promotions.html 
        - text: Manage product page layout
-         url: /pages/catalog/products/layout_edit.html      
+         url: /pages/catalog/products/product_layout.html      
     - text: Manage Manufacturers
       level: /pages/catalog/manufacturers/
       subitems:
