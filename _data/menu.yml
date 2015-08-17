@@ -88,10 +88,12 @@
          url: /pages/catalog/manufacturers/search.html      
        - text: Add & edit Manufacturers
          url: /pages/catalog/manufacturers/edit.html      
-    - text: Global Attributes
-      url: /pages/catalog/global_attributes.html
+    - text: Global Downloads
+      url: /pages/catalog/global_downloads.html
     - text: Product Reviews
       url: /pages/catalog/product_reviews.html
+    - text: Global Attributes
+      url: /pages/catalog/global_attributes.html
     - text: Resource Library
       url: /pages/catalog/resource_library.html
     - text: Page Layout
