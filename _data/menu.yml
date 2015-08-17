@@ -121,7 +121,9 @@
     - text: Add & edit customer
       url: /pages/customers/edit.html      
     - text: Add & edit address
-      url: /pages/customers/address.html      
+      url: /pages/customers/address.html   
+    - text: Add & edit transactions
+      url: /pages/customers/transactions.html      
     - text: Customer Groups
       url: /pages/customers/groups.html      
 - text: Managing Orders
