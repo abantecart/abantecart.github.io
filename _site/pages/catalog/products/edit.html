@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Edit Products</title>
+	<meta name="description" content="Manage products">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/png" href="/img/favicons/favicon-16x16.png" sizes="16x16">
+	<link rel="icon" type="image/png" href="/img/favicons/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="/img/favicons/favicon-96x96.png" sizes="96x96">
+	<link rel="apple-touch-icon" sizes="57x57" href="/img/favicons/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/img/favicons/apple-touch-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/img/favicons/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/img/favicons/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/img/favicons/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/img/favicons/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/img/favicons/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/img/favicons/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/img/favicons/apple-touch-icon-180x180.png">
+	<link rel="stylesheet" href="/css/style.css">
+	<script src="/js/modernizr.js"></script>
+</head>
+
+<body>
+	<!--[if lt IE 8]>
+	    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+	<![endif]-->
+	<div class="page">
+		<div class="header header-over large">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3 col-sm-6 col-xs-6">
+						<a href="/index.html" class="logo-image">
+							<img src="/img/logos/logo.png" alt="AbanteCart open source ecommerce">
+						</a>
+						<a href="/index.html" class="languages">
+						<span class="language-active js-language-active">AbanteCart Docs</span>
+						</a>
+					</div>
+					<div class="col-md-9 col-sm-6 col-xs-6">
+					<nav class="right helper">
+    					<ul class="menu sf-menu js-menu">
+						<li>
+    <a href="/pages/install/installation_options.html">Install</a>
+    <ul>
+    	<li>
+    		<a href="/pages/install/installation_options.html">Installation Options</a>
+    	</li>
+    	<li>
+    		<a href="/pages/install/system_requirements.html">System requirements</a>
+    	</li>
+    	<li>
+    		<a href="/pages/install/download.html">Download</a>
+    	</li>
+    </ul>
+</li>
+<li>
+    <a href="/pages/start/index.html">Getting Started</a>
+    <ul>
+    	<li>
+    		<a href="/pages/start/settings.html">Basic configurations</a>
+    	</li>
+    	<li>
+    		<a href="/pages/start/">...</a>
+    	</li>
+    </ul>
+</li>
+<li>
+    <a href="/pages/catalog/index.html">User Manual
+    	<span class="menu-label">v1.2.3</span>
+    </a>
+    <ul>
+    	<li>
+    		<a href="/pages/catalog/products/search.html">Manage Products</a>
+    	</li>
+    	<li>
+    		<a href="/pages/catalog/customers/search.html">Manage Customers</a>
+    	</li>
+    	<li>
+    		<a href="/pages/orders/search.htm">Manage Orders</a>
+    	</li>
+    	<li>
+    		<a href="/pages/settings/settings.html">Edit Settings</a>
+    	</li>
+    	<li>
+    		<a href="/pages/extensions/find.html">Extend Functionality</a>
+    	</li>
+    </ul>
+</li>
+<li>
+    <a href="/pages/design/index.html">Design Guide</a>
+    <ul>
+    	<li>
+    		<a href="/pages/design/templates/select.html">Manage Templates</a>
+    	</li>
+    	<li>
+    		<a href="/pages/design/layouts.html">Manage Page Layouts</a>
+    	</li>
+    	<li>
+    		<a href="/pages/design/blocks.html">Manage Blocks</a>
+    	</li>
+    	<li>
+    		<a href="/pages/design/menu.html">Manage Menu</a>
+    	</li>
+    </ul>
+</li>
+<li>
+    <a href="/pages/developer_guide/index.html">Developer Guide</a>
+    <ul>
+    	<li>
+    		<a href="/pages/developer_guide/architecture.html">Architecture</a>
+    	</li>
+    	<li>
+    		<a href="/pages/developer_guide/architecture.html">...</a>
+    	</li>
+    </ul>
+</li>
+
+						</u>
+					</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="page-info page-info-background background-2 page-info-small">
+			<div class="page-info-container">
+				<div class="container ">
+					<div class="row">
+						<div class="col-md-12">
+							<h1 class="page-title">Edit Products</h1>
+							<h2 class="page-description">Manage products</h2>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="content">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="layout with-left-sidebar">
+							<div class="left-sidebar">
+								<nav class="js-menu-fixed menu-vertical-wrapper">
+
+    <div class="search">
+<!--
+		//conflict of css and google button
+		<script>
+		  (function() {
+		    var cx = '015077254431814821964:ia6eg4e1ow4';
+		    var gcse = document.createElement('script');
+		    gcse.type = 'text/javascript';
+		    gcse.async = true;
+		    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+		        '//cse.google.com/cse.js?cx=' + cx;
+		    var s = document.getElementsByTagName('script')[0];
+		    s.parentNode.insertBefore(gcse, s);
+		  })();
+		</script>
+		<gcse:search></gcse:search>
+-->
+		<form name="cse" id="google_search" action="https://www.google.com/cse">
+		  <input type="hidden" name="cx" value="015077254431814821964:ia6eg4e1ow4" />
+		  <input type="hidden" name="ie" value="utf-8" />
+		  <input type="hidden" name="hl" value="" />
+		  <input name="q" type="text" size="40" class="search-input form-control" placeholder="Documents search" />
+		  <a href="#" onclick="document.getElementById('google_search').submit();"><i class="fa fa-search search-icon"></i></a>
+		</form>
+		                         
+    </div>
+
+	<ul class="menu-vertical js-menu-vertical">
+
+	
+    <li >
+    	 <a class="sub_menu_link" href="#"><i class="fa fa-cloud-download fa-fw"></i> Installation</a>
+    
+    
+        <ul >
+
+	
+    <li >
+    	 <a class="sub_menu_link" href="/pages/install/installation_options.html"><i class="fa fa-magic fa-fw"></i> Installation Options</a>
+    
+    
+        <ul >
+
+	
+    <li >    
+         <a href="/pages/install/options/click_installation.html"> Click Installation</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/install/options/cpanel_installation.html"> Cpanel Installation</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/install/options/cloud_installation.html"> Cloud Installation</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/install/options/localhost_installation.html"> Localhost Installation</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/install/options/regular_installation.html"> Regular installation</a>
+    
+    
+    </li>
+
+</ul>
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/install/system_requirements.html"> System requirements</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/install/download.html"> Download</a>
+    
+    
+    </li>
+
+</ul>
+    
+    </li>
+
+	
+    <li >
+    	 <a class="sub_menu_link" href="#"><i class="fa fa-sign-in fa-fw"></i> Core Upgrade</a>
+    
+    
+        <ul >
+
+	
+    <li >    
+         <a href="/pages/upgrade/auto.html"> Run Upgrade in admin</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/upgrade/manual.html"> Upgrade manually</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/upgrade/troubleshoot.html"> Troubleshoot</a>
+    
+    
+    </li>
+
+</ul>
+    
+    </li>
+
+	
+    <li >
+    	 <a class="sub_menu_link" href="#"><i class="fa fa-bicycle fa-fw"></i> Getting Started</a>
+    
+    
+        <ul >
+
+	
+    <li >    
+         <a href="/pages/quickstart/checklist.html"> Basic Setup Checklist</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/quickstart/settings.html"> Common Store settings</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/quickstart/email_settings.html"> Email settings</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/quickstart/language_settings.html"> Language settings</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/quickstart/currency_settings.html"> Currency settings</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/quickstart/region_settings.html"> Region settings</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/quickstart/setup_taxes.html"> Enable Taxes</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/quickstart/enable_payment.html"> Enable Payments</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/quickstart/enable_shipping.html"> Enable Shipping</a>
+    
+    
+    </li>
+
+</ul>
+    
+    </li>
+
+	
+    <li class="active-menu active-submenu selected">
+    	 <a class="sub_menu_link" href="#"><i class="fa fa-cubes fa-fw"></i> Managing Product Catalog</a>
+    
+    
+        <ul >
+
+	
+    <li >
+    	 <a class="sub_menu_link" href="#"> Manage Categories</a>
+    
+    
+        <ul >
+
+	
+    <li >    
+         <a href="/pages/catalog/categories/search.html"> List & search categories</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/catalog/categories/edit.html"> Add & edit categories</a>
+    
+    
+    </li>
+
+</ul>
+    
+    </li>
+
+	
+    <li class="active-menu active-submenu selected">
+    	 <a class="sub_menu_link" href="#"> Manage Products</a>
+    
+    
+        <ul >
+
+	
+    <li >    
+         <a href="/pages/catalog/products/search.html"> List & search products</a>
+    
+    
+    </li>
+
+	
+    <li class="active-menu selected">    
+         <a href="/pages/catalog/products/edit.html"> Add & edit products</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/catalog/products/media.html"> Manage product Media</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/catalog/products/attributes.html"> Manage product options</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/catalog/products/files.html"> Manage product files</a>
+    
+    
+    </li>
+
+</ul>
+    
+    </li>
+
+	
+    <li >
+    	 <a class="sub_menu_link" href="#"> Manage Manufacturers</a>
+    
+    
+        <ul >
+
+	
+    <li >    
+         <a href="/pages/catalog/manufacturers/search.html"> List & search Manufacturers</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/catalog/manufacturers/edit.html"> Add & edit Manufacturers</a>
+    
+    
+    </li>
+
+</ul>
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/catalog/global_attributes.html"> Global Attributes</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/catalog/product_reviews.html"> Product Reviews</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/catalog/resource_library.html"> Resource Library</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/catalog/page_layout.html"> Page Layout</a>
+    
+    
+    </li>
+
+</ul>
+    
+    </li>
+
+	
+    <li >
+    	 <a class="sub_menu_link" href="#"><i class="fa fa-tags fa-fw"></i> Managing Promotions</a>
+    
+    
+        <ul >
+
+	
+    <li >    
+         <a href="/pages/promotions/specials.html"> Manage Specials</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/promotions/discounts.html"> Set Quantity discounts</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/promotions/featured.html"> Set Features Products</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/promotions/banners.html"> Place banners</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/promotions/coupons.html"> Manage Coupons</a>
+    
+    
+    </li>
+
+</ul>
+    
+    </li>
+
+	
+    <li >
+    	 <a class="sub_menu_link" href="#"><i class="fa fa-users fa-fw"></i> Managing Customers</a>
+    
+    
+        <ul >
+
+	
+    <li >    
+         <a href="/pages/customers/search.html"> List & search customers</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/customers/edit.html"> Add & edit customer</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/customers/address.html"> Add & edit address</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/customers/groups.html"> Customer Groups</a>
+    
+    
+    </li>
+
+</ul>
+    
+    </li>
+
+	
+    <li >
+    	 <a class="sub_menu_link" href="#"><i class="fa fa-money fa-fw"></i> Managing Orders</a>
+    
+    
+        <ul >
+
+	
+    <li >    
+         <a href="/pages/orders/view.html"> View Orders</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/orders/search.html"> Search and filter</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/orders/modify.html"> Modify Orders</a>
+    
+    
+    </li>
+
+</ul>
+    
+    </li>
+
+	
+    <li >
+    	 <a class="sub_menu_link" href="#"><i class="fa fa-file-text fa-fw"></i> Store Reports</a>
+    
+    
+        <ul >
+
+	
+    <li >    
+         <a href="/pages/reports/sales.html"> Sales Report</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/reports/customers.html"> Customers Report</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/reports/products.html"> Products Report</a>
+    
+    
+    </li>
+
+</ul>
+    
+    </li>
+
+	
+    <li >
+    	 <a class="sub_menu_link" href="#"><i class="fa fa-tint fa-fw"></i> Design Guide</a>
+    
+    
+        <ul >
+
+	
+    <li >
+    	 <a class="sub_menu_link" href="#"> Templates</a>
+    
+    
+        <ul >
+
+	
+    <li >    
+         <a href="/pages/design/templates/select.html"> Select template</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/design/templates/edit.html"> Edit template</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/design/templates/files.html"> Template files</a>
+    
+    
+    </li>
+
+</ul>
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/design/layouts.html"> Layouts</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/design/blocks.html"> Blocks</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/design/menu.html"> Menu</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/design/content_pages.html"> Content Pages</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/design/banners.html"> Banners</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/design/forms.html"> Forms</a>
+    
+    
+    </li>
+
+</ul>
+    
+    </li>
+
+	
+    <li >
+    	 <a class="sub_menu_link" href="#"><i class="fa fa-money fa-fw"></i> Shippings & Payments</a>
+    
+    
+        <ul >
+
+	
+    <li >
+    	 <a class="sub_menu_link" href="/pages/ship_and_pay/enable_shipping.html"><i class="fa fa-truck fa-fw"></i> Enable Shipping</a>
+    
+    
+        <ul >
+
+	
+    <li >    
+         <a href="/pages/ship_and_pay/shippings/flatrate.html"> Flat Rate</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/ship_and_pay/shippings/free_shipping.html"> Free shipping</a>
+    
+    
+    </li>
+
+</ul>
+    
+    </li>
+
+	
+    <li >
+    	 <a class="sub_menu_link" href="/pages/ship_and_pay/enable_payment.html"><i class="fa fa-money fa-fw"></i> Enable Payment</a>
+    
+    
+        <ul >
+
+	
+    <li >    
+         <a href="/pages/ship_and_pay/payments/stripe.html"> Stripe</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/ship_and_pay/payments/paypal_payments.html"> PayPal Payments Standard</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/ship_and_pay/payments/paypal_payments.html"> PayPal Payments Pro</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/ship_and_pay/payments/paypal_payments.html"> PayPal Payments Pro (UK)</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/ship_and_pay/payments/paypal_payments.html"> PayPal Express Checkout</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/ship_and_pay/payments/check_money_order.html"> Cheque / Money Order</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/ship_and_pay/payments/authorize_net.html"> Authorize.Net (AIM)</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/ship_and_pay/payments/payza.html"> Payza</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/ship_and_pay/payments/realex.html"> Realex</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/ship_and_pay/payments/liqpay.html"> LIQPAY</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/ship_and_pay/payments/worldpay.html"> WorldPay</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/ship_and_pay/payments/2co.html"> 2Checkout</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/ship_and_pay/payments/sagepay_payments.html"> SagePay Payments</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/ship_and_pay/payments/paypoint.html"> PayPoint</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/ship_and_pay/payments/paymate.html"> Paymate</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/ship_and_pay/payments/cashflows.html"> CashFlows</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/ship_and_pay/payments/skrill.html"> Skrill</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/ship_and_pay/payments/cash_on_delivery.html"> Cash on Delivery</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/ship_and_pay/payments/banktransfer.html"> Bank Transfer</a>
+    
+    
+    </li>
+
+</ul>
+    
+    </li>
+
+</ul>
+    
+    </li>
+
+	
+    <li >
+    	 <a class="sub_menu_link" href="#"><i class="fa fa-wrench fa-fw"></i> Settings & Tools</a>
+    
+    
+        <ul >
+
+	
+    <li >
+    	 <a class="sub_menu_link" href="/pages/settings/settings.html"><i class="fa fa-cog fa-fw"></i> Settings</a>
+    
+    
+        <ul >
+
+	
+    <li >    
+         <a href="/pages/settings/details.html"> Details</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/settings/general.html"> General</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/settings/checkout.html"> Checkout</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/settings/appearance.html"> Appearance</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/settings/mail.html"> Mail</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/settings/api.html"> API</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/settings/system.html"> System</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/settings/stores.html"> Manage Multiple Stores</a>
+    
+    
+    </li>
+
+</ul>
+    
+    </li>
+
+</ul>
+    
+    </li>
+
+	
+    <li >
+    	 <a class="sub_menu_link" href="#"><i class="fa fa-puzzle-piece fa-fw"></i> Extend Functionally</a>
+    
+    
+        <ul >
+
+	
+    <li >    
+         <a href="/pages/extensions/find.html"> Find extension</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/extensions/install.html"> Install new extension</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/extensions/edit.html"> Managing extensions</a>
+    
+    
+    </li>
+
+</ul>
+    
+    </li>
+
+	
+    <li >
+    	 <a class="sub_menu_link" href="#"><i class="fa fa-life-ring fa-fw"></i> Helpful Tips</a>
+    
+    
+        <ul >
+
+	
+    <li >    
+         <a href="/pages/tips/global_search.html"> Global search</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/tips/side_panels.html"> Side Panels</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/tips/more_help.html"> Getting more help</a>
+    
+    
+    </li>
+
+</ul>
+    
+    </li>
+
+	
+    <li >
+    	 <a class="sub_menu_link" href="#"><i class="fa fa-code fa-fw"></i> Developer Guide</a>
+    
+    
+        <ul >
+
+	
+    <li >    
+         <a href="/pages/developer/architecture.html"> AbanteCart Architecture</a>
+    
+    
+    </li>
+
+	
+    <li >    
+         <a href="/pages/developer/extension_dev.html"> Extension Development</a>
+    
+    
+    </li>
+
+</ul>
+    
+    </li>
+
+</ul>
+
+    <div class="separator"></div>	
+
+</nav>
+							</div>
+							<div class="main-content with-left-sidebar main-content-full">
+								<div>
+<h4 class="heading_gray"><a name="General Tab" class="anchor"></a>General Tab</h4>
+<div class="padding">
+<p><strong>Status:</strong> MUST be "ON" for product to appear in your store.</p>
+<p><strong>Featured Product:</strong> MUST be "ON" for product to appear as featured in your store.</p>
+<p><strong>Product Name:</strong> The product name as it will appear in the front-end.</p>
+<p><strong>Description:</strong> Enter a description of the product. It will display in the main section of the product page.</p>
+<p><em>note: This uses the HTML-Editor so you can add HTML, images and FLASH content.</em></p>
+Also you can fill/edit the following fields:
+<p><strong>Meta Tag Keywords:</strong> is supposed to be a brief and concise list of the most important themes of your product's page. Meta Tag Keywords are used by search engines to describe the content of your web site.</p>
+<p><strong>Meta Tag Description:</strong> a brief and concise summary of your product's page's content.</p>
+<p><em>note: Meta Tag Keywords and Meta Tag Description will show in the tag of the product's HTML source.</em></p>
+<p><strong>Blurb:</strong> Enter a short description of the product. It will display in the product listing and main section of the product page.</p>
+<p><strong>Product Tags:</strong> Tags help to make searching for products easier. Add few relevant keywords that can be used when customer is viewing some product, then customer click on one of product's tags to see a list of all products with the same tag. Only Administrator users can add tags in admin. Use comma as delimiter. Product Tags will be viewable by everyone browsing the product info page and can be used as search keyword at Storefront.</p>
+<p><strong>Categories: </strong> Category or <a class="crosslink" href="ecommerce-documentation/user-manual/admin-user-manual/catalog-menu/categories">categories</a> where product will be displayed on storefront. Selecting a checkbox will associate this product to that category, and you can select as few or as many associated categories.</p>
+<p><strong>Stores: </strong> select store where product will be displayed. If you're managing multiple Stores, you can select the stores to which this product is associated by checking the checkbox next to the Stores from which you want the product to be available.</p>
+<p>read more about multi-store set up in <a class="crosslink" href="ecommerce-documentation/user-manual/admin-user-manual/system/multistore-set-up" target="_blank">this article</a></p>
+<p><strong>Manufacturer:</strong> If you have specified manufacturer or brand names in CATALOG -&gt; <a class="crosslink" href="ecommerce-documentation/user-manual/admin-user-manual/catalog-menu/manufacturers" target="_self">Manufacturers</a>, select manufacturer or brand name you want to display here.</p>
+<p><strong>Model:</strong> A unique model number of the product. Not required.</p>
+<p><strong>Block Product From Ordering:</strong> Enable "Call for order". This will put product to display mode only with no ability to order. Contact us for order message will be displayed.</p>
+<p><strong>Price:</strong> Enter the price without tax. The price of your item as it will display in the front-end. If you have a special, this will be the original price.</p>
+<p><strong>Cost:</strong> The wholesale cost used for profit reporting. This field is for internal purposes and does not require a value.</p>
+<p><strong>Tax Class:</strong> If you are required to charge tax on this item, set to "Taxable Goods." By default AbanteCart comes with one option for this drop-down: Taxable Goods. The Tax Class for all new products will automatically be set to <em>---None---</em>. You can learn more about setting up the Tax Classes and Tax Rates that apply to the Taxable Goods Tax Class, as well as creating new Tax Classes in System-&gt;Localization-&gt;<a class="crosslink" href="ecommerce-documentation/user-manual/admin-user-manual/system/localization#Tax Classes" target="_blank">Tax Classes</a> chapter.</p>
+<p><strong>Track Stock:</strong> Set YES if need to track stock quantity for this product. If options are used check subtract setting for each option value (they have own track stock setting). Enabled main product to track stock and subtract the quantity after order is placed by customers. This is very important setting read more about <a class="crosslink" href="ecommerce-documentation/user-manual/admin-user-manual/specific-manuals/stock-processing-configurations" target="_blank">Stock processing configurations</a>.</p>
+<p><strong>Quantity:</strong> Quantity available for the product. Used id stock trackable is set ON. If you have any stock trackable options, do not use this quantity and set it to 0 or be aware of the conflict.</p>
+<p><strong>Minimum Quantity:</strong> This value requires the customer to purchase a minimum amount of each product in an order. Forcing this quantity to be added in the cart automatically.</p>
+<p><strong>Out Of Stock Status:</strong> Message shown if stock in product or options will drop to 0 or below. This message is always show if our of stock condition is met for stock trackable products or options. <br />If you do not want to see this message set product and all options to be stock trackable off.</p>
+<p><strong>SKU:</strong> The products SKU. In the "SKU" text box you can set a unique identification number for this item. SKU is global, meaning if you update the SKU for a product in one store, it will update in all other stores as well. If use product option with this setting, please do not set SKU on the main product or be aware of the conflict.</p>
+<p><strong>Misc Location:</strong> It's just a place to store some extra data. It's initial purpose was for warehouses as an internal note on where something is located.</p>
+<p><strong>SEO Keyword:</strong> The SEO Keyword is important for the proper indexing of your on-line store by the various search engines. <span class="help">SEO key that will show in URL. Default value will be set to product name</span> on product creation. To create new one click Generate button.</p>
+<p><strong>Date Available:</strong></p>
+<p><strong>Sort Order:</strong> Sort Order set's the order of which the product will be displayed amongst others.</p>
+<p><strong>Requires Shipping:</strong> This value means shipping rates apply for product when checkout.</p>
+<p><strong>Ship Product Individually:</strong> Product will be shipped in a separate package and additional shipping cost will be added to the order with multiple items.</p>
+<p><strong>Free Shipping:</strong> must be ON to enable free shipping for this product.</p>
+<p><strong>Fixed Shipping Price:</strong> this setting allows you to offer an exact shipping price for individual products.</p>
+<p><strong>Length:</strong> set to better specify your current product</p>
+<p><strong>Width:</strong> set to better specify your current product</p>
+<p><strong>Height:</strong> set to better specify your current product</p>
+<p><strong>Length Class:</strong> Units of measure to use in product options and shipping by product dimensions. Read more in <a class="crosslink" href="ecommerce-documentation/user-manual/admin-user-manual/system/localization#Length%20classes">this chapter</a></p>
+<p><strong>Weight:</strong> The products weight - usually used for shipping calculations. If use product option with this setting, please do not set on the main product or be aware of the conflict.</p>
+<p><strong>Weight Class:</strong> Weight classes are used to provide a structured way of handling products and shipping systems that use different units of weight. Read more in <a class="crosslink" href="ecommerce-documentation/user-manual/admin-user-manual/system/localization#Weight%20classes">this chapter</a></p>
+<p>After you have made your changes, select the SAVE button</p>
+</div>
+
+
+<div>After SAVE the new options available to edit.<br />
+<a class="jcepopup" href="/img/other/abantecart-catalog-product-edit.png"><img src="/img/other/abantecart-catalog-product-edit.png" border="0" width="400" /></a>
+</div>
+<br />Product Summary block in the top will help you to quickly find main product data and condition.
+<div class="padding">
+<p><strong>Product Condition</strong><br />
+Available - if product's quantity or product's option quantity more than 0. Note: related to your track stock settings see <a class="crosslink" href="ecommerce-documentation/user-manual/admin-user-manual/specific-manuals/stock-processing-configurations">Stock processing configurations manual</a><br />Disabled - shown if product status is Disabled<br />
+Unavailable - related to Date Available setting<br />
+Out of Stock - shown when Product's Quantity is 0.<br />
+Product Option(s) Out of Stock - appear if you have Option's Track Stock enabled and some of option's quantity is 0. Read more about <a class="crosslink" href="ecommerce-documentation/user-manual/admin-user-manual/specific-manuals/stock-processing-configurations">Stock processing configurations</a></p>
+</div>
+
+<div class="padding"><strong>Embed Product</strong> We introduce new "products embed" feature with version 1.2.3. With AbanteCart 1.2.3 you can sell anything on any website. To get product's embed code click on the share icon. Read more about how to embed your products on any html page in  <a class="crosslink" href="ecommerce-documentation/admin-user-manual/specific-manuals/embed-your-store">Embed your store</a> article
+</div>
+
+<br />
+
+
+
+								<div class="note js-note blue-light">
+									<h4 class="note-title"> Related pages: </h4>
+									    
+    <ul class="tags">
+    
+        
+        
+    	<li class="tag-item">
+    		<a href="/tag/product_listing.html">List Products</a>
+    	</li>
+    
+        
+        
+    	<li class="tag-item">
+    		<a href="/tag/product_media.html">Product Media</a>
+    	</li>
+    
+        
+        
+    	<li class="tag-item">
+    		<a href="/tag/product_options.html">Product Options</a>
+    	</li>
+    
+        
+        
+    	<li class="tag-item">
+    		<a href="/tag/layout_edit.html">Edit page layout</a>
+    	</li>
+    
+    </ul>
+    
+								</div>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3 col-sm-3 col-xs-12">
+						<div class="footer-logo-wrapper">
+
+							<a href="index.html" class="logo-image ">
+								<img src="/img/logos/logo.png" alt="logo">
+							</a>
+
+							<p class="slogan"> Learn.
+								<br>Create.
+								<br>Impress. 
+							</p>
+
+						</div>
+					</div>
+					<div class="col-md-9 col-sm-9 col-xs-12">
+						<div class="footer-wrapper">
+
+							<span class="scroll-top js-scroll-top">
+								<i class="fa fa-angle-up"></i>
+							</span>
+
+							<div class="docs-version js-docs-version">
+								<span class="docs-current-version js-docs-current-version">v1.2.3</span>
+								<ul class="js-docs-version-list">
+									<li>
+										<a href="#">v1.2.3</a>
+									</li>
+								</ul>
+							</div>
+
+							<ul class="footer-menu helper right">
+								<li>
+									<a href="http://www.abantecart.com"> AbanteCart main site </a>
+								</li>
+								<li>
+									<a href="http://marketplace.abantecart.com"> Market Place </a>
+								</li>
+								<li>
+									<a href="http://forum.abantecart.com"> Community Forum </a>
+								</li>
+								<li>
+									<a href="http://pages.github.com">Published with GitHub Pages</a>
+								</li>
+								<li>
+									<a href="https://github.com/abantecart/abantecart.github.io">Modify This Site</a>
+								</li>
+							</ul>
+
+							<p class="copyright helper right"> AbanteCart, all rights reserved. 2015 &copy; </p>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<script src="/js/all.js"></script>
+	<script src="/js/custom.js"></script>
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-26192520-5', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</body>
+
+</html>

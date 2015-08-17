@@ -29,8 +29,8 @@
       url: /pages/upgrade/auto.html
     - text: Upgrade manually
       url: /pages/upgrade/manual.html
-    - text: Known Issues
-      url: /pages/upgrade/issues.html      
+    - text: Troubleshoot
+      url: /pages/upgrade/troubleshoot.html      
 - text: Getting Started
   level: /pages/quickstart/
   icon: '<i class="fa fa-bicycle fa-fw"></i>'
@@ -51,47 +51,6 @@
       url: /pages/quickstart/setup_taxes.html
     - text: Enable Payments
       url: /pages/quickstart/enable_payment.html
-      level: /pages/quickstart/payments/
-      icon: '<i class="fa fa-money fa-fw"></i>'
-      subitems:
-       - text: Stripe
-         url: /pages/quickstart/payments/stripe.html
-       - text: PayPal Payments Standard
-         url: /pages/quickstart/payments/paypal_payments.html
-       - text: PayPal Payments Pro
-         url: /pages/quickstart/payments/paypal_payments.html
-       - text: PayPal Payments Pro (UK)
-         url: /pages/quickstart/payments/paypal_payments.html
-       - text: PayPal Express Checkout
-         url: /pages/quickstart/payments/paypal_payments.html
-       - text: Cheque / Money Order
-         url: /pages/quickstart/payments/check_money_order.html    
-       - text: Authorize.Net (AIM)
-         url: /pages/quickstart/payments/authorize_net.html 
-       - text: Payza
-         url: /pages/quickstart/payments/payza.html  
-       - text: Realex
-         url: /pages/quickstart/payments/realex.html    
-       - text: LIQPAY
-         url: /pages/quickstart/payments/liqpay.html 
-       - text: WorldPay
-         url: /pages/quickstart/payments/worldpay.html
-       - text: 2Checkout
-         url: /pages/quickstart/payments/2co.html
-       - text: SagePay Payments
-         url: /pages/quickstart/payments/sagepay_payments.html 
-       - text: PayPoint
-         url: /pages/quickstart/payments/paypoint.html  
-       - text: Paymate
-         url: /pages/quickstart/payments/paymate.html 
-       - text: CashFlows
-         url: /pages/quickstart/payments/cashflows.html 
-       - text: Skrill
-         url: /pages/quickstart/payments/skrill.html   
-       - text: Cash on Delivery
-         url: /pages/quickstart/payments/cash_on_delivery.html  
-       - text: Bank Transfer
-         url: /pages/quickstart/payments/banktransfer.html  
     - text: Enable Shipping
       url: /pages/quickstart/enable_shipping.html
 - text: Managing Product Catalog
@@ -112,9 +71,11 @@
          url: /pages/catalog/products/search.html      
        - text: Add & edit products
          url: /pages/catalog/products/edit.html      
-       - text: Add & edit attributes
+       - text: Manage product Media
+         url: /pages/catalog/products/media.html      
+       - text: Manage product options
          url: /pages/catalog/products/attributes.html      
-       - text: Add & edit files
+       - text: Manage product files
          url: /pages/catalog/products/files.html      
     - text: Manage Manufacturers
       level: /pages/catalog/manufacturers/
@@ -185,25 +146,79 @@
       level: /pages/design/templates/
       subitems:
        - text: Select template
-         url: /pages/catalog/templates/select.html      
+         url: /pages/design/templates/select.html      
        - text: Edit template
-         url: /pages/catalog/templates/edit.html      
+         url: /pages/design/templates/edit.html      
        - text: Template files
-         url: /pages/catalog/templates/files.html      
-    - text: Templates
-      url: /pages/reports/templates.html      
+         url: /pages/design/templates/files.html      
     - text: Layouts
-      url: /pages/reports/layouts.html      
+      url: /pages/design/layouts.html      
     - text: Blocks
-      url: /pages/reports/blocks.html      
+      url: /pages/design/blocks.html      
     - text: Menu
-      url: /pages/reports/menu.html      
+      url: /pages/design/menu.html      
     - text: Content Pages
-      url: /pages/reports/content_pages.html      
+      url: /pages/design/content_pages.html      
     - text: Banners
-      url: /pages/reports/banners.html      
+      url: /pages/design/banners.html      
     - text: Forms
-      url: /pages/reports/forms.html      
+      url: /pages/design/forms.html      
+- text: Shippings & Payments
+  level: /pages/ship_and_pay/
+  icon: '<i class="fa fa-money fa-fw"></i>'
+  subitems:
+  - text: Enable Shipping
+    level: /pages/ship_and_pay/shippings/
+    url: /pages/ship_and_pay/enable_shipping.html
+    icon: '<i class="fa fa-truck fa-fw"></i>'
+    subitems:
+     - text: Flat Rate
+       url: /pages/ship_and_pay/shippings/flatrate.html
+     - text: Free shipping
+       url: /pages/ship_and_pay/shippings/free_shipping.html
+  - text: Enable Payment
+    level: /pages/ship_and_pay/payments/
+    icon: '<i class="fa fa-money fa-fw"></i>'
+    url: /pages/ship_and_pay/enable_payment.html
+    subitems:
+     - text: Stripe
+       url: /pages/ship_and_pay/payments/stripe.html
+     - text: PayPal Payments Standard
+       url: /pages/ship_and_pay/payments/paypal_payments.html
+     - text: PayPal Payments Pro
+       url: /pages/ship_and_pay/payments/paypal_payments.html
+     - text: PayPal Payments Pro (UK)
+       url: /pages/ship_and_pay/payments/paypal_payments.html
+     - text: PayPal Express Checkout
+       url: /pages/ship_and_pay/payments/paypal_payments.html
+     - text: Cheque / Money Order
+       url: /pages/ship_and_pay/payments/check_money_order.html    
+     - text: Authorize.Net (AIM)
+       url: /pages/ship_and_pay/payments/authorize_net.html 
+     - text: Payza
+       url: /pages/ship_and_pay/payments/payza.html  
+     - text: Realex
+       url: /pages/ship_and_pay/payments/realex.html    
+     - text: LIQPAY
+       url: /pages/ship_and_pay/payments/liqpay.html 
+     - text: WorldPay
+       url: /pages/ship_and_pay/payments/worldpay.html
+     - text: 2Checkout
+       url: /pages/ship_and_pay/payments/2co.html
+     - text: SagePay Payments
+       url: /pages/ship_and_pay/payments/sagepay_payments.html 
+     - text: PayPoint
+       url: /pages/ship_and_pay/payments/paypoint.html  
+     - text: Paymate
+       url: /pages/ship_and_pay/payments/paymate.html 
+     - text: CashFlows
+       url: /pages/ship_and_pay/payments/cashflows.html 
+     - text: Skrill
+       url: /pages/ship_and_pay/payments/skrill.html   
+     - text: Cash on Delivery
+       url: /pages/ship_and_pay/payments/cash_on_delivery.html  
+     - text: Bank Transfer
+       url: /pages/ship_and_pay/payments/banktransfer.html    
 - text: Settings & Tools
   level: /pages/settings/
   icon: '<i class="fa fa-wrench fa-fw"></i>'
@@ -245,8 +260,8 @@
   subitems:
     - text: Global search
       url: /pages/tips/global_search.html      
-    - text: Side Panel for new orders and customers 
-      url: /pages/tips/global_search.html      
+    - text: Side Panels  
+      url: /pages/tips/side_panels.html   
     - text: Getting more help 
       url: /pages/tips/more_help.html
 - text: Developer Guide 
@@ -256,4 +271,4 @@
     - text: AbanteCart Architecture
       url: /pages/developer/architecture.html      
     - text: Extension Development
-      url: /pages/developer/architecture.html      
+      url: /pages/developer/extension_dev.html      
