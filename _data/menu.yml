@@ -162,7 +162,18 @@
     - text: Layouts
       url: /pages/design/layouts.html      
     - text: Blocks
-      url: /pages/design/blocks.html      
+    level: /pages/design/blocks/
+         subitems:
+       - text: List & search blocks
+         url: /pages/design/blocks/search.html
+       - text: HTML block
+         url: /pages/design/blocks/html_block.html 
+       - text: Data Listing
+         url: /pages/design/blocks/data_listing.html 
+       - text: Banner block
+         url: /pages/design/blocks/banner_block.html
+       - text: Forms Block
+         url: /pages/design/blocks/forms_block.html
     - text: Menu
       url: /pages/design/menu.html      
     - text: Content Pages
