@@ -130,10 +130,10 @@
   level: /pages/orders/
   icon: '<i class="fa fa-money fa-fw"></i>'
   subitems:
-    - text: View Orders
-      url: /pages/orders/view.html      
     - text: Search and filter
       url: /pages/orders/search.html
+    - text: View Orders
+      url: /pages/orders/view.html      
     - text: Modify Orders
       url: /pages/orders/modify.html
 - text: Store Reports
