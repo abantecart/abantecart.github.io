@@ -162,8 +162,8 @@
     - text: Layouts
       url: /pages/design/layouts.html      
     - text: Blocks
-    level: /pages/design/blocks/
-         subitems:
+      level: /pages/design/blocks/
+      subitems:
        - text: List & search blocks
          url: /pages/design/blocks/search.html
        - text: HTML block
