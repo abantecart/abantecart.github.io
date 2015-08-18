@@ -300,22 +300,22 @@
       url: /pages/tools/message_manager.html
     - text: Data Import / Export
       level: /pages/tools/
-      icon: '<i class="fa fa-user-md fa-fw"></i>'
+      icon: '<i class="fa fa-upload fa-fw"></i>'
       subitems:
-       - text: Users
+       - text: Export
          url: /pages/tools/export.html      
-       - text: User Groups
+       - text: Import
          url: /pages/tools/import.html
     - text: File Uploads
       url: /pages/tools/file_uploads.html
     - text: Logs
-      level: /pages/logs/
+      level: /pages/tools/logs/
       icon: '<i class="fa fa-cog fa-fw"></i>'
       subitems:
        - text: install/Upgrade History 
-         url: /pages/logs/install_history.html      
+         url: /pages/tools/logs/install_history.html      
        - text: Error logs
-         url: /pages/logs/error_logs.html
+         url: /pages/tools/logs/error_logs.html
        - text: Scheduled Tasks 
          url: /pages/logs/sheduled_tasks.html
     - text: Stock configuration
