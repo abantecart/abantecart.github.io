@@ -59,6 +59,7 @@
   subitems:
     - text: Manage Categories
       level: /pages/catalog/categories/
+      icon: '<i class="fa fa-file-text fa-fw"></i>'
       subitems:
        - text: List & search categories
          url: /pages/catalog/categories/search.html      
@@ -66,6 +67,7 @@
          url: /pages/catalog/categories/edit.html      
     - text: Manage Products
       level: /pages/catalog/products/
+      icon: '<i class="fa fa-file-text fa-fw"></i>'
       subitems:
        - text: List & search products
          url: /pages/catalog/products/search.html      
@@ -83,6 +85,7 @@
          url: /pages/catalog/products/product_layout.html      
     - text: Manage Manufacturers
       level: /pages/catalog/manufacturers/
+      icon: '<i class="fa fa-file-text fa-fw"></i>'
       subitems:
        - text: List & search Manufacturers
          url: /pages/catalog/manufacturers/search.html      
@@ -164,6 +167,7 @@
   subitems:
     - text: Templates
       level: /pages/design/templates/
+      icon: '<i class="fa fa-file-text fa-fw"></i>'
       subitems:
        - text: Select template
          url: /pages/design/templates/select.html      
@@ -175,6 +179,7 @@
       url: /pages/design/layouts.html      
     - text: Blocks
       level: /pages/design/blocks/
+      icon: '<i class="fa fa-file-text fa-fw"></i>'
       subitems:
        - text: List & search blocks
          url: /pages/design/blocks/search.html
