@@ -316,6 +316,16 @@
       url: /pages/settings/encryption_data.html
     - text: Language Auto Translate
       url: /pages/settings/auto_translate.html
+- text: Manage Localization
+  level: /pages/localization/
+  icon: '<i class="fa fa-wrench fa-fw"></i>'
+  subitems:
+    - text: Languages
+      url: /pages/localization/languages.html
+    - text: Language Definitions
+      url: /pages/localization/language_definitions.html
+    - text: Currencies
+      url: /pages/localization/currencies.html
 - text: Embed your store
   url: /pages/embed/embed.html
   level: /pages/embed/
