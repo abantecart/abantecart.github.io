@@ -196,7 +196,9 @@
     - text: Content Pages
       url: /pages/design/content_pages.html      
     - text: Banners
-      url: /pages/design/banners.html      
+      url: /pages/design/banners.html
+    - text: Banner Slider Management
+      url: /pages/design/banner_slider.html      
     - text: Forms
       url: /pages/design/forms.html      
 - text: Shippings & Payments
