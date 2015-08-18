@@ -21,16 +21,16 @@
       url: /pages/install/system_requirements.html
     - text: Download
       url: /pages/install/download.html
-- text: Core Upgrade
-  level: /pages/upgrade/
-  icon: '<i class="fa fa-sign-in fa-fw"></i>'
-  subitems:
-    - text: Run Upgrade in admin
-      url: /pages/upgrade/auto.html
-    - text: Upgrade manually
-      url: /pages/upgrade/manual.html
-    - text: Troubleshoot
-      url: /pages/upgrade/troubleshoot.html      
+    - text: Core Upgrade
+      level: /pages/upgrade/
+      icon: '<i class="fa fa-sign-in fa-fw"></i>'
+      subitems:
+     - text: Run Upgrade in admin
+       url: /pages/upgrade/auto.html
+     - text: Upgrade manually
+       url: /pages/upgrade/manual.html
+     - text: Troubleshoot
+       url: /pages/upgrade/troubleshoot.html      
 - text: Getting Started
   level: /pages/quickstart/
   icon: '<i class="fa fa-bicycle fa-fw"></i>'
