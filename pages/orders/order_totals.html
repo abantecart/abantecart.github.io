@@ -1,0 +1,103 @@
+---
+layout: default
+title: Order Totals
+description: Manage Order Totals
+redirect_from: "/tag/total.html"
+tags: [
+    ['order_listing', 'List Orders'],
+]
+---
+
+<div><a class="anchorlink" href="#Coupon">Coupon<br /></a> <a class="anchorlink" href="#Handling Fee">Handling Fee<br /></a> <a class="anchorlink" href="#Low Order Fee">Low Order Fee<br /></a> <a class="anchorlink" href="#Sub-Total">Sub-Total<br /></a> <a class="anchorlink" href="#Shipping">Shipping<br /></a> <a class="anchorlink" href="#Taxes">Taxes<br /></a> <a class="anchorlink" href="#Total">Total<br /></a>
+<p><span class="st"><em>Order Totals</em> are the screens that appear to the customer during checkout. </span>Some require additional setup in other menus. Not every menu is required to appear during check-out.</p>
+<p> <a class="jcepopup" href="/img/other/order-total-grid.png"><img src="/img/other/order-total-grid.png" border="0" width="400" /></a></p>
+<p>To install any Order Totals module click install button. Then You can edit or uninstall it.</p>
+<p><em>note: You able to change Status and/or Sort Order directly from the Extensions-&gt;Order Totals listing</em></p>
+<a name="Coupon" class="anchor"></a>
+<h3 class="heading_gray">Setting up Coupon</h3>
+<div class="padding">
+<p>Allow customer to use a coupon towards the purchase price.</p>
+<p>Fill in the following fields:</p>
+<p><strong>Status:</strong> - MUST be "ON" for the order total extension is displayed when checking out.</p>
+<p><strong>Type:</strong> - select type to display. Default is <em>Discount</em></p>
+<p><strong>Sort Order:</strong> - Sort Order set's the order of which the Order Total extension will be displayed amongst others.</p>
+<p><strong>Calculation Order:</strong> - set's the order of which the Order Total extension will be calculated amongst others.</p>
+<p>After you have made your changes, click the SAVE</p>
+<p>With the discount <a class="crosslink" href="ecommerce-documentation/user-manual/admin-user-manual/sales-menu/coupons">coupons</a> feature enabled and active discount coupons in your database, a user might apply a discount to an order which will be deducted from the sub total of the order. This field tells you what the total amount of discount is which has been applied for the specified order.</p>
+</div>
+<a name="Handling Fee" class="anchor"></a>
+<h3 class="heading_gray">Setting up Handling Fee</h3>
+<div class="padding">
+<p>Charge an extra fee to customer during checkout.</p>
+<a class="jcepopup" href="/img/other/abantecart-handling-fee.png"><img src="/img/other/abantecart-handling-fee.png" border="0" alt="" width="500" /></a>
+<p>Fill in the following fields:</p>
+<p><strong>Order Total:</strong> - --.</p>
+<p><strong>Fee:</strong> - the cost value.</p>
+<p><strong>Tax Class:</strong> - Select <a class="crosslink" href="ecommerce-documentation/user-manual/admin-user-manual/system/localization#Tax%20Classes">Tax Class</a>.</p>
+<p><strong>Status:</strong> - MUST be "ON" for the order total extension is displayed when checking out.</p>
+<p><strong>Type:</strong> - select type to display.</p>
+<p><strong>Sort Order:</strong> - Sort Order set's the order of which the Order Total extension will be displayed amongst others.</p>
+<p><strong>Calculation Order:</strong> - set's the order of which the Order Total extension will be calculated amongst others.</p>
+<p>After you have made your changes, click the SAVE</p>
+</div>
+<a name="Low Order Fee" class="anchor"></a>
+<h3 class="heading_gray">Setting up Low Order Fee</h3>
+<div class="padding">
+<p>Charge an extra fee if the customer's order is below an amount you specify.</p>
+<p>Fill in the following fields:</p>
+<p><strong>Order Total:</strong> - --.</p>
+<p><strong>Fee:</strong> - the cost value.</p>
+<p><strong>Tax Class:</strong> - Select <a class="crosslink" href="ecommerce-documentation/user-manual/admin-user-manual/system/localization#Tax%20Classes">Tax Class</a>.</p>
+<p><strong>Status:</strong> - MUST be "ON" for the order total extension is displayed when checking out.</p>
+<p><strong>Type:</strong> - select type to display.</p>
+<p><strong>Sort Order:</strong> - Sort Order set's the order of which the Order Total extension will be displayed amongst others.</p>
+<p><strong>Calculation Order:</strong> - set's the order of which the Order Total extension will be calculated amongst others.</p>
+<p>After you have made your changes, click the SAVE</p>
+</div>
+<a name="Sub-Total" class="anchor"></a>
+<h3 class="heading_gray">Setting up Sub-Total</h3>
+<div class="padding">
+<p>Allow customer to see the sub-total on a separate screen.</p>
+<p>Fill in the following fields:</p>
+<p><strong>Status:</strong> - MUST be "ON" for the order total extension is displayed when checking out.</p>
+<p><strong>Type:</strong> - select type to display.</p>
+<p><strong>Sort Order:</strong> - Sort Order set's the order of which the Order Total extension will be displayed amongst others.</p>
+<p><strong>Calculation Order:</strong> - set's the order of which the Order Total extension will be calculated amongst others.</p>
+<p>After you have made your changes, click the SAVE</p>
+<p>The sub total of the order is the sum of the price of the product of each order item, each respectively multiplied by the quantity/count value of the order item. The sum is basically the total amount of the order before the shipping charges, discounts, taxes and other relevant values are calculated. Sub-Total is nearly always on the top so the calculation order and sort order should be the set to the lowest number.</p>
+</div>
+<a name="Shipping" class="anchor"></a>
+<h3 class="heading_gray">Setting up Shipping</h3>
+<div class="padding">
+<p>Allow customer to see shipping price or select from multiple shippers.</p>
+<p>Fill in the following fields:</p>
+<p><strong>Status:</strong> - MUST be "ON" for the order total extension is displayed when checking out.</p>
+<p><strong>Type:</strong> - select type to display.</p>
+<p><strong>Sort Order:</strong> - Sort Order set's the order of which the Order Total extension will be displayed amongst others.</p>
+<p><strong>Calculation Order:</strong> - set's the order of which the Order Total extension will be calculated amongst others.</p>
+<p>After you have made your changes, click the SAVE</p>
+<p>With shipping calculation enabled one or more tangible order items assigned to the order, this value will tell you what the total shipping charge is for the specified order. This value will be added to the sub total of the order and finally presents the total amount of the order as a sum.</p>
+</div>
+<a name="Taxes" class="anchor"></a>
+<h3 class="heading_gray">Setting up Taxes</h3>
+<div class="padding">
+<p>Allow customer to see the taxes on a separate screen.</p>
+<p>Fill in the following fields:</p>
+<p><strong>Status:</strong> - MUST be "ON" for the order total extension is displayed when checking out.</p>
+<p><strong>Type:</strong> - select type to display. Default is <em>Tax</em></p>
+<p><strong>Sort Order:</strong> - Sort Order set's the order of which the Order Total extension will be displayed amongst others.</p>
+<p><strong>Calculation Order:</strong> - set's the order of which the Order Total extension will be calculated amongst others.</p>
+<p>After you have made your changes, click the SAVE</p>
+</div>
+<a name="Total" class="anchor"></a>
+<h3 class="heading_gray">Setting up Total</h3>
+<div class="padding">
+<p>Allow customer to see one last total before the purchase is billed.</p>
+<p>Fill in the following fields:</p>
+<p><strong>Status:</strong> - MUST be "ON" for the order total extension is displayed when checking out.</p>
+<p><strong>Type:</strong> - select type to display. Default <em>Total</em></p>
+<p><strong>Sort Order:</strong> - Sort Order set's the order of which the Order Total extension will be displayed amongst others.</p>
+<p>After you have made your changes, click the SAVE</p>
+<p>The order total is the amount that the user will be/has been charged. The total is the sum of the sub total minus the discount applied, plus the shipping charges, plus taxes. This is the amount for the payment you receive when the user pays via the payment gateway.</p>
+</div>
+</div>

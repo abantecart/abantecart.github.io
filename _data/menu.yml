@@ -151,6 +151,8 @@
           url: /pages/orders/order_history.html      
     - text: Modify Orders
       url: /pages/orders/modify.html
+    - text: Manage Order Totals
+      url: /pages/orders/order_totals.html
 - text: Store Reports
   level: /pages/reports/
   icon: '<i class="fa fa-file-text fa-fw"></i>'
