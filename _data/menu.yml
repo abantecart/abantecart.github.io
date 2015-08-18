@@ -320,7 +320,7 @@
       url: /pages/settings/auto_translate.html
 - text: Manage Localization
   level: /pages/localization/
-  icon: '<i class="fa fa-fa-globe fa-fw"></i>'
+  icon: '<i class="fa fa-globe fa-fw"></i>'
   subitems:
     - text: Languages
       url: /pages/localization/languages.html
