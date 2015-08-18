@@ -314,6 +314,8 @@
       url: /pages/tips/side_panels.html   
     - text: Getting more help 
       url: /pages/tips/more_help.html
+    - text: Changing Domain Name 
+      url: /pages/tips/change_domain.html
 - text: Developer Guide 
   level: /pages/developer/
   icon: '<i class="fa fa-code fa-fw"></i>'
