@@ -283,7 +283,7 @@
        - text: Manage Multiple Stores
          url: /pages/settings/stores.html
     - text: Stock configuration
-    url: /pages/settings/stock_ configurations.html
+      url: /pages/settings/stock_ configurations.html
 - text: Embed your store
   url: /pages/embed/embed.html
   level: /pages/embed/
