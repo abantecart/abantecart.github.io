@@ -330,7 +330,7 @@
   subitems:
     - text: Languages
       level: /pages/localization/languages/
-      icon: '<i class="fa fa-cog fa-fw"></i>'
+      icon: '<i class="fa fa-language fa-fw"></i>'
       subitems:
        - text: Languages List 
          url: /pages/localization/languages/languages.html      
