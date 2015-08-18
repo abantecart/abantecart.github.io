@@ -326,6 +326,22 @@
       url: /pages/localization/language_definitions.html
     - text: Currencies
       url: /pages/localization/currencies.html
+    - text: Stock Statuses
+      url: /pages/localization/stock_statuses.html
+    - text: Orders Statuses
+      url: /pages/localization/orders_statuses.html
+    - text: Countries
+      url: /pages/localization/countries.html
+    - text: Zones
+      url: /pages/localization/zones.html
+    - text: Locations
+      url: /pages/localization/locations.html
+    - text: Tax Classes
+      url: /pages/localization/tax_classes.html
+    - text: Length classes
+      url: /pages/localization/length_classes.html
+    - text: Weight classes
+      url: /pages/localization/weight_classes.html
 - text: Embed your store
   url: /pages/embed/embed.html
   level: /pages/embed/
