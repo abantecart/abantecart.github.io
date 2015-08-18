@@ -299,7 +299,13 @@
     - text: Message manager
       url: /pages/tools/message_manager.html
     - text: Data Import / Export
-      url: /pages/tools/data_import_export.html
+      level: /pages/tools/
+      icon: '<i class="fa fa-user-md fa-fw"></i>'
+      subitems:
+       - text: Users
+         url: /pages/tools/export.html      
+       - text: User Groups
+         url: /pages/tools/import.html
     - text: File Uploads
       url: /pages/tools/file_uploads.html
     - text: Logs

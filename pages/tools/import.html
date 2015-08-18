@@ -1,0 +1,94 @@
+---
+layout: default
+title: Data Import
+description: Get quick access to any database table or record in the database
+redirect_from: "/tag/import.html"
+tags: [
+	['export', 'Data Export'],
+    ['pages_tool_backup', 'Backup and restore'],
+]
+
+---
+
+
+<div><a class="anchorlink" href="#Example 1: update">Example 1: Update products</a><br /> <a class="anchorlink" href="#Example 2: insert">Example 2: Insert Products</a> <br /> <a class="anchorlink" href="#Example 3: insert">Example 3: Insert Products with Images</a></div>
+<p class="heading_gray">Import</p>
+<p>You able to import data into your AbanteCart store using '.xml' or '.csv' files. Please select correct CSV delimiter. Also You can run import in Test Mode to prevent any unexpected results.</p>
+<p><em>Note: If you import data with table auto-increment index columns provided (example: product_id), default auto action will be </em><strong>update</strong>.<em> In case, new inserts required with auto-increment columns values, action </em><strong>insert</strong><em> needs to be specified </em>manually<em>.</em></p>
+<p><em> For example in XML file, you need to add </em> <strong>&lt;action&gt;insert&lt;/action&gt;</strong> <em>for each table or new column in CSV file.<br /></em></p>
+<a name="Example 1: update"></a>
+<p class="heading_gray">Example 1: Update products</p>
+<p>In this example we will show how to easily update your exiting products.</p>
+<p><strong>First export it.</strong> Go to <em>System-&gt;Data-&gt;Import/Export</em>. In the <em>Export</em> Tab find <em>Products</em>, click to expand table and select only <em>product_descriptions</em> table.</p>
+<a class="jcepopup" href="img/other/export2.png"><img src="img/other/export2.png" border="0" alt="" width="500" /></a><br />
+<p>In the bottom of the page select this export options:</p>
+<div class="padding">
+<p>File Format: <em>CSV</em></p>
+<p>CSV/TXT delimiter: <em>TAB</em></p>
+<p>Click <em>Export</em> button.</p>
+</div>
+<a class="jcepopup" href="img/other/export3.png"><img src="img/other/export3.png" border="0" alt="" width="400" /></a><br />
+<p>Then open exported CSV file in CSV editor like OpenOffice Calc, Microsoft Excel etc. Be sure to open file with correct CSV delimiter.</p>
+<a class="jcepopup" href="img/other/abantecart-import-exampleone-3.png"><img src="img/other/abantecart-import-exampleone-3.png" border="0" alt="" width="740" /></a><br />
+<p>In the opened CSV file easy to update/edit this products fields:</p>
+<div class="padding">
+<p><em>products.model</em></p>
+<p><em>products.quantity</em></p>
+<p><em>products.price</em></p>
+<p><em>products.weight</em></p>
+<p><em>products.length</em></p>
+<p><em>products.width</em></p>
+<p><em>products.height</em></p>
+<p><em>products.sort_order</em></p>
+<p><em>product_descriptions[0].name</em></p>
+<p><em>product_descriptions[0].description</em></p>
+</div>
+<p> </p>
+<p>Also You can edit other fields. But You need to know your<span style="text-decoration: underline;"> correct</span> exiting in your data <em>ids/values</em> for this fields:</p>
+<div class="padding">
+<p><em>products.stock_status_id</em></p>
+<p><em>products.manufacturer_id</em></p>
+<p><em>products.shipping</em></p>
+<p><em>products.tax_class_id</em></p>
+<p>and others</p>
+</div>
+<p><strong>Then Import file</strong>. Go to <em>System-&gt;Data-&gt;Import/Export</em>. In the <em>Import</em> Tab select correct <em>File to import</em> and correct <em>CSV/TXT delimiter</em>. Click <em>Import</em> button.</p>
+<a class="jcepopup" href="img/other/export4.png"><img src="img/other/export4.png" border="0" alt="" width="400" /></a><br />
+<p>After processing the message will be shown. Normally <em>0 errors</em> should be displayed.</p>
+<p>Update complete.</p>
+<img src="img/other/abantecart-import-exampleone-5.png" border="0" alt="" />
+<p> </p>
+<a name="Example 2: insert"></a>
+<p class="heading_gray">Example 2: Insert products</p>
+<p>Before insert a lot of new products just create sample product in Admin&gt;Catalog-&gt;Products and configure it.</p>
+<p>Then export to CSV file. Make sure to select needed tables like:</p>
+<div class="padding">
+<p>product_descriptions</p>
+<p>products_to_categories</p>
+<p>products_to_stores</p>
+<p>or any others tables which one contain needed data for configured sample product.</p>
+</div>
+<p> </p>
+<p>Then open exported CSV file in CSV editor like OpenOffice Calc, Microsoft Excel etc. Be sure to open file with correct CSV delimiter.</p>
+<p>Copy row with sample product to make sure new product will be configured in the same way.</p>
+<p>To <em>insert</em> new products using import tool you need to add new column named <em><strong>action</strong></em> in the exported file. See example for CSV file.</p>
+<a class="jcepopup" href="img/other/abantecart-import-exampleone-7.png"><img src="img/other/abantecart-import-exampleone-7.png" border="0" alt="" width="600" /></a><br />
+<p>Make sure to:</p>
+<div class="padding">
+<p>leave empty <strong>products.product_id</strong></p>
+<p>type <strong>insert</strong> in the <strong>action</strong> column</p>
+<p>and fill others columns like in exiting sample product.</p>
+</div>
+<p><strong>Then Import file</strong>. Go to <em>System-&gt;Data-&gt;Import/Export</em>. In the <em>Import</em> Tab select correct <em>File to import</em> and correct <em>CSV/TXT delimiter</em>. Click <em>Import</em> button.</p>
+<a class="jcepopup" href="img/other/export4.png"><img src="img/other/export4.png" border="0" alt="" width="500" /></a>
+<p>After processing the message will be shown. Normally <em>0 errors</em> should be displayed.</p>
+<img src="img/other/abantecart-import-exampleone-8.png" border="0" alt="" />
+<p>Insert complete. See CSV (TAB delimeted) examples for insert :<br /> categories <a href="img/other/categories-insert-example-tab.csv" target="_blank" title="CSV file">here</a><br /> manufacturers <a href="img/other/manufacturers-insert-example-tab.csv" target="_blank" title="CSV file">here</a><br /> products <a href="img/other/products-insert-example-tab.csv" target="_blank" title="CSV file">here</a>.</p>
+<p> </p>
+<a name="Example 3: insert"></a>
+<p class="heading_gray">Example 3: Insert products with Images</p>
+<p>1 upload images by ftp to this path ../resources/image/somefolder/</p>
+<p>2. update permission for this folder to 777 (or 755)</p>
+<p>3. change/add this columns in your csv file</p>
+<p>resource_map[0].resource_id              = leave empty<br />resource_map[0].object_name            = products<br />resource_library[0][0].type_id            = 1<br />resource_descriptions[0][0][0].language_id      = 1  (the id of installed language)<br />resource_descriptions[0][0][0].name             =    anyname (usually imagefile name)<br />resource_descriptions[0][0][0].title            =    leave empty or fill if you need title<br />resource_descriptions[0][0][0].description      =    leave empty or fill if you need description for the resource<br />resource_descriptions[0][0][0].resource_path    =    somefolder/product_image_1.jpg<br /><br />in case You have 2 languages installed in your cart add next columns<br />resource_descriptions[0][0][1].language_id      = 9  (the correct id of second installed language)<br />resource_descriptions[0][0][1].name             =    anyname (usually imagefile name)<br />resource_descriptions[0][0][1].title            =    leave empty or fill if you need it<br />resource_descriptions[0][0][1].description      =    leave empty or fill if you need it<br />resource_descriptions[0][0][1].resource_path    =    somefolder/product_image_1.jpg<br /><br />------------------------------------------------------------------------------------<br />in case If you need to add multiply images to one product please add more columns<br /><br />resource_map[1].resource_id              = leave empty<br />resource_map[1].object_name           = products<br />resource_library[1][0].type_id            = 1<br />resource_descriptions[1][0][0].language_id   = 1 (the id of installed language)<br />resource_descriptions[1][0][0].name          = sometext (any resource name to second image)<br />resource_descriptions[1][0][0].title            =    leave empty or fill if you need it<br />resource_descriptions[1][0][0].description      =    leave empty or fill if you need it<br />resource_descriptions[1][0][0].resource_path = somefolder/product_image_2.jpg   (path to second image)<br /><br />same for second language if you have it installed<br />resource_descriptions[1][0][1].language_id   = 9 (the correct id of second installed language)<br />resource_descriptions[1][0][1].name          = sometext (any resource name to second image)<br />resource_descriptions[1][0][1].title            =    leave empty or fill if you need it<br />resource_descriptions[1][0][1].description      =    leave empty or fill if you need it<br />resource_descriptions[1][0][1].resource_path = somefolder/product_image_2.jpg   (path to second image)<br /><br /><br />---------------------------------------------------------------------------------------<br />and to add one more image <br />resource_map[2].resource_id                     = leave empty<br />resource_map[2].object_name            = products<br />resource_library[2][0].type_id            = 1<br />resource_descriptions[2][0][0].language_id   = 1 (the id of installed language)<br />resource_descriptions[2][0][0].name          = sometext (any resource name to 3rd image)<br />resource_descriptions[2][0][0].title            =    leave empty or fill if you need it<br />resource_descriptions[2][0][0].description      =    leave empty or fill if you need it<br />resource_descriptions[2][0][0].resource_path = somefolder/product_image_3.jpg   (path to second image)<br /><br />resource_descriptions[2][0][1].language_id   = 9 (the id of second installed language)<br />resource_descriptions[2][0][1].name          = sometext (any resource name to 3rd image)<br />resource_descriptions[2][0][1].title            =    leave empty or fill if you need it<br />resource_descriptions[2][0][1].description      =    leave empty or fill if you need it<br />resource_descriptions[2][0][1].resource_path = somefolder/product_image_3.jpg   (path to second image)<br /><br />You can and more and more images for one product with similar way</p>
+<p>products with images CSV Tab delimited example download <a href="img/other/insert_product_with_images.csv" target="_blank" title="CSV file">here</a>.</p>
