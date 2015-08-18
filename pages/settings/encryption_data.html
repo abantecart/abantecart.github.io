@@ -1,0 +1,46 @@
+---
+layout: default
+title: Encryption Data Manager
+description: Maintain up to date security for data provided buy customers
+redirect_from: "/tag/encryption_data.html"
+tags: [
+    ['extension_listing', 'List Extensions'],
+]
+
+---
+
+<p>It is important for eCommerce site to maintain up to date security for data provided buy customers. This is required buy customers, industry and PCI standards.<br /> By enabling AbanteCart data encryption you can secure your customers data from access. Information, such as customer addresses, emails, phone numbers, credit cards, etc. will be encrypted and not readable. Encryption key can be stored securely and prevent access to this data in event of hacking or database attack. 
+<br /><br /> <strong>Requirement:</strong> PHP =&gt; 5.3 and openSSL enabled <br />(Contact your server admin or hosting company)<br />
+ NOTE: Do not confuse SSL data encryption with signed SSL certificates (HTTPS) used for browser access to sites
+ <br /><br /> <strong>Important! Backup your code and database before you start!<br /> For security keep backup of unencrypted data out of your server!</strong> <br /><br /> 
+
+<h4>1. Configuration:</h4>
+Add key storage location path. <br /> Add below lines to /system/config.php file. 
+<br /> <br /> <strong> define('ENCRYPTION_KEYS_DIR', '/path/to/keys/');</strong><br /> <strong> define('DATA_ENCRYPTION_ENABLED', true);</strong><br /> <br /> Change path to your specific path on your server and it has to be writable/readable only to web-server <br /> If ENCRYPTION_KEYS_DIR is not provided, default path will be used in /system/keys/ . Important to keep these keys secure! 
+<br /><br />
+
+<h4>2. Generate New Key:</h4>
+in Encryption Data Tools generate new key with some unique key name provided (no spaces or special characters).<a class="jcepopup"  href="/img/other/encrypt-1.png"><img src="/img/other/encrypt-1.png" border="0" alt="" width="500" /></a>
+ <br /><br /> Important to use only 1 key at the time and add below line to /system/config.php file with key name that will be default 
+<br /> <strong> define('DATA_ENCRYPTION_KEYPAIR', 'your_key_name');</strong>
+<br /> This is the key name that will be used for read/write at one given time. 
+<br /><br />
+
+<h4>3. Encrypt all data:</h4>
+Now you need to run encryption for all the data using new key created at prior step. 
+<br /> You can do this in Encryption Data Tools of Encrypt Data tab. <a class="jcepopup" href="/img/other/encrypt-2.png"><img src="/img/other/encrypt-2.png" border="0" alt="" width="500" /></a>
+ <br />Just follow the steps for "data encryption" process 
+<br /><br />
+<h4>4. Require login name:</h4> 
+Customer emails are encrypted now. To prevent login issues and duplicate accounts, set "Require login name" setting to ON. 
+<br /> Setting is located in <a class="crosslink" href="ecommerce-documentation/user-manual/admin-user-manual/system/settings/checkout">Settings -&gt; Checkout section</a> <br /> Existing customers will be asked to create unique login name at next time they login to the account
+ <br /><br /> All customers data is secured now! Start testing!
+ <br /><br />
+<div class="padding"><strong>NOTES: </strong><br /> 1. Keep Key in secure location with restricted file permissions for root and Apache (webserver)<br /> 3. Backup your keys in some remote secure location. Lost keys will cause loss of all data
+<br /> 3. There is no key expiration management. <br /> 4. Search or look up by encrypted user data will not work (search by address, phone number, etc. will not work)<br /> 5. <strong>Once data in encrypted there is NO undo and extension can not be disabled. </strong> <br /> These needs to be accounted for in key management procedures <br /><br /> 
+</div>
+
+<h4>5. Rotate (change) encryption key:</h4> 
+ - Generate new key pair <br /> - Set new key as default key into configuration file 
+<br /> - Go to Encryption Usage Tab select new key in Rotate column and click on Encrypt Data button<img src="/img/other/encrypt-3.png" width="500" border="0" alt="" /> 
+<br /><br /> Need help configuring, supporting or extending functionality, contact www.abantecart.com <a href="http://forum.abantecart.com" target="_blank">forum</a> or <a href="http://www.abantecart.com/contact-us" target="_blank">paid support</a></p>
