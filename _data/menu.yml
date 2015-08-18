@@ -317,7 +317,7 @@
        - text: Error logs
          url: /pages/tools/logs/error_logs.html
        - text: Scheduled Tasks 
-         url: /pages/logs/sheduled_tasks.html
+         url: /pages/tools/logs/sheduled_tasks.html
     - text: Stock configuration
       url: /pages/settings/stock_configurations.html
     - text: Encryption Data Manager
@@ -329,7 +329,13 @@
   icon: '<i class="fa fa-globe fa-fw"></i>'
   subitems:
     - text: Languages
-      url: /pages/localization/languages.html
+      level: /pages/localization/languages/
+      icon: '<i class="fa fa-cog fa-fw"></i>'
+      subitems:
+       - text: Languages List 
+         url: /pages/localization/languages/languages.html      
+       - text: Edit Language
+         url: /pages/localization/languages/edit_language.html
     - text: Language Definitions
       url: /pages/localization/language_definitions.html
     - text: Currencies
