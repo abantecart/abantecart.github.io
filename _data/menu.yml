@@ -284,6 +284,18 @@
          url: /pages/settings/system.html
        - text: Manage Multiple Stores
          url: /pages/settings/stores.html
+  level: /pages/users/
+  icon: '<i class="fa fa-wrench fa-fw"></i>'
+  subitems:
+    - text: Admin users
+      url: /pages/users/
+      level: /pages/users/
+      icon: '<i class="fa fa-cog fa-fw"></i>'
+      subitems:
+       - text: Users
+         url: /pages/users/users.html      
+       - text: User Groups
+         url: /pages/users/user_groups.html
     - text: Stock configuration
       url: /pages/settings/stock_configurations.html
     - text: Encryption Data Manager
