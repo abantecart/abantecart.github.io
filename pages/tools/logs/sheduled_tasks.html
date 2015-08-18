@@ -1,0 +1,49 @@
+---
+layout: default
+title: Scheduled tasks
+description: Starting with version 1.2.0 AbanteCart support the creation of scheduled tasks.
+redirect_from: "/tag/pages_tool_task.html"
+tags: [
+    ['pages_tool_backup', 'Backup and restore'],
+]
+
+---
+
+<div>Starting with version 1.2.0 AbanteCart support the creation of scheduled tasks.
+<h4 class="heading_gray"><a name="Scheduled Tasks list"></a>Scheduled Tasks list</h4>
+<a class="jcepopup" href="/img/other/task-grid.png"><img src="/img/other/task-grid.png" border="0" width="400" /></a>
+<p>These task can be of two types - with immediate execution and deferred.</p>
+<p>Each task has its own properties, which are stored in a database table <strong>tasks</strong>.</p>
+<p>These properties include:
+ <ul>
+<li>task_id</li><li>
+name - a unique name for the job</li><li>
+starter - user_id of the user who has the right to run the task (top-administrator has it always)</li><li>
+status - status</li><li>
+start_time - task start time</li><li>
+last_time_run - the last task start</li><li>
+progress - the percentage of completion</li><li>
+last_result - 0  - success,  1 - failed </li><li>
+run_interval - start task interval in seconds.</li><li>
+max_execution_time - the maximum duration of the task (not available yet)</li></ul></p>
+
+<p>Table is also used for the extended properties <strong>task_details</strong> in which:
+<ul><li>task_id</li><li>
+created_by - the name of the one who created the task</li><li>
+settings - abstract serialized array with additional task settings</li></ul></p>
+<p>Each task consists of steps. A description of each step is stored in the database table <strong>task_steps</strong>. As the task, each step has a status sequence number, the last run time and result. In addition, the table must specify RT controller performing step. For example: task / tool / backup / backupfiles</p>
+
+<p>Also in the table present  <strong>settings</strong> column in which should be recorded the serialized array. This array can be as arguments to functions and additional information on the launch step. For example <strong>interrupt_on_step_fault</strong> set to true or 1 will stop the execution of the remaining steps of the job, if the execution of the step failed.</p>
+
+<p>In cases where the execution of at least one of the listed task steps fails, the task is generally considered a failed. In other words, successfully completed task, this task is complete all the steps successfully.</p>
+
+<p>Running tasks can occur in two ways.
+<ol><li>console launch script task.php (from cron). task.php receive a list of all waiting tasks, then sort all in order and run in the background</li>
+<li>The launch of the UI (meaning immediately start the event, such as clicking a button).</li></ol> In the template admin file public_html / admin / view / default / javascript / general.js there are several js-functions for starting task, opening a modal window and display the start process steps.</p>
+
+<p>Functions hang event on an element with the css-class "<strong>task_run</strong>". Also, this element must be two custom attribute: <strong>data-run-task-url</strong> (url to which js-script gets the job description and all the steps in the json-format to run in a loop)
+ and <strong>data-complete-task-url</strong> - URL, which will be forwarded to the browser after successful completion of the task.</p>
+<p>As an example of creating and launching an urgent job, see button.
+admin->data-><a class="crosslink" href="ecommerce-documentation/user-manual/admin-user-manual/system/backuprestore">backup</a> -> “backup now”.</p>
+<p>To see examples of the data in the database tables described above, click admin-> data-><a class="crosslink" href="ecommerce-documentation/user-manual/admin-user-manual/system/backuprestore">backup</a> -> "schedule backup".</p>
+</div>
