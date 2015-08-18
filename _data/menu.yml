@@ -280,6 +280,10 @@
          url: /pages/settings/system.html
        - text: Manage Multiple Stores
          url: /pages/settings/stores.html
+- text: Embed your store
+  url: /pages/embed/embed.html
+  level: /pages/embed/
+  icon: '<i class="fa fa-code-fork fa-fw"></i>'
 - text: Extend Functionally
   level: /pages/extensions/
   icon: '<i class="fa fa-puzzle-piece fa-fw"></i>'

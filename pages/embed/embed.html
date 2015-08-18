@@ -1,0 +1,63 @@
+---
+layout: default
+title: API
+description: API Settings
+redirect_from: "/tag/embed.html"
+tags: [
+    ['category_listing', 'Listing Categories'],
+    ['manufacturer_listing', 'List Manufacturers'],
+    ['product_edit', 'Edit Products'],
+]
+
+---
+
+<div>
+<a class="anchorlink" href="#Example-Embed-Products">Example 1: Embed products</a><br />
+ <a class="anchorlink" href="#Example-Embed-Links">Example 2: Embed store's links</a> <br /> 
+</div>
+
+<p>We are very excited to introduce new "products embed" feature with new version 1.2.3. With AbanteCart 1.2.3 you can sell anything on any website.</p>
+<p>Whether you already have site, blog or you are using a cms like wordpress, joomla or drupal, its easy to embed your AbanteCart store ecommerce functionality</p>
+<p>AbanteCart allows you to embed:
+<ul>
+<li>products</li>
+<li>categories</li>
+<li>brands</li>
+<li>store links</li>
+</ul>
+</p>
+<a name="Example-Embed-Products" class="anchor"></a>
+<h3>This guide show how to embed your products to blog with few simple steps</h3>
+<div class="padding"><h4>Step 1</h4>
+<p>Visit product page which one you want to embed in the blog<br />
+<a class="jcepopup" href="/img/other/embed-product-code-1.png"><img src="/img/other/embed-product-code-1.png" border="0" width="400" /></a><br>
+<h4>Step 2</h4>
+Select data you want to display and copy generated html code<br>
+<a class="jcepopup" href="/img/other/embed-product-code-2.png"><img src="/img/other/embed-product-code-2.png" border="0" width="400" /></a><br>
+<h4>Step 3</h4>
+Paste it into the target page<br />
+<a class="jcepopup" href="/img/other/abantecart-insert-embed-code.png"><img src="/img/other/abantecart-insert-embed-code.png" border="0" width="400" /></a><br>
+<h4>That's all</h4>
+Visit your html page<br>
+<a class="jcepopup" href="/img/other/abantecart-embeded-product.png"><img src="/img/other/abantecart-embeded-product.png" border="0" width="400" /></a><br>
+By default product preview and checkout process in modal popup window. You can modify this by change Embed Click Action setting in <a class="crosslink" href="ecommerce-documentation/admin-user-manual/system/settings/general" target="_blank">General Settings page</a><br>
+<a class="jcepopup" href="/img/other/abantecart-embeded-product-checkout.png"><img src="/img/other/abantecart-embeded-product-checkout.png" border="0" width="400" /></a><br />
+<em>Note: If some html page element overlap embed window please modify <strong>z-index</strong> property in CSS  </em>
+</p></div>
+<br />
+<a name="Example-Embed-Links" class="anchor"></a>
+<h3>This guide show how to embed store links</h3>
+<em>Note: You can embed links only if you have embedded product or category on same page!</em>
+<div class="padding">
+<h4>Step 1</h4>
+<p>Copy URL your need to embed</p>
+<pre>http://demo.abantecart.com/index.php?rt=content/content&content_id=2</pre>
+<h4>Step 2</h4>
+<p>Modify URL add <strong>r/</strong> and  add special tags</p>
+<pre>
+&lt;a data-href=&quot;http://demo.abantecart.com/index.php?rt=r/content/content&content_id=2&quot;  data-html=&quot;true&quot; data-target=&quot;#abc_embed_modal&quot; data-toggle=&quot;abcmodal&quot; href=&quot;#&quot;&gt;your link title&lt;/a&gt;
+</pre>
+</div>
+
+
+
