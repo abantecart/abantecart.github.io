@@ -293,7 +293,23 @@
        - text: User Groups
          url: /pages/users/user_groups.html
     - text: Backup/Restore tool
-      url: /pages/backup_restore/
+      url: /pages/tools/backup_restore.html
+    - text: Migration tool
+      url: /pages/tools/migration.html
+    - text: Data Import / Export
+      url: /pages/tools/data_import_export.html
+    - text: File Uploads
+      url: /pages/tools/file_uploads.html
+    - text: Logs
+      level: /pages/logs/
+      icon: '<i class="fa fa-cog fa-fw"></i>'
+      subitems:
+       - text: install/Upgrade History 
+         url: /pages/logs/install_history.html      
+       - text: Error logs
+         url: /pages/logs/error_logs.html
+       - text: Scheduled Tasks 
+         url: /pages/logs/sheduled_tasks.html
     - text: Stock configuration
       url: /pages/settings/stock_configurations.html
     - text: Encryption Data Manager
