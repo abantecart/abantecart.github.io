@@ -286,7 +286,7 @@
          url: /pages/settings/stores.html
     - text: Admin users
       level: /pages/users/
-      icon: '<i class="fa fa-cog fa-fw"></i>'
+      icon: '<i class="fa fa-user-md fa-fw"></i>'
       subitems:
        - text: Users
          url: /pages/users/users.html      
@@ -296,6 +296,8 @@
       url: /pages/tools/backup_restore.html
     - text: Migration tool
       url: /pages/tools/migration.html
+    - text: Message manager
+      url: /pages/tools/message_manager.html
     - text: Data Import / Export
       url: /pages/tools/data_import_export.html
     - text: File Uploads
@@ -318,7 +320,7 @@
       url: /pages/settings/auto_translate.html
 - text: Manage Localization
   level: /pages/localization/
-  icon: '<i class="fa fa-wrench fa-fw"></i>'
+  icon: '<i class="fa fa-fa-globe fa-fw"></i>'
   subitems:
     - text: Languages
       url: /pages/localization/languages.html
