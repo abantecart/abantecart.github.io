@@ -212,8 +212,8 @@
     url: /pages/ship_and_pay/enable_shipping.html
     icon: '<i class="fa fa-truck fa-fw"></i>'
     subitems:
-     - text: Flat Rate
-       url: /pages/ship_and_pay/shippings/flatrate.html
+     - text: Fedex
+       url: /pages/ship_and_pay/shippings/fedex.html
      - text: Free shipping
        url: /pages/ship_and_pay/shippings/free_shipping.html
   - text: Enable Payment
