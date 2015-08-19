@@ -346,7 +346,7 @@
          url: /pages/localization/currencies/currencies.html      
        - text: Edit Currency
          url: /pages/localization/currencies/edit_currency.html
-    - text: Stock Statuses
+    - text: Stock and Order Statuses
       level: /pages/localization/statuses/
       icon: '<i class="fa fa-suitcase fa-fw"></i>'
       subitems:
@@ -354,17 +354,21 @@
          url: /pages/localization/statuses/stock_status_list.html      
        - text: Edit Stock Status
          url: /pages/localization/statuses/edit_stock_status.html
-    - text: Orders Statuses
-      icon: '<i class="fa fa-flag-checkered fa-fw"></i>'
-      subitems:
        - text: List Order Statuses 
          url: /pages/localization/statuses/order_status_list.html      
        - text: Edit Order Status
          url: /pages/localization/statuses/edit_order_status.html
-    - text: Countries
-      url: /pages/localization/countries.html
-    - text: Zones
-      url: /pages/localization/zones.html
+    - text: Countries and Zones
+      icon: '<i class="fa fa-map-marker fa-fw"></i>'
+      subitems:
+       - text: List Countries 
+         url: /pages/localization/country_and_zone/country_list.html      
+       - text: Edit Country
+         url: /pages/localization/country_and_zone/edit_country.html
+       - text: List Zones 
+         url: /pages/localization/country_and_zone/zone_list.html      
+       - text: Edit Zone
+         url: /pages/localization/country_and_zone/edit_zone.html
     - text: Locations
       url: /pages/localization/locations.html
     - text: Tax Classes
