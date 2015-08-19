@@ -339,7 +339,13 @@
     - text: Language Definitions
       url: /pages/localization/language_definitions.html
     - text: Currencies
-      url: /pages/localization/currencies.html
+      level: /pages/localization/currencies/
+      icon: '<i class="fa fa-language fa-fw"></i>'
+      subitems:
+       - text: List Currencies 
+         url: /pages/localization/currencies/currencies.html      
+       - text: Edit Currency
+         url: /pages/localization/currencies/edit_currency.html
     - text: Stock Statuses
       url: /pages/localization/stock_statuses.html
     - text: Orders Statuses
