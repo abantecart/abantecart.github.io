@@ -231,6 +231,10 @@
        url: /pages/ship_and_pay/shippings/per_item.html
      - text: Free Shipping
        url: /pages/ship_and_pay/shippings/free.html
+     - text: Flat rate
+       url: /pages/ship_and_pay/shippings/flat_rate.html
+     - text: CityLink
+       url: /pages/ship_and_pay/shippings/citylink.html
   - text: Enable Payment
     level: /pages/ship_and_pay/payments/
     icon: '<i class="fa fa-money fa-fw"></i>'
