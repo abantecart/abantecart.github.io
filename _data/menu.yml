@@ -269,7 +269,11 @@
      - text: 2Checkout
        url: /pages/ship_and_pay/payments/2co.html
      - text: SagePay Payments
-       url: /pages/ship_and_pay/payments/sagepay_payments.html 
+       url: /pages/ship_and_pay/payments/sagepay.html
+     - text: SagePay US Payments
+       url: /pages/ship_and_pay/payments/sagepay_us.html
+     - text: SagePay Direct
+       url: /pages/ship_and_pay/payments/sagepay_direct.html   
      - text: PayPoint
        url: /pages/ship_and_pay/payments/paypoint.html  
      - text: Paymate
