@@ -114,7 +114,12 @@
     - text: Place banners
       url: /pages/promotions/banners.html      
     - text: Manage Coupons
-      url: /pages/promotions/coupons.html      
+      icon: '<i class="fa fa-files-o fa-fw"></i>'
+      subitems:
+       - text: List & search coupons
+         url: /pages/promotions/search_coupons.html      
+       - text: Add & edit coupons
+         url: /pages/promotions/products/edit_coupons.html      
 - text: Managing Customers
   level: /pages/customers/
   icon: '<i class="fa fa-users fa-fw"></i>'
