@@ -379,7 +379,7 @@
        - text: List Tax Classes 
          url: /pages/localization/locations_and_taxes/tax_classes_list.html      
        - text: Edit Tax Class
-         url: /pages/localization/locations_and_taxes/edit_location.html
+         url: /pages/localization/locations_and_taxes/edit_tax_class.html
        - text: Add Rates to Tax Class
          url: /pages/localization/locations_and_taxes/add_rates.html
     - text: Length & Weight classes
