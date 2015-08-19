@@ -235,6 +235,10 @@
        url: /pages/ship_and_pay/shippings/flat_rate.html
      - text: CityLink
        url: /pages/ship_and_pay/shippings/citylink.html
+     - text: Weight Based
+       url: /pages/ship_and_pay/shippings/weight_based.html
+     - text: Pickup From Store
+       url: /pages/ship_and_pay/shippings/pickup.html
   - text: Enable Payment
     level: /pages/ship_and_pay/payments/
     icon: '<i class="fa fa-money fa-fw"></i>'
