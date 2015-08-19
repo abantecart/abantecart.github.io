@@ -355,7 +355,12 @@
        - text: Edit Stock Status
          url: /pages/localization/statuses/edit_stock_status.html
     - text: Orders Statuses
-      url: /pages/localization/orders_statuses.html
+      icon: '<i class="fa fa-flag-checkered fa-fw"></i>'
+      subitems:
+       - text: List Order Statuses 
+         url: /pages/localization/statuses/order_status_list.html      
+       - text: Edit Order Status
+         url: /pages/localization/statuses/edit_order_status.html
     - text: Countries
       url: /pages/localization/countries.html
     - text: Zones
