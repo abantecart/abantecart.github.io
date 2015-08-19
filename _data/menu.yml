@@ -223,6 +223,8 @@
        url: /pages/ship_and_pay/shippings/royal_mail.html
      - text: Parcelforce 48
        url: /pages/ship_and_pay/shippings/parcelforce_48.html
+     - text: USPS
+       url: /pages/ship_and_pay/shippings/usps.html
   - text: Enable Payment
     level: /pages/ship_and_pay/payments/
     icon: '<i class="fa fa-money fa-fw"></i>'
