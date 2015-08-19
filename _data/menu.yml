@@ -225,6 +225,10 @@
        url: /pages/ship_and_pay/shippings/parcelforce_48.html
      - text: USPS
        url: /pages/ship_and_pay/shippings/usps.html
+     - text: UPS
+       url: /pages/ship_and_pay/shippings/ups.html
+     - text: Per Item
+       url: /pages/ship_and_pay/shippings/per_item.html
   - text: Enable Payment
     level: /pages/ship_and_pay/payments/
     icon: '<i class="fa fa-money fa-fw"></i>'
