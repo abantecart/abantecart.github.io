@@ -340,14 +340,20 @@
       url: /pages/localization/language_definitions.html
     - text: Currencies
       level: /pages/localization/currencies/
-      icon: '<i class="fa fa-language fa-fw"></i>'
+      icon: '<i class="fa fa-usd fa-fw"></i>'
       subitems:
        - text: List Currencies 
          url: /pages/localization/currencies/currencies.html      
        - text: Edit Currency
          url: /pages/localization/currencies/edit_currency.html
     - text: Stock Statuses
-      url: /pages/localization/stock_statuses.html
+      level: /pages/localization/statuses/
+      icon: '<i class="fa fa-suitcase fa-fw"></i>'
+      subitems:
+       - text: List Stock Statuses 
+         url: /pages/localization/statuses/stock_status_list.html      
+       - text: Edit Stock Status
+         url: /pages/localization/statuses/edit_stock_status.html
     - text: Orders Statuses
       url: /pages/localization/orders_statuses.html
     - text: Countries
