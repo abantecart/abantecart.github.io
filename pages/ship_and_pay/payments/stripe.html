@@ -1,0 +1,41 @@
+---
+layout: default
+title: Stripe
+description: Configure Stripe payment.
+redirect_from: "/tag/stripe.html"
+tags: [
+	['enable_shipping', 'Setup Shippings'],
+	['pages_tool_package_installer', 'Install Extensions'], 
+]
+
+---
+
+						<!-- Category Info -->
+						<div class="category-info ">
+							<h3 class="category-title">Stripe</h3>
+							<h4 class="category-description">Extensions > Payment > Stripe</h4>
+							<p></p>
+						</div>
+						<!-- End of Caregory Info -->
+						
+
+<p>Fill in the following fields:</p>
+<p><strong>Store:</strong> - Select your store.</p>
+<p><strong>Status:</strong> - MUST be "ON" for Payment module to appear in your store.</p>
+<p><strong>Success & settled:</strong> - Select main order status you want to set in responce to payment processor status.</p>
+<p><strong>Success & not settled:</strong> -Select main order status you want to set in responce to payment processor status. The recommended status is Processing, however you can change this to whichever status you prefer.</p>
+<p><strong>Decline:</strong> - Order status you want to record in history in responce to payment processor status. Main order status is not affected. Order will not be placed only after payment is a success.</p>
+<p>Additional settings. Click to connect with Stripe live or test accounts. In cause you have connection issues click 'Cannot connect' link to set up Stripe manually<br>
+Every account is divided into two universes: one for testing, and one for running on your live website. All API requests exist in one of those two universes, and objects in one universe cannot be manipulated by objects in the other.<br>
+
+In test mode, credit card transactions don't go through the actual credit card network — instead, they go through simple checks in Stripe to validate that they look like they might be credit cards. You should only use your test API keys for testing. This will make sure that you don't accidentally modify your live customers or charges.
+</p>
+ <p><a class="jcepopup" href="/img/other/stripe-abantecart.png"><img src="/img/other/stripe-abantecart.png" border="0" alt="" width="550" /></a></p>
+<p><strong>Location:</strong> - select proper <a class="crosslink" href="ecommerce-documentation/user-manual/admin-user-manual/system/localization#Locations" target="_blank">location</a></p>
+<p><strong>Storefront Icon:</strong> - Payment Icon to be displayed at checkout payment selection</p>
+<p><strong>Total Order Minimum:</strong> - Minimum order amount to be reached to allow this payment</p>
+<p><strong>Total Order Maximum:</strong> - Maximum order amount to be reached to disallow this payment</p>
+<p><strong>Auto Select:</strong> - You can set to skip payment selection page if there is only one payment option. This payment method will be selected automatically</p>
+<p><strong>Sort Order:</strong> - Sort Order set's the order of which the Payment will be displayed amongst others.</p>
+<p>After you have made your changes, click the SAVE</p>
+					
