@@ -294,9 +294,13 @@
       icon: '<i class="fa fa-user-md fa-fw"></i>'
       subitems:
        - text: Users
-         url: /pages/users/users.html      
+         url: /pages/users/users.html
+       - text: Edit User
+         url: /pages/users/edit_user.html      
        - text: User Groups
          url: /pages/users/user_groups.html
+       - text: Permissions
+         url: /pages/users/user_permissions.html
     - text: Backup/Restore tool
       url: /pages/tools/backup_restore.html
     - text: Migration tool
