@@ -114,7 +114,7 @@
     - text: Place banners
       url: /pages/promotions/banners.html      
     - text: Manage Coupons
-      icon: '<i class="fa fa-files-o fa-fw"></i>'
+      icon: '<i class="fa fa-ticket fa-fw"></i>'
       subitems:
        - text: List & search coupons
          url: /pages/promotions/search_coupons.html      
