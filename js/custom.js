@@ -11,10 +11,6 @@ $(document).ready(function() {
 	});
 	
 	//Automaticaly open submenus for selected menus
-	$( ".active-submenu" ).each(function() {
-		//$(this).find('ul').show();
-	});
 	$('.active-submenu').children('ul').show();
-	
-	
+		
 });
