@@ -229,6 +229,8 @@
        url: /pages/ship_and_pay/shippings/ups.html
      - text: Per Item
        url: /pages/ship_and_pay/shippings/per_item.html
+     - text: Free Shipping
+       url: /pages/ship_and_pay/shippings/free.html
   - text: Enable Payment
     level: /pages/ship_and_pay/payments/
     icon: '<i class="fa fa-money fa-fw"></i>'
