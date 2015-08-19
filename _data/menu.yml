@@ -392,7 +392,7 @@
        - text: List Weight Classes 
          url: /pages/localization/length_and_weight/weight_list.html      
        - text: Edit Weight Class
-         url: /pages/localization/length_and_weight/edit_Weight.html
+         url: /pages/localization/length_and_weight/edit_weight.html
 - text: Embed your store
   url: /pages/embed/embed.html
   level: /pages/embed/
