@@ -369,14 +369,30 @@
          url: /pages/localization/country_and_zone/zone_list.html      
        - text: Edit Zone
          url: /pages/localization/country_and_zone/edit_zone.html
-    - text: Locations
-      url: /pages/localization/locations.html
-    - text: Tax Classes
-      url: /pages/localization/tax_classes.html
-    - text: Length classes
-      url: /pages/localization/length_classes.html
-    - text: Weight classes
-      url: /pages/localization/weight_classes.html
+    - text: Locations and Taxes
+      icon: '<i class="fa fa-location-arrow fa-fw"></i>'
+      subitems:
+       - text: List Locations 
+         url: /pages/localization/locations_and_taxes/locations_list.html      
+       - text: Edit Location
+         url: /pages/localization/locations_and_taxes/edit_location.html
+       - text: List Tax Classes 
+         url: /pages/localization/locations_and_taxes/tax_classes_list.html      
+       - text: Edit Tax Class
+         url: /pages/localization/locations_and_taxes/edit_location.html
+       - text: Add Rates to Tax Class
+         url: /pages/localization/locations_and_taxes/add_rates.html
+    - text: Length & Weight classes
+      icon: '<i class="fa fa-bus fa-fw"></i>'
+      subitems:
+       - text: List Length Classes 
+         url: /pages/localization/length_and_weight/length_list.html      
+       - text: Edit Length Class
+         url: /pages/localization/length_and_weight/edit_length.html
+       - text: List Weight Classes 
+         url: /pages/localization/length_and_weight/weight_list.html      
+       - text: Edit Weight Class
+         url: /pages/localization/length_and_weight/edit_Weight.html
 - text: Embed your store
   url: /pages/embed/embed.html
   level: /pages/embed/
