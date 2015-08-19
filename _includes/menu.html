@@ -1,11 +1,16 @@
 <ul {{include.class}}>
 {% for item in include.nav %}
+	{% if item.icon %}
+		{% assign faicon = item.icon %}
+    {% else %}
+		{% assign faicon = '<i class="fa fa-caret-right fa-fw"></i>' %}
+    {% endif %}
 	{% if item.level %}
     <li {% if page.url contains item.level %}class="active-menu active-submenu selected"{% endif %}>
-    	 <a class="sub_menu_link" href="{% if item.url %}{{ item.url }}{% else %}#{% endif %}">{{ item.icon }} {{ item.text }}</a>
+    	 <a class="sub_menu_link" href="{% if item.url %}{{ item.url }}{% else %}#{% endif %}">{{ faicon }} {{ item.text }}</a>
     {% else %}
     <li {% if page.url contains item.url %}class="active-menu selected"{% endif %}>    
-         <a href="{{ item.url }}">{{ item.icon }} {{ item.text }}</a>
+         <a href="{{ item.url }}">{{ faicon }} {{ item.text }}</a>
     {% endif %}
     {% if item.subitems %}
         {% include menu.html nav=item.subitems %}
