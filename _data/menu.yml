@@ -119,7 +119,7 @@
        - text: List & search coupons
          url: /pages/promotions/search_coupons.html      
        - text: Add & edit coupons
-         url: /pages/promotions/products/edit_coupons.html      
+         url: /pages/promotions/edit_coupons.html      
 - text: Managing Customers
   level: /pages/customers/
   icon: '<i class="fa fa-users fa-fw"></i>'
