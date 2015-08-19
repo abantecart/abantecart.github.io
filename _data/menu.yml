@@ -383,7 +383,7 @@
        - text: Add Rates to Tax Class
          url: /pages/localization/locations_and_taxes/add_rates.html
     - text: Length & Weight classes
-      icon: '<i class="fa fa-bus fa-fw"></i>'
+      icon: '<i class="fa fa-truck fa-fw"></i>'
       subitems:
        - text: List Length Classes 
          url: /pages/localization/length_and_weight/length_list.html      
