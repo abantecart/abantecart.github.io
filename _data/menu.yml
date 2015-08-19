@@ -247,13 +247,13 @@
      - text: Stripe
        url: /pages/ship_and_pay/payments/stripe.html
      - text: PayPal Payments Standard
-       url: /pages/ship_and_pay/payments/paypal_payments.html
+       url: /pages/ship_and_pay/payments/paypal_payments_std.html
      - text: PayPal Payments Pro
-       url: /pages/ship_and_pay/payments/paypal_payments.html
+       url: /pages/ship_and_pay/payments/paypal_payments_pro.html
      - text: PayPal Payments Pro (UK)
-       url: /pages/ship_and_pay/payments/paypal_payments.html
+       url: /pages/ship_and_pay/payments/paypal_payments_pro_uk.html
      - text: PayPal Express Checkout
-       url: /pages/ship_and_pay/payments/paypal_payments.html
+       url: /pages/ship_and_pay/payments/paypal_payments_express.html
      - text: Cheque / Money Order
        url: /pages/ship_and_pay/payments/check_money_order.html    
      - text: Authorize.Net (AIM)
