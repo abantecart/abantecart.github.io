@@ -50,7 +50,7 @@
     - text: Enable Taxes
       url: /pages/quickstart/setup_taxes.html
     - text: Enable Payments
-      url: /pages/quickstart/enable_payment.html
+      url: /pages/quickstart/shipping_quick_start.html
     - text: Enable Shipping
       url: /pages/quickstart/shipping_quick_start.html
 - text: Managing Product Catalog
