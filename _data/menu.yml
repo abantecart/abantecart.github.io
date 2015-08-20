@@ -52,7 +52,7 @@
     - text: Enable Payments
       url: /pages/quickstart/enable_payment.html
     - text: Enable Shipping
-      url: /pages/quickstart/enable_shipping.html
+      url: /pages/quickstart/shipping_quick_start.html
 - text: Managing Product Catalog
   level: /pages/catalog/
   icon: '<i class="fa fa-cubes fa-fw"></i>'
