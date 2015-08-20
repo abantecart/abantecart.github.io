@@ -353,8 +353,6 @@
       url: /pages/settings/stock_configurations.html
     - text: Encryption Data Manager
       url: /pages/settings/encryption_data.html
-    - text: Language Auto Translate
-      url: /pages/settings/auto_translate.html
 - text: Manage Localization
   level: /pages/localization/
   icon: '<i class="fa fa-globe fa-fw"></i>'
@@ -424,6 +422,8 @@
          url: /pages/localization/length_and_weight/weight_list.html      
        - text: Edit Weight Class
          url: /pages/localization/length_and_weight/edit_weight.html
+    - text: Language Auto Translate
+      url: /pages/localization/auto_translate.html
 - text: Embed your store
   url: /pages/embed/embed.html
   level: /pages/embed/
