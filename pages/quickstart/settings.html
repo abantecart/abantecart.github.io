@@ -40,7 +40,7 @@ Look for define('ADMIN_PATH', 'secret_admin');</p>
 									<span class="step-number"><i class="fa fa-compass"></i></span>
 									<h4 class="step-title">Change Logo.</h4>
 									<div class="step-content"> Logo related to template settings. In order to edit logo your need to locate storefront template settings in Admin.</div>
-									<p>Log in to your store's Admin area and go to the Design > Templates section. Click Edit button on your storefront template. On template settings page click on logo image to change it and a popup will appear allowing you to upload a picture you like from your local computer</p>>
+									<p>Log in to your store's Admin area and go to the Design > Templates section. Click Edit button on your storefront template. On template settings page click on logo image to change it and a popup will appear allowing you to upload a picture you like from your local computer</p>
 								</li>
 								<li class="step">
 									<span class="step-number"><i class="fa fa-search-plus"></i></span>
@@ -70,13 +70,24 @@ Look for define('ADMIN_PATH', 'secret_admin');</p>
 								</li>
 								<li class="step">
 									<span class="step-number">5</span>
-									<h4 class="step-title">Test placing an order, check tax, subtotal, totals.</h4>
-									<div class="step-content"> You must configure the tax rate for your business before accepting sales.  The moment your online store is activated, we recommend you complete an "end to end" test of the payment process. </div>
+									<h4 class="step-title">Editing texts and labels in your store</h4>
+									<div class="step-content"> You can manage all texts in System > Localization > <a href="/pages/localization/language_definitions.html">Language Definitions</a> section </div>
+									<p></p>
 								</li>
 								<li class="step">
 									<span class="step-number">6</span>
-									<h4 class="step-title">Confirm order is placed.</h4>
-									<div class="step-content"> Once an order is completed and payment is taken by the payment gateway, full details of the order will appear in your list of orders Sales > Orders  </div>
+									<h4 class="step-title">Removing the "Powered by".</h4>
+									<div class="step-content">   </div>
+									<p>You can remove manually in the template files or quickly and easily via whitelabel extension (No coding needed).<br>
+									Manully just delete this line:
+
+&lt;div class=&quot;pull-right textright&quot;&gt; &lt;?php echo $text_powered_by ?&gt; &lt;a href=&quot;...&quot; onclick=&quot;window.open(this.href);return false;&quot;
+title=&quot;Ideal OpenSource E-commerce Solution&quot;&gt;AbanteCart&lt;/a&gt;
+&lt;/div&gt;
+
+in this file: <pre>storefront>view>default_html5>template>common>footer.tpl</pre>
+
+									</p>
 								</li>
 								<li class="step">
 									<span class="step-number">7</span>
