@@ -133,7 +133,10 @@
     - text: Add & edit transactions
       url: /pages/customers/transactions.html      
     - text: Customer Groups
-      url: /pages/customers/groups.html      
+      url: /pages/customers/groups.html
+    - text: Send Mail
+      url: /pages/customers/send_mails.html      
+      
 - text: Managing Orders
   level: /pages/orders/
   icon: '<i class="fa fa-money fa-fw"></i>'
