@@ -30,25 +30,32 @@ Look for define('ADMIN_PATH', 'secret_admin');</p>
 						<!-- Category Info -->
 						<div class="category-info ">
 							<h3 class="category-title">Most common Store settings</h3>
-							<h4 class="category-description"> Making sure everything is ready for the actual first day of live use.</h4>
-							<p>You can always find this in your configuration file on your server.
-
-/system/config.php
-
-Look for define('ADMIN_PATH', 'xxxxxxx');</p>
+							<h4 class="category-description"> Section covers the most general configuration settings such as setting up logo, changing the domain name, etc.</h4>
+							<p></p>
 						</div>
 						<!-- End of Caregory Info -->
 							<!-- Steps -->
 							<ul class="steps">
 								<li class="step">
-									<span class="step-number">1</span>
-									<h4 class="step-title">Install an SSL certificate for the website.</h4>
+									<span class="step-number"><i class="fa fa-compass"></i></span>
+									<h4 class="step-title">Change Logo.</h4>
 									<div class="step-content"> Note: your domain name with and without the "www" part to be two different websites. </div>
 								</li>
 								<li class="step">
-									<span class="step-number">2</span>
-									<h4 class="step-title">Put the payment processor in live mode.</h4>
-									<div class="step-content"> To use a payment gateway in AbanteCart, you will first need to create an account with one of the payment gateway providers. </div>
+									<span class="step-number"><i class="fa fa-search-plus"></i></span>
+									<h4 class="step-title">Setting up seo-friendly URLs</h4>
+									<div class="step-content"> Use SEO-friendly URLs for product and categories, instead of default ones with GET parameters (e.g. index.php?rt=product/category&path=68) </div>
+									<p>Log in to your store's Admin area and go to the System > Settings > System section there. Set the Use SEO URL's to On. Next you need to rename the htaccess.txt file to .htaccess on your server</p>
+									<!-- Note -->
+									<div class="note js-note blue">
+										<span class="note-close js-close">
+											<i class="fa fa-times"></i>
+										</span>
+										<h4 class="note-title"> Note </h4>
+										<p class="note-description"> <strong> mod_rewrite</strong> is something that is installed on your server by your web host. You need to ask your host (or look in their help guide) to find out if you have it.<br>
+<em>Note: If you access store with sub-folder like http://www.mydomain/subfolder make sure to change <strong>RewriteBase /</strong> to <strong>RewriteBase /subfolder/</strong> in the .htaccess file.</em> </p>
+									</div>
+									<!-- End of Note -->
 								</li>
 								<li class="step">
 									<span class="step-number">3</span>
