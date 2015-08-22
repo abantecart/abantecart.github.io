@@ -39,6 +39,10 @@
       url: /pages/quickstart/checklist.html
     - text: Common Store settings
       url: /pages/quickstart/settings.html      
+    - text: Enable Payments
+      url: /pages/quickstart/payment_quick_start.html
+    - text: Enable Shipping
+      url: /pages/quickstart/shipping_quick_start.html
     - text: Email settings
       url: /pages/quickstart/email_settings.html
     - text: Language settings
@@ -49,10 +53,6 @@
       url: /pages/quickstart/region_settings.html
     - text: Enable Taxes
       url: /pages/quickstart/setup_taxes.html
-    - text: Enable Payments
-      url: /pages/quickstart/payment_quick_start.html
-    - text: Enable Shipping
-      url: /pages/quickstart/shipping_quick_start.html
 - text: Managing Product Catalog
   level: /pages/catalog/
   icon: '<i class="fa fa-cubes fa-fw"></i>'
