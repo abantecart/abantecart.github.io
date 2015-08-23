@@ -1,0 +1,817 @@
+---
+layout: default
+title: AbanteCart Architecture
+description: Code and system architecture and main concepts
+tags: [
+    ['extension_dev', 'Extension API']
+]
+redirect_from: "/tag/architecture.html"
+---
+
+<div class="category-info helper pt40">
+	<h3 class="category-title">AbanteCart Architecture Overview</h3>
+	<h4 class="category-description">
+	Here you will find explanation for the architecture of AbanteCart open source ecommerce, directory structure and how all subsystems interact and used. 
+	</h4>
+	<br />
+</div>
+
+<div class="note js-note blue-light">
+	<h4 class="note-title">Document Content</h4>
+	<ul>
+	<li class="toclevel-1 tocsection-1"><a href="#Directory_Structure"> <span class="toctext">Directory Structure</span></a></li>
+	<li class="toclevel-1 tocsection-2"><a href="#Application_areas_and_modules"> <span class="toctext">Application areas and modules</span></a></li>
+	<li class="toclevel-1 tocsection-3"><a href="#Application_Core"> <span class="toctext">Application Core</span></a></li>
+	<li class="toclevel-1 tocsection-4"><a href="#Global_Data_Structures_and_methods"> <span class="toctext">Global Data Structures and methods</span></a></li>
+	<li class="toclevel-1 tocsection-5"><a href="#Error_handling_and_AbanteCart_Debug"> <span class="toctext">Error handling and AbanteCart Debug</span></a></li>
+	</ul>
+</div>
+
+<div class="category-info helper">
+	<h4 id="Directory_Structure" class="box-title">Directory Structure</h4>
+	<p class="box-description">
+The main category you will see after opening AbanteCart distribution archive is public_html. Below are the files/directories inside public_html that represent AbanteCart public site directory structure. Most important directories and files are shown and linked to github repository for convenience. NOTE, not all directories/files are covered here. 
+	</p>
+</div>
+
+<!-- File Tree -->
+<div class="file-tree">
+    <div class="file-tree-title"> AbanteCart Directory Structure
+    	<ul class="file-tree-buttons">
+    		<li class="js-expand">
+    			<i class="fa fa-plus"></i> Expand all</li>
+    		<li class="js-collapse">
+    			<i class="fa fa-minus"></i> Collapse all</li>
+    	</ul>
+    </div>
+    <ul class="file-tree-list js-file-tree" data-expanded="">
+    <li class="is-folder">public_html -
+    	<span class="file-tree-description">AbanteCart public files 
+    	<a href="https://github.com/abantecart/abantecart-src/tree/master/public_html" target="_github"><i class="fa fa-code fa-fw"></i></a>
+    	</span>
+    	<ul>
+    	<li class="is-folder">admin -
+    		<span class="file-tree-description">Administration section files</span>
+    		<ul>
+    			<li class="is-folder">controller -
+    				<span class="file-tree-description">Admin section controllers
+    		    	<a href="https://github.com/abantecart/abantecart-src/tree/master/public_html/admin/controller" target="_github"><i class="fa fa-code fa-fw"></i></a>			
+    				</span>
+    				<ul>
+        				<li class="is-folder">common -
+        				<span class="file-tree-description">Commonly used admin controllers
+        				<a href="https://github.com/abantecart/abantecart-src/tree/master/public_html/admin/controller/common" target="_github"><i class="fa fa-code fa-fw"></i></a>
+        				</span>
+        				</li>	    				
+        				<li class="is-folder">pages -
+        				<span class="file-tree-description">Admin pages controllers
+        				<a href="https://github.com/abantecart/abantecart-src/tree/master/public_html/admin/controller/pages" target="_github"><i class="fa fa-code fa-fw"></i></a>
+        				</span>
+        				</li>	    				
+        				<li class="is-folder">responses -
+        				<span class="file-tree-description">Admin response controllers
+        				<a href="https://github.com/abantecart/abantecart-src/tree/master/public_html/admin/controller/responses" target="_github"><i class="fa fa-code fa-fw"></i></a>
+        				</span>
+        				</li>	    				
+    	    			<li class="is-file">... -
+    	    			<span class="file-tree-description">more 
+    	    			<a href="https://github.com/abantecart/abantecart-src/tree/master/public_html/admin/controller" target="_github"><i class="fa fa-code fa-fw"></i></a>
+    	    			</span>
+    					</li>
+    				</ul>
+    			</li>
+    			<li class="is-folder">model -
+    				<span class="file-tree-description">Admin section models dealing with data manipulation
+    		    	<a href="https://github.com/abantecart/abantecart-src/tree/master/public_html/admin/model" target="_github"><i class="fa fa-code fa-fw"></i></a>			
+    				</span>
+    			</li>
+    			<li class="is-folder">language/english -
+    				<span class="file-tree-description">Admin section language XML files
+    		    	<a href="https://github.com/abantecart/abantecart-src/tree/master/public_html/admin/language" target="_github"><i class="fa fa-code fa-fw"></i></a>			
+    				</span>
+    				<ul>
+        				<li class="is-folder">english.xml -
+        				<span class="file-tree-description">Main language file available in every admin page</a>
+        				</span>
+        				</li>	    				
+    	    			<li class="is-file">... -
+    	    			<span class="file-tree-description">more 
+    	    			<a href="https://github.com/abantecart/abantecart-src/tree/master/public_html/admin/language/english" target="_github"><i class="fa fa-code fa-fw"></i></a>
+    	    			</span>
+    					</li>
+    				</ul>
+    			</li>
+    			<li class="is-folder">view/default -
+    				<span class="file-tree-description">Directory for template related files
+    		    	<a href="https://github.com/abantecart/abantecart-src/tree/master/public_html/admin/view" target="_github"><i class="fa fa-code fa-fw"></i></a>			
+    				</span>
+    				<ul>
+        				<li class="is-folder">template -
+        				<span class="file-tree-description">Directory for all admin template files
+        				<a href="https://github.com/abantecart/abantecart-src/tree/master/public_html/admin/view/default/template" target="_github"><i class="fa fa-code fa-fw"></i></a>
+        				</span>
+        				</li>	    				
+        				<li class="is-folder">javascript -
+        				<span class="file-tree-description">Admin javascript files
+        				<a href="https://github.com/abantecart/abantecart-src/tree/master/public_html/admin/view/default/javascript" target="_github"><i class="fa fa-code fa-fw"></i></a>
+        				</span>
+        				</li>	    				
+        				<li class="is-folder">stylesheet -
+        				<span class="file-tree-description">Admin stylesheet files
+        				<a href="https://github.com/abantecart/abantecart-src/tree/master/public_html/admin/view/default/stylesheet" target="_github"><i class="fa fa-code fa-fw"></i></a>
+        				</span>
+        				</li>	    				
+    	    			<li class="is-file">... -
+    	    			<span class="file-tree-description">more 
+    	    			<a href="https://github.com/abantecart/abantecart-src/tree/master/public_html/admin/view/default/" target="_github"><i class="fa fa-code fa-fw"></i></a>
+    	    			</span>
+    					</li>
+    				</ul>
+    			</li>
+    			<li class="is-file">index.php -
+    			<span class="file-tree-description">Empty file / security protection</span>
+    			</li>
+    		</ul>
+    	</li>
+    	<li class="is-folder">core -
+    		<span class="file-tree-description">
+    		Core PHP classes and functional files to handle AbanteCart functionality
+    		<a href="https://github.com/abantecart/abantecart-src/tree/master/public_html/core/" target="_github"><i class="fa fa-code fa-fw"></i></a>
+    		</span>
+    		<ul>
+    			<li class="is-folder">lib -
+    				<span class="file-tree-description">Library files
+    		    	<a href="https://github.com/abantecart/abantecart-src/tree/master/public_html/core/lib" target="_github"><i class="fa fa-code fa-fw"></i></a>			
+    				</span>
+    			</li>
+    			<li class="is-folder">engine -
+    				<span class="file-tree-description">Core engine classes
+    		    	<a href="https://github.com/abantecart/abantecart-src/tree/master/public_html/core/engine" target="_github"><i class="fa fa-code fa-fw"></i></a>			
+    				</span>
+    			</li>
+    			<li class="is-folder">helper -
+    				<span class="file-tree-description">Files with supporting php functions 
+    		    	<a href="https://github.com/abantecart/abantecart-src/tree/master/public_html/core/helper" target="_github"><i class="fa fa-code fa-fw"></i></a>			
+    				</span>
+    			</li>
+    			<li class="is-file">init.php -
+    			<span class="file-tree-description">Main INIT files loaded at start for every page</span>
+    			</li>
+    	    	<li class="is-file">... -
+    	    		<span class="file-tree-description">more 
+    	    		<a href="https://github.com/abantecart/abantecart-src/tree/master/public_html/core" target="_github"><i class="fa fa-code fa-fw"></i></a>
+    	    		</span>
+    			</li>
+    		</ul>
+
+    	</li>
+    	<li class="is-folder">download -
+    		<span class="file-tree-description">Working directory for storing download files</span>
+    		
+    	</li>
+    	<li class="is-folder">extensions -
+    		<span class="file-tree-description">Directory to install and keep extensions for AbanteCart
+    		<a href="https://github.com/abantecart/abantecart-src/tree/master/public_html/extensions" target="_github"><i class="fa fa-code fa-fw"></i></a>
+    		</span>
+    	</li>
+    	<li class="is-folder">image -
+    		<span class="file-tree-description">Directory for static images used in AbanteCart</span>
+    		
+    	</li>
+    	<li class="is-folder">install -
+    		<span class="file-tree-description">Single use installation folder. Folder should be removed after AbanteCart is installed.</span>
+    		<ul>
+    			<li class="is-file">abantecart_database.sql -
+    				<span class="file-tree-description">Database definition file (DDL) </span>
+    			</li>
+    	    	<li class="is-file">... -
+    	    		<span class="file-tree-description">more 
+    	    		<a href="https://github.com/abantecart/abantecart-src/tree/master/public_html/install" target="_github"><i class="fa fa-code fa-fw"></i></a>
+    	    		</span>
+    			</li>
+    		</ul>
+    	</li>
+    	<li class="is-file">index.php -
+    		<span class="file-tree-description">Main index php files for AbanteCart application</span>
+    	</li>
+    	<li class="is-file">php.ini -
+    		<span class="file-tree-description">Custom PHP ini configuration file.</span>
+    	</li>
+    	<li class="is-folder">resources -
+    		<span class="file-tree-description">Working directory to store resources added to application</span>
+    	</li>
+    	<li class="is-file">robots.txt -
+    		<span class="file-tree-description">Search engine control file</span>
+    	</li>
+    	<li class="is-folder">static_pages -
+    		<span class="file-tree-description">AbanteCart static pages (error page)</span>
+    	</li>
+    	<li class="is-folder">storefront -
+    		<span class="file-tree-description">Storefront application files
+    		<a href="https://github.com/abantecart/abantecart-src/tree/master/public_html/storefront" target="_github"><i class="fa fa-code fa-fw"></i></a>
+    		</span>
+    		<ul>
+    			<li class="is-folder">controller -
+    				<span class="file-tree-description">Storefront controllers
+    		    	<a href="https://github.com/abantecart/abantecart-src/tree/master/public_html/storefront/controller" target="_github"><i class="fa fa-code fa-fw"></i></a>			
+    				</span>
+    				<ul>
+        				<li class="is-folder">common -
+        				<span class="file-tree-description">Commonly used storefront controllers
+        				<a href="https://github.com/abantecart/abantecart-src/tree/master/public_html/storefront/controller/common" target="_github"><i class="fa fa-code fa-fw"></i></a>
+        				</span>
+        				</li>	    				
+        				<li class="is-folder">pages -
+        				<span class="file-tree-description">Storefront pages controllers
+        				<a href="https://github.com/abantecart/abantecart-src/tree/master/public_html/storefront/controller/pages" target="_github"><i class="fa fa-code fa-fw"></i></a>
+        				</span>
+        				</li>	    				
+        				<li class="is-folder">responses -
+        				<span class="file-tree-description">Storefront response controllers
+        				<a href="https://github.com/abantecart/abantecart-src/tree/master/public_html/storefront/controller/responses" target="_github"><i class="fa fa-code fa-fw"></i></a>
+        				</span>
+        				</li>	    				
+    	    			<li class="is-file">... -
+    	    			<span class="file-tree-description">more 
+    	    			<a href="https://github.com/abantecart/abantecart-src/tree/master/public_html/storefront/controller" target="_github"><i class="fa fa-code fa-fw"></i></a>
+    	    			</span>
+    					</li>
+    				</ul>
+    			</li>
+    			<li class="is-folder">model -
+    				<span class="file-tree-description">Storefront section models dealing with data manipulation
+    		    	<a href="https://github.com/abantecart/abantecart-src/tree/master/public_html/storefront/model" target="_github"><i class="fa fa-code fa-fw"></i></a>			
+    				</span>
+    			</li>
+    			<li class="is-folder">language/english -
+    				<span class="file-tree-description">Storefront section language XML files
+    		    	<a href="https://github.com/abantecart/abantecart-src/tree/master/public_html/storefront/language" target="_github"><i class="fa fa-code fa-fw"></i></a>			
+    				</span>
+    				<ul>
+        				<li class="is-folder">english.xml -
+        				<span class="file-tree-description">Main language file available in every admin page</a>
+        				</span>
+        				</li>	    				
+    	    			<li class="is-file">... -
+    	    			<span class="file-tree-description">more 
+    	    			<a href="https://github.com/abantecart/abantecart-src/tree/master/public_html/storefront/language/english" target="_github"><i class="fa fa-code fa-fw"></i></a>
+    	    			</span>
+    					</li>
+    				</ul>
+    			</li>
+    			<li class="is-folder">view/default -
+    				<span class="file-tree-description">Directory for template related files
+    		    	<a href="https://github.com/abantecart/abantecart-src/tree/master/public_html/storefront/view" target="_github"><i class="fa fa-code fa-fw"></i></a>			
+    				</span>
+    				<ul>
+        				<li class="is-folder">template -
+        				<span class="file-tree-description">Directory for all storefront template files
+        				<a href="https://github.com/abantecart/abantecart-src/tree/master/public_html/storefront/view/default/template" target="_github"><i class="fa fa-code fa-fw"></i></a>
+        				</span>
+        				</li>	    				
+        				<li class="is-folder">javascript -
+        				<span class="file-tree-description">Storefront javascript files
+        				<a href="https://github.com/abantecart/abantecart-src/tree/master/public_html/storefront/view/default/javascript" target="_github"><i class="fa fa-code fa-fw"></i></a>
+        				</span>
+        				</li>	    				
+        				<li class="is-folder">stylesheet -
+        				<span class="file-tree-description">Storefront stylesheet files
+        				<a href="https://github.com/abantecart/abantecart-src/tree/master/public_html/storefront/view/default/stylesheet" target="_github"><i class="fa fa-code fa-fw"></i></a>
+        				</span>
+        				</li>	    				
+    	    			<li class="is-file">... -
+    	    			<span class="file-tree-description">more 
+    	    			<a href="https://github.com/abantecart/abantecart-src/tree/master/public_html/storefront/view/default/" target="_github"><i class="fa fa-code fa-fw"></i></a>
+    	    			</span>
+    					</li>
+    				</ul>
+    			</li>
+    			<li class="is-file">index.php -
+    			<span class="file-tree-description">Empty file / security protection</span>
+    			</li>
+    		</ul>	    		
+    	</li>
+    	<li class="is-folder">system -
+    		<span class="file-tree-description">Working system folder to keep system working files
+    		<a href="https://github.com/abantecart/abantecart-src/tree/master/public_html/system" target="_github"><i class="fa fa-code fa-fw"></i></a>
+    		</span>
+    		<ul>
+        		<li class="is-folder">cache -
+        			<span class="file-tree-description">System cache files</span>
+        		</li>	    				
+        		<li class="is-folder">logs -
+        			<span class="file-tree-description">System log files</span>
+        		</li>	    				
+    			<li class="is-file">config.php -
+    				<span class="file-tree-description">AbanteCart configuration file </span>
+    			</li>
+    	    	<li class="is-file">... -
+    	    		<span class="file-tree-description">more 
+    	    		<a href="https://github.com/abantecart/abantecart-src/tree/master/public_html/system" target="_github"><i class="fa fa-code fa-fw"></i></a>
+    	    		</span>
+    			</li>
+    		</ul>
+    	</li>
+    	<li class="is-file">task.php -
+    		<span class="file-tree-description">Task engine driver file</span>
+    	</li>
+    	<li class="is-file">.htaccess -
+    		<span class="file-tree-description">Custom Apache configuration file</span>
+    	</li>
+    	</ul>
+    </li>
+    <li class="is-file">install.txt -
+    		<span class="file-tree-description">Installation Instruction.</span>
+    	</li>
+    <li class="is-file">LICENSE.txt -
+    		<span class="file-tree-description">Open Software License ("OSL") v. 3.0.</span>
+    	</li>
+    <li class="is-file">release_notes.txt -
+    		<span class="file-tree-description">New Features, improvements highlight and history works log</span>
+    	</li>
+    </ul>
+</div>
+<!-- End of FIle Tree -->
+
+ 
+<div class="category-info helper">
+	<h4 id="" class="box-title">AbanteCart sub-systems</h4>
+	<p class="box-description">
+	Below diagram shows layers and sub-systems in the AbanteCart:
+	<div class="helper center"><img src="/img/developer/500px-Arch.png" /></div>
+	</p>
+</div>
+
+<div class="category-info helper">
+	<h4 id="Application_areas_and_modules" class="box-title">Application areas and modules</h4>
+	<p class="box-description">
+		<b>MVC</b> AbanteCart is built based on MVC concept. MVC stands for Model View Controller. In AbanteCart we also introduce dispatcher to concept of MVC. Dispatcher is in charge of running controllers in a set order and manages parent children processing between controllers. Fist controller in AbanteCart runs as a page or response controller. Others controllers can only be included and run as children of above two main controllers. This is done to prevent unauthorized execution of controllers.
+	</p>
+	<p class="box-description">
+		<b>Page controller</b> - this a main parent controller that is building page content. Layout class is loaded for this controller to build page elements based on set layout. See layout section
+	</p>
+	<p class="box-description">
+		<b>Response controller</b> - This is any first (main parent) controller that do not have a special layout and just provide data response. Example of this controllers can be AJAX response, XML Response, RSS feed, JSON, etc. 
+	</p>
+	<p class="box-description">
+		Below is the diagram to illustrate MVC process in AbanteCart. 
+		<div class="helper center"><img src="/img/developer/500px-Mvc.png" /></div>
+	</p>
+	<p class="box-description">
+		<b>Children Controller:</b> These are children controllers that can only be loaded from any other controller and can not be accessed directly from the browser. These controllers can perform any operation, load other children controllers and process any template.
+<br>
+On start (construct), any controller loads corresponding model and language set that are with the same route (name) as controller. 
+	</p>
+	<p class="box-description">
+		<b>Model:</b> These are the modules that handle data load and management that corresponds to given controller. Each controller auto-loads corresponding model . For instance, for controller catalog/product there will be catalog/product model loaded automatically once the controller is loaded (initialized).
+	</p>
+	<p class="box-description">
+		<b>Languages and translations</b>: AbanteCart language system is based on language translation saved in the database. Translations are grouped to sections that can represent given controller, page or section in the code. Each group needs to have unique identifier, for instance, product/category Initial translation entries for the languages are stored in XML files that are provided at installation. After installation all translation values are transferred to the database for further use in the system. XML Files are only used for initial load and resetting translations to default values. 
+	</p>
+	<p class="box-description">
+		Below diagram explains the process flow for the Language text depending on the action.
+		<div class="helper center"><img src="/img/developer/500px-Languages.png" /></div>
+	</p>
+	<p class="box-description">
+	<b>Database:</b> AbanteCart is primarily set up to use Mysql database. You can see the database structure below that can give you an idea of types of data, tables and relationships used in the application. 
+	</p>
+	<p class="box-description">
+	Below diagram shows Database Relationship:
+	<div class="helper center"><a href="/img/developer/Abantecart_database.png" target="_image"><img src="/img/developer/Abantecart_database.png" width="600" /></a></div>
+	</p>
+	<p class="box-description">
+	<b>Layout:</b> In layout we set a combination of elements or blocks on the given page. Blocks and elements are represented by controllers, models and views or templates (MVC) for each instance of the block or element. Any storefront page in AbanteCart needs to have a layout. Specific layout can be set to any page. If no specific layout is set default layout will be used. Layout can be stored in the database or set in the code. Layouts are set per template and will be reloaded if different template is selected. 
+	</p>
+
+	<p class="box-description">
+	<b>Template:</b> AbanteCart supports multiple templates for storefront and control panel. Templates can be set in the settings section of the control panel. Template files are loaded and processed by view class with the data loaded from model and controller management.
+	</p>
+	<p class="box-description">
+	<b>Blocks:</b> These are smaller scope MVC sets with separate controller, template and/or model. Blocks are elements that can appear in the template in a special location (top, bottom, left, right, center, etc). AbanteCart can have 2 types of blocks: Static and Dynamic. Static Blocks - added in the particular part of main controller code as children. Dynamic Blocks - Blocks that are linked to the particular placeholder and parent controller with database setting of layout class. See Layout ...
+	</p>
+	<p class="box-description">
+	<b>Forms:</b> In AbanteCart we introduce concept of FlexyForms, flexible way to set up forms in the application. Using FlexyForms you can configure any type of form with any type of fields quick and hassle free. This is very handy for creating extensions and quick forms management in the admin. FlexyForms are completely based on the settings loaded in the database and do not require code adjustment. In addition to FlexyForms AbanteCart offers blend of AForm and AHtml classes to provide unified interface to build regular forms in the code.
+	</p>
+	<p class="box-description">
+	<b>Dataset:</b> Dataset offer quick and worry free methods to handle data without dealing with SQL and creating specific database tables. Data can be handled via easy dataset class methods. Dataset can be used in extensions to store relatively small data sets that do not require extensive relationships and transactional data records.
+	</p>
+	<p class="box-description">
+	<b>Resource Library:</b> AbanteCart equipped with flexible and convenient way to store, manage and map media resources. System can handle media files or any other files or HTML codes that needs too have association to product, category, brand or any other data resource in the application. Simple example of the media file is image that can be mapped to one or many products or categories.
+	</p>
+	<p class="box-description">
+	<b>Extensions:</b> AbanteCart is build based on flexibility and expandability in design. To allow expandability, there is an extension concept built into the core of AbanteCart application. This allows to add virtually any feature or service to AbanteCart and this is very important in current dynamically changing technology environment. Extension is a set of files and configurations that builds a plugin module. Extensions are located in one directory and all extension related file are located under one directory with corresponding extension name.
+	</p>
+	<p class="box-description">
+	<b>Caching:</b> AbanteCart is set up to be fast performing eCommerce solution with optimized resources use and execution time. To achieve great performance AbanteCart utilize caching of commonly used database queries and requests.
+Upon changes in this areas in the control panel the cache for this section is automatically reset.
+	</p>
+	<p class="box-description">
+	<b>Messages:</b> AbanteCart equipped with the notification system, that enables merchants to get notifications about their AbanteCart eCommerce activity. These messages are available in the control panel of AbanteCart upon login or in the messages section. Messages give you dynamic information about AbanteCart updates and upgrades, sritical errors happened on your site, low stock notifications and other information.
+To communicate the error, warning and notices to administrator and users, AbanteCart utilise a message concept with help of AMessage class. Primarily purpose of this class is to pass the massage to the control panel users and make them aware of the activity and updates in the system. This system is configurable to the user desire and easily assessable in the code.
+	</p>
+	<p class="box-description">
+	<b>Debugging: </b> To help and improve development process for core and extensions where is ADebug class available that can provide comprehensive details about the page load and execution process. This system is configurable to the user desire and easily assessable in the code. In addition, visual debug is available to help debug blocks and controllers loaded on the pages for the template.
+	</p>
+	<p class="box-description">
+	<b>Dynamic Menus:</b> To offer more flexibility to navigation management a number of methods offered to control the menu item for the AbanteCart. Both Storefront and Control Panel (admin) utilize dynamic menu system that is stored in the Dataset. Menus can be edited at extension installation stage if particular extension requires to add new page to navigation menu.
+	</p>
+	<p class="box-description">
+	<b>User Friendly Control Panel: </b> In the control panel (admin) of AbanteCart uses unique approach to display, list and edit of the data. To list data in Control Panel pages, AbanteCart utilise jqGrid (developed by Tony Tomov, [1] ) based on jQuery. This approach is unified and applied on all pages that use data listing. See below how grid controller can be used to manage any data in the cart.
+On the edit pages of AbanterCart control panel there is a unified approach to saving data. Most of the data elements can be saved individually to bring best customer UI experience. To improve UI experience even more, all the fields that are eddied are highlighted for convenience. User can see what is edited and avoid mistakes before saving.
+	</p>
+	<p class="box-description">
+	<b>Data Migration:</b> AbanteCart helps existing ecommerce store owners to take advantage of the platform and migrate to it very quick and efficient. With offered migration tools, data can be transferred from third party ecommerce applications into AbanteCart in a matter of minutes. 
+	</p>
+
+</div>
+
+
+<div class="category-info helper">
+	<h4 id="Application_Core" class="box-title">Application Core</h4>
+	<p class="box-description">
+There is a core directory with engine and library sections in the AbanteCart architecture. These are the main components of the AbanteCart. Engine files represent the primary functional classes that organize execution flow and rendering of the result. Engine processes the controllers, in set order with help of dispatcher and connect it together with models and views . Libraries contain set of methods (routines) to help and support control over the engine and data management. In the libraries you can find classes that deal with processing translation (localization) exceptions and error handling, sessions, debugs, database and much more. We intend to keep AbanteCart with unified, clean and easy to use interface to all the engine classes and libraries. Functions are named base on their intention and produced result. In addition to standards, we also focus on providing flexibility and robustness to the interface. Data can be managed with direct access or via interface methods or with batch XML Load.
+	</p>
+	<p class="box-description">
+How controllers interact. There is always a main controller present in AbanteCart on every page load or request. Only 2 types of controllers can be loaded. These are page and response controllers.
+	</p>
+	<p class="box-description">
+Page controller - this a main parent controller that is building page content. Layout class is loaded for this controller to build page elements based on set layout. See layout section
+	</p>
+	<p class="box-description">
+Response controller - This is any first (main parent) controller that do not have a special layout and just provide data response. Example of this controllers can be AJAX response, XML Response, RSS feed, JSON, etc.
+	</p>
+	<p class="box-description">
+Other controllers are children for the above two main controllers. Children can be included statically in the code or with use of dynamic layout system loaded from the database. Dynamic layout system is only available for page controllers and organize elements to be displayed on the page and controllers to be loaded for that. Children controllers are processed in the order they assigned and return display result the the parent controller. This can be imagined as building Lego, where each peace is a controller that is processed individually and put together by dispatcher class into final Lego puzzle. 	
+	</p>
+	
+	<p class="box-description">
+	Static child controllers can be added inside any controller with example code: 
+	</p>
+	<div class="code-highlight">
+		<span class="js-copy-to-clipboard copy-code">copy</span> 
+		<pre>
+		<code class="language-markup">$this->addChild('common/menu', 'menu', 'common/menu.tpl');</code>
+		</pre> 
+	</div>	
+
+	<p class="box-description">
+	Dynamic controllers can be added with appropriate addition to the layout_block database that is explained later in extension section. 
+	</p>
+
+	<p class="box-description">
+In addition to children controllers you can request dispatcher to run a new controller that can be executed separately. Main difference from child controller is in the way it is ran. Newly dispatched controller can accept arguments and most important it can be run with caller controller terminated. This can be done as redirect to different controller or page. You can dispatch new controller and capture the output passing it back to prior caller or just use the output internally. See examples: 
+	</p>
+	<p class="box-description">
+	1. Dispatch new controller and exit (redirect execution flow) 
+	</p>
+	<div class="code-highlight">
+		<span class="js-copy-to-clipboard copy-code">copy</span> 
+		<pre>
+		<code class="language-markup">
+
+public function main() {
+….
+//Instantiate new dispatch
+$new_dispatched_controller = $this->dispatch('common/template_debug', array());
+    return $new_dispatched_controller;
+    //After return new controller will be run and we exit the current one.
+}
+		</code>
+		</pre> 
+	</div>		
+	<p class="box-description">
+	2. Dispatch new controller and capture result (act like a regular child) 
+	</p>
+	<div class="code-highlight">
+		<span class="js-copy-to-clipboard copy-code">copy</span> 
+		<pre>
+		<code class="language-markup">
+
+public function main() {
+….
+//Instantiate new dispatch
+$new_dispatched_controller = $this->dispatch('common/template_debug',
+array(
+	‘arg1’ => ‘value’,
+	‘arg2’ => ‘value’
+));
+    $output = $new_dispatched_controller->dispatchGetOutput();
+}
+		</code>
+		</pre> 
+	</div>		
+	
+</div>
+
+<div class="category-info helper">
+	<h4 id="Global_Data_Structures_and_methods" class="box-title">Global Data Structures and methods</h4>
+	<p class="box-description">
+	<b>Global structures (classes, functions) and how and where to use them.</b>
+AbanteCart utilize one central location (registry) for all global structure and class instances. Registry is automatically available in controllers (set in based controller class) and can be accessed with $this->registry . If you use some other non-controller file you can get local instance of the registry with line below:
+	</p>
+	<div class="code-highlight">
+		<code>$this->registry = Registry::getInstance();</code>
+	</div>	
+	<p class="box-description">
+	To have shorter access (from $this->registry->document to $this->document ) you can add below “magic” functions. 
+	</p>
+	<div class="code-highlight">
+		<pre>
+		<code>
+ public function __get($key) {
+  return $this->registry->get($key);
+ }
+  
+ public function __set($key, $value) {
+  $this->registry->set($key, $value);
+ }
+ 		</code>
+ 		</pre>
+	</div>	
+	
+	<p class="box-description">
+	Other global classes that are part of the registry: 
+	</p>
+	<p class="box-description">
+	This class stores data for head of the current page. Using this class methods you can manage meta tags and breadcrumbs. Check ADocument class for available methods.
+All data set in the ADocument class is store throughout execution and set to display at the end. Thus, this data can be effected in any controller.
+	</p>
+	<div class="code-highlight">
+		<code>$this->document,   $this->registry->document</code>
+	</div>	
+
+	<p class="box-description">
+	This is the class that provides access and control to the session data
+Example: 
+	</p>
+	<div class="code-highlight">
+		<code>$this->session or $this->registry->session</code>
+		<code>$this->session->data['stored_data']</code>
+	</div>	
+	
+	<p class="box-description">
+	This is the class that provides access to the request data and contains sanitized $_GET, $_POST, $_COOKIE, $_FILES and $_SERVER 
+	</p>	
+	<div class="code-highlight">
+		<code>$this->request or $this->registry->request</code>
+	</div>	
+
+	<p class="box-description">
+	Class containing extensions details on running AbanteCart
+	</p>
+	<div class="code-highlight">
+		<code>$this->extensions or $this->registry->extensions</code>
+	</div>	
+
+	<p class="box-description">
+	ALoader class provides interface to load models, language modules, configurations, etc. Once loaded data made available and accessible in global structures.
+	</p>
+	<div class="code-highlight">
+		<code>$this->load or $this->registry->load</code>
+	</div>	
+
+	<p class="box-description">
+	Global access to HTML interface is provided to build and display HTML elements.
+	</p>
+	<div class="code-highlight">
+		<code>$this->html or $this->registry->html</code>
+	</div>	
+
+	<p class="box-description">
+	Global access to configuration values. These are settings loaded for selected store id (0 store by default)
+	</p>
+	<div class="code-highlight">
+		<code>$this->config or $this->registry->config</code>
+	</div>	
+
+	<p class="box-description">
+	Global access to database interface. Connection is already established in class constructor
+	</p>
+	<div class="code-highlight">
+		<code>$this->db or $this->registry->db</code>
+	</div>	
+
+	<p class="box-description">
+	Global ALog class with interface to write to AbanteCart log file
+	</p>
+	<div class="code-highlight">
+		<code>$this->log or $this->registry->log</code>
+	</div>	
+
+	<p class="box-description">
+	Global ALayout class with interface and data access to current page layout. This is used for storefront pages layout construction.
+	</p>
+	<div class="code-highlight">
+		<code>$this->layout or $this->registry->layout</code>
+	</div>	
+
+	<p class="box-description">
+In controller’s local data and structures, there is an automatic access to all registry global objects listed above. In addition, there are local objects that can be automatically accessed once base controller class is extended.
+	</p>
+
+
+	<p class="box-description">
+	AView class that is in control of building the final output of current controller.
+	</p>
+	<div class="code-highlight">
+		<code>$this->view</code>
+	</div>	
+
+	<p class="box-description">
+	This is a unique instance ID for a given controller. Since there is a possibility of same controllers be loaded and run in the same page multiple times, we need to identify each controller unique instance. This instance ID is set on controller class creation with ->new() method.
+	</p>
+	<div class="code-highlight">
+		<code>$this->instance_id</code>
+	</div>	
+
+	<p class="box-description">
+	This is aa access to route string that identifies the name (rt) for the given controller. The route (rt) is also a partial directory path to the controller. It looks like this: pages/catalog/product
+	</p>
+	<div class="code-highlight">
+		<code>$this->controller</code>
+	</div>	
+
+	<p class="box-description">
+	In case of nested controllers, we need to identify child to parent relationship. Most controllers are children to some main controller (page or response). This variable contains reference to parent controller object. This way children can have access to some interface and data of parent controller. This can be used to pass common parent controller data to all children . If you have data set up in parent controller with public scope, it will be available for children.
+	</p>
+	<div class="code-highlight">
+		<code>$this->parent_controller</code>
+		<code>$variable= $this->parent_controller->data[‘variable_name’];</code>
+	</div>	
+
+	<p class="box-description">
+	This is an array with all children references for given controller. Last child controller will not have any children controllers. 
+	</p>
+	<div class="code-highlight">
+		<code>$this->children</code>
+	</div>	
+
+<div class="note js-note green">
+	<h4 class="note-title"> See values in arrays or classes </h4>
+	<p class="note-description">
+		To see detailed of any variable, array or class instance, you can use built-in echo_array(); function. Careful to echo full registry or nested structure as it can stole your browser. You can use debug methods to save output to file.
+	</p>
+</div>
+
+</div>
+
+<div class="category-info helper">
+	<h4 id="Error_handling_and_AbanteCart_Debug" class="box-title">Error handling and AbanteCart Debug</h4>
+	<p class="box-description">
+	AbanteCart offers sophisticated mechanism to handle errors and debug code. <br>
+	Error handling controlled in admin -> system -> settings . 
+	Click Server tab - here you have controls for error logging, debug info and debug level
+	Following settings is available:
+	</p>
+
+<div class="note js-note blue">
+	<p class="note-description">
+<b>Display Errors:</b> <br>
+Log Errors<br>
+Show Debug Info<br>
+<b>Debug Level:</b><br>
+Level 0 - no logs , only exception errors<br>
+Level 1 - errors and warnings<br>
+Level 2 - #1 + mysql site load, php file execution time and page elements load time<br>
+Level 3 - #2 + basic logs and stack of execution<br>
+Level 4 - #3 + dump mysql statements<br>
+Level 5 - #4 + intermediate variable <br>
+	</p>
+</div>
+
+
+	<p class="box-description">
+Depending on these settings you are able to track program flow
+<br>
+If you want to debug some piece of code, you should surround it with checkpoint functions. Example: 	
+	</p>
+	<div class="code-highlight">
+		<pre>
+		<code>
+AC_Debug::checkpoint('dev_checkpoint start');
+.
+.
+some code
+.
+.
+AC_Debug::checkpoint('dev_checkpoint end');
+ 		</code>
+ 		</pre>
+	</div>	
+	
+	<p class="box-description">
+	On dev_checkpoint end you could see something like this: 
+	</p>
+
+	<p class="box-description">
+<b>Example of debug level 4 checkpoint:</b> - Memory: 7,872 (1,752,352) - Files: 0 (44) - Queries: 2 (9) - Time: 0.0032 (0.0111) Time File Line SQL 0.00076 Z:\home\projects\www\ac\core\lib\language.php 98 SELECT * FROM language where code='en' 0.00058 Z:\home\projects\www\ac\core\lib\currency.php 13 SELECT * FROM currency
+
+These means that - programm allocate 7,872 bytes of memory since previous checkpoint ( total 1,752,352 bytes ) - included 0 files since previous checkpoint (total 44 included) - run 2 sql queries - spent 0.0032 sec on execution
+
+and below you see sql queries with info file, line etc. 	
+	</p>
+
+	<p class="box-description">
+	There are 3 classes to work with errors  <br />
+	AException - use it in case of fatal error. execution is terminated in this case AError - use it in case you want to let user know that there is an error, but it is not fatal AWarning - use it to warn user 
+	</p>
+
+	<h4 id="" class="box-title">AException Usage</h4>
+	<div class="code-highlight">
+		<code>throw new AC_Exception(AC_ERR_LOAD, 'Error: Could not load library ' . $library . '!');</code>
+	</div>
+	<p class="box-description">
+AC_ERR_LOAD - an error code, mean problem with loading some resources You could find all error codes in core/lib/exceptions/exception_code.php
+<br>
+Exception message will be either logged or saved for display. User will be redirect to /error/index.php - separate section with minimal class includes.	
+	</p>
+
+	<h4 id="" class="box-title">AError and AWarning Usage</h4>
+	<p class="box-description">
+	AError class has methods - toDebug - add msg to debug log - toLog - write to log - toMessages - add to AbanteCart messages system - toMail - mail error message to store owner
+	</p>
+
+	<div class="code-highlight">
+		<code>$err = new AError( $msg, $code );</code>
+		<code>$err->toDebug()->toLog(); // or just $err->toDebug();</code>
+	</div>	
+
+	<p class="box-description">
+Code is an optional parameter and needed to describe message title You could find all error codes in core/lib/exceptions/exception_code.php In extension we could add new code error and add error description like 
+	</p>
+
+	<div class="code-highlight">
+		<code>define('AC_ERR_ADDON', 9900 );</code>
+		<code>$error_descriptions[AC_ERR_ADDON] = 'some addon error';</code>
+	</div>	
+
+	<h4 id="" class="box-title">AbanteCart Messages</h4>
+	<p class="box-description">
+AbanteCart offers message class that can handle information (massages) passed to the next page (result page) or stored to the database to be recorded and passed to control panel users and store admins. Admins can see messages and manage them in the control panel of AbanteCart. Messages can be of 3 types, Critical, Warning and just informative or notice Message class can be instantiated at any part of application code and extensions. 
+	</p>
+	<div class="code-highlight">
+		<code>$registry->set('messages', $messages);</code>
+	</div>	
+	<p class="box-description">
+later on you can access it via registry object Message class has following methods - saveNotice($title, $message) - saveWarning($title, $message) - saveError($title, $message) these methods add message to db for further display
+	<br /><br />
+- saveForDisplay($title, $message, $status) - add message to session to display on page reload
+	<br /><br />
+you can use it as following: 
+	</p>
+
+	<div class="code-highlight">
+		<pre>
+		<code>
+// if you do not have access to registry - get it
+// in controllers you can access messages like - $this->messages
+$registry = Registry::getInstance();
+$messages = $registry->get(‘messages’);
+ 
+$message->saveNotice(‘Some notice’, ‘message text’); 		
+		</code>
+ 		</pre>
+	</div>	
+
+	<p class="box-description">
+Suggestions to use: Say you need to notify store admin of critical errors happened during checkout. Below is the example what you do:
+	<br /><br />
+//for use in controller $this->messages->saveError(‘Checkout error’, ‘message text’);
+	<br /><br />
+If the form submit encounter and error you can pass the message to the next leading page. See example: 	
+	</p>
+
+	<div class="code-highlight">
+		<pre>
+		<code>
+/**
+    * save notice
+    *
+    * @param  $title - string - message title
+    * @param  $message - string - message body
+    * @param  $status - message status ( N - notice, W - warning, E - error )
+    * @return void
+    */
+ 
+// in this case message will be added to session message pool and shown on page reload
+$this->messages->saveForDisplay($title, $message, $status)
+		</code>
+ 		</pre>
+	</div>	
+
+	<p class="box-description">
+	Below diagram show error, warning and message relation and flow: 
+	<div class="helper center"><img src="/img/developer/500px-Error_warning.png" /></div>
+	</p>
+
+</div>
+
+<div class="category-info helper">
+	<h4 id="" class="box-title"></h4>
+	<p class="box-description">
+	</p>
+</div>
+
+
+
+
