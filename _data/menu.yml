@@ -455,6 +455,8 @@
       url: /pages/tips/more_help.html
     - text: Changing Domain Name 
       url: /pages/tips/change_domain.html
+    - text: Enable Seo Urls 
+      url: /pages/tips/enable_seo.html
 - text: Developer Guide 
   level: /pages/developer/
   icon: '<i class="fa fa-code fa-fw"></i>'
