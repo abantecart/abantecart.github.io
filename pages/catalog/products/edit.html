@@ -88,7 +88,12 @@ Product Option(s) Out of Stock - appear if you have Option's Track Stock enabled
 <p><strong>Tax Class:</strong> If you are required to charge tax on this item, set to "Taxable Goods." By default AbanteCart comes with one option for this drop-down: Taxable Goods. The Tax Class for all new products will automatically be set to <em>---None---</em>. You can learn more about setting up the Tax Classes and Tax Rates that apply to the Taxable Goods Tax Class, as well as creating new Tax Classes in System > Localization > <a class="crosslink" href="/pages/quickstart/setup_taxes.html" target="_blank">Tax Classes</a> chapter.</p>
 <p><strong>Track Stock:</strong> Set YES if need to track stock quantity for this product. If options are used check subtract setting for each option value (they have own track stock setting). Enabled main product to track stock and subtract the quantity after order is placed by customers. This is very important setting read more about <a class="crosslink" href="/pages/settings/stock_configurations.html" target="_blank">Stock processing configurations</a>.</p>
 <p><strong>Quantity:</strong> The exact current quantity in stock, or any value if you do not intend to track the inventory of this product. Used if stock trackable is set ON. If you have any stock trackable options, do not use this quantity and set it to 0 or be aware of the conflict.</p>
-<p><strong>Minimum Quantity:</strong> This value requires the customer to purchase a minimum amount of each product in an order. Forcing this quantity to be added in the cart automatically.</p>
+
+<p><strong>Minimum Quantity:</strong> This value requires the customer to purchase a minimum amount of each product in an order. Forcing this quantity to be added in the cart automatically. The minimum order amount always appears on a product details page of the storefront</p>
+<p><strong>Maximum Quantity:</strong> Maximum number of product items that a customer can order at a time. 0 means no maximum limit.</p>
+
+
+
 <p><strong>Out Of Stock Status:</strong> Message shown if stock in product or options will drop to 0 or below. This message is always show if our of stock condition is met for stock trackable products or options. <br />If you do not want to see this message set product and all options to be stock trackable off.</p>
 <p><strong>SKU:</strong> The products SKU. In the "SKU" text box you can set a unique identification number for this item. SKU is global, meaning if you update the SKU for a product in one store, it will update in all other stores as well. If use product option with this setting, please do not set SKU on the main product or be aware of the conflict.</p>
 <p><strong>Misc Location:</strong> It's just a place to store some extra data. It's initial purpose was for warehouses as an internal note on where something is located.</p>
@@ -133,7 +138,8 @@ Product Option(s) Out of Stock - appear if you have Option's Track Stock enabled
 						<div class="category-info ">
 							<h3 class="category-title">Products Embed feature</h3>
 							<h4 class="category-description">Embed your product anywhere.</h4>
-							<p><strong>Embed Product</strong> We introduce new "products embed" feature with version 1.2.3. With AbanteCart 1.2.3 you can sell anything on any website. To get product's embed code click on the share icon. Read more about how to embed your products on any html page in  <a class="crosslink" href="/pages/embed/embed.html">Embed your store</a> article</p>
+							<p>  We introduce new "products embed" feature with version 1.2.3. With AbanteCart you can sell anything on any website. To get product's embed code click on the share <i class="fa fa-share-alt-square"></i>
+ icon. Read more about how to embed your products on any html page in  <a class="crosslink" href="/pages/embed/embed.html">Embed your store</a> article</p>
 
 						</div>
 						<!-- End of Caregory Info -->
