@@ -80,3 +80,54 @@ Important stages in extension to understand:<br>
 <b>Delete Extension:</b> This is a step to remove extension components from the directory. Note: delete can only be done if extension is uninstalled.
 </p>
 </div>
+
+
+
+
+
+
+
+
+<div class="category-info helper">
+	<h4 id="files" class="box-title">Files and directory structure </h4>
+	<p class="box-description">
+All Extensions are located in <b>extensions</b> folder. Bellow is the set of files and directories  that represent one extension.<br>
+/extensions/[extension unique name]<br>
+/extensions/[extension unique name]/config.xml<br>
+/extensions/[extension unique name]/core/<br>
+/extensions/[extension unique name]/admin/<br>
+/extensions/[extension unique name]/storefront/<br>
+/extensions/[extension unique name]/main.php<br>
+<b>config.xml</b> - Required configuration xml file with settings for given extension.<br>
+<b>main.php</b> - Required file that contain init instructions for extension.<br>
+<b>admin</b> - admin directory structure and contain files for admin section (directory structure under this directory resembles main admin directory for AbaneteCart)<br>
+<b>storefront</b> - storefront directory structure and contain files for storefront section (directory structure under this directory resembles main storefront directory for AbaneteCart)<br>
+<b>core</b> - directory that contain some core addon classes that implement additional functionality ( if needed )<br>
+<b>install.sql</b> - optional file that contain SQL instructions for extension install<br>
+<b>uninstall.sql</b> - optional file that contain SQL  instructions for extension uninstall<br>
+<b>install.php</b> - optional file that contain PHP code for extension installation process<br>
+<b>uninstall.php</b> - optional file that contain PHP code for extension uninstall process<br>
+<i>Note: you can use PHP or SQL or mixed depending on the requirents.</i>
+</p>
+
+
+<p><img width="650" height="603" src="/img/developer/Extensions.png" alt="caption">
+</p>
+
+<p><b>Pre-install actions - validation</b><br>
+Extensions are installed in control panel from Extension Manager section. Before installation there following checks are performed:
+<ul><li> - check available space
+</li><li> - is extensions directory writable
+</li><li> - was extension already installed ( extension upgrade )
+</li><li> - does extension support used core version
+</li><li> - does hosting support all php modules used by extension
+</li><li> - does extension override some controllers/ template files that already overridden by another extension. if two or more extensions override completely same files there will be a conflict, so high priority extension will be used. But, there will be warning in the install about conflict.
+</li></ul></p>
+
+
+<p><b>Post-install actions</b>
+<ul><li> - check all files list and sizes
+</li><li> - run install process
+</li></ul>
+</p>
+</div>
