@@ -53,15 +53,16 @@ When you decide to set up some attributes for a product, you need to consider wh
 							<h4 class="category-description">AbanteCart supports next field types (Element Types) for attributes</h4>
 							<p><ul>
 							<li>input</li>
-							<li>textarea</li>
-							<li>multiselectbox</li>
-							<li>selectbox</li>
-							<li>radio</li>
+							<li>textarea - this field type for a longer text length than Input field</li>
+							<li>multiselectbox - multiple values for one attribute.</li>
+							<li>selectbox - multiple values for one attribute.</li>
+							<li>radio - multiple values for one attribute.</li>
 							<li>checkbox</li>
-							<li>checkboxgroup</li>
+							<li>checkboxgroup - multiple values for one attribute.</li>
 							<li>hidden</li>
-							<li>file</li>
-							</ul></p>					
+							<li>file - allows file uploads by customer</li>
+							</ul></p>	
+							<p>Editable attributes - Input, Textarea, File. Adding an editable attribute value  for some product attribute creates an empty editable text area field on the product page where buyers can enter their own custom text before adding the product to their shopping cart. This feature may be used if you are going to provide personalization options for products, like monogramming, embroidery, etc.</p>				
 						</div>
 						<!-- End of Caregory Info -->
 
@@ -83,10 +84,19 @@ When you decide to set up some attributes for a product, you need to consider wh
 <p>After creating the new Option please select it's name in the Options list and insert new option 'values' by click on <i class="fa fa-plus-square-o"></i> button.</p>
 <a class="jcepopup" href="/img/other/catalog-products-options.png"><img src="/img/other/catalog-products-options.png" border="0" alt="" width="500" /></a>
 <p>You can fill/edit the following fields:</p>
-<p><strong>Default:</strong> one of the product's option values now can be selected as default (for storefront product page).</p>
+<p><strong>Default:</strong> When configuring multi-value attributes, you can control which of the attribute values should be shown to customers by default.</p>
 <p><strong>Option value:</strong> Enter the name of option value. Example <em>Small, Medium</em> or <em>Large</em>.</p>
 <p><strong>Quantity:</strong> If you are tracking stock, how many of this option you have. Set quantity for unique options value combination that represent one unique product variation.</p>
-<p><strong>Track Stock:</strong> Enabled option value for product to track stock and subtract the quantity after order is placed by customers. This is important setting read more about <a class="crosslink" href="/pages/settings/stock_configurations.html" target="_blank">Stock processing configurations</a>.</p>
+<p><strong>Track Stock:</strong> Enabled option value for product to track stock and subtract the quantity after order is placed by customers. This is important setting read more about <a class="crosslink" href="/pages/settings/stock_configurations.html">Stock processing configurations</a>.</p>
+						<!-- Note -->
+						<div class="note js-note blue-light">
+							<span class="note-close js-close">
+								<i class="fa fa-times"></i>
+							</span>
+							<h4 class="note-title"> Info </h4>
+							<p class="note-description"> Attribute values for product otions can be configured as price and/or weight modifier options that will increase or decrease the price and/or weight of the product (the product's weight affects the shipping cost). </p>
+						</div>
+						<!-- End of Note -->
 <p><strong>Price Modifier:</strong> If you wish to charge extra (or less) for this product, enter the amount here. EXAMPLE: Men's extra large t-shirts cost $2 more from the manufacturer. The "+$2.00" will appear in the option box of your storefront. If you wish to DISCOUNT this option, type "-2.00".</p>
 <p><strong>Modify Price By:</strong> select type of price calculation. If you select "$" the new price for this option will be 'manufacturer price' +/- 'option price value in your default currency'. If you select "%" the new price for this option will be 'manufacturer price' +/- 'option price value percents from manufacturer price'.</p>
 <p><strong>Sort Order:</strong> Sort Order set's the order of which the option value will be displayed amongst others.</p>
