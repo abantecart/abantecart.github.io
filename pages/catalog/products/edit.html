@@ -39,25 +39,34 @@ tags: [
 
 <div class="padding">
 <p><strong>Status:</strong> MUST be "ON" for product to appear in your store.</p>
-<p><strong>Featured Product:</strong> MUST be "ON" for product to appear as featured in your store.</p>
+<p><strong>Featured Product:</strong> MUST be "ON" for product to appear as featured in your store. If you use default template featured products appear on Home Page.</p>
 <p><strong>Product Name:</strong> The product name as it will appear in the front-end.</p>
 <p><strong>Description:</strong> Enter a description of the product. It will display in the main section of the product page.</p>
-<p><em>note: This uses the HTML-Editor so you can add HTML, images and FLASH content.</em></p>
-Also you can fill/edit the following fields:
-<p><strong>Meta Tag Keywords:</strong> is supposed to be a brief and concise list of the most important themes of your product's page. Meta Tag Keywords are used by search engines to describe the content of your web site.</p>
+						<!-- Note -->
+						<div class="note js-note blue">
+							<span class="note-close js-close">
+								<i class="fa fa-times"></i>
+							</span>
+							<h4 class="note-title"> Description Note </h4>
+							<p class="note-description"> This uses the HTML-Editor so you can add HTML, images and FLASH content.</p>
+						</div>
+						<!-- End of Note -->
+
+
+<p><strong>Meta Tag Keywords:</strong> is supposed to be a brief and concise list of the most important themes of your product's page. Meta Tag Keywords are used by search engines to describe the content of your web site. Keywords to be used in the keywords META tag on the product page HTML source.</p>
 <p><strong>Meta Tag Description:</strong> a brief and concise summary of your product's page's content.</p>
-<p><em>note: Meta Tag Keywords and Meta Tag Description will show in the tag of the product's HTML source.</em></p>
-<p><strong>Blurb:</strong> Enter a short description of the product. It will display in the product listing and main section of the product page.</p>
+
+<p><strong>Blurb:</strong> Enter a short description of the product. Will be displayed on product list pages and main section of the product page.</p>
 <p><strong>Product Tags:</strong> Tags help to make searching for products easier. Add few relevant keywords that can be used when customer is viewing some product, then customer click on one of product's tags to see a list of all products with the same tag. Only Administrator users can add tags in admin. Use comma as delimiter. Product Tags will be viewable by everyone browsing the product info page and can be used as search keyword at Storefront.</p>
 <p><strong>Categories: </strong> Category or <a class="crosslink" href="/pages/catalog/categories/search.html">categories</a> where product will be displayed on storefront. Selecting a checkbox will associate this product to that category, and you can select as few or as many associated categories.</p>
 <p><strong>Stores: </strong> select store where product will be displayed. If you're managing multiple Stores, you can select the stores to which this product is associated by checking the checkbox next to the Stores from which you want the product to be available.</p>
-<p>read more about multi-store set up in <a class="crosslink" href="/pages/settings/stores.html" target="_blank">this article</a></p>
+<p>Read more about multi-store set up in <a class="crosslink" href="/pages/settings/stores.html">this article</a></p>
 <p><strong>Manufacturer:</strong> If you have specified manufacturer or brand names in CATALOG -&gt; <a class="crosslink" href="/pages/catalog/manufacturers/search.html" target="_self">Manufacturers</a>, select manufacturer or brand name you want to display here.</p>
 <p><strong>Model:</strong> A unique model number of the product. Not required.</p>
 <p><strong>Block Product From Ordering:</strong> Enable "Call for order". This will put product to display mode only with no ability to order. Contact us for order message will be displayed.</p>
 <p><strong>Price:</strong> Enter the price without tax. The price of your item as it will display in the front-end. If you have a special, this will be the original price.</p>
 <p><strong>Cost:</strong> The wholesale cost used for profit reporting. This field is for internal purposes and does not require a value.</p>
-<p><strong>Tax Class:</strong> If you are required to charge tax on this item, set to "Taxable Goods." By default AbanteCart comes with one option for this drop-down: Taxable Goods. The Tax Class for all new products will automatically be set to <em>---None---</em>. You can learn more about setting up the Tax Classes and Tax Rates that apply to the Taxable Goods Tax Class, as well as creating new Tax Classes in System-&gt;Localization-&gt;<a class="crosslink" href="/pages/quickstart/setup_taxes.html" target="_blank">Tax Classes</a> chapter.</p>
+<p><strong>Tax Class:</strong> If you are required to charge tax on this item, set to "Taxable Goods." By default AbanteCart comes with one option for this drop-down: Taxable Goods. The Tax Class for all new products will automatically be set to <em>---None---</em>. You can learn more about setting up the Tax Classes and Tax Rates that apply to the Taxable Goods Tax Class, as well as creating new Tax Classes in System > Localization > <a class="crosslink" href="/pages/quickstart/setup_taxes.html" target="_blank">Tax Classes</a> chapter.</p>
 <p><strong>Track Stock:</strong> Set YES if need to track stock quantity for this product. If options are used check subtract setting for each option value (they have own track stock setting). Enabled main product to track stock and subtract the quantity after order is placed by customers. This is very important setting read more about <a class="crosslink" href="/pages/settings/stock_configurations.html" target="_blank">Stock processing configurations</a>.</p>
 <p><strong>Quantity:</strong> Quantity available for the product. Used id stock trackable is set ON. If you have any stock trackable options, do not use this quantity and set it to 0 or be aware of the conflict.</p>
 <p><strong>Minimum Quantity:</strong> This value requires the customer to purchase a minimum amount of each product in an order. Forcing this quantity to be added in the cart automatically.</p>
@@ -67,9 +76,24 @@ Also you can fill/edit the following fields:
 <p><strong>SEO Keyword:</strong> The SEO Keyword is important for the proper indexing of your on-line store by the various search engines. <span class="help">SEO key that will show in URL. Default value will be set to product name</span> on product creation. To create new one click Generate button.</p>
 <p><strong>Date Available:</strong></p>
 <p><strong>Sort Order:</strong> Sort Order set's the order of which the product will be displayed amongst others.</p>
-<p><strong>Requires Shipping:</strong> This value means shipping rates apply for product when checkout.</p>
+<p><strong>Requires Shipping:</strong> Whether the product is shippable.</p>
 <p><strong>Ship Product Individually:</strong> Product will be shipped in a separate package and additional shipping cost will be added to the order with multiple items.</p>
-<p><strong>Free Shipping:</strong> must be ON to enable free shipping for this product.</p>
+
+
+<p><strong>Free Shipping:</strong> Whether the product should be shipped free of charge. Shipping will be free of charge in case all products in the shopping cart are free shipping too.</p>
+						<!-- Note -->
+						<div class="note js-note blue">
+							<span class="note-close js-close">
+								<i class="fa fa-times"></i>
+							</span>
+							<h4 class="note-title"> Note </h4>
+							<p class="note-description"> Do not confuse with Free Shipping extension (Extensions > Shipping). "Free Shipping extension" and "Free Shipping setting per products" are different thing. Say you need to enable free shipping only when Sub-Total amount more than 40 USD - this possible only with "Free Shipping extension"</p>
+						</div>
+						<!-- End of Note -->
+
+
+
+
 <p><strong>Fixed Shipping Price:</strong> this setting allows you to offer an exact shipping price for individual products.</p>
 <p><strong>Length:</strong> set to better specify your current product</p>
 <p><strong>Width:</strong> set to better specify your current product</p>
