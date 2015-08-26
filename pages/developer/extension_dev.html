@@ -43,3 +43,40 @@ Our extension architecture is partially based on Plexus API concept (http://code
 	<li class="toclevel-1 tocsection-17"><a href="#package"><span class="toctext">Package extension for distribution</span></a></li>
 	</ul>
 </div>
+
+
+
+
+<div class="category-info helper">
+	<h4 id="glossary" class="box-title">Glossary</h4>
+	<p class="box-description">
+<b>Extension</b> &ndash;  Collection of  directories and files under one main directory  that can be added to shopping cart to offer additional feature or function.  Extension can be enabled and configured in the admin of shopping cart application<br>
+<b>Extension Configuration</b> &ndash; Collection of settings that can control the extension functionality of behavior.  Configuration can be default (provided with the original installation of the extension) and custom, after installation once admin user change the settings.<br>
+<b>Hook</b> &ndash; This is the tool used in extension subsystem to connect extension to particular section in application.<br>
+<b>Core Hook</b> &ndash; This is the hook to the core function of application that allows extending functionality, effect data structures and values.
+<b>Template Hook</b> -  This is the hook to extend display of the particular page on the front end or admin.  This is usually implemented within template file.<br>
+<b>Dataset</b> - Ability to save, access and manage data specific for extension. See more details later on.
+</p>
+</div>
+
+
+
+
+
+
+<div class="category-info helper">
+	<h4 id="basic" class="box-title">Basic architecture and structure of the extension subsystem. </h4>
+	<p class="box-description">
+This paragraph to give you a generic idea about AbanteCart extension system and organization.<br>
+AbanteCart architecture is designed around flexibility and expandability in mind. We believe that application architecture should provide sufficient flexibility to be able extended with new features and configured or adjusted to rapidly changing technology. To do so we introduce concept of fully extension based system and empower developers to create extensions for any new features or functionality.<br>
+Extension can be installed and managed in the control panel of the AbanteCart. Marketplace is available to purchase, download and install extensions right in the control panel. In addition, any AbanteCart extension can be installed manually by simple upload of extension folder to AbanteCart and easy activation process.<br>
+Extension itself is a collection of files that modify or add functionality of AbanteCart. Extension files include installation scripts, configuration settings, extension MVC file.<br>
+Dependency concept is present to make sure that dependent extensions are installed to make extensions that depend on them work properly. 
+Important stages in extension to understand:<br>
+<b>Extension load:</b> This is the step of getting extension directory (content with files) in to the AbanteCart extensions directory. This is essential before step before you can install and use extension.<br>
+<b>Extension Installation:</b>  This is a process of loading extension configuration to the system and making extension visible to the system. This stage does dependency validation and error checking. Install script provided in the extension is executed. Note: Installation is not to be confused with downloading extension or loading extension to the directory. This is done prior to installation. This step also allows you to edit extension configuration and settings.<br>
+<b>Enable Extension:</b> This is a step to activate extension. Once extension is enabled it will be used by the system.
+<b>Uninstall Extension:</b> It is important to understand this step. If you decide no longer to use given extension you can uninstall it. This step will completely remove all the settings and data used by the extension. Uninstall script provided in the extension is executed. Consider backup.<br>
+<b>Delete Extension:</b> This is a step to remove extension components from the directory. Note: delete can only be done if extension is uninstalled.
+</p>
+</div>
