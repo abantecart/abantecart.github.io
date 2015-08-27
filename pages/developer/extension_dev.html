@@ -34,7 +34,7 @@ Our extension architecture is partially based on Plexus API concept (http://code
 	<li class="toclevel-1 tocsection-8"><a href="#languages"><span class="toctext">Languages</span></a></li>
 	<li class="toclevel-1 tocsection-9"><a href="#hooks"><span class="toctext">Hooks</span></a></li>
 	<li class="toclevel-1 tocsection-10"><a href="#examples"><span class="toctext">Basic examples</span></a></li>
-	<li class="toclevel-1 tocsection-11"><a href="#hooks"><span class="toctext">Hooks Template Variables</span></a></li>
+	<li class="toclevel-1 tocsection-11"><a href="#hooks-variable"><span class="toctext">Hooks Template Variables</span></a></li>
 	<li class="toclevel-1 tocsection-12"><a href="#process"><span class="toctext">Extension Process flow</span></a></li>
 	<li class="toclevel-1 tocsection-13"><a href="#additional"><span class="toctext">Additional scripts and styles for extensions</span></a></li>
 	<li class="toclevel-1 tocsection-14"><a href="#rl"><span class="toctext">Resource Library</span></a></li>
@@ -876,7 +876,7 @@ class ExtensionDefaultExtensionLogger extends Extension {
 <div class="category-info helper">
 	<h4 id="examples" class="box-title">Basic examples</h4>
 	<p class="box-description">
->You need to control Controller <b>data</b> property to change data that passed to template file . We will place hooks in two places
+You need to control Controller <b>data</b> property to change data that passed to template file . We will place hooks in two places
 </p>
 <ul><li> in the very beginning of  method  - to init some data
 </li><li> before call to <b>$this-&gt;render()</b> to update data
@@ -940,6 +940,46 @@ $this-&gt;extensions-&gt;hk_getProducts();</code>
  	</pre>
 </div>
 <!-- HTML Highlight -->
+
+
+
+</div>
+
+
+
+
+
+
+<div class="category-info helper">
+	<h4 id="hooks-variable" class="box-title">Hooks Template Variables</h4>
+	<p class="box-description">
+	In order to add new data (HTML or just text) to template (.tpl) files from extension AbanteCart allows hook template variables that are placed in .tpl files as regular PHP variables. <br>
+Template Hook Variables look like this:  <b>&lt;?php echo $this-&gt;getHookVar('hook_name');&nbsp;?&gt;</b><br>
+These Template Hook Variables can be used in the extension. To add variable use <b>$this-&gt;view&gt;addHookVar()</b> method. 
+To locate appropriate template hook variable look into the template file, where you want to add values too. <br>
+Example:  
+</p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+// an extension that access  and modify template hook variables:
+&lt;?php
+class ExtensionName extends Extension {	
+   public function onClassNameMethodName_UpdateData()
+   {     	
+	// Set new value with appending  new data to $hook_message
+	$this-&gt;baseObject-&gt;view-&gt;addHookVar(&#39;hook_message&#39;, &#39;Confirmation Massage&#39;);
+   }
+ 
+ }</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+<p><b>Help:</b> Can not add or change values in the base template file or controller? No Problem. Contact us in a forum.abantecart.com  and we will help to find solution. If you discover that you need to add something to base template files in AbanteCart storefront or admin, and there is no way to do this or no hook variable available let us know. We can add hooks to current development version and next release. 
+</p>
+	
+	
+
 
 
 
