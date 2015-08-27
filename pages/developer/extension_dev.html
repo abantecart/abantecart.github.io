@@ -201,73 +201,74 @@ Bellow is the description of all items that are available in configuration file
 
 
 <div class="code-highlight">
-		<pre>
+	<pre>
 		<code>
-<?xml version="1.0"?>
-<extension>
-  <id>discount</id>
-  <version>0.1.0</version>
-  <cartversions>
-        	<item>1.0</item>
-  </cartversions>
-  <phpmodules>
-        	 <item>curl</item>
-  </phpmodules>
-  <layout></layout>
-  <priority>10</priority>  
-  <type>template</type>
-  <category>template</category>
-  <dependencies>
-       <item prior_version="0.9" version="1.0">slideshow</item>
-       <item prior_version="0.9" version="1.0">product_slider</item>
-       <item required="true" prior_version="0.9" version="1.0">default_cod</item>
-  </dependencies>
-  <settings>
-  	<item id="discount_status">
-  	  	<type>selectbox</type>
-  	  	<default_value>0</default_value>
-  	  	<variants>
-            <item>0</item>
-            <item>1</item>
-  	  	</variants>
-  	</item>
-  	<item id="discount_percent">
-  	  	<type>input</type>
-  	  	<default_value>10</default_value>
-  	</item>
-  	<item id="discount_message">
-  	  	<type>input</type>
-  	  	<default_value>We are pleased to annouce september discounts</default_value>
-        	</item>
-  	<item id="discount_product_message">
-  	  	<type>input</type>
-  	  	<default_value>Old price: %s, You save: %s</default_value>
-  	</item>
-</settings>   
-<additional_settings><![CDATA[setting/setting&active=store]]></additional_settings>
-<note>true</note>
-<preview>
-    <item>preview.jpg</item>
-	<item>preview1.jpg</item>
-  <item>preview2.jpg</item>
-</preview>
-<help_link><![CDATA[http://google.com]]></help_link>
-<install>
-  	 <sql>install.sql</sql>
-       <trigger>install.php</trigger>
-</install>
-<uninstall>
-  	<sql>uninstall.sql</sql>
-  	<trigger>uninstall.php</trigger>
-</uninstall>
-</extension>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;extension&gt;
+  &lt;id&gt;discount&lt;/id&gt;
+  &lt;version&gt;0.1.0&lt;/version&gt;
+  &lt;cartversions&gt;
+        	&lt;item&gt;1.0&lt;/item&gt;
+  &lt;/cartversions&gt;
+  &lt;phpmodules&gt;
+        	 &lt;item&gt;curl&lt;/item&gt;
+  &lt;/phpmodules&gt;
+  &lt;layout&gt;&lt;/layout&gt;
+  &lt;priority&gt;10&lt;/priority&gt;  
+  &lt;type&gt;template&lt;/type&gt;
+  &lt;category&gt;template&lt;/category&gt;
+  &lt;dependencies&gt;
+       &lt;item prior_version=&quot;0.9&quot; version=&quot;1.0&quot;&gt;slideshow&lt;/item&gt;
+       &lt;item prior_version=&quot;0.9&quot; version=&quot;1.0&quot;&gt;product_slider&lt;/item&gt;
+       &lt;item required=&quot;true&quot; prior_version=&quot;0.9&quot; version=&quot;1.0&quot;&gt;default_cod&lt;/item&gt;
+  &lt;/dependencies&gt;
+  &lt;settings&gt;
+  	&lt;item id=&quot;discount_status&quot;&gt;
+  	  	&lt;type&gt;selectbox&lt;/type&gt;
+  	  	&lt;default_value&gt;0&lt;/default_value&gt;
+  	  	&lt;variants&gt;
+            &lt;item&gt;0&lt;/item&gt;
+            &lt;item&gt;1&lt;/item&gt;
+  	  	&lt;/variants&gt;
+  	&lt;/item&gt;
+  	&lt;item id=&quot;discount_percent&quot;&gt;
+  	  	&lt;type&gt;input&lt;/type&gt;
+  	  	&lt;default_value&gt;10&lt;/default_value&gt;
+  	&lt;/item&gt;
+  	&lt;item id=&quot;discount_message&quot;&gt;
+  	  	&lt;type&gt;input&lt;/type&gt;
+  	  	&lt;default_value&gt;We are pleased to annouce september discounts&lt;/default_value&gt;
+        	&lt;/item&gt;
+  	&lt;item id=&quot;discount_product_message&quot;&gt;
+  	  	&lt;type&gt;input&lt;/type&gt;
+  	  	&lt;default_value&gt;Old price: %s, You save: %s&lt;/default_value&gt;
+  	&lt;/item&gt;
+&lt;/settings&gt;   
+&lt;additional_settings&gt;&lt;![CDATA[setting/setting&amp;active=store]]&gt;&lt;/additional_settings&gt;
+&lt;note&gt;true&lt;/note&gt;
+&lt;preview&gt;
+    &lt;item&gt;preview.jpg&lt;/item&gt;
+	&lt;item&gt;preview1.jpg&lt;/item&gt;
+  &lt;item&gt;preview2.jpg&lt;/item&gt;
+&lt;/preview&gt;
+&lt;help_link&gt;&lt;![CDATA[http://google.com]]&gt;&lt;/help_link&gt;
+&lt;install&gt;
+  	 &lt;sql&gt;install.sql&lt;/sql&gt;
+       &lt;trigger&gt;install.php&lt;/trigger&gt;
+&lt;/install&gt;
+&lt;uninstall&gt;
+  	&lt;sql&gt;uninstall.sql&lt;/sql&gt;
+  	&lt;trigger&gt;uninstall.php&lt;/trigger&gt;
+&lt;/uninstall&gt;
+&lt;/extension&gt;
+
  		</code>
  		</pre>
-	</div>
+</div>
 
 
 
-<p><br>
+<p>
 <b>More details about each extension config item</b>
 </p><p><b>&lt;id&gt;discount&lt;/id&gt;</b> - extension unique named identifier ( should be unique among all other extensions )
 </p><p><b>&lt;version&gt;0.1.0&lt;/version&gt;</b> - current extension version
