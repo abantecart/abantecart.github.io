@@ -725,4 +725,134 @@ $this-&gt;extensions-&gt;hkMethodName($object, $param1, $param2);
  	</pre>
 </div>
 <!-- HTML Highlight -->
+
+
+
+<p>Basically, when you tell the extensions api to hook ClassName::methodName(), it creates Extension hooks and calls them and the main method as follows (this is not always true and it is more complicated than this, but it is better to express more precise wiring in visual form):
+</p>
+<ul><li> <b>Extension::beforeClassNameMethodName()</b> - use it to update/change parameters passed to method
+</li><li> <b>Extension::aroundClassNameMethodName()</b> - use it to forbid original method call
+</li><li> <b>ClassName::methodName()</b>
+</li><li> <b>Extension::onClassNameMethodName()</b> - use it to change return data
+</li><li> <b>Extension::afterClassNameMethodName()</b> - use it to run some functions after method is executed
+</li></ul>
+<p><a href="/document_wiki/index.php/Extension_FlowChart" title="Extension FlowChart">Extension_FlowChart</a> 
+</p><p>Some of the hooks may seem very similar, but they help to serve different purposes.
+</p><p>Extension automatically has access to the current controller object (class instance) loaded during the hooking process. Current controller instance used in the extension class will be available via <b>$this-&gt;baseObject</b> and provides access to all public methods and properties in the extended controller. This also includes access to global structures. Refer to developer’s manual for global data structures and controller public methods and properties.<br>
+NOTE: The state of extended controller instance can be different depending on the hook location and stage of execution.
+</p><p>Example of extension class:
+</p>
+
+
+
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">
+class ExtensionName extends Extension {
+   public function onClassNameMethodName($param1, $param2) {
+   	if ($this-&gt;baseObject-&gt;property === true) {
+       	// ... let&#39;s do something now ...
+   	}
+   }
+}
+</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+
+
+<p><b>NOTE:</b> all class properties you want to be used in extensions must be declared as <b>public</b>
+</p><p>Extensions also have the current ExtensionsApi loaded into them so that they can make hookable calls on other objects if needed, such as the base object or another object:
+</p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">
+class ExtensionName extends Extension { 
+            	public function beforeClassNameMethodName($param1, $param2)
+            	{
+   	// ...
+   	$object = new AnotherClass();
+   	// ...
+       $this-&gt;ExtensionsApi-&gt;hkAnotherMethod($object, &#39;this is input param 1&#39;);
+            	}
+            	public function afterClassNameMethodName($param1, $param2) {
+   	// ...
+       $this-&gt;ExtensionsApi-&gt;hkAnotherMethod($this-&gt;baseObject);
+            	}
+}
+ 	</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+
+
+
+
+<p>Extensions can even have calls to themselves hooked. You could use the Extension’s ExtensionsApi to accomplish this just as with other objects; however, if you are not overriding the Extension __call() method, there is an easier way:
+</p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">
+class ExtensionName extends Extension {
+            	public function afterClassNameMethodName($param1, $param2) {
+   	// hook $this-&gt;performSomeAction()
+   	$this-&gt;hkPerformSomeAction();
+   }
+   public function performSomeAction() {
+   	// ...
+   }
+}
+ 	</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+
+
+
+<p>When it is a Extension that is being hooked, the base object is not changed. This is usually the desired functionallity, but may not always be. However, if one Extension wants to access another Extension, it can do so through its Extension Api:
+</p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">
+class AnotherExtensionName extends Extension {
+   public function onExtensionNamePerformSomeAction() {
+   	$Extension = $this-&gt;ExtensionsApi-&gt;ExtensionName;
+   	// ... do something with the other Extension now
+   }
+}
+</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+
+
+
+<p>Extension can be called on any hook method called. You need to use <b>overload Hooks</b> property for it
+</p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">
+class ExtensionDefaultExtensionLogger extends Extension {
+            	public $overloadHooks = true;
+            	protected $log = &#39;&#39;;
+            	protected function log($message) {
+                           	$this-&gt;log .= &#39;[&#39; . date(&#39;Y-m-d H:i:s&#39;) . &quot;] $message\n&quot;;
+            	}
+ 
+            	public function __call($method, $args) {
+                           	$this-&gt;log(&quot;called Extension::$method()&quot;);
+            	}
+            	public function printLog() {
+                           	echo &#39;&lt;strong&gt;Extension Call Log&lt;/strong&gt;&lt;pre&gt;&#39;, $this-&gt;log, &#39;&lt;/ pre&gt;&#39;;
+            	}
+}</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+
 </div>
