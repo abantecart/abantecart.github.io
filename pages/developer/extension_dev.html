@@ -91,7 +91,117 @@ Important stages in extension to understand:<br>
 <div class="category-info helper">
 	<h4 id="files" class="box-title">Files and directory structure </h4>
 	<p class="box-description">
-All Extensions are located in <b>extensions</b> folder. Bellow is the set of files and directories  that represent one extension.<br>
+All Extensions are located in <b>extensions</b> folder. Bellow is the set of files and directories  that represent one extension.<br></p>
+<!-- File Tree -->
+<div class="file-tree">
+    <div class="file-tree-title"> AbanteCart Directory Structure
+    	<ul class="file-tree-buttons">
+    		<li class="js-expand">
+    			<i class="fa fa-plus"></i> Expand all</li>
+    		<li class="js-collapse">
+    			<i class="fa fa-minus"></i> Collapse all</li>
+    	</ul>
+    </div>
+    <ul class="file-tree-list js-file-tree" data-expanded="">
+    <li class="is-folder">extensions -
+    	<span class="file-tree-description">AbanteCart public files 
+    	<a href="https://github.com/abantecart/abantecart-src/tree/master/public_html" target="_github"><i class="fa fa-code fa-fw"></i></a>
+    	</span>
+    	<ul>
+    	<li class="is-folder">[extension unique name] -
+    		<span class="file-tree-description">Administration section files</span>
+    		<ul>
+    			<li class="is-folder">core -
+    				<span class="file-tree-description">Admin section controllers
+    		    	<a href="https://github.com/abantecart/abantecart-src/tree/master/public_html/admin/controller" target="_github"><i class="fa fa-code fa-fw"></i></a>			
+    				</span>
+    			</li>
+    			<li class="is-folder">model -
+    				<span class="file-tree-description">Admin section models dealing with data manipulation
+    		    	<a href="https://github.com/abantecart/abantecart-src/tree/master/public_html/admin/model" target="_github"><i class="fa fa-code fa-fw"></i></a>			
+    				</span>
+    			</li>
+    			<li class="is-folder">language/english -
+    				<span class="file-tree-description">Admin section language XML files
+    		    	<a href="https://github.com/abantecart/abantecart-src/tree/master/public_html/admin/language" target="_github"><i class="fa fa-code fa-fw"></i></a>			
+    				</span>
+    				<ul>
+        				<li class="is-folder">english.xml -
+        				<span class="file-tree-description">Main language file available in every admin page</a>
+        				</span>
+        				</li>	    				
+    	    			<li class="is-file">... -
+    	    			<span class="file-tree-description">more 
+    	    			<a href="https://github.com/abantecart/abantecart-src/tree/master/public_html/admin/language/english" target="_github"><i class="fa fa-code fa-fw"></i></a>
+    	    			</span>
+    					</li>
+    				</ul>
+    			</li>
+    			<li class="is-folder">view/default -
+    				<span class="file-tree-description">Directory for template related files
+    		    	<a href="https://github.com/abantecart/abantecart-src/tree/master/public_html/admin/view" target="_github"><i class="fa fa-code fa-fw"></i></a>			
+    				</span>
+    				<ul>
+        				<li class="is-folder">template -
+        				<span class="file-tree-description">Directory for all admin template files
+        				<a href="https://github.com/abantecart/abantecart-src/tree/master/public_html/admin/view/default/template" target="_github"><i class="fa fa-code fa-fw"></i></a>
+        				</span>
+        				</li>	    				
+        				<li class="is-folder">javascript -
+        				<span class="file-tree-description">Admin javascript files
+        				<a href="https://github.com/abantecart/abantecart-src/tree/master/public_html/admin/view/default/javascript" target="_github"><i class="fa fa-code fa-fw"></i></a>
+        				</span>
+        				</li>	    				
+        				<li class="is-folder">stylesheet -
+        				<span class="file-tree-description">Admin stylesheet files
+        				<a href="https://github.com/abantecart/abantecart-src/tree/master/public_html/admin/view/default/stylesheet" target="_github"><i class="fa fa-code fa-fw"></i></a>
+        				</span>
+        				</li>	    				
+    	    			<li class="is-file">... -
+    	    			<span class="file-tree-description">more 
+    	    			<a href="https://github.com/abantecart/abantecart-src/tree/master/public_html/admin/view/default/" target="_github"><i class="fa fa-code fa-fw"></i></a>
+    	    			</span>
+    					</li>
+    				</ul>
+    			</li>
+    			<li class="is-file">index.php -
+    			<span class="file-tree-description">Empty file / security protection</span>
+    			</li>
+    		</ul>
+    	</li>
+    	<li class="is-file">index.php -
+    		<span class="file-tree-description">Main index php files for AbanteCart application</span>
+    	</li>
+    	<li class="is-file">php.ini -
+    		<span class="file-tree-description">Custom PHP ini configuration file.</span>
+    	</li>
+    	<li class="is-folder">resources -
+    		<span class="file-tree-description">Working directory to store resources added to application</span>
+    	</li>
+    	<li class="is-file">robots.txt -
+    		<span class="file-tree-description">Search engine control file</span>
+    	</li>
+    	<li class="is-folder">static_pages -
+    		<span class="file-tree-description">AbanteCart static pages (error page)</span>
+    	</li>
+    	<li class="is-file">.htaccess -
+    		<span class="file-tree-description">Custom Apache configuration file</span>
+    	</li>
+    	</ul>
+    </li>
+    <li class="is-file">install.txt -
+    		<span class="file-tree-description">Installation Instruction.</span>
+    	</li>
+    <li class="is-file">LICENSE.txt -
+    		<span class="file-tree-description">Open Software License ("OSL") v. 3.0.</span>
+    	</li>
+    <li class="is-file">release_notes.txt -
+    		<span class="file-tree-description">New Features, improvements highlight and history works log</span>
+    	</li>
+    </ul>
+</div>
+<!-- End of FIle Tree -->
+<p>
 /extensions/[extension unique name]<br>
 /extensions/[extension unique name]/config.xml<br>
 /extensions/[extension unique name]/core/<br>
