@@ -351,9 +351,9 @@ Example:
 <!-- HTML Highlight -->
 <div class="code-highlight">
 	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">
-		&lt;item id=&quot;payment_minimum_total&quot;&gt;
+&lt;item id=&quot;payment_minimum_total&quot;&gt;
 			&lt;disabled&gt;true&lt;/disabled&gt;
-		&lt;/item&gt; 	</code>
+&lt;/item&gt; 	</code>
  	</pre>
 </div>
 <!-- HTML Highlight -->
@@ -369,7 +369,8 @@ Example:
 <!-- HTML Highlight -->
 <div class="code-highlight">
 	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">
-&lt;additional_settings&gt;&lt;![CDATA[setting/setting&amp;active=store]]&gt;&lt;/additional_settings&gt;</code>
+&lt;additional_settings&gt;&lt;![CDATA[setting/setting&amp;active=store]]
+&gt;&lt;/additional_settings&gt;</code>
  	</pre>
 </div>
 <!-- HTML Highlight -->
@@ -438,3 +439,123 @@ Example:
 
 
 
+
+
+
+<div class="category-info helper">
+	<h4 id="validation" class="box-title">Settings Values Validation (Starting v1.1.4)</h4>
+	<p class="box-description">
+In some cases there is a need to validate settings values provided by user. It is a developers responsobility to maintain stability of extension and AbanteCart core as a result of extension functionality. For this reason important to validate settings not only for required fields, but also for actual values and allowed value types. 
+Validation is possible with 2 methods. 
+</p>
+<pre>1. Pattern (regular expressions) based validation  
+2. Code side validation in custom function  
+</pre>
+<h3> <span class="mw-headline" id="Pattern_based_validation">  Pattern based validation </span></h3>
+<p>This is a quick way to set validation to given setting field.  Regular expression can be set per each setting filed  to allow only specified value in the field. 
+</p><p>Example of email validation:
+</p>
+
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">
+    &lt;item id=&quot;email&quot;&gt;
+		&lt;type&gt;input&lt;/type&gt;
+		&lt;default_value&gt;&lt;/default_value&gt;
+		&lt;pattern_validate&gt;/^[a-zA-Z0-9_\-.]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-.]+$/&lt;/pattern_validate&gt;
+    &lt;/item&gt;
+</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+
+
+
+
+<p>Note: Error text needs to be added to language XML with key like this: [extention_id]_[item_id]_validation_error or [extention_id]_email_validation_error in example above.
+</p>
+<h3> <span class="mw-headline" id="Code_side_validation">  Code side validation </span></h3>
+<p>In case more advanced settings values validation required, you need to provide your own code to validate input and generate errors. 
+This is done in a special validate.php file included on the main extension directory level. This file will be automatically included 
+Function inside the file have to be named settingsValidation () { …
+</p><p>Example:
+</p>
+
+
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">
+function settingsValidation ( $settings_data = array()) {
+    $error_items = array(); // array with failed validation data keys
+  
+    foreach($settings_data as $item_id=&gt;$item_value){
+        if( !isset($item_value)){
+            $error_items[$item_id] = $language-&gt;get(&#39;errot_text_key&#39;) ;
+        }
+    }
+    if ($error_items) {
+        return array( &#39;result&#39; =&gt; false,
+                      &#39;errors&#39; =&gt; $error_items);
+    }
+    return array(&#39;result&#39;=&gt;true);
+}</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+<p>Input: 
+settingsValidation function will get an array with settings and values submitted by user. 
+</p><p>Example of input array:
+</p>
+
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">
+array (
+ &#39;store_id&#39; =&gt; &#39;0&#39;,
+ &#39;google_checkout_advanced_status&#39; =&gt; &#39;1&#39;,
+ &#39;google_checkout_advanced_merchant_id&#39; =&gt; &#39;11111111111111111111&#39;,
+ &#39;google_checkout_advanced_merchant_key&#39; =&gt; &#39;dfjsdljadsfkjsdfklsdjfksdl&#39;,
+ &#39;google_checkout_advanced_currency&#39; =&gt; &#39;USD&#39;,
+ &#39;google_checkout_advanced_total&#39; =&gt; &#39;0&#39;,
+ &#39;google_checkout_advanced_test&#39; =&gt; &#39;1&#39;,
+ &#39;google_checkout_advanced_merchant_calculation&#39; =&gt; &#39;1&#39;,
+ &#39;google_checkout_advanced_order_status_id&#39; =&gt; &#39;1&#39;,
+ &#39;google_checkout_advanced_location_id&#39; =&gt; &#39;0&#39;,
+ &#39;google_checkout_advanced_sort_order&#39; =&gt; &#39;0&#39;,
+)
+</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+<p>NOTE: settingsValidation function will be call in all settings save and individual (quick) save. Keep in mind that validation needs to be done on each field separately. 
+Required values handled by core and  required="true"  setting in the config
+</p><p>Return:
+return needs to be array with result =  true/false and error message for each field with failed validation.
+</p><p>If validation passed
+</p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">
+array( &#39;result&#39;=&gt;true );
+</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+<p>or if failed
+</p>
+
+
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">
+array( &#39;result&#39;=&gt;false , &#39;errors&#39; =&gt; array( &#39;field_name&#39; =&gt; &#39;Missing Name&#39; ) );	
+ 	</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+
+</div>
