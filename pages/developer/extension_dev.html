@@ -316,31 +316,98 @@ Higher number will make extension with higher priority.
 See allowed settings types below. <br>
 Example:
 </p>
-<div><div class="syntaxhighlighter  php" id="highlighter_454485"><div class="toolbar"><span><a class="toolbar_item command_help help" href="#">?</a></span></div><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div><div class="line number14 index13 alt1">14</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="php plain">&lt;settings&gt;</code></div><div class="line number2 index1 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php plain">&lt;item id=</code><code class="php string">"discount_status"</code><code class="php plain">&gt;</code></div><div class="line number3 index2 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php plain">&lt;type&gt;selectbox&lt;/type&gt;</code></div><div class="line number4 index3 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php plain">&lt;default_value&gt;0&lt;/default_value&gt;</code></div><div class="line number5 index4 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php plain">&lt;variants&gt;</code></div><div class="line number6 index5 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php plain">&lt;item&gt;0&lt;/item&gt;</code></div><div class="line number7 index6 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php plain">&lt;item&gt;1&lt;/item&gt;</code></div><div class="line number8 index7 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php plain">&lt;/variants&gt;</code></div><div class="line number9 index8 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php plain">&lt;/item&gt;</code></div><div class="line number10 index9 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php plain">&lt;item id=</code><code class="php string">"discount_percent"</code><code class="php plain">&gt;</code></div><div class="line number11 index10 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php plain">&lt;type&gt;input&lt;/type&gt;</code></div><div class="line number12 index11 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php plain">&lt;default_value&gt;10&lt;/default_value&gt;</code></div><div class="line number13 index12 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php plain">&lt;/item&gt;</code></div><div class="line number14 index13 alt1"><code class="php spaces">&nbsp;</code><code class="php plain">&lt;/settings&gt; </code></div></div></td></tr></tbody></table></div></div>
+
+
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">
+ &lt;settings&gt;
+       &lt;item id=&quot;discount_status&quot;&gt;
+           &lt;type&gt;selectbox&lt;/type&gt;
+           &lt;default_value&gt;0&lt;/default_value&gt;
+           &lt;variants&gt;
+               &lt;item&gt;0&lt;/item&gt;
+               &lt;item&gt;1&lt;/item&gt;
+           &lt;/variants&gt;
+       &lt;/item&gt;
+       &lt;item id=&quot;discount_percent&quot;&gt;
+           &lt;type&gt;input&lt;/type&gt;
+           &lt;default_value&gt;10&lt;/default_value&gt;
+       &lt;/item&gt;
+  &lt;/settings&gt;
+  </code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+
 <p>Starting from version 1.1.5 global settings have been implemented.  Now common settings such as status, sort_order etc. are not required to be included. <br> 
 If common settings are still included in given extension configuration file, they will override global settings.<br>  
 If global setting is not needed, it can be disabled with adding &lt;disabled&gt;true&lt;/disabled&gt;<br> 
 Example:
 </p>
-<div><div class="syntaxhighlighter  php" id="highlighter_340993"><div class="toolbar"><span><a class="toolbar_item command_help help" href="#">?</a></span></div><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="php plain">&lt;item id=</code><code class="php string">"payment_minimum_total"</code><code class="php plain">&gt;</code></div><div class="line number2 index1 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php plain">&lt;disabled&gt;true&lt;/disabled&gt;</code></div><div class="line number3 index2 alt2"><code class="php plain">&lt;/item&gt;&nbsp; </code></div></div></td></tr></tbody></table></div></div>
+
+
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">
+		&lt;item id=&quot;payment_minimum_total&quot;&gt;
+			&lt;disabled&gt;true&lt;/disabled&gt;
+		&lt;/item&gt; 	</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
 <p>Global settings are located in core/extension/ directory and attached to top or bottom of the settings page. <br> 
 Global settings available for any extension (default section) and for extension type as well, such as shipping and payment. <br> 
 </p><p><br>
 <b>&lt;additional_settings&gt;...&lt;/additional_settings&gt;</b> - you can add link to additional extension settings. It could be controller inside extension or any existing admin controller. By default button title will be ‘Additional Settings’. If you want to change it - you should add language definition with key = ‘text_additional_settings’ to your language file - it will define button title<br>
 Example:
 </p>
-<div><div class="syntaxhighlighter  php" id="highlighter_210614"><div class="toolbar"><span><a class="toolbar_item command_help help" href="#">?</a></span></div><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="php plain">&lt;additional_settings&gt;&lt;![CDATA[setting/setting&amp;active=store]]&gt;&lt;/additional_settings&gt;</code></div></div></td></tr></tbody></table></div></div>
+
+
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">
+&lt;additional_settings&gt;&lt;![CDATA[setting/setting&amp;active=store]]&gt;&lt;/additional_settings&gt;</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
 <p><br>
 <b>&lt;note&gt;true&lt;/note&gt;</b> - define if extensions have notes or not. notes defined in language file with key = ‘&lt;extension_name&gt;_note’. note will be shown on extension edit page. This note can help with additional information to users how to manage extension or extra steps to set up extension. 
 </p><p><b>&lt;preview&gt;...&lt;/preview&gt;</b> - extension preview images. stored in <i>[extension_id]/image/</i> folder<br>
 Example:
 </p>
-<div><div class="syntaxhighlighter  php" id="highlighter_831790"><div class="toolbar"><span><a class="toolbar_item command_help help" href="#">?</a></span></div><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="php plain">&lt;preview&gt;</code></div><div class="line number2 index1 alt1"><code class="php plain">&lt;item&gt;preview.jpg&lt;/item&gt;</code></div><div class="line number3 index2 alt2"><code class="php plain">&lt;item&gt;preview1.jpg&lt;/item&gt;</code></div><div class="line number4 index3 alt1"><code class="php plain">&lt;item&gt;preview2.jpg&lt;/item&gt;</code></div><div class="line number5 index4 alt2"><code class="php plain">&lt;/preview&gt;</code></div></div></td></tr></tbody></table></div></div>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">
+&lt;preview&gt;
+&lt;item&gt;preview.jpg&lt;/item&gt;
+&lt;item&gt;preview1.jpg&lt;/item&gt;
+&lt;item&gt;preview2.jpg&lt;/item&gt;
+&lt;/preview&gt;</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
 <p><br>
 <b>&lt;help_link&gt;&lt;![CDATA<a href="http://www.google.com" class="external autonumber" rel="nofollow">[1]</a>]&gt;&lt;/help_link&gt;</b> - define help page link. if not empty - you will have help button on extension edit page. This can be external link.
 </p><p>Install and removal items:
 </p>
-<div><div class="syntaxhighlighter  php" id="highlighter_227458"><div class="toolbar"><span><a class="toolbar_item command_help help" href="#">?</a></span></div><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="php plain">&lt;install&gt;</code></div><div class="line number2 index1 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php plain">&lt;sql&gt;install.sql&lt;/sql&gt; - sql queries run on install</code></div><div class="line number3 index2 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php plain">&lt;trigger&gt;install.php&lt;/trigger&gt; - php code run on install</code></div><div class="line number4 index3 alt1"><code class="php plain">&lt;/install&gt;</code></div><div class="line number5 index4 alt2"><code class="php plain">&lt;uninstall&gt;</code></div><div class="line number6 index5 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php plain">&lt;sql&gt;uninstall.sql&lt;/sql&gt; - sql queries run on uninstall</code></div><div class="line number7 index6 alt2"><code class="php plain">&lt;trigger&gt;uninstall.php&lt;/trigger&gt; - php code run on uninstall</code></div><div class="line number8 index7 alt1"><code class="php plain">&lt;/uninstall&gt;</code></div></div></td></tr></tbody></table></div></div> 
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">
+&lt;install&gt;
+        &lt;sql&gt;install.sql&lt;/sql&gt; - sql queries run on install
+       &lt;trigger&gt;install.php&lt;/trigger&gt; - php code run on install
+&lt;/install&gt;
+&lt;uninstall&gt;
+	    	&lt;sql&gt;uninstall.sql&lt;/sql&gt; - sql queries run on uninstall
+&lt;trigger&gt;uninstall.php&lt;/trigger&gt; - php code run on uninstall
+&lt;/uninstall&gt;</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
 <p><b>AbanteCart extension support following settings types:</b>
 </p>
 <ul><li> hidden
