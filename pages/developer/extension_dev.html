@@ -276,11 +276,38 @@ Bellow is the description of all items that are available in configuration file
 </p><p><b>&lt;dependencies&gt;...&lt;/dependencies&gt;</b> - if given extension depends on other extension(s) be installed, this item can be used. See examples:
 </p><p>Optional extension dependency.  original extension can work without dependant extension installed. ( use only 0.9 - 1.0 versions of extension )
 </p>
-<div><div class="syntaxhighlighter  php" id="highlighter_676648"><div class="toolbar"><span><a class="toolbar_item command_help help" href="#">?</a></span></div><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="php plain">&lt;dependencies&gt;</code></div><div class="line number2 index1 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php plain">&lt;item prior_version=</code><code class="php string">"0.9"</code> <code class="php plain">version=</code><code class="php string">"1.0"</code><code class="php plain">&gt;slideshow&lt;/item&gt; </code></div><div class="line number3 index2 alt2"><code class="php plain">&lt;/dependencies&gt;</code></div></div></td></tr></tbody></table></div></div>
-<p><br>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">
+&lt;dependencies&gt;
+  	&lt;item prior_version=&quot;0.9&quot; version=&quot;1.0&quot;&gt;slideshow&lt;/item&gt; 
+&lt;/dependencies&gt;
+ 	</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+<p>
 Required extension. Current extension can not work without dependant extension installed.
 </p>
-<div><div class="syntaxhighlighter  php" id="highlighter_376460"><div class="toolbar"><span><a class="toolbar_item command_help help" href="#">?</a></span></div><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="php plain">&lt;dependencies&gt;</code></div><div class="line number2 index1 alt1"><code class="php plain">&lt;item required=</code><code class="php string">"true"</code> <code class="php plain">prior_version=</code><code class="php string">"0.9"</code> <code class="php plain">version=</code><code class="php string">"1.0"</code><code class="php plain">&gt;default_cod&lt;/item&gt; - extension.</code></div><div class="line number3 index2 alt2"><code class="php plain">&lt;/dependencies&gt;</code></div><div class="line number4 index3 alt1">&nbsp;</div><div class="line number5 index4 alt2"><code class="php plain">&lt;phpmodules&gt; </code></div><div class="line number6 index5 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php plain">&lt;item&gt;gd&lt;/item&gt;</code></div><div class="line number7 index6 alt2"><code class="php plain">&lt;/phpmodules&gt; - Given extension depends on following php modules</code></div></div></td></tr></tbody></table></div></div>
+
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">
+&lt;dependencies&gt;
+&lt;item required=&quot;true&quot; prior_version=&quot;0.9&quot; version=&quot;1.0&quot;&gt;default_cod&lt;/item&gt; - extension.
+&lt;/dependencies&gt;
+
+&lt;phpmodules&gt; 
+  	&lt;item&gt;gd&lt;/item&gt;
+&lt;/phpmodules&gt; - Given extension depends on following php modules
+ 	</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+
+
 <p><b>&lt;priority&gt;10&lt;/priority&gt;</b> - Extension priority. This will set when current extension needs to be included and ran compare to other extensions installed.<br> 
 Higher number will make extension with higher priority. 
 </p><p><b>&lt;type&gt;template&lt;/type&gt;</b> - extension type. can be 'extensions', 'payment', 'shipping', 'template'. New types might be added in the future.
