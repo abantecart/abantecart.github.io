@@ -104,12 +104,12 @@ All Extensions are located in <b>extensions</b> folder. Bellow is the set of fil
     </div>
     <ul class="file-tree-list js-file-tree" data-expanded="true">
     <li class="is-folder">extensions -
-    	<span class="file-tree-description">AbanteCart public files 
-    	<a href="https://github.com/abantecart/abantecart-src/tree/master/public_html" target="_github"><i class="fa fa-code fa-fw"></i></a>
+    	<span class="file-tree-description">All Extensions are located in extensions folder. 
+    	<a href="https://github.com/abantecart/abantecart-src/tree/master/public_html/extensions" target="_github"><i class="fa fa-code fa-fw"></i></a>
     	</span>
     	<ul>
-    	<li class="is-folder">[extension unique name] -
-    		<span class="file-tree-description">Administration section files</span>
+    	<li class="is-folder">[extension unique name] 
+    		<span class="file-tree-description"> </span>
     		<ul>
     			<li class="is-file">config.xml -
     		<span class="file-tree-description">Required configuration xml file with settings for given extension.</span>
@@ -144,25 +144,17 @@ All Extensions are located in <b>extensions</b> folder. Bellow is the set of fil
     </li>
     </ul>
 </div>
-<!-- End of FIle Tree -->
-<p>
-/extensions/[extension unique name]<br>
-/extensions/[extension unique name]/config.xml<br>
-/extensions/[extension unique name]/core/<br>
-/extensions/[extension unique name]/admin/<br>
-/extensions/[extension unique name]/storefront/<br>
-/extensions/[extension unique name]/main.php<br>
-<b>config.xml</b> - Required configuration xml file with settings for given extension.<br>
-<b>main.php</b> - Required file that contain init instructions for extension.<br>
-<b>admin</b> - admin directory structure and contain files for admin section (directory structure under this directory resembles main admin directory for AbaneteCart)<br>
-<b>storefront</b> - storefront directory structure and contain files for storefront section (directory structure under this directory resembles main storefront directory for AbaneteCart)<br>
-<b>core</b> - directory that contain some core addon classes that implement additional functionality ( if needed )<br>
-<b>install.sql</b> - optional file that contain SQL instructions for extension install<br>
-<b>uninstall.sql</b> - optional file that contain SQL  instructions for extension uninstall<br>
-<b>install.php</b> - optional file that contain PHP code for extension installation process<br>
-<b>uninstall.php</b> - optional file that contain PHP code for extension uninstall process<br>
-<i>Note: you can use PHP or SQL or mixed depending on the requirents.</i>
-</p>
+						<!-- End of FIle Tree -->
+
+						<div class="note js-note blue">
+							<span class="note-close js-close">
+								<i class="fa fa-times"></i>
+							</span>
+							<h4 class="note-title"> Note </h4>
+							<p class="note-description"> you can use PHP or SQL or mixed depending on the requirents. </p>
+						</div>
+						<!-- End of Note -->
+
 
 
 <p><img width="650" height="603" src="/img/developer/extensions.png" alt="Directory structure">
