@@ -711,7 +711,7 @@ Refer to languages in developer’s manual.
 
 
 <div class="category-info helper">
-	<h4 id="рooks" class="box-title">Hooks</h4>
+	<h4 id="hooks" class="box-title">Hooks</h4>
 	<p class="box-description">
 	In order to control data structures, functions, flow and views AbanteCart utilize hooks placed in various parts of the code in core, storefront and admin.  Each hook will have unique name.<br>
 To call a hook you must use <i>extensions api</i> object. It is stored in registry as an <b>extensions</b> and since all classes can use registry properties as their own you can use <b>$this-&gt;extensions</b>
@@ -853,6 +853,94 @@ class ExtensionDefaultExtensionLogger extends Extension {
  	</pre>
 </div>
 <!-- HTML Highlight -->
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="category-info helper">
+	<h4 id="examples" class="box-title">Basic examples</h4>
+	<p class="box-description">
+>You need to control Controller <b>data</b> property to change data that passed to template file . We will place hooks in two places
+</p>
+<ul><li> in the very beginning of  method  - to init some data
+</li><li> before call to <b>$this-&gt;render()</b> to update data
+</li></ul>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">
+// in the beginning of file
+//use to init controller data
+$this-&gt;extensions-&gt;hk_InitData($this);
+.....
+//some code
+.....
+//use to update controller data
+$this-&gt;extensions-&gt;hk_UpdateData($this);
+
+// an extension that use these hooks could look like this
+&lt;?php
+class ExtensionName extends Extension {	
+ 
+   public function onClassNameMethodName_InitData()
+   {  
+   	// add message variable
+   	$this-&gt;baseObject-&gt;data[&#39;message&#39;] = $message;
+   }
+ 
+   public function onClassNameMethodName_UpdateData()
+   {  
+   	// update message variable
+   	$this-&gt;baseObject-&gt;data[&#39;message&#39;] = ucfirst($message);
+   }
+}
+ 	</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+           	
+<p>If you need to create a hook for some method of a class, for example you need to hook to Cart::getProducts method
+you can do following:
+</p>
+<ul><li> you can update all <b>$this-&gt;cart-&gt;getProducts</b> calls to <b>$this-&gt;extensions-&gt;hkgetProducts($cart);</b>
+</li><li> or you can change original function
+</li></ul>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">
+//first change original function
+public function getProducts() {
+   	$registry = Registry::getInstance();
+   	// call extensions api
+   	return $registry-&gt;get(&#39;extensions&#39;)-&gt;hk_getProducts($this);
+   }
+ 
+// rename the original function, now it will be called
+// by extensions api if not overrided
+public function _getProducts() {}
+ 
+and call function as
+$this-&gt;extensions-&gt;hk_getProducts();</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
 
 
 </div>
