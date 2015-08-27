@@ -696,3 +696,33 @@ Refer to languages in developer’s manual.
 </div>
 <!-- HTML Highlight -->
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="category-info helper">
+	<h4 id="рooks" class="box-title">Hooks</h4>
+	<p class="box-description">
+	In order to control data structures, functions, flow and views AbanteCart utilize hooks placed in various parts of the code in core, storefront and admin.  Each hook will have unique name.<br>
+To call a hook you must use <i>extensions api</i> object. It is stored in registry as an <b>extensions</b> and since all classes can use registry properties as their own you can use <b>$this-&gt;extensions</b>
+To have an extensions api hook an object of class “ClassName” method call, you do:
+	</p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">
+$this-&gt;extensions-&gt;hkMethodName($object, $param1, $param2);
+ 	</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+</div>
