@@ -1163,7 +1163,7 @@ class ExtensionDiscount extends Extension {
 </p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
-	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
 public function onControllerPagesCheckoutCart_InitData() {  
 $discount_message = $this-&gt;registry-&gt;get(&#39;config&#39;)-&gt;get(&#39;discount_message&#39;); 	
 	$this-&gt;baseObject-&gt;view-&gt;addHookVar(&#39;additional_message&#39;, $discount_message);
@@ -1210,7 +1210,7 @@ extensions/discount/storefront/view/default/template/pages/checkout/
 </p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
-	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
 // change original function to support hooks
 public function getProducts() {
    $registry = Registry::getInstance();
@@ -1231,7 +1231,7 @@ public function _getProducts() {
 </p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
-	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
 
    // use hook added for getProducts method to apply discount
   	public function onACart_getProducts($products) {
@@ -1255,7 +1255,7 @@ add these lines
 </p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
-	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
 //use to update product data before render
 $this-&gt;extensions-&gt;do_UpdateProduct($this, $result);
  
@@ -1278,7 +1278,7 @@ $this-&gt;data[&#39;product&#39;] = array(
 </p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
-	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
 public function onControllerPagesCheckoutCart_UpdateData() {
    	$controller = $this-&gt;baseObject;
   	   $products = $this-&gt;registry-&gt;get(&#39;cart&#39;)-&gt;getProducts();
@@ -1340,3 +1340,65 @@ And insert before &lt;?php }&nbsp;?&gt;
 	
 	
 	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
+
+
+<div class="category-info helper">
+	<h4 id="additional" class="box-title">Additional scripts and styles for extensions</h4>
+	<p class="box-description">
+All styles and scripts loaded in head controller. It use <b>document</b> class. If your extension need to load style/script use <b>document</b> class
+</p><p>To add stylesheet  use
+</p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+public function addStyle(array($href, $rel = &#39;stylesheet&#39;, $media = &#39;screen&#39;))</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->	
+<p>To add script use
+</p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+public function addScript($script)
+ 	</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+//For example you need to add css and js
+// RDIR_TEMPLATE - points to template directory
+$document = $registry-&gt;get(‘document’);
+$document-&gt;addStyle(array(RDIR_TEMPLATE.&#39;stylesheet/some.css&#39;));
+$document-&gt;addScript(RDIR_TEMPLATE.&#39;javascript/some.js&#39;);
+ 
+// in controller you can use this
+$this-&gt;document-&gt;addStyle(array(RDIR_TEMPLATE.&#39;stylesheet/some.css&#39;));
+$this-&gt;document-&gt;addScript(RDIR_TEMPLATE.&#39;javascript/some.js&#39;);</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+	
+	
+	
+</div>
