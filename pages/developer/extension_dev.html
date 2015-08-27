@@ -978,9 +978,365 @@ class ExtensionName extends Extension {
 <p><b>Help:</b> Can not add or change values in the base template file or controller? No Problem. Contact us in a forum.abantecart.com  and we will help to find solution. If you discover that you need to add something to base template files in AbanteCart storefront or admin, and there is no way to do this or no hook variable available let us know. We can add hooks to current development version and next release. 
 </p>
 	
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="category-info helper">
+	<h4 id="process" class="box-title">Extension Process flow:</h4>
+	<p class="box-description">
+	Once AbanteCart page/response load starts (init.php), all enabled extensions are loaded.  At this time system has created instances of all extensions classes that responsible for hooks processing.<br>
+Control passed to Action class which is trying to define controller and method based on route variable. It checks if first part of route is an extension name and if it is, tries to load it.<br>
+Controller is loaded, it's method is executed and it is ready to render template. System is looking for template file.
+</p>
+<ul><li> first it looks for an override file - it will be named as <b>template.override.tpl</b> - any extensions can override template file. But if several extensions tries to override one file, file from extension with higher priority will be used.
+</li><li> if override is not found it is looking for <b>template.pre.tpl</b> and <b>template.post.tpl</b> - their content added before and after original template - any extensions can use <b>pre</b> and <b>post</b> files.  if several extensions contain <b>pre</b> or <b>post</b>  files - they all will be rendered according to extension priority
+</li><li> at last it is looking for <b>template.tpl</b>
+</li></ul>
+<p><br>
+<b>How to develop Extensions:</b>
+Let us show how to develop extension based on the example that will apply discount on all products
+</p><p>Extension unique id name will be - <b>discount</b>
+</p>
+<ul><li> create directory <b>../extensions/discount</b>
+</li><li> create config file  <b>../extensions/discount/config.xml</b>
+</li></ul>
+<p>At minimum we need to add following settings<br>
+1. discount_status - enabled/disabled
+2. discount_percent - percent of discount
+3. discount message - message that will be shown on cart page
+4. discount message for every product - how much you save
+</p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;extension&gt;
+   &lt;id&gt;discount&lt;/id&gt;
+   &lt;version&gt;0.1.0&lt;/version&gt;
+   &lt;cartversions&gt;
+        &lt;item&gt;0.9&lt;/item&gt;
+        &lt;item&gt;1.0&lt;/item&gt;
+    &lt;/cartversions&gt;
+   &lt;dependencies&gt;&lt;/dependencies&gt;
+   &lt;phpmodules&gt;&lt;/phpmodules&gt;
+   &lt;layout&gt;&lt;/layout&gt;
+   &lt;priority&gt;10&lt;/priority&gt;  
+   &lt;type&gt;extensions&lt;/type&gt;
+   &lt; category&gt;discount&lt;/ category&gt;
+   &lt;settings&gt;
+ &lt;item id=&quot;discount_status&quot;&gt;
+            &lt;type&gt;checkbox&lt;/type&gt;
+            &lt;default_value&gt;0&lt;/default_value&gt;
+   	&lt;/item&gt;
+       &lt;item id=&quot;discount_percent&quot;&gt;
+           &lt;type&gt;input&lt;/type&gt;
+           &lt;default_value&gt;10&lt;/default_value&gt;
+       &lt;/item&gt;
+       &lt;item id=&quot;discount_message&quot;&gt;
+           &lt;type&gt;input&lt;/type&gt;
+           &lt;default_value&gt;We are pleased to annouce september discounts&lt;/default_value&gt;
+       &lt;/item&gt;
+       &lt;item id=&quot;discount_product_message&quot;&gt;
+           &lt;type&gt;input&lt;/type&gt;
+           &lt;default_value&gt;Old price: %s, You save: %s&lt;/default_value&gt;
+       &lt;/item&gt;
+   &lt;/settings&gt;	
+&lt;/extension&gt;</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+<p>
+- create main driver PHP file <b>../extensions/discount/main.php</b>
+</p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+&lt;?php
+include(&#39;core/discount.php&#39;);
+&lt;?php
+if ( !defined ( &#39;DIR_CORE&#39; )) {
+	header ( &#39;Location: static_pages/&#39; );
+}
+ 
+$languages = array(
+  	&#39;admin&#39; =&gt; array(
+	  &#39;discount/discount&#39;
+  	),
+  	&#39;storefront&#39; =&gt; array(),
+);
+ 
+$templates = array(
+  	&#39;admin&#39; =&gt; array(),
+  	&#39;storefront&#39; =&gt; array(
+        	&#39;pages/checkout/cart.tpl&#39;
+  	),
+);
+</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+
+<p>
+- create language setting file <b>../extensions/discount/admin/language/english/discount/discount.xml</b>
+</p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;definitions&gt;
+ &lt;definition&gt;
+   &lt;key&gt;discount_name&lt;/key&gt;
+   &lt;value&gt;&lt;![CDATA[Discount extension]]&gt;&lt;/value&gt;
+ &lt;/definition&gt;
+ &lt;definition&gt;
+   &lt;key&gt;discount_description&lt;/key&gt;
+   &lt;value&gt;&lt;![CDATA[discount products extension]]&gt;&lt;/value&gt;
+ &lt;/definition&gt;
+ &lt;definition&gt;
+   &lt;key&gt;discount_percent&lt;/key&gt;
+   &lt;value&gt;&lt;![CDATA[Discount percent]]&gt;&lt;/value&gt;
+ &lt;/definition&gt;
+ &lt;definition&gt;
+   &lt;key&gt;discount_message&lt;/key&gt;
+   &lt;value&gt;&lt;![CDATA[Discount message]]&gt;&lt;/value&gt;
+ &lt;/definition&gt;
+ &lt;definition&gt;
+   &lt;key&gt;discount_product_message&lt;/key&gt;
+   &lt;value&gt;&lt;![CDATA[Product message]]&gt;&lt;/value&gt;
+ &lt;/definition&gt;
+ &lt;definition&gt;
+   &lt;key&gt;discount_status&lt;/key&gt;
+   &lt;value&gt;&lt;![CDATA[Status]]&gt;&lt;/value&gt;
+ &lt;/definition&gt;
+ &lt;definition&gt;
+   &lt;key&gt;discount_status_0&lt;/key&gt;
+   &lt;value&gt;&lt;![CDATA[Disabled]]&gt;&lt;/value&gt;
+ &lt;/definition&gt;
+ &lt;definition&gt;
+   &lt;key&gt;discount_status_1&lt;/key&gt;
+   &lt;value&gt;&lt;![CDATA[Enabled]]&gt;&lt;/value&gt;
+ &lt;/definition&gt;
+&lt;/definitions&gt;
+ 	</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+
+
+<p>- create extension class to handle the work: <b>../extensions/discount/core/discount.php</b>
+</p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+&lt;?php
+class ExtensionDiscount extends Extension {
+   protected $registry;
+   public function  __construct() {
+   	$this-&gt;registry = Registry::getInstance();
+   }
+ 
+}
+</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->	
+
+
+
+<p>- add a message about discounts to CheckoutCart step/page
+1. Edit file add this function below:<br>
+<b>../extensions/discount/core/discount.php</b>
+</p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">
+public function onControllerPagesCheckoutCart_InitData() {  
+$discount_message = $this-&gt;registry-&gt;get(&#39;config&#39;)-&gt;get(&#39;discount_message&#39;); 	
+	$this-&gt;baseObject-&gt;view-&gt;addHookVar(&#39;additional_message&#39;, $discount_message);
+ } 	</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+
+
+<p>2. Extension will need to override default cart template to add discount message
+copy<br>
+storefront/view/default/template/pages/checkout/cart.tpl<br>
+to<br>
+extensions/discount/storefront/view/default/template/pages/checkout/
+</p><p>edit <b>cart.tpl</b>
+</p><p>find
+</p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+&lt;?php if ($error_warning) { ?&gt;
+	&lt;div class=&quot;warning&quot;&gt;&lt;?php echo $error_warning; ?&gt;&lt;/div&gt;
+&lt;?php } ?&gt;</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+<p>Insert after it
+</p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+&lt;?php echo $this-&gt;getHookVar(&#39;additional_message&#39;); ?&gt;</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
 	
 
 
 
-
+<p>- now lets apply a discount to each product in cart
+1. edit <b>core\lib\cart.php</b>
+</p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">
+// change original function to support hooks
+public function getProducts() {
+   $registry = Registry::getInstance();
+   return $registry-&gt;get(&#39;extensions&#39;)-&gt;do_getProducts($this);
+}
+ 
+// rename original function   	
+public function _getProducts() {
+</code>
+ 	</pre>
 </div>
+<!-- HTML Highlight -->	
+
+
+
+
+<p>2. edit <b>extensions\discount\core\discount.php</b>
+</p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">
+
+   // use hook added for getProducts method to apply discount
+  	public function onACart_getProducts($products) {
+       $discount = $this-&gt;registry-&gt;get(&#39;config&#39;)-&gt;get(&#39;discount_percent&#39;);
+       foreach ( $products as $key =&gt; $p ) {
+           $products[$key][&#39;original_price&#39;] = $p[&#39;price&#39;];
+           $products[$key][&#39;original_total&#39;] = $p[&#39;total&#39;];
+           $products[$key][&#39;price&#39;] = $p[&#39;price&#39;] - $p[&#39;price&#39;] * $discount / 100;
+           $products[$key][&#39;total&#39;] = $p[&#39;total&#39;] - $p[&#39;total&#39;] * $discount / 100;
+   	}
+	}
+	</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+	
+	
+	
+<p>3. edit <b>storefront\controller\checkout\cart.php</b>
+add these lines
+</p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">
+//use to update product data before render
+$this-&gt;extensions-&gt;do_UpdateProduct($this, $result);
+ 
+after
+$this-&gt;data[&#39;product&#39;] = array(
+.....
+);
+ 	</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+
+
+
+
+
+<p>4. edit <b>extensions\discount\core\discount.php</b>
+</p><p>Use updateData hook. Each controller has this hook and can update its data before render output
+</p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">
+public function onControllerPagesCheckoutCart_UpdateData() {
+   	$controller = $this-&gt;baseObject;
+  	   $products = $this-&gt;registry-&gt;get(&#39;cart&#39;)-&gt;getProducts();
+   	$data = $controller-&gt;view-&gt;getData();
+  	   $currency = $this-&gt;registry-&gt;get(&#39;currency&#39;);
+  	   $tax = $this-&gt;registry-&gt;get(&#39;tax&#39;);
+  	   $config_tax = $this-&gt;registry-&gt;get(&#39;config&#39;)-&gt;get(&#39;config_tax&#39;);
+  	 foreach ( $data[&#39;products&#39;] as $key =&gt; $p ) {
+       	$product = $products[$p[&#39;key&#39;]];
+  	       $data[&#39;products&#39;][$key][&#39;discount_product_message&#39;] = sprintf(
+              	   $this-&gt;registry-&gt;get(&#39;config&#39;)-&gt;get(&#39;discount_product_message&#39;),
+              	   $currency-&gt;format($tax-&gt;calculate($product[&#39;original_price&#39;], $product[&#39;tax_class_id&#39;], $config_tax)),
+              	   $currency-&gt;format($tax-&gt;calculate($product[&#39;original_price&#39;] - $product[&#39;price&#39;], $product[&#39;tax_class_id&#39;], $config_tax))
+        	   );
+   	}
+ 
+   	$controller-&gt;view-&gt;assign(&#39;products&#39;, $data[&#39;products&#39;]);
+ 
+  	}
+	</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+
+
+
+
+<p>5. edit <b>extensions/discount/storefront/view/default/template/pages/checkout/cart.tpl</b>
+</p><p>Find
+</p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+&lt;?php foreach ($products as $product) { ?&gt;
+....
+&lt;?php } ?&gt;
+ 	</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+
+<p><br> 
+And insert before &lt;?php }&nbsp;?&gt;
+</p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">
+&lt;tr&gt;
+   &lt;td colspan=&quot;7&quot; align=&quot;center&quot;&gt;
+&lt;?php echo $product[&#39;discount_product_message&#39;]; ?&gt;
+  &lt;/td&gt;
+&lt;/tr&gt;
+ 	</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+	
+	
+	</div>
