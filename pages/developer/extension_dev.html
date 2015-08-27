@@ -189,14 +189,32 @@ All Extensions are located in <b>extensions</b> folder. Bellow is the set of fil
     	</li>
     	</ul>
     </li>
-    <li class="is-file">install.txt -
-    		<span class="file-tree-description">Installation Instruction.</span>
+    <li class="is-file">config.xml -
+    		<span class="file-tree-description">Required configuration xml file with settings for given extension.</span>
+    </li>
+    <li class="is-file">main.php -
+    		<span class="file-tree-description">Required file that contain init instructions for extension.</span>
+    </li>
+    <li class="is-folder">admin -
+    		<span class="file-tree-description">admin directory structure and contain files for admin section (directory structure under this directory resembles main admin directory for AbaneteCart)</span>
     	</li>
-    <li class="is-file">LICENSE.txt -
-    		<span class="file-tree-description">Open Software License ("OSL") v. 3.0.</span>
+    <li class="is-folder">storefront -
+    		<span class="file-tree-description">storefront directory structure and contain files for storefront section (directory structure under this directory resembles main storefront directory for AbaneteCart)</span>
     	</li>
-    <li class="is-file">release_notes.txt -
-    		<span class="file-tree-description">New Features, improvements highlight and history works log</span>
+    <li class="is-folder">core -
+    		<span class="file-tree-description">directory that contain some core addon classes that implement additional functionality ( if needed )</span>
+    	</li>
+    <li class="is-file">install.sql -
+    		<span class="file-tree-description">optional file that contain SQL instructions for extension install</span>
+    	</li>
+    <li class="is-file">uninstall.sql -
+    		<span class="file-tree-description">optional file that contain SQL  instructions for extension uninstall</span>
+    	</li>
+    <li class="is-file">install.php -
+    		<span class="file-tree-description">optional file that contain PHP code for extension installation proces.</span>
+    	</li>
+    <li class="is-file">uninstall.php -
+    		<span class="file-tree-description">optional file that contain PHP code for extension uninstall process</span>
     	</li>
     </ul>
 </div>
