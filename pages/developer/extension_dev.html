@@ -559,3 +559,70 @@ array( &#39;result&#39;=&gt;false , &#39;errors&#39; =&gt; array( &#39;field_nam
 
 
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="category-info helper">
+	<h4 id="driver" class="box-title">Main driver file for extension</h4>
+	<p class="box-description">
+This is a main file that gets processed every time extension is loaded.  It is used to include files used by given extension, define extension resources and do other initial routines.<br>
+There are 4 types of resources that extension can use
+</p>
+<ul><li> controllers
+</li><li> languages
+</li><li> models
+</li><li> template files
+</li></ul>
+<p>Each resource can be in 2 sections – admin &amp; storefront.
+</p><p>Controllers, languages and models defined as <b>catalog/product</b><br>
+Templates defined with <b>.tpl</b> extension – <b>catalog/product.tpl</b>
+</p><p>Example:
+</p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+<?php
+if ( !defined ( 'DIR_CORE' )) {
+	header ( 'Location: static_pages/' );
+}
+include('core/template2.php');
+include('core/template2_pagination.php');
+ 
+$languages = array(
+  	'storefront' => array(
+	  'template2/template2',
+  	),
+  	'admin' => array(
+	    	'template2/template2',
+  	),
+);
+$templates = array(
+  	'storefront' => array(
+	  'common/head.tpl',
+	  'common/header.tpl',
+	  'common/footer.tpl',
+  	),
+  	'admin' => array(),
+);
+?>
+ 	</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+
+</p>
+
+
+
+
+</div>
