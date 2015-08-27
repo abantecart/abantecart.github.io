@@ -622,8 +622,24 @@ $templates = array(
 
 
 </p>
+</div>
 
 
 
 
+
+
+
+
+
+
+<div class="category-info helper">
+	<h4 id="install" class="box-title">Install or Uninstall scripts</h4>
+	<p class="box-description">
+	There are 2 types of install or removal scripts that can be used. SQL and PHP.<br>
+SQL needs to have SQL commands that will be executed on extension install or uninstall respectivly.<br>
+PHP can have code that will be executed during extension install and removal process. PHP files can include all the methods and classes available in the AbanteCart.<br>
+<b>IMPORTANT:</b> Be very careful with updating database and altering tables. Please account for data integrity. If update existing table, account for speed of SQL execution in case of large data in the tables you effect. If uninstall, be careful with data removal. Do not delete altered fields and drop tables that are not created by given extension.<br> 
+Consider validation for data if you do multiple SQL insert or updates that depends on each other. 
+	</p>
 </div>
