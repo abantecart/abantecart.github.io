@@ -643,3 +643,56 @@ PHP can have code that will be executed during extension install and removal pro
 Consider validation for data if you do multiple SQL insert or updates that depends on each other. 
 	</p>
 </div>
+
+
+
+
+
+
+
+
+
+<div class="category-info helper">
+	<h4 id="languages" class="box-title">Languages</h4>
+	<p class="box-description">
+	Each extension needs to have it own language files that it is using for text variables.<br>
+Extension needs to include all the language that it supports.<br>
+<b>IMPORTANT:</b> Please use translation (language based variables) for all the text you use.<br>
+This will help everybody and users can edit translation in the control panel if needed. <br>
+Refer to languages in developer’s manual.
+	</p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;definitions&gt;
+ &lt;definition&gt;
+   &lt;key&gt;discount_name&lt;/key&gt;  - [extension]_name - will be output as an extension name
+   &lt;value&gt;&lt;![CDATA[Discount on all products]]&gt;&lt;/value&gt;
+ &lt;/definition&gt;
+ &lt;definition&gt;
+   &lt;key&gt;discount_description&lt;/key&gt;  - [extension]_name - will be output as an extension description
+   &lt;value&gt;&lt;![CDATA[discount products extension]]&gt;&lt;/value&gt;
+ &lt;/definition&gt;
+ &lt;definition&gt;
+   &lt;key&gt;discount_percent&lt;/key&gt; - translation for settings item
+   &lt;value&gt;&lt;![CDATA[Discount percent]]&gt;&lt;/value&gt;
+ &lt;/definition&gt;
+ &lt;definition&gt;
+   &lt;key&gt;discount_status&lt;/key&gt; - translation for settings item
+   &lt;value&gt;&lt;![CDATA[Status]]&gt;&lt;/value&gt;
+ &lt;/definition&gt;
+ &lt;definition&gt;
+   &lt;key&gt;discount_status_0&lt;/key&gt;  - translation for settings item variant ( in format [item_id][variant_value] - [discount_status][0] )
+   &lt;value&gt;&lt;![CDATA[Disabled]]&gt;&lt;/value&gt;
+ &lt;/definition&gt;
+ &lt;definition&gt;
+   &lt;key&gt;discount_status_1&lt;/key&gt;
+   &lt;value&gt;&lt;![CDATA[Enabled]]&gt;&lt;/value&gt;
+ &lt;/definition&gt;
+&lt;/definitions&gt;
+ 	</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+</div>
