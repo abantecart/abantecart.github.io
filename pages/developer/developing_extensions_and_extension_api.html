@@ -1,0 +1,55 @@
+---
+layout: default
+title: Developing Extensions
+description: Developing Extensions and Extension API
+tags: [
+    ['architecture', 'AbanteCart Architecture']
+]
+redirect_from: "/tag/developing_extensions_and_extension_api.html"
+---
+
+
+<div class="category-info helper pt40">
+	<h3 class="category-title">Developing Extensions and Extension API</h3>
+	<h4 class="category-description"> 
+	</h4>
+	<p class="box-description">
+	The extension subsystem of the AbanteCart is an essential part of shopping cart application. Extensions allow efficient way to add new features to the cart and allow scalability and flexibility of ecommerce application.
+The extension subsystem of the AbanteCart allows shopping cart project grow indefinitely together with rapidly changing technologies, standards and techniques.<br>
+Lots of effort lays on the development of the system and extensions to allow shopping cart administrators and owners smooth and worry free cart experience.<br>
+Extension can be installed and managed in the control panel of AbanteCart. If you use market place to purchase extensions inside the control panel, extensions are downloaded and installed seamlessly without leaving your control panel and web browser.
+<br>
+Our extension architecture is partially based on Plexus API concept (http://code.google.com/p/phpplexus/ ) and blend with our own concepts described below. 
+	</p>
+</div>
+
+<div class="note js-note blue-light">
+	<h4 class="note-title">Document Content</h4>
+	<ul>
+	<li class="toclevel-1 tocsection-1"><a href="#Glossary"> <span class="toctext">Glossary</span></a></li>
+	<li class="toclevel-1 tocsection-2"><a href="#Basic_architecture_and_structure_of_the_extension_subsystem"> <span class="toctext">Basic architecture and structure of the extension subsystem.</span></a></li>
+	<li class="toclevel-1 tocsection-3"><a href="#Database_extension"> <span class="toctext">Database extension</span></a></li>
+	<li class="toclevel-1 tocsection-4"><a href="#Working_with_Forms"> <span class="toctext">Working with Forms</span></a></li>
+	<li class="toclevel-1 tocsection-5"><a href="#Extending_and_Creating_FlexyForms"><span class="toctext">Extending and Creating FlexyForms</span></a></li>
+	<li class="toclevel-1 tocsection-6"><a href="#Extend_Standard_Forms"><span class="toctext">Extend Standard Forms</span></a></li>
+	<li class="toclevel-1 tocsection-7"><a href="#Setting_Up_Data_Listing_Pages_with_Grid"><span class="toctext">Setting Up Data Listing Pages with Grid</span></a></li>
+	</ul>
+</div>
+
+
+
+
+
+
+
+
+<div class="category-info helper">
+	<h4 id="glossary" class="box-title">Glossary</h4>
+	<p class="box-description">
+	<b>Extension</b> &ndash; Collection of directories and files under one main directory that can be added to shopping cart to offer additional feature or function. Extension can be enabled and configured in the admin of shopping cart application<br />
+<b>Extension Configuration</b> &ndash; Collection of settings that can control the extension functionality of behavior. Configuration can be default (provided with the original installation of the extension) and custom, after installation once admin user change the settings.<br />
+<b>Hook</b> &ndash; This is the tool used in extension subsystem to connect extension to particular section in application.<br />
+<b>Core Hook</b> &ndash; This is the hook to the core function of application that allows extending functionality, effect data structures and values. <b>Template Hook</b> - This is the hook to extend display of the particular page on the front end or admin. This is usually implemented within template file.<br />
+<b>Dataset</b> - Ability to save, access and manage data specific for extension. See more details later on.
+</p>
+</div>
