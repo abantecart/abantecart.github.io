@@ -665,7 +665,296 @@ $this-&gt;document-&gt;addStyle(&quot;path/to/css&quot;);</code>
 						</div>
 						<!-- End of Note -->
 						
+<p>You are now done with building the form code and display of the form</p>
 
+<p>Now you need to set fields to the database. You can use different methods to set and save form settings and fields to the database. There is a traditional SQL inserts or updates that can be used. We have following tables that needs to be used to manage forms data:</p>
+
+<p><a class="image" href="http://www.abantecart.com/document_wiki/index.php/File:Forms.png" title="caption"><img alt="caption" height="337" src="http://www.abantecart.com/document_wiki/images/thumb/9/9c/Forms.png/500px-Forms.png" width="500" /></a></p>
+
+<p>In addition to traditional SQL method we offer a convenience of build in functions in the library to simplify adding, deleting or editing FlexyForms database. These can be used for extension install and uninstall process and in the control panel to manage FlexyForm settings.</p>
+
+<p>Example of xml file for form loading:</p>
+
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;    
+    &lt;forms&gt;
+   	 &lt;form&gt;
+   		 &lt;action&gt;&lt;/action&gt;
+   		 &lt;form_name&gt;some form&lt;/form_name&gt;
+   		 &lt;controller&gt;testcase/testcase&lt;/controller&gt;
+   		 &lt;success_page&gt;/pages/testcase/success&lt;/success_page&gt;
+   		 &lt;status&gt;active&lt;/status&gt;
+   		 &lt;form_descriptions&gt;
+   			 &lt;form_description&gt;
+   				 &lt;language&gt;english&lt;/language&gt;
+   				 &lt;description&gt;some form for loading by XML-load&lt;/description&gt;
+   			 &lt;/form_description&gt;
+   		 &lt;/form_descriptions&gt;
+   		 &lt;fields&gt;
+   			 &lt;field&gt;
+   				 &lt;action&gt;&lt;/action&gt;
+   				 &lt;field_name&gt;fld_name&lt;/field_name&gt;
+   				 &lt;element_type&gt;I&lt;/element_type&gt;
+   				 &lt;sort_order&gt;1&lt;/sort_order&gt;
+   				 &lt;attributes&gt;onclick=&quot;alert(&#39;some alert text!!!&#39;)&quot;&lt;/attributes&gt;
+   				 &lt;required&gt;Y&lt;/required&gt;
+   				 &lt;status&gt;1&lt;/status&gt;
+   				 &lt;field_descriptions&gt;
+   					 &lt;field_description&gt;
+   						 &lt;language&gt;english&lt;/language&gt;
+   						 &lt;name&gt;some input&lt;/name&gt;
+   						 &lt;description&gt;some description&lt;/description&gt;
+   					 &lt;/field_description&gt;   				 
+   				 &lt;/field_descriptions&gt;   				 
+   			 &lt;/field&gt;
+   			 &lt;field_groups&gt;
+   				 &lt;field_group&gt;
+   					 &lt;action&gt;insert&lt;/action&gt;
+   					 &lt;name&gt;Some field group name&lt;/name&gt;
+   					 &lt;sort_order&gt;2&lt;/sort_order&gt;
+   					 &lt;status&gt;1&lt;/status&gt;
+   					 &lt;field_group_descriptions&gt;
+   						 &lt;field_group_description&gt;
+   							 &lt;language&gt;english&lt;/language&gt;
+   							 &lt;name&gt;some field group&lt;/name&gt;
+   							 &lt;description&gt;some description&lt;/description&gt;   
+   						 &lt;/field_group_description&gt;
+   					 &lt;/field_group_descriptions&gt;			 
+   					 &lt;fields&gt;
+   			   		     &lt;field&gt;
+   						      &lt;action&gt;&lt;/action&gt;
+   						      &lt;field_name&gt;input in group&lt;/field_name&gt;
+   						      &lt;element_type&gt;I&lt;/element_type&gt;
+   						      &lt;sort_order&gt;1&lt;/sort_order&gt;
+   						      &lt;attribues&gt;&lt;/attribues&gt;
+   						      &lt;required&gt;Y&lt;/required&gt;
+   						      &lt;status&gt;1&lt;/status&gt;
+   					     &lt;field_descriptions&gt;
+   					 	 &lt;field_description&gt;
+   						    &lt;language&gt;english&lt;/language&gt;
+   						    &lt;name&gt;some input in group&lt;/name&gt;
+   						    &lt;description&gt;somedescription&lt;/description&gt;
+   								 &lt;/field_description&gt;   				 
+   					      &lt;/field_descriptions&gt;    
+   					   &lt;/field&gt;   					 
+   					   &lt;field&gt;
+   							 &lt;action&gt;insert&lt;/action&gt;
+   							 &lt;field_name&gt;some select&lt;/field_name&gt;
+   							 &lt;element_type&gt;S&lt;/element_type&gt;
+   							 &lt;sort_order&gt;2&lt;/sort_order&gt;
+   							 &lt;attribues&gt;&lt;/attribues&gt;
+   							 &lt;required&gt;Y&lt;/required&gt;
+   							 &lt;status&gt;1&lt;/status&gt;
+   							 &lt;field_values&gt;
+   								 &lt;field_value&gt;
+   									 &lt;language&gt;english&lt;/language&gt;
+   									 &lt;opt_value&gt;1&lt;/opt_value&gt;
+   									 &lt;value&gt;select me 1&lt;/value&gt;
+   									 &lt;default&gt;0&lt;/default&gt;
+   									 &lt;sort_order&gt;1&lt;/sort_order&gt;
+   								 &lt;/field_value&gt;
+   								 &lt;field_value&gt;
+   									 &lt;language&gt;english&lt;/language&gt;
+   									 &lt;opt_value&gt;2&lt;/opt_value&gt;
+   									 &lt;value&gt;select me 2&lt;/value&gt;
+   									 &lt;default&gt;1&lt;/default&gt;
+   									 &lt;sort_order&gt;2&lt;/sort_order&gt;
+   								 &lt;/field_value&gt;
+   								 &lt;field_value&gt;
+   									 &lt;language&gt;english&lt;/language&gt;
+   									 &lt;opt_value&gt;3&lt;/opt_value&gt;
+   									 &lt;value&gt;select me 3&lt;/value&gt;
+   									 &lt;default&gt;0&lt;/default&gt;
+   									 &lt;sort_order&gt;3&lt;/sort_order&gt;
+   								 &lt;/field_value&gt;
+   							 &lt;/field_values&gt;    
+   						 &lt;/field&gt;  
+   					 &lt;/fields&gt;   	
+   				 &lt;/field_group&gt;
+   			 &lt;/field_groups&gt;
+   		 &lt;/fields&gt;   		 
+   	 &lt;/form&gt;    
+    &lt;/forms&gt;
+    </code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+<p><b>Create or Extend Standard Form with AForm Class</b><br />
+AbanteCart offers unified methods to create forms and load HTML form elements such as form data and fields. There are 2 main classes AForm and AHtml that are inter-connected to give better control and flexibility of the form.<br />
+To create a form you need to create an instance of class AForm and continue with using methods.<br />
+See Example:</p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+$form = new AForm();
+	//Set the form
+        	$form-&gt;setForm( array(
+                	&#39;form_name&#39; =&gt; &#39;example_form_name&#39;,
+        	));
+	//Set form name and id
+    	$form_data[&#39;example_form&#39;][&#39;id&#39;] = &#39;example_form_name&#39;;
+	//Create a form open tag
+    	$form_data[&#39;example_form&#39;][&#39;form_open&#39;] = $form-&gt;getFieldHtml(array(
+                	&#39;type&#39; =&gt; &#39;form&#39;,
+                	&#39;name&#39; =&gt; &#39;example_form_name&#39;,
+                	&#39;action&#39; =&gt; &#39;&#39;,
+        	));
+    	$form_data[&#39;example_form&#39;][&#39;submit&#39;] = $form-&gt;getFieldHtml(array(
+                	&#39;type&#39; =&gt; &#39;button&#39;,
+                	&#39;name&#39; =&gt; &#39;submit&#39;,
+                	&#39;text&#39; =&gt; $this-&gt;language-&gt;get(&#39;button_go&#39;),
+                	&#39;style&#39; =&gt; &#39;button5&#39;,
+        	));
+
+$this-&gt;view-&gt;batchAssign( $form_data );
+            	$this-&gt;processTemplate(&#39;pages/example.tpl&#39; );</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+<p>To set selected value for the selectbox, checkboxgroup and multiselect elements, for example, you need to pass options array with available options to select and you can pass “value” parameter (as selected value(s) ) that can be singe value or array; </p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+$this-&gt;form-&gt;getFieldHtml(array(
+ 		&#39;type&#39; =&gt; &#39;selectbox&#39;,
+ 		&#39;name&#39; =&gt; &#39;multiple&#39;,
+ 	&#39;options&#39; =&gt; array( 1=&gt;&#39;1&#39;, 2=&gt;&#39;2&#39;, 3=&gt;&#39;3&#39;),
+ 	&#39;value&#39; =&gt; 1,
+	)); </code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+<p></p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+$this-&gt;form-&gt;getFieldHtml(array(
+ 		&#39;type&#39; =&gt; &#39;multipleselectbox&#39;,
+ 		&#39;name&#39; =&gt; &#39;multiple&#39;,
+ 		&#39;options&#39; =&gt; array( 1=&gt;&#39;1&#39;, 2=&gt;&#39;2&#39;, 3=&gt;&#39;3&#39;),
+ 		&#39;value&#39; =&gt; array(1=&gt;1, 2=&gt;2),
+	));
+	</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+<p>
+Available field types as part of AForm class: input, textarea, selectbox, multiselectbox, radio, checkbox, checkboxgroup, file, and hidden
+<br />
+Available methods as part of AHtml class:</p>
+
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+getURL($rt, $params = &#39;&#39;) 
+    	getSecureURL($rt, $params = &#39;&#39;) 
+    	getSEOURL($rt, $params = &#39;&#39;) 
+    	getCatalogURL($rt, $params = &#39;&#39;) 
+    	getImagePath() 
+	buildElement($data) 
+	buildHidden($data) 
+	buildInput($data) 
+	buildPassword($data) 
+buildPasswordset($data)
+	buildSelectbox($data) 
+buildMultiselectbox($data)
+	buildTextarea($data) 
+    	buildCheckbox($data) 
+    	buildCheckboxGroup($data) 
+	buildFile($data) 
+	buildButton($data) 
+	buildForm($data) 
+buildCaptcha($data) </code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+<p>You can build HTML element via Form object Reference or via html object methods: Example:</p>
+
+<p>build Input Element via form object</p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+string  $form-&gt;getFieldHtml( array(
+   	 	&#39;type&#39; =&gt; &#39;input&#39;,
+   	 	&#39;name&#39; =&gt; &#39;field_name&#39;,
+   	 	&#39;value&#39; =&gt; &#39;field_value&#39;,
+    	));</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+<p>
+build Input Element via html object</p>
+
+
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+     	string  $this-&gt;html-&gt;buildInput( array(
+   	 	&#39;name&#39; =&gt; &#39;field_name&#39;,
+   	 	&#39;value&#39; =&gt; &#39;field_value&#39;,
+    	));</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+
+
+<p>build Input Element via html object</p>
+
+
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+     	string  $this-&gt;html-&gt;buildElement( array(
+   	 	&#39;type&#39; =&gt; &#39;input&#39;,
+   	 	&#39;name&#39; =&gt; &#39;field_name&#39;,
+   	 	&#39;value&#39; =&gt; &#39;field_value&#39;,
+    	));</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+
+<p>build Button Element </p>
+
+
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+$form-&gt;getFieldHtml(array(
+    &#39;type&#39; =&gt; &#39;button&#39;,
+    &#39;name&#39; =&gt; &#39;submit&#39;,
+    &#39;text&#39; =&gt; ‘button_save’,
+    &#39;style&#39; =&gt; &#39;button1&#39;,
+));</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+
+<p>build Selectbox Element</p>
+
+
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+$form-&gt;getFieldHtml(array(
+    &#39;type&#39; =&gt; &#39;selectbox&#39;,
+    &#39;name&#39; =&gt; &#39;manufacturer_id&#39;,
+    &#39;value&#39; =&gt; &#39;manufacturer_id&#39;,
+    &#39;options&#39; =&gt; array(
+option_value =&gt; option_text,
+option_value =&gt; option_text,
+option_value =&gt; option_text,
+    ),
+))</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
 
 	
 </div>
