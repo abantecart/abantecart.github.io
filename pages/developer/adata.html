@@ -57,3 +57,233 @@ AData is easy, fast and robust to deal with any database aspect of AbanteCart. Y
 
 
 
+
+
+
+<div class="category-info helper">
+	<h4 id="Where_AData_is_used" class="box-title">Where AData is used </h4>
+	<p class="box-description">
+	AData is used in the data import/export feature of AbanteCart and load of load of extension data. It can be used in any other part of future application development for import and export of data to and from various data formats.
+<br>
+Using AData data can be connected and mapped to any other third party application or service as SOAP, XML feed or other. 
+</p>
+</div>
+
+
+
+
+
+
+<div class="category-info helper">
+	<h4 id="Opportunity" class="box-title">Opportunity</h4>
+	<p class="box-description">
+	With use of AbanteCart AData, there is a number of applications that can improve AbanteCart data management and communication processed. Applications can have quick data read and save with any AbanteCart database table using relationship based on primary key and foreign key. 
+</p>
+</div>
+
+
+
+
+
+
+<div class="category-info helper">
+	<h4 id="How_it_works" class="box-title"> How it works</h4>
+	<p class="box-description">
+	Below are main interface functions to AData</p>
+
+<p><b>Export Methods:</b> 
+</p>
+</div>
+
+
+
+
+
+<div class="category-info helper">
+	<h4 id="exportData" class="box-title">exportData</h4>
+	<p class="box-description">
+(request array, [ skip display of relationship IDs ])</p>
+
+<p>Function to produce multidimensional associative array with data based on the request input array.</p>
+
+<p>-request is an array providing list of tables and restrictions to the data to be exported from the database. See below is example of the request array structure. Request array can contain special parameters to set limited data extract (similar to SQL where clause).</p>
+
+<p>Additional parameters: filter and start_id / end_id filter can contain any SQL (where) like portion to limit the result. start_id / end_id are 2 parameters to set a range of unique table IDs (if applicable)</p>
+
+<p>- skip display of relationship IDs. By default, result array will not show relationship ID key and value on each nested element. This is not needed for the export, since all nested nodes of data gets relationship ID key and value from parent node. If pass as FALSE relationship ID key and value will be added on each node.</p>
+
+<p>- result array. Result array is returned in a form of multidimensional associative array where each nested level represent child table and rows for related table. See below is example of the return array structure.</p>
+ <p>Example of request array:</p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+$request  = array (
+
+    &#39;categories&#39; =&gt; array
+
+       (
+
+           &#39;start_id&#39; =&gt; 30,
+
+           &#39;end_id&#39; =&gt; 50,
+
+           &#39;tables&#39; =&gt; Array
+
+               (
+
+                   &#39;category_descriptions&#39; =&gt; &#39;category_descriptions&#39;,
+
+                   &#39;categories_to_stores&#39; =&gt; &#39;categories_to_stores&#39;,
+
+               )
+
+       ),
+
+   &#39;products&#39; =&gt; array
+
+       (
+
+           &#39;start_id&#39; =&gt; 60,
+
+           &#39;end_id&#39; =&gt; 80,
+
+           &#39;tables&#39; =&gt; array
+
+               (
+
+                   &#39;product_descriptions&#39; =&gt; &#39;product_descriptions&#39;,
+
+                   &#39;product_options&#39; =&gt; array (
+
+                       &#39;tables&#39; =&gt; array (
+
+                           &#39;product_option_descriptions&#39; =&gt; &#39;product_option_descriptions&#39;,
+
+                            &#39;product_option_values&#39; =&gt; array (
+
+                                &#39;tables&#39; =&gt; array (
+
+                                    &#39;product_option_value_descriptions&#39; =&gt; &#39;product_option_value_descriptions&#39;
+
+                                )
+
+                            ),
+
+                       )
+
+                   ),
+
+                   &#39;product_specials&#39; =&gt; &#39;product_specials&#39;,
+
+               )
+
+       )
+
+);</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+<p>request with the filter: </p>
+
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+$request  = array (
+
+    &#39;categories&#39; =&gt; array
+
+       (
+
+           &#39;start_id&#39; =&gt; 30,
+
+           &#39;end_id&#39; =&gt; 50,
+
+    &#39;filter&#39; =&gt; &#39;status = 1 order by sort_order desc&#39;,
+
+           &#39;tables&#39; =&gt; Array
+
+               (
+
+                   &#39;category_descriptions&#39; =&gt; &#39;category_descriptions&#39;,
+
+                   &#39;categories_to_stores&#39; =&gt; &#39;categories_to_stores&#39;,
+
+               )
+
+       ),
+
+}</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+<p>Example Return Array: </p>
+
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+Array
+(
+   [timestamp] =&gt; 05/14/2012 19:08:28
+   [tables] =&gt; Array
+       (
+           [0] =&gt; Array
+               (
+                   [name] =&gt; categories
+                   [rows] =&gt; Array
+                       (
+                           [0] =&gt; Array
+                               (
+                                   [category_id] =&gt; 36
+
+            …
+
+            [tables] =&gt; Array
+                                       (
+                                           [0] =&gt; Array
+                                               (
+                                                   [name] =&gt; category_descriptions
+                                                   [rows] =&gt; Array
+
+                       (
+
+                          …
+
+      )
+
+)
+
+                                           [1] =&gt; Array
+                           (
+                                                           [name] =&gt; categories_to_stores
+                                                           [rows] =&gt; Array
+                                                                 (
+                              …
+                                  )
+
+                       )
+
+                       )
+
+                 )
+
+              …
+
+                         )
+
+          ...
+
+       )
+
+    )</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+
+
+
+
+
+</div>
+
