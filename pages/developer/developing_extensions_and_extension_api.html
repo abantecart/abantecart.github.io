@@ -174,7 +174,7 @@ $my_data_obj-&gt;getDatasetProperties();	</code>
 <p>Next step for new dataset, is to set columns and properties for them. This is similar in concept of creating fields for the database. Each dataset is a representation of one table and it has columns and rows. </p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
-	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
 // define columns for questions
 $poll_qs-&gt;defineColumns (
    		 array ( &quot;name&quot;=&gt;&quot;language_code&quot;,
@@ -308,114 +308,114 @@ $my_data-&gt;dropDataset();</code>
 <!-- HTML Highlight -->
 <div class="code-highlight">
 	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">
-<?xml version="1.0" encoding="UTF-8"?>
-<datasets>
-	<dataset>
-		<action>update</action>
-		<dataset_name>abo</dataset_name>
-		<dataset_key>menu</dataset_key>		
-		<dataset_definition>
-			<column_definition>
-				<column_name>menu_id</column_name>
-				<column_type>integer</column_type>
-				<column_sort_order>1</column_sort_order>				
-	 		</column_definition>
-	 		<column_definition>
-				<column_name>menu_name</column_name>
-				<column_type>varchar</column_type>
-				<column_sort_order>2</column_sort_order>				
-	 		</column_definition>
-	 		<column_definition>
-				<column_name>menu_text</column_name>
-				<column_type>varchar</column_type>
-				<column_sort_order>3</column_sort_order>				
-	 		</column_definition>
-	 		<column_definition>
-				<column_name>sort_order</column_name>
-				<column_type>integer</column_type>
-				<column_sort_order>4</column_sort_order>				
-	 		</column_definition>	
-	 	</dataset_definition>	 	
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;datasets&gt;
+	&lt;dataset&gt;
+		&lt;action&gt;update&lt;/action&gt;
+		&lt;dataset_name&gt;abo&lt;/dataset_name&gt;
+		&lt;dataset_key&gt;menu&lt;/dataset_key&gt;		
+		&lt;dataset_definition&gt;
+			&lt;column_definition&gt;
+				&lt;column_name&gt;menu_id&lt;/column_name&gt;
+				&lt;column_type&gt;integer&lt;/column_type&gt;
+				&lt;column_sort_order&gt;1&lt;/column_sort_order&gt;				
+	 		&lt;/column_definition&gt;
+	 		&lt;column_definition&gt;
+				&lt;column_name&gt;menu_name&lt;/column_name&gt;
+				&lt;column_type&gt;varchar&lt;/column_type&gt;
+				&lt;column_sort_order&gt;2&lt;/column_sort_order&gt;				
+	 		&lt;/column_definition&gt;
+	 		&lt;column_definition&gt;
+				&lt;column_name&gt;menu_text&lt;/column_name&gt;
+				&lt;column_type&gt;varchar&lt;/column_type&gt;
+				&lt;column_sort_order&gt;3&lt;/column_sort_order&gt;				
+	 		&lt;/column_definition&gt;
+	 		&lt;column_definition&gt;
+				&lt;column_name&gt;sort_order&lt;/column_name&gt;
+				&lt;column_type&gt;integer&lt;/column_type&gt;
+				&lt;column_sort_order&gt;4&lt;/column_sort_order&gt;				
+	 		&lt;/column_definition&gt;	
+	 	&lt;/dataset_definition&gt;	 	
 
-	 	<dataset_properties>
-	 		<dataset_property>	 			
-	 			<dataset_property_name>some_prop</dataset_property_name>
-	 			<dataset_property_value>25100</dataset_property_value>
-	 		</dataset_property>	 		 		
-	 	</dataset_properties>
+	 	&lt;dataset_properties&gt;
+	 		&lt;dataset_property&gt;	 			
+	 			&lt;dataset_property_name&gt;some_prop&lt;/dataset_property_name&gt;
+	 			&lt;dataset_property_value&gt;25100&lt;/dataset_property_value&gt;
+	 		&lt;/dataset_property&gt;	 		 		
+	 	&lt;/dataset_properties&gt;
 
 	 	
-	 	<column_properties>
-	 		<column_property>
-	 			<column_name>menu_id</column_name>
-	 			<column_property_name>max_id</column_property_name>
-	 			<column_property_value>100</column_property_value>
-	 		</column_property>
-	 		<column_property>
-	 			<column_name>menu_id</column_name>
-	 			<column_property_name>min_id</column_property_name>
-	 			<column_property_value>10</column_property_value>
-	 		</column_property>	 		
-	 	</column_properties>
+	 	&lt;column_properties&gt;
+	 		&lt;column_property&gt;
+	 			&lt;column_name&gt;menu_id&lt;/column_name&gt;
+	 			&lt;column_property_name&gt;max_id&lt;/column_property_name&gt;
+	 			&lt;column_property_value&gt;100&lt;/column_property_value&gt;
+	 		&lt;/column_property&gt;
+	 		&lt;column_property&gt;
+	 			&lt;column_name&gt;menu_id&lt;/column_name&gt;
+	 			&lt;column_property_name&gt;min_id&lt;/column_property_name&gt;
+	 			&lt;column_property_value&gt;10&lt;/column_property_value&gt;
+	 		&lt;/column_property&gt;	 		
+	 	&lt;/column_properties&gt;
 	 	
-	 	<dataset_rows>
-	 		<dataset_row>
-	 			<cell>
-	 				<column_name>menu_id</column_name>
-	 				<value>11</value>
-	 			</cell>
-	 			<cell>	
-	 				<column_name>menu_name</column_name>
-	 				<value>some name1</value>
-	 			</cell>
-	 			<cell>	
-	 				<column_name>menu_text</column_name>
-	 				<value>some text1</value>
-	 			</cell>
-	 			<cell>	
-	 				<column_name>sort_order</column_name>
-	 				<value>1</value>
-	 			</cell>
-	 		</dataset_row>
-	 		<dataset_row>
-	 			<cell>
-	 				<column_name>menu_id</column_name>
-	 				<value>12</value>
-	 			</cell>
-	 			<cell>	
-	 				<column_name>menu_name</column_name>
-	 				<value>some name2</value>
-	 			</cell>
-	 			<cell>	
-	 				<column_name>menu_text</column_name>
-	 				<value>some text2</value>
-	 			</cell>
-	 			<cell>	
-	 				<column_name>sort_order</column_name>
-	 				<value>2</value>
-	 			</cell>
-	 		</dataset_row>
-	 		<dataset_row>
-	 			<cell>
-	 				<column_name>menu_id</column_name>
-	 				<value>13</value>
-	 			</cell>
-	 			<cell>	
-	 				<column_name>menu_name</column_name>
-	 				<value>some name3</value>
-	 			</cell>
-	 			<cell>	
-	 				<column_name>menu_text</column_name>
-	 				<value>some text3</value>
-	 			</cell>
-	 			<cell>	
-	 				<column_name>sort_order</column_name>
-	 				<value>3</value>
-	 			</cell>
-	 		</dataset_row>
-	 	 </dataset_rows>	 	
-	</dataset>
-</datasets>
+	 	&lt;dataset_rows&gt;
+	 		&lt;dataset_row&gt;
+	 			&lt;cell&gt;
+	 				&lt;column_name&gt;menu_id&lt;/column_name&gt;
+	 				&lt;value&gt;11&lt;/value&gt;
+	 			&lt;/cell&gt;
+	 			&lt;cell&gt;	
+	 				&lt;column_name&gt;menu_name&lt;/column_name&gt;
+	 				&lt;value&gt;some name1&lt;/value&gt;
+	 			&lt;/cell&gt;
+	 			&lt;cell&gt;	
+	 				&lt;column_name&gt;menu_text&lt;/column_name&gt;
+	 				&lt;value&gt;some text1&lt;/value&gt;
+	 			&lt;/cell&gt;
+	 			&lt;cell&gt;	
+	 				&lt;column_name&gt;sort_order&lt;/column_name&gt;
+	 				&lt;value&gt;1&lt;/value&gt;
+	 			&lt;/cell&gt;
+	 		&lt;/dataset_row&gt;
+	 		&lt;dataset_row&gt;
+	 			&lt;cell&gt;
+	 				&lt;column_name&gt;menu_id&lt;/column_name&gt;
+	 				&lt;value&gt;12&lt;/value&gt;
+	 			&lt;/cell&gt;
+	 			&lt;cell&gt;	
+	 				&lt;column_name&gt;menu_name&lt;/column_name&gt;
+	 				&lt;value&gt;some name2&lt;/value&gt;
+	 			&lt;/cell&gt;
+	 			&lt;cell&gt;	
+	 				&lt;column_name&gt;menu_text&lt;/column_name&gt;
+	 				&lt;value&gt;some text2&lt;/value&gt;
+	 			&lt;/cell&gt;
+	 			&lt;cell&gt;	
+	 				&lt;column_name&gt;sort_order&lt;/column_name&gt;
+	 				&lt;value&gt;2&lt;/value&gt;
+	 			&lt;/cell&gt;
+	 		&lt;/dataset_row&gt;
+	 		&lt;dataset_row&gt;
+	 			&lt;cell&gt;
+	 				&lt;column_name&gt;menu_id&lt;/column_name&gt;
+	 				&lt;value&gt;13&lt;/value&gt;
+	 			&lt;/cell&gt;
+	 			&lt;cell&gt;	
+	 				&lt;column_name&gt;menu_name&lt;/column_name&gt;
+	 				&lt;value&gt;some name3&lt;/value&gt;
+	 			&lt;/cell&gt;
+	 			&lt;cell&gt;	
+	 				&lt;column_name&gt;menu_text&lt;/column_name&gt;
+	 				&lt;value&gt;some text3&lt;/value&gt;
+	 			&lt;/cell&gt;
+	 			&lt;cell&gt;	
+	 				&lt;column_name&gt;sort_order&lt;/column_name&gt;
+	 				&lt;value&gt;3&lt;/value&gt;
+	 			&lt;/cell&gt;
+	 		&lt;/dataset_row&gt;
+	 	 &lt;/dataset_rows&gt;	 	
+	&lt;/dataset&gt;
+&lt;/datasets&gt;
 </code>
  	</pre>
 </div>
