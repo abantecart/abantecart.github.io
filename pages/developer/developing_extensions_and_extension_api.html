@@ -49,7 +49,8 @@ Our extension architecture is partially based on Plexus API concept (http://code
 	<b>Extension</b> &ndash; Collection of directories and files under one main directory that can be added to shopping cart to offer additional feature or function. Extension can be enabled and configured in the admin of shopping cart application<br />
 <b>Extension Configuration</b> &ndash; Collection of settings that can control the extension functionality of behavior. Configuration can be default (provided with the original installation of the extension) and custom, after installation once admin user change the settings.<br />
 <b>Hook</b> &ndash; This is the tool used in extension subsystem to connect extension to particular section in application.<br />
-<b>Core Hook</b> &ndash; This is the hook to the core function of application that allows extending functionality, effect data structures and values. <b>Template Hook</b> - This is the hook to extend display of the particular page on the front end or admin. This is usually implemented within template file.<br />
+<b>Core Hook</b> &ndash; This is the hook to the core function of application that allows extending functionality, effect data structures and values. 
+<br /><b>Template Hook</b> - This is the hook to extend display of the particular page on the front end or admin. This is usually implemented within template file.<br />
 <b>Dataset</b> - Ability to save, access and manage data specific for extension. See more details later on.
 </p>
 </div>
@@ -100,10 +101,10 @@ Dataset class will handle all the data storing and management for you with inter
 <p class="box-description"><b>How does Dataset work?</b><br />
 First you have to recognize namings in dataset class. There are &ldquo;object&rdquo;, &ldquo;datarow&rdquo;, &ldquo;fieldset&rdquo; and their &ldquo;definitions&rdquo;.</p>
 
-<p class="box-description"><a class="image" href="http://www.abantecart.com/document_wiki/index.php/File:Dataset_01.png" title="caption"><img alt="caption" height="417" src="http://www.abantecart.com/document_wiki/images/thumb/e/ea/Dataset_01.png/700px-Dataset_01.png" width="700" /></a></p>
+<p class="box-description"><a class="image" href="/img/developer/Dataset_01.png" title="caption"><img alt="caption" height="417" src="/img/developer/Dataset_01.png" width="700" /></a></p>
 
 <p class="box-description">&ldquo;Object&rdquo; is any abstract part of your extension or core. It may be anything that we call &ldquo;owner&rdquo;. Object is owner of data sets. Menu, charts, polls, etc. may contain some data, therefore, they are owners of data sets, objects. &ldquo;Object&rdquo; entity have two attributes: name and key. Name is common text unique identifier of the object (menu, poll, etc). &ldquo;Key&rdquo; is identifier from another section or table of AbanteCart, for example, extension&rsquo;s key(id). Pair &ldquo;name-key&rdquo; must be unique. Key can be also understood as a sort of foreign key to any other table in the system. Key is not required and if not provided name part of the object needs to stay unique. Foreign key connection to any table can be also build pragmatically with use any field in the dataset fieldset.<br />
-Key can also be a subset name in case of multiple tables used within one feature or set. <a class="image" href="http://www.abantecart.com/document_wiki/index.php/File:Dataset_02.png" title="caption"><img alt="caption" height="436" src="http://www.abantecart.com/document_wiki/images/thumb/8/8e/Dataset_02.png/700px-Dataset_02.png" width="700" /></a></p>
+Key can also be a subset name in case of multiple tables used within one feature or set. <a class="image" href="/img/developer/Dataset_02.png" title="caption"><img alt="caption" height="436" src="/img/developer/Dataset_02.png" width="700" /></a></p>
 
 <p class="box-description">In our poll example you have poll_questions and poll_answers tables. You will create 2 datasets as following:</p>
 
