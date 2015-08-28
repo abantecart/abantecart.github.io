@@ -526,7 +526,59 @@ $menu-&gt;deleteMenuItem (&quot;sale_your-menu&quot;);</code>
 							<p class="note-description"> testForm -> Form Name and ID that needs to be unique Now we need to load this from data to the form instance from the database. We assume we already have it in there. We explain later how to add form to the database.  </p>
 						</div>
 						<!-- End of Note -->
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+$this-&gt;form-&gt;loadFromDb(&#39;testForm&#39;);</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+<p>Since we have all the form data, fields and settings for the form loaded from the database, we are ready to generate FlexyForm code and pass to the template to be displayed. <br>To display form you just pass output of getFormHtml() function: </p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+$this-&gt;view-&gt;assign(&#39;form_output&#39;, $this-&gt;form-&gt;getFormHtml() );
+</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+						<!-- Note -->
+						<div class="note js-note blue">
+							<span class="note-close js-close">
+								<i class="fa fa-times"></i>
+							</span>
+							<h4 class="note-title"> Note </h4>
+							<p class="note-description"> 'form_output' is the name of variable in the template to display the form’s HTML  </p>
+						</div>
+						<!-- End of Note -->
+<p>Run the form template or any other template to display the form: </p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+$this-&gt;processTemplate(&#39;pages/index/form.tpl&#39; );</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
 
+<p>Validation: <br>At some point you need to add validation code to check submited values of the form. <br>You can see example below how this can be done:</p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">
+if ( $this-&gt;request-&gt;server[&#39;REQUEST_METHOD&#39;] == &#39;POST&#39; ) {
+        	if ( $this-&gt;validateForm() ) {
+            	//this message should be loaded from language file
+            	$this-&gt;session-&gt;data[&#39;success&#39;] = &#39;Success&#39;;
+            	$f = $this-&gt;form-&gt;getForm();
+		//success_page can be set for the for in the database. 
+            		$this-&gt;redirect($this-&gt;html-&gt;getSecureURL($f[&#39;success_page&#39;]));
+        	} else {
+            		$this-&gt;form-&gt;setErrors($this-&gt;errors);
+            		$this-&gt;form-&gt;batchAssign($this-&gt;request-&gt;post);
+        	}
+    	}</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
 
 
 	
