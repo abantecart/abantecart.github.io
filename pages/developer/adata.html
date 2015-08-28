@@ -91,7 +91,7 @@ Using AData data can be connected and mapped to any other third party applicatio
 	<p class="box-description">
 	Below are main interface functions to AData</p>
 
-<p><b>Export Methods:</b> 
+<p class="box-description"><b>Export Methods:</b> 
 </p>
 </div>
 
@@ -104,16 +104,16 @@ Using AData data can be connected and mapped to any other third party applicatio
 	<p class="box-description">
 (request array, [ skip display of relationship IDs ])</p>
 
-<p>Function to produce multidimensional associative array with data based on the request input array.</p>
+<p class="box-description">Function to produce multidimensional associative array with data based on the request input array.</p>
 
-<p>-request is an array providing list of tables and restrictions to the data to be exported from the database. See below is example of the request array structure. Request array can contain special parameters to set limited data extract (similar to SQL where clause).</p>
+<p class="box-description">-request is an array providing list of tables and restrictions to the data to be exported from the database. See below is example of the request array structure. Request array can contain special parameters to set limited data extract (similar to SQL where clause).</p>
 
-<p>Additional parameters: filter and start_id / end_id filter can contain any SQL (where) like portion to limit the result. start_id / end_id are 2 parameters to set a range of unique table IDs (if applicable)</p>
+<p class="box-description">Additional parameters: filter and start_id / end_id filter can contain any SQL (where) like portion to limit the result. start_id / end_id are 2 parameters to set a range of unique table IDs (if applicable)</p>
 
-<p>- skip display of relationship IDs. By default, result array will not show relationship ID key and value on each nested element. This is not needed for the export, since all nested nodes of data gets relationship ID key and value from parent node. If pass as FALSE relationship ID key and value will be added on each node.</p>
+<p class="box-description">- skip display of relationship IDs. By default, result array will not show relationship ID key and value on each nested element. This is not needed for the export, since all nested nodes of data gets relationship ID key and value from parent node. If pass as FALSE relationship ID key and value will be added on each node.</p>
 
-<p>- result array. Result array is returned in a form of multidimensional associative array where each nested level represent child table and rows for related table. See below is example of the return array structure.</p>
- <p>Example of request array:</p>
+<p class="box-description">- result array. Result array is returned in a form of multidimensional associative array where each nested level represent child table and rows for related table. See below is example of the return array structure.</p>
+ <p class="box-description">Example of request array:</p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
 	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
@@ -183,7 +183,7 @@ $request  = array (
  	</pre>
 </div>
 <!-- HTML Highlight -->
-<p>request with the filter: </p>
+<p class="box-description">request with the filter: </p>
 
 <!-- HTML Highlight -->
 <div class="code-highlight">
@@ -217,7 +217,7 @@ $request  = array (
 </div>
 <!-- HTML Highlight -->
 
-<p>Example Return Array: </p>
+<p class="box-description">Example Return Array: </p>
 
 <!-- HTML Highlight -->
 <div class="code-highlight">
@@ -301,15 +301,15 @@ Array
 	<p class="box-description">
 (import data array, [ method test or commit (default) ])</p>
 
-<p>Function to process multidimensional associative input array and perform action on the database tables with the data provided (insert/update/delete).</p>
+<p class="box-description">Function to process multidimensional associative input array and perform action on the database tables with the data provided (insert/update/delete).</p>
 
-<p>- input array. Input array is provided in a form of multidimensional associative array where each nested level represent child table and rows for related table. See below is example of the input array structure. On each data level, additional special key &ldquo;action&rdquo;. Action can be insert, update or delete. Note. insert or update action can be determined automatically, but to improve performance (speed) of update/insert we suggest you provided action as much as possible.</p>
+<p class="box-description">- input array. Input array is provided in a form of multidimensional associative array where each nested level represent child table and rows for related table. See below is example of the input array structure. On each data level, additional special key &ldquo;action&rdquo;. Action can be insert, update or delete. Note. insert or update action can be determined automatically, but to improve performance (speed) of update/insert we suggest you provided action as much as possible.</p>
 
-<p>NOTE: If you import data with table autoincrement index columns provided (example: product_id), default action will be update. In case, new inserts required with autoincrement columns values, action &quot;insert&quot; needs to be specified.</p>
+<p class="box-description">NOTE: If you import data with table autoincrement index columns provided (example: product_id), default action will be update. In case, new inserts required with autoincrement columns values, action &quot;insert&quot; needs to be specified.</p>
 
-<p>- method. By default importData will perform an action on the database. With passing test, you can first check input before effecting the data in the database. NOTE: SQL run time errors can not be detected, but all other data related issues can be caught with this test.</p>
+<p class="box-description">- method. By default importData will perform an action on the database. With passing test, you can first check input before effecting the data in the database. NOTE: SQL run time errors can not be detected, but all other data related issues can be caught with this test.</p>
 
-<p>- return. Array with statuses for each table. In the test mode array returned with all SQLs to be performed on the database.<br>
+<p class="box-description">- return. Array with statuses for each table. In the test mode array returned with all SQLs to be performed on the database.<br>
 <b>Example Import Array:</b></p>
 
 <!-- HTML Highlight -->
@@ -479,7 +479,7 @@ $array2 = $this-&gt;data-&gt;XML2Array( $xml_str );
 	<p class="box-description">
 	( file_path string, delimiter_index int ) - Function to convert CSV file to nested array. Returned array may be used to update the database.</p>
 
-<p><b>Example use:</b>
+<p class="box-description"><b>Example use:</b>
 	</p>
 	
 <!-- HTML Highlight -->
@@ -504,21 +504,21 @@ $array = $this-&gt;data-&gt;CSV2ArrayFromFile( $path_to_file, 0 ); // 0 - comma 
 	<p class="box-description">
 	( data_array, file_name string [, delimiter_index int, format csv or txt, enclosure_symbol, escape_symbol, as_file bool ]) - Provide CSV data from nested array.</p>
 
-<p>Returns ZIP archive with CSV files. Each file contains data for whole section (categories, products, etc.).</p>
+<p class="box-description">Returns ZIP archive with CSV files. Each file contains data for whole section (categories, products, etc.).</p>
 
-<p>- data_array - array with nested structure.</p>
+<p class="box-description">- data_array - array with nested structure.</p>
 
-<p>- file_name - name of the zip archive file.</p>
+<p class="box-description">- file_name - name of the zip archive file.</p>
 
-<p>- delimiter_index - index of the prefered delimiter symbol: 0 - comma, 1 - semicolon, 2 - TAB symbol.</p>
+<p class="box-description">- delimiter_index - index of the prefered delimiter symbol: 0 - comma, 1 - semicolon, 2 - TAB symbol.</p>
 
-<p>- enclosure_symbol - columns in CSV file will be enclosed with this symbol.</p>
+<p class="box-description">- enclosure_symbol - columns in CSV file will be enclosed with this symbol.</p>
 
-<p>- escape_symbol - chars in data that are used as enclosure will be escaped with this symbol.</p>
+<p class="box-description">- escape_symbol - chars in data that are used as enclosure will be escaped with this symbol.</p>
 
-<p>- as_file - return as path to file or as file contents.
+<p class="box-description">- as_file - return as path to file or as file contents.
 	</p>
-<p><b>Example use:</b></p>
+<p class="box-description"><b>Example use:</b></p>
 	
 <!-- HTML Highlight -->
 <div class="code-highlight">
@@ -542,7 +542,7 @@ $this-&gt;data = new AData();
 
 <b>TODO:</b>
 
-<p>- Implement &lsquo;all&rsquo; for the request array to include all nested tables automatically. Example:</p>
+<p class="box-description">- Implement &lsquo;all&rsquo; for the request array to include all nested tables automatically. Example:</p>
 
 
 <!-- HTML Highlight -->
@@ -553,13 +553,13 @@ $this-&gt;data = new AData();
 </div>
 <!-- HTML Highlight -->
 
-<p>This will include all related tables based on table config.</p>
+<p class="box-description">This will include all related tables based on table config.</p>
 
-<p>- BUG in special case. some keys like language_id is not carried all the way to end nodes.</p>
+<p class="box-description">- BUG in special case. some keys like language_id is not carried all the way to end nodes.</p>
 
-<p>I think we need to stack main node input and pass it. Need better solution.</p>
+<p class="box-description">I think we need to stack main node input and pass it. Need better solution.</p>
 
-<p>- Implement special method to import Resource Library file to local repository from remote location.</p>
+<p class="box-description">- Implement special method to import Resource Library file to local repository from remote location.</p>
 
 
 
