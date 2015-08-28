@@ -455,3 +455,58 @@ $menu-&gt;deleteMenuItem (&quot;sale_your-menu&quot;);</code>
 
 
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="category-info helper">
+	<h4 id="Working_with_Forms" class="box-title">Working with Forms</h4>
+	<p class="box-description">
+	There are 2 types of forms in AbanteCart, FlexyForms and standards forms. Both forms are using the same classes to draw the form and HTML elements. Main difference between the two is that FlexyForms are loaded from the data base automatically with LoadFormDB() function.<br> Standard form is build in the code. FlexyForms are mainly used in storefront to provide flexibility to cart admin to edit fields and add new forms, and also ability to extend forms/fields with add extensions. In AbanteCart control panel we use standard forms, but blended with FlexyForms. Since control panel mainly consists of forms, it will be heavy load to provide database driven forms. FlexyForms approach in the control panel gives ability to add (extend) fields to the forms with added extensions. <br>There are 3 types of field sets that are used in AbanteCart. These types are based on the way fields respond to changes. Standard type - On fields changes, no changes are highlighted. This is a standard most known fields that are used in allwebsite. In AbanteCart these fields are used in storefront, and for search and non-update related fields in control panel. Highlight on change - These fields will change color once you change the value in the fields. They will change back the color if you change the value back to original. This is very helpful in UI to show users that data was changed and requires attention or saving. <br>Highlight and save - These fields will not only change color, but will also show the option to save or reset the value. Changed field can be saved individually right after edit, or if change in accident. it can be reset. This is very handy in the areas with big forms and improve user experience and user error. 
+	</p>
+	
+	
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="category-info helper">
+	<h4 id="Extending_and_Creating_FlexyForms" class="box-title">Extending and Creating FlexyForms </h4>
+<p>FlexyForm set up consists of 3 important components: Database entry, Processing Controller and Template. Below is a diagram that can give more idea how FlexyForms are structured: <a class="image" href="http://www.abantecart.com/document_wiki/index.php/File:Default_abantecart_charts_p9.png" title="caption"><img alt="caption" height="708" src="http://www.abantecart.com/document_wiki/images/thumb/5/54/Default_abantecart_charts_p9.png/500px-Default_abantecart_charts_p9.png" width="500" /></a></p>
+
+<p>Lets look into Controller and PHP code Create an instance of the class AForm:</p>
+
+	
+	
+</div>
