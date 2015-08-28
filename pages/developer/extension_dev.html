@@ -1528,6 +1528,34 @@ DROP TABLE IF EXISTS `ac_slides`;</code>
  	</pre>
 </div>
 <!-- HTML Highlight -->
+
+
+<p>-          create <b>install.php</b>. Here we will add block to layout. Container for our block will be <b>content_top</b>
+</p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+<?php
+if ( !defined ( 'DIR_CORE' )) {
+  	header ( 'Location: static_pages/' );
+}
+ 
+$layout = new ALayoutManager();
+$block_data = array(
+    'block_txt_id' => 'slideshow',
+    'controller' => 'blocks/slideshow',
+    'templates' => array(
+        array(
+            'parent_block_txt_id' => 'content_top',
+            'template' => 'blocks/slideshow.tpl',
+        ),
+	),
+);
+$layout->saveBlock( $block_data );
+ 	</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
 	
 	
 	
