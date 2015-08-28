@@ -22,17 +22,13 @@ redirect_from: "/tag/sf_api.html"
 	<h4 class="note-title">Document Content</h4>
 	<ul>
 	<li class="toclevel-1 tocsection-1"><a href="#Introduction"> <span class="toctext">Introduction</span></a></li>
-	<li class="toclevel-1 tocsection-2"><a href="#Where_AData_is_used"> <span class="toctext">Where AData is used</span></a></li>
-	<li class="toclevel-1 tocsection-3"><a href="#Opportunity"> <span class="toctext">Opportunity</span></a></li>
-	<li class="toclevel-1 tocsection-4"><a href="#How_it_works"> <span class="toctext">How it works</span></a>
-	<ul>
-	<li class="toclevel-2 tocsection-1"><a href="#exportData"> <span class="toctext">exportData</span></a></li>
-	<li class="toclevel-2 tocsection-2"><a href="#importData"> <span class="toctext">importData</span></a></li>
-	<li class="toclevel-2 tocsection-3"><a href="#array2XML"> <span class="toctext">array2XML</span></a></li>
-	<li class="toclevel-2 tocsection-4"><a href="#ML2ArrayFromFile"> <span class="toctext">ML2ArrayFromFile</span></a></li>
-	<li class="toclevel-2 tocsection-5"><a href="#XML2Array"> <span class="toctext">XML2Array</span></a></li>
-	<li class="toclevel-2 tocsection-6"><a href="#CSV2ArrayFromFile"> <span class="toctext">CSV2ArrayFromFile</span></a></li>
-	<li class="toclevel-2 tocsection-7"><a href="#array2CSV"> <span class="toctext">array2CSV</span></a></li></ul>
+	<li class="toclevel-1 tocsection-2"><a href="#Requests"> <span class="toctext">Requests, Parameters and Responses</span></a>
+		<ul>
+		<li class="toclevel-2 tocsection-1"><a href="#Catalog_API"> <span class="toctext">Catalog API</span></a></li>
+		<li class="toclevel-2 tocsection-2"><a href="#Customer_API"> <span class="toctext">Customer API</span></a></li>
+		<li class="toclevel-2 tocsection-3"><a href="#Checkout_API"> <span class="toctext">Checkout API</span></a></li>
+		<li class="toclevel-2 tocsection-4"><a href="#Common_DATA_API"> <span class="toctext">Common DATA API</span></a></li>
+		</ul>
 	</li>
 	</ul>
 </div>
@@ -45,12 +41,32 @@ redirect_from: "/tag/sf_api.html"
 
 
 <div class="category-info helper">
-	<h4 id="What_is_AData_Import" class="box-title">What is AData Import/Export Engine or Class?
-
-</h4>
+	<h4 id="Introduction" class="box-title">Introduction</h4>
 	<p class="box-description">
-	To provide maximum data flexibility, quick access and update of the database in abantecart, we have create easy and flexible class AData. This class helps get quick access to any database table or record in the database and receive easy to read XML, CSV or Array formats. Similar way, XML, CSV or Array records can be saved back to the database.
-<br>
-AData is easy, fast and robust to deal with any database aspect of AbanteCart. You do not need to deal with database selects, updates and deletes. Data can be accessed in the batch with complete inset or with partial update. Important aspect to mention that data is imported (updated) in the same format is it is exported. To see format of the data, you can simply export the data, review, update or add in the same format and import back to the database. 
-</p>
+	<b>NOTE: API is currently in a beta mode. Use caution to enable it on live sites and use API key.</b></p>
+
+<p>AbanteCart storefront API is included in code base distribution starting from version 1.0.0. API is RESTful based with JSON as a primary data document format. API supports both HTTP and HTTPS protocols along with extra security if using API key configured in the control panel of AbanteCart.</p>
+
+<p>API build to provide same features as regular AbanteCart storefront and offer remote or mobile platforms to access shopping cart and perform light weight eCommerce requests.</p>
+
+<p>API includes product (catalog) and customer side support. These includes browsing categories, products, attributes as well as create new customer account, login, add to cart and place orders.</p>
+
+<p>AbanteCart API is optimized to perform light and fast responses to the client&rsquo;s requests. API rt routes are explicit and start with a/... , example, a/product/product</p>
+
+<p><br />
+Enable API:</p>
+
+<p>By default API is disabled. To enable the API, you need to locate Control Panel (admin) settings -&gt; system section and enable API. If you want to restrict public access with secret key you can save it in settings. This key will need to be provided with every API request.</p>
+
+<p><br />
+How To Test API.</p>
+
+<p>To make development with AbanteCart API and testing easier we have created a script to help you see how API works. These script includes most of the features and provides examples.</p>
+
+<p><a class="external free" href="http://demo.abantecart.com/test_api.php" rel="nofollow">http://demo.abantecart.com/test_api.php</a></p>
+
+<p>NOTE: You need to enable API in the demo admin. Demo is reset every 30 min, so you need to reactivate.</p>
+
+<p>You can copy this script to your own installation main directory.</p>
+
 </div>
