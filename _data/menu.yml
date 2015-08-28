@@ -472,4 +472,6 @@
     - text: Developing Templates
       url: /pages/developer/developing_templates_as_extensions.html 
     - text: Import/Export AData
-      url: /pages/developer/adata.html      
+      url: /pages/developer/adata.html 
+    - text: Storefront API
+      url: /pages/developer/sf_api.html
