@@ -1535,31 +1535,965 @@ DROP TABLE IF EXISTS `ac_slides`;</code>
 <!-- HTML Highlight -->
 <div class="code-highlight">
 	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
-<?php
-if ( !defined ( 'DIR_CORE' )) {
-  	header ( 'Location: static_pages/' );
+&lt;?php
+if ( !defined ( &#39;DIR_CORE&#39; )) {
+  	header ( &#39;Location: static_pages/&#39; );
 }
  
 $layout = new ALayoutManager();
 $block_data = array(
-    'block_txt_id' => 'slideshow',
-    'controller' => 'blocks/slideshow',
-    'templates' => array(
+    &#39;block_txt_id&#39; =&gt; &#39;slideshow&#39;,
+    &#39;controller&#39; =&gt; &#39;blocks/slideshow&#39;,
+    &#39;templates&#39; =&gt; array(
         array(
-            'parent_block_txt_id' => 'content_top',
-            'template' => 'blocks/slideshow.tpl',
+            &#39;parent_block_txt_id&#39; =&gt; &#39;content_top&#39;,
+            &#39;template&#39; =&gt; &#39;blocks/slideshow.tpl&#39;,
         ),
 	),
 );
-$layout->saveBlock( $block_data );
+$layout-&gt;saveBlock( $block_data );
  	</code>
  	</pre>
 </div>
 <!-- HTML Highlight -->
+
+
+
+
+<p>
+-          create <b>uninstall.php</b>
+</p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+&lt;?php
+if ( !defined ( &#39;DIR_CORE&#39; )) {
+  	header ( &#39;Location: static_pages/&#39; );
+}
+ 
+// delete block
+$layout = new ALayoutManager();
+$layout-&gt;deleteBlock(&#39;slideshow&#39;);
+ 	</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+<p>-          create image folder. Here we will have
+o    icon.png – extension icon <br>
+o    slides/slide1.jpg, slides/slide2.jpg, slides/slide3.jpg – default slides
+</p><p>-          create <b>main.php</b>. Here we will define extension resources
+</p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">
+&lt;?php
+if ( !defined ( &#39;DIR_CORE&#39; )) {
+  	header ( &#39;Location: static_pages/&#39; );
+}
+ 
+$controllers = array(
+    &#39;storefront&#39; =&gt; array(
+        &#39;blocks/slideshow&#39;,
+	),
+    &#39;admin&#39; =&gt; array(
+        &#39;pages/blocks/slideshow&#39;,
+	),
+);
+ 
+$models = array(
+    &#39;storefront&#39; =&gt; array(
+        &#39;slideshow/slideshow&#39;,
+	),
+    &#39;admin&#39; =&gt; array(
+        &#39;slideshow/slideshow&#39;,
+	),
+);
+ 
+$languages = array(
+    &#39;storefront&#39; =&gt; array(),
+    &#39;admin&#39; =&gt; array(
+        &#39;slideshow/slideshow&#39;,
+	),
+);
+ 
+$templates = array(
+    &#39;storefront&#39; =&gt; array(
+        &#39;blocks/slideshow.tpl&#39;,
+	),
+    &#39;admin&#39; =&gt; array(
+        &#39;pages/blocks/slideshow_list.tpl&#39;,
+        &#39;pages/blocks/slideshow_form.tpl&#39;,
+	),
+);</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+	
+<p><br> 
+Our extension will have
+</p>
+<ul><li> 2 controllers – one for admin to manage slides, one for storefront to prepare data for slideshow
+</li><li> One language file
+</li><li> A couple of templates
+</li><li> Two models. Model for storefront has only methods to retrieve data. Model for admin has methods to add/edit/delete items
+</li></ul>
+<p><br> 
+</p>
+<ul><li> Create language file – <b>extensions/slideshow/admin/language/english/slideshow/slideshow.xml</b>
+</li></ul>
+
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;definitions&gt;
+  	&lt;definition&gt;
+        	&lt;key&gt;slideshow_name&lt;/key&gt;
+        	&lt;value&gt;&lt;![CDATA[slideshow]]&gt;&lt;/value&gt;
+  	&lt;/definition&gt;
+    &lt;definition&gt;
+        	&lt;key&gt;slides_title&lt;/key&gt;
+        	&lt;value&gt;&lt;![CDATA[Edit Slides]]&gt;&lt;/value&gt;
+  	&lt;/definition&gt;
+    &lt;definition&gt;
+        	&lt;key&gt;button_remove&lt;/key&gt;
+        	&lt;value&gt;&lt;![CDATA[Remove]]&gt;&lt;/value&gt;
+  	&lt;/definition&gt;
+    &lt;definition&gt;
+        	&lt;key&gt;button_edit&lt;/key&gt;
+        	&lt;value&gt;&lt;![CDATA[Edit]]&gt;&lt;/value&gt;
+  	&lt;/definition&gt;
+    &lt;definition&gt;
+        	&lt;key&gt;button_add_slide&lt;/key&gt;
+        	&lt;value&gt;&lt;![CDATA[Add Slide]]&gt;&lt;/value&gt;
+  	&lt;/definition&gt;
+    &lt;definition&gt;
+        	&lt;key&gt;text_slide&lt;/key&gt;
+        	&lt;value&gt;&lt;![CDATA[Slide]]&gt;&lt;/value&gt;
+  	&lt;/definition&gt;
+    &lt;definition&gt;
+        	&lt;key&gt;text_success&lt;/key&gt;
+        	&lt;value&gt;&lt;![CDATA[You successfully modified slides]]&gt;&lt;/value&gt;
+  	&lt;/definition&gt;
+    &lt;definition&gt;
+        	&lt;key&gt;entry_img&lt;/key&gt;
+        	&lt;value&gt;&lt;![CDATA[Image]]&gt;&lt;/value&gt;
+  	&lt;/definition&gt;
+    &lt;definition&gt;
+        	&lt;key&gt;entry_url&lt;/key&gt;
+        	&lt;value&gt;&lt;![CDATA[Url]]&gt;&lt;/value&gt;
+  	&lt;/definition&gt;
+  	&lt;definition&gt;
+        	&lt;key&gt;slideshow_status&lt;/key&gt;
+        	&lt;value&gt;&lt;![CDATA[Status]]&gt;&lt;/value&gt;
+  	&lt;/definition&gt;
+  	&lt;definition&gt;
+        	&lt;key&gt;slideshow_status_0&lt;/key&gt;
+        	&lt;value&gt;&lt;![CDATA[Disabled]]&gt;&lt;/value&gt;
+  	&lt;/definition&gt;
+  	&lt;definition&gt;
+        	&lt;key&gt;slideshow_status_1&lt;/key&gt;
+        	&lt;value&gt;&lt;![CDATA[Enabled]]&gt;&lt;/value&gt;
+  	&lt;/definition&gt;
+  	&lt;definition&gt;
+        	&lt;key&gt;slideshow_x&lt;/key&gt;
+        	&lt;value&gt;&lt;![CDATA[Slide Width]]&gt;&lt;/value&gt;
+  	&lt;/definition&gt;
+  	&lt;definition&gt;
+        	&lt;key&gt;slideshow_y&lt;/key&gt;
+        	&lt;value&gt;&lt;![CDATA[Slide Height]]&gt;&lt;/value&gt;
+  	&lt;/definition&gt;
+    &lt;definition&gt;
+        	&lt;key&gt;text_additional_settings&lt;/key&gt;
+        	&lt;value&gt;&lt;![CDATA[ Edit Slides]]&gt;&lt;/value&gt;
+  	&lt;/definition&gt;
+  	&lt;definition&gt;
+        	&lt;key&gt;slideshow_note&lt;/key&gt;
+        	&lt;value&gt;&lt;![CDATA[To add slideshow to your template : &lt;br/&gt;
+        	- go to Design -&gt; &lt;a href=&quot;#admin#rt=design/layout&quot; target=&quot;_layout&quot;&gt;Layout&lt;/a&gt; &lt;br/&gt;
+        	- choose layout you want to add slideshow to&lt;br/&gt;
+        	- add it to content_top section
+        	&lt;br/&gt;
+        	&lt;br/&gt;
+        	&lt;b&gt;To access &#39;Edit slides&#39; page you need to enable extension&lt;/b&gt;&lt;br/&gt;
+        	To edit slides:
+        	- click on &#39;Edit slides&#39; button in top bar&lt;br/&gt;
+        	- or &lt;a href=&quot;#admin#rt=blocks/slideshow&quot; target=&quot;_slideshow&quot;&gt;click here&lt;/a&gt;
+        	]]&gt;&lt;/value&gt;
+  	&lt;/definition&gt;
+&lt;/definitions&gt;</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->	
+
+
+<p><br>
+Please note that we have definition key for every extension setting. We also override advanced settings button text and add note.
+<br>
+In note we use link - </p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">
+&lt;a href=&quot;#admin#rt=design/layout&quot; target=&quot;_layout&quot;&gt;Layout&lt;/a&gt;</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+
+<p>This link contain two parts<br>
+- #admin – application section<br>
+- #rt=design/layout – route path
+</p><p>-          Now add models. First create model for storefront<br> <b>extensions\slideshow\storefront\model\slideshow\slideshow.php</b>
+</p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+&lt;?php
+if (! defined ( &#39;DIR_CORE&#39; )) {
+  	header ( &#39;Location: static_pages/&#39; );
+}
+class ModelSlideshowSlideshow extends Model {
+ 
+    protected $model_tool_image;
+    protected $slide;
+    protected $rm;
+ 
+    public function __construct($registry) {
+        parent::__construct($registry);
+        $this-&gt;model_tool_image = $this-&gt;registry-&gt;get(&#39;model_tool_image&#39;);
+  		$this-&gt;slide = array(
+        		&#39;x&#39; =&gt; $this-&gt;registry-&gt;get(&#39;config&#39;)-&gt;get(&#39;slideshow_x&#39;),
+        		&#39;y&#39; =&gt; $this-&gt;registry-&gt;get(&#39;config&#39;)-&gt;get(&#39;slideshow_y&#39;),
+  		);
+        $this-&gt;rm = new AResource(&#39;image&#39;);
+  	}
+ 
+    public function getSlides() {
+        $query = $this-&gt;db-&gt;query(&quot;SELECT * FROM &quot; . DB_PREFIX . &quot;slides&quot;);
+  		$result = $query-&gt;rows;
+  		foreach ( $result as $key =&gt; $img ) {
+              	$result[$key][&#39;slide_img&#39;] = $this-&gt;_getSlideUrl($img[&#39;slide_img&#39;]);
+        }
+ 
+        	return $result;
+	}
+ 
+    public function getSlide($slide_id) {
+        $query = $this-&gt;db-&gt;query(&quot;SELECT * FROM &quot; . DB_PREFIX . &quot;slides WHERE slide_id = &#39;&quot;.(int)$slide_id.&quot;&#39; &quot;);
+  		$query-&gt;row[&#39;preview&#39;] = $this-&gt;_getSlideUrl($query-&gt;row[&#39;slide_img&#39;]);
+        	return $query-&gt;row;
+	}
+ 
+  	private function _getSlideUrl( $img ) {
+ 
+        	if(!is_file(DIR_RESOURCE . $img)){
+              	if(!is_file(DIR_EXT . &#39;slideshow/image/&#39; . $img)){
+                    	$result = $this-&gt;model_tool_image-&gt;resize(&#39;no_image.jpg&#39;, $this-&gt;slide[&#39;x&#39;], $this-&gt;slide[&#39;y&#39;]);
+              	}else{
+                    	$result = HTTP_EXT.&#39;slideshow/image/&#39; . $img;
+              	}
+        	}else{
+ 
+            $id = $this-&gt;rm-&gt;getIdFromHexPath( str_replace($this-&gt;rm-&gt;getTypeDir(), &#39;&#39;, $img) );
+            $result = $this-&gt;rm-&gt;getResourceThumb($id, $this-&gt;slide[&#39;x&#39;], $this-&gt;slide[&#39;y&#39;]);
+            if ( !$result )
+              		$result = $this-&gt;model_tool_image-&gt;resize(&#39;no_image.jpg&#39;, $this-&gt;slide[&#39;x&#39;], $this-&gt;slide[&#39;y&#39;]);
+        	}
+ 
+        	return $result;
+  	}
+ 
+}
+</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+<p><br> 
+This model has two methods to fetch data<br>
+also note _getSlideUrl method. Since we have default images we should check if image passed in function is exist in resource directory. If so we try to get resource id from its path and create a thumbnail with width/height defined in extension settings
+</p><p>-          Now add model for admin - <b>extensions\slideshow\admin\model\slideshow\slideshow.php</b>
+</p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+&lt;?php
+if (! defined ( &#39;DIR_CORE&#39; )) {
+  	header ( &#39;Location: static_pages/&#39; );
+}
+class ModelSlideshowSlideshow extends Model {
+ 
+    protected $model_tool_image;
+    protected $slide;
+    protected $rm;
+ 
+    public function __construct($registry) {
+        parent::__construct($registry);
+        $this-&gt;model_tool_image = $this-&gt;registry-&gt;get(&#39;model_tool_image&#39;);
+  		$this-&gt;slide = array(
+        		&#39;x&#39; =&gt; $this-&gt;registry-&gt;get(&#39;config&#39;)-&gt;get(&#39;slideshow_x&#39;),
+        		&#39;y&#39; =&gt; $this-&gt;registry-&gt;get(&#39;config&#39;)-&gt;get(&#39;slideshow_y&#39;),
+  		);
+        $this-&gt;rm = new AResource(&#39;image&#39;);
+  	}
+ 
+    public function getSlides() {
+        $query = $this-&gt;db-&gt;query(&quot;SELECT * FROM &quot; . DB_PREFIX . &quot;slides&quot;);
+  		$result = $query-&gt;rows;
+  		foreach ( $result as $key =&gt; $img ) {
+              	$result[$key][&#39;slide_img&#39;] = $this-&gt;_getSlideUrl($img[&#39;slide_img&#39;]);
+        }
+ 
+        	return $result;
+	}
+ 
+    public function addSlide($data) {
+        $this-&gt;db-&gt;query(
+            &quot;INSERT INTO &quot; . DB_PREFIX . &quot;slides
+            SET slide_img = &#39;&quot;.$this-&gt;db-&gt;escape( $data[&#39;slide_img&#39;] ).&quot;&#39;,
+                slide_url = &#39;&quot;.$this-&gt;db-&gt;escape( $data[&#39;slide_url&#39;] ).&quot;&#39;  &quot;);
+	}
+ 
+    public function editSlide($slide_id, $data) {
+        $this-&gt;db-&gt;query(
+            &quot;UPDATE &quot; . DB_PREFIX . &quot;slides
+            SET slide_img = &#39;&quot;.$this-&gt;db-&gt;escape( $data[&#39;slide_img&#39;] ).&quot;&#39;,
+                slide_url = &#39;&quot;.$this-&gt;db-&gt;escape( $data[&#39;slide_url&#39;] ).&quot;&#39;
+            WHERE slide_id = &#39;&quot;.(int)$slide_id.&quot;&#39; &quot;);
+	}
+ 
+    public function getSlide($slide_id) {
+        $query = $this-&gt;db-&gt;query(&quot;SELECT * FROM &quot; . DB_PREFIX . &quot;slides WHERE slide_id = &#39;&quot;.(int)$slide_id.&quot;&#39; &quot;);
+  		$query-&gt;row[&#39;preview&#39;] = $this-&gt;_getSlideUrl($query-&gt;row[&#39;slide_img&#39;]);
+        	return $query-&gt;row;
+	}
+ 
+    public function deleteSlide($slide_id) {
+        $this-&gt;db-&gt;query(&quot;DELETE FROM &quot; . DB_PREFIX . &quot;slides WHERE slide_id = &#39;&quot;.(int)$slide_id.&quot;&#39; &quot;);
+	}
+ 
+  	private function _getSlideUrl( $img ) {
+ 
+        	if(!is_file(DIR_RESOURCE . $img)){
+              	if(!is_file(DIR_EXT . &#39;slideshow/image/&#39; . $img)){
+        	        	$result = $this-&gt;model_tool_image-&gt;resize(&#39;no_image.jpg&#39;, $this-&gt;slide[&#39;x&#39;], $this-&gt;slide[&#39;y&#39;]);
+              	}else{
+                    	$result = HTTP_EXT.&#39;slideshow/image/&#39; . $img;
+              	}
+        	}else{
+ 
+            $id = $this-&gt;rm-&gt;getIdFromHexPath( str_replace($this-&gt;rm-&gt;getTypeDir(), &#39;&#39;, $img) );
+            $result = $this-&gt;rm-&gt;getResourceThumb($id, $this-&gt;slide[&#39;x&#39;], $this-&gt;slide[&#39;y&#39;]);
+            if ( !$result )
+              		$result = $this-&gt;model_tool_image-&gt;resize(&#39;no_image.jpg&#39;, $this-&gt;slide[&#39;x&#39;], $this-&gt;slide[&#39;y&#39;]);
+        	}
+ 
+        	return $result;
+  	}
+ 
+}
+</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+	
+<p><br> 
+This model has methods to manage slideshow items – add / edit / delete<br>
+Now all ready to create a controller to manage slides in admin<br>
+<b>extensions\slideshow\admin\controller\pages\blocks\slideshow.php</b>
+</p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+&lt;?php
+if ( !defined ( &#39;DIR_CORE&#39; )) {
+  	header ( &#39;Location: static_pages/&#39; );
+}
+ 
+class ControllerPagesBlocksSlideshow extends AController {
+ 
+  	private $error = array();
+  	public $data = array();
+ 
+  	public function main() {
+ 
+          //init controller data
+        $this-&gt;extensions-&gt;hk_InitData($this);
+ 
+	  $this-&gt;loadLanguage(&#39;extension/extensions&#39;);
+	  $this-&gt;loadLanguage(&#39;slideshow/slideshow&#39;);
+	  $this-&gt;loadModel(&#39;slideshow/slideshow&#39;);
+        $this-&gt;document-&gt;setTitle( $this-&gt;language-&gt;get(&#39;heading_title&#39;) );
+ 
+        	$this-&gt;view-&gt;assign(&#39;error_warning&#39;, $this-&gt;error[&#39;warning&#39;]);
+        	$this-&gt;view-&gt;assign(&#39;success&#39;, $this-&gt;session-&gt;data[&#39;success&#39;]);
+        	if (isset($this-&gt;session-&gt;data[&#39;success&#39;])) {
+              	unset($this-&gt;session-&gt;data[&#39;success&#39;]);
+        	}
+ 
+	  $this-&gt;document-&gt;initBreadcrumb( array (
+   	       	&#39;href&#39;  	=&gt; $this-&gt;html-&gt;getSecureURL(&#39;index/home&#39;),
+   	       	&#39;text&#39;  	=&gt; $this-&gt;language-&gt;get(&#39;text_home&#39;),
+  	        	&#39;separator&#39; =&gt; FALSE
+        	 ));
+        $this-&gt;document-&gt;addBreadcrumb(array(
+            &#39;href&#39; =&gt; $this-&gt;html-&gt;getSecureURL(&#39;extension/extensions/&#39;.$this-&gt;session-&gt;data[&#39;extension_filter&#39;]),
+            &#39;text&#39; =&gt; $this-&gt;language-&gt;get(&#39;heading_title&#39;),
+            &#39;separator&#39; =&gt; &#39; :: &#39;
+        ));
+        	$this-&gt;document-&gt;addBreadcrumb(array(
+            &#39;href&#39; =&gt; $this-&gt;html-&gt;getSecureURL(&#39;extension/extensions/edit&#39;, &#39;&amp;extension=slideshow&#39;),
+   	     &#39;text&#39; =&gt; $this-&gt;language-&gt;get(&#39;slideshow_name&#39;),
+            &#39;separator&#39; =&gt; &#39; :: &#39;
+        ));
+        	$this-&gt;document-&gt;addBreadcrumb( array (
+   	       	&#39;href&#39;  	=&gt; $this-&gt;html-&gt;getSecureURL(&#39;blocks/slideshow&#39;),
+   	       	&#39;text&#39;  	=&gt; $this-&gt;language-&gt;get(&#39;slides_title&#39;),
+  	        	&#39;separator&#39; =&gt; &#39; :: &#39;
+        	 ));
+ 
+        	$this-&gt;data[&#39;images&#39;] = $this-&gt;model_slideshow_slideshow-&gt;getSlides();
+ 
+        	$this-&gt;data[&#39;delete&#39;] = $this-&gt;html-&gt;getSecureURL(&#39;blocks/slideshow/delete&#39;, &#39;&amp;slide_id=%ID%&#39; );
+        	$this-&gt;data[&#39;update&#39;] = $this-&gt;html-&gt;getSecureURL(&#39;blocks/slideshow/update&#39;, &#39;&amp;slide_id=%ID%&#39; );
+        	$this-&gt;data[&#39;insert&#39;] = $this-&gt;html-&gt;getSecureURL(&#39;blocks/slideshow/insert&#39; );
+ 
+        	$this-&gt;data[&#39;button_remove&#39;] = $this-&gt;html-&gt;buildButton(array(
+              	&#39;text&#39; =&gt; $this-&gt;language-&gt;get(&#39;button_remove&#39;),
+              	&#39;style&#39; =&gt; &#39;button2&#39;,
+        	));
+        	$this-&gt;data[&#39;button_edit&#39;] = $this-&gt;html-&gt;buildButton(array(
+              	&#39;text&#39; =&gt; $this-&gt;language-&gt;get(&#39;button_edit&#39;),
+              	&#39;style&#39; =&gt; &#39;button2&#39;,
+        	));
+        	$this-&gt;data[&#39;button_add_slide&#39;] = $this-&gt;html-&gt;buildButton(array(
+              	&#39;text&#39; =&gt; $this-&gt;language-&gt;get(&#39;button_add_slide&#39;),
+              	&#39;style&#39; =&gt; &#39;button1&#39;,
+        	));
+ 
+        $this-&gt;view-&gt;batchAssign(  $this-&gt;language-&gt;getASet() );
+        	$this-&gt;view-&gt;batchAssign( $this-&gt;data );
+ 
+        	$this-&gt;processTemplate(&#39;pages/blocks/slideshow_list.tpl&#39; );
+ 
+          //update controller data
+        $this-&gt;extensions-&gt;hk_UpdateData($this);
+  	}
+ 
+  	public function insert() {
+ 
+        //init controller data
+        $this-&gt;extensions-&gt;hk_InitData($this);
+ 
+	  $this-&gt;loadLanguage(&#39;slideshow/slideshow&#39;);
+        $this-&gt;loadModel(&#39;slideshow/slideshow&#39;);
+	  $this-&gt;document-&gt;setTitle($this-&gt;language-&gt;get(&#39;heading_title&#39;));
+ 
+	  if (($this-&gt;request-&gt;server[&#39;REQUEST_METHOD&#39;] == &#39;POST&#39;)) {
+    	    $this-&gt;request-&gt;post[&#39;slide_img&#39;] = html_entity_decode($this-&gt;request-&gt;post[&#39;slide_img&#39;], ENT_COMPAT, &#39;UTF-8&#39;);
+            $this-&gt;model_slideshow_slideshow-&gt;addSlide($this-&gt;request-&gt;post);
+            $this-&gt;session-&gt;data[&#39;success&#39;] = $this-&gt;language-&gt;get(&#39;text_success&#39;);
+              	$this-&gt;redirect( $this-&gt;html-&gt;getSecureURL(&#39;blocks/slideshow&#39;) );
+	  }
+	  $this-&gt;_getForm();
+ 
+        //update controller data
+        $this-&gt;extensions-&gt;hk_UpdateData($this);
+  	}
+ 
+  	public function update() {
+ 
+        //init controller data
+        $this-&gt;extensions-&gt;hk_InitData($this);
+ 
+	  $this-&gt;loadLanguage(&#39;slideshow/slideshow&#39;);
+        $this-&gt;loadModel(&#39;slideshow/slideshow&#39;);
+	  $this-&gt;document-&gt;setTitle($this-&gt;language-&gt;get(&#39;heading_title&#39;));
+	  if (($this-&gt;request-&gt;server[&#39;REQUEST_METHOD&#39;] == &#39;POST&#39;)) {
+            $this-&gt;request-&gt;post[&#39;slide_img&#39;] = html_entity_decode($this-&gt;request-&gt;post[&#39;slide_img&#39;], ENT_COMPAT, &#39;UTF-8&#39;);
+              	$this-&gt;model_slideshow_slideshow-&gt;editSlide($this-&gt;request-&gt;get[&#39;slide_id&#39;], $this-&gt;request-&gt;post);
+              	$this-&gt;session-&gt;data[&#39;success&#39;] = $this-&gt;language-&gt;get(&#39;text_success&#39;);
+              	$this-&gt;redirect( $this-&gt;html-&gt;getSecureURL(&#39;blocks/slideshow&#39;) );
+        	}
+	  $this-&gt;_getForm();
+ 
+   	 //update controller data
+        $this-&gt;extensions-&gt;hk_UpdateData($this);
+  	}
+ 
+  	public function delete() {
+ 
+        //init controller data
+        $this-&gt;extensions-&gt;hk_InitData($this);
+ 
+	  $this-&gt;loadLanguage(&#39;slideshow/slideshow&#39;);
+        $this-&gt;loadModel(&#39;slideshow/slideshow&#39;);
+	  $this-&gt;model_slideshow_slideshow-&gt;deleteSlide($this-&gt;request-&gt;get[&#39;slide_id&#39;]);
+        $this-&gt;session-&gt;data[&#39;success&#39;] = $this-&gt;language-&gt;get(&#39;text_success&#39;);
+        	$this-&gt;redirect( $this-&gt;html-&gt;getSecureURL(&#39;blocks/slideshow&#39;) );
+ 
+        	//update controller data
+        $this-&gt;extensions-&gt;hk_UpdateData($this);
+  	}
+ 
+  	private function _getForm() {
+ 
+        	$this-&gt;view-&gt;assign(&#39;error_warning&#39;, $this-&gt;error[&#39;warning&#39;]);
+        	$this-&gt;view-&gt;assign(&#39;success&#39;, $this-&gt;session-&gt;data[&#39;success&#39;]);
+        	if (isset($this-&gt;session-&gt;data[&#39;success&#39;])) {
+              	unset($this-&gt;session-&gt;data[&#39;success&#39;]);
+        	}
+        	$this-&gt;view-&gt;batchAssign(  $this-&gt;language-&gt;getASet() );
+ 
+	  $this-&gt;data = array();
+        	$this-&gt;data[&#39;error&#39;] = $this-&gt;error;
+        	$this-&gt;data[&#39;cancel&#39;] = $this-&gt;html-&gt;getSecureURL(&#39;blocks/slideshow&#39;);
+ 
+        	$this-&gt;data[&#39;heading_title&#39;] = $this-&gt;language-&gt;get(&#39;slides_title&#39;);
+ 
+        	$this-&gt;document-&gt;initBreadcrumb( array (
+   	       	&#39;href&#39;  	=&gt; $this-&gt;html-&gt;getSecureURL(&#39;index/home&#39;),
+   	       	&#39;text&#39;  	=&gt; $this-&gt;language-&gt;get(&#39;text_home&#39;),
+  	        	&#39;separator&#39; =&gt; FALSE
+        	 ));
+        $this-&gt;document-&gt;addBreadcrumb(array(
+            &#39;href&#39; =&gt; $this-&gt;html-&gt;getSecureURL(&#39;extension/extensions/&#39;.$this-&gt;session-&gt;data[&#39;extension_filter&#39;]),
+            &#39;text&#39; =&gt; $this-&gt;language-&gt;get(&#39;heading_title&#39;),
+            &#39;separator&#39; =&gt; &#39; :: &#39;
+        ));
+        	$this-&gt;document-&gt;addBreadcrumb(array(
+            &#39;href&#39; =&gt; $this-&gt;html-&gt;getSecureURL(&#39;extension/extensions/edit&#39;, &#39;&amp;extension=slideshow&#39;),
+	        &#39;text&#39; =&gt; $this-&gt;language-&gt;get(&#39;slideshow_name&#39;),
+            &#39;separator&#39; =&gt; &#39; :: &#39;
+        ));
+        	$this-&gt;document-&gt;addBreadcrumb( array (
+   	       	&#39;href&#39;  	=&gt; $this-&gt;html-&gt;getSecureURL(&#39;blocks/slideshow&#39;),
+   	       	&#39;text&#39;  	=&gt; $this-&gt;language-&gt;get(&#39;slides_title&#39;),
+  	        	&#39;separator&#39; =&gt; &#39; :: &#39;
+        	 ));
+ 
+ 
+        	if (isset($this-&gt;request-&gt;get[&#39;slide_id&#39;]) &amp;&amp; ($this-&gt;request-&gt;server[&#39;REQUEST_METHOD&#39;] != &#39;POST&#39;)) {
+  	        	$item_info = $this-&gt;model_slideshow_slideshow-&gt;getSlide($this-&gt;request-&gt;get[&#39;slide_id&#39;]);
+	  }
+ 
+        	$fields = array(&#39;slide_img&#39;, &#39;slide_url&#39;);
+        	foreach ( $fields as $f ) {
+              	if (isset ( $this-&gt;request-&gt;post [$f] )) {
+                    	$this-&gt;data [$f] = $this-&gt;request-&gt;post [$f];
+              	} elseif (isset($item_info[$f])) {
+                    	$this-&gt;data[$f] = $item_info[$f];
+              	} else {
+                    	$this-&gt;data[$f] = &#39;&#39;;
+              	}
+        	}
+ 
+        if (!isset($this-&gt;request-&gt;get[&#39;slide_id&#39;])) {
+              	$this-&gt;data[&#39;action&#39;] = $this-&gt;html-&gt;getSecureURL(&#39;blocks/slideshow/insert&#39; );
+              	$this-&gt;data[&#39;form_title&#39;] = $this-&gt;language-&gt;get(&#39;text_insert&#39;) . $this-&gt;language-&gt;get(&#39;text_slide&#39;);
+        	} else {
+              	$this-&gt;data[&#39;action&#39;] = $this-&gt;html-&gt;getSecureURL(&#39;blocks/slideshow/update&#39;, &#39;&amp;slide_id=&#39; . $this-&gt;request-&gt;get[&#39;slide_id&#39;] );
+              	$this-&gt;data[&#39;form_title&#39;] = $this-&gt;language-&gt;get(&#39;text_edit&#39;) . $this-&gt;language-&gt;get(&#39;text_slide&#39;);
+        	}
+ 
+        $form = new AForm(&#39;ST&#39;);
+ 
+        	$this-&gt;document-&gt;addBreadcrumb( array (
+              	&#39;href&#39;  	=&gt; $this-&gt;data[&#39;action&#39;],
+              	&#39;text&#39;  	=&gt; $this-&gt;data[&#39;form_title&#39;],
+              	&#39;separator&#39; =&gt; &#39; :: &#39;
+        	 ));
+ 
+        	$form-&gt;setForm(array(
+        		&#39;form_name&#39; =&gt; &#39;frm&#39;,
+              	&#39;update&#39; =&gt; &#39;&#39;,
+  		));
+ 
+        $this-&gt;data[&#39;form&#39;][&#39;id&#39;] = &#39;frm&#39;;
+        $this-&gt;data[&#39;form&#39;][&#39;form_open&#39;] = $form-&gt;getFieldHtml(array(
+        		&#39;type&#39; =&gt; &#39;form&#39;,
+        		&#39;name&#39; =&gt; &#39;frm&#39;,
+        		&#39;action&#39; =&gt; $this-&gt;data[&#39;action&#39;],
+  		));
+        $this-&gt;data[&#39;form&#39;][&#39;submit&#39;] = $form-&gt;getFieldHtml(array(
+        		&#39;type&#39; =&gt; &#39;button&#39;,
+        		&#39;name&#39; =&gt; &#39;submit&#39;,
+        		&#39;text&#39; =&gt; $this-&gt;language-&gt;get(&#39;button_save&#39;),
+        		&#39;style&#39; =&gt; &#39;button1&#39;,
+  		));
+        	$this-&gt;data[&#39;form&#39;][&#39;cancel&#39;] = $form-&gt;getFieldHtml(array(
+        		&#39;type&#39; =&gt; &#39;button&#39;,
+        		&#39;name&#39; =&gt; &#39;cancel&#39;,
+        		&#39;text&#39; =&gt; $this-&gt;language-&gt;get(&#39;button_cancel&#39;),
+        		&#39;style&#39; =&gt; &#39;button2&#39;,
+  		));
+ 
+        $this-&gt;data[&#39;form&#39;][&#39;fields&#39;][&#39;img&#39;] = $form-&gt;getFieldHtml(
+            array(
+                &#39;type&#39; =&gt; &#39;hidden&#39;,
+                &#39;name&#39; =&gt; &#39;slide_img&#39;,
+                &#39;value&#39; =&gt; htmlspecialchars($this-&gt;data[&#39;slide_img&#39;], ENT_COMPAT, &#39;UTF-8&#39;),
+        		)
+        );
+        $this-&gt;data[&#39;form&#39;][&#39;fields&#39;][&#39;url&#39;] = $form-&gt;getFieldHtml(
+            array(
+                &#39;type&#39; =&gt; &#39;input&#39;,
+                &#39;name&#39; =&gt; &#39;slide_url&#39;,
+                &#39;value&#39; =&gt; $this-&gt;data[&#39;slide_url&#39;],
+                &#39;attr&#39; =&gt; &#39;class=&quot;large-field&quot;&#39;,
+        		)
+        );
+ 
+        $resources_scripts = $this-&gt;dispatch(
+            &#39;responses/common/resource_library/get_resources_scripts&#39;,
+            array(
+                &#39;object_name&#39; =&gt; &#39;&#39;,
+                &#39;object_id&#39; =&gt; &#39;&#39;,
+                &#39;types&#39; =&gt; &#39;image&#39;,
+                &#39;mode&#39; =&gt; &#39;url&#39;,
+            )
+        );
+        $this-&gt;data[&#39;resources_scripts&#39;] = $resources_scripts-&gt;dispatchGetOutput();
+        if ( isset($this-&gt;request-&gt;get[&#39;slide_id&#39;]) &amp;&amp; is_file( DIR_RESOURCE . $item_info[&#39;slide_img&#39;]) ) {
+            $rm = new AResourceManager();
+            $rm-&gt;setType(&#39;image&#39;);
+            $id = $rm-&gt;getIdFromHexPath( str_replace($rm-&gt;getTypeDir(), &#39;&#39;, $item_info[&#39;slide_img&#39;]) );
+            $thumb = $rm-&gt;getResourceThumb(
+                $id,
+                $this-&gt;config-&gt;get(&#39;config_image_product_width&#39;),
+                $this-&gt;config-&gt;get(&#39;config_image_product_height&#39;)
+            );
+            $this-&gt;view-&gt;assign( &#39;thumb&#39;, $thumb);
+        	}
+ 
+        $this-&gt;view-&gt;batchAssign( $this-&gt;data );
+        $this-&gt;processTemplate(&#39;pages/blocks/slideshow_form.tpl&#39; );
+  	}
+ 
+ 
+}
+</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+<p>This controller is work as usual application controller<br>
+Main method – fetch all slides and give ability to add/edit/delete slides<br>
+<b>Insert</b> – insert new slide<br>
+<b>Update</b> – edit slide image/url<br>
+<b>Delete</b> – delete slide
+</p><p><br> 
+</p><p><br> 
+</p><p>Lets look in details how we include resource library scripts
+</p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+ $resources_scripts = $this-&gt;dispatch(
+            &#39;responses/common/resource_library/get_resources_scripts&#39;,
+            array(
+                &#39;object_name&#39; =&gt; &#39;&#39;,
+                &#39;object_id&#39; =&gt; &#39;&#39;,
+                &#39;types&#39; =&gt; &#39;image&#39;,
+                &#39;mode&#39; =&gt; &#39;url&#39;,
+            )
+        );
+        $this-&gt;data[&#39;resources_scripts&#39;] = $resources_scripts-&gt;dispatchGetOutput();
+</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+<p>$this-&gt;dispatch – call controller with arguments and return dispatch object
+$resources_scripts-&gt;dispatchGetOutput(); - return controller output, which is passed to template later
+</p><p>This controller use two templates
+</p>
+<ul><li> slideshow_list.tpl – show all slides
+</li><li> slideshow_form.tpl – create/update form
+</li></ul>
+<p>Now lets create storefront controller<br>
+<b>extensions\slideshow\storefront\controller\blocks\slideshow.php</b>
+</p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+&lt;?php 
+if (! defined ( &#39;DIR_CORE&#39; )) {
+  	header ( &#39;Location: static_pages/&#39; );
+}
+ 
+class ControllerBlocksSlideshow extends AController {
+  	public function main() {
+ 
+        //init controller data
+        $this-&gt;extensions-&gt;hk_InitData($this);
+        $this-&gt;loadModel(&#39;slideshow/slideshow&#39;);
+ 
+        if ( !$this-&gt;registry-&gt;has(&#39;jcycle&#39;) ) {
+            $this-&gt;document-&gt;addScript( $this-&gt;view-&gt;templateResource(&#39;/javascript/jquery/jquery.cycle.js&#39;) );
+            $this-&gt;registry-&gt;set(&#39;jcycle&#39;, true);
+        }
+        	$this-&gt;document-&gt;addStyle(
+              	array(
+                    	 &#39;href&#39; =&gt; $this-&gt;view-&gt;templateResource(&#39;/stylesheet/slideshow.css&#39;),
+                    	 &#39;rel&#39; =&gt; &#39;stylesheet&#39;,
+                    	 &#39;media&#39; =&gt; &#39;screen&#39;,
+              	)
+        	);
+ 
+        	$this-&gt;view-&gt;assign(&#39;images&#39;, $this-&gt;model_slideshow_slideshow-&gt;getSlides());
+        	
+        $this-&gt;processTemplate(&#39;blocks/slideshow.tpl&#39;);
+ 
+        //init controller data
+        $this-&gt;extensions-&gt;hk_UpdateData($this);
+        	
+  	}
+}
+</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+
+
+
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+$this-&gt;document-&gt;addScript &amp; $this-&gt;document-&gt;addStyle&lt;/pre&gt; methods add styles and scripts in document object and will be added in head tag
+Please note that
+&lt;pre class=&quot;brush:php;&quot;&gt;
+            $this-&gt;registry-&gt;set(&#39;jcycle&#39;, true);
+</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+<p>Used to avoid loading multiple instances of scripts in order you will have several slideshows on one page
+</p><p>Storefront template include simple slideshow html.
+</p><p>You can take a look at full code by downloading our free template. This extension is a part of template.
+</p>
+
+	
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="category-info helper">
+	<h4 id="listingblock" class="box-title">Example of extension with listing block wrapper (appearance controller)</h4>
+	<p class="box-description">
+	1. Load custom listing block settings to the layout. Best way to do this is via XML load. Please see <a rel="nofollow" class="external autonumber" href="http://www.abantecart.com/document_wiki/index.php/Developing_Templates_as_Extensions#Example_of_adding_template.2C_block_to_layout_in_the_XML_below_:">[2]</a>
+</p><p>2. Add a hook into your extension on ControllerPagesDesignBlocks (Control Panel side).
+This will add controller(wrapper) to selection in control panel and show listing on storefront using your templates. For details see <a rel="nofollow" class="external autonumber" href="http://www.abantecart.com/document_wiki/index.php/AbanteCart_Extension%E2%80%99s_Developer_Guide#Basic_examples:">[3]</a>
+</p>
+
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+public function onControllerPagesDesignBlocks_InitData() {
+$this-&gt;baseObject-&gt;data[ &#39;block_wrappers&#39; ][&#39;blocks/extension_listing_controller&#39;] = &#39;[extension_name]&#39;;
+	}</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+<p>3. In main.php file of your extension add list of templates which will be used in list view.
+Number of templates depends on your block listing extensions controller. 
+</p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+$templates = array(
+    &#39;storefront&#39; =&gt; array(&#39;blocks/some-template-name1.tpl&#39;, 
+ &#39;blocks/some-template-name2.tpl&#39;, 
+ &#39;blocks/some-template-name3.tpl&#39;, 
+ &#39;blocks/some-template-name4.tpl&#39;,....));</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+<p>4. Place above template files into folder «[extension_name]/storefront/view/default/templates/blocks/»
+</p><p>5. Create listing block controller file in «[extension_name]/storefront/controller/blocks»
+</p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+&lt;?php 
+if (! defined ( &#39;DIR_CORE&#39; )) {
+	header ( &#39;Location: static_pages/&#39; );
+}
+class ControllerBlocksExtensionName extends AController {
+	public $data;
+	public function main() {
+
+        //init controller data
+        $this-&gt;extensions-&gt;hk_InitData($this);
+
+		$block_data = func_get_args(1);
+		$parent_block_txt_id = $block_data[0];
+		$block_data = $block_data[1];
+
+		if($block_data){
+			$this-&gt;view-&gt;assign(&#39;content&#39;,$block_data[&#39;content&#39;]);
+			$this-&gt;view-&gt;assign(&#39;heading_title&#39;, $block_data[&#39;title&#39;] );
+			switch($parent_block_txt_id){
+				case &#39;content_top&#39;:
+					$template = &#39;&#39;blocks/some-template-name1.tpl&#39;&#39;;
+					break;
+				case &#39;column_left&#39;:
+					$template = &#39;&#39;blocks/some-template-name3.tpl&#39;&#39;;
+					break;
+				case &#39;column_right&#39;:
+					$template = &#39;&#39;blocks/some-template-name4.tpl&#39;&#39;;
+					break;
+
+				default:
+					$template = &#39;&#39;blocks/some-template-name2.tpl&#39;&#39;;
+					break;
+			}
+			$this-&gt;processTemplate( $template );
+		}
+
+  	}
+
+}
+?&gt;</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->	
+<p>6. Add your controller into main.php to $controllers array:
+</p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">
+$controllers = array(
+    &#39;storefront&#39; =&gt; array(&#39;blocks/[extension_name]&#39; ));
+</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->	
 	
 	
-	
-	
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="category-info helper">
+	<h4 id="package" class="box-title">Package extension for distribution</h4>
+	<p class="box-description">
+	In order to have smooth users experience with extension installation and management all extension developers need to comply and follow requirements for AbanteCart extension API and distribution.<br>
+Below is a <b>Checklist</b> with some suggestions and guidance to extension construction:
+</p>
+<ul><li> All code provided in the extension needs to be clean, well organized and free of bugs.
+</li><li> Avoid inclusion of unused or untested codes or files.
+</li><li> Avoid replacement of files and limit logical replacement of files.
+</li><li> If your extension is dependant on some other extension, make sure to include dependency in configuration.  Installation process will check that for you.
+</li><li> Place all text in language files and include in the package
+</li><li> Include all configuration that is necessary to set up the extension
+</li><li> Include all necessary instruction for installation and configuration
+</li><li> Include a disclaimer or legal document for the extension. It will be shown before installation.
+</li><li> Include .htaccess and index.php in all directories under your extension to prevent unauthorised access to files.
+</li><li> Perform check in every PHP file for blocking direct access from the browser. Use code below or similar in all PHP files:
+</li></ul>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">
+if (! defined ( &#39;DIR_CORE&#39; )) {
+	header ( &#39;Location: static_pages/&#39; );
+}</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+<ul><li> Do testing of the extension and it installation and uninstall process.
+</li></ul>
+<p>Distribution should include the following items. Items marked “required” needs to be included.
+</p>
+<ul><li> config.xml (required)
+</li><li> install and uninstall php and/or sql
+</li><li> image (directory to keep preview images and icon) (required)
+</li><li> main.php (required )
+</li><li> admin (code for control panel)
+</li><li> storefront (code for store front)
+</li><li> core (core code for the extension)
+</li><li> documentation ( any documentation needed for extension)
+</li></ul>
+<p>Details about most of extension components are covered in extension API development documentation.<br>
+In image directory include icon and preview images for your extension. Icon will be shown in market place and the extension menu and preview will be shown in extension details page before download and in the extension configuration section. 
+Naming for icon and preview images:<br>
+</p>
+<pre>       	icon image:            	<b>image/icon.png</b> (Size: 57x57 px)
+       	main preview:       	<b>image/preview.jpg</b> (Size: 350 x 350 px)
+       	additional preview: <b>image/preview1.jpg</b> (Size: 350 x 350 px)
+                                          	<b>image/preview2.jpg</b> (Size: 350 x 350 px)
+                                          	more images as needed ...
+
+</pre>
+<p>Extension naming and description is defined in language files<br>
+Extension name is defined with definition key = &lt;extension&gt;_name<br>
+Extension description is defined with definition key = &lt;extension&gt;_note . Please note that in order to show extension description you should enable it in extension config like
+&lt;note&gt;true&lt;/note&gt;
+</p><p><b>Archiving instructions:</b><br>
+Final completed package needs to be archived to zip format with all files/directories hierarchy starting from root directory.
+</p><p>An example of directory structure for package:
+</p><p>&lt;ext&gt;
+-          V1.0
+</p>
+<ul><li> code – contain extension code starting from application root. ( /extensions/&lt;extention&gt;…. )
+</li><li> manuals – help files
+</li><li> copyright.txt
+</li><li> license.txt
+</li><li> package.xml
+</li></ul>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;package&gt;
+    &lt;id&gt;myextention&lt;/id&gt;
+    &lt;type&gt;extension&lt;/type&gt;
+  	&lt;version&gt;1.0.0&lt;/version&gt;
+  	&lt;minversion&gt;1.0.0&lt;/minversion&gt;
+  	&lt;cartversions&gt;
+        	&lt;item&gt;0.9&lt;/item&gt;
+        	&lt;item&gt;1.0&lt;/item&gt;
+  	&lt;/cartversions&gt;
+  	&lt;package_content&gt;
+        	&lt;extensions&gt;
+              	&lt;extension&gt;myextention&lt;/extension&gt;
+        	&lt;/extensions&gt;
+  	&lt;/package_content&gt;
+&lt;/package&gt;
+</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+<p>Note: 
+&lt;version&gt; - current version of extension<br>
+&lt;minversion&gt; - start version which can be upgraded.)<br>
+&lt;cartversions&gt;&lt;item&gt; have to contain only two parts - major and minor versions.<br>
+</p><p>If you intend to resale extension via AbanteCart market place, please make sure you are compliant with requirements as much as possible. This will help your extension to be approved faster and get better ranking.
+</p>	
 	
 	
 	
