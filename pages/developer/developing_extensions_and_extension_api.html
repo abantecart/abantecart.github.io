@@ -101,10 +101,10 @@ Dataset class will handle all the data storing and management for you with inter
 <p class="box-description"><b>How does Dataset work?</b><br />
 First you have to recognize namings in dataset class. There are &ldquo;object&rdquo;, &ldquo;datarow&rdquo;, &ldquo;fieldset&rdquo; and their &ldquo;definitions&rdquo;.</p>
 
-<p class="box-description"><a class="image" href="/img/developer/Dataset_01.png" title="caption"><img alt="caption" height="417" src="/img/developer/Dataset_01.png" width="700" /></a></p>
+<p class="box-description"><a   href="/img/developer/Dataset_01.png" title="caption"><img alt="caption" height="417" src="/img/developer/Dataset_01.png" width="700" /></a></p>
 
 <p class="box-description">&ldquo;Object&rdquo; is any abstract part of your extension or core. It may be anything that we call &ldquo;owner&rdquo;. Object is owner of data sets. Menu, charts, polls, etc. may contain some data, therefore, they are owners of data sets, objects. &ldquo;Object&rdquo; entity have two attributes: name and key. Name is common text unique identifier of the object (menu, poll, etc). &ldquo;Key&rdquo; is identifier from another section or table of AbanteCart, for example, extension&rsquo;s key(id). Pair &ldquo;name-key&rdquo; must be unique. Key can be also understood as a sort of foreign key to any other table in the system. Key is not required and if not provided name part of the object needs to stay unique. Foreign key connection to any table can be also build pragmatically with use any field in the dataset fieldset.<br />
-Key can also be a subset name in case of multiple tables used within one feature or set. <a class="image" href="/img/developer/Dataset_02.png" title="caption"><img alt="caption" height="436" src="/img/developer/Dataset_02.png" width="700" /></a></p>
+Key can also be a subset name in case of multiple tables used within one feature or set. <a   href="/img/developer/Dataset_02.png" title="caption"><img alt="caption" height="436" src="/img/developer/Dataset_02.png" width="700" /></a></p>
 
 <p class="box-description">In our poll example you have poll_questions and poll_answers tables. You will create 2 datasets as following:</p>
 
@@ -504,7 +504,7 @@ $menu-&gt;deleteMenuItem (&quot;sale_your-menu&quot;);</code>
 
 <div class="category-info helper">
 	<h4 id="Extending_and_Creating_FlexyForms" class="box-title">Extending and Creating FlexyForms </h4>
-<p class="box-description">FlexyForm set up consists of 3 important components: Database entry, Processing Controller and Template. Below is a diagram that can give more idea how FlexyForms are structured: <a class="image" href="/img/developer/Default_abantecart_charts_p9.png" title="caption"><img alt="caption" height="708" src="/img/developer/Default_abantecart_charts_p9.png" width="500" /></a></p>
+<p class="box-description">FlexyForm set up consists of 3 important components: Database entry, Processing Controller and Template. Below is a diagram that can give more idea how FlexyForms are structured: <a   href="/img/developer/Default_abantecart_charts_p9.png" title="caption"><img alt="caption" height="708" src="/img/developer/Default_abantecart_charts_p9.png" width="500" /></a></p>
 
 <p class="box-description">Lets look into Controller and PHP code Create an instance of the class AForm:</p>
 <!-- HTML Highlight -->
@@ -670,7 +670,7 @@ $this-&gt;document-&gt;addStyle(&quot;path/to/css&quot;);</code>
 
 <p class="box-description">Now you need to set fields to the database. You can use different methods to set and save form settings and fields to the database. There is a traditional SQL inserts or updates that can be used. We have following tables that needs to be used to manage forms data:</p>
 
-<p class="box-description"><a class="image" href="/img/developer/Forms.png" title="caption"><img alt="caption" height="337" src="/img/developer/Forms.png" width="500" /></a></p>
+<p class="box-description"><a   href="/img/developer/Forms.png" title="caption"><img alt="caption" height="337" src="/img/developer/Forms.png" width="500" /></a></p>
 
 <p class="box-description">In addition to traditional SQL method we offer a convenience of build in functions in the library to simplify adding, deleting or editing FlexyForms database. These can be used for extension install and uninstall process and in the control panel to manage FlexyForm settings.</p>
 
