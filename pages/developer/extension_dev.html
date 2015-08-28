@@ -1430,3 +1430,99 @@ $this-&gt;document-&gt;addScript(RDIR_TEMPLATE.&#39;javascript/some.js&#39;);</c
 </li></ul>
 		
 </div>
+
+
+
+
+
+
+
+
+
+<div class="category-info helper">
+	<h4 id="rlexample" class="box-title">Example of extension that use resource library</h4>
+	<p class="box-description">
+	We will create slideshow extension.  It will have following features:
+</p>
+<ul><li> manage slides
+</li><li> slides will use image resources from resource library
+</li><li> add block to layout
+</li><li> example of how to add styles/scripts that needed for extension
+</li></ul>
+<p>Here we will have a part of extension source. You can take a look at full code by downloading our free template. This extension is a part of template.
+</p><p>-          create <b>extensions/slideshow</b> folder
+-          create <b>extensions/slideshow/config.xml</b>
+</p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;extension&gt;
+  	&lt;id&gt;slideshow&lt;/id&gt;
+  	&lt;version&gt;1.0&lt;/version&gt;
+  	&lt;cartversions&gt;
+        	&lt;item&gt;0.9&lt;/item&gt;
+        &lt;item&gt;1.0&lt;/item&gt;
+  	&lt;/cartversions&gt;
+  	&lt;priority&gt;30&lt;/priority&gt;
+  	&lt;type&gt;extension&lt;/type&gt;
+  	&lt;category&gt;blocks&lt;/category&gt;
+  	&lt;settings&gt;
+        	&lt;item id=&quot;slideshow_status&quot;&gt;
+              	&lt;type&gt;checkbox&lt;/type&gt;
+              	&lt;default_value&gt;0&lt;/default_value&gt;
+        	&lt;/item&gt;
+        	&lt;item id=&quot;slideshow_x&quot;&gt;
+              	&lt;type&gt;input&lt;/type&gt;
+              	&lt;default_value&gt;544&lt;/default_value&gt;
+        	&lt;/item&gt;
+        	&lt;item id=&quot;slideshow_y&quot;&gt;
+              	&lt;type&gt;input&lt;/type&gt;
+              	&lt;default_value&gt;305&lt;/default_value&gt;
+        	&lt;/item&gt;
+  	&lt;/settings&gt;
+  	&lt;additional_settings&gt;&lt;![CDATA[blocks/slideshow]]&gt;&lt;/additional_settings&gt;
+  	&lt;note&gt;true&lt;/note&gt;
+  	&lt;install&gt;
+        	&lt;sql&gt;install.sql&lt;/sql&gt;
+        	&lt;trigger&gt;install.php&lt;/trigger&gt;
+  	&lt;/install&gt;
+  	&lt;uninstall&gt;
+        &lt;sql&gt;uninstall.sql&lt;/sql&gt;
+        	&lt;trigger&gt;uninstall.php&lt;/trigger&gt;
+  	&lt;/uninstall&gt;
+&lt;/extension&gt;
+</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+<p>In config we define size of slide ( slideshow_x, slideshow_y )
+&lt;additional_settings&gt; tag define link for extension controller that will manage slides
+&lt;note&gt;true&lt;/note&gt; - mean that will have description note for extension that will be shown on extension edit page. Note text is defined in language file with definition key = <b>slideshow_note</b>
+</p><p>-          create <b>install.sql</b>. Table will keep slide img and slide url
+</p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-sql">
+CREATE TABLE IF NOT EXISTS `ac_slides` (
+  	`slide_id` int(11) NOT NULL AUTO_INCREMENT,
+  	`slide_img` varchar(128) COLLATE utf8_bin NOT NULL DEFAULT &#39;&#39;,
+  	`slide_url` varchar(128) COLLATE utf8_bin NOT NULL DEFAULT &#39;&#39;,
+  	PRIMARY KEY (`slide_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1;
+ 
+INSERT INTO `ac_slides` ( `slide_img`, `slide_url` ) VALUES ( &#39;slides/slide1.jpg&#39;, &#39;http://google.com&#39; );
+INSERT INTO `ac_slides` ( `slide_img`, `slide_url` ) VALUES ( &#39;slides/slide2.jpg&#39;, &#39;http://bing.com&#39; );
+INSERT INTO `ac_slides` ( `slide_img`, `slide_url` ) VALUES ( &#39;slides/slide3.jpg&#39;, &#39;http://msn.com&#39; );</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+	
+	
+	
+	
+	
+	
+	
+</div>
