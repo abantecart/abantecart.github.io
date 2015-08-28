@@ -392,7 +392,7 @@ Example:
 </div>
 <!-- HTML Highlight -->
 <p class="box-description"><br>
-<b><help_link><![CDATA[http://www.google.com]]></help_link></b> - define help page link. if not empty - you will have help button on extension edit page. This can be external link.
+<b>&lt;help_link&gt;&lt;![CDATA[http://www.google.com]]&gt;&lt;/help_link&gt;</b> - define help page link. if not empty - you will have help button on extension edit page. This can be external link.
 </p><p class="box-description">Install and removal items:
 </p>
 <!-- HTML Highlight -->
@@ -485,7 +485,7 @@ Function inside the file have to be named settingsValidation () { …
 
 <!-- HTML Highlight -->
 <div class="code-highlight">
-	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
 function settingsValidation ( $settings_data = array()) {
     $error_items = array(); // array with failed validation data keys
   
@@ -511,7 +511,7 @@ settingsValidation function will get an array with settings and values submitted
 
 <!-- HTML Highlight -->
 <div class="code-highlight">
-	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
 array (
  &#39;store_id&#39; =&gt; &#39;0&#39;,
  &#39;google_checkout_advanced_status&#39; =&gt; &#39;1&#39;,
@@ -530,15 +530,26 @@ array (
 </div>
 <!-- HTML Highlight -->
 
-<p class="box-description">NOTE: settingsValidation function will be call in all settings save and individual (quick) save. Keep in mind that validation needs to be done on each field separately. 
-Required values handled by core and  required="true"  setting in the config
-</p><p class="box-description">Return:
+
+
+
+<!-- Note -->
+						<div class="note js-note blue">
+							<span class="note-close js-close">
+								<i class="fa fa-times"></i>
+							</span>
+							<h4 class="note-title"> Note </h4>
+							<p class="note-description"> settingsValidation function will be call in all settings save and individual (quick) save. Keep in mind that validation needs to be done on each field separately. 
+Required values handled by core and  required="true"  setting in the config </p>
+						</div>
+						<!-- End of Note -->
+<p class="box-description">Return:
 return needs to be array with result =  true/false and error message for each field with failed validation.
 </p><p class="box-description">If validation passed
 </p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
-	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
 array( &#39;result&#39;=&gt;true );
 </code>
  	</pre>
@@ -550,7 +561,7 @@ array( &#39;result&#39;=&gt;true );
 
 <!-- HTML Highlight -->
 <div class="code-highlight">
-	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
 array( &#39;result&#39;=&gt;false , &#39;errors&#39; =&gt; array( &#39;field_name&#39; =&gt; &#39;Missing Name&#39; ) );	
  	</code>
  	</pre>
@@ -638,10 +649,18 @@ $templates = array(
 	<p class="box-description">
 	There are 2 types of install or removal scripts that can be used. SQL and PHP.<br>
 SQL needs to have SQL commands that will be executed on extension install or uninstall respectivly.<br>
-PHP can have code that will be executed during extension install and removal process. PHP files can include all the methods and classes available in the AbanteCart.<br>
-<b>IMPORTANT:</b> Be very careful with updating database and altering tables. Please account for data integrity. If update existing table, account for speed of SQL execution in case of large data in the tables you effect. If uninstall, be careful with data removal. Do not delete altered fields and drop tables that are not created by given extension.<br> 
-Consider validation for data if you do multiple SQL insert or updates that depends on each other. 
-	</p>
+PHP can have code that will be executed during extension install and removal process. PHP files can include all the methods and classes available in the AbanteCart.</p>
+						<!-- Note -->
+						<div class="note js-note note-bounce">
+							<span class="note-close js-close">
+								<i class="fa fa-times"></i>
+							</span>
+							<h4 class="note-title"> IMPORTANT </h4>
+							<p class="note-description"> Be very careful with updating database and altering tables. Please account for data integrity. If update existing table, account for speed of SQL execution in case of large data in the tables you effect. If uninstall, be careful with data removal. Do not delete altered fields and drop tables that are not created by given extension.<br> 
+Consider validation for data if you do multiple SQL insert or updates that depends on each other.  </p>
+						</div>
+						<!-- End of Note -->
+
 </div>
 
 
@@ -656,11 +675,22 @@ Consider validation for data if you do multiple SQL insert or updates that depen
 	<h4 id="languages" class="box-title">Languages</h4>
 	<p class="box-description">
 	Each extension needs to have it own language files that it is using for text variables.<br>
-Extension needs to include all the language that it supports.<br>
-<b>IMPORTANT:</b> Please use translation (language based variables) for all the text you use.<br>
+Extension needs to include all the language that it supports.</p>
+
+						<!-- Note -->
+						<div class="note js-note note-bounce">
+							<span class="note-close js-close">
+								<i class="fa fa-times"></i>
+							</span>
+							<h4 class="note-title"> IMPORTANT </h4>
+							<p class="note-description"> Please use translation (language based variables) for all the text you use.<br>
 This will help everybody and users can edit translation in the control panel if needed. <br>
-Refer to languages in developer’s manual.
-	</p>
+Refer to languages in developer’s manual.  </p>
+						</div>
+						<!-- End of Note -->
+
+
+
 <!-- HTML Highlight -->
 <div class="code-highlight">
 	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">
@@ -719,7 +749,7 @@ To have an extensions api hook an object of class “ClassName” method call, y
 	</p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
-	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
 $this-&gt;extensions-&gt;hkMethodName($object, $param1, $param2);
  	</code>
  	</pre>
@@ -736,18 +766,31 @@ $this-&gt;extensions-&gt;hkMethodName($object, $param1, $param2);
 </li><li> <b>Extension::onClassNameMethodName()</b> - use it to change return data
 </li><li> <b>Extension::afterClassNameMethodName()</b> - use it to run some functions after method is executed
 </li></ul>
-<p class="box-description"><a href="/document_wiki/index.php/Extension_FlowChart" title="Extension FlowChart">Extension_FlowChart</a> 
+<p class="box-description">
+
+<a href="/img/developer/ext_flowchart.png" title="Extension FlowChart">Extension_FlowChart<br>
+<img width="650" height="603" src="/img/developer/ext_flowchart.png" alt="Extension_FlowChart">
+</a> 
 </p><p class="box-description">Some of the hooks may seem very similar, but they help to serve different purposes.
-</p><p class="box-description">Extension automatically has access to the current controller object (class instance) loaded during the hooking process. Current controller instance used in the extension class will be available via <b>$this-&gt;baseObject</b> and provides access to all public methods and properties in the extended controller. This also includes access to global structures. Refer to developer’s manual for global data structures and controller public methods and properties.<br>
-NOTE: The state of extended controller instance can be different depending on the hook location and stage of execution.
-</p><p class="box-description">Example of extension class:
+</p><p class="box-description">Extension automatically has access to the current controller object (class instance) loaded during the hooking process. Current controller instance used in the extension class will be available via <b>$this-&gt;baseObject</b> and provides access to all public methods and properties in the extended controller. This also includes access to global structures. Refer to developer’s manual for global data structures and controller public methods and properties.</p>
+
+						<!-- Note -->
+						<div class="note js-note blue">
+							<span class="note-close js-close">
+								<i class="fa fa-times"></i>
+							</span>
+							<h4 class="note-title"> Note </h4>
+							<p class="note-description"> The state of extended controller instance can be different depending on the hook location and stage of execution. </p>
+						</div>
+						<!-- End of Note -->
+<p class="box-description">Example of extension class:
 </p>
 
 
 
 <!-- HTML Highlight -->
 <div class="code-highlight">
-	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
 class ExtensionName extends Extension {
    public function onClassNameMethodName($param1, $param2) {
    	if ($this-&gt;baseObject-&gt;property === true) {
@@ -760,14 +803,21 @@ class ExtensionName extends Extension {
 </div>
 <!-- HTML Highlight -->
 
+						<!-- Note -->
+						<div class="note js-note blue">
+							<span class="note-close js-close">
+								<i class="fa fa-times"></i>
+							</span>
+							<h4 class="note-title"> Note </h4>
+							<p class="note-description"> all class properties you want to be used in extensions must be declared as <b>public</b> </p>
+						</div>
+						<!-- End of Note -->
 
-
-<p class="box-description"><b>NOTE:</b> all class properties you want to be used in extensions must be declared as <b>public</b>
-</p><p class="box-description">Extensions also have the current ExtensionsApi loaded into them so that they can make hookable calls on other objects if needed, such as the base object or another object:
+<p class="box-description">Extensions also have the current ExtensionsApi loaded into them so that they can make hookable calls on other objects if needed, such as the base object or another object:
 </p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
-	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
 class ExtensionName extends Extension { 
             	public function beforeClassNameMethodName($param1, $param2)
             	{
@@ -794,7 +844,7 @@ class ExtensionName extends Extension {
 </p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
-	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
 class ExtensionName extends Extension {
             	public function afterClassNameMethodName($param1, $param2) {
    	// hook $this-&gt;performSomeAction()
@@ -816,7 +866,7 @@ class ExtensionName extends Extension {
 </p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
-	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
 class AnotherExtensionName extends Extension {
    public function onExtensionNamePerformSomeAction() {
    	$Extension = $this-&gt;ExtensionsApi-&gt;ExtensionName;
@@ -835,7 +885,7 @@ class AnotherExtensionName extends Extension {
 </p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
-	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
 class ExtensionDefaultExtensionLogger extends Extension {
             	public $overloadHooks = true;
             	protected $log = &#39;&#39;;
@@ -883,7 +933,7 @@ You need to control Controller <b>data</b> property to change data that passed t
 </li></ul>
 <!-- HTML Highlight -->
 <div class="code-highlight">
-	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
 // in the beginning of file
 //use to init controller data
 $this-&gt;extensions-&gt;hk_InitData($this);
@@ -923,7 +973,7 @@ you can do following:
 </li></ul>
 <!-- HTML Highlight -->
 <div class="code-highlight">
-	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
 //first change original function
 public function getProducts() {
    	$registry = Registry::getInstance();
@@ -975,8 +1025,19 @@ class ExtensionName extends Extension {
  	</pre>
 </div>
 <!-- HTML Highlight -->
-<p class="box-description"><b>Help:</b> Can not add or change values in the base template file or controller? No Problem. Contact us in a forum.abantecart.com  and we will help to find solution. If you discover that you need to add something to base template files in AbanteCart storefront or admin, and there is no way to do this or no hook variable available let us know. We can add hooks to current development version and next release. 
-</p>
+
+
+
+						<!-- Note -->
+						<div class="note js-note green">
+							<span class="note-close js-close">
+								<i class="fa fa-times"></i>
+							</span>
+							<h4 class="note-title"> Help </h4>
+							<p class="note-description"> Can not add or change values in the base template file or controller? No Problem. Contact us in a forum.abantecart.com  and we will help to find solution. If you discover that you need to add something to base template files in AbanteCart storefront or admin, and there is no way to do this or no hook variable available let us know. We can add hooks to current development version and next release.  </p>
+						</div>
+						<!-- End of Note -->
+						
 	
 
 </div>
@@ -1586,7 +1647,7 @@ o    slides/slide1.jpg, slides/slide2.jpg, slides/slide3.jpg – default slides
 </p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
-	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
 &lt;?php
 if ( !defined ( &#39;DIR_CORE&#39; )) {
   	header ( &#39;Location: static_pages/&#39; );
