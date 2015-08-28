@@ -44,7 +44,7 @@ Our extension architecture is partially based on Plexus API concept (http://code
 
 
 <div class="category-info helper">
-	<h4 id="glossary" class="box-title">Glossary</h4>
+	<h4 id="Glossary" class="box-title">Glossary</h4>
 	<p class="box-description">
 	<b>Extension</b> &ndash; Collection of directories and files under one main directory that can be added to shopping cart to offer additional feature or function. Extension can be enabled and configured in the admin of shopping cart application<br />
 <b>Extension Configuration</b> &ndash; Collection of settings that can control the extension functionality of behavior. Configuration can be default (provided with the original installation of the extension) and custom, after installation once admin user change the settings.<br />
@@ -52,4 +52,406 @@ Our extension architecture is partially based on Plexus API concept (http://code
 <b>Core Hook</b> &ndash; This is the hook to the core function of application that allows extending functionality, effect data structures and values. <b>Template Hook</b> - This is the hook to extend display of the particular page on the front end or admin. This is usually implemented within template file.<br />
 <b>Dataset</b> - Ability to save, access and manage data specific for extension. See more details later on.
 </p>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="category-info helper">
+	<h4 id="Basic_architecture_and_structure_of_the_extension_subsystem" class="box-title">Basic architecture and structure of the extension subsystem.</h4>
+	<p class="box-description">
+This paragraph to give you a generic idea about AbanteCart extension system and organization. For more details refer to AbanteCart Extensions Developer Guide.<br />
+AbanteCart architecture is designed around flexibility and expandability in mind. We believe that application architecture should provide sufficient flexibility to be able extended with new features and configured or adjusted to rapidly changing technology. To do so we introduce concept of fully extension based system and empower developers to create extensions for any new features or functionality. Extension can be installed and managed in the control panel of the AbanteCart. Marketplace is available to purchase, download and install extensions right in the control panel. In addition, any AbanteCart extension can be installed manually by simple upload of extension folder to AbanteCart and easy activation process.<br />
+Extension itself is a collection of files that modify or add functionality of AbanteCart. Extension files include installation scripts, configuration settings, extension MVC file.<br />
+Dependency concept is present to make sure that dependent extensions are installed to make extensions that depend on them work properly. Important stages in extension to understand:<br />
+<b>Extension load:</b> This is the step of getting extension directory (content with files) in to the AbanteCart extensions directory. This is essential before step before you can install and use extension.<br />
+<b>Extension Installation:</b> This is a process of loading extension configuration to the system and making extension visible to the system. This stage does dependency validation and error checking. Install script provided in the extension is executed. Note: Installation is not to be confused with downloading extension or loading extension to the directory. This is done prior to installation. This step also allows you to edit extension configuration and settings.<br />
+<b>Enable Extension:</b> This is a step to activate extension. Once extension is enabled it will be used by the system.<br />
+Uninstall Extension: It is important to understand this step. If you decide no longer to use given extension you can uninstall it. This step will completely remove all the settings and data used by the extension. Uninstall script provided in the extension is executed. Consider backup.<br />
+<b>Delete Extension:</b> This is a step to remove extension components from the directory. Note: delete can only be done if extension is uninstalled.</p>
+
+<p>See AbanteCart Extension</p>
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="category-info helper">
+	<h4 id="Database_extension" class="box-title">Database extension</h4>
+	<p class="box-description">
+You can use 3 approaches to store extension data to the database.<br> 1. New tables can be created to support the data storage <br>2. Existing tables can be altered to add new fields and indexes. <br>3. Dataset tools are offered by AbanteCart to save data without creating or altering database. <br>Dataset offer quick and worry free method to handle data without dealing with SQL and creating specific database tables. Data can be handled via easy dataset class methods.<br />
+It is not recommended to use dataset for large sets and transactional type of data, since performance might be affected. Even though, we tested performance with 500000 rows, and no slow down noticed, it is still not desired to use this storage for high traffic read and write. Perfect area to use dataset will be products, categories, customers and orders data extension, polls, questioners, etc.</p>
+
+<p><b>What is Dataset</b><br />
+Say you need to have a poll and need to store records of poll questions and answers. Normally, you would create and add 2 or more tables to the databases to handle data for the poll. With the dataset, we created an abstraction layer to the database, that allows you to skip database creation and go directly to handling data.<br />
+Dataset class will handle all the data storing and management for you with interface of methods provided. It is very easy. You name new dataset (traditionally table) or use existing dataset . Dataset can be created during extension installation from XML file provided in the extension package. It can be also removed with extension uninstall. No direct access to SQL or database is needed. If restriction access required to the dataset, it needs to be handled pragmatically based on AbanteCart permissions. If you decide to use traditional database tables in extension, you will need to create SQL scripts with install, uninstall and disable extension management process.</p>
+
+<p><b>How does Dataset work?</b><br />
+First you have to recognize namings in dataset class. There are &ldquo;object&rdquo;, &ldquo;datarow&rdquo;, &ldquo;fieldset&rdquo; and their &ldquo;definitions&rdquo;.</p>
+
+<p><a class="image" href="http://www.abantecart.com/document_wiki/index.php/File:Dataset_01.png" title="caption"><img alt="caption" height="417" src="http://www.abantecart.com/document_wiki/images/thumb/e/ea/Dataset_01.png/700px-Dataset_01.png" width="700" /></a></p>
+
+<p>&ldquo;Object&rdquo; is any abstract part of your extension or core. It may be anything that we call &ldquo;owner&rdquo;. Object is owner of data sets. Menu, charts, polls, etc. may contain some data, therefore, they are owners of data sets, objects. &ldquo;Object&rdquo; entity have two attributes: name and key. Name is common text unique identifier of the object (menu, poll, etc). &ldquo;Key&rdquo; is identifier from another section or table of AbanteCart, for example, extension&rsquo;s key(id). Pair &ldquo;name-key&rdquo; must be unique. Key can be also understood as a sort of foreign key to any other table in the system. Key is not required and if not provided name part of the object needs to stay unique. Foreign key connection to any table can be also build pragmatically with use any field in the dataset fieldset.<br />
+Key can also be a subset name in case of multiple tables used within one feature or set. <a class="image" href="http://www.abantecart.com/document_wiki/index.php/File:Dataset_02.png" title="caption"><img alt="caption" height="436" src="http://www.abantecart.com/document_wiki/images/thumb/8/8e/Dataset_02.png/700px-Dataset_02.png" width="700" /></a></p>
+
+<p>In our poll example you have poll_questions and poll_answers tables. You will create 2 datasets as following:</p>
+
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+$poll_qs = new ADataset();
+$poll_qs -&gt; createDataset(&#39;poll&#39;,&#39;poll_questions&#39;);
+$poll_asw = new ADataset();	
+$poll_asw -&gt; createDataset(&#39;poll&#39;,&#39;poll_answers&#39;);
+</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+<p>To work with dataset object you just create a new instance of dataset class or use one that you have created before:
+</p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+//Create new instance:
+$my_data_obj = new ADataset ( $object_name, $object_key );
+After you create a new dataset you can set properties to the dataset. These properties are global to given dataset and can be always be accessible. Properties can be some generic values that give a state to the dataset:
+$my_data_obj-&gt;setDatasetProperties(  array( name =&gt; value, ….  )  );
+</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+<p>or</p>
+
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+$poll_qs-&gt;setDatasetProperties(	 array(  	&#39;start_date&#39;=&gt;&#39;2011-07-01 12:00&#39;,
+   					 	&#39;stop_date&#39;=&gt;&#39;2011-08-01 12:00&#39;)	);</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+<p>
+Setting properties method:</p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+$my_data -&gt; setDatasetProperties(	
+ array( 	 &quot;some_property_name&quot;=&gt;”some_value”, 			
+&quot;some_property_name&quot;=&gt;&quot;some_value”) );</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+						<!-- Note -->
+						<div class="note js-note blue">
+							<span class="note-close js-close">
+								<i class="fa fa-times"></i>
+							</span>
+							<h4 class="note-title"> Note </h4>
+							<p class="note-description"> property’s name and value have limit size at 255 characters. Method setDatasetProperties completely changes values of properties, without updating.  </p>
+						</div>
+						<!-- End of Note -->
+<p>Properties can be accessed with getDatasetProperties() method. This method returns an array with all the properties: </p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+$my_data_obj-&gt;getDatasetProperties();	</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->						
+
+<p>Next step for new dataset, is to set columns and properties for them. This is similar in concept of creating fields for the database. Each dataset is a representation of one table and it has columns and rows. </p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">
+// define columns for questions
+$poll_qs-&gt;defineColumns (
+   		 array ( &quot;name&quot;=&gt;&quot;language_code&quot;,
+   			 &quot;type&quot;=&gt;&quot;varchar&quot;),
+   		 array ( &quot;name&quot;=&gt;&quot;question&quot;,
+   			 &quot;type&quot;=&gt;&quot;text&quot;),
+      		 };
+      		 </code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+<p>Dataset&rsquo;s columns definition contain list of value&rsquo;s descriptions (fields). Every dataset consist of columns or fieldset. Now dataset concept supports following column types: integer<br />
+float<br />
+varchar<br />
+text<br />
+boolean<br />
+timestamp</p>
+						<!-- Note -->
+						<div class="note js-note blue">
+							<span class="note-close js-close">
+								<i class="fa fa-times"></i>
+							</span>
+							<h4 class="note-title"> Note </h4>
+							<p class="note-description"> if you need to identify rows in your dataset by id, you need to create a column and make sure in your code to provide this value unique. If you later call getRows with your unique field and value, you will always get one unique row.  </p>
+						</div>
+						<!-- End of Note -->
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+//set properties for the dataset
+$poll_qs-&gt;setColumnProperties ( 
+array ( &quot;column_name&quot; =&gt; &quot;language_code&quot;,
+   				 &quot;property_name&quot; =&gt; &quot;length&quot;,
+   				 &quot;property_value&quot; =&gt; &quot;2&quot; ),		
+array ( &quot;column_name&quot; =&gt; &quot;question&quot;,
+   				 &quot;property_name&quot; =&gt; &quot;translation_key&quot;,
+   				 &quot;property_value&quot; =&gt; &quot;question_txt&quot; ),		 
+   			 );</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+<p>Column properties are used to keep global information for the columns for the given dataset . This properties can be used to identify data type and constrains for the column. Validation code can use these properties before saving data.</p>
+
+<p>In some cases, column properties can be used to store data and act as 1 row table. If you have only 1 row of data and it is not changing you can just use columns properties to store data and avoid extra step to use rows.<br />
+Columns properties are not required, but helpful.<br />
+Actual data for the datasets is stored in rows that are similar to rows in traditional database or spreadsheet. Every row have columns (fields) that are set in the defineColumns method described above.</p>
+
+<p>Let first see how we can add a row to example dataset:</p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+$poll_qs-&gt;addRows (  array(
+	array(   language_code =&gt; “en”, question =&gt; “What color do you like?” ),
+	array(   language_code =&gt; “en”, question =&gt; “What shape do you like?” )  
+) );</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+<p>If all rows are inserted successful the return will be total number of rows added that shouldbe same as imputed array count.</p>
+
+<p>Now we can select all the rows from the dataset</p>
+
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+$rows = poll_qs-&gt;getRows (); &lt;/pre&gt;
+</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+<p>
+Or for big datasets we can search for specific row based on needed column:</p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+&lt;pre class=&quot;brush:php;&quot;&gt;$rows = poll_qs-&gt;searchRows ( array(   name=&gt; “language_code”,  operator =&gt; “=”,  value =&gt; “en”   )  );  </code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+<p>or</p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+$rows = poll_qs-&gt;searchRows ( array(   name=&gt; “question”,  operator =&gt; “LIKE”,  value =&gt; “color”   )  ); </code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+<p>where &ldquo;condition&rdquo; may be one of list:<br />
+&ldquo;=&rdquo;<br />
+&rdquo;&gt;&rdquo;<br />
+&rdquo;&lt;&rdquo;<br />
+LIKE</p>
+
+<p>To delete the row from the dataset you can simply call method deleteRows</p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+$my_data-&gt;deleteRows( array( &quot;column_name&quot;=&gt;string, &quot;operator&quot;=&gt;string, &quot;value&quot;=&gt;string )  );</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+<p>If success, method will return total number of rows deleted.</p>
+
+<p>To drop dataset you can use simple command:</p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+$my_data-&gt;dropDataset();</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+
+
+
+
+						<!-- Note -->
+						<div class="note js-note blue">
+							<span class="note-close js-close">
+								<i class="fa fa-times"></i>
+							</span>
+							<h4 class="note-title"> Note </h4>
+							<p class="note-description"> This method will completely delete data and settings in the dataset. Make sure you know what you do.  </p>
+						</div>
+						<!-- End of Note -->
+<p>To make things simple to batch load there is a method to load data set via XML. You can create and populate data set with one function loadXML and simple XML node structure</p>
+
+<p>XML Load Example:</p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">
+<?xml version="1.0" encoding="UTF-8"?>
+<datasets>
+	<dataset>
+		<action>update</action>
+		<dataset_name>abo</dataset_name>
+		<dataset_key>menu</dataset_key>		
+		<dataset_definition>
+			<column_definition>
+				<column_name>menu_id</column_name>
+				<column_type>integer</column_type>
+				<column_sort_order>1</column_sort_order>				
+	 		</column_definition>
+	 		<column_definition>
+				<column_name>menu_name</column_name>
+				<column_type>varchar</column_type>
+				<column_sort_order>2</column_sort_order>				
+	 		</column_definition>
+	 		<column_definition>
+				<column_name>menu_text</column_name>
+				<column_type>varchar</column_type>
+				<column_sort_order>3</column_sort_order>				
+	 		</column_definition>
+	 		<column_definition>
+				<column_name>sort_order</column_name>
+				<column_type>integer</column_type>
+				<column_sort_order>4</column_sort_order>				
+	 		</column_definition>	
+	 	</dataset_definition>	 	
+
+	 	<dataset_properties>
+	 		<dataset_property>	 			
+	 			<dataset_property_name>some_prop</dataset_property_name>
+	 			<dataset_property_value>25100</dataset_property_value>
+	 		</dataset_property>	 		 		
+	 	</dataset_properties>
+
+	 	
+	 	<column_properties>
+	 		<column_property>
+	 			<column_name>menu_id</column_name>
+	 			<column_property_name>max_id</column_property_name>
+	 			<column_property_value>100</column_property_value>
+	 		</column_property>
+	 		<column_property>
+	 			<column_name>menu_id</column_name>
+	 			<column_property_name>min_id</column_property_name>
+	 			<column_property_value>10</column_property_value>
+	 		</column_property>	 		
+	 	</column_properties>
+	 	
+	 	<dataset_rows>
+	 		<dataset_row>
+	 			<cell>
+	 				<column_name>menu_id</column_name>
+	 				<value>11</value>
+	 			</cell>
+	 			<cell>	
+	 				<column_name>menu_name</column_name>
+	 				<value>some name1</value>
+	 			</cell>
+	 			<cell>	
+	 				<column_name>menu_text</column_name>
+	 				<value>some text1</value>
+	 			</cell>
+	 			<cell>	
+	 				<column_name>sort_order</column_name>
+	 				<value>1</value>
+	 			</cell>
+	 		</dataset_row>
+	 		<dataset_row>
+	 			<cell>
+	 				<column_name>menu_id</column_name>
+	 				<value>12</value>
+	 			</cell>
+	 			<cell>	
+	 				<column_name>menu_name</column_name>
+	 				<value>some name2</value>
+	 			</cell>
+	 			<cell>	
+	 				<column_name>menu_text</column_name>
+	 				<value>some text2</value>
+	 			</cell>
+	 			<cell>	
+	 				<column_name>sort_order</column_name>
+	 				<value>2</value>
+	 			</cell>
+	 		</dataset_row>
+	 		<dataset_row>
+	 			<cell>
+	 				<column_name>menu_id</column_name>
+	 				<value>13</value>
+	 			</cell>
+	 			<cell>	
+	 				<column_name>menu_name</column_name>
+	 				<value>some name3</value>
+	 			</cell>
+	 			<cell>	
+	 				<column_name>menu_text</column_name>
+	 				<value>some text3</value>
+	 			</cell>
+	 			<cell>	
+	 				<column_name>sort_order</column_name>
+	 				<value>3</value>
+	 			</cell>
+	 		</dataset_row>
+	 	 </dataset_rows>	 	
+	</dataset>
+</datasets>
+</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+<p><b>Other methods</b><br />
+<b>Extending Menus</b><br />
+We offer handy way to add menus when you install extension. This can be done with simple function that will do all the work of adding the menu for you to the proper place.</p>
+
+<p>There is a library &lsquo;menu_control.php&rsquo; with class AMenu. This class offers methods to control the menu for both storefront and control panel. You can add, delete menu items to access your extension. This can be done with simple call to aMenu class in install.php and in uninstall.php To install:</p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+// add new menu item
+$menu = new AMenu ( &quot;admin_menu&quot; );
+$menu-&gt;insertMenuItem ( array (        &quot;item_id&quot;=&gt;&#187;your-menu&#187;,
+				&quot;item_text&quot;=&gt;&#187;your_item_text_entry&#187;,
+			 &quot;item_url&quot;=&gt;&#187;your-item-url-or-route-to-controller&#187;,
+		 		&quot;parent_id&quot;=&gt;&#187;item_id-of-parent-item&#187;,
+				 &quot;sort_order&quot;=&gt;&#187;number&#187;,
+		 		&quot;item_type&quot; =&gt;&#187;optional-parameter-for-recognizing-items&#187;));
+		 		</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+<p>To uninstall: </p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+//delete menu item
+$menu = new AMenu ( &quot;admin_menu&quot; );
+$menu-&gt;deleteMenuItem (&quot;sale_your-menu&quot;);</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+<p>Final menu id after it is created is represented based on menu levels. It will have following structure [parent]_[parent]_....[your_menu] and as in our example it is sale_your-menu To avoid conflicts with other extensions, try to create unique menu name. Do not create generic names like products or orders.</p>
+
+
+
 </div>
