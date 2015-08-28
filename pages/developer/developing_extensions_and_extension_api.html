@@ -75,7 +75,7 @@ Dependency concept is present to make sure that dependent extensions are install
 Uninstall Extension: It is important to understand this step. If you decide no longer to use given extension you can uninstall it. This step will completely remove all the settings and data used by the extension. Uninstall script provided in the extension is executed. Consider backup.<br />
 <b>Delete Extension:</b> This is a step to remove extension components from the directory. Note: delete can only be done if extension is uninstalled.</p>
 
-<p>See AbanteCart Extension</p>
+<p class="box-description">See AbanteCart Extension</p>
 
 </div>
 
@@ -93,19 +93,19 @@ Uninstall Extension: It is important to understand this step. If you decide no l
 You can use 3 approaches to store extension data to the database.<br> 1. New tables can be created to support the data storage <br>2. Existing tables can be altered to add new fields and indexes. <br>3. Dataset tools are offered by AbanteCart to save data without creating or altering database. <br>Dataset offer quick and worry free method to handle data without dealing with SQL and creating specific database tables. Data can be handled via easy dataset class methods.<br />
 It is not recommended to use dataset for large sets and transactional type of data, since performance might be affected. Even though, we tested performance with 500000 rows, and no slow down noticed, it is still not desired to use this storage for high traffic read and write. Perfect area to use dataset will be products, categories, customers and orders data extension, polls, questioners, etc.</p>
 
-<p><b>What is Dataset</b><br />
+<p class="box-description"><b>What is Dataset</b><br />
 Say you need to have a poll and need to store records of poll questions and answers. Normally, you would create and add 2 or more tables to the databases to handle data for the poll. With the dataset, we created an abstraction layer to the database, that allows you to skip database creation and go directly to handling data.<br />
 Dataset class will handle all the data storing and management for you with interface of methods provided. It is very easy. You name new dataset (traditionally table) or use existing dataset . Dataset can be created during extension installation from XML file provided in the extension package. It can be also removed with extension uninstall. No direct access to SQL or database is needed. If restriction access required to the dataset, it needs to be handled pragmatically based on AbanteCart permissions. If you decide to use traditional database tables in extension, you will need to create SQL scripts with install, uninstall and disable extension management process.</p>
 
-<p><b>How does Dataset work?</b><br />
+<p class="box-description"><b>How does Dataset work?</b><br />
 First you have to recognize namings in dataset class. There are &ldquo;object&rdquo;, &ldquo;datarow&rdquo;, &ldquo;fieldset&rdquo; and their &ldquo;definitions&rdquo;.</p>
 
-<p><a class="image" href="http://www.abantecart.com/document_wiki/index.php/File:Dataset_01.png" title="caption"><img alt="caption" height="417" src="http://www.abantecart.com/document_wiki/images/thumb/e/ea/Dataset_01.png/700px-Dataset_01.png" width="700" /></a></p>
+<p class="box-description"><a class="image" href="http://www.abantecart.com/document_wiki/index.php/File:Dataset_01.png" title="caption"><img alt="caption" height="417" src="http://www.abantecart.com/document_wiki/images/thumb/e/ea/Dataset_01.png/700px-Dataset_01.png" width="700" /></a></p>
 
-<p>&ldquo;Object&rdquo; is any abstract part of your extension or core. It may be anything that we call &ldquo;owner&rdquo;. Object is owner of data sets. Menu, charts, polls, etc. may contain some data, therefore, they are owners of data sets, objects. &ldquo;Object&rdquo; entity have two attributes: name and key. Name is common text unique identifier of the object (menu, poll, etc). &ldquo;Key&rdquo; is identifier from another section or table of AbanteCart, for example, extension&rsquo;s key(id). Pair &ldquo;name-key&rdquo; must be unique. Key can be also understood as a sort of foreign key to any other table in the system. Key is not required and if not provided name part of the object needs to stay unique. Foreign key connection to any table can be also build pragmatically with use any field in the dataset fieldset.<br />
+<p class="box-description">&ldquo;Object&rdquo; is any abstract part of your extension or core. It may be anything that we call &ldquo;owner&rdquo;. Object is owner of data sets. Menu, charts, polls, etc. may contain some data, therefore, they are owners of data sets, objects. &ldquo;Object&rdquo; entity have two attributes: name and key. Name is common text unique identifier of the object (menu, poll, etc). &ldquo;Key&rdquo; is identifier from another section or table of AbanteCart, for example, extension&rsquo;s key(id). Pair &ldquo;name-key&rdquo; must be unique. Key can be also understood as a sort of foreign key to any other table in the system. Key is not required and if not provided name part of the object needs to stay unique. Foreign key connection to any table can be also build pragmatically with use any field in the dataset fieldset.<br />
 Key can also be a subset name in case of multiple tables used within one feature or set. <a class="image" href="http://www.abantecart.com/document_wiki/index.php/File:Dataset_02.png" title="caption"><img alt="caption" height="436" src="http://www.abantecart.com/document_wiki/images/thumb/8/8e/Dataset_02.png/700px-Dataset_02.png" width="700" /></a></p>
 
-<p>In our poll example you have poll_questions and poll_answers tables. You will create 2 datasets as following:</p>
+<p class="box-description">In our poll example you have poll_questions and poll_answers tables. You will create 2 datasets as following:</p>
 
 <!-- HTML Highlight -->
 <div class="code-highlight">
@@ -118,7 +118,7 @@ $poll_asw -&gt; createDataset(&#39;poll&#39;,&#39;poll_answers&#39;);
  	</pre>
 </div>
 <!-- HTML Highlight -->
-<p>To work with dataset object you just create a new instance of dataset class or use one that you have created before:
+<p class="box-description">To work with dataset object you just create a new instance of dataset class or use one that you have created before:
 </p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
@@ -132,7 +132,7 @@ $my_data_obj-&gt;setDatasetProperties(  array( name =&gt; value, ….  )  );
 </div>
 <!-- HTML Highlight -->
 
-<p>or</p>
+<p class="box-description">or</p>
 
 <!-- HTML Highlight -->
 <div class="code-highlight">
@@ -142,7 +142,7 @@ $poll_qs-&gt;setDatasetProperties(	 array(  	&#39;start_date&#39;=&gt;&#39;2011-
  	</pre>
 </div>
 <!-- HTML Highlight -->
-<p>
+<p class="box-description">
 Setting properties method:</p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
@@ -162,7 +162,7 @@ $my_data -&gt; setDatasetProperties(
 							<p class="note-description"> property’s name and value have limit size at 255 characters. Method setDatasetProperties completely changes values of properties, without updating.  </p>
 						</div>
 						<!-- End of Note -->
-<p>Properties can be accessed with getDatasetProperties() method. This method returns an array with all the properties: </p>
+<p class="box-description">Properties can be accessed with getDatasetProperties() method. This method returns an array with all the properties: </p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
 	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
@@ -171,7 +171,7 @@ $my_data_obj-&gt;getDatasetProperties();	</code>
 </div>
 <!-- HTML Highlight -->						
 
-<p>Next step for new dataset, is to set columns and properties for them. This is similar in concept of creating fields for the database. Each dataset is a representation of one table and it has columns and rows. </p>
+<p class="box-description">Next step for new dataset, is to set columns and properties for them. This is similar in concept of creating fields for the database. Each dataset is a representation of one table and it has columns and rows. </p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
 	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
@@ -187,7 +187,7 @@ $poll_qs-&gt;defineColumns (
 </div>
 <!-- HTML Highlight -->
 
-<p>Dataset&rsquo;s columns definition contain list of value&rsquo;s descriptions (fields). Every dataset consist of columns or fieldset. Now dataset concept supports following column types: integer<br />
+<p class="box-description">Dataset&rsquo;s columns definition contain list of value&rsquo;s descriptions (fields). Every dataset consist of columns or fieldset. Now dataset concept supports following column types: integer<br />
 float<br />
 varchar<br />
 text<br />
@@ -217,13 +217,13 @@ array ( &quot;column_name&quot; =&gt; &quot;question&quot;,
  	</pre>
 </div>
 <!-- HTML Highlight -->
-<p>Column properties are used to keep global information for the columns for the given dataset . This properties can be used to identify data type and constrains for the column. Validation code can use these properties before saving data.</p>
+<p class="box-description">Column properties are used to keep global information for the columns for the given dataset . This properties can be used to identify data type and constrains for the column. Validation code can use these properties before saving data.</p>
 
-<p>In some cases, column properties can be used to store data and act as 1 row table. If you have only 1 row of data and it is not changing you can just use columns properties to store data and avoid extra step to use rows.<br />
+<p class="box-description">In some cases, column properties can be used to store data and act as 1 row table. If you have only 1 row of data and it is not changing you can just use columns properties to store data and avoid extra step to use rows.<br />
 Columns properties are not required, but helpful.<br />
 Actual data for the datasets is stored in rows that are similar to rows in traditional database or spreadsheet. Every row have columns (fields) that are set in the defineColumns method described above.</p>
 
-<p>Let first see how we can add a row to example dataset:</p>
+<p class="box-description">Let first see how we can add a row to example dataset:</p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
 	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
@@ -234,9 +234,9 @@ $poll_qs-&gt;addRows (  array(
  	</pre>
 </div>
 <!-- HTML Highlight -->
-<p>If all rows are inserted successful the return will be total number of rows added that shouldbe same as imputed array count.</p>
+<p class="box-description">If all rows are inserted successful the return will be total number of rows added that shouldbe same as imputed array count.</p>
 
-<p>Now we can select all the rows from the dataset</p>
+<p class="box-description">Now we can select all the rows from the dataset</p>
 
 <!-- HTML Highlight -->
 <div class="code-highlight">
@@ -246,7 +246,7 @@ $rows = poll_qs-&gt;getRows (); &lt;/pre&gt;
  	</pre>
 </div>
 <!-- HTML Highlight -->
-<p>
+<p class="box-description">
 Or for big datasets we can search for specific row based on needed column:</p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
@@ -255,7 +255,7 @@ Or for big datasets we can search for specific row based on needed column:</p>
  	</pre>
 </div>
 <!-- HTML Highlight -->
-<p>or</p>
+<p class="box-description">or</p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
 	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
@@ -264,13 +264,13 @@ $rows = poll_qs-&gt;searchRows ( array(   name=&gt; “question”,  operator =&
 </div>
 <!-- HTML Highlight -->
 
-<p>where &ldquo;condition&rdquo; may be one of list:<br />
+<p class="box-description">where &ldquo;condition&rdquo; may be one of list:<br />
 &ldquo;=&rdquo;<br />
 &rdquo;&gt;&rdquo;<br />
 &rdquo;&lt;&rdquo;<br />
 LIKE</p>
 
-<p>To delete the row from the dataset you can simply call method deleteRows</p>
+<p class="box-description">To delete the row from the dataset you can simply call method deleteRows</p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
 	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
@@ -278,9 +278,9 @@ $my_data-&gt;deleteRows( array( &quot;column_name&quot;=&gt;string, &quot;operat
  	</pre>
 </div>
 <!-- HTML Highlight -->
-<p>If success, method will return total number of rows deleted.</p>
+<p class="box-description">If success, method will return total number of rows deleted.</p>
 
-<p>To drop dataset you can use simple command:</p>
+<p class="box-description">To drop dataset you can use simple command:</p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
 	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
@@ -302,9 +302,9 @@ $my_data-&gt;dropDataset();</code>
 							<p class="note-description"> This method will completely delete data and settings in the dataset. Make sure you know what you do.  </p>
 						</div>
 						<!-- End of Note -->
-<p>To make things simple to batch load there is a method to load data set via XML. You can create and populate data set with one function loadXML and simple XML node structure</p>
+<p class="box-description">To make things simple to batch load there is a method to load data set via XML. You can create and populate data set with one function loadXML and simple XML node structure</p>
 
-<p>XML Load Example:</p>
+<p class="box-description">XML Load Example:</p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
 	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">
@@ -420,11 +420,11 @@ $my_data-&gt;dropDataset();</code>
  	</pre>
 </div>
 <!-- HTML Highlight -->
-<p><b>Other methods</b><br />
+<p class="box-description"><b>Other methods</b><br />
 <b>Extending Menus</b><br />
 We offer handy way to add menus when you install extension. This can be done with simple function that will do all the work of adding the menu for you to the proper place.</p>
 
-<p>There is a library &lsquo;menu_control.php&rsquo; with class AMenu. This class offers methods to control the menu for both storefront and control panel. You can add, delete menu items to access your extension. This can be done with simple call to aMenu class in install.php and in uninstall.php To install:</p>
+<p class="box-description">There is a library &lsquo;menu_control.php&rsquo; with class AMenu. This class offers methods to control the menu for both storefront and control panel. You can add, delete menu items to access your extension. This can be done with simple call to aMenu class in install.php and in uninstall.php To install:</p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
 	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
@@ -440,7 +440,7 @@ $menu-&gt;insertMenuItem ( array (        &quot;item_id&quot;=&gt;&#187;your-men
  	</pre>
 </div>
 <!-- HTML Highlight -->
-<p>To uninstall: </p>
+<p class="box-description">To uninstall: </p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
 	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
@@ -450,7 +450,7 @@ $menu-&gt;deleteMenuItem (&quot;sale_your-menu&quot;);</code>
  	</pre>
 </div>
 <!-- HTML Highlight -->
-<p>Final menu id after it is created is represented based on menu levels. It will have following structure [parent]_[parent]_....[your_menu] and as in our example it is sale_your-menu To avoid conflicts with other extensions, try to create unique menu name. Do not create generic names like products or orders.</p>
+<p class="box-description">Final menu id after it is created is represented based on menu levels. It will have following structure [parent]_[parent]_....[your_menu] and as in our example it is sale_your-menu To avoid conflicts with other extensions, try to create unique menu name. Do not create generic names like products or orders.</p>
 
 
 
@@ -503,9 +503,9 @@ $menu-&gt;deleteMenuItem (&quot;sale_your-menu&quot;);</code>
 
 <div class="category-info helper">
 	<h4 id="Extending_and_Creating_FlexyForms" class="box-title">Extending and Creating FlexyForms </h4>
-<p>FlexyForm set up consists of 3 important components: Database entry, Processing Controller and Template. Below is a diagram that can give more idea how FlexyForms are structured: <a class="image" href="http://www.abantecart.com/document_wiki/index.php/File:Default_abantecart_charts_p9.png" title="caption"><img alt="caption" height="708" src="http://www.abantecart.com/document_wiki/images/thumb/5/54/Default_abantecart_charts_p9.png/500px-Default_abantecart_charts_p9.png" width="500" /></a></p>
+<p class="box-description">FlexyForm set up consists of 3 important components: Database entry, Processing Controller and Template. Below is a diagram that can give more idea how FlexyForms are structured: <a class="image" href="http://www.abantecart.com/document_wiki/index.php/File:Default_abantecart_charts_p9.png" title="caption"><img alt="caption" height="708" src="http://www.abantecart.com/document_wiki/images/thumb/5/54/Default_abantecart_charts_p9.png/500px-Default_abantecart_charts_p9.png" width="500" /></a></p>
 
-<p>Lets look into Controller and PHP code Create an instance of the class AForm:</p>
+<p class="box-description">Lets look into Controller and PHP code Create an instance of the class AForm:</p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
 	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
@@ -533,7 +533,7 @@ $this-&gt;form-&gt;loadFromDb(&#39;testForm&#39;);</code>
  	</pre>
 </div>
 <!-- HTML Highlight -->
-<p>Since we have all the form data, fields and settings for the form loaded from the database, we are ready to generate FlexyForm code and pass to the template to be displayed. <br>To display form you just pass output of getFormHtml() function: </p>
+<p class="box-description">Since we have all the form data, fields and settings for the form loaded from the database, we are ready to generate FlexyForm code and pass to the template to be displayed. <br>To display form you just pass output of getFormHtml() function: </p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
 	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
@@ -551,7 +551,7 @@ $this-&gt;view-&gt;assign(&#39;form_output&#39;, $this-&gt;form-&gt;getFormHtml(
 							<p class="note-description"> 'form_output' is the name of variable in the template to display the form’s HTML  </p>
 						</div>
 						<!-- End of Note -->
-<p>Run the form template or any other template to display the form: </p>
+<p class="box-description">Run the form template or any other template to display the form: </p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
 	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
@@ -560,7 +560,7 @@ $this-&gt;processTemplate(&#39;pages/index/form.tpl&#39; );</code>
 </div>
 <!-- HTML Highlight -->
 
-<p>Validation: <br>At some point you need to add validation code to check submited values of the form. <br>You can see example below how this can be done:</p>
+<p class="box-description">Validation: <br>At some point you need to add validation code to check submited values of the form. <br>You can see example below how this can be done:</p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
 	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
@@ -579,7 +579,7 @@ if ( $this-&gt;request-&gt;server[&#39;REQUEST_METHOD&#39;] == &#39;POST&#39; ) 
  	</pre>
 </div>
 <!-- HTML Highlight -->
-<p>Validation function is pretty simple In sample case we just check if all required fields filled. You can easily extend this function to meet your needs. </p>
+<p class="box-description">Validation function is pretty simple In sample case we just check if all required fields filled. You can easily extend this function to meet your needs. </p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
 	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
@@ -604,7 +604,7 @@ private function validateForm() {
 </div>
 <!-- HTML Highlight -->
 
-<p>To assign values to form fields you can call 2 methods assign() and batchAssign(). <br>Here is an example how it is done: </p>
+<p class="box-description">To assign values to form fields you can call 2 methods assign() and batchAssign(). <br>Here is an example how it is done: </p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
 	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
@@ -618,7 +618,7 @@ $this-&gt;form-&gt;batchAssign( array(
  	</pre>
 </div>
 <!-- HTML Highlight -->
-<p>If you have multiselect field or checkbox group field, you need to pass an array. </p>
+<p class="box-description">If you have multiselect field or checkbox group field, you need to pass an array. </p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
 	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
@@ -627,7 +627,7 @@ $this-&gt;form-&gt;assign( &#39;field_name&#39;,  array(‘value1’, ‘value2�
  	</pre>
 </div>
 <!-- HTML Highlight -->
-<p>Now let’s look in the template that actually contains the code to displays the form. In the template you need to include the form output in the place you need form to show: </p>
+<p class="box-description">Now let’s look in the template that actually contains the code to displays the form. In the template you need to include the form output in the place you need form to show: </p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
 	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
@@ -639,11 +639,11 @@ $this-&gt;form-&gt;assign( &#39;field_name&#39;,  array(‘value1’, ‘value2�
 <!-- HTML Highlight -->
 
 
-<p>Form CSS style will be based on the standard style set in the AbanteCart. You can modify the style by including your own CSS. To modify: Locate original CSS for the form in appropriate stylesheet location for admin or storefront.</p>
+<p class="box-description">Form CSS style will be based on the standard style set in the AbanteCart. You can modify the style by including your own CSS. To modify: Locate original CSS for the form in appropriate stylesheet location for admin or storefront.</p>
 
-<p><i>TIP: In some browsers (Firefox with Firebug or Safari) you can use feature to inspect HTML elements. This is very handy to understand how CSS and HTML structured on the pages.</i></p>
+<p class="box-description"><i>TIP: In some browsers (Firefox with Firebug or Safari) you can use feature to inspect HTML elements. This is very handy to understand how CSS and HTML structured on the pages.</i></p>
 
-<p><br />
+<p class="box-description"><br />
 To add your own styles you can include CSS:</p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
@@ -665,15 +665,15 @@ $this-&gt;document-&gt;addStyle(&quot;path/to/css&quot;);</code>
 						</div>
 						<!-- End of Note -->
 						
-<p>You are now done with building the form code and display of the form</p>
+<p class="box-description">You are now done with building the form code and display of the form</p>
 
-<p>Now you need to set fields to the database. You can use different methods to set and save form settings and fields to the database. There is a traditional SQL inserts or updates that can be used. We have following tables that needs to be used to manage forms data:</p>
+<p class="box-description">Now you need to set fields to the database. You can use different methods to set and save form settings and fields to the database. There is a traditional SQL inserts or updates that can be used. We have following tables that needs to be used to manage forms data:</p>
 
-<p><a class="image" href="http://www.abantecart.com/document_wiki/index.php/File:Forms.png" title="caption"><img alt="caption" height="337" src="http://www.abantecart.com/document_wiki/images/thumb/9/9c/Forms.png/500px-Forms.png" width="500" /></a></p>
+<p class="box-description"><a class="image" href="http://www.abantecart.com/document_wiki/index.php/File:Forms.png" title="caption"><img alt="caption" height="337" src="http://www.abantecart.com/document_wiki/images/thumb/9/9c/Forms.png/500px-Forms.png" width="500" /></a></p>
 
-<p>In addition to traditional SQL method we offer a convenience of build in functions in the library to simplify adding, deleting or editing FlexyForms database. These can be used for extension install and uninstall process and in the control panel to manage FlexyForm settings.</p>
+<p class="box-description">In addition to traditional SQL method we offer a convenience of build in functions in the library to simplify adding, deleting or editing FlexyForms database. These can be used for extension install and uninstall process and in the control panel to manage FlexyForm settings.</p>
 
-<p>Example of xml file for form loading:</p>
+<p class="box-description">Example of xml file for form loading:</p>
 
 <!-- HTML Highlight -->
 <div class="code-highlight">
@@ -782,7 +782,7 @@ $this-&gt;document-&gt;addStyle(&quot;path/to/css&quot;);</code>
 </div>
 <!-- HTML Highlight -->
 
-<p><b>Create or Extend Standard Form with AForm Class</b><br />
+<p class="box-description"><b>Create or Extend Standard Form with AForm Class</b><br />
 AbanteCart offers unified methods to create forms and load HTML form elements such as form data and fields. There are 2 main classes AForm and AHtml that are inter-connected to give better control and flexibility of the form.<br />
 To create a form you need to create an instance of class AForm and continue with using methods.<br />
 See Example:</p>
@@ -814,7 +814,7 @@ $this-&gt;view-&gt;batchAssign( $form_data );
  	</pre>
 </div>
 <!-- HTML Highlight -->
-<p>To set selected value for the selectbox, checkboxgroup and multiselect elements, for example, you need to pass options array with available options to select and you can pass “value” parameter (as selected value(s) ) that can be singe value or array; </p>
+<p class="box-description">To set selected value for the selectbox, checkboxgroup and multiselect elements, for example, you need to pass options array with available options to select and you can pass “value” parameter (as selected value(s) ) that can be singe value or array; </p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
 	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
@@ -827,7 +827,7 @@ $this-&gt;form-&gt;getFieldHtml(array(
  	</pre>
 </div>
 <!-- HTML Highlight -->
-<p></p>
+<p class="box-description"></p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
 	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
@@ -842,7 +842,7 @@ $this-&gt;form-&gt;getFieldHtml(array(
 </div>
 <!-- HTML Highlight -->
 
-<p>
+<p class="box-description">
 Available field types as part of AForm class: input, textarea, selectbox, multiselectbox, radio, checkbox, checkboxgroup, file, and hidden
 <br />
 Available methods as part of AHtml class:</p>
@@ -872,9 +872,9 @@ buildCaptcha($data) </code>
  	</pre>
 </div>
 <!-- HTML Highlight -->
-<p>You can build HTML element via Form object Reference or via html object methods: Example:</p>
+<p class="box-description">You can build HTML element via Form object Reference or via html object methods: Example:</p>
 
-<p>build Input Element via form object</p>
+<p class="box-description">build Input Element via form object</p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
 	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
@@ -886,7 +886,7 @@ string  $form-&gt;getFieldHtml( array(
  	</pre>
 </div>
 <!-- HTML Highlight -->
-<p>
+<p class="box-description">
 build Input Element via html object</p>
 
 
@@ -903,7 +903,7 @@ build Input Element via html object</p>
 
 
 
-<p>build Input Element via html object</p>
+<p class="box-description">build Input Element via html object</p>
 
 
 <!-- HTML Highlight -->
@@ -919,7 +919,7 @@ build Input Element via html object</p>
 <!-- HTML Highlight -->
 
 
-<p>build Button Element </p>
+<p class="box-description">build Button Element </p>
 
 
 <!-- HTML Highlight -->
@@ -936,7 +936,7 @@ $form-&gt;getFieldHtml(array(
 <!-- HTML Highlight -->
 
 
-<p>build Selectbox Element</p>
+<p class="box-description">build Selectbox Element</p>
 
 
 <!-- HTML Highlight -->
@@ -988,7 +988,7 @@ $this-&gt;form-&gt;loadExtendedFields(&#39;testFrm&#39;);</code>
 </div>
 <!-- HTML Highlight -->
 
-<p>Example how to add extended fields from FlexyForm to standard form: </p>
+<p class="box-description">Example how to add extended fields from FlexyForm to standard form: </p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
 	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
@@ -1003,7 +1003,7 @@ $this-&gt;view-&gt;assign(&#39;extended_fields&#39;, $extended_fields);
 </div>
 <!-- HTML Highlight -->	
 	
-<p>In the template you need to add code below within the form scope:
+<p class="box-description">In the template you need to add code below within the form scope:
 </p>
 	
 <!-- HTML Highlight -->
@@ -1036,20 +1036,20 @@ $this-&gt;view-&gt;assign(&#39;extended_fields&#39;, $extended_fields);
 
 <div class="category-info helper">
 	<h4 id="Setting_Up_Data_Listing_Pages_with_Grid" class="box-title"> Setting Up Data Listing Pages with Grid </h4>
-	<p>To list data in Control Panel pages, AbanteCart utilise jqGrid (by Tony Tomov, www.trirand.com/blog). This approach is unified and applied on all pages that use data listing. There is a standard interface to jqGrid that is set up as child controller. Any new page building data listing needs to include jqGrid controller and child and build data and settings. Settings are pass to controller directly and data loaded by jqGrid controller via remote ajax call to response controller.</p>
+	<p class="box-description">To list data in Control Panel pages, AbanteCart utilise jqGrid (by Tony Tomov, www.trirand.com/blog). This approach is unified and applied on all pages that use data listing. There is a standard interface to jqGrid that is set up as child controller. Any new page building data listing needs to include jqGrid controller and child and build data and settings. Settings are pass to controller directly and data loaded by jqGrid controller via remote ajax call to response controller.</p>
 
-<p>Main idea for this concept is to prepare the format and settings for the fata and load actual data based on set format and settings. Main page controller is responsible for building data format and settings and remote AJAX controller will prepare and provide the data to be listed in the grid. Grid controller that is a common &ldquo;blackbox&rdquo; element shared by everybody, will display the data in a format requested.</p>
+<p class="box-description">Main idea for this concept is to prepare the format and settings for the fata and load actual data based on set format and settings. Main page controller is responsible for building data format and settings and remote AJAX controller will prepare and provide the data to be listed in the grid. Grid controller that is a common &ldquo;blackbox&rdquo; element shared by everybody, will display the data in a format requested.</p>
 
-<p>Bellow is the description of the settings and data provided to grid controller: There are 2 parts to grid: main page controller and ajax (response) controller</p>
+<p class="box-description">Bellow is the description of the settings and data provided to grid controller: There are 2 parts to grid: main page controller and ajax (response) controller</p>
 
-<p><i>Main Page controller</i><br />
+<p class="box-description"><i>Main Page controller</i><br />
 This controller includes grid as a child and prepare all the settings for the grid to give it a desired state. Settings include, list of fields, actions, search values, and edit/view restrictions.</p>
 
-<p>All settings are set into one array that will be passed to child listing_grid controller.</p>
+<p class="box-description">All settings are set into one array that will be passed to child listing_grid controller.</p>
 
-<p>Here is the process based on the example how to include grid to the main controller:</p>
+<p class="box-description">Here is the process based on the example how to include grid to the main controller:</p>
 
-<p>First you need to provide main settings for grid to operate. These include table name (table_id), URL, edit action URL, Default sort column, actions allowed for each row.</p>
+<p class="box-description">First you need to provide main settings for grid to operate. These include table name (table_id), URL, edit action URL, Default sort column, actions allowed for each row.</p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
 	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
@@ -1076,7 +1076,7 @@ $grid_settings = array(
 </div>
 <!-- HTML Highlight -->
 	
-<p>You need to specify column names and settings per each column.<br />
+<p class="box-description">You need to specify column names and settings per each column.<br />
 You can set name, index, width, sorttype, align, and more. By default, if you do not set any width, it will be automatic (recommended). If you set the width, you need to set width for every column.<br />
 For more settings options for jqGrid, you can refer to www.trirand.com/blog</p>
 <!-- HTML Highlight -->
@@ -1116,7 +1116,7 @@ $grid_settings[&#39;colNames&#39;] = array(
  	</pre>
 </div>
 <!-- HTML Highlight -->
-<p>Additional parameters and settings:<br />
+<p class="box-description">Additional parameters and settings:<br />
 You can specify the master search form that will show above the grid and can perform specific searches and update the list result</p>
 
 
@@ -1159,18 +1159,18 @@ $form = new AForm();
 <!-- HTML Highlight -->
 
 
-<p><i>Ajax (response) controller</i><br />
+<p class="box-description"><i>Ajax (response) controller</i><br />
 This controller builds data set for the grid to display. Grid does the remote (separate) HTTP(S) call to load the data.</p>
 
-<p>Here is the process based on the example how to build data set and provide it to the gird: &hellip;..</p>
+<p class="box-description">Here is the process based on the example how to build data set and provide it to the gird: &hellip;..</p>
 
-<p><br />
+<p class="box-description"><br />
 Main grid controller: admin\controller\common\listing_grid.php</p>
 
-<p>For more details to data format check jqGrid manuals: <a class="external free" href="http://www.trirand.com/jqgridwiki/doku.php?id=wiki:retrieving_data" rel="nofollow">http://www.trirand.com/jqgridwiki/doku.php?id=wiki:retrieving_data</a></p>
+<p class="box-description">For more details to data format check jqGrid manuals: <a target="_blank" class="external free" href="http://www.trirand.com/jqgridwiki/doku.php?id=wiki:retrieving_data" rel="nofollow">http://www.trirand.com/jqgridwiki/doku.php?id=wiki:retrieving_data</a></p>
 
-<p><br />
-<b>We suggest to try extension developer tools to create your extension</b>. This will help you avoid tedious work of creating necessary files. <a class="external text" href="https://github.com/abantecart/developer_tools_extension/" rel="nofollow">Dev Tools Extension on Github</a></p>
+<p class="box-description"><br />
+<b>We suggest to try extension developer tools to create your extension</b>. This will help you avoid tedious work of creating necessary files. <a class="external text" href="https://github.com/abantecart/developer_tools_extension/" rel="nofollow" target="_blank">Dev Tools Extension on Github</a></p>
 
 	
 	
