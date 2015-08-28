@@ -12,7 +12,7 @@ redirect_from: "/tag/extension_dev.html"
 	<h3 class="category-title">AbanteCart Extension’s Developer Guide</h3>
 	<h4 class="category-description"> 
 	</h4>
-	<p class="note-description">
+	<p class="box-description">
 	The extension subsystem of the AbanteCart is an essential part of shopping cart application. Extensions allow efficient way to add new features to the cart and allow scalability and flexibility of ecommerce application.
 The extension subsystem of the AbanteCart allows shopping cart project grow indefinitely together with rapidly changing technologies, standards and techniques.<br>
 Lots of effort lays on the development of the system and extensions to allow shopping cart administrators and owners smooth and worry free cart experience.<br>
@@ -157,10 +157,10 @@ All Extensions are located in <b>extensions</b> folder. Bellow is the set of fil
 
 
 
-<p class="note-description"><img width="650" height="603" src="/img/developer/extensions.png" alt="Directory structure">
+<p class="box-description"><img width="650" height="603" src="/img/developer/extensions.png" alt="Directory structure">
 </p>
 
-<p class="note-description"><b>Pre-install actions - validation</b><br>
+<p class="box-description"><b>Pre-install actions - validation</b><br>
 Extensions are installed in control panel from Extension Manager section. Before installation there following checks are performed:
 <ul><li> - check available space
 </li><li> - is extensions directory writable
@@ -171,7 +171,7 @@ Extensions are installed in control panel from Extension Manager section. Before
 </li></ul></p>
 
 
-<p class="note-description"><b>Post-install actions</b>
+<p class="box-description"><b>Post-install actions</b>
 <ul><li> - check all files list and sizes
 </li><li> - run install process
 </li></ul>
@@ -196,7 +196,7 @@ Most of initial and default settings can be provided in configuration file. This
 Bellow is the description of all items that are available in configuration file
 </p>
 
-<p class="note-description"><b>config.xml</b> example:
+<p class="box-description"><b>config.xml</b> example:
 </p>
 
 
@@ -268,13 +268,13 @@ Bellow is the description of all items that are available in configuration file
 <!-- HTML Highlight -->
 
 
-<p class="note-description">
+<p class="box-description">
 <b>More details about each extension config item</b>
-</p><p class="note-description"><b>&lt;id&gt;discount&lt;/id&gt;</b> - extension unique named identifier ( should be unique among all other extensions )
-</p><p class="note-description"><b>&lt;version&gt;0.1.0&lt;/version&gt;</b> - current extension version
-</p><p class="note-description"><b>&lt;cartversions&gt;<br>&lt;item&gt;1.0&lt;/item&gt;<br>&lt;/cartversions&gt;</b>   - supported cart versions by the extension
-</p><p class="note-description"><b>&lt;dependencies&gt;...&lt;/dependencies&gt;</b> - if given extension depends on other extension(s) be installed, this item can be used. See examples:
-</p><p class="note-description">Optional extension dependency.  original extension can work without dependant extension installed. ( use only 0.9 - 1.0 versions of extension )
+</p><p class="box-description"><b>&lt;id&gt;discount&lt;/id&gt;</b> - extension unique named identifier ( should be unique among all other extensions )
+</p><p class="box-description"><b>&lt;version&gt;0.1.0&lt;/version&gt;</b> - current extension version
+</p><p class="box-description"><b>&lt;cartversions&gt;<br>&lt;item&gt;1.0&lt;/item&gt;<br>&lt;/cartversions&gt;</b>   - supported cart versions by the extension
+</p><p class="box-description"><b>&lt;dependencies&gt;...&lt;/dependencies&gt;</b> - if given extension depends on other extension(s) be installed, this item can be used. See examples:
+</p><p class="box-description">Optional extension dependency.  original extension can work without dependant extension installed. ( use only 0.9 - 1.0 versions of extension )
 </p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
@@ -287,7 +287,7 @@ Bellow is the description of all items that are available in configuration file
 </div>
 <!-- HTML Highlight -->
 
-<p class="note-description">
+<p class="box-description">
 Required extension. Current extension can not work without dependant extension installed.
 </p>
 
@@ -308,11 +308,11 @@ Required extension. Current extension can not work without dependant extension i
 
 
 
-<p class="note-description"><b>&lt;priority&gt;10&lt;/priority&gt;</b> - Extension priority. This will set when current extension needs to be included and ran compare to other extensions installed.<br> 
+<p class="box-description"><b>&lt;priority&gt;10&lt;/priority&gt;</b> - Extension priority. This will set when current extension needs to be included and ran compare to other extensions installed.<br> 
 Higher number will make extension with higher priority. 
-</p><p class="note-description"><b>&lt;type&gt;template&lt;/type&gt;</b> - extension type. can be 'extensions', 'payment', 'shipping', 'template'. New types might be added in the future.
-</p><p class="note-description"><b>&lt;category&gt;template&lt;/category&gt;</b> - extension category. This mostly used for grouping extensions and not used in AbanteCart itself. 
-</p><p class="note-description"><b>&lt;settings&gt;.. &lt;/settings&gt;</b>  - contains extension settings<br>
+</p><p class="box-description"><b>&lt;type&gt;template&lt;/type&gt;</b> - extension type. can be 'extensions', 'payment', 'shipping', 'template'. New types might be added in the future.
+</p><p class="box-description"><b>&lt;category&gt;template&lt;/category&gt;</b> - extension category. This mostly used for grouping extensions and not used in AbanteCart itself. 
+</p><p class="box-description"><b>&lt;settings&gt;.. &lt;/settings&gt;</b>  - contains extension settings<br>
 See allowed settings types below. <br>
 Example:
 </p>
@@ -341,7 +341,7 @@ Example:
 <!-- HTML Highlight -->
 
 
-<p class="note-description">Starting from version 1.1.5 global settings have been implemented.  Now common settings such as status, sort_order etc. are not required to be included. <br> 
+<p class="box-description">Starting from version 1.1.5 global settings have been implemented.  Now common settings such as status, sort_order etc. are not required to be included. <br> 
 If common settings are still included in given extension configuration file, they will override global settings.<br>  
 If global setting is not needed, it can be disabled with adding &lt;disabled&gt;true&lt;/disabled&gt;<br> 
 Example:
@@ -358,9 +358,9 @@ Example:
 </div>
 <!-- HTML Highlight -->
 
-<p class="note-description">Global settings are located in core/extension/ directory and attached to top or bottom of the settings page. <br> 
+<p class="box-description">Global settings are located in core/extension/ directory and attached to top or bottom of the settings page. <br> 
 Global settings available for any extension (default section) and for extension type as well, such as shipping and payment. <br> 
-</p><p class="note-description"><br>
+</p><p class="box-description"><br>
 <b>&lt;additional_settings&gt;...&lt;/additional_settings&gt;</b> - you can add link to additional extension settings. It could be controller inside extension or any existing admin controller. By default button title will be ‘Additional Settings’. If you want to change it - you should add language definition with key = ‘text_additional_settings’ to your language file - it will define button title<br>
 Example:
 </p>
@@ -375,9 +375,9 @@ Example:
 </div>
 <!-- HTML Highlight -->
 
-<p class="note-description"><br>
+<p class="box-description"><br>
 <b>&lt;note&gt;true&lt;/note&gt;</b> - define if extensions have notes or not. notes defined in language file with key = ‘&lt;extension_name&gt;_note’. note will be shown on extension edit page. This note can help with additional information to users how to manage extension or extra steps to set up extension. 
-</p><p class="note-description"><b>&lt;preview&gt;...&lt;/preview&gt;</b> - extension preview images. stored in <i>[extension_id]/image/</i> folder<br>
+</p><p class="box-description"><b>&lt;preview&gt;...&lt;/preview&gt;</b> - extension preview images. stored in <i>[extension_id]/image/</i> folder<br>
 Example:
 </p>
 <!-- HTML Highlight -->
@@ -391,9 +391,9 @@ Example:
  	</pre>
 </div>
 <!-- HTML Highlight -->
-<p class="note-description"><br>
+<p class="box-description"><br>
 <b>&lt;help_link&gt;&lt;![CDATA<a href="http://www.google.com" class="external autonumber" rel="nofollow">[1]</a>]&gt;&lt;/help_link&gt;</b> - define help page link. if not empty - you will have help button on extension edit page. This can be external link.
-</p><p class="note-description">Install and removal items:
+</p><p class="box-description">Install and removal items:
 </p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
@@ -409,7 +409,7 @@ Example:
  	</pre>
 </div>
 <!-- HTML Highlight -->
-<p class="note-description"><b>AbanteCart extension support following settings types:</b>
+<p class="box-description"><b>AbanteCart extension support following settings types:</b>
 </p>
 <ul><li> hidden
 </li><li> input
@@ -452,8 +452,8 @@ Validation is possible with 2 methods.
 2. Code side validation in custom function  
 </pre>
 <h3> <span class="mw-headline" id="Pattern_based_validation">  Pattern based validation </span></h3>
-<p class="note-description">This is a quick way to set validation to given setting field.  Regular expression can be set per each setting filed  to allow only specified value in the field. 
-</p><p class="note-description">Example of email validation:
+<p class="box-description">This is a quick way to set validation to given setting field.  Regular expression can be set per each setting filed  to allow only specified value in the field. 
+</p><p class="box-description">Example of email validation:
 </p>
 
 <!-- HTML Highlight -->
@@ -473,13 +473,13 @@ Validation is possible with 2 methods.
 
 
 
-<p class="note-description">Note: Error text needs to be added to language XML with key like this: [extention_id]_[item_id]_validation_error or [extention_id]_email_validation_error in example above.
+<p class="box-description">Note: Error text needs to be added to language XML with key like this: [extention_id]_[item_id]_validation_error or [extention_id]_email_validation_error in example above.
 </p>
 <h3> <span class="mw-headline" id="Code_side_validation">  Code side validation </span></h3>
-<p class="note-description">In case more advanced settings values validation required, you need to provide your own code to validate input and generate errors. 
+<p class="box-description">In case more advanced settings values validation required, you need to provide your own code to validate input and generate errors. 
 This is done in a special validate.php file included on the main extension directory level. This file will be automatically included 
 Function inside the file have to be named settingsValidation () { …
-</p><p class="note-description">Example:
+</p><p class="box-description">Example:
 </p>
 
 
@@ -504,9 +504,9 @@ function settingsValidation ( $settings_data = array()) {
 </div>
 <!-- HTML Highlight -->
 
-<p class="note-description">Input: 
+<p class="box-description">Input: 
 settingsValidation function will get an array with settings and values submitted by user. 
-</p><p class="note-description">Example of input array:
+</p><p class="box-description">Example of input array:
 </p>
 
 <!-- HTML Highlight -->
@@ -530,11 +530,11 @@ array (
 </div>
 <!-- HTML Highlight -->
 
-<p class="note-description">NOTE: settingsValidation function will be call in all settings save and individual (quick) save. Keep in mind that validation needs to be done on each field separately. 
+<p class="box-description">NOTE: settingsValidation function will be call in all settings save and individual (quick) save. Keep in mind that validation needs to be done on each field separately. 
 Required values handled by core and  required="true"  setting in the config
-</p><p class="note-description">Return:
+</p><p class="box-description">Return:
 return needs to be array with result =  true/false and error message for each field with failed validation.
-</p><p class="note-description">If validation passed
+</p><p class="box-description">If validation passed
 </p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
@@ -544,7 +544,7 @@ array( &#39;result&#39;=&gt;true );
  	</pre>
 </div>
 <!-- HTML Highlight -->
-<p class="note-description">or if failed
+<p class="box-description">or if failed
 </p>
 
 
@@ -582,10 +582,10 @@ There are 4 types of resources that extension can use
 </li><li> models
 </li><li> template files
 </li></ul>
-<p class="note-description">Each resource can be in 2 sections – admin &amp; storefront.
-</p><p class="note-description">Controllers, languages and models defined as <b>catalog/product</b><br>
+<p class="box-description">Each resource can be in 2 sections – admin &amp; storefront.
+</p><p class="box-description">Controllers, languages and models defined as <b>catalog/product</b><br>
 Templates defined with <b>.tpl</b> extension – <b>catalog/product.tpl</b>
-</p><p class="note-description">Example:
+</p><p class="box-description">Example:
 </p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
@@ -728,7 +728,7 @@ $this-&gt;extensions-&gt;hkMethodName($object, $param1, $param2);
 
 
 
-<p class="note-description">Basically, when you tell the extensions api to hook ClassName::methodName(), it creates Extension hooks and calls them and the main method as follows (this is not always true and it is more complicated than this, but it is better to express more precise wiring in visual form):
+<p class="box-description">Basically, when you tell the extensions api to hook ClassName::methodName(), it creates Extension hooks and calls them and the main method as follows (this is not always true and it is more complicated than this, but it is better to express more precise wiring in visual form):
 </p>
 <ul><li> <b>Extension::beforeClassNameMethodName()</b> - use it to update/change parameters passed to method
 </li><li> <b>Extension::aroundClassNameMethodName()</b> - use it to forbid original method call
@@ -736,11 +736,11 @@ $this-&gt;extensions-&gt;hkMethodName($object, $param1, $param2);
 </li><li> <b>Extension::onClassNameMethodName()</b> - use it to change return data
 </li><li> <b>Extension::afterClassNameMethodName()</b> - use it to run some functions after method is executed
 </li></ul>
-<p class="note-description"><a href="/document_wiki/index.php/Extension_FlowChart" title="Extension FlowChart">Extension_FlowChart</a> 
-</p><p class="note-description">Some of the hooks may seem very similar, but they help to serve different purposes.
-</p><p class="note-description">Extension automatically has access to the current controller object (class instance) loaded during the hooking process. Current controller instance used in the extension class will be available via <b>$this-&gt;baseObject</b> and provides access to all public methods and properties in the extended controller. This also includes access to global structures. Refer to developer’s manual for global data structures and controller public methods and properties.<br>
+<p class="box-description"><a href="/document_wiki/index.php/Extension_FlowChart" title="Extension FlowChart">Extension_FlowChart</a> 
+</p><p class="box-description">Some of the hooks may seem very similar, but they help to serve different purposes.
+</p><p class="box-description">Extension automatically has access to the current controller object (class instance) loaded during the hooking process. Current controller instance used in the extension class will be available via <b>$this-&gt;baseObject</b> and provides access to all public methods and properties in the extended controller. This also includes access to global structures. Refer to developer’s manual for global data structures and controller public methods and properties.<br>
 NOTE: The state of extended controller instance can be different depending on the hook location and stage of execution.
-</p><p class="note-description">Example of extension class:
+</p><p class="box-description">Example of extension class:
 </p>
 
 
@@ -762,8 +762,8 @@ class ExtensionName extends Extension {
 
 
 
-<p class="note-description"><b>NOTE:</b> all class properties you want to be used in extensions must be declared as <b>public</b>
-</p><p class="note-description">Extensions also have the current ExtensionsApi loaded into them so that they can make hookable calls on other objects if needed, such as the base object or another object:
+<p class="box-description"><b>NOTE:</b> all class properties you want to be used in extensions must be declared as <b>public</b>
+</p><p class="box-description">Extensions also have the current ExtensionsApi loaded into them so that they can make hookable calls on other objects if needed, such as the base object or another object:
 </p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
@@ -790,7 +790,7 @@ class ExtensionName extends Extension {
 
 
 
-<p class="note-description">Extensions can even have calls to themselves hooked. You could use the Extension’s ExtensionsApi to accomplish this just as with other objects; however, if you are not overriding the Extension __call() method, there is an easier way:
+<p class="box-description">Extensions can even have calls to themselves hooked. You could use the Extension’s ExtensionsApi to accomplish this just as with other objects; however, if you are not overriding the Extension __call() method, there is an easier way:
 </p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
@@ -812,7 +812,7 @@ class ExtensionName extends Extension {
 
 
 
-<p class="note-description">When it is a Extension that is being hooked, the base object is not changed. This is usually the desired functionallity, but may not always be. However, if one Extension wants to access another Extension, it can do so through its Extension Api:
+<p class="box-description">When it is a Extension that is being hooked, the base object is not changed. This is usually the desired functionallity, but may not always be. However, if one Extension wants to access another Extension, it can do so through its Extension Api:
 </p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
@@ -831,7 +831,7 @@ class AnotherExtensionName extends Extension {
 
 
 
-<p class="note-description">Extension can be called on any hook method called. You need to use <b>overload Hooks</b> property for it
+<p class="box-description">Extension can be called on any hook method called. You need to use <b>overload Hooks</b> property for it
 </p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
@@ -915,7 +915,7 @@ class ExtensionName extends Extension {
 <!-- HTML Highlight -->
 
            	
-<p class="note-description">If you need to create a hook for some method of a class, for example you need to hook to Cart::getProducts method
+<p class="box-description">If you need to create a hook for some method of a class, for example you need to hook to Cart::getProducts method
 you can do following:
 </p>
 <ul><li> you can update all <b>$this-&gt;cart-&gt;getProducts</b> calls to <b>$this-&gt;extensions-&gt;hkgetProducts($cart);</b>
@@ -975,7 +975,7 @@ class ExtensionName extends Extension {
  	</pre>
 </div>
 <!-- HTML Highlight -->
-<p class="note-description"><b>Help:</b> Can not add or change values in the base template file or controller? No Problem. Contact us in a forum.abantecart.com  and we will help to find solution. If you discover that you need to add something to base template files in AbanteCart storefront or admin, and there is no way to do this or no hook variable available let us know. We can add hooks to current development version and next release. 
+<p class="box-description"><b>Help:</b> Can not add or change values in the base template file or controller? No Problem. Contact us in a forum.abantecart.com  and we will help to find solution. If you discover that you need to add something to base template files in AbanteCart storefront or admin, and there is no way to do this or no hook variable available let us know. We can add hooks to current development version and next release. 
 </p>
 	
 
@@ -1003,15 +1003,15 @@ Controller is loaded, it's method is executed and it is ready to render template
 </li><li> if override is not found it is looking for <b>template.pre.tpl</b> and <b>template.post.tpl</b> - their content added before and after original template - any extensions can use <b>pre</b> and <b>post</b> files.  if several extensions contain <b>pre</b> or <b>post</b>  files - they all will be rendered according to extension priority
 </li><li> at last it is looking for <b>template.tpl</b>
 </li></ul>
-<p class="note-description"><br>
+<p class="box-description"><br>
 <b>How to develop Extensions:</b>
 Let us show how to develop extension based on the example that will apply discount on all products
-</p><p class="note-description">Extension unique id name will be - <b>discount</b>
+</p><p class="box-description">Extension unique id name will be - <b>discount</b>
 </p>
 <ul><li> create directory <b>../extensions/discount</b>
 </li><li> create config file  <b>../extensions/discount/config.xml</b>
 </li></ul>
-<p class="note-description">At minimum we need to add following settings<br>
+<p class="box-description">At minimum we need to add following settings<br>
 1. discount_status - enabled/disabled
 2. discount_percent - percent of discount
 3. discount message - message that will be shown on cart page
@@ -1057,7 +1057,7 @@ Let us show how to develop extension based on the example that will apply discou
 </div>
 <!-- HTML Highlight -->
 
-<p class="note-description">
+<p class="box-description">
 - create main driver PHP file <b>../extensions/discount/main.php</b>
 </p>
 <!-- HTML Highlight -->
@@ -1089,7 +1089,7 @@ $templates = array(
 <!-- HTML Highlight -->
 
 
-<p class="note-description">
+<p class="box-description">
 - create language setting file <b>../extensions/discount/admin/language/english/discount/discount.xml</b>
 </p>
 <!-- HTML Highlight -->
@@ -1137,7 +1137,7 @@ $templates = array(
 
 
 
-<p class="note-description">- create extension class to handle the work: <b>../extensions/discount/core/discount.php</b>
+<p class="box-description">- create extension class to handle the work: <b>../extensions/discount/core/discount.php</b>
 </p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
@@ -1157,7 +1157,7 @@ class ExtensionDiscount extends Extension {
 
 
 
-<p class="note-description">- add a message about discounts to CheckoutCart step/page
+<p class="box-description">- add a message about discounts to CheckoutCart step/page
 1. Edit file add this function below:<br>
 <b>../extensions/discount/core/discount.php</b>
 </p>
@@ -1174,13 +1174,13 @@ $discount_message = $this-&gt;registry-&gt;get(&#39;config&#39;)-&gt;get(&#39;di
 
 
 
-<p class="note-description">2. Extension will need to override default cart template to add discount message
+<p class="box-description">2. Extension will need to override default cart template to add discount message
 copy<br>
 storefront/view/default/template/pages/checkout/cart.tpl<br>
 to<br>
 extensions/discount/storefront/view/default/template/pages/checkout/
-</p><p class="note-description">edit <b>cart.tpl</b>
-</p><p class="note-description">find
+</p><p class="box-description">edit <b>cart.tpl</b>
+</p><p class="box-description">find
 </p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
@@ -1192,7 +1192,7 @@ extensions/discount/storefront/view/default/template/pages/checkout/
 </div>
 <!-- HTML Highlight -->
 
-<p class="note-description">Insert after it
+<p class="box-description">Insert after it
 </p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
@@ -1205,7 +1205,7 @@ extensions/discount/storefront/view/default/template/pages/checkout/
 
 
 
-<p class="note-description">- now lets apply a discount to each product in cart
+<p class="box-description">- now lets apply a discount to each product in cart
 1. edit <b>core\lib\cart.php</b>
 </p>
 <!-- HTML Highlight -->
@@ -1227,7 +1227,7 @@ public function _getProducts() {
 
 
 
-<p class="note-description">2. edit <b>extensions\discount\core\discount.php</b>
+<p class="box-description">2. edit <b>extensions\discount\core\discount.php</b>
 </p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
@@ -1250,7 +1250,7 @@ public function _getProducts() {
 	
 	
 	
-<p class="note-description">3. edit <b>storefront\controller\checkout\cart.php</b>
+<p class="box-description">3. edit <b>storefront\controller\checkout\cart.php</b>
 add these lines
 </p>
 <!-- HTML Highlight -->
@@ -1273,8 +1273,8 @@ $this-&gt;data[&#39;product&#39;] = array(
 
 
 
-<p class="note-description">4. edit <b>extensions\discount\core\discount.php</b>
-</p><p class="note-description">Use updateData hook. Each controller has this hook and can update its data before render output
+<p class="box-description">4. edit <b>extensions\discount\core\discount.php</b>
+</p><p class="box-description">Use updateData hook. Each controller has this hook and can update its data before render output
 </p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
@@ -1307,8 +1307,8 @@ public function onControllerPagesCheckoutCart_UpdateData() {
 
 
 
-<p class="note-description">5. edit <b>extensions/discount/storefront/view/default/template/pages/checkout/cart.tpl</b>
-</p><p class="note-description">Find
+<p class="box-description">5. edit <b>extensions/discount/storefront/view/default/template/pages/checkout/cart.tpl</b>
+</p><p class="box-description">Find
 </p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
@@ -1322,7 +1322,7 @@ public function onControllerPagesCheckoutCart_UpdateData() {
 <!-- HTML Highlight -->
 
 
-<p class="note-description"><br> 
+<p class="box-description"><br> 
 And insert before &lt;?php }&nbsp;?&gt;
 </p>
 <!-- HTML Highlight -->
@@ -1362,7 +1362,7 @@ And insert before &lt;?php }&nbsp;?&gt;
 	<h4 id="additional" class="box-title">Additional scripts and styles for extensions</h4>
 	<p class="box-description">
 All styles and scripts loaded in head controller. It use <b>document</b> class. If your extension need to load style/script use <b>document</b> class
-</p><p class="note-description">To add stylesheet  use
+</p><p class="box-description">To add stylesheet  use
 </p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
@@ -1371,7 +1371,7 @@ public function addStyle(array($href, $rel = &#39;stylesheet&#39;, $media = &#39
  	</pre>
 </div>
 <!-- HTML Highlight -->	
-<p class="note-description">To add script use
+<p class="box-description">To add script use
 </p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
@@ -1420,7 +1420,7 @@ $this-&gt;document-&gt;addScript(RDIR_TEMPLATE.&#39;javascript/some.js&#39;);</c
 </li><li> manage resources
 </li><li> assign resources to different objects like products, manufacturers, categories, downloads etc
 </li></ul>
-<p class="note-description">We have following resource types
+<p class="box-description">We have following resource types
 </p>
 <ul><li> image
 </li><li> audio
@@ -1449,8 +1449,8 @@ $this-&gt;document-&gt;addScript(RDIR_TEMPLATE.&#39;javascript/some.js&#39;);</c
 </li><li> add block to layout
 </li><li> example of how to add styles/scripts that needed for extension
 </li></ul>
-<p class="note-description">Here we will have a part of extension source. You can take a look at full code by downloading our free template. This extension is a part of template.
-</p><p class="note-description">-          create <b>extensions/slideshow</b> folder
+<p class="box-description">Here we will have a part of extension source. You can take a look at full code by downloading our free template. This extension is a part of template.
+</p><p class="box-description">-          create <b>extensions/slideshow</b> folder
 -          create <b>extensions/slideshow/config.xml</b>
 </p>
 <!-- HTML Highlight -->
@@ -1497,10 +1497,10 @@ $this-&gt;document-&gt;addScript(RDIR_TEMPLATE.&#39;javascript/some.js&#39;);</c
 </div>
 <!-- HTML Highlight -->
 
-<p class="note-description">In config we define size of slide ( slideshow_x, slideshow_y )
+<p class="box-description">In config we define size of slide ( slideshow_x, slideshow_y )
 &lt;additional_settings&gt; tag define link for extension controller that will manage slides
 &lt;note&gt;true&lt;/note&gt; - mean that will have description note for extension that will be shown on extension edit page. Note text is defined in language file with definition key = <b>slideshow_note</b>
-</p><p class="note-description">-          create <b>install.sql</b>. Table will keep slide img and slide url
+</p><p class="box-description">-          create <b>install.sql</b>. Table will keep slide img and slide url
 </p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
@@ -1519,7 +1519,7 @@ INSERT INTO `ac_slides` ( `slide_img`, `slide_url` ) VALUES ( &#39;slides/slide3
 </div>
 <!-- HTML Highlight -->
 
-<p class="note-description">-          create uninstall.sql
+<p class="box-description">-          create uninstall.sql
 </p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
@@ -1530,7 +1530,7 @@ DROP TABLE IF EXISTS `ac_slides`;</code>
 <!-- HTML Highlight -->
 
 
-<p class="note-description">-          create <b>install.php</b>. Here we will add block to layout. Container for our block will be <b>content_top</b>
+<p class="box-description">-          create <b>install.php</b>. Here we will add block to layout. Container for our block will be <b>content_top</b>
 </p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
@@ -1560,7 +1560,7 @@ $layout-&gt;saveBlock( $block_data );
 
 
 
-<p class="note-description">
+<p class="box-description">
 -          create <b>uninstall.php</b>
 </p>
 <!-- HTML Highlight -->
@@ -1579,10 +1579,10 @@ $layout-&gt;deleteBlock(&#39;slideshow&#39;);
 </div>
 <!-- HTML Highlight -->
 
-<p class="note-description">-          create image folder. Here we will have
+<p class="box-description">-          create image folder. Here we will have
 o    icon.png – extension icon <br>
 o    slides/slide1.jpg, slides/slide2.jpg, slides/slide3.jpg – default slides
-</p><p class="note-description">-          create <b>main.php</b>. Here we will define extension resources
+</p><p class="box-description">-          create <b>main.php</b>. Here we will define extension resources
 </p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
@@ -1630,7 +1630,7 @@ $templates = array(
 </div>
 <!-- HTML Highlight -->
 	
-<p class="note-description"><br> 
+<p class="box-description"><br> 
 Our extension will have
 </p>
 <ul><li> 2 controllers – one for admin to manage slides, one for storefront to prepare data for slideshow
@@ -1638,7 +1638,7 @@ Our extension will have
 </li><li> A couple of templates
 </li><li> Two models. Model for storefront has only methods to retrieve data. Model for admin has methods to add/edit/delete items
 </li></ul>
-<p class="note-description"><br> 
+<p class="box-description"><br> 
 </p>
 <ul><li> Create language file – <b>extensions/slideshow/admin/language/english/slideshow/slideshow.xml</b>
 </li></ul>
@@ -1728,7 +1728,7 @@ Our extension will have
 <!-- HTML Highlight -->	
 
 
-<p class="note-description"><br>
+<p class="box-description"><br>
 Please note that we have definition key for every extension setting. We also override advanced settings button text and add note.
 <br>
 In note we use link - </p>
@@ -1741,10 +1741,10 @@ In note we use link - </p>
 <!-- HTML Highlight -->
 
 
-<p class="note-description">This link contain two parts<br>
+<p class="box-description">This link contain two parts<br>
 - #admin – application section<br>
 - #rt=design/layout – route path
-</p><p class="note-description">-          Now add models. First create model for storefront<br> <b>extensions\slideshow\storefront\model\slideshow\slideshow.php</b>
+</p><p class="box-description">-          Now add models. First create model for storefront<br> <b>extensions\slideshow\storefront\model\slideshow\slideshow.php</b>
 </p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
@@ -1810,10 +1810,10 @@ class ModelSlideshowSlideshow extends Model {
 </div>
 <!-- HTML Highlight -->
 
-<p class="note-description"><br> 
+<p class="box-description"><br> 
 This model has two methods to fetch data<br>
 also note _getSlideUrl method. Since we have default images we should check if image passed in function is exist in resource directory. If so we try to get resource id from its path and create a thumbnail with width/height defined in extension settings
-</p><p class="note-description">-          Now add model for admin - <b>extensions\slideshow\admin\model\slideshow\slideshow.php</b>
+</p><p class="box-description">-          Now add model for admin - <b>extensions\slideshow\admin\model\slideshow\slideshow.php</b>
 </p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
@@ -1898,7 +1898,7 @@ class ModelSlideshowSlideshow extends Model {
 </div>
 <!-- HTML Highlight -->
 	
-<p class="note-description"><br> 
+<p class="box-description"><br> 
 This model has methods to manage slideshow items – add / edit / delete<br>
 Now all ready to create a controller to manage slides in admin<br>
 <b>extensions\slideshow\admin\controller\pages\blocks\slideshow.php</b>
@@ -2177,14 +2177,14 @@ class ControllerPagesBlocksSlideshow extends AController {
  	</pre>
 </div>
 <!-- HTML Highlight -->
-<p class="note-description">This controller is work as usual application controller<br>
+<p class="box-description">This controller is work as usual application controller<br>
 Main method – fetch all slides and give ability to add/edit/delete slides<br>
 <b>Insert</b> – insert new slide<br>
 <b>Update</b> – edit slide image/url<br>
 <b>Delete</b> – delete slide
-</p><p class="note-description"><br> 
-</p><p class="note-description"><br> 
-</p><p class="note-description">Lets look in details how we include resource library scripts
+</p><p class="box-description"><br> 
+</p><p class="box-description"><br> 
+</p><p class="box-description">Lets look in details how we include resource library scripts
 </p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
@@ -2203,14 +2203,14 @@ Main method – fetch all slides and give ability to add/edit/delete slides<br>
  	</pre>
 </div>
 <!-- HTML Highlight -->
-<p class="note-description">$this-&gt;dispatch – call controller with arguments and return dispatch object
+<p class="box-description">$this-&gt;dispatch – call controller with arguments and return dispatch object
 $resources_scripts-&gt;dispatchGetOutput(); - return controller output, which is passed to template later
-</p><p class="note-description">This controller use two templates
+</p><p class="box-description">This controller use two templates
 </p>
 <ul><li> slideshow_list.tpl – show all slides
 </li><li> slideshow_form.tpl – create/update form
 </li></ul>
-<p class="note-description">Now lets create storefront controller<br>
+<p class="box-description">Now lets create storefront controller<br>
 <b>extensions\slideshow\storefront\controller\blocks\slideshow.php</b>
 </p>
 <!-- HTML Highlight -->
@@ -2269,9 +2269,9 @@ Please note that
 </div>
 <!-- HTML Highlight -->
 
-<p class="note-description">Used to avoid loading multiple instances of scripts in order you will have several slideshows on one page
-</p><p class="note-description">Storefront template include simple slideshow html.
-</p><p class="note-description">You can take a look at full code by downloading our free template. This extension is a part of template.
+<p class="box-description">Used to avoid loading multiple instances of scripts in order you will have several slideshows on one page
+</p><p class="box-description">Storefront template include simple slideshow html.
+</p><p class="box-description">You can take a look at full code by downloading our free template. This extension is a part of template.
 </p>
 
 	
@@ -2294,7 +2294,7 @@ Please note that
 	<h4 id="listingblock" class="box-title">Example of extension with listing block wrapper (appearance controller)</h4>
 	<p class="box-description">
 	1. Load custom listing block settings to the layout. Best way to do this is via XML load. Please see <a rel="nofollow" class="external autonumber" href="http://www.abantecart.com/document_wiki/index.php/Developing_Templates_as_Extensions#Example_of_adding_template.2C_block_to_layout_in_the_XML_below_:">[2]</a>
-</p><p class="note-description">2. Add a hook into your extension on ControllerPagesDesignBlocks (Control Panel side).
+</p><p class="box-description">2. Add a hook into your extension on ControllerPagesDesignBlocks (Control Panel side).
 This will add controller(wrapper) to selection in control panel and show listing on storefront using your templates. For details see <a rel="nofollow" class="external autonumber" href="http://www.abantecart.com/document_wiki/index.php/AbanteCart_Extension%E2%80%99s_Developer_Guide#Basic_examples:">[3]</a>
 </p>
 
@@ -2308,7 +2308,7 @@ $this-&gt;baseObject-&gt;data[ &#39;block_wrappers&#39; ][&#39;blocks/extension_
 </div>
 <!-- HTML Highlight -->
 
-<p class="note-description">3. In main.php file of your extension add list of templates which will be used in list view.
+<p class="box-description">3. In main.php file of your extension add list of templates which will be used in list view.
 Number of templates depends on your block listing extensions controller. 
 </p>
 <!-- HTML Highlight -->
@@ -2322,8 +2322,8 @@ $templates = array(
  	</pre>
 </div>
 <!-- HTML Highlight -->
-<p class="note-description">4. Place above template files into folder «[extension_name]/storefront/view/default/templates/blocks/»
-</p><p class="note-description">5. Create listing block controller file in «[extension_name]/storefront/controller/blocks»
+<p class="box-description">4. Place above template files into folder «[extension_name]/storefront/view/default/templates/blocks/»
+</p><p class="box-description">5. Create listing block controller file in «[extension_name]/storefront/controller/blocks»
 </p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
@@ -2371,7 +2371,7 @@ class ControllerBlocksExtensionName extends AController {
  	</pre>
 </div>
 <!-- HTML Highlight -->	
-<p class="note-description">6. Add your controller into main.php to $controllers array:
+<p class="box-description">6. Add your controller into main.php to $controllers array:
 </p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
@@ -2426,7 +2426,7 @@ if (! defined ( &#39;DIR_CORE&#39; )) {
 
 <ul><li> Do testing of the extension and it installation and uninstall process.
 </li></ul>
-<p class="note-description">Distribution should include the following items. Items marked “required” needs to be included.
+<p class="box-description">Distribution should include the following items. Items marked “required” needs to be included.
 </p>
 <ul><li> config.xml (required)
 </li><li> install and uninstall php and/or sql
@@ -2437,7 +2437,7 @@ if (! defined ( &#39;DIR_CORE&#39; )) {
 </li><li> core (core code for the extension)
 </li><li> documentation ( any documentation needed for extension)
 </li></ul>
-<p class="note-description">Details about most of extension components are covered in extension API development documentation.<br>
+<p class="box-description">Details about most of extension components are covered in extension API development documentation.<br>
 In image directory include icon and preview images for your extension. Icon will be shown in market place and the extension menu and preview will be shown in extension details page before download and in the extension configuration section. 
 Naming for icon and preview images:<br>
 </p>
@@ -2448,14 +2448,14 @@ Naming for icon and preview images:<br>
                                           	more images as needed ...
 
 </pre>
-<p class="note-description">Extension naming and description is defined in language files<br>
+<p class="box-description">Extension naming and description is defined in language files<br>
 Extension name is defined with definition key = &lt;extension&gt;_name<br>
 Extension description is defined with definition key = &lt;extension&gt;_note . Please note that in order to show extension description you should enable it in extension config like
 &lt;note&gt;true&lt;/note&gt;
-</p><p class="note-description"><b>Archiving instructions:</b><br>
+</p><p class="box-description"><b>Archiving instructions:</b><br>
 Final completed package needs to be archived to zip format with all files/directories hierarchy starting from root directory.
-</p><p class="note-description">An example of directory structure for package:
-</p><p class="note-description">&lt;ext&gt;
+</p><p class="box-description">An example of directory structure for package:
+</p><p class="box-description">&lt;ext&gt;
 -          V1.0
 </p>
 <ul><li> code – contain extension code starting from application root. ( /extensions/&lt;extention&gt;…. )
@@ -2502,7 +2502,7 @@ Final completed package needs to be archived to zip format with all files/direct
 <cartversions><item> have to contain only two parts - major and minor versions. </p>
 						</div>
 						<!-- End of Note -->
-<p class="note-description">If you intend to resale extension via AbanteCart market place, please make sure you are compliant with requirements as much as possible. This will help your extension to be approved faster and get better ranking.
+<p class="box-description">If you intend to resale extension via AbanteCart market place, please make sure you are compliant with requirements as much as possible. This will help your extension to be approved faster and get better ranking.
 </p>	
 	
 	
