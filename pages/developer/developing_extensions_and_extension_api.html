@@ -958,3 +958,220 @@ option_value =&gt; option_text,
 
 	
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="category-info helper">
+	<h4 id="Extend_Standard_Forms" class="box-title">Extend Standard Forms </h4>
+	<p class="box-description">To extend or add fields to standard form you need to create FlexyForm entry with the same form name. You need to add to FlexyForm all new (additional) fields that you need to be added to the form. These additional fields will be loaded at the end of the form with method loadExtendedFields(). Each standard form code should have this call to allow extensions to add fields to the form: </p>
+	<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+$this-&gt;form-&gt;loadExtendedFields(&#39;testFrm&#39;);</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+<p>Example how to add extended fields from FlexyForm to standard form: </p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+$this-&gt;form = new AForm();
+// Standard form code 
+...
+$this-&gt;form-&gt;loadFromDb(&#39;testFrm&#39;);
+$extended_fields = $this-&gt;form-&gt;loadExtendedFields();
+$this-&gt;view-&gt;assign(&#39;extended_fields&#39;, $extended_fields);
+</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->	
+	
+<p>In the template you need to add code below within the form scope:
+</p>
+	
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+&lt;?php echo $extended_fields ?&gt;
+&lt;/form&gt; 
+ 	</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+	
+	
+	
+	
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="category-info helper">
+	<h4 id="Setting_Up_Data_Listing_Pages_with_Grid" class="box-title"> Setting Up Data Listing Pages with Grid </h4>
+	<p>To list data in Control Panel pages, AbanteCart utilise jqGrid (by Tony Tomov, www.trirand.com/blog). This approach is unified and applied on all pages that use data listing. There is a standard interface to jqGrid that is set up as child controller. Any new page building data listing needs to include jqGrid controller and child and build data and settings. Settings are pass to controller directly and data loaded by jqGrid controller via remote ajax call to response controller.</p>
+
+<p>Main idea for this concept is to prepare the format and settings for the fata and load actual data based on set format and settings. Main page controller is responsible for building data format and settings and remote AJAX controller will prepare and provide the data to be listed in the grid. Grid controller that is a common &ldquo;blackbox&rdquo; element shared by everybody, will display the data in a format requested.</p>
+
+<p>Bellow is the description of the settings and data provided to grid controller: There are 2 parts to grid: main page controller and ajax (response) controller</p>
+
+<p><i>Main Page controller</i><br />
+This controller includes grid as a child and prepare all the settings for the grid to give it a desired state. Settings include, list of fields, actions, search values, and edit/view restrictions.</p>
+
+<p>All settings are set into one array that will be passed to child listing_grid controller.</p>
+
+<p>Here is the process based on the example how to include grid to the main controller:</p>
+
+<p>First you need to provide main settings for grid to operate. These include table name (table_id), URL, edit action URL, Default sort column, actions allowed for each row.</p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+$grid_settings = array(
+   		 &#39;table_id&#39; =&gt; &#39;lang_definition_grid&#39;,
+   		 &#39;url&#39; =&gt; $this-&gt;html-&gt;getSecureURL(&#39;listing_grid/language_definitions&#39;),
+   		 &#39;editurl&#39; =&gt; $this-&gt;html-&gt;getSecureURL(&#39;listing_grid/language_definitions/update&#39;),
+        	&#39;update_field&#39; =&gt; $this-&gt;html-&gt;getSecureURL(&#39;listing_grid/language_definitions/update_field&#39;),
+   		 &#39;sortname&#39; =&gt; &#39;module&#39;,
+        		&#39;actions&#39; =&gt; array(
+            		&#39;edit&#39; =&gt; array(
+                		&#39;text&#39; =&gt; $this-&gt;language-&gt;get(&#39;text_edit&#39;),
+   			 &#39;href&#39; =&gt; $this-&gt;html-&gt;getSecureURL(&#39;localisation/language_definitions/update&#39;, &#39;&amp;language_definition_id=%ID%&#39;)
+            		),
+            		&#39;delete&#39; =&gt; array(
+                		&#39;text&#39; =&gt; $this-&gt;language-&gt;get(&#39;button_delete&#39;),
+            		),
+            		&#39;save&#39; =&gt; array(
+                		&#39;text&#39; =&gt; $this-&gt;language-&gt;get(&#39;button_save&#39;),
+            		),
+        	),
+   	 );</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+	
+<p>You need to specify column names and settings per each column.<br />
+You can set name, index, width, sorttype, align, and more. By default, if you do not set any width, it will be automatic (recommended). If you set the width, you need to set width for every column.<br />
+For more settings options for jqGrid, you can refer to www.trirand.com/blog</p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+//Set column names and order
+$grid_settings[&#39;colNames&#39;] = array(
+            			$this-&gt;language-&gt;get(&#39;column_module&#39;),
+			$this-&gt;language-&gt;get(&#39;column_key&#39;),
+			$this-&gt;language-&gt;get(&#39;column_translation&#39;),
+		);
+//Set column definition 
+		$grid_settings[&#39;colModel&#39;] = array(
+			array(
+				&#39;name&#39; =&gt; &#39;module&#39;,
+				&#39;index&#39; =&gt; &#39;module&#39;,
+                			&#39;align&#39; =&gt; &#39;center&#39;,
+				&#39;sorttype&#39; =&gt; &#39;string&#39;,
+			),
+           			 array(
+				&#39;name&#39; =&gt; &#39;language_key&#39;,
+				&#39;index&#39; =&gt; &#39;language_key&#39;,
+				&#39;align&#39; =&gt; &#39;center&#39;,
+				&#39;sorttype&#39; =&gt; &#39;string&#39;,
+			),
+			array(
+				&#39;name&#39; =&gt; &#39;language_value&#39;,
+				&#39;index&#39; =&gt; &#39;language_value&#39;,
+                			&#39;align&#39; =&gt; &#39;center&#39;,
+				&#39;sorttype&#39; =&gt; &#39;string&#39;,
+               				 &#39;sortable&#39; =&gt; false,
+			),
+);
+		//Load grid child controller and get result 
+      	  	$grid = $this-&gt;dispatch(&#39;common/listing_grid&#39;, array( $grid_settings ) );
+		$this-&gt;view-&gt;assign(&#39;listing_grid&#39;, $grid-&gt;dispatchGetOutput());</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+<p>Additional parameters and settings:<br />
+You can specify the master search form that will show above the grid and can perform specific searches and update the list result</p>
+
+
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+$form = new AForm();
+    	$form-&gt;setForm(array(
+   	 	&#39;form_name&#39; =&gt; &#39;lang_definition_grid_search&#39;,
+    	));
+
+    	$listing_data[&#39;search_form&#39;][&#39;id&#39;] = &#39;lang_definition_grid_search&#39;;
+    	$listing_data[&#39;search_form&#39;][&#39;form_open&#39;] = $form-&gt;getFieldHtml(array(
+   	 	&#39;type&#39; =&gt; &#39;form&#39;,
+   	 	&#39;name&#39; =&gt; &#39;lang_definition_grid_search&#39;,
+   	 	&#39;action&#39; =&gt; &#39;&#39;,
+    	));
+    	$listing_data[&#39;search_form&#39;][&#39;submit&#39;] = $form-&gt;getFieldHtml(array(
+   	 	&#39;type&#39; =&gt; &#39;button&#39;,
+   	 	&#39;name&#39; =&gt; &#39;submit&#39;,
+   	 	&#39;text&#39; =&gt; $this-&gt;language-&gt;get(&#39;button_go&#39;),
+   	 	&#39;style&#39; =&gt; &#39;button&#39;,
+    	));
+
+    	$listing_data[&#39;search_form&#39;][&#39;fields&#39;][&#39;language_key&#39;] = $this-&gt;language-&gt;get(&#39;entry_language_key&#39;) . $form-&gt;getFieldHtml(array(
+   	 	&#39;type&#39; =&gt; &#39;input&#39;,
+   	 	&#39;name&#39; =&gt; &#39;language_key&#39;,
+    	));
+    	$listing_data[&#39;search_form&#39;][&#39;fields&#39;][&#39;section&#39;] = $this-&gt;language-&gt;get(&#39;entry_section&#39;) . $form-&gt;getFieldHtml(array(
+   	 	&#39;type&#39; =&gt; &#39;selectbox&#39;,
+   	 	&#39;name&#39; =&gt; &#39;section&#39;,
+        	&#39;options&#39; =&gt; array(
+            		&#39;&#39; =&gt; $this-&gt;language-&gt;get(&#39;text_select&#39;),
+            		1 =&gt; $this-&gt;language-&gt;get(&#39;text_admin&#39;),
+            		0 =&gt; $this-&gt;language-&gt;get(&#39;text_storefront&#39;),
+        		),
+    	));</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+
+<p><i>Ajax (response) controller</i><br />
+This controller builds data set for the grid to display. Grid does the remote (separate) HTTP(S) call to load the data.</p>
+
+<p>Here is the process based on the example how to build data set and provide it to the gird: &hellip;..</p>
+
+<p><br />
+Main grid controller: admin\controller\common\listing_grid.php</p>
+
+<p>For more details to data format check jqGrid manuals: <a class="external free" href="http://www.trirand.com/jqgridwiki/doku.php?id=wiki:retrieving_data" rel="nofollow">http://www.trirand.com/jqgridwiki/doku.php?id=wiki:retrieving_data</a></p>
+
+<p><br />
+<b>We suggest to try extension developer tools to create your extension</b>. This will help you avoid tedious work of creating necessary files. <a class="external text" href="https://github.com/abantecart/developer_tools_extension/" rel="nofollow">Dev Tools Extension on Github</a></p>
+
+	
+	
+</div>
