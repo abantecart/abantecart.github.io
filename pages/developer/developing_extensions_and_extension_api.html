@@ -563,7 +563,7 @@ $this-&gt;processTemplate(&#39;pages/index/form.tpl&#39; );</code>
 <p>Validation: <br>At some point you need to add validation code to check submited values of the form. <br>You can see example below how this can be done:</p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
-	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
 if ( $this-&gt;request-&gt;server[&#39;REQUEST_METHOD&#39;] == &#39;POST&#39; ) {
         	if ( $this-&gt;validateForm() ) {
             	//this message should be loaded from language file
@@ -579,6 +579,92 @@ if ( $this-&gt;request-&gt;server[&#39;REQUEST_METHOD&#39;] == &#39;POST&#39; ) 
  	</pre>
 </div>
 <!-- HTML Highlight -->
+<p>Validation function is pretty simple In sample case we just check if all required fields filled. You can easily extend this function to meet your needs. </p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+private function validateForm() {
+
+    $this-&gt;errors = array();
+    $fields = $this-&gt;form-&gt;getFields();
+    foreach( $fields as $name =&gt; $data) {
+   	 if ( $data[&#39;required&#39;] == &#39;Y&#39; &amp;&amp; empty($this-&gt;request-&gt;post[$name]) ) {
+   		 $this-&gt;errors[$name] = &#39;This field is required&#39;;
+   	 }
+    }
+
+    if ( !empty($this-&gt;errors) ) {
+   	 return false;
+    } else {
+   	 return true;
+    }
+}
+ 	</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+<p>To assign values to form fields you can call 2 methods assign() and batchAssign(). <br>Here is an example how it is done: </p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+$this-&gt;form-&gt;assign( &#39;field_name&#39;,  &#39;field_value&#39; )
+$this-&gt;form-&gt;batchAssign( array(
+&#39;field_name&#39; =&gt; &#39;field_value&#39;,
+&#39;field_name&#39; =&gt; &#39;field_value&#39;,
+&#39;field_name&#39; =&gt; &#39;field_value&#39;,
+ ) )
+ </code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+<p>If you have multiselect field or checkbox group field, you need to pass an array. </p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+$this-&gt;form-&gt;assign( &#39;field_name&#39;,  array(‘value1’, ‘value2’..., ‘valueN’) )
+</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+<p>Now let’s look in the template that actually contains the code to displays the form. In the template you need to include the form output in the place you need form to show: </p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+&lt;div class=&quot;from_wrapper&quot;&gt;
+    &lt;?php echo $form_out; ?&gt;
+  &lt;/div&gt;</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+
+<p>Form CSS style will be based on the standard style set in the AbanteCart. You can modify the style by including your own CSS. To modify: Locate original CSS for the form in appropriate stylesheet location for admin or storefront.</p>
+
+<p><i>TIP: In some browsers (Firefox with Firebug or Safari) you can use feature to inspect HTML elements. This is very handy to understand how CSS and HTML structured on the pages.</i></p>
+
+<p><br />
+To add your own styles you can include CSS:</p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+$this-&gt;document-&gt;addStyle(&quot;path/to/css&quot;);</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+
+
+						<!-- Note -->
+						<div class="note js-note blue">
+							<span class="note-close js-close">
+								<i class="fa fa-times"></i>
+							</span>
+							<h4 class="note-title"> Note </h4>
+							<p class="note-description"> It is very recommended that you add this only to your extension or create extension. If you change CSS file in original location it might be replaced at your next upgrade or in some cases upgrade might fail.  </p>
+						</div>
+						<!-- End of Note -->
+						
 
 
 	
