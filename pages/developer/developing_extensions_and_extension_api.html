@@ -506,7 +506,28 @@ $menu-&gt;deleteMenuItem (&quot;sale_your-menu&quot;);</code>
 <p>FlexyForm set up consists of 3 important components: Database entry, Processing Controller and Template. Below is a diagram that can give more idea how FlexyForms are structured: <a class="image" href="http://www.abantecart.com/document_wiki/index.php/File:Default_abantecart_charts_p9.png" title="caption"><img alt="caption" height="708" src="http://www.abantecart.com/document_wiki/images/thumb/5/54/Default_abantecart_charts_p9.png/500px-Default_abantecart_charts_p9.png" width="500" /></a></p>
 
 <p>Lets look into Controller and PHP code Create an instance of the class AForm:</p>
-
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+	$this-&gt;form = new AForm(&#39;testForm&#39;); 
+ 	</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
 	
+
+
+						<!-- Note -->
+						<div class="note js-note blue">
+							<span class="note-close js-close">
+								<i class="fa fa-times"></i>
+							</span>
+							<h4 class="note-title"> Note </h4>
+							<p class="note-description"> testForm -> Form Name and ID that needs to be unique Now we need to load this from data to the form instance from the database. We assume we already have it in there. We explain later how to add form to the database.  </p>
+						</div>
+						<!-- End of Note -->
+
+
+
 	
 </div>
