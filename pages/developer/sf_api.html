@@ -96,19 +96,20 @@ How To Test API.</p>
 
 
 <div class="category-info helper">
-	<h4 id="Introduction" class="box-title">Introduction</h4>
+	<h4 id="Requests" class="box-title">Requests, Parameters and Responses. </h4>
 	
 	
 	
-	<h3><span class="mw-headline" id="Catalog_API">Catalog API </span></h3>
+	<h3 id="Catalog_API" class="box-title"><span class="mw-headline" id="Catalog_API">Catalog API </span></h3>
 
-<p class="box-description"Catalog side API provides GET or POST interface to get information about categories, products, manufacturers (brands) and other information related to the products set up in AbanteCart.</p>
+<p class="box-description">
+Catalog side API provides GET or POST interface to get information about categories, products, manufacturers (brands) and other information related to the products set up in AbanteCart.</p>
 
 <p>Any request can contain GET language parameter. This will switch response data to new language. Example: language=es.</p>
 
 <p><i>NOTE: language parameter needs to be passed only one time. It is stored in the session for all next requests.</i></p>
 
-<h4><span class="mw-headline" id="Get_Single_Product">Get Single Product </span></h4>
+<h5><span class="mw-headline" id="Get_Single_Product">Get Single Product </span></h5>
 
 <p>You can get all product details by unique product ID.</p>
 
@@ -150,6 +151,117 @@ How To Test API.</p>
 <p>with key: http://demo.abantecart.com/index.php?rt=a/product/product&amp;product_id=85&amp;api_key=[key_string]</p>
 
 <p><b>Example response:</b></p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+{
+   &quot;product_id&quot;:&quot;85&quot;,
+   &quot;model&quot;:&quot;Ck0010&quot;,
+   &quot;sku&quot;:&quot;&quot;,
+   &quot;location&quot;:&quot;&quot;,
+   &quot;stock_status_id&quot;:&quot;1&quot;,
+   &quot;manufacturer_id&quot;:&quot;13&quot;,
+   &quot;shipping&quot;:&quot;1&quot;,
+   &quot;price&quot;:&quot;$45.00&quot;,
+   &quot;tax_class_id&quot;:&quot;1&quot;,
+   &quot;date_available&quot;:&quot;2011-09-01&quot;,
+   &quot;weight&quot;:&quot;0.08&quot;,
+   &quot;weight_class_id&quot;:&quot;5&quot;,
+   &quot;length&quot;:&quot;0.00&quot;,
+   &quot;width&quot;:&quot;0.00&quot;,
+   &quot;height&quot;:&quot;0.00&quot;,
+   &quot;length_class_id&quot;:&quot;0&quot;,
+   &quot;status&quot;:&quot;1&quot;,
+   &quot;date_added&quot;:&quot;2011-09-02 11:48:08&quot;,
+   &quot;date_modified&quot;:&quot;2011-09-07 04:24:25&quot;,
+   &quot;viewed&quot;:&quot;21&quot;,
+   &quot;sort_order&quot;:&quot;0&quot;,
+   &quot;subtract&quot;:&quot;1&quot;,
+   &quot;minimum&quot;:&quot;1&quot;,
+   &quot;cost&quot;:&quot;0.0000&quot;,
+   &quot;language_id&quot;:&quot;1&quot;,
+   &quot;name&quot;:&quot;Forbidden euphoria Eau de Parfum Spray &quot;,
+   &quot;meta_keywords&quot;:&quot;&quot;,
+   &quot;meta_description&quot;:&quot;&quot;,
+   &quot;description&quot;:&quot;
+\r\n\tPossessing an innate confidence and sophistication,
+    she is just starting to explore her sexuality. What she doesn&#39;t yet know is that she already is every man&#39;s fantasy.”,
+   &quot;store_id&quot;:&quot;0&quot;,
+   &quot;manufacturer&quot;:&quot;Calvin Klein&quot;,
+   &quot;stock_status&quot;:&quot;In Stock&quot;,
+   &quot;thumbnail&quot;:&quot;http:\/\/dev01.algozone.net\/abantecart_branch100\/public_html\/image\/thumbnails\/18\/6d\/azdemoproduct351jpg-100054-180x180.jpg&quot;,
+   &quot;special&quot;:false,
+   &quot;discounts&quot;:[
+       
+   ],
+   &quot;product_price&quot;:&quot;45.0000&quot;,
+   &quot;stock&quot;:null,
+   &quot;options&quot;:{
+       &quot;323&quot;:{
+           &quot;product_option_id&quot;:&quot;323&quot;,
+           &quot;attribute_id&quot;:&quot;0&quot;,
+           &quot;group_id&quot;:&quot;0&quot;,
+           &quot;name&quot;:&quot;Fragrance Size&quot;,
+           &quot;option_value&quot;:{
+               &quot;669&quot;:{
+                   &quot;product_option_value_id&quot;:&quot;669&quot;,
+                   &quot;attribute_value_id&quot;:&quot;0&quot;,
+                   &quot;group_id&quot;:&quot;0&quot;,
+                   &quot;name&quot;:&quot;1 oz&quot;,
+                   &quot;sku&quot;:&quot;&quot;,
+                   &quot;price&quot;:&quot;0.0000&quot;,
+                   &quot;prefix&quot;:&quot;$&quot;,
+                   &quot;weight&quot;:&quot;0.00000000&quot;,
+                   &quot;weight_type&quot;:&quot;lbs&quot;
+               },
+               &quot;670&quot;:{
+                   &quot;product_option_value_id&quot;:&quot;670&quot;,
+                   &quot;attribute_value_id&quot;:&quot;0&quot;,
+                   &quot;group_id&quot;:&quot;0&quot;,
+                   &quot;name&quot;:&quot;1.7 oz&quot;,
+                   &quot;sku&quot;:&quot;&quot;,
+                   &quot;price&quot;:&quot;18.0000&quot;,
+                   &quot;prefix&quot;:&quot;$&quot;,
+                   &quot;weight&quot;:&quot;0.00000000&quot;,
+                   &quot;weight_type&quot;:&quot;lbs&quot;
+               },
+               &quot;671&quot;:{
+                   &quot;product_option_value_id&quot;:&quot;671&quot;,
+                   &quot;attribute_value_id&quot;:&quot;0&quot;,
+                   &quot;group_id&quot;:&quot;0&quot;,
+                   &quot;name&quot;:&quot;3.4 oz&quot;,
+                   &quot;sku&quot;:&quot;&quot;,
+                   &quot;price&quot;:&quot;23.5000&quot;,
+                   &quot;prefix&quot;:&quot;$&quot;,
+                   &quot;weight&quot;:&quot;0.00000000&quot;,
+                   &quot;weight_type&quot;:&quot;lbs&quot;
+               }
+           },
+           &quot;sort_order&quot;:&quot;0&quot;,
+           &quot;element_type&quot;:&quot;S&quot;,
+           &quot;html_type&quot;:&quot;selectbox&quot;,
+           &quot;required&quot;:&quot;0&quot;
+       }
+   },
+   &quot;text_stars&quot;:&quot;&quot;,
+   &quot;stars&quot;:&quot;&quot;,
+   &quot;average&quot;:0,
+   &quot;tags&quot;:[
+       {
+           &quot;tag&quot;:&quot;fragrance&quot;
+       },
+       {
+           &quot;tag&quot;:&quot;women&quot;
+       }
+   ]
+}
+</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+
+
 	
 	
 </div>
