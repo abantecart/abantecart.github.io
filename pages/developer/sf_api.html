@@ -44,7 +44,19 @@ redirect_from: "/tag/sf_api.html"
 				<li class="toclevel-3 tocsection-5"><a href="#Customer_Registration"> <span class="toctext">Customer_Registration</span></a></li>
 				</ul>
 		</li>
-		<li class="toclevel-2 tocsection-3"><a href="#Checkout_API"> <span class="toctext">Checkout API</span></a></li>
+		<li class="toclevel-2 tocsection-3"><a href="#Checkout_API"> <span class="toctext">Checkout API</span></a>
+				<ul>
+				<li class="toclevel-3 tocsection-1"><a href="#Add_products_to_cart"> <span class="toctext">Add products to cart (basket)</span></a></li>
+				<li class="toclevel-3 tocsection-2"><a href="#Shipping_options_and_selection"> <span class="toctext">Shipping options and selection</span></a></li>
+				<li class="toclevel-3 tocsection-3"><a href="#Shipping_or_Billing"> <span class="toctext">Shipping or Billing (payment) selection</span></a></li>
+				<li class="toclevel-3 tocsection-4"><a href="#Payment_options_and_selection"> <span class="toctext">Payment options and selection</span></a></li>
+				<li class="toclevel-3 tocsection-5"><a href="#Final_confirmation_before_payment_submit"> <span class="toctext">Final confirmation before payment submit </span></a></li>
+				<li class="toclevel-3 tocsection-6"><a href="#Process_payment_and_complete_the_order"> <span class="toctext">Process payment and complete the order </span></a></li>
+				</ul>
+		</li>
+		
+		
+		
 		<li class="toclevel-2 tocsection-4"><a href="#Common_DATA_API"> <span class="toctext">Common DATA API</span></a></li>
 		</ul>
 	</li>
@@ -1707,4 +1719,1018 @@ Example request:<br> POST: firstname=First+Name , lastname=Last+Name , email=tes
 
 
 	
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="category-info helper">
+<h4 id="Checkout_API" class="box-title">Checkout API</h4>
+<p>This is a section of API to provide tools to add products to cart, select shipment and payment details and complete the order. It is highly recommended to use HTTPS to access this part of API. </p>
+<h5 class="box-title"><span class="mw-headline" id="Add_products_to_cart">Add products to cart (basket) </span></h5>
+
+<p>Ability to add product to the cart with quantity and options. Default response to empty request is the content of the cart. If product and quantity are provided product will be added to the cart. If remove is provided along with valid product key, these products will be removed from the cart</p>
+
+<p>Route: <b>a/checkout/cart</b></p>
+
+<p>Method: <b>POST</b></p>
+
+<!-- Table -->
+<div class="table-responsive">
+<table class="table">
+	<tbody>
+		<tr>
+			<th>Parameter</th>
+			<th>Meaning</th>
+			<th>Notes</th>
+		</tr>
+		<tr>
+			<td>callback</td>
+			<td>A JavaScript function to run when the response is received</td>
+			<td>Optional parameter allows you to specify a JavaScript function to handle query results for pure client-side implementations.
+			<p>Embed the API query in &lt;script&gt; tags. Define the callback function in &lt;script&gt; tags.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>token</td>
+			<td>Access token ID. This token is provided by the system after successful initial authentication</td>
+			<td>required</td>
+		</tr>
+		<tr>
+			<td>product_id</td>
+			<td>Unique product ID that will be added to the cart</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>quantity</td>
+			<td>Number of products to be added to the cart</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>option_id</td>
+			<td>Product option ID</td>
+			<td>Options can be provided as an array with multiple combinations of option_id and option_value</td>
+		</tr>
+		<tr>
+			<td>option_value</td>
+			<td>Product option value</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>remove</td>
+			<td>Array of product keys to be removed from the cart.</td>
+			<td>Product cart key can be found on the cart content data structure. Examples: &quot;key&quot;:&quot;85:a10ee6ef6a41d8d2078bc2614fd71296&quot; or &quot;key&quot;:&quot;86&quot;</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>api_key</td>
+			<td>Unique API key that is set in the control panel</td>
+			<td>This is optional key that can be set to limit unauthorized (accidental) access to your API</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+<p>Example request:<br>POST: rt=a/checkout/cart , token=58fb1592f0c59b8dc1d5541aebdff8da</p>
+
+<p><b>Example response:</b></p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+{
+   &quot;products&quot;:[
+       {
+           &quot;key&quot;:&quot;85:a10ee6ef6a41d8d2078bc2614fd71296&quot;,
+           &quot;name&quot;:&quot;Forbidden euphoria Eau de Parfum Spray &quot;,
+           &quot;model&quot;:&quot;Ck0010&quot;,
+           &quot;thumb&quot;:&quot;http:\/\/dev01.algozone.net\/abantecart_branch100\/public_html\/image\/thumbnails\/18\/6d\/azdemoproduct351jpg-100054-75x75.jpg&quot;,
+           &quot;option&quot;:[
+               {
+                   &quot;name&quot;:&quot;Fragrance Size&quot;,
+                   &quot;value&quot;:&quot;1 oz&quot;
+               }
+           ],
+           &quot;quantity&quot;:1,
+           &quot;stock&quot;:true,
+           &quot;price&quot;:&quot;$45.00&quot;,
+           &quot;total&quot;:&quot;$45.00&quot;
+       }
+   ],
+   &quot;weight&quot;:&quot;0.08lb&quot;,
+   &quot;totals&quot;:[
+       {
+           &quot;title&quot;:&quot;Sub-Total:&quot;,
+           &quot;text&quot;:&quot;$45.00&quot;,
+           &quot;value&quot;:45,
+           &quot;sort_order&quot;:&quot;1&quot;
+       },
+       {
+           &quot;title&quot;:&quot;Total:&quot;,
+           &quot;text&quot;:&quot;$45.00&quot;,
+           &quot;value&quot;:45,
+           &quot;sort_order&quot;:&quot;6&quot;
+       }
+   ]
+}
+</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+
+
+
+
+<h5 class="box-title">
+<span class="mw-headline" id="Shipping_options_and_selection">Shipping options and selection (First step in checkout) </span></h5>
+
+<p>There are 2 steps to shipping selection. First step is to get all available shipping options and pricing. Second step is to provide user selection.</p>
+
+<p>Note, some products settings might not require shipping, in this case user selection step can be skipped.</p>
+
+<p>Route: <b>a/checkout/shipping</b></p>
+
+<p>Method: <b>POST</b></p>
+
+<p>Get all available shipping methods with mode=list</p>
+
+<p>Post users selection of shipping method and comment with mode=select</p>
+
+
+<!-- Table -->
+<div class="table-responsive">
+<table class="table">
+	<tbody>
+		<tr>
+			<th>Parameter</th>
+			<th>Meaning</th>
+			<th>Notes</th>
+		</tr>
+		<tr>
+			<td>callback</td>
+			<td>A JavaScript function to run when the response is received</td>
+			<td>Optional parameter allows you to specify a JavaScript function to handle query results for pure client-side implementations.
+			<p>Embed the API query in &lt;script&gt; tags. Define the callback function in &lt;script&gt; tags.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>token</td>
+			<td>Access token ID. This token is provided by the system after successful initial authentication</td>
+			<td>required</td>
+		</tr>
+		<tr>
+			<td>mode</td>
+			<td>switch to set the mode of this step.</td>
+			<td>Values:
+			<p><b>select</b> - Pass user selection for shipping method</p>
+
+			<p><b>list</b> - Get all available shipping methods</p>
+			</td>
+		</tr>
+		<tr>
+			<td>shipping_method</td>
+			<td>User selected shipping method ID</td>
+			<td>This is an ID for shipping that is part of shipping_methods structure. Example:
+			<p>default_free_shipping.default_free_shipping</p>
+			</td>
+		</tr>
+		<tr>
+			<td>option_id</td>
+			<td>Product option ID</td>
+			<td>Options can be provided as an array with multiple combinations of option_id and option_value</td>
+		</tr>
+		<tr>
+			<td>comment</td>
+			<td>User text based comment</td>
+			<td>Optional</td>
+		</tr>
+		<tr>
+			<td>api_key</td>
+			<td>Unique API key that is set in the control panel</td>
+			<td>This is optional key that can be set to limit unauthorized (accidental) access to your API</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+<p>Example request: POST: rt=a/checkout/shipping , mode=list , token=2f7f30e3efeb0d73744680ac7c0c11e6</p>
+
+<p><b>Example response:</b></p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+{
+   &quot;error_warning&quot;:null,
+   &quot;address&quot;:&quot;First Name Last Name
+test
+Address 1
+Address 2
+087901,
+    3676 Test City
+WI&quot;,
+   &quot;shipping_methods&quot;:{
+       &quot;default_free_shipping&quot;:{
+           &quot;title&quot;:&quot;Free Shipping&quot;,
+           &quot;quote&quot;:{
+               &quot;default_free_shipping&quot;:{
+                   &quot;id&quot;:&quot;default_free_shipping.default_free_shipping&quot;,
+                   &quot;title&quot;:&quot;Free Shipping&quot;,
+                   &quot;cost&quot;:0,
+                   &quot;tax_class_id&quot;:0,
+                   &quot;text&quot;:&quot;$0.00&quot;
+               }
+           },
+           &quot;sort_order&quot;:&quot;&quot;,
+           &quot;error&quot;:false
+       },
+       &quot;default_flat_rate_shipping&quot;:{
+           &quot;title&quot;:&quot;Flat Rate&quot;,
+           &quot;quote&quot;:{
+               &quot;default_flat_rate_shipping&quot;:{
+                   &quot;id&quot;:&quot;default_flat_rate_shipping.default_flat_rate_shipping&quot;,
+                   &quot;title&quot;:&quot;Flat Shipping Rate&quot;,
+                   &quot;cost&quot;:&quot;2&quot;,
+                   &quot;tax_class_id&quot;:&quot;9&quot;,
+                   &quot;text&quot;:&quot;$2.00&quot;
+               }
+           },
+           &quot;sort_order&quot;:&quot;1&quot;,
+           &quot;error&quot;:false
+       }
+   },
+   &quot;comment&quot;:null
+}</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+<p>Example request:</p>
+
+<p>POST: rt=a/checkout/shipping , mode=select , shipping_method=default_free_shipping.default_free_shipping , token=2f7f30e3efeb0d73744680ac7c0c11e6</p>
+
+<p><b>Example response:</b></p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+{
+   &quot;status&quot;:1,
+   &quot;shipping_select&quot;:&quot;success&quot;
+}</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+
+
+
+
+
+
+
+
+<h5 class="box-title"><span class="mw-headline" id="Shipping_or_Billing">Shipping or Billing (payment) selection </span></h5>
+
+<p>There are 2 steps to shipping or billing address selection. First step is to get all available addresses in customer address book. Second step is to provide user selection with existing address ID or completely new address information (will be saved to address book)</p>
+
+<p>Route: <b>a/checkout/address</b></p>
+
+<p>Method: <b>POST</b></p>
+
+<p>Get all available addresses and current selection (if already done) with mode=shipping or mode =payment</p>
+
+<p>Post users selection with mode=shipping or mode =payment and action=save</p>
+
+
+<!-- Table -->
+<div class="table-responsive">
+<table class="table">
+	<tbody>
+		<tr>
+			<th>Parameter</th>
+			<th>Meaning</th>
+			<th>Notes</th>
+		</tr>
+		<tr>
+			<td>callback</td>
+			<td>A JavaScript function to run when the response is received</td>
+			<td>Optional parameter allows you to specify a JavaScript function to handle query results for pure client-side implementations.
+			<p>Embed the API query in &lt;script&gt; tags. Define the callback function in &lt;script&gt; tags.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>token</td>
+			<td>Access token ID. This token is provided by the system after successful initial authentication</td>
+			<td>required</td>
+		</tr>
+		<tr>
+			<td>mode</td>
+			<td>switch to set the mode of this step.</td>
+			<td>Values:
+			<p><b>shipping</b> - Handle shipping related address</p>
+
+			<p><b>payment</b> - Handle payment (billing) related address</p>
+			</td>
+		</tr>
+		<tr>
+			<td>shipping_address_id</td>
+			<td>User selected shipping address ID from address book</td>
+			<td>This is address_id for shipping that is part part of response structure in saved_addresses
+			<p>Works in combination with mode=shipping</p>
+			</td>
+		</tr>
+		<tr>
+			<td>payment_address_id</td>
+			<td>User selected payment address ID from address book</td>
+			<td>This is address_id for payment that is part part of response structure in saved_addresses
+			<p>Works in combination with mode=payment</p>
+			</td>
+		</tr>
+		<tr>
+			<td>api_key</td>
+			<td>Unique API key that is set in the control panel</td>
+			<td>This is optional key that can be set to limit unauthorized (accidental) access to your API</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+<p>Example request:</p>
+
+<p>POST: rt=a/checkout/address , mode=shipping , token=2f7f30e3efeb0d73744680ac7c0c11e6</p>
+
+<p><b>Example response:</b></p>
+
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+{
+   &quot;selected_address_id&quot;:&quot;20&quot;,
+   &quot;saved_addresses&quot;:[
+       {
+           &quot;address_id&quot;:&quot;20&quot;,
+           &quot;address&quot;:&quot;First Name Last Name,
+            Address 1,
+            Test City,
+            Wisconsin,
+            087901,
+            United States&quot;
+       }
+   ],
+   &quot;fields&quot;:{
+       &quot;firstname&quot;:{
+           &quot;type&quot;:&quot;input&quot;,
+           &quot;name&quot;:&quot;firstname&quot;,
+           &quot;value&quot;:null,
+           &quot;required&quot;:true,
+           &quot;error&quot;:null
+       },
+       &quot;lastname&quot;:{
+           &quot;type&quot;:&quot;input&quot;,
+           &quot;name&quot;:&quot;lastname&quot;,
+           &quot;value&quot;:null,
+           &quot;required&quot;:true,
+           &quot;error&quot;:null
+       },
+       &quot;company&quot;:{
+           &quot;type&quot;:&quot;input&quot;,
+           &quot;name&quot;:&quot;company&quot;,
+           &quot;value&quot;:null,
+           &quot;required&quot;:false
+       },
+       &quot;address_1&quot;:{
+           &quot;type&quot;:&quot;input&quot;,
+           &quot;name&quot;:&quot;address_1&quot;,
+           &quot;value&quot;:null,
+           &quot;required&quot;:true,
+           &quot;error&quot;:null
+       },
+       &quot;address_2&quot;:{
+           &quot;type&quot;:&quot;input&quot;,
+           &quot;name&quot;:&quot;address_2&quot;,
+           &quot;value&quot;:null,
+           &quot;required&quot;:false
+       },
+       &quot;city&quot;:{
+           &quot;type&quot;:&quot;input&quot;,
+           &quot;name&quot;:&quot;city&quot;,
+           &quot;value&quot;:null,
+           &quot;required&quot;:true,
+           &quot;error&quot;:null
+       },
+       &quot;postcode&quot;:{
+           &quot;type&quot;:&quot;input&quot;,
+           &quot;name&quot;:&quot;postcode&quot;,
+           &quot;value&quot;:null,
+           &quot;required&quot;:false
+       },
+       &quot;country_id&quot;:{
+           &quot;type&quot;:&quot;selectbox&quot;,
+           &quot;name&quot;:&quot;country_id&quot;,
+           &quot;options&quot;:{
+               &quot;FALSE&quot;:&quot; --- Please Select --- &quot;,
+               &quot;1&quot;:&quot;Afghanistan&quot;,
+               &quot;2&quot;:&quot;Albania&quot;,
+               &quot;3&quot;:&quot;Algeria&quot;,
+         …..     
+           },
+           &quot;value&quot;:&quot;223&quot;,
+           &quot;required&quot;:true,
+           &quot;error&quot;:null
+       },
+       &quot;zone_id&quot;:{
+           &quot;type&quot;:&quot;selectbox&quot;,
+           &quot;name&quot;:&quot;zone_id&quot;,
+           &quot;required&quot;:true,
+           &quot;value&quot;:null,
+           &quot;error&quot;:null
+       }
+   }
+}
+</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+<p>Method: <b>POST</b></p>
+
+<p>Validate and save new customer&rsquo;s address and set it as shipping or payment address</p>
+
+<!-- Table -->
+<div class="table-responsive">
+<table class="table">
+	<tbody>
+		<tr>
+			<th>Parameter</th>
+			<th>Meaning</th>
+			<th>Notes</th>
+		</tr>
+		<tr>
+			<td>callback</td>
+			<td>A JavaScript function to run when the response is received</td>
+			<td>Optional parameter allows you to specify a JavaScript function to handle query results for pure client-side implementations.
+			<p>Embed the API query in &lt;script&gt; tags. Define the callback function in &lt;script&gt; tags.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>token</td>
+			<td>Access token ID. This token is provided by the system after successful initial authentication</td>
+			<td>required</td>
+		</tr>
+		<tr>
+			<td>mode</td>
+			<td>switch to set the mode of this step</td>
+			<td>Values:
+			<p><b>shipping</b> - Handle shipping related address</p>
+
+			<p><b>payment</b> - Handle payment (billing) related address</p>
+			</td>
+		</tr>
+		<tr>
+			<td>firstname</td>
+			<td>Customer&rsquo;s first name</td>
+			<td>32 characters limit</td>
+		</tr>
+		<tr>
+			<td>lastname</td>
+			<td>Customer&rsquo;s lastname</td>
+			<td>32 characters limit</td>
+		</tr>
+		<tr>
+			<td>company</td>
+			<td>Company name (optional)</td>
+			<td>32 characters limit</td>
+		</tr>
+		<tr>
+			<td>address_1</td>
+			<td>Street Address</td>
+			<td>128 characters limit</td>
+		</tr>
+		<tr>
+			<td>address_2</td>
+			<td>Apartment #, Suite #, etc part of address</td>
+			<td>128 characters limit</td>
+		</tr>
+		<tr>
+			<td>postcode</td>
+			<td>Zip code or Postal code</td>
+			<td>10 characters limit</td>
+		</tr>
+		<tr>
+			<td>city</td>
+			<td>City or town name</td>
+			<td>128 characters limit</td>
+		</tr>
+		<tr>
+			<td>country_id</td>
+			<td>ID of the country based on provided list of countries</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>zone_id</td>
+			<td>ID for the local zone within a country. This is usually a state or region</td>
+			<td>This ID can be received with separate request based on selected country ID</td>
+		</tr>
+		<tr>
+			<td>Any other</td>
+			<td>There are other parameters possible to be loaded (from extensions)</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>api_key</td>
+			<td>Unique API key that is set in the control panel</td>
+			<td>This is optional key that can be set to limit unauthorized (accidental) access to your API</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+
+
+
+
+
+
+
+
+
+
+<h5 class="box-title"><span class="mw-headline" id="Payment_options_and_selection">Payment options and selection </span></h5>
+
+<p>There are 2 steps to payment method selection. First step is to get all available payment options. Second step is to provide user payment selection. Coupon for discount can also be provided at this stage.</p>
+
+<p>Route: <b>a/checkout/payment</b></p>
+
+<p>Method: <b>POST</b></p>
+
+<p>Get all available payment methods with mode=list</p>
+
+<p>Post users selection of payment method and comment with mode=select</p>
+
+<p>NOTE: Shipping method and Payment address should be selected before this API stage.</p>
+
+<!-- Table -->
+<div class="table-responsive">
+<table class="table">
+	<tbody>
+		<tr>
+			<th>Parameter</th>
+			<th>Meaning</th>
+			<th>Notes</th>
+		</tr>
+		<tr>
+			<td>callback</td>
+			<td>A JavaScript function to run when the response is received</td>
+			<td>Optional parameter allows you to specify a JavaScript function to handle query results for pure client-side implementations.
+			<p>Embed the API query in &lt;script&gt; tags. Define the callback function in &lt;script&gt; tags.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>token</td>
+			<td>Access token ID. This token is provided by the system after successful initial authentication</td>
+			<td>required</td>
+		</tr>
+		<tr>
+			<td>mode</td>
+			<td>switch to set the mode of this step</td>
+			<td>Values:
+			<p><b>select</b> - Pass user selection for payment method</p>
+
+			<p><b>list</b> - Get all available payment methods</p>
+			</td>
+		</tr>
+		<tr>
+			<td>coupon</td>
+			<td>Coupon code to be used to apply available coupon value to total order.</td>
+			<td>Works in combination with any mode.</td>
+		</tr>
+		<tr>
+			<td>payment_method</td>
+			<td>User selected payment method ID</td>
+			<td>This is an ID for payment that is part of payment_methods structure.
+			<p>Example: default_authorizenet_aim</p>
+			</td>
+		</tr>
+		<tr>
+			<td>agree</td>
+			<td>Pass return policy confirmation if required based on configuration settings.</td>
+			<td>This is configured in the admin and can be possibly enabled or disabled. Values: 1 agree or 0 decline</td>
+		</tr>
+		<tr>
+			<td>comment</td>
+			<td>User text based comment</td>
+			<td>Optional</td>
+		</tr>
+		<tr>
+			<td>api_key</td>
+			<td>Unique API key that is set in the control panel</td>
+			<td>This is optional key that can be set to limit unauthorized (accidental) access to your API</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+<p><br />
+Example request: POST: rt=a/checkout/payment , mode=list , token=2f7f30e3efeb0d73744680ac7c0c11e6</p>
+
+<p><b>Example response:</b></p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+{
+   &quot;error_warning&quot;:&quot;Error: You must agree to the Return Policy!&quot;,
+   &quot;success&quot;:null,
+   &quot;coupon&quot;:null,
+   &quot;address&quot;:&quot;First Name Last Name
+test
+Address 1
+Address 2
+087901,
+    3676 Test City
+WI&quot;,
+   &quot;payment_methods&quot;:{
+       &quot;default_cod&quot;:{
+           &quot;id&quot;:&quot;default_cod&quot;,
+           &quot;title&quot;:&quot;Cash On Delivery&quot;,
+           &quot;sort_order&quot;:&quot;&quot;
+       },
+       &quot;default_authorizenet_aim&quot;:{
+           &quot;id&quot;:&quot;default_authorizenet_aim&quot;,
+           &quot;title&quot;:&quot;Credit Card \/ Debit Card (Authorize.Net)&quot;,
+           &quot;sort_order&quot;:&quot;&quot;
+       }
+   },
+   &quot;payment_method&quot;:null,
+   &quot;comment&quot;:&quot;&quot;,
+   &quot;text_agree&quot;:&quot;I have read and agree to the Return Policy&lt;\/b&gt;&lt;\/a&gt;&quot;,
+   &quot;agree&quot;:null
+}
+</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="box-title"><span class="mw-headline" id="Final_confirmation_before_payment_submit">Final confirmation before payment submit</span></h5>
+
+<p>This step it to provide all prepared data for the order back to the user for final confirmation. Once user confirms that details payment details needs to be sent back for final payment processing.</p>
+
+<p>Currently. Only COD and Authorize.Net are supported for payment methods.</p>
+
+<p>IMPORTANT: In the confirmation response, there is a payment array structure that provides required data to complete payment. This data needs to be collected from the user and sent to final process step.</p>
+
+<p>Route: <b>a/checkout/confirm</b></p>
+
+<p>Method: <b>POST</b></p>
+
+
+<!-- Table -->
+<div class="table-responsive">
+<table class="table">
+	<tbody>
+		<tr>
+			<th>Parameter</th>
+			<th>Meaning</th>
+			<th>Notes</th>
+		</tr>
+		<tr>
+			<td>callback</td>
+			<td>A JavaScript function to run when the response is received</td>
+			<td>Optional parameter allows you to specify a JavaScript function to handle query results for pure client-side implementations.
+			<p>Embed the API query in &lt;script&gt; tags. Define the callback function in &lt;script&gt; tags.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>token</td>
+			<td>Access token ID. This token is provided by the system after successful initial authentication</td>
+			<td>required</td>
+		</tr>
+		<tr>
+			<td>api_key</td>
+			<td>Unique API key that is set in the control panel</td>
+			<td>This is optional key that can be set to limit unauthorized (accidental) access to your API</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+<p>Example request:</p>
+
+<p>POST: rt=a/checkout/confirm , token=2f7f30e3efeb0d73744680ac7c0c11e6</p>
+
+<p><b>Response:</b></p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+{
+   &quot;store_id&quot;:null,
+   &quot;store_name&quot;:&quot;Web Store Name&quot;,
+   &quot;store_url&quot;:&quot;http:\/\/dev01.algozone.net\/abantecart_branch100\/public_html\/&quot;,
+   &quot;customer_id&quot;:&quot;16&quot;,
+   &quot;customer_group_id&quot;:&quot;8&quot;,
+   &quot;firstname&quot;:&quot;First Name&quot;,
+   &quot;lastname&quot;:&quot;Last Name&quot;,
+   &quot;email&quot;:&quot;test@test1.com&quot;,
+   &quot;telephone&quot;:&quot;435435435&quot;,
+   &quot;fax&quot;:&quot;434543543&quot;,
+   &quot;shipping_firstname&quot;:&quot;First Name&quot;,
+   &quot;shipping_lastname&quot;:&quot;Last Name&quot;,
+   &quot;shipping_company&quot;:&quot;test&quot;,
+   &quot;shipping_address_1&quot;:&quot;Address 1&quot;,
+   &quot;shipping_address_2&quot;:&quot;Address 2&quot;,
+   &quot;shipping_city&quot;:&quot;Test City&quot;,
+   &quot;shipping_postcode&quot;:&quot;087901&quot;,
+   &quot;shipping_zone&quot;:&quot;Wisconsin&quot;,
+   &quot;shipping_zone_id&quot;:&quot;3676&quot;,
+   &quot;shipping_country&quot;:&quot;United States&quot;,
+   &quot;shipping_country_id&quot;:&quot;223&quot;,
+   &quot;shipping_address_format&quot;:&quot;{
+       firstname
+   } {
+       lastname
+   }\r\n{
+       company
+   }\r\n{
+       address_1
+   }\r\n{
+       address_2
+   }\r\n{
+       city
+   },
+    {
+       zone
+   } {
+       postcode
+   }\r\n{
+       country
+   }&quot;,
+   &quot;payment_firstname&quot;:&quot;First Name&quot;,
+   &quot;payment_lastname&quot;:&quot;Last Name&quot;,
+   &quot;payment_company&quot;:&quot;test&quot;,
+   &quot;payment_address_1&quot;:&quot;Address 1&quot;,
+   &quot;payment_address_2&quot;:&quot;Address 2&quot;,
+   &quot;payment_city&quot;:&quot;Test City&quot;,
+   &quot;payment_postcode&quot;:&quot;087901&quot;,
+   &quot;payment_zone&quot;:&quot;Wisconsin&quot;,
+   &quot;payment_zone_id&quot;:&quot;3676&quot;,
+   &quot;payment_country&quot;:&quot;United States&quot;,
+   &quot;payment_country_id&quot;:&quot;223&quot;,
+   &quot;payment_address_format&quot;:&quot;{
+       firstname
+   } {
+       lastname
+   }\r\n{
+       company
+   }\r\n{
+       address_1
+   }\r\n{
+       address_2
+   }\r\n{
+       city
+   },
+    {
+       zone
+   } {
+       postcode
+   }\r\n{
+       country
+   }&quot;,
+   &quot;shipping_method&quot;:&quot;Free Shipping&quot;,
+   &quot;payment_method&quot;:&quot;Credit Card \/ Debit Card (Authorize.Net)&quot;,
+   &quot;products&quot;:[
+       {
+           &quot;product_id&quot;:&quot;84&quot;,
+           &quot;name&quot;:&quot;Armani Code Pour Femme&quot;,
+           &quot;model&quot;:&quot;GRM005&quot;,
+           &quot;option&quot;:[
+               {
+                   &quot;product_option_value_id&quot;:&quot;669&quot;,
+                   &quot;name&quot;:null,
+                   &quot;value&quot;:&quot;669&quot;,
+                   &quot;prefix&quot;:null
+               }
+           ],
+           &quot;download&quot;:[
+               
+           ],
+           &quot;quantity&quot;:2,
+           &quot;price&quot;:&quot;$30.00&quot;,
+           &quot;total&quot;:&quot;$60.00&quot;,
+           &quot;tax&quot;:0,
+           &quot;thumb&quot;:&quot;http:\/\/dev01.algozone.net\/abantecart_branch100\/public_html\/image\/thumbnails\/18\/6b\/azdemoproduct34jpg-100018-75x75.jpg&quot;
+       }
+   ],
+   &quot;totals&quot;:[
+       {
+           &quot;title&quot;:&quot;Sub-Total:&quot;,
+           &quot;text&quot;:&quot;$60.00&quot;,
+           &quot;value&quot;:60,
+           &quot;sort_order&quot;:&quot;1&quot;
+       },
+       {
+           &quot;title&quot;:&quot;Free Shipping:&quot;,
+           &quot;text&quot;:&quot;$0.00&quot;,
+           &quot;value&quot;:0,
+           &quot;sort_order&quot;:&quot;3&quot;
+       },
+       {
+           &quot;title&quot;:&quot;Retail 8.5%:&quot;,
+           &quot;text&quot;:&quot;$5.10&quot;,
+           &quot;value&quot;:5.1,
+           &quot;sort_order&quot;:&quot;5&quot;
+       },
+       {
+           &quot;title&quot;:&quot;Total:&quot;,
+           &quot;text&quot;:&quot;$65.10&quot;,
+           &quot;value&quot;:65.1,
+           &quot;sort_order&quot;:&quot;6&quot;
+       }
+   ],
+   &quot;comment&quot;:&quot;&quot;,
+   &quot;total&quot;:65.1,
+   &quot;language_id&quot;:&quot;1&quot;,
+   &quot;currency_id&quot;:&quot;1&quot;,
+   &quot;currency&quot;:&quot;USD&quot;,
+   &quot;value&quot;:&quot;1.00000000&quot;,
+   &quot;coupon_id&quot;:0,
+   &quot;ip&quot;:&quot;71.127.255.162&quot;,
+   &quot;shipping_address&quot;:&quot;First Name Last Name
+test
+Address 1
+Address 2
+087901,
+    3676 Test City
+WI&quot;,
+   &quot;payment_address&quot;:&quot;First Name Last Name
+test
+Address 1
+Address 2
+087901,
+    3676 Test City
+WI&quot;,
+   &quot;text_accept_agree&quot;:&quot;&quot;,
+   &quot;payment&quot;:{
+       &quot;text_credit_card&quot;:&quot;Credit Card Details&quot;,
+       &quot;entry_cc_owner&quot;:&quot;Card Owner:&quot;,
+       &quot;cc_owner&quot;:{
+           &quot;type&quot;:&quot;input&quot;,
+           &quot;name&quot;:&quot;cc_owner&quot;,
+           &quot;required&quot;:true,
+           &quot;value&quot;:&quot;&quot;
+       },
+       &quot;entry_cc_number&quot;:&quot;Card Number:&quot;,
+       &quot;cc_number&quot;:{
+           &quot;type&quot;:&quot;input&quot;,
+           &quot;name&quot;:&quot;cc_number&quot;,
+           &quot;required&quot;:true,
+           &quot;value&quot;:&quot;&quot;
+       },
+       &quot;entry_cc_expire_date&quot;:&quot;Card Expiry Date:&quot;,
+       &quot;entry_cc_cvv2&quot;:&quot;Card Security Code (CVV2):&quot;,
+       &quot;cc_cvv2&quot;:{
+           &quot;type&quot;:&quot;input&quot;,
+           &quot;name&quot;:&quot;cc_cvv2&quot;,
+           &quot;value&quot;:&quot;&quot;,
+           &quot;style&quot;:&quot;short&quot;,
+           &quot;required&quot;:true,
+           &quot;attr&quot;:&quot; size=\&quot;3\&quot;&quot;
+       },
+       &quot;button_confirm&quot;:&quot;Confirm Order&quot;,
+       &quot;button_back&quot;:&quot;Back&quot;,
+       &quot;cc_expire_date_month&quot;:{
+           &quot;type&quot;:&quot;selectbox&quot;,
+           &quot;name&quot;:&quot;cc_expire_date_month&quot;,
+           &quot;value&quot;:&quot;03&quot;,
+           &quot;options&quot;:{
+               &quot;01&quot;:&quot;January&quot;,
+               &quot;02&quot;:&quot;February&quot;,
+    …
+           },
+           &quot;required&quot;:true,
+           &quot;style&quot;:&quot;short&quot;
+       },
+       &quot;cc_e    xpire_date_year&quot;:{
+           &quot;type&quot;:&quot;selectbox&quot;,
+           &quot;name&quot;:&quot;cc_expire_date_year&quot;,
+           &quot;value&quot;:&quot;2013&quot;,
+           &quot;options&quot;:{
+               &quot;2012&quot;:&quot;2012&quot;,
+    …
+           },
+           &quot;required&quot;:true,
+           &quot;style&quot;:&quot;short&quot;
+       },
+       &quot;process_rt&quot;:&quot;default_authorizenet_aim\/send&quot;
+   }
+}</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+
+
+
+
+<h5 class="box-title"><span class="mw-headline" id="Process_payment_and_complete_the_order">Process payment and complete the order </span></h5>
+
+<p>This is a final step in order process.</p>
+
+<p>IMPORTANT: In the confirmation response, there was a payment array structure that provided required data to complete payment. This data needs to be collected from the user and sent to this process step.</p>
+
+<p>Route: <b>a/checkout/process</b></p>
+
+<p>Method: <b>POST</b></p>
+
+<!-- Table -->
+<div class="table-responsive">
+<table class="table">
+	<tbody>
+		<tr>
+			<th>Parameter</th>
+			<th>Meaning</th>
+			<th>Notes</th>
+		</tr>
+		<tr>
+			<td>callback</td>
+			<td>A JavaScript function to run when the response is received</td>
+			<td>Optional parameter allows you to specify a JavaScript function to handle query results for pure client-side implementations.
+			<p>Embed the API query in &lt;script&gt; tags. Define the callback function in &lt;script&gt; tags.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>token</td>
+			<td>Access token ID. This token is provided by the system after successful initial authentication</td>
+			<td>required</td>
+		</tr>
+		<tr>
+			<td>payment details</td>
+			<td>Details that are returned from confirmation step in payment structure.</td>
+			<td>Required based on &ldquo;required&rdquo; flag in the structure</td>
+		</tr>
+		<tr>
+			<td>api_key</td>
+			<td>Unique API key that is set in the control panel</td>
+			<td>This is optional key that can be set to limit unauthorized (accidental) access to your API</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+<p>Example request:</p>
+
+<p>POST: rt=a/checkout/process , [ field values ] token=2f7f30e3efeb0d73744680ac7c0c11e6</p>
+
+<p><b>Response:</b></p>
+
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+{
+   &quot;success&quot;:&quot;completed&quot;,
+   &quot;status&quot;:1
+}
+</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+
+
+
+
+
+
+
+
+
+
+
 </div>
