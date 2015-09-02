@@ -1749,14 +1749,14 @@ Example request:<br> POST: firstname=First+Name , lastname=Last+Name , email=tes
 
 <div class="category-info helper">
 <h4 id="Checkout_API" class="box-title">Checkout API</h4>
-<p>This is a section of API to provide tools to add products to cart, select shipment and payment details and complete the order. It is highly recommended to use HTTPS to access this part of API. </p>
+<p class="box-description">This is a section of API to provide tools to add products to cart, select shipment and payment details and complete the order. It is highly recommended to use HTTPS to access this part of API. </p>
 <h5 class="box-title"><span class="mw-headline" id="Add_products_to_cart">Add products to cart (basket) </span></h5>
 
-<p>Ability to add product to the cart with quantity and options. Default response to empty request is the content of the cart. If product and quantity are provided product will be added to the cart. If remove is provided along with valid product key, these products will be removed from the cart</p>
+<p class="box-description">Ability to add product to the cart with quantity and options. Default response to empty request is the content of the cart. If product and quantity are provided product will be added to the cart. If remove is provided along with valid product key, these products will be removed from the cart</p>
 
-<p>Route: <b>a/checkout/cart</b></p>
+<p class="box-description">Route: <b>a/checkout/cart</b></p>
 
-<p>Method: <b>POST</b></p>
+<p class="box-description">Method: <b>POST</b></p>
 
 <!-- Table -->
 <div class="table-responsive">
@@ -1771,7 +1771,7 @@ Example request:<br> POST: firstname=First+Name , lastname=Last+Name , email=tes
 			<td>callback</td>
 			<td>A JavaScript function to run when the response is received</td>
 			<td>Optional parameter allows you to specify a JavaScript function to handle query results for pure client-side implementations.
-			<p>Embed the API query in &lt;script&gt; tags. Define the callback function in &lt;script&gt; tags.</p>
+			<p class="box-description">Embed the API query in &lt;script&gt; tags. Define the callback function in &lt;script&gt; tags.</p>
 			</td>
 		</tr>
 		<tr>
@@ -1817,9 +1817,9 @@ Example request:<br> POST: firstname=First+Name , lastname=Last+Name , email=tes
 	</tbody>
 </table>
 </div>
-<p>Example request:<br>POST: rt=a/checkout/cart , token=58fb1592f0c59b8dc1d5541aebdff8da</p>
+<p class="box-description">Example request:<br>POST: rt=a/checkout/cart , token=58fb1592f0c59b8dc1d5541aebdff8da</p>
 
-<p><b>Example response:</b></p>
+<p class="box-description"><b>Example response:</b></p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
 	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
@@ -1870,17 +1870,17 @@ Example request:<br> POST: firstname=First+Name , lastname=Last+Name , email=tes
 <h5 class="box-title">
 <span class="mw-headline" id="Shipping_options_and_selection">Shipping options and selection (First step in checkout) </span></h5>
 
-<p>There are 2 steps to shipping selection. First step is to get all available shipping options and pricing. Second step is to provide user selection.</p>
+<p class="box-description">There are 2 steps to shipping selection. First step is to get all available shipping options and pricing. Second step is to provide user selection.</p>
 
-<p>Note, some products settings might not require shipping, in this case user selection step can be skipped.</p>
+<p class="box-description">Note, some products settings might not require shipping, in this case user selection step can be skipped.</p>
 
-<p>Route: <b>a/checkout/shipping</b></p>
+<p class="box-description">Route: <b>a/checkout/shipping</b></p>
 
-<p>Method: <b>POST</b></p>
+<p class="box-description">Method: <b>POST</b></p>
 
-<p>Get all available shipping methods with mode=list</p>
+<p class="box-description">Get all available shipping methods with mode=list</p>
 
-<p>Post users selection of shipping method and comment with mode=select</p>
+<p class="box-description">Post users selection of shipping method and comment with mode=select</p>
 
 
 <!-- Table -->
@@ -1896,7 +1896,7 @@ Example request:<br> POST: firstname=First+Name , lastname=Last+Name , email=tes
 			<td>callback</td>
 			<td>A JavaScript function to run when the response is received</td>
 			<td>Optional parameter allows you to specify a JavaScript function to handle query results for pure client-side implementations.
-			<p>Embed the API query in &lt;script&gt; tags. Define the callback function in &lt;script&gt; tags.</p>
+			<p class="box-description">Embed the API query in &lt;script&gt; tags. Define the callback function in &lt;script&gt; tags.</p>
 			</td>
 		</tr>
 		<tr>
@@ -1908,16 +1908,16 @@ Example request:<br> POST: firstname=First+Name , lastname=Last+Name , email=tes
 			<td>mode</td>
 			<td>switch to set the mode of this step.</td>
 			<td>Values:
-			<p><b>select</b> - Pass user selection for shipping method</p>
+			<p class="box-description"><b>select</b> - Pass user selection for shipping method</p>
 
-			<p><b>list</b> - Get all available shipping methods</p>
+			<p class="box-description"><b>list</b> - Get all available shipping methods</p>
 			</td>
 		</tr>
 		<tr>
 			<td>shipping_method</td>
 			<td>User selected shipping method ID</td>
 			<td>This is an ID for shipping that is part of shipping_methods structure. Example:
-			<p>default_free_shipping.default_free_shipping</p>
+			<p class="box-description">default_free_shipping.default_free_shipping</p>
 			</td>
 		</tr>
 		<tr>
@@ -1938,9 +1938,9 @@ Example request:<br> POST: firstname=First+Name , lastname=Last+Name , email=tes
 	</tbody>
 </table>
 </div>
-<p>Example request: POST: rt=a/checkout/shipping , mode=list , token=2f7f30e3efeb0d73744680ac7c0c11e6</p>
+<p class="box-description">Example request: POST: rt=a/checkout/shipping , mode=list , token=2f7f30e3efeb0d73744680ac7c0c11e6</p>
 
-<p><b>Example response:</b></p>
+<p class="box-description"><b>Example response:</b></p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
 	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
@@ -1989,11 +1989,11 @@ WI&quot;,
 </div>
 <!-- HTML Highlight -->
 
-<p>Example request:</p>
+<p class="box-description">Example request:</p>
 
-<p>POST: rt=a/checkout/shipping , mode=select , shipping_method=default_free_shipping.default_free_shipping , token=2f7f30e3efeb0d73744680ac7c0c11e6</p>
+<p class="box-description">POST: rt=a/checkout/shipping , mode=select , shipping_method=default_free_shipping.default_free_shipping , token=2f7f30e3efeb0d73744680ac7c0c11e6</p>
 
-<p><b>Example response:</b></p>
+<p class="box-description"><b>Example response:</b></p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
 	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
@@ -2015,15 +2015,15 @@ WI&quot;,
 
 <h5 class="box-title"><span class="mw-headline" id="Shipping_or_Billing">Shipping or Billing (payment) selection </span></h5>
 
-<p>There are 2 steps to shipping or billing address selection. First step is to get all available addresses in customer address book. Second step is to provide user selection with existing address ID or completely new address information (will be saved to address book)</p>
+<p class="box-description">There are 2 steps to shipping or billing address selection. First step is to get all available addresses in customer address book. Second step is to provide user selection with existing address ID or completely new address information (will be saved to address book)</p>
 
-<p>Route: <b>a/checkout/address</b></p>
+<p class="box-description">Route: <b>a/checkout/address</b></p>
 
-<p>Method: <b>POST</b></p>
+<p class="box-description">Method: <b>POST</b></p>
 
-<p>Get all available addresses and current selection (if already done) with mode=shipping or mode =payment</p>
+<p class="box-description">Get all available addresses and current selection (if already done) with mode=shipping or mode =payment</p>
 
-<p>Post users selection with mode=shipping or mode =payment and action=save</p>
+<p class="box-description">Post users selection with mode=shipping or mode =payment and action=save</p>
 
 
 <!-- Table -->
@@ -2039,7 +2039,7 @@ WI&quot;,
 			<td>callback</td>
 			<td>A JavaScript function to run when the response is received</td>
 			<td>Optional parameter allows you to specify a JavaScript function to handle query results for pure client-side implementations.
-			<p>Embed the API query in &lt;script&gt; tags. Define the callback function in &lt;script&gt; tags.</p>
+			<p class="box-description">Embed the API query in &lt;script&gt; tags. Define the callback function in &lt;script&gt; tags.</p>
 			</td>
 		</tr>
 		<tr>
@@ -2051,23 +2051,23 @@ WI&quot;,
 			<td>mode</td>
 			<td>switch to set the mode of this step.</td>
 			<td>Values:
-			<p><b>shipping</b> - Handle shipping related address</p>
+			<p class="box-description"><b>shipping</b> - Handle shipping related address</p>
 
-			<p><b>payment</b> - Handle payment (billing) related address</p>
+			<p class="box-description"><b>payment</b> - Handle payment (billing) related address</p>
 			</td>
 		</tr>
 		<tr>
 			<td>shipping_address_id</td>
 			<td>User selected shipping address ID from address book</td>
 			<td>This is address_id for shipping that is part part of response structure in saved_addresses
-			<p>Works in combination with mode=shipping</p>
+			<p class="box-description">Works in combination with mode=shipping</p>
 			</td>
 		</tr>
 		<tr>
 			<td>payment_address_id</td>
 			<td>User selected payment address ID from address book</td>
 			<td>This is address_id for payment that is part part of response structure in saved_addresses
-			<p>Works in combination with mode=payment</p>
+			<p class="box-description">Works in combination with mode=payment</p>
 			</td>
 		</tr>
 		<tr>
@@ -2078,11 +2078,11 @@ WI&quot;,
 	</tbody>
 </table>
 </div>
-<p>Example request:</p>
+<p class="box-description">Example request:</p>
 
-<p>POST: rt=a/checkout/address , mode=shipping , token=2f7f30e3efeb0d73744680ac7c0c11e6</p>
+<p class="box-description">POST: rt=a/checkout/address , mode=shipping , token=2f7f30e3efeb0d73744680ac7c0c11e6</p>
 
-<p><b>Example response:</b></p>
+<p class="box-description"><b>Example response:</b></p>
 
 <!-- HTML Highlight -->
 <div class="code-highlight">
@@ -2175,9 +2175,9 @@ WI&quot;,
 </div>
 <!-- HTML Highlight -->
 
-<p>Method: <b>POST</b></p>
+<p class="box-description">Method: <b>POST</b></p>
 
-<p>Validate and save new customer&rsquo;s address and set it as shipping or payment address</p>
+<p class="box-description">Validate and save new customer&rsquo;s address and set it as shipping or payment address</p>
 
 <!-- Table -->
 <div class="table-responsive">
@@ -2192,7 +2192,7 @@ WI&quot;,
 			<td>callback</td>
 			<td>A JavaScript function to run when the response is received</td>
 			<td>Optional parameter allows you to specify a JavaScript function to handle query results for pure client-side implementations.
-			<p>Embed the API query in &lt;script&gt; tags. Define the callback function in &lt;script&gt; tags.</p>
+			<p class="box-description">Embed the API query in &lt;script&gt; tags. Define the callback function in &lt;script&gt; tags.</p>
 			</td>
 		</tr>
 		<tr>
@@ -2204,9 +2204,9 @@ WI&quot;,
 			<td>mode</td>
 			<td>switch to set the mode of this step</td>
 			<td>Values:
-			<p><b>shipping</b> - Handle shipping related address</p>
+			<p class="box-description"><b>shipping</b> - Handle shipping related address</p>
 
-			<p><b>payment</b> - Handle payment (billing) related address</p>
+			<p class="box-description"><b>payment</b> - Handle payment (billing) related address</p>
 			</td>
 		</tr>
 		<tr>
@@ -2279,17 +2279,17 @@ WI&quot;,
 
 <h5 class="box-title"><span class="mw-headline" id="Payment_options_and_selection">Payment options and selection </span></h5>
 
-<p>There are 2 steps to payment method selection. First step is to get all available payment options. Second step is to provide user payment selection. Coupon for discount can also be provided at this stage.</p>
+<p class="box-description">There are 2 steps to payment method selection. First step is to get all available payment options. Second step is to provide user payment selection. Coupon for discount can also be provided at this stage.</p>
 
-<p>Route: <b>a/checkout/payment</b></p>
+<p class="box-description">Route: <b>a/checkout/payment</b></p>
 
-<p>Method: <b>POST</b></p>
+<p class="box-description">Method: <b>POST</b></p>
 
-<p>Get all available payment methods with mode=list</p>
+<p class="box-description">Get all available payment methods with mode=list</p>
 
-<p>Post users selection of payment method and comment with mode=select</p>
+<p class="box-description">Post users selection of payment method and comment with mode=select</p>
 
-<p>NOTE: Shipping method and Payment address should be selected before this API stage.</p>
+<p class="box-description">NOTE: Shipping method and Payment address should be selected before this API stage.</p>
 
 <!-- Table -->
 <div class="table-responsive">
@@ -2304,7 +2304,7 @@ WI&quot;,
 			<td>callback</td>
 			<td>A JavaScript function to run when the response is received</td>
 			<td>Optional parameter allows you to specify a JavaScript function to handle query results for pure client-side implementations.
-			<p>Embed the API query in &lt;script&gt; tags. Define the callback function in &lt;script&gt; tags.</p>
+			<p class="box-description">Embed the API query in &lt;script&gt; tags. Define the callback function in &lt;script&gt; tags.</p>
 			</td>
 		</tr>
 		<tr>
@@ -2316,9 +2316,9 @@ WI&quot;,
 			<td>mode</td>
 			<td>switch to set the mode of this step</td>
 			<td>Values:
-			<p><b>select</b> - Pass user selection for payment method</p>
+			<p class="box-description"><b>select</b> - Pass user selection for payment method</p>
 
-			<p><b>list</b> - Get all available payment methods</p>
+			<p class="box-description"><b>list</b> - Get all available payment methods</p>
 			</td>
 		</tr>
 		<tr>
@@ -2330,7 +2330,7 @@ WI&quot;,
 			<td>payment_method</td>
 			<td>User selected payment method ID</td>
 			<td>This is an ID for payment that is part of payment_methods structure.
-			<p>Example: default_authorizenet_aim</p>
+			<p class="box-description">Example: default_authorizenet_aim</p>
 			</td>
 		</tr>
 		<tr>
@@ -2351,10 +2351,10 @@ WI&quot;,
 	</tbody>
 </table>
 </div>
-<p><br />
+<p class="box-description"><br />
 Example request: POST: rt=a/checkout/payment , mode=list , token=2f7f30e3efeb0d73744680ac7c0c11e6</p>
 
-<p><b>Example response:</b></p>
+<p class="box-description"><b>Example response:</b></p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
 	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
@@ -2403,15 +2403,15 @@ WI&quot;,
 
 <h5 class="box-title"><span class="mw-headline" id="Final_confirmation_before_payment_submit">Final confirmation before payment submit</span></h5>
 
-<p>This step it to provide all prepared data for the order back to the user for final confirmation. Once user confirms that details payment details needs to be sent back for final payment processing.</p>
+<p class="box-description">This step it to provide all prepared data for the order back to the user for final confirmation. Once user confirms that details payment details needs to be sent back for final payment processing.</p>
 
-<p>Currently. Only COD and Authorize.Net are supported for payment methods.</p>
+<p class="box-description">Currently. Only COD and Authorize.Net are supported for payment methods.</p>
 
-<p>IMPORTANT: In the confirmation response, there is a payment array structure that provides required data to complete payment. This data needs to be collected from the user and sent to final process step.</p>
+<p class="box-description">IMPORTANT: In the confirmation response, there is a payment array structure that provides required data to complete payment. This data needs to be collected from the user and sent to final process step.</p>
 
-<p>Route: <b>a/checkout/confirm</b></p>
+<p class="box-description">Route: <b>a/checkout/confirm</b></p>
 
-<p>Method: <b>POST</b></p>
+<p class="box-description">Method: <b>POST</b></p>
 
 
 <!-- Table -->
@@ -2427,7 +2427,7 @@ WI&quot;,
 			<td>callback</td>
 			<td>A JavaScript function to run when the response is received</td>
 			<td>Optional parameter allows you to specify a JavaScript function to handle query results for pure client-side implementations.
-			<p>Embed the API query in &lt;script&gt; tags. Define the callback function in &lt;script&gt; tags.</p>
+			<p class="box-description">Embed the API query in &lt;script&gt; tags. Define the callback function in &lt;script&gt; tags.</p>
 			</td>
 		</tr>
 		<tr>
@@ -2443,11 +2443,11 @@ WI&quot;,
 	</tbody>
 </table>
 </div>
-<p>Example request:</p>
+<p class="box-description">Example request:</p>
 
-<p>POST: rt=a/checkout/confirm , token=2f7f30e3efeb0d73744680ac7c0c11e6</p>
+<p class="box-description">POST: rt=a/checkout/confirm , token=2f7f30e3efeb0d73744680ac7c0c11e6</p>
 
-<p><b>Response:</b></p>
+<p class="box-description"><b>Response:</b></p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
 	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
@@ -2662,13 +2662,13 @@ WI&quot;,
 
 <h5 class="box-title"><span class="mw-headline" id="Process_payment_and_complete_the_order">Process payment and complete the order </span></h5>
 
-<p>This is a final step in order process.</p>
+<p class="box-description">This is a final step in order process.</p>
 
-<p>IMPORTANT: In the confirmation response, there was a payment array structure that provided required data to complete payment. This data needs to be collected from the user and sent to this process step.</p>
+<p class="box-description">IMPORTANT: In the confirmation response, there was a payment array structure that provided required data to complete payment. This data needs to be collected from the user and sent to this process step.</p>
 
-<p>Route: <b>a/checkout/process</b></p>
+<p class="box-description">Route: <b>a/checkout/process</b></p>
 
-<p>Method: <b>POST</b></p>
+<p class="box-description">Method: <b>POST</b></p>
 
 <!-- Table -->
 <div class="table-responsive">
@@ -2683,7 +2683,7 @@ WI&quot;,
 			<td>callback</td>
 			<td>A JavaScript function to run when the response is received</td>
 			<td>Optional parameter allows you to specify a JavaScript function to handle query results for pure client-side implementations.
-			<p>Embed the API query in &lt;script&gt; tags. Define the callback function in &lt;script&gt; tags.</p>
+			<p class="box-description">Embed the API query in &lt;script&gt; tags. Define the callback function in &lt;script&gt; tags.</p>
 			</td>
 		</tr>
 		<tr>
@@ -2704,11 +2704,11 @@ WI&quot;,
 	</tbody>
 </table>
 </div>
-<p>Example request:</p>
+<p class="box-description">Example request:</p>
 
-<p>POST: rt=a/checkout/process , [ field values ] token=2f7f30e3efeb0d73744680ac7c0c11e6</p>
+<p class="box-description">POST: rt=a/checkout/process , [ field values ] token=2f7f30e3efeb0d73744680ac7c0c11e6</p>
 
-<p><b>Response:</b></p>
+<p class="box-description"><b>Response:</b></p>
 
 <!-- HTML Highlight -->
 <div class="code-highlight">
@@ -2726,8 +2726,187 @@ WI&quot;,
 
 
 
+</div>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="category-info helper">
+<h4 id="Common_DATA_API" class="box-title">Common DATA API</h4>
+<p class="box-description">There is some additional data available via API.</p>
+
+<p class="box-description"><b>Validate Access to API</b></p>
+
+<p class="box-description">You can run this simple request to check if API access is working. You will get error if no access or empty reply if access it OK.</p>
+
+<p class="box-description">Route: <b>a/common/access</b></p>
+
+<p class="box-description">Method: <b>GET</b></p>
+<!-- Table -->
+<div class="table-responsive">
+<table class="table">
+	<tbody>
+		<tr>
+			<th>Parameter</th>
+			<th>Meaning</th>
+			<th>Notes</th>
+		</tr>
+		<tr>
+			<td>callback</td>
+			<td>A JavaScript function to run when the response is received</td>
+			<td>Optional parameter allows you to specify a JavaScript function to handle query results for pure client-side implementations.
+			<p class="box-description">Embed the API query in &lt;script&gt; tags. Define the callback function in &lt;script&gt; tags.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>api_key</td>
+			<td>Unique API key that is set in the control panel</td>
+			<td>This is optional key that can be set to limit unauthorized (accidental) access to your API</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+<p class="box-description">Example request:</p>
+
+<p class="box-description">http://demo.abantecart.com/index.php?rt=a/common/access&amp;api_key=[key]</p>
+
+<p class="box-description"><b>Example response:</b></p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+{&quot;error&quot;:&quot;Access to API is disabled!&quot;}
+</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+
+
+
+
+
+<h5 class="box-title"><span class="mw-headline" id="Get_Countries">Get Countries </span></h5>
+
+<p class="box-description">You can get all the countries from the system</p>
+
+<p class="box-description">Route: <b>a/common/country</b></p>
+
+<p class="box-description">Method: <b>GET</b></p>
+
+<!-- Table -->
+<div class="table-responsive">
+<table class="table">
+	<tbody>
+		<tr>
+			<th>Parameter</th>
+			<th>Meaning</th>
+			<th>Notes</th>
+		</tr>
+		<tr>
+			<td>callback</td>
+			<td>A JavaScript function to run when the response is received</td>
+			<td>Optional parameter allows you to specify a JavaScript function to handle query results for pure client-side implementations.
+			<p class="box-description">Embed the API query in &lt;script&gt; tags. Define the callback function in &lt;script&gt; tags.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>api_key</td>
+			<td>Unique API key that is set in the control panel</td>
+			<td>This is optional key that can be set to limit unauthorized (accidental) access to your API</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+<p class="box-description">Example request: http://demo.abantecart.com/index.php?rt=a/common/country</p>
+
+
+
+
+
+<h5 class="box-title"><span class="mw-headline" id="Get_Zones">Get Zones </span></h5>
+
+<p class="box-description">You can get all the geo zones for specified country ID</p>
+
+<p class="box-description">Route: <b>a/common/zone</b></p>
+
+<p class="box-description">Method: <b>GET</b></p>
+
+<!-- Table -->
+<div class="table-responsive">
+<table class="table">
+	<tbody>
+		<tr>
+			<th>Parameter</th>
+			<th>Meaning</th>
+			<th>Notes</th>
+		</tr>
+		<tr>
+			<td>callback</td>
+			<td>A JavaScript function to run when the response is received</td>
+			<td>Optional parameter allows you to specify a JavaScript function to handle query results for pure client-side implementations.
+			<p class="box-description">Embed the API query in &lt;script&gt; tags. Define the callback function in &lt;script&gt; tags.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>country_id</td>
+			<td>Unique country ID</td>
+			<td>Required</td>
+		</tr>
+		<tr>
+			<td>api_key</td>
+			<td>Unique API key that is set in the control panel</td>
+			<td>This is optional key that can be set to limit unauthorized (accidental) access to your API</td>
+		</tr>
+	</tbody>
+</table>
+<div>
+<p class="box-description"><br />
+Example request:</p>
+
+<p class="box-description">http://demo.abantecart.com/index.php?rt=a/common/zone&amp;country_id=2</p>
+
+<p class="box-description"><b>Example response:</b></p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+[
+   {
+       &quot;zone_id&quot;:&quot;33&quot;,
+       &quot;country_id&quot;:&quot;2&quot;,
+       &quot;code&quot;:&quot;BR&quot;,
+       &quot;name&quot;:&quot;Berat&quot;,
+       &quot;status&quot;:&quot;1&quot;,
+       &quot;sort_order&quot;:&quot;0&quot;
+   },
+   {
+       &quot;zone_id&quot;:&quot;34&quot;,
+       &quot;country_id&quot;:&quot;2&quot;,
+       &quot;code&quot;:&quot;BU&quot;,
+       &quot;name&quot;:&quot;Bulqize&quot;,
+       &quot;status&quot;:&quot;1&quot;,
+       &quot;sort_order&quot;:&quot;0&quot;
+   },
+...
+]</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
 
 
 
