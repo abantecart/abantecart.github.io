@@ -57,7 +57,15 @@ redirect_from: "/tag/sf_api.html"
 		
 		
 		
-		<li class="toclevel-2 tocsection-4"><a href="#Common_DATA_API"> <span class="toctext">Common DATA API</span></a></li>
+		<li class="toclevel-2 tocsection-4"><a href="#Common_DATA_API"> <span class="toctext">Common DATA API</span></a>
+				<ul>
+				<li class="toclevel-3 tocsection-1"><a href="#Get_Countries"> <span class="toctext">Get Countries</span></a></li>
+				<li class="toclevel-3 tocsection-2"><a href="#Get_Zones"> <span class="toctext">Get Zones</span></a></li>
+				</ul>
+		
+		
+		
+		</li>
 		</ul>
 	</li>
 	</ul>
@@ -2289,7 +2297,18 @@ WI&quot;,
 
 <p class="box-description">Post users selection of payment method and comment with mode=select</p>
 
-<p class="box-description">NOTE: Shipping method and Payment address should be selected before this API stage.</p>
+
+
+						<!-- Note -->
+						<div class="note js-note blue">
+							<span class="note-close js-close">
+								<i class="fa fa-times"></i>
+							</span>
+							<h4 class="note-title"> Note </h4>
+							<p class="note-description"> Shipping method and Payment address should be selected before this API stage.</p>
+						</div>
+						<!-- End of Note -->
+
 
 <!-- Table -->
 <div class="table-responsive">
@@ -2406,8 +2425,16 @@ WI&quot;,
 <p class="box-description">This step it to provide all prepared data for the order back to the user for final confirmation. Once user confirms that details payment details needs to be sent back for final payment processing.</p>
 
 <p class="box-description">Currently. Only COD and Authorize.Net are supported for payment methods.</p>
+						<!-- Note -->
+						<div class="note js-note purple">
+							<span class="note-close js-close">
+								<i class="fa fa-times"></i>
+							</span>
+							<h4 class="note-title"> IMPORTANT </h4>
+							<p class="note-description"> In the confirmation response, there is a payment array structure that provides required data to complete payment. This data needs to be collected from the user and sent to final process step. </p>
+						</div>
+						<!-- End of Note -->
 
-<p class="box-description">IMPORTANT: In the confirmation response, there is a payment array structure that provides required data to complete payment. This data needs to be collected from the user and sent to final process step.</p>
 
 <p class="box-description">Route: <b>a/checkout/confirm</b></p>
 
@@ -2664,7 +2691,19 @@ WI&quot;,
 
 <p class="box-description">This is a final step in order process.</p>
 
-<p class="box-description">IMPORTANT: In the confirmation response, there was a payment array structure that provided required data to complete payment. This data needs to be collected from the user and sent to this process step.</p>
+
+
+						<!-- Note -->
+						<div class="note js-note purple">
+							<span class="note-close js-close">
+								<i class="fa fa-times"></i>
+							</span>
+							<h4 class="note-title"> IMPORTANT </h4>
+							<p class="note-description"> In the confirmation response, there was a payment array structure that provided required data to complete payment. This data needs to be collected from the user and sent to this process step.  </p>
+						</div>
+						<!-- End of Note -->
+
+
 
 <p class="box-description">Route: <b>a/checkout/process</b></p>
 
