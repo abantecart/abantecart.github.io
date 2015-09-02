@@ -858,32 +858,36 @@ Route: <b>a/product/filter</b></p>
 	</tbody>
 </table>
 </div>
-<p><br />
-<i>Notes:</i> - One of following search parameters is required category_id, manufacturer_id or keyword</p>
+						<!-- Note -->
+						<div class="note js-note blue">
+							<span class="note-close js-close">
+								<i class="fa fa-times"></i>
+							</span>
+							<h4 class="note-title"> Note </h4>
+							<p class="note-description"> One of following search parameters is required category_id, manufacturer_id or keyword </p>
+						</div>
+						<!-- End of Note -->
+
 
 <p>- Advanced jqGrid based search and filtering: Please refer to page below for more details on advanced filter construction http://www.trirand.com/jqgridwiki/doku.php?id=wiki:advanced_searching</p>
 
 <p><br />
 Example requests:</p>
 
-<p>Extract products in category ID 36</p>
-
-<p>http://demo.abantecart.com/index.php?rt=a/product/filter&amp;category_id=36</p>
-
-<p><br />
-Extract product for manufacturer with ID 14</p>
-
-<p>http://demo.abantecart.com/index.php?rt=a/product/filter&amp;manufacturer_id=14</p>
+<p>Extract products in category ID 36
+<br /> http://demo.abantecart.com/index.php?rt=a/product/filter&amp;category_id=36</p>
 
 <p><br />
-Search for product with keyword ab and sort by price.</p>
-
-<p>http://demo.abantecart.com/index.php?rt=a/product/filter&amp;keyword=ab&amp;page=1&amp;rows=10&amp;sidx=price&amp;sord=ACS</p>
+Extract product for manufacturer with ID 14
+<br /> http://demo.abantecart.com/index.php?rt=a/product/filter&amp;manufacturer_id=14</p>
 
 <p><br />
-Search for product name only with ab as part of the name</p>
+Search for product with keyword ab and sort by price.
+<br /> http://demo.abantecart.com/index.php?rt=a/product/filter&amp;keyword=ab&amp;page=1&amp;rows=10&amp;sidx=price&amp;sord=ACS</p>
 
-<p>http://demo.abantecart.com/index.php?rt=a/product/filter&amp;keyword=a&amp;page=1&amp;rows=10&amp;sidx=price&amp;sord=ACS&amp;_search=true&amp;filters={&quot;groupOp&quot;:&quot;AND&quot;,&quot;rules&quot;:[{&quot;field&quot;:&quot;name&quot;,&quot;op&quot;:&quot;cn&quot;,&quot;data&quot;:&quot;ab&quot;}]}</p>
+<p><br />
+Search for product name only with ab as part of the name
+<br /> http://demo.abantecart.com/index.php?rt=a/product/filter&amp;keyword=a&amp;page=1&amp;rows=10&amp;sidx=price&amp;sord=ACS&amp;_search=true&amp;filters={&quot;groupOp&quot;:&quot;AND&quot;,&quot;rules&quot;:[{&quot;field&quot;:&quot;name&quot;,&quot;op&quot;:&quot;cn&quot;,&quot;data&quot;:&quot;ab&quot;}]}</p>
 
 	
 	
