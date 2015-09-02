@@ -88,3 +88,68 @@ How To Test API.</p>
 <p>You can copy this script to your own installation main directory.</p>
 
 </div>
+
+
+
+
+
+
+
+<div class="category-info helper">
+	<h4 id="Introduction" class="box-title">Introduction</h4>
+	
+	
+	
+	<h3><span class="mw-headline" id="Catalog_API">Catalog API </span></h3>
+
+<p class="box-description"Catalog side API provides GET or POST interface to get information about categories, products, manufacturers (brands) and other information related to the products set up in AbanteCart.</p>
+
+<p>Any request can contain GET language parameter. This will switch response data to new language. Example: language=es.</p>
+
+<p><i>NOTE: language parameter needs to be passed only one time. It is stored in the session for all next requests.</i></p>
+
+<h4><span class="mw-headline" id="Get_Single_Product">Get Single Product </span></h4>
+
+<p>You can get all product details by unique product ID.</p>
+
+<p>Route: <b>a/product/product</b></p>
+
+<p>Method: <b>GET</b></p>
+
+<table class="wikitable">
+	<tbody>
+		<tr>
+			<th>Parameter</th>
+			<th>Meaning</th>
+			<th>Notes</th>
+		</tr>
+		<tr>
+			<td>callback</td>
+			<td>A JavaScript function to run when the response is received</td>
+			<td>Optional parameter allows you to specify a JavaScript function to handle query results for pure client-side implementations.
+			<p>Embed the API query in &lt;script&gt; tags. Define the callback function in &lt;script&gt; tags.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>product_id</td>
+			<td>Unique product ID on products table</td>
+			<td>Required parameter</td>
+		</tr>
+		<tr>
+			<td>api_key</td>
+			<td>Unique API key that is set in the control panel</td>
+			<td>This is optional key that can be set to limit unauthorized (accidental) access to your API</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>Example request:</p>
+
+<p>http://demo.abantecart.com/index.php?rt=a/product/product&amp;product_id=85</p>
+
+<p>with key: http://demo.abantecart.com/index.php?rt=a/product/product&amp;product_id=85&amp;api_key=[key_string]</p>
+
+<p><b>Example response:</b></p>
+	
+	
+</div>
