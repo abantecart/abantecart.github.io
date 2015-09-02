@@ -272,6 +272,619 @@ Catalog side API provides GET or POST interface to get information about categor
 
 
 
+
+
+
+
+
+
+
+
+<h5 class="box-title"><span class="mw-headline" id="Get_Product_Resources">Get Product Resources </span></h5>
+
+<p>You can get all product resource by unique product ID.</p>
+
+<p>Route: <b>a/product/resources</b></p>
+
+<p>Method: <b>GET</b></p>
+
+
+<!-- Table -->
+<div class="table-responsive">
+<table class="table">
+	<tbody>
+		<tr>
+			<th>Parameter</th>
+			<th>Meaning</th>
+			<th>Notes</th>
+		</tr>
+		<tr>
+			<td>callback</td>
+			<td>A JavaScript function to run when the response is received</td>
+			<td>Optional parameter allows you to specify a JavaScript function to handle query results for pure client-side implementations.
+			<p>Embed the API query in &lt;script&gt; tags. Define the callback function in &lt;script&gt; tags.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>product_id</td>
+			<td>Unique product ID on products table</td>
+			<td>Required parameter</td>
+		</tr>
+		<tr>
+			<td>resource_type</td>
+			<td>Type of resource to show. Now supported only image type</td>
+			<td>Default image type</td>
+		</tr>
+		<tr>
+			<td>api_key</td>
+			<td>Unique API key that is set in the control panel</td>
+			<td>This is optional key that can be set to limit unauthorized (accidental) access to your API</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+<p><br />
+Example request:</p>
+
+<p>http://demo.abantecart.com/index.php?rt=a/product/resources&amp;product_id=85</p>
+<p><b>Example response:</b></p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+{
+   &quot;total&quot;:3,
+   &quot;resources&quot;:[
+       {
+&quot;origial&quot;:&quot;http:\/\/dev01.algozone.net\/abantecart_branch100\/public_html\/resources\/image\/18\/6d\/6.jpg&quot;,            &quot;thumb&quot;:&quot;http:\/\/dev01.algozone.net\/abantecart_branch100\/public_html\/image\/thumbnails\/18\/6d\/azdemoproduct351jpg-100054-45x45.jpg&quot;
+       },
+       {   &quot;origial&quot;:&quot;http:\/\/dev01.algozone.net\/abantecart_branch100\/public_html\/resources\/image\/18\/6d\/7.jpg&quot;,
+&quot;thumb&quot;:&quot;http:\/\/dev01.algozone.net\/abantecart_branch100\/public_html\/image\/thumbnails\/18\/6d\/azdemoproduct352jpg-100055-45x45.jpg&quot;
+       },
+       {
+&quot;origial&quot;:&quot;http:\/\/dev01.algozone.net\/abantecart_branch100\/public_html\/resources\/image\/18\/6d\/8.jpg&quot;,
+&quot;thumb&quot;:&quot;http:\/\/dev01.algozone.net\/abantecart_branch100\/public_html\/image\/thumbnails\/18\/6d\/azdemoproduct35jpg-100056-45x45.jpg&quot;
+       }
+   ]
+}
+</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+
+
+
+
+
+
+<h5 class="box-title"><span class="mw-headline" id="Get_Related_Products">Get Related Products </span></h5>
+
+<p>You can get all related products to given product with unique product ID.</p>
+
+<p>Route: <b>a/product/related</b></p>
+
+<p>Method: <b>GET</b></p>
+
+
+<!-- Table -->
+<div class="table-responsive">
+<table class="table">
+	<tbody>
+		<tr>
+			<th>Parameter</th>
+			<th>Meaning</th>
+			<th>Notes</th>
+		</tr>
+		<tr>
+			<td>callback</td>
+			<td>A JavaScript function to run when the response is received</td>
+			<td>Optional parameter allows you to specify a JavaScript function to handle query results for pure client-side implementations.
+			<p>Embed the API query in &lt;script&gt; tags. Define the callback function in &lt;script&gt; tags.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>product_id</td>
+			<td>Unique product ID on products table</td>
+			<td>Required parameter</td>
+		</tr>
+		<tr>
+			<td>api_key</td>
+			<td>Unique API key that is set in the control panel</td>
+			<td>This is optional key that can be set to limit unauthorized (accidental) access to your API</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+
+<p>Example request: http://demo.abantecart.com/index.php?rt=a/product/related&amp;product_id=85</p>
+
+<p><b>Example response:</b></p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+{
+   &quot;total&quot;:2,
+   &quot;related_products&quot;:[
+       {
+           &quot;product_id&quot;:&quot;83&quot;,
+           &quot;name&quot;:&quot;Armani Code Sport&quot;,
+           &quot;model&quot;:&quot;GRM004&quot;,
+           &quot;rating&quot;:0,
+           &quot;stars&quot;:&quot;&quot;,
+           &quot;price&quot;:&quot;$37.50&quot;,
+           &quot;options&quot;:[
+               
+           ],
+           &quot;special&quot;:null,
+           &quot;image&quot;:&quot;http:\/\/dev01.algozone.net\/abantecart_branch100\/public_html\/image\/thumbnails\/18\/6b\/azdemoproduct32jpg-100021-38x38.jpg&quot;,
+           &quot;thumb&quot;:&quot;http:\/\/dev01.algozone.net\/abantecart_branch100\/public_html\/image\/thumbnails\/18\/6b\/azdemoproduct32jpg-100021-120x120.jpg&quot;,
+           &quot;cart_add_rt&quot;:&quot;a\/checkout\/cart&quot;
+       },
+       {
+           &quot;product_id&quot;:&quot;84&quot;,
+           &quot;name&quot;:&quot;Armani Code Pour Femme&quot;,
+           &quot;model&quot;:&quot;GRM005&quot;,
+           &quot;rating&quot;:0,
+           &quot;stars&quot;:&quot;&quot;,
+           &quot;price&quot;:&quot;$30.00&quot;,
+           &quot;options&quot;:{
+               &quot;322&quot;:{
+                   &quot;product_option_id&quot;:&quot;322&quot;,
+                   &quot;attribute_id&quot;:&quot;0&quot;,
+                   &quot;group_id&quot;:&quot;0&quot;,
+                   &quot;name&quot;:&quot;Size&quot;,
+                   &quot;option_value&quot;:{
+                       &quot;666&quot;:{
+                           &quot;product_option_value_id&quot;:&quot;666&quot;,
+                           &quot;attribute_value_id&quot;:&quot;0&quot;,
+                           &quot;group_id&quot;:&quot;0&quot;,
+                           &quot;name&quot;:&quot;30 ml&quot;,
+                           &quot;sku&quot;:&quot;&quot;,
+                           &quot;price&quot;:&quot;0.0000&quot;,
+                           &quot;prefix&quot;:&quot;$&quot;,
+                           &quot;weight&quot;:&quot;0.00000000&quot;,
+                           &quot;weight_type&quot;:&quot;lbs&quot;
+                       },
+                       &quot;667&quot;:{
+                           &quot;product_option_value_id&quot;:&quot;667&quot;,
+                           &quot;attribute_value_id&quot;:&quot;0&quot;,
+                           &quot;group_id&quot;:&quot;0&quot;,
+                           &quot;name&quot;:&quot;50 ml&quot;,
+                           &quot;sku&quot;:&quot;&quot;,
+                           &quot;price&quot;:&quot;20.0000&quot;,
+                           &quot;prefix&quot;:&quot;$&quot;,
+                           &quot;weight&quot;:&quot;0.00000000&quot;,
+                           &quot;weight_type&quot;:&quot;lbs&quot;
+                       },
+                       &quot;668&quot;:{
+                           &quot;product_option_value_id&quot;:&quot;668&quot;,
+                           &quot;attribute_value_id&quot;:&quot;0&quot;,
+                           &quot;group_id&quot;:&quot;0&quot;,
+                           &quot;name&quot;:&quot;75 ml&quot;,
+                           &quot;sku&quot;:&quot;&quot;,
+                           &quot;price&quot;:&quot;32.0000&quot;,
+                           &quot;prefix&quot;:&quot;$&quot;,
+                           &quot;weight&quot;:&quot;0.00000000&quot;,
+                           &quot;weight_type&quot;:&quot;lbs&quot;
+                       }
+                   },
+                   &quot;sort_order&quot;:&quot;0&quot;,
+                   &quot;element_type&quot;:&quot;S&quot;,
+                   &quot;html_type&quot;:&quot;selectbox&quot;,
+                   &quot;required&quot;:&quot;0&quot;
+               }
+           },
+           &quot;special&quot;:null,
+           &quot;image&quot;:&quot;http:\/\/dev01.algozone.net\/abantecart_branch100\/public_html\/image\/thumbnails\/18\/6b\/azdemoproduct34jpg-100018-38x38.jpg&quot;,
+           &quot;thumb&quot;:&quot;http:\/\/dev01.algozone.net\/abantecart_branch100\/public_html\/image\/thumbnails\/18\/6b\/azdemoproduct34jpg-100018-120x120.jpg&quot;,
+           &quot;cart_add_rt&quot;:&quot;a\/product\/product&quot;
+       }
+   ]
+}
+</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+
+
+
+
+
+
+<h5 class="box-title"><span class="mw-headline" id="Get_Product_Reviews">Get Product Reviews </span></h5>
+
+<p>You can get product reviews by unique product ID.</p>
+
+<p>Route: <b>a/product/product/review</b></p>
+
+<p>Method: <b>GET</b></p>
+
+<!-- Table -->
+<div class="table-responsive">
+<table class="table">
+	<tbody>
+		<tr>
+			<th>Parameter</th>
+			<th>Meaning</th>
+			<th>Notes</th>
+		</tr>
+		<tr>
+			<td>callback</td>
+			<td>A JavaScript function to run when the response is received</td>
+			<td>Optional parameter allows you to specify a JavaScript function to handle query results for pure client-side implementations.
+			<p>Embed the API query in &lt;script&gt; tags. Define the callback function in &lt;script&gt; tags.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>product_id</td>
+			<td>Unique product ID on products table</td>
+			<td>Required parameter</td>
+		</tr>
+		<tr>
+			<td>api_key</td>
+			<td>Unique API key that is set in the control panel</td>
+			<td>This is optional key that can be set to limit unauthorized (accidental) access to your API</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+
+<p>Example request: http://demo.abantecart.com/index.php?rt=a/product/product&amp;product_id=85</p>
+
+<p><b>Example response:</b></p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+{
+   &quot;average&quot;:4,
+   &quot;records&quot;:&quot;1&quot;,
+   &quot;page&quot;:&quot;1&quot;,
+   &quot;total&quot;:1,
+   &quot;rows&quot;:[
+       {
+           &quot;author&quot;:&quot;Stefania V&quot;,
+           &quot;rating&quot;:&quot;4&quot;,
+           &quot;text&quot;:&quot;it works very well moisturing and cleaning and unlike many other healthy shampoos it doesn&#39;t open the hair platelets too far and therefore doesn&#39;t feel so dry and sticky so I can get away without using a conditioner. Great value.&quot;,
+           &quot;date_added&quot;:&quot;07\/09\/2011&quot;
+       }
+   ]
+}
+</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+
+
+
+
+
+
+<h5 class="box-title"><span class="mw-headline" id="Get_Categories">Get Categories </span></h5>
+
+<p>You can get category details and subcategories if available. If category ID or path is provided you will get details for matched category and list (array) of available immediate children.</p>
+
+<p>Route: <b>a/product/category</b></p>
+
+<p>Method: <b>GET</b></p>
+<!-- Table -->
+<div class="table-responsive">
+<table class="table">
+	<tbody>
+		<tr>
+			<th>Parameter</th>
+			<th>Meaning</th>
+			<th>Notes</th>
+		</tr>
+		<tr>
+			<td>callback</td>
+			<td>A JavaScript function to run when the response is received</td>
+			<td>Optional parameter allows you to specify a JavaScript function to handle query results for pure client-side implementations.
+			<p>Embed the API query in &lt;script&gt; tags. Define the callback function in &lt;script&gt; tags.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>category_id</td>
+			<td>Unique category ID on products table</td>
+			<td>Optional parameter. If not provided all root categories are returned</td>
+		</tr>
+		<tr>
+			<td>path</td>
+			<td>list of category IDs from parent to child to represent path to last category.</td>
+			<td>Optional path is separated by &ldquo;_&rdquo;. Example: 36_38</td>
+		</tr>
+		<tr>
+			<td>api_key</td>
+			<td>Unique API key that is set in the control panel</td>
+			<td>This is optional key that can be set to limit unauthorized (accidental) access to your API</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+<p><br />
+Example request: http://demo.abantecart.com/index.php?rt=a/product/category&amp;category_id=36</p>
+
+<p>with key: http://demo.abantecart.com/index.php?rt=a/product/category&amp;category_id=36&amp;api_key=[key_string]</p>
+
+<p><b>Example response:</b></p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+{
+   &quot;category_id&quot;:&quot;36&quot;,
+   &quot;parent_id&quot;:&quot;0&quot;,
+   &quot;sort_order&quot;:&quot;1&quot;,
+   &quot;date_added&quot;:&quot;2011-08-29 10:24:45&quot;,
+   &quot;date_modified&quot;:&quot;2011-08-31 06:29:25&quot;,
+   &quot;status&quot;:&quot;1&quot;,
+   &quot;language_id&quot;:&quot;1&quot;,
+   &quot;name&quot;:&quot;Makeup&quot;,
+   &quot;meta_keywords&quot;:&quot;Makeup&quot;,
+   &quot;meta_description&quot;:&quot;&quot;,
+   &quot;description&quot;:&quot;
+\r\n\tAll your makeup needs,
+    from foundation to eye shadow in hundreds of different assortments and colors.&lt;\/p&gt;\r\n&quot;,
+   &quot;store_id&quot;:&quot;0&quot;,
+   &quot;tumbnail&quot;:&quot;http:\/\/dev01.algozone.net\/abantecart_branch100\/public_html\/image\/thumbnails\/18\/71\/demoproduct04jpg-100124-120x120.jpg&quot;,
+   &quot;total_products&quot;:&quot;7&quot;,
+   &quot;total_subcategories&quot;:&quot;6&quot;,
+   &quot;subcategories&quot;:[
+       {
+           &quot;name&quot;:&quot;Eyes&quot;,
+           &quot;category_id&quot;:&quot;39&quot;,
+           &quot;sort_order&quot;:&quot;0&quot;,
+           &quot;thumb&quot;:&quot;http:\/\/dev01.algozone.net\/abantecart_branch100\/public_html\/image\/thumbnails\/18\/72\/demoproduct47png-100136-120x120.png&quot;
+       },
+       {
+           &quot;name&quot;:&quot;Lips&quot;,
+           &quot;category_id&quot;:&quot;41&quot;,
+           &quot;sort_order&quot;:&quot;0&quot;,
+           &quot;thumb&quot;:&quot;http:\/\/dev01.algozone.net\/abantecart_branch100\/public_html\/image\/thumbnails\/18\/72\/demoproduct083jpg-100134-120x120.jpg&quot;
+       },
+       {
+           &quot;name&quot;:&quot;Nails&quot;,
+           &quot;category_id&quot;:&quot;42&quot;,
+           &quot;sort_order&quot;:&quot;0&quot;,
+           &quot;thumb&quot;:&quot;http:\/\/dev01.algozone.net\/abantecart_branch100\/public_html\/image\/thumbnails\/18\/72\/demoproduct102jpg-100135-120x120.jpg&quot;
+       },
+       {
+           &quot;name&quot;:&quot;Value Sets&quot;,
+           &quot;category_id&quot;:&quot;37&quot;,
+           &quot;sort_order&quot;:&quot;0&quot;,
+           &quot;thumb&quot;:&quot;http:\/\/dev01.algozone.net\/abantecart_branch100\/public_html\/image\/thumbnails\/18\/72\/demoproduct112jpg-100137-120x120.jpg&quot;
+       },
+       {
+           &quot;name&quot;:&quot;Face&quot;,
+           &quot;category_id&quot;:&quot;38&quot;,
+           &quot;sort_order&quot;:&quot;1&quot;,
+           &quot;thumb&quot;:&quot;http:\/\/dev01.algozone.net\/abantecart_branch100\/public_html\/image\/thumbnails\/18\/72\/demoproduct05jpg-100132-120x120.jpg&quot;
+       },
+       {
+           &quot;name&quot;:&quot;Cheeks&quot;,
+           &quot;category_id&quot;:&quot;40&quot;,
+           &quot;sort_order&quot;:&quot;9&quot;,
+           &quot;thumb&quot;:&quot;http:\/\/dev01.algozone.net\/abantecart_branch100\/public_html\/image\/thumbnails\/18\/72\/demoproduct07jpg-100133-120x120.jpg&quot;
+       }
+   ]
+}
+</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+
+
+
+
+
+
+
+
+<h5 class="box-title"><span class="mw-headline" id="Get_Manufacturers">Get Manufacturers </span></h5>
+
+<p>You can get manufacturer details and all manufacturers available. If manufacturer ID is provided you will get details for matched manufacturer and list (array) of available manufacturers if no input is provided.</p>
+
+<p>Route: <b>a/product/manufacturer</b></p>
+
+<p>Method: <b>GET</b></p>
+
+
+
+<!-- Table -->
+<div class="table-responsive">
+<table class="table">
+	<tbody>
+		<tr>
+			<th>Parameter</th>
+			<th>Meaning</th>
+			<th>Notes</th>
+		</tr>
+		<tr>
+			<td>callback</td>
+			<td>A JavaScript function to run when the response is received</td>
+			<td>Optional parameter allows you to specify a JavaScript function to handle query results for pure client-side implementations.
+			<p>Embed the API query in &lt;script&gt; tags. Define the callback function in &lt;script&gt; tags.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>manufacturer_id</td>
+			<td>Unique manufacturer ID</td>
+			<td>Optional parameter. If not provided all manufacturers are returned</td>
+		</tr>
+		<tr>
+			<td>api_key</td>
+			<td>Unique API key that is set in the control panel</td>
+			<td>This is optional key that can be set to limit unauthorized (accidental) access to your API</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+<p>Example request:</p>
+
+<p>http://demo.abantecart.com/index.php?rt=a/product/manufacturer&amp;manufacturer_id=12</p>
+
+<p><b>Example response:</b></p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+	{
+   &quot;manufacturer_id&quot;:&quot;12&quot;,
+   &quot;name&quot;:&quot;Benefit&quot;,
+   &quot;sort_order&quot;:&quot;0&quot;,
+   &quot;store_id&quot;:&quot;0&quot;
+}
+ 	</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+
+
+
+<h5 class="box-title"><span class="mw-headline" id="Get_Products_With_Flexible_Filtering">Get Products With Flexible Filtering </span></h5>
+
+<p>You can get all products assigned to matching category ID, Manufacturer ID, keyword, etc</p>
+						<!-- Note -->
+						<div class="note js-note blue">
+							<span class="note-close js-close">
+								<i class="fa fa-times"></i>
+							</span>
+							<h4 class="note-title"> Note </h4>
+							<p class="note-description"> Filtering is based on jQgrid advanced search concept. You can check more details here: <br>
+							http://www.trirand.com/jqgridwiki/doku.php?id=wiki:advanced_searching
+							</p>
+						</div>
+						<!-- End of Note -->
+
+
+<p><br />
+Route: <b>a/product/filter</b></p>
+
+<p>Method: <b>GET</b></p>
+
+<!-- Table -->
+<div class="table-responsive">
+<table class="table">
+	<tbody>
+		<tr>
+			<th>Parameter</th>
+			<th>Meaning</th>
+			<th>Notes</th>
+		</tr>
+		<tr>
+			<td>callback</td>
+			<td>A JavaScript function to run when the response is received</td>
+			<td>Optional parameter allows you to specify a JavaScript function to handle query results for pure client-side implementations.
+			<p>Embed the API query in &lt;script&gt; tags. Define the callback function in &lt;script&gt; tags.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>-</td>
+			<td>Quit filter parameters</td>
+			<td>-</td>
+		</tr>
+		<tr>
+			<td>category_id</td>
+			<td>Unique category ID</td>
+			<td>Optional parameter</td>
+		</tr>
+		<tr>
+			<td>manufacturer_id</td>
+			<td>Unique manufacturer ID</td>
+			<td>Optional parameter.</td>
+		</tr>
+		<tr>
+			<td>keyword</td>
+			<td>Keyword text to be searched in product name, mode or SKU</td>
+			<td>space separated words to be searched</td>
+		</tr>
+		<tr>
+			<td>match</td>
+			<td>Identify type of match for keyword based search. Allowed values: any, all or exact
+			<p><b>any</b> - result will contain any of the matched keywords separated by space <b>all</b> - all keywords must be present in the result <b>exact</b> - will do matching of whole keyword.</p>
+			</td>
+			<td>match works only in combination with keyword
+			<p>Default is exact match</p>
+			</td>
+		</tr>
+		<tr>
+			<td>pfrom and pto</td>
+			<td>search for price range from pfrom to pto price</td>
+			<td>Only starting pfrom or finishing price range pto can be specified.</td>
+		</tr>
+		<tr>
+			<td>-</td>
+			<td>Advanced filter parameters</td>
+			<td>-</td>
+		</tr>
+		<tr>
+			<td>page</td>
+			<td>Show specific page for the result</td>
+			<td>in combination with rows</td>
+		</tr>
+		<tr>
+			<td>rows</td>
+			<td>Number or results in one page set</td>
+			<td>default 10</td>
+		</tr>
+		<tr>
+			<td>sidx</td>
+			<td>Data result to use for sorting (Sort Index)
+			<p>Sorting is possible by name, model, price and sort_order</p>
+			</td>
+			<td>Default sorting is done by sort_order data column.</td>
+		</tr>
+		<tr>
+			<td>sord</td>
+			<td>Sorting order direction. Possible values DESC descending and ASC ascending</td>
+			<td>Default ASC sorting order</td>
+		</tr>
+		<tr>
+			<td>_search</td>
+			<td>Parameter to identify that advanced search is performed with JSON based filter string.</td>
+			<td>Possible values true or false</td>
+		</tr>
+		<tr>
+			<td>filters</td>
+			<td>JSON based string with set of parameters to perform advanced search and filtering.</td>
+			<td>This filter string is based on advanced jGgrid searching. See below</td>
+		</tr>
+		<tr>
+			<td>api_key</td>
+			<td>Unique API key that is set in the control panel</td>
+			<td>This is optional key that can be set to limit unauthorized (accidental) access to your API</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+<p><br />
+<i>Notes:</i> - One of following search parameters is required category_id, manufacturer_id or keyword</p>
+
+<p>- Advanced jqGrid based search and filtering: Please refer to page below for more details on advanced filter construction http://www.trirand.com/jqgridwiki/doku.php?id=wiki:advanced_searching</p>
+
+<p><br />
+Example requests:</p>
+
+<p>Extract products in category ID 36</p>
+
+<p>http://demo.abantecart.com/index.php?rt=a/product/filter&amp;category_id=36</p>
+
+<p><br />
+Extract product for manufacturer with ID 14</p>
+
+<p>http://demo.abantecart.com/index.php?rt=a/product/filter&amp;manufacturer_id=14</p>
+
+<p><br />
+Search for product with keyword ab and sort by price.</p>
+
+<p>http://demo.abantecart.com/index.php?rt=a/product/filter&amp;keyword=ab&amp;page=1&amp;rows=10&amp;sidx=price&amp;sord=ACS</p>
+
+<p><br />
+Search for product name only with ab as part of the name</p>
+
+<p>http://demo.abantecart.com/index.php?rt=a/product/filter&amp;keyword=a&amp;page=1&amp;rows=10&amp;sidx=price&amp;sord=ACS&amp;_search=true&amp;filters={&quot;groupOp&quot;:&quot;AND&quot;,&quot;rules&quot;:[{&quot;field&quot;:&quot;name&quot;,&quot;op&quot;:&quot;cn&quot;,&quot;data&quot;:&quot;ab&quot;}]}</p>
+
 	
 	
 </div>
