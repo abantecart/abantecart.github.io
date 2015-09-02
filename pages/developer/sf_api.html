@@ -114,7 +114,7 @@ How To Test API.</p>
 	
 	
 	
-	<h4 id="Catalog_API" class="box-title"><span class="mw-headline" id="Catalog_API">Catalog API </span></h4>
+	<h4 id="Catalog_API" class="box-title">Catalog API</h4>
 
 <p class="box-description">
 Catalog side API provides GET or POST interface to get information about categories, products, manufacturers (brands) and other information related to the products set up in AbanteCart.</p>
@@ -904,5 +904,807 @@ Search for product name only with ab as part of the name
 <br /> http://demo.abantecart.com/index.php?rt=a/product/filter&amp;keyword=a&amp;page=1&amp;rows=10&amp;sidx=price&amp;sord=ACS&amp;_search=true&amp;filters={&quot;groupOp&quot;:&quot;AND&quot;,&quot;rules&quot;:[{&quot;field&quot;:&quot;name&quot;,&quot;op&quot;:&quot;cn&quot;,&quot;data&quot;:&quot;ab&quot;}]}</p>
 
 	
+	
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="category-info helper">
+	
+	
+	
+	
+	<h4 id="Customer_API" class="box-title">Customer API</h4>
+	
+	<p class="box-description">This is a section of API to provide access to registration, customer login and account access. It is highly recommended to use HTTPS to access this part of API.</p>
+
+<p class="box-description">Customer Login or authentication confirmation</p>
+
+<p class="box-description">This API request needs to be done every time customer request to login to get access to customer account or just to confirm that current authentication is still valid and not expired.</p>
+
+<p class="box-description">Route: <b>a/account/login</b></p>
+
+<p class="box-description">Method: <b>POST</b></p>
+
+<!-- Table -->
+<div class="table-responsive">
+<table class="table">
+	<tbody>
+		<tr>
+			<th>Parameter</th>
+			<th>Meaning</th>
+			<th>Notes</th>
+		</tr>
+		<tr>
+			<td>callback</td>
+			<td>A JavaScript function to run when the response is received</td>
+			<td>Optional parameter allows you to specify a JavaScript function to handle query results for pure client-side implementations.
+			<p class="box-description">Embed the API query in &lt;script&gt; tags. Define the callback function in &lt;script&gt; tags.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>email</td>
+			<td>email address as account user name</td>
+			<td>required in case of initial login</td>
+		</tr>
+		<tr>
+			<td>password</td>
+			<td>customer&rsquo;s password</td>
+			<td>required in case of initial login</td>
+		</tr>
+		<tr>
+			<td>token</td>
+			<td>Access token ID. This token is provided by the system after successful initial authentication</td>
+			<td>required to confirm established authentication</td>
+		</tr>
+		<tr>
+			<td>api_key</td>
+			<td>Unique API key that is set in the control panel</td>
+			<td>This is optional key that can be set to limit unauthorized (accidental) access to your API</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+<p class="box-description">Example logon request:<br>POST: rt=a/account/login , email=test@test.com , password=123456789</p>
+
+<p class="box-description"><b>Example response:</b> Success:</p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+{&quot;status&quot;:1,&quot;success&quot;:&quot;Logged in&quot;,&quot;token&quot;:&quot;58fb1592f0c59b8dc1d5541aebdff8da&quot;}
+</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+<p class="box-description"><b>Example response:</b> Fail:</p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+{&quot;status&quot;:0,&quot;error&quot;:&quot;Login attempt failed!&quot;}
+</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+<p class="box-description">Example authentication check request:</p>
+
+<p class="box-description">POST: rt=a/account/login , token=58fb1592f0c59b8dc1d5541aebdff8da</p>
+
+<p class="box-description"><b>Example response:</b></p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+{
+   &quot;status&quot;:1,
+   &quot;request&quot;:&quot;authorized&quot;
+}</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+
+
+
+
+
+
+<h5 class="box-title"><span class="mw-headline" id="Account_Logout">Account Logout </span></h5>
+
+<p class="box-description">Simple log out request. Token needs to be disregarded from future use.</p>
+
+<p class="box-description">Route: <b>a/account/logout</b></p>
+
+<p class="box-description">Method: <b>POST</b></p>
+
+<p class="box-description">&nbsp;</p>
+
+<!-- Table -->
+<div class="table-responsive">
+<table class="table">
+	<tbody>
+		<tr>
+			<th>Parameter</th>
+			<th>Meaning</th>
+			<th>Notes</th>
+		</tr>
+		<tr>
+			<td>callback</td>
+			<td>A JavaScript function to run when the response is received</td>
+			<td>Optional parameter allows you to specify a JavaScript function to handle query results for pure client-side implementations.
+			<p class="box-description">Embed the API query in &lt;script&gt; tags. Define the callback function in &lt;script&gt; tags.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>token</td>
+			<td>Access token ID. This token is provided by the system after successful initial authentication</td>
+			<td>required</td>
+		</tr>
+		<tr>
+			<td>api_key</td>
+			<td>Unique API key that is set in the control panel</td>
+			<td>This is optional key that can be set to limit unauthorized (accidental) access to your API</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+<p class="box-description">Example request:<br>POST: rt=a/account/logout , token=58fb1592f0c59b8dc1d5541aebdff8da</p>
+
+<p class="box-description"><b>Example response:</b></p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+{
+   &quot;status&quot;:1,
+   &quot;success&quot;:&quot;Logged out&quot;
+}
+</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+	
+
+
+
+
+
+
+
+<h5 class="box-title"><span class="mw-headline" id="Customer_Account_Details">Customer Account Details </span></h5>
+
+<p class="box-description">Get basic customer Details.</p>
+
+<p class="box-description">Route: <b>a/account/account</b></p>
+
+<p class="box-description">Method: <b>POST</b></p>
+
+
+<!-- Table -->
+<div class="table-responsive">
+<table class="table">
+	<tbody>
+		<tr>
+			<th>Parameter</th>
+			<th>Meaning</th>
+			<th>Notes</th>
+		</tr>
+		<tr>
+			<td>callback</td>
+			<td>A JavaScript function to run when the response is received</td>
+			<td>Optional parameter allows you to specify a JavaScript function to handle query results for pure client-side implementations.
+			<p class="box-description">Embed the API query in &lt;script&gt; tags. Define the callback function in &lt;script&gt; tags.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>token</td>
+			<td>Access token ID. This token is provided by the system after successful initial authentication</td>
+			<td>required</td>
+		</tr>
+		<tr>
+			<td>api_key</td>
+			<td>Unique API key that is set in the control panel</td>
+			<td>This is optional key that can be set to limit unauthorized (accidental) access to your API</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+<p class="box-description">Example request:<br>POST: rt=a/account/account , token=58fb1592f0c59b8dc1d5541aebdff8da</p>
+
+<p class="box-description"><b>Example response:</b></p>
+
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+{
+   &quot;title&quot;:&quot;My Account&quot;,
+   &quot;customer_id&quot;:&quot;14&quot;,
+   &quot;firstname&quot;:&quot;Joe&quot;,
+   &quot;lastname&quot;:&quot;Doe&quot;,
+   &quot;email&quot;:&quot;test@test.com&quot;,
+   &quot;information&quot;:&quot;a\/account\/edit&quot;,
+   &quot;history&quot;:&quot;a\/account\/history&quot;,
+   &quot;newsletter&quot;:&quot;a\/account\/logout&quot;
+}</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->	
+
+
+
+
+
+
+
+<h5 class="box-title"><span class="mw-headline" id="Customer_Account_History">Customer Account History </span></h5>
+
+<p class="box-description">Get customer order history.</p>
+
+<p class="box-description">Route: <b>a/account/history</b></p>
+
+<p class="box-description">Method: <b>POST</b></p>
+
+<!-- Table -->
+<div class="table-responsive">
+<table class="table">
+	<tbody>
+		<tr>
+			<th>Parameter</th>
+			<th>Meaning</th>
+			<th>Notes</th>
+		</tr>
+		<tr>
+			<td>callback</td>
+			<td>A JavaScript function to run when the response is received</td>
+			<td>Optional parameter allows you to specify a JavaScript function to handle query results for pure client-side implementations.
+			<p class="box-description">Embed the API query in &lt;script&gt; tags. Define the callback function in &lt;script&gt; tags.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>token</td>
+			<td>Access token ID. This token is provided by the system after successful initial authentication</td>
+			<td>required</td>
+		</tr>
+		<tr>
+			<td>api_key</td>
+			<td>Unique API key that is set in the control panel</td>
+			<td>This is optional key that can be set to limit unauthorized (accidental) access to your API</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+<p class="box-description">Example request:<br>
+POST: rt=a/account/history , token=58fb1592f0c59b8dc1d5541aebdff8da </p>
+<p class="box-description">Example response:</p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+{
+   &quot;orders&quot;:[
+       
+   ],
+   &quot;total_orders&quot;:0
+}
+</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+<h5 class="box-title"><span class="mw-headline" id="Edit_Customer_Account_Details">Edit Customer Account Details </span></h5>
+
+<p class="box-description">There are 2 steps to edit and save customer details. First step is to get all required fields and existing data. Second step is to provide data to be updated.</p>
+
+<p class="box-description">Route: <b>a/account/edit</b></p>
+
+<p class="box-description">Method: <b>GET</b></p>
+
+<p class="box-description">Get all required and optional fields, values and error messages (if any)</p>
+
+
+<!-- Table -->
+<div class="table-responsive">
+<table class="table">
+	<tbody>
+		<tr>
+			<th>Parameter</th>
+			<th>Meaning</th>
+			<th>Notes</th>
+		</tr>
+		<tr>
+			<td>callback</td>
+			<td>A JavaScript function to run when the response is received</td>
+			<td>Optional parameter allows you to specify a JavaScript function to handle query results for pure client-side implementations.
+			<p class="box-description">Embed the API query in &lt;script&gt; tags. Define the callback function in &lt;script&gt; tags.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>token</td>
+			<td>Access token ID. This token is provided by the system after successful initial authentication</td>
+			<td>required</td>
+		</tr>
+		<tr>
+			<td>api_key</td>
+			<td>Unique API key that is set in the control panel</td>
+			<td>This is optional key that can be set to limit unauthorized (accidental) access to your API</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+<p class="box-description">Example request:<br>GET: rt=a/account/edit&amp;token=2f7f30e3efeb0d73744680ac7c0c11e6</p>
+
+<p class="box-description"><b>Example response:</b></p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+{
+   &quot;fields&quot;:{
+       &quot;firstname&quot;:{
+           &quot;type&quot;:&quot;input&quot;,
+           &quot;name&quot;:&quot;firstname&quot;,
+           &quot;value&quot;:&quot;First Name&quot;,
+           &quot;required&quot;:true,
+           &quot;error&quot;:null
+       },
+       &quot;lastname&quot;:{
+           &quot;type&quot;:&quot;input&quot;,
+           &quot;name&quot;:&quot;lastname&quot;,
+           &quot;value&quot;:&quot;Last Name&quot;,
+           &quot;required&quot;:true,
+           &quot;error&quot;:null
+       },
+       &quot;email&quot;:{
+           &quot;type&quot;:&quot;input&quot;,
+           &quot;name&quot;:&quot;email&quot;,
+           &quot;value&quot;:&quot;test@test.com&quot;,
+           &quot;required&quot;:true,
+           &quot;error&quot;:null
+       },
+       &quot;telephone&quot;:{
+           &quot;type&quot;:&quot;input&quot;,
+           &quot;name&quot;:&quot;telephone&quot;,
+           &quot;value&quot;:&quot;435435435&quot;,
+           &quot;required&quot;:true,
+           &quot;error&quot;:null
+       },
+       &quot;fax&quot;:{
+           &quot;type&quot;:&quot;input&quot;,
+           &quot;name&quot;:&quot;fax&quot;,
+           &quot;value&quot;:&quot;434543543&quot;,
+           &quot;required&quot;:false
+       },
+       &quot;newsletter&quot;:{
+           &quot;type&quot;:&quot;selectbox&quot;,
+           &quot;name&quot;:&quot;newsletter&quot;,
+           &quot;value&quot;:&quot;1&quot;,
+           &quot;required&quot;:false
+       }
+   }
+}</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+
+<p class="box-description">Method: <b>POST</b></p>
+
+<p class="box-description">Update customer information</p>
+
+<!-- Table -->
+<div class="table-responsive">
+<table class="table">
+	<tbody>
+		<tr>
+			<th>Parameter</th>
+			<th>Meaning</th>
+			<th>Notes</th>
+		</tr>
+		<tr>
+			<td>callback</td>
+			<td>A JavaScript function to run when the response is received</td>
+			<td>Optional parameter allows you to specify a JavaScript function to handle query results for pure client-side implementations.
+			<p class="box-description">Embed the API query in &lt;script&gt; tags. Define the callback function in &lt;script&gt; tags.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>token</td>
+			<td>Access token ID. This token is provided by the system after successful initial authentication</td>
+			<td>required</td>
+		</tr>
+		<tr>
+			<td>firstname</td>
+			<td>Customer&rsquo;s first name</td>
+			<td>32 characters limit</td>
+		</tr>
+		<tr>
+			<td>lastname</td>
+			<td>Customer&rsquo;s lastname</td>
+			<td>32 characters limit</td>
+		</tr>
+		<tr>
+			<td>email</td>
+			<td>Customer&rsquo;s email address</td>
+			<td>96 characters limit</td>
+		</tr>
+		<tr>
+			<td>telephone</td>
+			<td>Customer&rsquo;s telephone number</td>
+			<td>32 characters limit</td>
+		</tr>
+		<tr>
+			<td>fax</td>
+			<td>Customer&rsquo;s fax number</td>
+			<td>32 characters limit</td>
+		</tr>
+		<tr>
+			<td>newsletter</td>
+			<td>Selection to receive a newsletter</td>
+			<td>values: 1 to receive and 0 to skip</td>
+		</tr>
+		<tr>
+			<td>Any other</td>
+			<td>There are other parameters possible to be loaded (from extensions)</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>api_key</td>
+			<td>Unique API key that is set in the control panel</td>
+			<td>This is optional key that can be set to limit unauthorized (accidental) access to your API</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+<p class="box-description"><br />
+Example request:<br> POST: firstname=First+Name , lastname=Last+Name , email=test@test.com , telephone=435435435 , fax=434543543 , rt=a/account/edit , token=2f7f30e3efeb0d73744680ac7c0c11e6</p>
+
+<p class="box-description"><b>Example response:</b></p>
+
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+{
+   &quot;status&quot;: 1,
+   &quot;text_message&quot;:&quot;Success&quot;
+}</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+
+
+
+
+
+
+<h5 class="box-title"><span class="mw-headline" id="Customer_Registration">Customer Registration </span></h5>
+
+<p class="box-description">There are 2 steps to register new customer and save customer details. First step is to get all required fields and provided earlier data (in case of error). Second step is to provide data to be validated and saved.</p>
+
+<p class="box-description">Route: <b>a/account/create</b></p>
+
+<p class="box-description">Method: <b>GET</b></p>
+
+<p class="box-description">Get all required and optional fields, values and error messages (if any)</p>
+
+
+<!-- Table -->
+<div class="table-responsive">
+<table class="table">
+
+	<tbody>
+		<tr>
+			<th>Parameter</th>
+			<th>Meaning</th>
+			<th>Notes</th>
+		</tr>
+		<tr>
+			<td>callback</td>
+			<td>A JavaScript function to run when the response is received</td>
+			<td>Optional parameter allows you to specify a JavaScript function to handle query results for pure client-side implementations.
+			<p class="box-description">Embed the API query in &lt;script&gt; tags. Define the callback function in &lt;script&gt; tags.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>token</td>
+			<td>Access token ID. This token is provided by the system after successful initial authentication</td>
+			<td>required</td>
+		</tr>
+		<tr>
+			<td>api_key</td>
+			<td>Unique API key that is set in the control panel</td>
+			<td>This is optional key that can be set to limit unauthorized (accidental) access to your API</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+<p class="box-description">Example request:<br>GET: rt=a/account/create&amp;token=2f7f30e3efeb0d73744680ac7c0c11e6</p>
+
+<p class="box-description"><b>Example response:</b></p>
+
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+{
+   &quot;fields&quot;:{
+       &quot;firstname&quot;:{
+           &quot;type&quot;:&quot;input&quot;,
+           &quot;name&quot;:&quot;firstname&quot;,
+           &quot;value&quot;:null,
+           &quot;required&quot;:true,
+           &quot;error&quot;:null
+       },
+       &quot;lastname&quot;:{
+           &quot;type&quot;:&quot;input&quot;,
+           &quot;name&quot;:&quot;lastname&quot;,
+           &quot;value&quot;:null,
+           &quot;required&quot;:true,
+           &quot;error&quot;:null
+       },
+       &quot;email&quot;:{
+           &quot;type&quot;:&quot;input&quot;,
+           &quot;name&quot;:&quot;email&quot;,
+           &quot;value&quot;:null,
+           &quot;required&quot;:true,
+           &quot;error&quot;:null
+       },
+       &quot;telephone&quot;:{
+           &quot;type&quot;:&quot;input&quot;,
+           &quot;name&quot;:&quot;telephone&quot;,
+           &quot;value&quot;:null,
+           &quot;required&quot;:true,
+           &quot;error&quot;:null
+       },
+       &quot;fax&quot;:{
+           &quot;type&quot;:&quot;input&quot;,
+           &quot;name&quot;:&quot;fax&quot;,
+           &quot;value&quot;:null,
+           &quot;required&quot;:false
+       },
+       &quot;company&quot;:{
+           &quot;type&quot;:&quot;input&quot;,
+           &quot;name&quot;:&quot;company&quot;,
+           &quot;value&quot;:null,
+           &quot;required&quot;:false
+       },
+       &quot;address_1&quot;:{
+           &quot;type&quot;:&quot;input&quot;,
+           &quot;name&quot;:&quot;address_1&quot;,
+           &quot;value&quot;:null,
+           &quot;required&quot;:true,
+           &quot;error&quot;:null
+       },
+       &quot;address_2&quot;:{
+           &quot;type&quot;:&quot;input&quot;,
+           &quot;name&quot;:&quot;address_2&quot;,
+           &quot;value&quot;:null,
+           &quot;required&quot;:false
+       },
+       &quot;city&quot;:{
+           &quot;type&quot;:&quot;input&quot;,
+           &quot;name&quot;:&quot;city&quot;,
+           &quot;value&quot;:null,
+           &quot;required&quot;:true,
+           &quot;error&quot;:null
+       },
+       &quot;postcode&quot;:{
+           &quot;type&quot;:&quot;input&quot;,
+           &quot;name&quot;:&quot;postcode&quot;,
+           &quot;value&quot;:null,
+           &quot;required&quot;:false
+       },
+       &quot;country_id&quot;:{
+           &quot;type&quot;:&quot;selectbox&quot;,
+           &quot;name&quot;:&quot;country_id&quot;,
+           &quot;options&quot;:{
+               &quot;FALSE&quot;:&quot; --- Please Select --- &quot;,
+               &quot;1&quot;:&quot;Afghanistan&quot;,
+               &quot;2&quot;:&quot;Albania&quot;,
+        …
+           },
+           &quot;value&quot;:&quot;223&quot;,
+           &quot;required&quot;:true,
+           &quot;error&quot;:null
+       },
+       &quot;zone_id&quot;:{
+           &quot;type&quot;:&quot;selectbox&quot;,
+           &quot;name&quot;:&quot;zone_id&quot;,
+           &quot;required&quot;:true,
+           &quot;value&quot;:null,
+           &quot;error&quot;:null
+       },
+       &quot;password&quot;:{
+           &quot;type&quot;:&quot;password&quot;,
+           &quot;name&quot;:&quot;password&quot;,
+           &quot;value&quot;:null,
+           &quot;required&quot;:true,
+           &quot;error&quot;:null
+       },
+       &quot;confirm&quot;:{
+           &quot;type&quot;:&quot;password&quot;,
+           &quot;name&quot;:&quot;confirm&quot;,
+           &quot;value&quot;:null,
+           &quot;required&quot;:true,
+           &quot;error&quot;:null
+       },
+       &quot;newsletter&quot;:{
+           &quot;type&quot;:&quot;radio&quot;,
+           &quot;name&quot;:&quot;newsletter&quot;,
+           &quot;value&quot;:-1,
+           &quot;options&quot;:{
+               &quot;1&quot;:&quot;Yes&quot;,
+               &quot;0&quot;:&quot;No&quot;
+           }
+       },
+       &quot;agree&quot;:{
+           &quot;type&quot;:&quot;checkbox&quot;,
+           &quot;name&quot;:&quot;agree&quot;,
+           &quot;value&quot;:1,
+           &quot;checked&quot;:null
+       }
+   },
+   &quot;text_agree&quot;:&quot;I have read and agree to the Privacy Policy&lt;\/b&gt;&lt;\/a&gt;&quot;
+}
+</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+<p class="box-description">Method: <b>POST</b></p>
+
+<p class="box-description">Validate and save new customer information</p>
+
+<!-- Table -->
+<div class="table-responsive">
+<table class="table">
+	<tbody>
+		<tr>
+			<th>Parameter</th>
+			<th>Meaning</th>
+			<th>Notes</th>
+		</tr>
+		<tr>
+			<td>callback</td>
+			<td>A JavaScript function to run when the response is received</td>
+			<td>Optional parameter allows you to specify a JavaScript function to handle query results for pure client-side implementations.
+			<p class="box-description">Embed the API query in &lt;script&gt; tags. Define the callback function in &lt;script&gt; tags.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>token</td>
+			<td>Access token ID. This token is provided by the system after successful initial authentication</td>
+			<td>required</td>
+		</tr>
+		<tr>
+			<td>firstname</td>
+			<td>Customer&rsquo;s first name</td>
+			<td>32 characters limit</td>
+		</tr>
+		<tr>
+			<td>lastname</td>
+			<td>Customer&rsquo;s lastname</td>
+			<td>32 characters limit</td>
+		</tr>
+		<tr>
+			<td>email</td>
+			<td>Customer&rsquo;s email address</td>
+			<td>96 characters limit</td>
+		</tr>
+		<tr>
+			<td>telephone</td>
+			<td>Customer&rsquo;s telephone number</td>
+			<td>32 characters limit</td>
+		</tr>
+		<tr>
+			<td>fax</td>
+			<td>Customer&rsquo;s fax number</td>
+			<td>32 characters limit</td>
+		</tr>
+		<tr>
+			<td>company</td>
+			<td>Company name (optional)</td>
+			<td>32 characters limit</td>
+		</tr>
+		<tr>
+			<td>address_1</td>
+			<td>Street Address</td>
+			<td>128 characters limit</td>
+		</tr>
+		<tr>
+			<td>address_2</td>
+			<td>Apartment #, Suite #, etc part of address</td>
+			<td>128 characters limit</td>
+		</tr>
+		<tr>
+			<td>postcode</td>
+			<td>Zip code or Postal code</td>
+			<td>10 characters limit</td>
+		</tr>
+		<tr>
+			<td>city</td>
+			<td>City or town name</td>
+			<td>128 characters limit</td>
+		</tr>
+		<tr>
+			<td>country_id</td>
+			<td>ID of the country based on provided list of countries</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>zone_id</td>
+			<td>ID for the local zone within a country. This is usually a state or region</td>
+			<td>This ID can be received with separate request based on selected country ID</td>
+		</tr>
+		<tr>
+			<td>password</td>
+			<td>Password to access login to the account</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>confirm</td>
+			<td>Confirmation with the same password as in password field</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>agree</td>
+			<td>This is a confirmation that user agrees to the site user agreement</td>
+			<td>This is configured in the admin and can be possibly enabled or disabled. Values: 1 agree or 0 decline</td>
+		</tr>
+		<tr>
+			<td>newsletter</td>
+			<td>Selection to receive a newsletter</td>
+			<td>values: 1 to receive and 0 to skip</td>
+		</tr>
+		<tr>
+			<td>Any other</td>
+			<td>There are other parameters possible to be loaded (from extensions)</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>api_key</td>
+			<td>Unique API key that is set in the control panel</td>
+			<td>This is optional key that can be set to limit unauthorized (accidental) access to your API</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+<p class="box-description">Example request:<br>POST: firstname=First+Name , lastname=Last+Name , email=test@test.com , telephone=435435435 , fax=434543543 , &hellip; rt=a/account/create , token=2f7f30e3efeb0d73744680ac7c0c11e6</p>
+
+<p class="box-description"><b>Example response:</b></p>
+
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+{
+   &quot;status&quot;: 1,
+   &quot;text_message&quot;:&quot;Success&quot;
+}</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+
 	
 </div>
