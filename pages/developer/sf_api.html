@@ -96,18 +96,26 @@ How To Test API.</p>
 
 
 <div class="category-info helper">
-	<h4 id="Requests" class="box-title">Requests, Parameters and Responses. </h4>
+	<h3 id="Requests" class="box-title">Requests, Parameters and Responses. </h3>
 	
 	
 	
-	<h3 id="Catalog_API" class="box-title"><span class="mw-headline" id="Catalog_API">Catalog API </span></h3>
+	<h4 id="Catalog_API" class="box-title"><span class="mw-headline" id="Catalog_API">Catalog API </span></h4>
 
 <p class="box-description">
 Catalog side API provides GET or POST interface to get information about categories, products, manufacturers (brands) and other information related to the products set up in AbanteCart.</p>
 
 <p>Any request can contain GET language parameter. This will switch response data to new language. Example: language=es.</p>
+						<!-- Note -->
+						<div class="note js-note blue">
+							<span class="note-close js-close">
+								<i class="fa fa-times"></i>
+							</span>
+							<h4 class="note-title"> Note </h4>
+							<p class="note-description"> language parameter needs to be passed only one time. It is stored in the session for all next requests. </p>
+						</div>
+						<!-- End of Note -->
 
-<p><i>NOTE: language parameter needs to be passed only one time. It is stored in the session for all next requests.</i></p>
 
 <h5><span class="mw-headline" id="Get_Single_Product">Get Single Product </span></h5>
 
