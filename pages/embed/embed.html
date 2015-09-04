@@ -32,7 +32,8 @@ tags: [
 
 <div>
 <a class="anchorlink" href="#Example-Embed-Products">Example 1: Embed products</a><br />
- <a class="anchorlink" href="#Example-Embed-Links">Example 2: Embed store's links</a> <br /> 
+<a class="anchorlink" href="#Example-Embed-Links">Example 2: Embed store's links</a> <br /> 
+<a class="anchorlink" href="#Example-Embed-Cart-Link">Example 3: Embed shopping cart link</a> <br /> 
 </div>
 <br />
 <a name="Example-Embed-Products" class="anchor"></a>
@@ -82,11 +83,11 @@ By default product preview and checkout process in modal popup window. You can m
 						</div>
 						<!-- End of Caregory Info -->
 						<!-- Note -->
-						<div class="note js-note blue">
+						<div class="note js-note green">
 							<span class="note-close js-close">
 								<i class="fa fa-times"></i>
 							</span>
-							<h4 class="note-title"> Note </h4>
+							<h4 class="note-title"> Info </h4>
 							<p class="note-description"> You can embed links only if you have embedded product or category on same page! </p>
 						</div>
 						<!-- End of Note -->
@@ -112,3 +113,50 @@ By default product preview and checkout process in modal popup window. You can m
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+<a name="Example-Embed-Cart-Link" class="anchor"></a>
+						<!-- Category Info -->
+						<div class="category-info ">
+							<h3 class="category-title">This guide show how to embed shopping cart link</h3>
+							<h4 class="category-description"></h4>
+							<p class="box-description">
+							</p>
+						</div>
+						<!-- End of Caregory Info -->
+						<!-- Note -->
+						<div class="note js-note green">
+							<span class="note-close js-close">
+								<i class="fa fa-times"></i>
+							</span>
+							<h4 class="note-title"> Info </h4>
+							<p class="note-description"> You can embed links only if you have embedded product or category on same page! </p>
+						</div>
+						<!-- End of Note -->
+
+
+<h4 class="category-description">Step 1</h4>
+<p class="box-description">Copy shopping cart page URL your need to embed</p>
+<pre>http://demo.abantecart.com/index.php?rt=checkout/cart</pre>
+<h4 class="category-description">Step 2</h4>
+<p class="box-description">Modify URL in this way <strong>http://demo.abantecart.com/index.php?rt=r/checkout/cart/embed</strong> and  add special tags</p>
+
+
+
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+&lt;a data-href=&quot;http://demo.abantecart.com/index.php?rt=r/checkout/cart/embed&quot;  data-html=&quot;true&quot; data-target=&quot;#abc_embed_modal&quot; <br> data-toggle=&quot;abcmodal&quot; href=&quot;#&quot;&gt;your link title&lt;/a&gt;
+</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
