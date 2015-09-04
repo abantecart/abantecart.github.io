@@ -83,6 +83,8 @@
          url: /pages/catalog/products/relations.html 
        - text: Manage product page layout
          url: /pages/catalog/products/product_layout.html      
+       - text: Manage product inventory
+         url: /pages/catalog/products/inventory.html
     - text: Manage Manufacturers
       level: /pages/catalog/manufacturers/
       icon: '<i class="fa fa-bookmark fa-fw"></i>'
