@@ -355,7 +355,7 @@
        - text: Scheduled Tasks 
          url: /pages/tools/logs/sheduled_tasks.html
     - text: Stock configuration
-      url: /pages/settings/stock_configurations.html
+      url: /pages/catalog/products/inventory.html
     - text: Encryption Data Manager
       url: /pages/settings/encryption_data.html
 - text: Manage Localization
