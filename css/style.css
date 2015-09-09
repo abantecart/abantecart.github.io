@@ -11405,3 +11405,20 @@ textarea.contacts-input {
 .green_text {
   color: #44bb55;
 }
+
+.main_page_search {
+	padding: 20px 0 0 10px;
+}
+.main_page_search form {
+    width:50%; 
+    margin:0 auto;
+}
+.main_page_search .search-input{
+	max-width: 600px;
+}
+.main_page_search a {
+	position: relative;
+	top: -18px;
+	left: 565px;
+	color: #808488;
+}
