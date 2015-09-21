@@ -15,7 +15,18 @@ tags: [
 							<h3 class="category-title">List Mail Settings</h3>
 							<h4 class="category-description">This page can be accessed by going to System > Settings > Mail</h4>
 <p><strong>Mail Protocol:</strong> Only choose 'Mail' unless your host has disabled the php mail function. Each shared hosting companies have own spam or block e-mail rules. If you want to use PHP mail, you need to make sure that your server can send emails and it is configured properly. This can be sendmail, postfix, or anything else that your server is set up with. Please contact with your hosting if mail not work correctly.</p>
-<p class="c12"><strong>Mail Parameters:</strong> When using 'Mail', additional mail parameters can be added here <br />(e.g. "<strong>-f</strong>webmaster<span>@</span>example.com")<br /> The parameters can be used to pass additional flags as command line options to the program configured to be used when sending mail, as defined by the sendmail_path configuration setting. For example, this can be used to set the envelope sender address when using sendmail with the -f sendmail option. <br />-f will set the From address, -r will override the default Return-path that sendmail generates (typically the From address gets used). If you want your bouncebacks to go to a different address than the from address, try using both flags at once: "-f myfromemail@example.com -r mybounceemail@example.com"<br /><em>Note: This setting for experts only and may not work on certain servers.</em></p>
+<p class="c12"><strong>Mail Parameters:</strong> When using 'Mail', additional mail parameters can be added here <br />(e.g. "<strong>-f</strong>webmaster<span>@</span>example.com")<br /> The parameters can be used to pass additional flags as command line options to the program configured to be used when sending mail, as defined by the sendmail_path configuration setting. For example, this can be used to set the envelope sender address when using sendmail with the -f sendmail option. <br />-f will set the From address, -r will override the default Return-path that sendmail generates (typically the From address gets used). If you want your bouncebacks to go to a different address than the from address, try using both flags at once: "-f myfromemail@example.com -r mybounceemail@example.com"</p>
+						<!-- Note -->
+						<div class="note js-note blue">
+							<span class="note-close js-close">
+								<i class="fa fa-times"></i>
+							</span>
+							<h4 class="note-title"> Note </h4>
+							<p class="note-description"> This setting for experts only and may not work on certain servers. </p>
+						</div>
+						<!-- End of Note -->
+
+
 <p class="c12"><strong>Alert Mail:</strong> Send a email to the store owner when a new order is created.</p>
 <p class="c12"><strong>Additional Alert E-Mails:</strong> Any additional emails you want to receive the alert email, in addition to the main store email. (comma separated)</p>
 <p>Once you select Mail Protocol: SMTP the additional smtp settings fields appear:</p>
@@ -26,8 +37,18 @@ tags: [
 <p class="c12"><strong>SMTP Port:</strong> If your host requires you to use SMTP mail, get this from your web host. Default value 25.</p>
 <p class="c12"><strong>SMTP Timeout:</strong> If your host requires you to use SMTP mail, get this from your web host. Default value 5.</p>
 </div>
-<p><em>Note: Shared hosting companies usually limit the amount of SMTP e-mails you can send.</em></p>
-<p class="c12"><em>Example of gmail SMTP settings:</em></p>
+						<!-- Note -->
+						<div class="note js-note blue">
+							<span class="note-close js-close">
+								<i class="fa fa-times"></i>
+							</span>
+							<h4 class="note-title"> Note </h4>
+							<p class="note-description"> Shared hosting companies usually limit the amount of SMTP e-mails you can send. </p>
+						</div>
+						<!-- End of Note -->
+						
+						
+<h4 class="note-title">Example of gmail SMTP settings:</h4>
 <p>Mail Protocol – SMTP</p>
 <p>SMTP Host - ssl://smtp.gmail.com</p>
 <p>SMTP Username - your username (aka username if your email is username@gmail.com)</p>
