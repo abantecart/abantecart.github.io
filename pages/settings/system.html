@@ -3,20 +3,35 @@ layout: default
 title: System Settings
 description: Settings to control system behaviour, security and SEO, errors and debug
 redirect_from: "/tag/system.html"
+tags: [
+    ['details', 'Details Settings'],
+    ['general', 'General Settings'],
+    ['mail', 'Mail Settings'],
+]
 ---
 
+
+						<!-- Category Info -->
+						<div class="category-info ">
+							<h3 class="category-title">List System Settings</h3>
+							<h4 class="category-description">This page can be accessed by going to System > Settings > System</h4>
 <p><strong>Control Panel Session Expiration:</strong> This value controls time interval in minutes before you will be asked to login again due to no activity. There is also related to PHP session expiration time configured on the server.</p>
 <p><strong>Maintenance Mode:</strong> Prevents customers from browsing your store. They will instead see a maintenance message. If logged in as admin, you will see the store as normal.</p>
 <p><strong>Voice Control:</strong> Enable admin voice control to activate voice commands feature. Currently only supported in Chrome browser version 25 or later.</p>
 <p><strong>Encryption Key:</strong> Please provide a secret key that will be used to encrypt private information when processing orders.</p>
 <p><strong>Use SEO URLs:</strong> To use SEO URL's Apache module mod-rewrite must be installed and you need to rename the htaccess.txt file to <strong>.htaccess<br /> </strong> Search Engine Friendly URLs allows you to activate categories and product's SEO Keyword setting. For each product and category you can assign seo keyword visible in url. This will better describe a product's page to visitors and search engines.</p>
-<div class="padding">
-<p><strong> mod_rewrite</strong> is something that is installed on your server by your web host. You need to ask your host (or look in their help guide) to find out if you have it.<br>
-<em>Note: If you access store with sub-folder like http://www.mydomain/subfolder make sure to change <strong>RewriteBase /</strong> to <strong>RewriteBase /subfolder/</strong> in the .htaccess file.</em></p>
-</div>
 
+<p><strong> mod_rewrite</strong> is something that is installed on your server by your web host. You need to ask your host (or look in their help guide) to find out if you have it.<br>
+</p>
 <p><strong>Generate high-res (retina) images:</strong> Easy serve high-resolution images to devices with retina displays. To use this apache module <em>mod-rewrite</em> must be installed and you need to rename the .htaccess.txt to .htaccess  After enabling please clear the AbanteCart images <a class="crosslink" href="ecommerce-documentation/user-manual/admin-user-manual/system/cache" target="_blank">cache</a>.<br>
-<em>Note: If you access store with sub-folder like http://www.mydomain/subfolder/ make sure to change <strong>RewriteBase /</strong> to <strong>RewriteBase /subfolder/</strong> in the .htaccess file</em> </p>
+						<!-- Note -->
+						<div class="note js-note red">
+							
+							<h4 class="note-title"> Note </h4>
+							<p class="note-description"> If you access store with sub-folder like http://www.mydomain/subfolder/ make sure to change <strong>RewriteBase /</strong> to <strong>RewriteBase /subfolder/</strong> in the .htaccess file </p>
+						</div>
+						<!-- End of Note -->
+
 <p><strong>Output Compression Level:</strong> GZIP for more efficient transfer to requesting clients. Compression level must be between 0 - 9.</p>
 <p><strong>Cache enabled:</strong> Please be careful when disable <a class="crosslink" href="ecommerce-documentation/user-manual/admin-user-manual/system/cache" target="_blank">caching</a>. Cached pages will not be re-created until at least this much time has elapsed.</p>
 <p><strong>Resource Library Upload Max File Size, kB:</strong> File size Limit for uploaded files. Please note some servers have PHP configuration to limit upload size. <span style="text-decoration: underline;">Check with your hosting provider</span> or change manually php.ini or .htaccess file settings like post_max_size, upload_max_filesize.</p>
@@ -29,3 +44,4 @@ redirect_from: "/tag/system.html"
 <p>*<strong>Error Log Filename:</strong> Default is error.txt.</p>
 <p><strong>System Check:</strong> Recommended is ON. Enable this setting if you want to check your system condition in respect to AbanteCart functionlaity. System issues effecting AbanteCart will be reported as messages visible in admin.</p>
 <p>After you have made your changes, select the save button</p>
+</div>
