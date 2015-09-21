@@ -44,19 +44,26 @@ redirect_from: "/tag/stores.html"
 <img src="/img/other/abantecart-multistore-cpanel1.png" border="0" width="501" />
 <p>Create a subdomain</p>
 <img src="/img/other/abantecart-multistore-cpanel2.png" border="0" width="736" />
-<p>Note: very important - Document Root value should be same with main domain!!! If you have AbanteCart installed in some folder for example /public_html/somefolder/mycartfolder/ subdomain Root should be the same. Also a lot of other problems here not AbanteCart related:<br />• some hosting provider limit or don't allow subdomains<br />• if you are using a content delivery network you should edit A record in DNS zone editor manually and/or modify additional settings</p>
+						<!-- Note -->
+						<div class="note js-note blue">
+							<span class="note-close js-close">
+								<i class="fa fa-times"></i>
+							</span>
+							<h4 class="note-title"> Note </h4>
+							<p class="note-description">   Very important - Document Root value should be same with main domain!!! If you have AbanteCart installed in some folder for example /public_html/somefolder/mycartfolder/ subdomain Root should be the same.  </p>
+						</div>
+						<!-- End of Note -->
+						<p> Also a lot of other problems here not AbanteCart related:<br />• some hosting provider limit or don't allow subdomains<br />• if you are using a content delivery network you should edit A record in DNS zone editor manually and/or modify additional settings</p>
 <p> </p>
 
-
-
-
-<p>Anyway a lot of beginners have issues here because:<br /> • Due to DNS propagation, the subdomain can take up to 24 hours and more to start working</p>
+<p>Anyway a lot of beginners have issues with this step because:<br /> 
+• Due to DNS propagation, the subdomain can take up to 24 hours and more to start working</p>
 <p>• make sure to link the subdomain to the path where the default store was installed to</p>
 <p>• make sure there is no redirection setup for new subdomain/domain</p>
 <p>• usually user may need to clear browser cache and DNS cache on local computer to resolve new or reconfigured domains/subdomains</p>
 <p>• also possible some settings in .htacess file or file permissions issue prevent correct work </p>
 <p>Please contact with your hosting service provider to make sure your domain/subdomain configured correctly</p>
-
+<p> </p>
 
 
 
@@ -69,7 +76,8 @@ redirect_from: "/tag/stores.html"
 <p><a class="jcepopup" href="/img/other/multistore1.png"><img src="/img/other/multistore1.png" border="0" width="400" /></a>
 </p>
 <p>fill in the at least following fields:</p>
-<p><strong>Store Name:</strong></p>
+<p><strong>Status:</strong> Turn it On to enable store.</p>
+<p><strong>Store Name:</strong> The name of your store or business.</p>
 <p><strong>Store URL:</strong> Include the full URL to your store. Make sure to add '/' at the end. Example: http://www.second.yourdomain.com/store/</p>
 <p>
 <a class="jcepopup" href="/img/other/multistore2.png"><img src="/img/other/multistore2.png" border="0" width="400" /></a></p>
