@@ -11,12 +11,14 @@ tags: [
 ---
 
 
-<div><a class="anchorlink" href="#Example 1: update">Example 1: Update products</a><br /> <a class="anchorlink" href="#Example 2: insert">Example 2: Insert Products</a> <br /> <a class="anchorlink" href="#Example 3: insert">Example 3: Insert Products with Images</a></div>
+<div><a class="anchorlink" href="#Example1:update">Example 1: Update products</a><br />
+<a class="anchorlink" href="#Example2:insert">Example 2: Insert Products</a> <br />
+<a class="anchorlink" href="#Example3:insert">Example 3: Insert Products with Images</a></div>
 <p class="heading_gray">Import</p>
 <p>You able to import data into your AbanteCart store using '.xml' or '.csv' files. Please select correct CSV delimiter. Also You can run import in Test Mode to prevent any unexpected results.</p>
 <p><em>Note: If you import data with table auto-increment index columns provided (example: product_id), default auto action will be </em><strong>update</strong>.<em> In case, new inserts required with auto-increment columns values, action </em><strong>insert</strong><em> needs to be specified </em>manually<em>.</em></p>
 <p><em> For example in XML file, you need to add </em> <strong>&lt;action&gt;insert&lt;/action&gt;</strong> <em>for each table or new column in CSV file.<br /></em></p>
-<a name="Example 1: update"></a>
+<a name="Example1:update"></a>
 <p class="heading_gray">Example 1: Update products</p>
 <p>In this example we will show how to easily update your exiting products.</p>
 <p><strong>First export it.</strong> Go to <em>System-&gt;Data-&gt;Import/Export</em>. In the <em>Export</em> Tab find <em>Products</em>, click to expand table and select only <em>product_descriptions</em> table.</p>
@@ -57,8 +59,9 @@ tags: [
 <p>After processing the message will be shown. Normally <em>0 errors</em> should be displayed.</p>
 <p>Update complete.</p>
 <img src="/img/other/abantecart-import-exampleone-5.png" border="0" alt="" />
-<p> </p>
-<a name="Example 2: insert"></a>
+<p></p>
+
+<a name="Example2:insert"></a>
 <p class="heading_gray">Example 2: Insert products</p>
 <p>Before insert a lot of new products just create sample product in Admin&gt;Catalog-&gt;Products and configure it.</p>
 <p>Then export to CSV file. Make sure to select needed tables like:</p>
@@ -84,8 +87,11 @@ tags: [
 <p>After processing the message will be shown. Normally <em>0 errors</em> should be displayed.</p>
 <img src="/img/other/abantecart-import-exampleone-8.png" border="0" alt="" />
 <p>Insert complete. See CSV (TAB delimeted) examples for insert :<br /> categories <a href="/img/other/categories-insert-example-tab.csv" target="_blank" title="CSV file">here</a><br /> manufacturers <a href="/img/other/manufacturers-insert-example-tab.csv" target="_blank" title="CSV file">here</a><br /> products <a href="/img/other/products-insert-example-tab.csv" target="_blank" title="CSV file">here</a>.</p>
-<p> </p>
-<a name="Example 3: insert"></a>
+<p></p>
+
+
+
+<a name="Example3:insert"></a>
 <p class="heading_gray">Example 3: Insert products with Images</p>
 <p>1 upload images by ftp to this path ../resources/image/somefolder/</p>
 <p>2. update permission for this folder to 777 (or 755)</p>
