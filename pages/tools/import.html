@@ -212,18 +212,53 @@ Some of fields are required for a successful import, yet nearly almost all field
 
 
 
-
+                            <p></p>
                             <a name="csv"></a>
                             <div class="category-info ">
 							<h3 class="category-title">CSV file format</h3>
 							<h4 class="category-description">  </h4>
 							</div>
-							<p>
+							<div class="step-content">
 							   <ul>
 							   <li>The first row must include column headers and the column headers must match those given in the documentation.</li>
 							   <li>Values must be separated by a delimiter, which is expected to be a tab, comma “,” by default, though this can be set during the import process to any other character, so long as you are consistent within your file.</li>
 							   <li>Each imported item (Products, Category) belongs on its own row</li>
-							   <li>Some CSV file editor like Microsoft Office may automaticly change price or date fields format and broke your file.</li>
+							   <li>Some CSV file editor like MS Excel may automaticly change price or date fields format and broke your file.</li>
 							   </ul>
-							    
-							</p>
+							   </div>
+							   
+							   
+							   
+							   
+							   
+							   
+							   
+							   
+							   
+							   
+							   
+							   
+                            <p></p>
+                            <a name="trouble"></a>
+                            <div class="category-info ">
+							<h3 class="category-title">Troubleshooting</h3>
+							<h4 class="category-description">  </h4>
+							</div>
+							<!-- Steps -->
+						<ul class="steps">
+							<li class="step">
+								<span class="step-number">1</span>
+								<h4 class="step-title">Allowed memory size of xxx bytes exhausted</h4>
+								<div class="step-content"> Your server may not have enough memory to perform the import. </div>
+							</li>
+							<li class="step">
+								<span class="step-number">2</span>
+								<h4 class="step-title">Import is timing out</h4>
+								<div class="step-content"> increase the <strong>max_execution_time</strong>.  its not possible for you to increase the <strong>max_execution_time</strong> you can either break your CSVs into multiple parts and import each separately</div>
+							</li>
+							<li class="step">
+								<span class="step-number">3</span>
+								<h4 class="step-title">Special / foreign characters imported not properly</h4>
+								<div class="step-content"> The file you are importing must be properly encoded as UTF-8.</div>
+							</li>
+						</ul>
