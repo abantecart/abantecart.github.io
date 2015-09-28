@@ -10,6 +10,16 @@ tags: [
 
 ---
 
+                            <div class="category-info ">
+							<h3 class="category-title">Data Import</h3>
+							<h4 class="category-description"> System > Data > Import </h4>
+							</div>
+
+
+
+
+
+
 
 <div><a class="anchorlink" href="#Example1:update">Example 1: Update products</a><br />
 <a class="anchorlink" href="#Example2:insert">Example 2: Insert Products</a> <br />
@@ -18,9 +28,16 @@ tags: [
 <p>You able to import data into your AbanteCart store using '.xml' or '.csv' files. Please select correct CSV delimiter. Also You can run import in Test Mode to prevent any unexpected results.</p>
 <p><em>Note: If you import data with table auto-increment index columns provided (example: product_id), default auto action will be </em><strong>update</strong>.<em> In case, new inserts required with auto-increment columns values, action </em><strong>insert</strong><em> needs to be specified </em>manually<em>.</em></p>
 <p><em> For example in XML file, you need to add </em> <strong>&lt;action&gt;insert&lt;/action&gt;</strong> <em>for each table or new column in CSV file.<br /></em></p>
-<a name="Example1:update"></a>
-<p class="heading_gray">Example 1: Update products</p>
-<p>In this example we will show how to easily update your exiting products.</p>
+
+
+
+
+                            <a name="Example1:update"></a>
+                            <div class="category-info ">
+							<h3 class="category-title">Example 1: Update products</h3>
+							<h4 class="category-description"> In this example we will show how to easily update your exiting products. </h4>
+							</div>
+
 <p><strong>First export it.</strong> Go to <em>System-&gt;Data-&gt;Import/Export</em>. In the <em>Export</em> Tab find <em>Products</em>, click to expand table and select only <em>product_descriptions</em> table.</p>
 <a class="jcepopup" href="/img/other/export2.png"><img src="/img/other/export2.png" border="0" alt="" width="500" /></a><br />
 <p>In the bottom of the page select this export options:</p>
@@ -61,38 +78,58 @@ tags: [
 <img src="/img/other/abantecart-import-exampleone-5.png" border="0" alt="" />
 <p></p>
 
-<a name="Example2:insert"></a>
-<p class="heading_gray">Example 2: Insert products</p>
-<p>Before insert a lot of new products just create sample product in Admin&gt;Catalog-&gt;Products and configure it.</p>
+
+
+
+
+
+
+
+
+
+                            <a name="Example2:insert"></a>
+                            <div class="category-info ">
+							<h3 class="category-title">Example 2: Insert products</h3>
+							<h4 class="category-description"> </h4>
+							</div>
+
+
+<p>Before insert a lot of new products just create sample product in Admin > Catalog > Products and configure it.</p>
 <p>Then export to CSV file. Make sure to select needed tables like:</p>
-<div class="padding">
+
 <p>product_descriptions</p>
 <p>products_to_categories</p>
 <p>products_to_stores</p>
 <p>or any others tables which one contain needed data for configured sample product.</p>
-</div>
-<p> </p>
+
+
 <p>Then open exported CSV file in CSV editor like OpenOffice Calc, Microsoft Excel etc. Be sure to open file with correct CSV delimiter.</p>
 <p>Copy row with sample product to make sure new product will be configured in the same way.</p>
 <p>To <em>insert</em> new products using import tool you need to add new column named <em><strong>action</strong></em> in the exported file. See example for CSV file.</p>
 <a class="jcepopup" href="/img/other/abantecart-import-exampleone-7.png"><img src="/img/other/abantecart-import-exampleone-7.png" border="0" alt="" width="600" /></a><br />
 <p>Make sure to:</p>
-<div class="padding">
+
 <p>leave empty <strong>products.product_id</strong></p>
 <p>type <strong>insert</strong> in the <strong>action</strong> column</p>
 <p>and fill others columns like in exiting sample product.</p>
-</div>
+
 <p><strong>Then Import file</strong>. Go to <em>System-&gt;Data-&gt;Import/Export</em>. In the <em>Import</em> Tab select correct <em>File to import</em> and correct <em>CSV/TXT delimiter</em>. Click <em>Import</em> button.</p>
 <a class="jcepopup" href="/img/other/export4.png"><img src="/img/other/export4.png" border="0" alt="" width="500" /></a>
 <p>After processing the message will be shown. Normally <em>0 errors</em> should be displayed.</p>
 <img src="/img/other/abantecart-import-exampleone-8.png" border="0" alt="" />
 <p>Insert complete. See CSV (TAB delimeted) examples for insert :<br /> categories <a href="/img/other/categories-insert-example-tab.csv" target="_blank" title="CSV file">here</a><br /> manufacturers <a href="/img/other/manufacturers-insert-example-tab.csv" target="_blank" title="CSV file">here</a><br /> products <a href="/img/other/products-insert-example-tab.csv" target="_blank" title="CSV file">here</a>.</p>
-<p></p>
 
 
 
-<a name="Example3:insert"></a>
-<p class="heading_gray">Example 3: Insert products with Images</p>
+
+
+                            <a name="Example3:insert"></a>
+                            <div class="category-info ">
+							<h3 class="category-title">Example 3: Insert products with Images</h3>
+							<h4 class="category-description"> </h4>
+							</div>
+
+
 <p>1 upload images by ftp to this path ../resources/image/somefolder/</p>
 <p>2. update permission for this folder to 777 (or 755)</p>
 <p>3. change/add this columns in your csv file</p>
