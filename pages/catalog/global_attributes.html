@@ -8,37 +8,80 @@ tags: [
     ['product_files', 'Product Files'], 
 ]
 ---
-If most of your products have the same product option, you can define this option here. You will need to define the product option only once and then you will be able to add it to any product in one click (without necessity to add option variants to each product one by one).
-<div>
+
+						<!-- Category Info -->
+						<div class="category-info ">
+							<h3 class="category-title">Global Product Options or Attributes</h3>
+							<h4 class="category-description">
+							Managed from Catalog > Global attributes.</h4>
+						</div>
+						<!-- End of Caregory Info -->
+
+<p>
+If most of your products have the same product option, you can define this option here. You will need to define the product option only once and then you will be able to add it to any product in one click (without necessity to add option variants to each product one by one).</p>
+
 <h4 class="heading_gray"><a name="Global Attributes list"></a>Global Attributes list</h4>
 <p><a class="jcepopup" href="/img/other/catalog-attributes-grid.png"><img src="/img/other/catalog-attributes-grid.png" border="0" width="550" /></a>
 </p>
 <ul>
 <li>Global Attributes patterns created on this page will be available to add to products on the Administration-&gt;Catalog-&gt;Products-&gt;<a class="crosslink" href="/pages/catalog/products/attributes.html" target="_blank">Options Tab</a></li>
-</ul>
-<ul>
+
 <li>Download Attributes created on this page will be available to add to products downloads on the Administration-&gt;Catalog-&gt;Products-&gt;<a class="crosslink" href="/pages/catalog/products/files.html" target="_blank">Files Tab</a> and when create/edit Shared Downloads on the Administration-&gt;Catalog-&gt;<a class="crosslink" href="/pages/catalog/global_downloads.html" target="_blank">Downloads</a></li>
-</ul>
-<ul>
+
 <li>To add a new Global Attribute click the + button</li>
 </ul>
-<div class="padding">
+
 <p><strong>Global Attribute Status:</strong> MUST be "ON" for product to appear in your store.</p>
 <p><strong>Name:</strong> The Global Attribute's name as it will appear in the front-end.</p>
 <p><strong>Attribute Parent:</strong> Here you can set the Attribute you are currently adding to be a parent of another Global Attribute</p>
-<p>Note: If this is a parent attribute with children attributes, it can only be of type SelectBox, MultiSelect Box, Checkbox and Checkbox group. Children values combination will be shown as one set.</p>
+						<!-- Note -->
+						<div class="note js-note blue">
+							<span class="note-close js-close">
+								<i class="fa fa-times"></i>
+							</span>
+							<h4 class="note-title"> Note </h4>
+							<p class="note-description"> If this is a parent attribute with children attributes, it can only be of type SelectBox, MultiSelect Box, Checkbox and Checkbox group. Children values combination will be shown as one set </p>
+						</div>
+						<!-- End of Note -->
+
+
 <p><strong>Element Type:</strong> Select the Element Type. The following types available:</p>
 <div class="padding"><em>input</em> - a single-line text input field. Can be used if you need some short text from customer for example cup-prints with custom names, Logos or anything else.<br /><img src="/img/other/abantecart-attribute-input.png" border="0" width="266px;" /><br /> <em>textarea</em> - a multi-line text input control can hold an unlimited number of characters. Similar to input useful for products like Wrapped Canvas.<br /> <em>selectbox</em> - a drop-down list with options. Example colors, sizes, paper types... etc<br /><img src="/img/other/abantecart-attribute-selectbox.png" border="0" width="294px;" /><br /> <em>multiselectbox</em> - list that allows multiple selections. Use it if you sell products that come in different sizes, colours or flavors. For example 2 tone color prints or food ingredients.<br /><img src="/img/other/abantecart-attribute-multiselect.png" border="0" width="254px;" /><br /> <em>radio</em> - represents a selection of one item from a list of items (a radio button). Similar to selectbox but displayed in other format - all option values visible. For example "Format: Blu-ray/DVD". You able to set default value.<br /><img src="/img/other/abantecart-attribute-radio.png" border="0" width="227px;" /><br /> <em>checkbox</em> - represents a state or option that can be toggled. For example "gift wrapping: Yes"<br /><img src="/img/other/abantecart-attributecheckbox.png" border="0" width="227px;" /><br /> <em>checkboxgroup</em> - a multi checkbox set, allowing a user to select multiple options. Similar to multiselectbox. Use it if you sell products that come in different sizes, colours or flavors.<br /><img src="/img/other/abantecart-attributecheckboxgroup.png" border="0" width="222px;" /><br /> <em>hidden</em> - Defines a hidden input field (a value that is not intended to be examined or manipulated by customer)<br /> <em>file</em> (File uploads can be added to attributes) - Defines a file-select field and a "Browse..." button (for file uploads). For example customer can send custom design or some docs attached to the ordered product.</div>
-<p>Note: Some of the Element Types have additional settings displayed after you choose proper element type.</p>
-</div>
+						<!-- Note -->
+						<div class="note js-note blue">
+							<span class="note-close js-close">
+								<i class="fa fa-times"></i>
+							</span>
+							<h4 class="note-title"> Note </h4>
+							<p class="note-description"> Few Element Types have additional settings displayed after you choose proper element type. </p>
+						</div>
+						<!-- End of Note -->
+						
+
+
 <p><strong>Sort Order:</strong> Sort Order set's the order of which the Global Attribute will be displayed amongst others.</p>
 <p><strong>Required:</strong> Select if You want to make Global Attribute required by default</p>
 <p><strong>Regular Expression Pattern for Validation of Values:</strong> is a sequence of characters that forms a pattern, mainly for use in pattern matching. Programming knowledge required!</p>
 <p><strong>Error Message of invalid Value:</strong> message text shown when attribute value does not meet Regular Expression Pattern</p>
 <p>After you have made your changes, select the SAVE button</p>
-</div>
 
-<h4 class="heading_gray"><a class="anchor" name="ParentChildAttributes"> </a>Example for parent/child attributes: Create attribute <strong>Color&amp;size</strong>.</h4>
+
+
+
+
+
+
+
+
+						<a class="anchor" name="ParentChildAttributes"> </a>
+						<!-- Category Info -->
+						<div class="category-info ">
+							<h3 class="category-title">Example for parent/child attributes</h3>
+							<h4 class="category-description">
+							Create attribute <strong>Color&amp;size</strong>.</h4>
+						</div>
+						<!-- End of Caregory Info -->
+
 <p>First create main attribute <em>Color&amp;Size</em> without any values. Element type: - selectbox.</p>
 <p>Then create new child attribute <em>Size</em>. Set Attribute Parent: <em>Color&amp;Size</em>. Element type: - selectbox. Here you need add option values like <em>XS, S, L</em>...</p>
 <p>Then create new child attribute <em>Color</em>. Set Attribute Parent: <em>Color&amp;Size</em>. Here you need add option values like <em>white, black, red</em>..etc. Element type: - selectbox.</p>
