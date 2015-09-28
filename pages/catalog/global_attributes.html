@@ -46,7 +46,7 @@ If most of your products have the same product option, you can define this optio
 
 
 <p><strong>Element Type:</strong> Select the Element Type. The following types available:</p>
-<div class="padding"><em>input</em> - a single-line text input field. Can be used if you need some short text from customer for example cup-prints with custom names, Logos or anything else.<br /><img src="/img/other/abantecart-attribute-input.png" border="0" width="266px;" /><br /> <em>textarea</em> - a multi-line text input control can hold an unlimited number of characters. Similar to input useful for products like Wrapped Canvas.<br /> <em>selectbox</em> - a drop-down list with options. Example colors, sizes, paper types... etc<br /><img src="/img/other/abantecart-attribute-selectbox.png" border="0" width="294px;" /><br /> <em>multiselectbox</em> - list that allows multiple selections. Use it if you sell products that come in different sizes, colours or flavors. For example 2 tone color prints or food ingredients.<br /><img src="/img/other/abantecart-attribute-multiselect.png" border="0" width="254px;" /><br /> <em>radio</em> - represents a selection of one item from a list of items (a radio button). Similar to selectbox but displayed in other format - all option values visible. For example "Format: Blu-ray/DVD". You able to set default value.<br /><img src="/img/other/abantecart-attribute-radio.png" border="0" width="227px;" /><br /> <em>checkbox</em> - represents a state or option that can be toggled. For example "gift wrapping: Yes"<br /><img src="/img/other/abantecart-attributecheckbox.png" border="0" width="227px;" /><br /> <em>checkboxgroup</em> - a multi checkbox set, allowing a user to select multiple options. Similar to multiselectbox. Use it if you sell products that come in different sizes, colours or flavors.<br /><img src="/img/other/abantecart-attributecheckboxgroup.png" border="0" width="222px;" /><br /> <em>hidden</em> - Defines a hidden input field (a value that is not intended to be examined or manipulated by customer)<br /> <em>file</em> (File uploads can be added to attributes) - Defines a file-select field and a "Browse..." button (for file uploads). For example customer can send custom design or some docs attached to the ordered product.</div>
+<p><em>input</em> - a single-line text input field. Can be used if you need some short text from customer for example cup-prints with custom names, Logos or anything else.<br /><img src="/img/other/abantecart-attribute-input.png" border="0" width="266px;" /><br /> <em>textarea</em> - a multi-line text input control can hold an unlimited number of characters. Similar to input useful for products like Wrapped Canvas.<br /> <em>selectbox</em> - a drop-down list with options. Example colors, sizes, paper types... etc<br /><img src="/img/other/abantecart-attribute-selectbox.png" border="0" width="294px;" /><br /> <em>multiselectbox</em> - list that allows multiple selections. Use it if you sell products that come in different sizes, colours or flavors. For example 2 tone color prints or food ingredients.<br /><img src="/img/other/abantecart-attribute-multiselect.png" border="0" width="254px;" /><br /> <em>radio</em> - represents a selection of one item from a list of items (a radio button). Similar to selectbox but displayed in other format - all option values visible. For example "Format: Blu-ray/DVD". You able to set default value.<br /><img src="/img/other/abantecart-attribute-radio.png" border="0" width="227px;" /><br /> <em>checkbox</em> - represents a state or option that can be toggled. For example "gift wrapping: Yes"<br /><img src="/img/other/abantecart-attributecheckbox.png" border="0" width="227px;" /><br /> <em>checkboxgroup</em> - a multi checkbox set, allowing a user to select multiple options. Similar to multiselectbox. Use it if you sell products that come in different sizes, colours or flavors.<br /><img src="/img/other/abantecart-attributecheckboxgroup.png" border="0" width="222px;" /><br /> <em>hidden</em> - Defines a hidden input field (a value that is not intended to be examined or manipulated by customer)<br /> <em>file</em> (File uploads can be added to attributes) - Defines a file-select field and a "Browse..." button (for file uploads). For example customer can send custom design or some docs attached to the ordered product.</p>
 						<!-- Note -->
 						<div class="note js-note blue">
 							<span class="note-close js-close">
@@ -81,11 +81,37 @@ If most of your products have the same product option, you can define this optio
 							Create attribute <strong>Color&amp;size</strong>.</h4>
 						</div>
 						<!-- End of Caregory Info -->
+						<!-- Steps -->
+						<ul class="steps">
+							<li class="step">
+								<span class="step-number">1</span>
+								<h4 class="step-title">Create parent attribute</h4>
+								<div class="step-content"> Create main attribute <em>Color&amp;Size</em> without any values. Element type: - selectbox. </div>
+							</li>
+							<li class="step">
+								<span class="step-number">2</span>
+								<h4 class="step-title">Then create new child attribute <em>Size</em>. Set Attribute Parent: <em>Color&amp;Size</em>.</h4>
+								<div class="step-content"> Element type: - selectbox. Here you need add option values like <em>XS, S, L</em>... </div>
+							</li>
+							<li class="step">
+								<span class="step-number">3</span>
+								<h4 class="step-title">Then create new child attribute <em>Color</em>. Set Attribute Parent: <em>Color&amp;Size</em>.</h4>
+								<div class="step-content"> Here you need add option values like <em>white, black, red</em>..etc. Element type: - selectbox. </div>
+							</li>
+							<li class="step">
+								<span class="step-number">4</span>
+								<h4 class="step-title">Add Option to Product</h4>
+								<div class="step-content"> Now if you go to product edit page click to add new <em>Color&amp;Size</em> global attribute to editable product. </div>
+							</li>
+							<li class="step">
+								<span class="step-number">5</span>
+								<h4 class="step-title">Add Option's values to Product</h4>
+								<div class="step-content"> Then add option value like <em>black:XS black:S white:L white:XS red:S red:L </em>or any other combination of product you have to sell. <br>
+								<a class="jcepopup" href="/img/other/catalog-attributes-parent.png"><img src="/img/other/catalog-attributes-parent.png" border="0" width="400" /></a>
+								</div>
+							</li>
+						</ul>
 
-<p>First create main attribute <em>Color&amp;Size</em> without any values. Element type: - selectbox.</p>
-<p>Then create new child attribute <em>Size</em>. Set Attribute Parent: <em>Color&amp;Size</em>. Element type: - selectbox. Here you need add option values like <em>XS, S, L</em>...</p>
-<p>Then create new child attribute <em>Color</em>. Set Attribute Parent: <em>Color&amp;Size</em>. Here you need add option values like <em>white, black, red</em>..etc. Element type: - selectbox.</p>
-<p>Now if you go to product edit page click to add new <em>Color&amp;Size</em> global attribute to editable product.</p>
-<p>Then add option value like <em>black:XS black:S white:L white:XS red:S red:L </em>or any other combination of product you have to sell.<em></em></p>
-<p><a class="jcepopup" href="/img/other/catalog-attributes-parent.png"><img src="/img/other/catalog-attributes-parent.png" border="0" width="400" /></a>
+<p>
 </p>
+
