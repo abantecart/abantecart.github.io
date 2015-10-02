@@ -47,7 +47,7 @@ Both causes regulated by <a href="http://php.net/manual/en/ini.core.php#ini.memo
 
 
 
-
+<br><br>
 
 
 
@@ -62,14 +62,21 @@ Both causes regulated by <a href="http://php.net/manual/en/ini.core.php#ini.memo
 						<!-- Category Info -->
 
 <p>If for any reason built in backup is not working for you, you can use standard way to back up code and database. There are 2 steps in the back up and you need linux shell access:</p>
-<p>
-1. Backup code using  tar and gz command line tools. <br>
-cd /your_webdirectory<br>
-tar -cvpz backup.tar.gz *<br>
-<br>
-2. Create database export <br>
-mysqldump -u database_username -p[password] database_name --opt > filename.sql<br>
-</p>
+<!-- Steps -->
+						<ul class="steps">
+							<li class="step">
+								<span class="step-number">1</span>
+								<h4 class="step-title">Backup code using  tar and gz command line tools.</h4>
+								<div class="step-content"> cd /your_webdirectory<br>
+tar -cvpz backup.tar.gz *<br> </div>
+							</li>
+							<li class="step">
+								<span class="step-number">2</span>
+								<h4 class="step-title">Create database export.</h4>
+								<div class="step-content"> mysqldump -u database_username -p[password] database_name --opt > filename.sql</div>
+							</li>
+						</ul>
+<br><br>
 
 
 
@@ -95,8 +102,8 @@ mysqldump -u database_username -p[password] database_name --opt > filename.sql<b
 						</div>
 						<!-- End of Note -->
 						<!-- Category Info -->
-<>You can create a backup of your site quite easily. Account backups can be performed using the cPanel -> Backups functionality for your hosting account.</p>
-<p>Additionally you can use standard way to back up all files and database. There are 2 steps in the back up and you need hosting Cpanel access:</p>
+<p>You can create a backup of your site quite easily. Account backups can be performed using the cPanel -> Backups functionality for your hosting account.</p>
+<p>Additionally you can use standard way to back up all files and database. There are 2 steps in the back up and you need hosting cPanel access:</p>
 
 						<!-- Steps -->
 						<ul class="steps">
