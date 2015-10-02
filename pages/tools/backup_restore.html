@@ -9,28 +9,58 @@ tags: [
 
 ---
 
-<div>
+
 <a class="anchorlink" href="#abantecartbackup">AbanteCart built in backup and restore</a><br>
 <a class="anchorlink" href="#externalbackup">External backup and restore</a><br><br>
+						<!-- Category Info -->
+						<div class="category-info ">
+						<a id="abantecartbackup" class="anchor"></a>
+							<h3 class="category-title">AbanteCart built in Backup and Restore</h3>
+							<h4 class="category-description">System > Data > Backup & Restore</h4>
+							<p>Save or restore a full or partial copy of your store's database to your personal computer</p>
+						</div>
+						<!-- Category Info -->
 
-<h3 class="heading_gray"><a id="abantecartbackup" class="anchor"></a>AbanteCart built in Backup and Restore</h3>
-<p>Save or restore a full or partial copy of your store's database to your personal computer.</p>
-<a class="jcepopup" href="/img/other/backup.png"><img src="/img/other/backup.png"  width="500" /></a>
+
+<p>
+<a class="jcepopup" href="/img/other/backup.png"><img src="/img/other/backup.png"  width="500" /></a></p>
 <p><strong>Backup</strong> - Save a full or partial copy of your store's database to your personal computer in SQL database format.<br /> This does NOT save a copy of your all store files like <em>.php</em> . Partial copy mean that you can backup (and restore it later) only part of your database for example backup only main products info by selecting <em>products, products_description </em>and<em> products_to_category, products_to_store</em> tables and backup Resource Library Files.<br>Starting with version 1.2.0 AbanteCart support the creation of scheduled <a class="crosslink" href="/pages/tools/logs/sheduled_tasks.html">backup</a><br>
-<div class="padding"><em>Note:  backup process execution depends on your AbanteCart data size as well as your server virtual memory size:
+</p>
+						<!-- Note -->
+						<div class="note js-note blue">
+							<h4 class="note-title"> Note </h4>
+							<p class="note-description">  backup process execution depends on your AbanteCart data size as well as your server virtual memory size:
  <br>in most cases that error related to 2 causes:<br>
 1. memory for php is not enough<br>
 2. time for executing php-script exceeds limit<br>
 3. check directory /../admin/system/backup permissions to be set to -rw-rw-rw <br>
 
 Both causes regulated by <a href="http://php.net/manual/en/ini.core.php#ini.memory-limit" target="_blank">php.ini</a> directives but have global server limitations (hosting limitations).
- If you can not to change them we recommended to do full backup of your abantecart in hosting provider CPanel (ask hosting provider support about this, or just do export of whole database from phpmyadmin and copy all files via ftp access) </em>
-</div>
-</p>
+ If you can not to change them we recommended to do full backup of your abantecart in hosting provider CPanel (ask hosting provider support about this, or just do export of whole database from phpmyadmin and copy all files via ftp access) </p>
+						</div>
+						<!-- End of Note -->
+
+
 <p><strong>Restore</strong> - Restore a full or partial copy of your store's database from your local computer. <br /> To restore backup unpack archive file and browse <em>dump.sql</em> file from unarchived \manual_backup_20xx\data\ folder then click GO button. To restore Resource Library Files copy all contents of "code" directory to your AbanteCart directory. You need to override directories and files if your copy process request confirmation.<br />NOTE: All Backup files are located in the Admin-System-Logs-<a class="crosslink" href="/pages/tools/logs/install_history.html">Install/Upgrade History</a> section and saved in <em>.tar.gz</em> archive format. To extract tar.gz file upload it to your PC then open using archive software for example free <em>7-Zip</em> and unpack.</p>
 <p></p>
 
-<h3 class="heading_gray"><a id="externalbackup" class="anchor"></a>External backup and restore</h3>
+
+
+
+
+
+
+
+
+						<!-- Category Info -->
+						<div class="category-info ">
+						<a id="externalbackup" class="anchor"></a>
+							<h3 class="category-title">External backup and restore</h3>
+							<h4 class="category-description"></h4>
+							
+						</div>
+						<!-- Category Info -->
+
 <p>If for any reason built in backup is not working for you, you can use standard way to back up code and database. There are 2 steps in the back up and you need linux shell access:</p>
 <p>
 1. Backup code using  tar and gz command line tools. <br>
@@ -41,4 +71,3 @@ tar -cvpz backup.tar.gz *<br>
 mysqldump -u database_username -p[password] database_name --opt > filename.sql<br>
 </p>
 
-</div>
