@@ -39,12 +39,24 @@ settings - abstract serialized array with additional task settings</li></ul></p>
 
 <p>In cases where the execution of at least one of the listed task steps fails, the task is generally considered a failed. In other words, successfully completed task, this task is complete all the steps successfully.</p>
 
-<p>Running tasks can occur in two ways.
-<ol><li>console launch script task.php (from cron). task.php receive a list of all waiting tasks, then sort all in order and run in the background</li>
-<li>The launch of the UI (meaning immediately start the event, such as clicking a button).</li></ol> In the template admin file public_html / admin / view / default / javascript / general.js there are several js-functions for starting task, opening a modal window and display the start process steps.</p>
+<p>Running tasks can occur in two ways.</p>
+						<!-- Steps -->
+						<ul class="steps">
+							<li class="step">
+								<span class="step-number">1</span>
+								<h4 class="step-title"> </h4>
+								<div class="step-content"> console launch script task.php (from cron). task.php receive a list of all waiting tasks, then sort all in order and run in the background </div>
+							</li>
+							<li class="step">
+								<span class="step-number">2</span>
+								<h4 class="step-title"> </h4>
+								<div class="step-content"> The launch of the UI (meaning immediately start the event, such as clicking a button). </div>
+							</li>
+						</ul>
+<p> In the template admin file public_html / admin / view / default / javascript / general.js there are several js-functions for starting task, opening a modal window and display the start process steps.</p>
 
 <p>Functions hang event on an element with the css-class "<strong>task_run</strong>". Also, this element must be two custom attribute: <strong>data-run-task-url</strong> (url to which js-script gets the job description and all the steps in the json-format to run in a loop)
  and <strong>data-complete-task-url</strong> - URL, which will be forwarded to the browser after successful completion of the task.</p>
 <p>As an example of creating and launching an urgent job, see button.
-admin->data-><a class="crosslink" href="/pages/tools/backup_restore.html">backup</a> -> “backup now”.</p>
-<p>To see examples of the data in the database tables described above, click admin-> data-><a class="crosslink" href="/pages/tools/backup_restore.html">backup</a> -> "schedule backup".</p>
+Admin > Data > <a class="crosslink" href="/pages/tools/backup_restore.html">backup</a> > “Backup now”.</p>
+<p>To see examples of the data in the database tables described above, click Admin > Data > <a class="crosslink" href="/pages/tools/backup_restore.html">Backup</a> > "Schedule backup".</p>
