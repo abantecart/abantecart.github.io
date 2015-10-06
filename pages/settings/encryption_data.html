@@ -16,9 +16,25 @@ tags: [
 						</div>
 						<!-- End of Caregory Info -->
 <p>It is important for eCommerce site to maintain up to date security for data provided buy customers. This is required buy customers, industry and PCI standards.<br /> By enabling AbanteCart data encryption you can secure your customers data from access. Information, such as customer addresses, emails, phone numbers, credit cards, etc. will be encrypted and not readable. Encryption key can be stored securely and prevent access to this data in event of hacking or database attack. 
-<br /><br /> <strong>Requirement:</strong> PHP =&gt; 5.3 and openSSL enabled <br />(Contact your server admin or hosting company)<br />
- NOTE: Do not confuse SSL data encryption with signed SSL certificates (HTTPS) used for browser access to sites
- <br /><br /> <strong>Important! Backup your code and database before you start!<br /> For security keep backup of unencrypted data out of your server!</strong> <br /><br /> 
+<br /><br /> <strong>Requirements:</strong> PHP =&gt; 5.3 and openSSL enabled <br />(Contact your server admin or hosting company)</p>
+						<!-- Note -->
+						<div class="note js-note blue">
+							<span class="note-close js-close">
+								<i class="fa fa-times"></i>
+							</span>
+							<h4 class="note-title"> Note </h4>
+							<p class="note-description"> Do not confuse SSL data encryption with signed SSL certificates (HTTPS) used for browser access to sites
+						</div>
+						<!-- End of Note -->
+						
+						
+						<!-- Note -->
+						<div class="note js-note red note-pulse">
+							<h4 class="note-title"> Important! </h4>
+							<p class="note-description"> Backup your code and database before you start!<br /> For security keep backup of unencrypted data out of your server! </p>
+						</div>
+						<!-- End of Note -->
+
 
 <h4>1. Configuration:</h4>
 Add key storage location path. <br /> Add below lines to /system/config.php file. 
@@ -42,9 +58,22 @@ Customer emails are encrypted now. To prevent login issues and duplicate account
 <br /> Setting is located in <a class="crosslink" href="/pages/settings/checkout.html">Settings -&gt; Checkout section</a> <br /> Existing customers will be asked to create unique login name at next time they login to the account
  <br /><br /> All customers data is secured now! Start testing!
  <br /><br />
-<div class="padding"><strong>NOTES: </strong><br /> 1. Keep Key in secure location with restricted file permissions for root and Apache (webserver)<br /> 3. Backup your keys in some remote secure location. Lost keys will cause loss of all data
-<br /> 3. There is no key expiration management. <br /> 4. Search or look up by encrypted user data will not work (search by address, phone number, etc. will not work)<br /> 5. <strong>Once data in encrypted there is NO undo and extension can not be disabled. </strong> <br /> These needs to be accounted for in key management procedures <br /><br /> 
-</div>
+
+						<!-- Note -->
+						<div class="note js-note blue">
+							<span class="note-close js-close">
+								<i class="fa fa-times"></i>
+							</span>
+							<h4 class="note-title"> Notes </h4>
+							<p class="note-description"> 1. Keep Key in secure location with restricted file permissions for root and Apache (webserver)<br />
+							 2. Backup your keys in some remote secure location. Lost keys will cause loss of all data
+<br /> 
+3. There is no key expiration management. <br />
+ 4. Search or look up by encrypted user data will not work (search by address, phone number, etc. will not work)<br />
+  5. <strong>Once data in encrypted there is NO undo and extension can not be disabled. </strong> <br />
+   These needs to be accounted for in key management procedures
+						</div>
+						<!-- End of Note -->
 
 <h4>5. Rotate (change) encryption key:</h4> 
  - Generate new key pair <br /> - Set new key as default key into configuration file 
