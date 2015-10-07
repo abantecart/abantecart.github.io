@@ -9,16 +9,30 @@ tags: [
 ]
 
 ---
-
-If you are moving AbanteCart to a different domain name, or switching from server pathways to your domain name, then you must update AbanteCart with the new domain name.
-<br>
-<div>
-<a class="anchorlink" href="#MoveDirectory">Move site from a sub-directory</a><br /> 
+						<!-- Category Info -->
+						<div class="category-info ">
+							<h3 class="category-title">Changing Domain Name</h3>
+						
+						</div>
+						<!-- End of Caregory Info -->
+<p>If you are moving AbanteCart to a different domain name, or switching from server pathways to your domain name, then you must update AbanteCart with the new domain name.
+</p>
+<p><a class="anchorlink" href="#MoveDirectory">Move site from a sub-directory</a><br /> 
 <a class="anchorlink" href="#ChangeHosting">Move to another hosting</a><br />
- </div>
-<br>
+</p>
+
+
+
+
+
 <a class="anchor" name="MoveDirectory"></a>
-<h3 class="heading_gray">Move site from a sub-directory</h3>
+						<!-- Category Info -->
+						<div class="category-info ">
+							<h3 class="category-title">Move site from a sub-directory</h3>
+							
+						</div>
+						<!-- End of Caregory Info -->
+
 <p>No need to change configuration file.
 Change <strong>Store URL</strong> setting to have correct URL in Admin->System->Settings-><a class="crosslink" href="/pages/settings/details.html">Details</a>.
 If you put any full paths in any of your <a class="crosslink" href="/pages/design/blocks/search.html">HTML blocks</a> or content you will need to change this.
@@ -27,13 +41,45 @@ Also if you changed .htaccess, you will need to change it</p>
 
 
 
+
+
 <a class="anchor" name="ChangeHosting"></a>
-<h3 class="heading_gray">Move to another hosting</h3>
-<p>
-<em>1. Install new AbanteCart with normal process on the new host (do not load demo data)</em><br>
+						<!-- Category Info -->
+						<div class="category-info ">
+							<h3 class="category-title">Move to another hosting</h3>
+							
+						</div>
+						<!-- End of Caregory Info -->
+
+						<!-- Steps -->
+						<ul class="steps">
+							<li class="step">
+								<span class="step-number">1</span>
+								<h4 class="step-title">Install new AbanteCart</h4>
+								<div class="step-content"> Install new AbanteCart with normal process on the new host (do not load demo data)</em><br>
 NOTE: You need to select the same MySQL database prefix as on your current AbanteCart instance. How do I find the database prefix for my sql database? Log in to the AbanteCart backend, go to System-Data-Backup/Restore section. Another way is using a Database Interface (Requires Access to the Database, e.g. phpMyAdmin for MySQL)
- <a class="jcepopup" href="/img/other/abantecart-database-prefix.png"><img src="/img/other/abantecart-database-prefix.png" border="0" width="350" /></a><br>
-<em>2. On existing AbanteCart instance, do backup of database, code and resource library (do not include config)</em><br>
-<em>3. Download backup in the backup history</em><br>
-<em>4. Load backup to newly installed AbanteCart.</em> To unpack a tar.gz file (A tarball 'tar.gz file' is nothing but compressed tar archive) extract backup.tar.gz then extract backup.tar<br>
-<em>5. You will need to replace salt key from your original installation into new configuration file.</em> It is in system/config.php </p>
+ <a class="jcepopup" href="/img/other/abantecart-database-prefix.png"><img src="/img/other/abantecart-database-prefix.png" border="0" width="350" /></a></div>
+							</li>
+							<li class="step">
+								<span class="step-number">2</span>
+								<h4 class="step-title">Backup AbanteCart</h4>
+								<div class="step-content"> On existing AbanteCart instance, do backup of database, code and resource library (do not include config)</div>
+							</li>
+							<li class="step">
+								<span class="step-number">3</span>
+								<h4 class="step-title">Download backup</h4>
+								<div class="step-content"> Download backup in the backup history</div>
+							</li>
+							<li class="step">
+								<span class="step-number">4</span>
+								<h4 class="step-title">Load backup to newly installed AbanteCart.</h4>
+								<div class="step-content"> To unpack a tar.gz file (A tarball 'tar.gz file' is nothing but compressed tar archive) extract backup.tar.gz then extract backup.tar</div>
+							</li>
+							<li class="step">
+								<span class="step-number">5</span>
+								<h4 class="step-title">Replace salt key</h4>
+								<div class="step-content"> You will need to replace salt key from your original installation into new configuration file. It is in system/config.php file</div>
+							</li>
+						</ul>
+
+
