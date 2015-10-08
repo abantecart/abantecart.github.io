@@ -1,33 +1,27 @@
 ---
 layout: default
-title: Developing Extensions
-description: Developing Extensions and Extension API
+title: Advanced Extension Development
+description: More advanced topics for extension development
 tags: [
-    ['architecture', 'AbanteCart Architecture']
+    ['architecture', 'AbanteCart Architecture'],
+    ['extension_dev', 'Extension Developer Guide']
 ]
 redirect_from: "/tag/developing_extensions_and_extension_api.html"
 ---
 
 
 <div class="category-info helper pt40">
-	<h3 class="category-title">Developing Extensions and Extension API</h3>
+	<h3 class="category-title">Advanced Extension Development Topics</h3>
 	<h4 class="category-description"> 
 	</h4>
 	<p class="box-description">
-	The extension subsystem of the AbanteCart is an essential part of shopping cart application. Extensions allow efficient way to add new features to the cart and allow scalability and flexibility of ecommerce application.
-The extension subsystem of the AbanteCart allows shopping cart project grow indefinitely together with rapidly changing technologies, standards and techniques.<br>
-Lots of effort lays on the development of the system and extensions to allow shopping cart administrators and owners smooth and worry free cart experience.<br>
-Extension can be installed and managed in the control panel of AbanteCart. If you use market place to purchase extensions inside the control panel, extensions are downloaded and installed seamlessly without leaving your control panel and web browser.
-<br>
-Our extension architecture is partially based on Plexus API concept (http://code.google.com/p/phpplexus/ ) and blend with our own concepts described below. 
+	Extenstion might require sometime more advanced approcahes, depending on the requirements. More advanced extension development solutions are discussed in this manual.
 	</p>
 </div>
 
 <div class="note js-note blue-light">
 	<h4 class="note-title">Document Content</h4>
 	<ul>
-	<li class="toclevel-1 tocsection-1"><a href="#Glossary"> <span class="toctext">Glossary</span></a></li>
-	<li class="toclevel-1 tocsection-2"><a href="#Basic_architecture_and_structure_of_the_extension_subsystem"> <span class="toctext">Basic architecture and structure of the extension subsystem.</span></a></li>
 	<li class="toclevel-1 tocsection-3"><a href="#Database_extension"> <span class="toctext">Database extension</span></a></li>
 	<li class="toclevel-1 tocsection-4"><a href="#Working_with_Forms"> <span class="toctext">Working with Forms</span></a></li>
 	<li class="toclevel-1 tocsection-5"><a href="#Extending_and_Creating_FlexyForms"><span class="toctext">Extending and Creating FlexyForms</span></a></li>
@@ -38,64 +32,27 @@ Our extension architecture is partially based on Plexus API concept (http://code
 
 
 
-
-
-
-
-
-<div class="category-info helper">
-	<h4 id="Glossary" class="box-title">Glossary</h4>
-	<p class="box-description">
-	<b>Extension</b> &ndash; Collection of directories and files under one main directory that can be added to shopping cart to offer additional feature or function. Extension can be enabled and configured in the admin of shopping cart application<br />
-<b>Extension Configuration</b> &ndash; Collection of settings that can control the extension functionality of behavior. Configuration can be default (provided with the original installation of the extension) and custom, after installation once admin user change the settings.<br />
-<b>Hook</b> &ndash; This is the tool used in extension subsystem to connect extension to particular section in application.<br />
-<b>Core Hook</b> &ndash; This is the hook to the core function of application that allows extending functionality, effect data structures and values. 
-<br /><b>Template Hook</b> - This is the hook to extend display of the particular page on the front end or admin. This is usually implemented within template file.<br />
-<b>Dataset</b> - Ability to save, access and manage data specific for extension. See more details later on.
-</p>
-</div>
-
-
-
-
-
-
-
-
-
-<div class="category-info helper">
-	<h4 id="Basic_architecture_and_structure_of_the_extension_subsystem" class="box-title">Basic architecture and structure of the extension subsystem.</h4>
-	<p class="box-description">
-This paragraph to give you a generic idea about AbanteCart extension system and organization. For more details refer to AbanteCart Extensions Developer Guide.<br />
-AbanteCart architecture is designed around flexibility and expandability in mind. We believe that application architecture should provide sufficient flexibility to be able extended with new features and configured or adjusted to rapidly changing technology. To do so we introduce concept of fully extension based system and empower developers to create extensions for any new features or functionality. Extension can be installed and managed in the control panel of the AbanteCart. Marketplace is available to purchase, download and install extensions right in the control panel. In addition, any AbanteCart extension can be installed manually by simple upload of extension folder to AbanteCart and easy activation process.<br />
-Extension itself is a collection of files that modify or add functionality of AbanteCart. Extension files include installation scripts, configuration settings, extension MVC file.<br />
-Dependency concept is present to make sure that dependent extensions are installed to make extensions that depend on them work properly. Important stages in extension to understand:<br />
-<b>Extension load:</b> This is the step of getting extension directory (content with files) in to the AbanteCart extensions directory. This is essential before step before you can install and use extension.<br />
-<b>Extension Installation:</b> This is a process of loading extension configuration to the system and making extension visible to the system. This stage does dependency validation and error checking. Install script provided in the extension is executed. Note: Installation is not to be confused with downloading extension or loading extension to the directory. This is done prior to installation. This step also allows you to edit extension configuration and settings.<br />
-<b>Enable Extension:</b> This is a step to activate extension. Once extension is enabled it will be used by the system.<br />
-Uninstall Extension: It is important to understand this step. If you decide no longer to use given extension you can uninstall it. This step will completely remove all the settings and data used by the extension. Uninstall script provided in the extension is executed. Consider backup.<br />
-<b>Delete Extension:</b> This is a step to remove extension components from the directory. Note: delete can only be done if extension is uninstalled.</p>
-
-<p class="box-description">See AbanteCart Extension</p>
-
-</div>
-
-
-
-
-
-
-
-
-
 <div class="category-info helper">
 	<h4 id="Database_extension" class="box-title">Database extension</h4>
 	<p class="box-description">
-You can use 3 approaches to store extension data to the database.<br> 1. New tables can be created to support the data storage <br>2. Existing tables can be altered to add new fields and indexes. <br>3. Dataset tools are offered by AbanteCart to save data without creating or altering database. <br>Dataset offer quick and worry free method to handle data without dealing with SQL and creating specific database tables. Data can be handled via easy dataset class methods.<br />
-It is not recommended to use dataset for large sets and transactional type of data, since performance might be affected. Even though, we tested performance with 500000 rows, and no slow down noticed, it is still not desired to use this storage for high traffic read and write. Perfect area to use dataset will be products, categories, customers and orders data extension, polls, questioners, etc.</p>
+You can utilize 3 approaches to store extension data to the database.<br> 
+1. New tables can be created to support the data storage <br>
+2. Existing tables can be altered to add new fields and indexes. <br>
+3. Dataset tools are offered by AbanteCart to save data without creating or altering database. <br /><br />
 
-<p class="box-description"><b>What is Dataset</b><br />
-Say you need to have a poll and need to store records of poll questions and answers. Normally, you would create and add 2 or more tables to the databases to handle data for the poll. With the dataset, we created an abstraction layer to the database, that allows you to skip database creation and go directly to handling data.<br />
+As first two are straight forward, we will cover #3 in more details. <br />
+Dataset aproach offers quick and worry free method to handle data without dealing with SQL and creating specific database tables. Data can be handled via easy dataset class methods.<br />
+
+Good example for dataset usage will be ocasionaly edited information for products, categories, customers and orders data extension, polls, questioners, etc. 
+</p>
+<div class="note js-note red note-pulse">
+	<h4 class="note-title"> Note </h4>
+	<p class="note-description"> It is not recommended to use dataset for large sets and transactional type of data, since performance might be affected. Eventhough, we tested performance with 500000 rows, and no slowdown noticed, it is still not desired to use this storage for high traffic read and write.</p>
+</div>
+
+
+<p class="box-description"><b>What is Dataset?</b><br />
+Say you need to develop a poll extension and need to store records of poll questions and answers. Normally, you would create and add 2 or more tables to the databases to handle data for the poll. With the dataset, we created an abstraction layer to the database, that allows you to skip database creation and go directly to handling data.<br />
 Dataset class will handle all the data storing and management for you with interface of methods provided. It is very easy. You name new dataset (traditionally table) or use existing dataset . Dataset can be created during extension installation from XML file provided in the extension package. It can be also removed with extension uninstall. No direct access to SQL or database is needed. If restriction access required to the dataset, it needs to be handled pragmatically based on AbanteCart permissions. If you decide to use traditional database tables in extension, you will need to create SQL scripts with install, uninstall and disable extension management process.</p>
 
 <p class="box-description"><b>How does Dataset work?</b><br />
@@ -104,7 +61,10 @@ First you have to recognize namings in dataset class. There are &ldquo;object&rd
 <p class="box-description"><a   href="/img/developer/Dataset_01.png" title="caption"><img alt="caption" height="417" src="/img/developer/Dataset_01.png" width="700" /></a></p>
 
 <p class="box-description">&ldquo;Object&rdquo; is any abstract part of your extension or core. It may be anything that we call &ldquo;owner&rdquo;. Object is owner of data sets. Menu, charts, polls, etc. may contain some data, therefore, they are owners of data sets, objects. &ldquo;Object&rdquo; entity have two attributes: name and key. Name is common text unique identifier of the object (menu, poll, etc). &ldquo;Key&rdquo; is identifier from another section or table of AbanteCart, for example, extension&rsquo;s key(id). Pair &ldquo;name-key&rdquo; must be unique. Key can be also understood as a sort of foreign key to any other table in the system. Key is not required and if not provided name part of the object needs to stay unique. Foreign key connection to any table can be also build pragmatically with use any field in the dataset fieldset.<br />
-Key can also be a subset name in case of multiple tables used within one feature or set. <a   href="/img/developer/Dataset_02.png" title="caption"><img alt="caption" height="436" src="/img/developer/Dataset_02.png" width="700" /></a></p>
+Key can also be a subset name in case of multiple tables used within one feature or set. 
+</p>
+<br />
+<a href="/img/developer/Dataset_02.png" title="caption"><img alt="caption" height="436" src="/img/developer/Dataset_02.png" width="700" /></a>
 
 <p class="box-description">In our poll example you have poll_questions and poll_answers tables. You will create 2 datasets as following:</p>
 
@@ -188,12 +148,15 @@ $poll_qs-&gt;defineColumns (
 </div>
 <!-- HTML Highlight -->
 
-<p class="box-description">Dataset&rsquo;s columns definition contain list of value&rsquo;s descriptions (fields). Every dataset consist of columns or fieldset. Now dataset concept supports following column types: integer<br />
+<p class="box-description">Dataset&rsquo;s columns definition contain list of value&rsquo;s descriptions (fields). Every dataset consist of columns or fieldset. Now dataset concept supports following column types: <br />
+<b>
+integer<br />
 float<br />
 varchar<br />
 text<br />
 boolean<br />
 timestamp</p>
+</b>
 						<!-- Note -->
 						<div class="note js-note blue">
 							<span class="note-close js-close">
@@ -464,40 +427,15 @@ $menu-&gt;deleteMenuItem (&quot;sale_your-menu&quot;);</code>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="category-info helper">
 	<h4 id="Working_with_Forms" class="box-title">Working with Forms</h4>
 	<p class="box-description">
-	There are 2 types of forms in AbanteCart, FlexyForms and standards forms. Both forms are using the same classes to draw the form and HTML elements. Main difference between the two is that FlexyForms are loaded from the data base automatically with LoadFormDB() function.<br> Standard form is build in the code. FlexyForms are mainly used in storefront to provide flexibility to cart admin to edit fields and add new forms, and also ability to extend forms/fields with add extensions. In AbanteCart control panel we use standard forms, but blended with FlexyForms. Since control panel mainly consists of forms, it will be heavy load to provide database driven forms. FlexyForms approach in the control panel gives ability to add (extend) fields to the forms with added extensions. <br>There are 3 types of field sets that are used in AbanteCart. These types are based on the way fields respond to changes. Standard type - On fields changes, no changes are highlighted. This is a standard most known fields that are used in allwebsite. In AbanteCart these fields are used in storefront, and for search and non-update related fields in control panel. Highlight on change - These fields will change color once you change the value in the fields. They will change back the color if you change the value back to original. This is very helpful in UI to show users that data was changed and requires attention or saving. <br>Highlight and save - These fields will not only change color, but will also show the option to save or reset the value. Changed field can be saved individually right after edit, or if change in accident. it can be reset. This is very handy in the areas with big forms and improve user experience and user error. 
+	There are 2 types of forms in AbanteCart, FlexyForms and standards forms. Both forms are using the same classes to draw the form and HTML elements. Main difference between the two is that FlexyForms are loaded from the data base automatically with LoadFormDB() function.
 	</p>
-	
-	
+	<p class="box-description">
+	 Standard form is build in the code and FlexyForms are mainly used in storefront to provide flexibility to cart admin to edit fields, add new forms, and also ability to extend forms/fields with extensions. In AbanteCart control panel we use standard forms, but blended with FlexyForms. Since control panel mainly consists of forms, it will be heavy load to provide database driven forms. FlexyForms approach in the control panel gives ability to add (extend) fields to the forms with added extensions. <br />There are 3 types of field sets that are used in AbanteCart. These types are based on the way fields respond to changes. Standard type - On fields changes, no changes are highlighted. This is a standard most known fields that are used in allwebsite. In AbanteCart these fields are used in storefront, and for search and non-update related fields in control panel. Highlight on change - These fields will change color once you change the value in the fields. They will change back the color if you change the value back to original. This is very helpful in UI to show users that data was changed and requires attention or saving. <br/><br/>Highlight and save - These fields will not only change color, but will also show the option to save or reset the value. Changed field can be saved individually right after edit, or if change in accident. it can be reset. This is very handy in the areas with big forms and improve user experience and user error. 
+	</p>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -516,7 +454,6 @@ $menu-&gt;deleteMenuItem (&quot;sale_your-menu&quot;);</code>
 </div>
 <!-- HTML Highlight -->
 	
-
 
 						<!-- Note -->
 						<div class="note js-note blue">

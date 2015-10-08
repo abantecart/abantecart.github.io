@@ -469,7 +469,7 @@
       url: /pages/developer/architecture.html      
     - text: Extension Development
       url: /pages/developer/extension_dev.html 
-    - text: Developing Extensions
+    - text: Advanced Extension dev
       url: /pages/developer/developing_extensions_and_extension_api.html 
     - text: Developing Templates
       url: /pages/developer/developing_templates_as_extensions.html 

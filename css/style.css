@@ -1224,7 +1224,7 @@ body {
   color: #333333;
 }
 #content {
-  padding: 30px 0;
+  padding: 20px 0;
 }
 .layout {
   position: relative;
@@ -7645,7 +7645,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .search {
   position: relative;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
 }
 .search-icon {
   position: absolute;
@@ -8231,7 +8231,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   bottom: 0;
 }
 .menu-vertical {
-  line-height: 40px;
+  line-height: 35px;
   margin: 0;
   list-style-type: none;
   color: #333333;
@@ -8241,7 +8241,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   margin: 0;
   padding: 0;
   list-style-type: none;
-  line-height: 40px;
+  line-height: 30px;
 }
 .menu-vertical ul li.selected > a {
   color: #44bb55;
