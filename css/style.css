@@ -1230,7 +1230,7 @@ body {
   position: relative;
 }
 .layout.with-left-sidebar {
-  padding-left: 315px;
+  padding-left: 306px;
 }
 .layout.with-right-sidebar {
   padding-right: 315px;
@@ -8219,7 +8219,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .menu-vertical-wrapper {
   width: 300px;
-  padding: 20px 4px;
+  padding: 20px 5px;
   height: 700px;
   overflow-y: auto;
 }
