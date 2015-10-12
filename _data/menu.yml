@@ -477,3 +477,5 @@
       url: /pages/developer/adata.html 
     - text: Storefront API
       url: /pages/developer/sf_api.html
+    - text: Resource Library System
+      url: /pages/developer/rl_system.html
