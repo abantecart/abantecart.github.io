@@ -78,5 +78,48 @@ $this->document->setTitle( $this->language->get('heading_title') );
 
 
 
+	<p class="box-description">
+or
+</p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+$this->loadLanguage('catalog/category');
+        //Get specific translation by key
+$this->document->setTitle( $this->language->get('heading_title') );
+</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+
+	<p class="box-description">
+To add a language translation, you need to create an XML file and place it to the corespondent location in <i>admin[storefront]/language/english/.. directory.</i><br />
+Once controller loads this new language translation XML fist time it will load XML details to the database and will cache the result. Once XML files are loaded in the database they are no longer used (possibly only for reset of values in the database). Translations are now used from database or cache. Users can change translations and these will reset the cache automatically after edit.
+</p>
+						<!-- Note -->
+						<div class="note js-note red note-pulse">
+							<h4 class="note-title"> IMPORTANT NOTE </h4>
+							<p class="note-description"> If you load multiple language sets, keep in mind that same keys will override values for each other and last value will be used bu default (implicit) access. If you need to get key text from specific section use explicit call with specified route. </p>
+						</div>
+						<!-- End of Note -->
+						
+						
+						
+						
+						<!-- Note -->
+						<div class="note js-note blue">
+							<span class="note-close js-close">
+								<i class="fa fa-times"></i>
+							</span>
+							<h4 class="note-title"> NOTE </h4>
+							<p class="note-description"> To improve performance AbanteCart, does not load same language files multiple times for the same page load. There is a global stack of all languages loaded for the page kept in global ALanguage class instance. Despite the fact that loaded language are in the class, there is no access to all of them. You need to specify languages that you need to use in the controller, except the main language and language corresponding to current controller. These are available automatically. </p>
+						</div>
+						<!-- End of Note -->
+	<p class="box-description">
+You can always create a new local instance of ALanguage class, but this is not desired. 
+</p>
+
+
 
 </div>
