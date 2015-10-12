@@ -74,7 +74,7 @@ We do not see much of disadvantage, only inconvenience of non-conventional stora
 <div class="category-info helper">
 	<h4 id="Simple_Resource_Library_diagram" class="box-title">Simple Resource Library diagram</h4>
 	<p class="box-description">
-<a class="jcepopup" href="/img/developer/resource_library.png"><img src="/img/other/resource_library.png" border="0" width="550" /></a>
+<a class="jcepopup" href="/img/developer/resource_library.png"><img src="/img/developer/resource_library.png" border="0" width="550" /></a>
 </p>
 </div>
 
@@ -97,4 +97,59 @@ $resource = new AResource('image');
  	</pre>
 </div>
 <!-- HTML Highlight -->
+
+
+
+
+
+	<p class="box-description">
+To get a details of the resource, for instance for the product, you need to call method getResources with area name and ID. 
+</p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+public function getResources ( $object_name, $object_id, $language_id = '' )
+</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+
+
+
+	<p class="box-description">
+<b>object name</b> is type of object you want to get resources for <b>object id</b> define certain object <b>language id</b> is optional parameter. if not specified - default language is used - $this-&gt;config-&gt;get(&#39;storefront_language_id&#39;). you can provide id if you need to get some specific language<br />
+In example of product, it will be &lsquo;products&rsquo; and id for the product. <br>
+Example:</p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+$results = $resource->getResources( 'products', $this->request->get['product_id'] );
+</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+
+
+
+	<p class="box-description">
+Here are some more useful methods: 
+</p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+//get certain resource. language id is optional
+public function getResource ( $resource_id, $language_id = '' )  
+//get resource thumbnail
+public function getResourceThumb ( $resource_id, $width, $height, $language_id = '' ) 
+</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+
+
+
+
 </div>
