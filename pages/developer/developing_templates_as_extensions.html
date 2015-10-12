@@ -1022,3 +1022,97 @@ $layout->loadXml(array(
 </div>
 <!-- HTML Highlight -->
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="category-info helper">
+	<h4 id="Blocks" class="box-title">Blocks</h4>
+	<p class="box-description">
+Blocks are elements that show data on the page in particular section. There 8 placeholders sections for the blocks on the page.</p>
+
+<p><b>Placeholders:</b><br />
+Header: 8 Locations<br />
+Under header: Unlimited locations in order<br />
+Above Content: Unlimited locations in order<br />
+Below Content: Unlimited locations in order<br />
+Left Side: Unlimited locations in order<br />
+Right Side: Unlimited locations in order<br />
+Above Footer: Unlimited locations in order<br />
+Footer: 8 Locations</p>
+
+<p>Each block consist of one MVC set (Controller, View and Model). Each new block should have one unique controller name. As for model and view, these can be multiple. Depending on the placeholder where given block is indented to be used, corresponding template needs to be included.<br />
+If you want to give a block ability to be added to any placeholder location, all views/templates needs to be included.</p>
+
+<p>An example of code to add blocks and define templates for all locations.
+</p>
+
+
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+$block_info['block_txt_id'] = 'social_media_set';
+$block_info['controller'] = 'social_media_set/social_media_set';
+$block_info['templates'] = Array( 
+array('parent_block_txt_id'=>'header', 
+'template'=>'social_media_set/social_media_set_tblock.tpl'),
+array('parent_block_txt_id'=>'header_bottom',
+'template'=>'social_media_set/social_media_set_cblock.tpl'),
+array('parent_block_txt_id'=>'content_top',
+'template'=>'social_media_set/social_media_set_cblock.tpl'),
+array('parent_block_txt_id'=>'content_bottom',
+'template'=>'social_media_set/social_media_set_cblock.tpl'),
+array('parent_block_txt_id'=>'footer',
+'template'=>'social_media_set/social_media_set_tblock.tpl'),
+array('parent_block_txt_id'=>'footer_top',
+'template'=>'social_media_set/social_media_set_cblock.tpl'),
+array('parent_block_txt_id'=>'column_left',
+'template'=>'social_media_set/social_media_set_sblock.tpl'),
+array('parent_block_txt_id'=>'column_right',
+'template'=>'social_media_set/social_media_set_sblock.tpl'));
+
+
+$block_info['descriptions'] = Array( array('language_name' => 'english',
+ 'name' => 'Social Media Set'),
+					   array('language_name' => 'espanol',
+  'name' => 'Conjunto de Medios Sociales'));
+$layout = new ALayoutManager();
+$layout->saveBlock($block_info);
+</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="category-info helper">
+	<h4 id="Control_Panel_Template" class="box-title">Control Panel Template</h4>
+	<p class="box-description">
+There is only one AbanteCart control panel template set per all storefronts or stores. Control Panel default template is located in <i>/admin/view/default/</i> directory that includes all other components for the template.<br />
+It is possible to create new control panel template or extension for it. Unfortunately, we do not provide any instructions for creating custom control panel template yet.
+</p>
+</div>
+
+
