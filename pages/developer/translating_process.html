@@ -1,0 +1,82 @@
+---
+layout: default
+title: Translating Process
+description: Working with language translations
+tags: [
+    ['architecture', 'AbanteCart Architecture'],
+    ['extension_dev', 'Extension Developer Guide']
+]
+redirect_from: "/tag/translating_process.html"
+---
+
+
+<div class="category-info helper pt40">
+	<h3 class="category-title">Creating new languages </h3>
+	<h4 class="category-description"> 
+	</h4>
+	<p class="box-description">
+	New languages can be added to AbanteCart as extensions from the marketplace or downloaded from AbanteCart.com Alternately, new languages can be created in the admin manually. This is done with creating new language in System -> Localization -> Languages. In this case, language can be translated using auto-translation mode in "Load missing language data" section.
+<br>
+We recommend creating new language by creating new extension. Simplest process will be to copy any existing language extension, rename all files, replace flag icons and translate the text. Text can be translated using Google translator and manually verified and corrected. 
+	</p>
+</div>
+
+
+
+
+
+
+
+<div class="category-info helper">
+	<h4 id="Using_Language" class="box-title">Using Language translations in the code</h4>
+	<p class="box-description">
+AbanteCart using ALanguage class to handle all text translation. There is a global instance of ALanguage class always present in the registry for all controllers. Default language set from selected language [english.xml] is loaded for any run and available in any place. If any additional language sets are loaded they might override translation if same keys are used. Keep this in mind. To avoid overriding language text can be requested from specific section by specifying section at an argument to get() function. In controller, values can be accessed with function <strong>$this->language->get()</strong>, example: 
+</p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+$this->language->get('heading_title');  // Implicit call and gets last defined key text in the scope
+</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+<p class="box-description">
+or
+</p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+$this->language->get('heading_title', 'catalog/product');  //explicit call to gets key text for given controller catalog/product
+</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+
+
+
+
+	<p class="box-description">
+In the template (corresponding .tpl file) this value will be available in <b>$heading_title</b><br />
+Each controller auto-loads corresponding language translation that is available for it. For instance, for controller catalog/product there will be catalog/product language set loaded automatically once the controller is loaded.<br />
+If you need more translation, you can load any other language set that will be used in controller and templates that are processed by given controller. Below are the examples how it is done: 
+</p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+$this->load->language('catalog/category');
+    //Get specific translation by key
+$this->document->setTitle( $this->language->get('heading_title') );
+    //Assign all translations to the template
+    $this->view->batchAssign( $this->language->getAll() );
+</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+
+
+
+
+</div>

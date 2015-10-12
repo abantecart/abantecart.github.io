@@ -479,3 +479,5 @@
       url: /pages/developer/sf_api.html
     - text: Resource Library System
       url: /pages/developer/rl_system.html
+    - text: Translating Process
+      url: /pages/developer/translating_process.html
