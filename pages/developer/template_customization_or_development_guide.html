@@ -234,4 +234,43 @@ These template files have corresponding block names and considered to be special
 </p>
 
 
+<p class="box-description">
+About Blocks:<br>
+Children Blocks are standalone elements that are linked to some parent block and the layout for specific page/template combination.<br>
+
+Single block can be linked to multiple layouts or templates. <br>
+
+Each block is identified by block_txt_id. Duplicate blocks with same "block_txt_id" will not be allowed <br>
+
+To make sure that your block does not have conflicting block_txt_id with any other block, create a unique 'block_txt_id'. 
+<br>
+In event, you load new block via XML layout, and same "block_txt_id" block already available, existing block ID will be used instead of your block and linked to your layout. 
+<br>
+It is recommended to use unique "block_txt_id" if you need to make sure you use your specific block. 
+
+<br>
+To lean more about AbanteCart architecture, see <a href="/pages/developer/architecture.html">this page</a>
+</p>
+
+<p class="box-description">Reusing or extending block<br>
+
+If you need to reuse (include) or extend functionality of existing block from "default" template, you can do it. 
+<br>
+There are 3 Options for reusing existing blocks provided by default template. 
+<ul>
+<li>1. You can reuse existing common block. If you need custom template (.tpl) file for this block, you can provide an override template in same virtual location in your extension. </li>
+<li>2. You can reuse existing common block and provide override for controller in same virtual location of extension. </li>
+<li>3. You can reuse existing common block and hook into controller of the block to extend functionality. </li>
+</ul>
+[need examples for each - cooming soon].
+
+
+New block<br>
+
+If you provide new block, it must include set of controller and template. In some cases, you might need a modal if special data load is required for your new block. 
+
+<br>
+Examples of block inclusion in layout XML</p>
+
+
 
