@@ -259,7 +259,27 @@ If you need to reuse (include) or extend functionality of existing block from "d
 There are 3 Options for reusing existing blocks provided by default template. 
 </p>
 <ul>
-<li>1. You can reuse existing common block. If you need custom template (.tpl) file for this block, you can provide an override template in same virtual location in your extension. </li>
+<li>1. You can reuse existing common block. If you need custom template (.tpl) file for this block, you can provide an override template in same virtual location in your extension. <br>
+								<!-- HTML Highlight -->
+								<div class="code-highlight">
+								<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+&lt;block&gt;
+          &lt;block_txt_id&gt;menu&lt;/block_txt_id&gt;          
+          &lt;templates&gt;
+            &lt;template&gt;
+              &lt;parent_block&gt;header&lt;/parent_block&gt;
+              &lt;template_name&gt;blocks/your_menu_top.tpl&lt;/template_name&gt;
+            &lt;/template&gt;
+          &lt;/templates&gt;
+          &lt;status&gt;1&lt;/status&gt;
+          &lt;position&gt;20&lt;/position&gt;
+&lt;/block&gt;
+
+								</code>
+								</pre>
+								</div>
+								<!-- HTML Highlight -->
+</li>
 <li>2. You can reuse existing common block and provide override for controller in same virtual location of extension. </li>
 <li>3. You can reuse existing common block and hook into controller of the block to extend functionality. </li>
 </ul>
@@ -275,7 +295,7 @@ If you provide new block, it must include set of controller and template. In som
 Examples of block inclusion in layout XML</p>
 
 
-<!-- Steps -->
+						<!-- Steps -->
 						<ul class="steps">
 							<li class="step">
 								<span class="step-number">1</span>
