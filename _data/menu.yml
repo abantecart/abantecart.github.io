@@ -472,7 +472,9 @@
     - text: Advanced Extension dev
       url: /pages/developer/developing_extensions_and_extension_api.html 
     - text: Developing Templates
-      url: /pages/developer/developing_templates_as_extensions.html 
+      url: /pages/developer/developing_templates_as_extensions.html
+    - text: Template development guide 
+      url: /pages/developer/template_customization_or_development_guide.html 
     - text: Import/Export AData
       url: /pages/developer/adata.html 
     - text: Storefront API
