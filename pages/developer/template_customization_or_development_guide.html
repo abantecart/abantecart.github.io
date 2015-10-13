@@ -282,11 +282,95 @@ Examples of block inclusion in layout XML</p>
 								<!-- HTML Highlight -->
 								<div class="code-highlight">
 								<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
-<block>
+&lt;block&gt;
 
-<block_txt_id>language</block_txt_id>
+&lt;block_txt_id&gt;language&lt;/block_txt_id&gt;
 
-</block>
+&lt;/block&gt;
+								</code>
+								</pre>
+								</div>
+								<!-- HTML Highlight -->
+								</div>
+							</li>
+							<li class="step">
+								<span class="step-number">2</span>
+								<h4 class="step-title">Creating owned block provided with your extension</h4>
+								<div class="step-content">
+								<!-- HTML Highlight -->
+								<div class="code-highlight">
+								<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+                &lt;block&gt;
+
+                    &lt;block_txt_id&gt;somename_language&lt;/block_txt_id&gt;
+
+                    &lt;controller&gt;blocks/somename_language&lt;/controller&gt;
+
+                    &lt;templates&gt;
+
+                        &lt;template&gt;
+
+                            &lt;parent_block&gt;header&lt;/parent_block&gt;
+
+                            &lt;template_name&gt;blocks/somename_language.tpl&lt;/template_name&gt;
+
+                        &lt;/template&gt;
+
+                    &lt;/templates&gt;
+
+                &lt;/block&gt;
+								</code>
+								</pre>
+								</div>
+								<!-- HTML Highlight -->
+								</div>
+							</li>
+							<li class="step">
+								<span class="step-number">3</span>
+								<h4 class="step-title">Updating owned block </h4>
+								<div class="step-content">
+								<!-- HTML Highlight -->
+								<div class="code-highlight">
+								<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+                &lt;block&gt;
+
+                    &lt;block_txt_id&gt;somename_language&lt;/block_txt_id&gt;
+
+                    &lt;controller&gt;blocks/somename_language&lt;/controller&gt;
+
+                    &lt;templates&gt;
+
+                        &lt;template&gt;
+
+                            &lt;parent_block&gt;header&lt;/parent_block&gt;
+
+                            &lt;template_name&gt;blocks/somename_language.tpl&lt;/template_name&gt;
+
+                        &lt;/template&gt;
+
+                    &lt;/templates&gt;
+
+                &lt;/block&gt;
+								</code>
+								</pre>
+								</div>
+								<!-- HTML Highlight -->
+								</div>
+							</li>
+							<li class="step">
+								<span class="step-number">4</span>
+								<h4 class="step-title">Deleting owned block</h4>
+								<div class="step-content">
+								<!-- HTML Highlight -->
+								<div class="code-highlight">
+								<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+                &lt;block&gt;
+
+				&lt;action&gt;delete&lt;/action&gt;
+
+                    &lt;block_txt_id&gt;somename_language&lt;/block_txt_id&gt;
+
+                &lt;/block&gt;
 								</code>
 								</pre>
 								</div>
@@ -296,72 +380,9 @@ Examples of block inclusion in layout XML</p>
 						</ul>
 <p>
 
-
-
-2. Creating owned block provided with your extension
-
-                <block>
-
-                    <block_txt_id>somename_language</block_txt_id>
-
-                    <controller>blocks/somename_language</controller>
-
-                    <templates>
-
-                        <template>
-
-                            <parent_block>header</parent_block>
-
-                            <template_name>blocks/somename_language.tpl</template_name>
-
-                        </template>
-
-                    </templates>
-
-                </block>
-
-
-3. Updating owned block 
-
-                <block>
-
-                    <block_txt_id>somename_language</block_txt_id>
-
-                    <controller>blocks/somename_language</controller>
-
-                    <templates>
-
-                        <template>
-
-                            <parent_block>header</parent_block>
-
-                            <template_name>blocks/somename_language.tpl</template_name>
-
-                        </template>
-
-                    </templates>
-
-                </block>
-
-
-4. Deleting owned block 
-
-                <block>
-
-				<action>delete</action>
-
-                    <block_txt_id>somename_language</block_txt_id>
-
-                </block>
-
-
-<br>
 Managing blocks in admin layout:<br>
 
 There is a lazy way to create layouts/blocks in the template while you develop. You can use admin drag & drop tools to create page layout. Once you complete, you can use Dev Tools extension to export layout and include in your extension installation. <br>
-
-  
-
 
 Storefront menu:<br>
 
@@ -370,8 +391,6 @@ There is a navigation menu and categories menu available in AbanteCart storefron
 Storefront navigation menu is constructed in common/menu.php controller and categories menu is constructed in common/category.php 
 <br>
 If you need to build custom menu, you can provide override for these controllers or hook into controller to substitute template variables stack. 
-
-
 </p>
 
 
