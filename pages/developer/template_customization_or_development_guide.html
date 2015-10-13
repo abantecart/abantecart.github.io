@@ -500,5 +500,64 @@ Banners are set in the admin design -> Banner manager. You can include your bann
 Example of block inclusion in layout.xml 
 	</p>
 </div>
+								<!-- HTML Highlight -->
+								<div class="code-highlight">
+								<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+        &lt;block&gt;
 
+          &lt;custom_block_txt_id&gt;mytemplate_bannerslider&lt;/custom_block_txt_id&gt;
+
+          &lt;kind&gt;custom&lt;/kind&gt;
+
+          &lt;type&gt;banner_block&lt;/type&gt;
+
+          &lt;block_descriptions&gt;
+
+            &lt;block_description&gt;
+
+              &lt;language&gt;english&lt;/language&gt;
+
+              &lt;name&gt;&lt;![CDATA[Main Page Banner Slider]]&gt;&lt;/name&gt;
+
+              &lt;title&gt;&lt;![CDATA[Main Page Banner Slider]]&gt;&lt;/title&gt;
+
+              &lt;block_wrapper&gt;&lt;![CDATA[blocks/banner_slider.tpl]]&gt;&lt;/block_wrapper&gt;
+
+              &lt;block_framed&gt;&lt;![CDATA[0]]&gt;&lt;/block_framed&gt;
+
+              &lt;description&gt;&lt;![CDATA[]]&gt;&lt;/description&gt;
+
+              &lt;content&gt;&lt;![CDATA[a:1:{s:17:&quot;banner_group_name&quot;;s:17:&quot;Main Page Banners&quot;;}]]&gt;&lt;/content&gt;
+
+            &lt;/block_description&gt;
+
+          &lt;/block_descriptions&gt;
+
+          &lt;installed&gt;
+
+            &lt;placeholder&gt;header_bottom&lt;/placeholder&gt;
+
+          &lt;/installed&gt;
+
+          &lt;status&gt;1&lt;/status&gt;
+
+          &lt;position&gt;20&lt;/position&gt;
+
+        &lt;/block&gt;
+								</code>
+								</pre>
+								</div>
+								<!-- HTML Highlight -->
+								
+								
+								
+						<!-- Note -->
+						<div class="note js-note blue">
+							<span class="note-close js-close">
+								<i class="fa fa-times"></i>
+							</span>
+							<h4 class="note-title"> NOTE </h4>
+							<p class="note-description"> &lt;block_wrapper&gt; property provides a custom template that you can include. This template will be loaded by banner system to display your banners' content. Notice, that group name is important to be specified to identify which banner(s) will be loaded for your banner block. </p>
+						</div>
+						<!-- End of Note -->
 
