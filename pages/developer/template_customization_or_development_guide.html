@@ -74,10 +74,63 @@ Be fair! Developer Tools extension is under constant improvement, so feel free t
 Fastest way to build new template or customize "default" template is to clone template with Developer Tools extension.
 </p>
 <p class="box-description">
-<a class="jcepopup" href="/img/developer/abantecart-developer-tools-clone.png"><img src="/img/developer/abantecart-developer-tools-clone.png" border="0" width="550" /></a>
+<a class="jcepopup" href="/img/developer/abantecart-developer-tools-clone.png"><img src="/img/developer/abantecart-developer-tools-clone.png" border="0" width="450" /></a>
+</p>
+	<p class="box-description">
+There are two template cloning options, full and partial clone. If you develop new template and plan to edit template ".tpl" files, you will need a full clone. It will copy all the template files. Partial clone will copy only CSS, JavaScript and images. This is helpful if you only plane to change style for the template
 </p>
 </div>
 
+
+						<!-- Note -->
+						<div class="note js-note blue">
+							<span class="note-close js-close">
+								<i class="fa fa-times"></i>
+							</span>
+							<h4 class="note-title"> NOTE </h4>
+							<p class="note-description"> Important to note that if new template does not have specific template/file present, "default" template file will be used. <br>
+
+Remember to keep "default" template files intact and accessible all the time. Your clone templates will not be effected during minor updates. </p>
+						</div>
+						<!-- End of Note -->
+
+	<p class="box-description">
+When you clone, you can choose to create a core template or an extension template. We recommend to create template extensions, but if you have a specific project and do not intend to redistribute this template, you can create core clone. 
+</p>
+
+						<!-- Note -->
+						<div class="note js-note red note-pulse">
+							<h4 class="note-title"> Important </h4>
+							<p class="note-description">It is important to make sure that directory for cloned template have complete rules to write files (777). 
+<br>
+For template extension clone, you need to set /extensions/ directory to 777 and for core template clone set /storefront/view/ directory to 777.  </p>
+						</div>
+						<!-- End of Note -->
+						
+	<p class="box-description">
+After clone is completed, you will see new directory created in /extensions/ or /storefront/view/<br>
+Also, you will see new template available in design/templates section. <br>
+You can now enable extension template (if cloned as extension) and set new template to storefront. 
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="category-info helper">
+	<h4 id="files" class="box-title">2. Now we have a template to work with, we can start exploring and editing files</h4>
+	<p class="box-description">
+Let's note that AbanteCart storefront pages are constructed of templates and these templates are called "blocks". Each block has a corresponding entry in the database. <br>
+There is a main template file common/page.tpl that collects all the main parent blocks together organizing them into layout. This template file includes the following template files that are also blocks.
+</p>
+</div>
 
 
 
