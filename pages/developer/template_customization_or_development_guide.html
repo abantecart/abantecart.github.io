@@ -296,7 +296,32 @@ There are 3 Options for reusing existing blocks provided by default template.
 								</div>
 								<!-- HTML Highlight -->
 </li>
-<li>3. You can reuse existing common block and hook into controller of the block to extend functionality. </li>
+<li>3. You can reuse existing common block and hook into controller of the block to extend functionality. <br>
+hook
+								<!-- HTML Highlight -->
+								<div class="code-highlight">
+								<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+public function onControlleBlocksCurrency_InitData(){
+		$this-&gt;baseObject-&gt;view-&gt;addHookVar(&#39;your_var_name&#39;, &#39;some value&#39;);
+	}
+</code>
+								</pre>
+								</div>
+								<!-- HTML Highlight -->
+hook will add new variable to block's template.  <br>
+Then create block tpl for example blocks/currency.tpl<br>
+and get variable 
+
+								<!-- HTML Highlight -->
+								<div class="code-highlight">
+								<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+$this-&gt;getHookVar(&#39;your_var_name&#39;);
+</code>
+								</pre>
+								</div>
+								<!-- HTML Highlight -->
+
+</li>
 </ul>
 
 <h6 class="box-title">New block</h6>
@@ -629,9 +654,10 @@ As you develop your template, you might need to change global HTML elements used
 <br>
 HTML Template elements are located in .../template/form/ directory. 
 <br>
-Important to note, changes to these template will effect storefront of application globally. 
-<br>
-[collapsing list from github]
+Important to note, changes to these template will effect storefront of application globally.  
+<a class="button button-icon stroke small green" target="_blank"  href="https://github.com/abantecart/abantecart-src/tree/master/public_html/storefront/view/default/template/form">
+							<i class="fa fa-code-fork"></i>
+Success </a>
 	</p>
 </div>
 
