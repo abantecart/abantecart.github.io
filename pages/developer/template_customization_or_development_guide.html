@@ -418,3 +418,52 @@ Debugging AbanteCart
 
 
 
+
+
+<div class="category-info helper">
+	<h4 id="files" class="box-title">3. Creating head, header and footer. </h4>
+	<p class="box-description">
+Head HTML is built and displayed in common/head.tpl
+<br>
+In your custom common/head.tpl template, you must include some components that are produced by core code. 
+<br>
+These are: metadata, template debug CSS, additional styles code, and scripts 
+<br>
+Example of common/head.tpl [github link]
+<br>
+
+Similar to head, there is a core code in footer.tpl that will need to be present. 
+<br>
+Example of common/footer.tpl [github link]
+
+<br>
+In the header or footer you can include local or external components to be loaded. This is the same as you would do in regular HTML. 
+<br>
+
+Examples for including CSS file:
+								<!-- HTML Highlight -->
+								<div class="code-highlight">
+								<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+&lt;link href=&quot;&lt;?php echo $this-&gt;templateResource(&#39;/stylesheet/template.css&#39;); ?&gt;&quot; rel=&quot;stylesheet&quot; type=&#39;text/css&#39; /&gt;
+								</code>
+								</pre>
+								</div>
+								<!-- HTML Highlight -->
+
+
+
+Examples for including JavaScript file:
+								<!-- HTML Highlight -->
+								<div class="code-highlight">
+								<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+&lt;script type=&quot;text/javascript&quot; defer src=&quot;&lt;?php echo $this-&gt;templateResource(&#39;/javascript/template.js&#39;); ?&gt;&quot;&gt;&lt;/script&gt;
+								</code>
+								</pre>
+								</div>
+								<!-- HTML Highlight -->
+
+</p>
+</div>
+
+
+
