@@ -257,12 +257,13 @@ To lean more about AbanteCart architecture, see <a href="/pages/developer/archit
 If you need to reuse (include) or extend functionality of existing block from "default" template, you can do it. 
 <br>
 There are 3 Options for reusing existing blocks provided by default template. 
+<.p>
 <ul>
 <li>1. You can reuse existing common block. If you need custom template (.tpl) file for this block, you can provide an override template in same virtual location in your extension. </li>
 <li>2. You can reuse existing common block and provide override for controller in same virtual location of extension. </li>
 <li>3. You can reuse existing common block and hook into controller of the block to extend functionality. </li>
 </ul>
-[need examples for each - cooming soon].<br>
+<p class="box-description">[need examples for each - cooming soon].<br>
 
 
 New block<br>
@@ -429,12 +430,12 @@ In your custom common/head.tpl template, you must include some components that a
 <br>
 These are: metadata, template debug CSS, additional styles code, and scripts 
 <br>
-Example of common/head.tpl [github link]
+Example of common/head.tpl <a href="https://github.com/abantecart/abantecart-src/blob/master/public_html/storefront/view/default/template/common/head.tpl" target="_github"><i class="fa fa-code fa-fw"></i> github</a>
 <br>
 
 Similar to head, there is a core code in footer.tpl that will need to be present. 
 <br>
-Example of common/footer.tpl [github link]
+Example of common/footer.tpl <a href="https://github.com/abantecart/abantecart-src/blob/master/public_html/storefront/view/default/template/common/footer.tpl" target="_github"><i class="fa fa-code fa-fw"></i> github</a>
 
 <br>
 In the header or footer you can include local or external components to be loaded. This is the same as you would do in regular HTML. 
