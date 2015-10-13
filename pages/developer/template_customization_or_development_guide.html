@@ -273,20 +273,36 @@ There are 3 Options for reusing existing blocks provided by default template.
           &lt;/templates&gt;
           &lt;status&gt;1&lt;/status&gt;
           &lt;position&gt;20&lt;/position&gt;
-&lt;/block&gt;
-
-								</code>
+&lt;/block&gt;</code>
 								</pre>
 								</div>
 								<!-- HTML Highlight -->
 </li>
-<li>2. You can reuse existing common block and provide override for controller in same virtual location of extension. </li>
+<li>2. You can reuse existing common block and provide override for controller in same virtual location of extension.
+<br>
+								<!-- HTML Highlight -->
+								<div class="code-highlight">
+								<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+&lt;block&gt;
+          &lt;block_txt_id&gt;currency&lt;/block_txt_id&gt;
+          &lt;controller&gt;blocks/ext_txt_id_currency&lt;/controller&gt;
+          &lt;templates&gt;
+            &lt;template&gt;
+              &lt;parent_block&gt;header&lt;/parent_block&gt;
+              &lt;template_name&gt;blocks/currency.tpl&lt;/template_name&gt;
+            &lt;/template&gt;
+          &lt;/templates&gt;
+          &lt;status&gt;1&lt;/status&gt;
+          &lt;position&gt;40&lt;/position&gt;
+&lt;/block&gt;</code>
+								</pre>
+								</div>
+								<!-- HTML Highlight -->
+</li>
 <li>3. You can reuse existing common block and hook into controller of the block to extend functionality. </li>
 </ul>
 
-<p class="box-description">[need examples for each - cooming soon].<br>
-
-
+<p class="box-description">
 New block<br>
 
 If you provide new block, it must include set of controller and template. In some cases, you might need a modal if special data load is required for your new block. 
