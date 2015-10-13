@@ -262,7 +262,7 @@ There are 3 Options for reusing existing blocks provided by default template.
 <li>2. You can reuse existing common block and provide override for controller in same virtual location of extension. </li>
 <li>3. You can reuse existing common block and hook into controller of the block to extend functionality. </li>
 </ul>
-[need examples for each - cooming soon].
+[need examples for each - cooming soon].<br>
 
 
 New block<br>
@@ -271,6 +271,108 @@ If you provide new block, it must include set of controller and template. In som
 
 <br>
 Examples of block inclusion in layout XML</p>
+
+
+<!-- Steps -->
+						<ul class="steps">
+							<li class="step">
+								<span class="step-number">1</span>
+								<h4 class="step-title">Link to existing block on default core template </h4>
+								<div class="step-content">
+								<!-- HTML Highlight -->
+								<div class="code-highlight">
+								<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+<block>
+
+<block_txt_id>language</block_txt_id>
+
+</block>
+								</code>
+								</pre>
+								</div>
+								<!-- HTML Highlight -->
+								</div>
+							</li>
+						</ul>
+<p>
+
+
+
+2. Creating owned block provided with your extension
+
+                <block>
+
+                    <block_txt_id>somename_language</block_txt_id>
+
+                    <controller>blocks/somename_language</controller>
+
+                    <templates>
+
+                        <template>
+
+                            <parent_block>header</parent_block>
+
+                            <template_name>blocks/somename_language.tpl</template_name>
+
+                        </template>
+
+                    </templates>
+
+                </block>
+
+
+3. Updating owned block 
+
+                <block>
+
+                    <block_txt_id>somename_language</block_txt_id>
+
+                    <controller>blocks/somename_language</controller>
+
+                    <templates>
+
+                        <template>
+
+                            <parent_block>header</parent_block>
+
+                            <template_name>blocks/somename_language.tpl</template_name>
+
+                        </template>
+
+                    </templates>
+
+                </block>
+
+
+4. Deleting owned block 
+
+                <block>
+
+				<action>delete</action>
+
+                    <block_txt_id>somename_language</block_txt_id>
+
+                </block>
+
+
+<br>
+Managing blocks in admin layout:<br>
+
+There is a lazy way to create layouts/blocks in the template while you develop. You can use admin drag & drop tools to create page layout. Once you complete, you can use Dev Tools extension to export layout and include in your extension installation. <br>
+
+  
+
+
+Storefront menu:<br>
+
+There is a navigation menu and categories menu available in AbanteCart storefront.
+<br>
+Storefront navigation menu is constructed in common/menu.php controller and categories menu is constructed in common/category.php 
+<br>
+If you need to build custom menu, you can provide override for these controllers or hook into controller to substitute template variables stack. 
+
+
+</p>
 
 
 
