@@ -8220,7 +8220,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .menu-vertical-wrapper {
   width: 300px;
   padding: 20px 5px;
-  height: 700px;
+  /*height: 700px;*/
   overflow-y: auto;
 }
 .menu-vertical-wrapper.menu-fixed {
