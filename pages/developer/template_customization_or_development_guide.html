@@ -632,10 +632,37 @@ Example of block inclusion in layout.xml
 	<p class="box-description">
 If you need to add ad blocks or any other HTML content that users can change, we recommend to use HTML blocks. 
 <br>
-Static HTML content can be included in the block &lt;content&gt; and block XML included in the layout of desired page. 
-<br>
-[XML example] 
+Static HTML content can be included in the block &lt;content&gt; and block XML included in the layout of desired page.  
 	</p>
+	
+									<!-- HTML Highlight -->
+								<div class="code-highlight">
+								<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-xml">
+&lt;block&gt;
+          &lt;custom_block_txt_id&gt;creditcardicons&lt;/custom_block_txt_id&gt;          
+          &lt;type&gt;html_block&lt;/type&gt;
+          &lt;block_descriptions&gt;
+            &lt;block_description&gt;
+              &lt;language&gt;english&lt;/language&gt;
+              &lt;name&gt;&lt;![CDATA[Credit Card Icons]]&gt;&lt;/name&gt;
+              &lt;title&gt;&lt;![CDATA[Credit Card Icons]]&gt;&lt;/title&gt;
+              &lt;block_wrapper&gt;&lt;![CDATA[0]]&gt;&lt;/block_wrapper&gt;
+              &lt;block_framed&gt;&lt;![CDATA[0]]&gt;&lt;/block_framed&gt;
+              &lt;description&gt;&lt;![CDATA[HTML Block with credit card icons. ]]&gt;&lt;/description&gt;
+              &lt;content&gt;&lt;![CDATA[&amp;lt;ul class=&amp;quot;card-icons&amp;quot;&amp;gt;
+    &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#&amp;quot; target=&amp;quot;_blank&amp;quot; data-toggle=&amp;quot;tooltip&amp;quot; data-placement=&amp;quot;top&amp;quot; title=&amp;quot;Paypal&amp;quot;&amp;gt;&amp;lt;i class=&amp;quot;fa fa-cc-paypal&amp;quot;&amp;gt;&amp;lt;/i&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+    &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#&amp;quot; target=&amp;quot;_blank&amp;quot; data-toggle=&amp;quot;tooltip&amp;quot; data-placement=&amp;quot;top&amp;quot; title=&amp;quot;Mastercard&amp;quot;&amp;gt;&amp;lt;i class=&amp;quot;fa fa-cc-mastercard&amp;quot;&amp;gt;&amp;lt;/i&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+    &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#&amp;quot; target=&amp;quot;_blank&amp;quot; data-toggle=&amp;quot;tooltip&amp;quot; data-placement=&amp;quot;top&amp;quot; title=&amp;quot;Visa&amp;quot;&amp;gt;&amp;lt;i class=&amp;quot;fa fa-cc-visa&amp;quot;&amp;gt;&amp;lt;/i&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+    &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#&amp;quot; target=&amp;quot;_blank&amp;quot; data-toggle=&amp;quot;tooltip&amp;quot; data-placement=&amp;quot;top&amp;quot; title=&amp;quot;Discover&amp;quot;&amp;gt;&amp;lt;i class=&amp;quot;fa fa-cc-discover&amp;quot;&amp;gt;&amp;lt;/i&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+    &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#&amp;quot; target=&amp;quot;_blank&amp;quot; data-toggle=&amp;quot;tooltip&amp;quot; data-placement=&amp;quot;top&amp;quot; title=&amp;quot;AMEX&amp;quot;&amp;gt;&amp;lt;i class=&amp;quot;fa fa-cc-amex&amp;quot;&amp;gt;&amp;lt;/i&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+&amp;lt;/ul&amp;gt;
+]]&gt;&lt;/content&gt;
+            &lt;/block_description&gt;
+&lt;/block&gt;
+								</code>
+								</pre>
+								</div>
+								<!-- HTML Highlight -->
 </div>
 
 
