@@ -370,6 +370,8 @@
          url: /pages/localization/languages/languages.html      
        - text: Edit Language
          url: /pages/localization/languages/edit_language.html
+       - text: Create Language
+         url: /pages/localization/languages/create_language.html
     - text: Language Definitions
       url: /pages/localization/language_definitions.html
     - text: Currencies
