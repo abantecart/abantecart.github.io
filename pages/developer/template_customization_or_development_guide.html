@@ -3,7 +3,9 @@ layout: default
 title: Template customization or development guide 
 description: AbanteCart Templates Guide
 tags: [
-    ['architecture', 'AbanteCart Architecture']
+    ['architecture', 'AbanteCart Architecture'],
+    ['templates_overview', 'Template Overview']
+    
 ]
 redirect_from: "/tag/template_customization_or_development_guide.html"
 ---
@@ -233,9 +235,31 @@ These template files have corresponding block names and considered to be special
 <a class="jcepopup" href="/img/developer/abantecart-template-debug.png"><img src="/img/developer/abantecart-template-debug.png" border="0" width="500" class="gif-player" /></a>
 </p>
 
+<h6 class="box-title">About Layouts:</h6>
+<p class="box-description">
+Layouts are explained in <a class="jcepopup" href="/pages/developer/templates_overview.html#Blocks_and_layout">template overview section</a>. Layouts are loaded with layout.xml file that can be loaded in the installation script (install.php) with simple function call below. <br>
+
+								<!-- HTML Highlight -->
+								<div class="code-highlight">
+								<span class="js-copy-to-clipboard copy-code">copy</span> 
+								<pre><code class="language-php">
+								
+$file = DIR_EXT . '/simply_stylish/layout.xml';
+$layout = new ALayoutManager('default');
+$layout->loadXml(array('file' => $file));
+								</code>
+								</pre>
+								</div>
+								<!-- HTML Highlight -->
+<br>
+Download an example of <a class="jcepopup" href="/img/developer/layout.xml">layout.xml</a>
+<br><br>
+</p>
+
 
 <h6 class="box-title">About Blocks:</h6>
 <p class="box-description">
+
 Children Blocks are standalone elements that are linked to some parent block and the layout for specific page/template combination.<br>
 Single block can be linked to multiple layouts or templates. <br>
 Each block is identified by block_txt_id. Duplicate blocks with same "block_txt_id" will not be allowed <br>

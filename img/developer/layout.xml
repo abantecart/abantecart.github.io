@@ -1,0 +1,1600 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template_layouts>
+  <layout>
+    <name>Default Page Layout</name>
+    <template_id>example_template</template_id>
+    <type>Default</type>
+    <pages>
+      <page>
+        <controller>generic</controller>
+        <page_descriptions>
+          <page_description>
+            <language>english</language>
+            <name><![CDATA[All Other Pages]]></name>
+          </page_description>
+        </page_descriptions>
+      </page>
+    </pages>
+    <blocks>
+      <block>
+        <block_txt_id>header</block_txt_id>
+        <controller>common/header</controller>
+        <status>1</status>
+        <position>10</position>
+        <block>
+          <block_txt_id>customer</block_txt_id>
+          <status>1</status>
+          <position>10</position>
+        </block>
+        <block>
+          <block_txt_id>menu</block_txt_id>
+          <status>1</status>
+          <position>20</position>
+        </block>
+        <block>
+          <block_txt_id>language</block_txt_id>
+          <status>1</status>
+          <position>30</position>
+        </block>
+        <block>
+          <block_txt_id>currency</block_txt_id>
+          <status>1</status>
+          <position>40</position>
+        </block>
+        <block>
+          <block_txt_id>category</block_txt_id>
+          <status>1</status>
+          <position>50</position>
+        </block>
+        <block>
+          <block_txt_id>search</block_txt_id>
+          <status>1</status>
+          <position>70</position>
+        </block>
+        <block>
+          <block_txt_id>cart</block_txt_id>
+          <status>1</status>
+          <position>80</position>
+        </block>
+      </block>
+      <block>
+        <block_txt_id>header_bottom</block_txt_id>
+        <controller>common/header_bottom</controller>
+        <status>1</status>
+        <position>20</position>
+        <block>
+          <block_txt_id>breadcrumbs</block_txt_id>
+          <status>1</status>
+          <position>10</position>
+        </block>
+      </block>
+      <block>
+        <block_txt_id>column_left</block_txt_id>
+        <controller>common/column_left</controller>
+        <status>1</status>
+        <position>30</position>
+      </block>
+      <block>
+        <block_txt_id>content_top</block_txt_id>
+        <controller>common/content_top</controller>
+        <status>1</status>
+        <position>40</position>
+      </block>
+      <block>
+        <block_txt_id>content_bottom</block_txt_id>
+        <controller>common/content_bottom</controller>
+        <status>1</status>
+        <position>50</position>
+      </block>
+      <block>
+        <block_txt_id>column_right</block_txt_id>
+        <controller>common/column_right</controller>
+        <status>1</status>
+        <position>60</position>
+      </block>
+      <block>
+        <block_txt_id>footer_top</block_txt_id>
+        <controller>common/footer_top</controller>
+        <status>1</status>
+        <position>70</position>
+      </block>
+      <block>
+        <block_txt_id>footer</block_txt_id>
+        <controller>common/footer</controller>
+        <status>1</status>
+        <position>80</position>
+        <block>
+          <custom_block_txt_id>contactus_19</custom_block_txt_id>
+          <kind>custom</kind>
+          <type>html_block</type>
+          <block_descriptions>
+            <block_description>
+              <language>english</language>
+              <name><![CDATA[Contact us]]></name>
+              <title><![CDATA[Contact Us]]></title>
+              <block_wrapper><![CDATA[0]]></block_wrapper>
+              <block_framed><![CDATA[1]]></block_framed>
+              <description><![CDATA[]]></description>
+              <content><![CDATA[&lt;address&gt;
+&lt;ul &gt;
+&lt;li&gt;&lt;i class=&quot;fa fa-building-o fa-fw&quot;&gt;&lt;/i&gt; Our address, NY 11000 USA &lt;/li&gt;
+&lt;li&gt;&lt;i class=&quot;fa fa-phone fa-fw&quot;&gt;&lt;/i&gt; +123 456 7890, +123 456 7890&lt;/li&gt;
+&lt;li&gt;&lt;i class=&quot;fa fa-fax fa-fw&quot;&gt;&lt;/i&gt; +123 456 7890, +123 456 78900&lt;/li&gt;
+&lt;li&gt;&lt;i class=&quot;fa fa-envelope-o fa-fw&quot;&gt;&lt;/i&gt; &lt;a href=&quot;mailto:myemail@myemail.com&quot;&gt;myemail@myemail.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/address&gt;]]></content>
+            </block_description>
+          </block_descriptions>
+          <installed>
+            <placeholder>footer</placeholder>
+          </installed>
+          <status>1</status>
+          <position>10</position>
+        </block>
+        <block>
+          <custom_block_txt_id>socialicons_17</custom_block_txt_id>
+          <kind>custom</kind>
+          <type>html_block</type>
+          <block_descriptions>
+            <block_description>
+              <language>english</language>
+              <name><![CDATA[Social Icons]]></name>
+              <title><![CDATA[Social Icons]]></title>
+              <block_wrapper><![CDATA[0]]></block_wrapper>
+              <block_framed><![CDATA[0]]></block_framed>
+              <description><![CDATA[This is a an HTML block to show social icons and link.
+NOTE: Need to edit HTML in block content to add  personal link to social media sites]]></description>
+              <content><![CDATA[&lt;ul class=&quot;social-icons&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; target=&quot;_blank&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; title=&quot;Facebook&quot;&gt;&lt;i class=&quot;fa fa-facebook&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; target=&quot;_blank&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; title=&quot;Twitter&quot;&gt;&lt;i class=&quot;fa fa-twitter&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; target=&quot;_blank&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; title=&quot;Google Plus&quot;&gt;&lt;i class=&quot;fa fa-google-plus&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; target=&quot;_blank&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; title=&quot;Instagram&quot;&gt;&lt;i class=&quot;fa fa-instagram&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; target=&quot;_blank&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; title=&quot;Flickr&quot;&gt;&lt;i class=&quot;fa fa-flickr&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+]]></content>
+            </block_description>
+          </block_descriptions>
+          <installed>
+            <placeholder>footer</placeholder>
+          </installed>
+          <status>1</status>
+          <position>20</position>
+        </block>
+        <block>
+          <block_txt_id>content</block_txt_id>
+          <controller>blocks/content</controller>
+          <templates>
+            <template>
+              <parent_block>footer</parent_block>
+              <template_name>blocks/content_footer.tpl</template_name>
+            </template>
+          </templates>
+          <status>1</status>
+          <position>30</position>
+        </block>
+        <block>
+          <block_txt_id>newsletter_signup</block_txt_id>
+          <status>1</status>
+          <position>40</position>
+        </block>
+        <block>
+          <custom_block_txt_id>footerlogo_26</custom_block_txt_id>
+          <kind>custom</kind>
+          <type>html_block</type>
+          <block_descriptions>
+            <block_description>
+              <language>english</language>
+              <name><![CDATA[Footer Logo]]></name>
+              <title><![CDATA[Footer Logo]]></title>
+              <block_wrapper><![CDATA[blocks/html_block_footer.tpl]]></block_wrapper>
+              <block_framed><![CDATA[0]]></block_framed>
+              <description><![CDATA[Logo included in the footer. ]]></description>
+              <content><![CDATA[&lt;div class=&quot;footer_logo&quot;&gt;&lt;/div&gt;]]></content>
+            </block_description>
+          </block_descriptions>
+          <installed>
+            <placeholder>footer</placeholder>
+          </installed>
+          <status>1</status>
+          <position>50</position>
+        </block>
+        <block>
+          <custom_block_txt_id>creditcardicons_27</custom_block_txt_id>
+          <kind>custom</kind>
+          <type>html_block</type>
+          <block_descriptions>
+            <block_description>
+              <language>english</language>
+              <name><![CDATA[Credit Card Icons]]></name>
+              <title><![CDATA[Credit Card Icons]]></title>
+              <block_wrapper><![CDATA[0]]></block_wrapper>
+              <block_framed><![CDATA[0]]></block_framed>
+              <description><![CDATA[HTML Block with credit card icons. ]]></description>
+              <content><![CDATA[&lt;ul class=&quot;card-icons&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; target=&quot;_blank&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; title=&quot;Paypal&quot;&gt;&lt;i class=&quot;fa fa-cc-paypal&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; target=&quot;_blank&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; title=&quot;Mastercard&quot;&gt;&lt;i class=&quot;fa fa-cc-mastercard&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; target=&quot;_blank&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; title=&quot;Visa&quot;&gt;&lt;i class=&quot;fa fa-cc-visa&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; target=&quot;_blank&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; title=&quot;Discover&quot;&gt;&lt;i class=&quot;fa fa-cc-discover&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; target=&quot;_blank&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; title=&quot;AMEX&quot;&gt;&lt;i class=&quot;fa fa-cc-amex&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+]]></content>
+            </block_description>
+          </block_descriptions>
+          <installed>
+            <placeholder>footer</placeholder>
+          </installed>
+          <status>1</status>
+          <position>60</position>
+        </block>
+      </block>
+    </blocks>
+  </layout>
+  <layout>
+    <name>Home Page</name>
+    <template_id>example_template</template_id>
+    <type>Active</type>
+    <pages>
+      <page>
+        <controller>pages/index/home</controller>
+        <page_descriptions>
+          <page_description>
+            <language>english</language>
+            <name><![CDATA[Home Page]]></name>
+          </page_description>
+        </page_descriptions>
+      </page>
+    </pages>
+    <blocks>
+      <block>
+        <block_txt_id>header</block_txt_id>
+        <controller>common/header</controller>
+        <status>1</status>
+        <position>10</position>
+        <block>
+          <block_txt_id>customer</block_txt_id>
+          <status>1</status>
+          <position>10</position>
+        </block>
+        <block>
+          <block_txt_id>menu</block_txt_id>
+          <status>1</status>
+          <position>20</position>
+        </block>
+        <block>
+          <block_txt_id>language</block_txt_id>
+          <status>1</status>
+          <position>30</position>
+        </block>
+        <block>
+          <block_txt_id>currency</block_txt_id>
+          <status>1</status>
+          <position>40</position>
+        </block>
+        <block>
+          <block_txt_id>category</block_txt_id>
+          <status>1</status>
+          <position>50</position>
+        </block>
+        <block>
+          <block_txt_id>search</block_txt_id>
+          <status>1</status>
+          <position>70</position>
+        </block>
+        <block>
+          <block_txt_id>cart</block_txt_id>
+          <status>1</status>
+          <position>80</position>
+        </block>
+      </block>
+      <block>
+        <block_txt_id>header_bottom</block_txt_id>
+        <controller>common/header_bottom</controller>
+        <status>1</status>
+        <position>20</position>
+        <block>
+          <custom_block_txt_id>mainpagebannerslider_example_template</custom_block_txt_id>
+          <kind>custom</kind>
+          <type>banner_block</type>
+          <block_descriptions>
+            <block_description>
+              <language>english</language>
+              <name><![CDATA[Main Page Banner Slider ]]></name>
+              <title><![CDATA[Main Page Banner Slider ]]></title>
+              <block_wrapper><![CDATA[blocks/banner_slider.tpl]]></block_wrapper>
+              <block_framed><![CDATA[0]]></block_framed>
+              <description><![CDATA[]]></description>
+              <content><![CDATA[a:1:{s:17:"banner_group_name";s:32:"Main Page Banners ";}]]></content>
+            </block_description>
+          </block_descriptions>
+          <installed>
+            <placeholder>header_bottom</placeholder>
+          </installed>
+          <status>1</status>
+          <position>10</position>
+        </block>
+      </block>
+      <block>
+        <block_txt_id>column_left</block_txt_id>
+        <controller>common/column_left</controller>
+        <status>0</status>
+        <position>30</position>
+      </block>
+      <block>
+        <block_txt_id>content_top</block_txt_id>
+        <controller>common/content_top</controller>
+        <status>1</status>
+        <position>40</position>
+      </block>
+      <block>
+        <block_txt_id>content_bottom</block_txt_id>
+        <controller>common/content_bottom</controller>
+        <status>1</status>
+        <position>50</position>
+        <block>
+          <block_txt_id>featured</block_txt_id>
+          <status>1</status>
+          <position>10</position>
+        </block>
+        <block>
+          <block_txt_id>latest</block_txt_id>
+          <status>1</status>
+          <position>30</position>
+        </block>
+        <block>
+          <block_txt_id>special</block_txt_id>
+          <status>1</status>
+          <position>40</position>
+        </block>
+        <block>
+          <block_txt_id>bestsellers</block_txt_id>
+          <status>1</status>
+          <position>60</position>
+        </block>
+        <block>
+          <custom_block_txt_id>ourbrands_24</custom_block_txt_id>
+          <kind>custom</kind>
+          <type>listing_block</type>
+          <block_descriptions>
+            <block_description>
+              <language>english</language>
+              <name><![CDATA[Our Brands]]></name>
+              <title><![CDATA[Our Brands]]></title>
+              <block_wrapper><![CDATA[blocks/listing_block/popular_brands_content_bottom.tpl]]></block_wrapper>
+              <block_framed><![CDATA[1]]></block_framed>
+              <description><![CDATA[]]></description>
+              <content><![CDATA[a:1:{s:18:"listing_datasource";s:20:"custom_manufacturers";}]]></content>
+            </block_description>
+          </block_descriptions>
+          <installed>
+            <placeholder>content_bottom</placeholder>
+          </installed>
+          <status>1</status>
+          <position>70</position>
+        </block>
+      </block>
+      <block>
+        <block_txt_id>column_right</block_txt_id>
+        <controller>common/column_right</controller>
+        <status>0</status>
+        <position>60</position>
+      </block>
+      <block>
+        <block_txt_id>footer_top</block_txt_id>
+        <controller>common/footer_top</controller>
+        <status>1</status>
+        <position>70</position>
+      </block>
+      <block>
+        <block_txt_id>footer</block_txt_id>
+        <controller>common/footer</controller>
+        <status>1</status>
+        <position>80</position>
+        <block>
+          <custom_block_txt_id>contactus_19</custom_block_txt_id>
+          <kind>custom</kind>
+          <type>html_block</type>
+          <block_descriptions>
+            <block_description>
+              <language>english</language>
+              <name><![CDATA[Contact us]]></name>
+              <title><![CDATA[Contact Us]]></title>
+              <block_wrapper><![CDATA[0]]></block_wrapper>
+              <block_framed><![CDATA[1]]></block_framed>
+              <description><![CDATA[]]></description>
+              <content><![CDATA[&lt;address&gt;
+&lt;ul &gt;
+&lt;li&gt;&lt;i class=&quot;fa fa-building-o fa-fw&quot;&gt;&lt;/i&gt; Our address, NY 11000 USA &lt;/li&gt;
+&lt;li&gt;&lt;i class=&quot;fa fa-phone fa-fw&quot;&gt;&lt;/i&gt; +123 456 7890, +123 456 7890&lt;/li&gt;
+&lt;li&gt;&lt;i class=&quot;fa fa-fax fa-fw&quot;&gt;&lt;/i&gt; +123 456 7890, +123 456 78900&lt;/li&gt;
+&lt;li&gt;&lt;i class=&quot;fa fa-envelope-o fa-fw&quot;&gt;&lt;/i&gt; &lt;a href=&quot;mailto:myemail@myemail.com&quot;&gt;myemail@myemail.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/address&gt;]]></content>
+            </block_description>
+          </block_descriptions>
+          <installed>
+            <placeholder>footer</placeholder>
+          </installed>
+          <status>1</status>
+          <position>10</position>
+        </block>
+        <block>
+          <custom_block_txt_id>socialicons_17</custom_block_txt_id>
+          <kind>custom</kind>
+          <type>html_block</type>
+          <block_descriptions>
+            <block_description>
+              <language>english</language>
+              <name><![CDATA[Social Icons]]></name>
+              <title><![CDATA[Social Icons]]></title>
+              <block_wrapper><![CDATA[0]]></block_wrapper>
+              <block_framed><![CDATA[0]]></block_framed>
+              <description><![CDATA[This is a an HTML block to show social icons and link.
+NOTE: Need to edit HTML in block content to add  personal link to social media sites]]></description>
+              <content><![CDATA[&lt;ul class=&quot;social-icons&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; target=&quot;_blank&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; title=&quot;Facebook&quot;&gt;&lt;i class=&quot;fa fa-facebook&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; target=&quot;_blank&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; title=&quot;Twitter&quot;&gt;&lt;i class=&quot;fa fa-twitter&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; target=&quot;_blank&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; title=&quot;Google Plus&quot;&gt;&lt;i class=&quot;fa fa-google-plus&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; target=&quot;_blank&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; title=&quot;Instagram&quot;&gt;&lt;i class=&quot;fa fa-instagram&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; target=&quot;_blank&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; title=&quot;Flickr&quot;&gt;&lt;i class=&quot;fa fa-flickr&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+]]></content>
+            </block_description>
+          </block_descriptions>
+          <installed>
+            <placeholder>footer</placeholder>
+          </installed>
+          <status>1</status>
+          <position>20</position>
+        </block>
+        <block>
+          <block_txt_id>content</block_txt_id>
+          <controller>blocks/content</controller>
+          <templates>
+            <template>
+              <parent_block>footer</parent_block>
+              <template_name>blocks/content_footer.tpl</template_name>
+            </template>
+          </templates>
+          <status>1</status>
+          <position>30</position>
+        </block>
+        <block>
+          <block_txt_id>newsletter_signup</block_txt_id>
+          <status>1</status>
+          <position>40</position>
+        </block>
+        <block>
+          <custom_block_txt_id>footerlogo_26</custom_block_txt_id>
+          <kind>custom</kind>
+          <type>html_block</type>
+          <block_descriptions>
+            <block_description>
+              <language>english</language>
+              <name><![CDATA[Footer Logo]]></name>
+              <title><![CDATA[Footer Logo]]></title>
+              <block_wrapper><![CDATA[blocks/html_block_footer.tpl]]></block_wrapper>
+              <block_framed><![CDATA[0]]></block_framed>
+              <description><![CDATA[Logo included in the footer. ]]></description>
+              <content><![CDATA[&lt;div class=&quot;footer_logo&quot;&gt;&lt;/div&gt;]]></content>
+            </block_description>
+          </block_descriptions>
+          <installed>
+            <placeholder>footer</placeholder>
+          </installed>
+          <status>1</status>
+          <position>50</position>
+        </block>
+        <block>
+          <custom_block_txt_id>creditcardicons_27</custom_block_txt_id>
+          <kind>custom</kind>
+          <type>html_block</type>
+          <block_descriptions>
+            <block_description>
+              <language>english</language>
+              <name><![CDATA[Credit Card Icons]]></name>
+              <title><![CDATA[Credit Card Icons]]></title>
+              <block_wrapper><![CDATA[0]]></block_wrapper>
+              <block_framed><![CDATA[0]]></block_framed>
+              <description><![CDATA[HTML Block with credit card icons. ]]></description>
+              <content><![CDATA[&lt;ul class=&quot;card-icons&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; target=&quot;_blank&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; title=&quot;Paypal&quot;&gt;&lt;i class=&quot;fa fa-cc-paypal&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; target=&quot;_blank&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; title=&quot;Mastercard&quot;&gt;&lt;i class=&quot;fa fa-cc-mastercard&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; target=&quot;_blank&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; title=&quot;Visa&quot;&gt;&lt;i class=&quot;fa fa-cc-visa&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; target=&quot;_blank&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; title=&quot;Discover&quot;&gt;&lt;i class=&quot;fa fa-cc-discover&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; target=&quot;_blank&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; title=&quot;AMEX&quot;&gt;&lt;i class=&quot;fa fa-cc-amex&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+]]></content>
+            </block_description>
+          </block_descriptions>
+          <installed>
+            <placeholder>footer</placeholder>
+          </installed>
+          <status>1</status>
+          <position>60</position>
+        </block>
+      </block>
+    </blocks>
+  </layout>
+  <layout>
+    <name>Login Page</name>
+    <template_id>example_template</template_id>
+    <type>Active</type>
+    <pages>
+      <page>
+        <controller>pages/account/login</controller>
+        <page_descriptions>
+          <page_description>
+            <language>english</language>
+            <name><![CDATA[Login Page]]></name>
+          </page_description>
+        </page_descriptions>
+      </page>
+    </pages>
+    <blocks>
+      <block>
+        <block_txt_id>header</block_txt_id>
+        <controller>common/header</controller>
+        <status>1</status>
+        <position>10</position>
+        <block>
+          <block_txt_id>customer</block_txt_id>
+          <status>1</status>
+          <position>10</position>
+        </block>
+        <block>
+          <block_txt_id>menu</block_txt_id>
+          <status>1</status>
+          <position>20</position>
+        </block>
+        <block>
+          <block_txt_id>language</block_txt_id>
+          <status>1</status>
+          <position>30</position>
+        </block>
+        <block>
+          <block_txt_id>currency</block_txt_id>
+          <status>1</status>
+          <position>40</position>
+        </block>
+        <block>
+          <block_txt_id>category</block_txt_id>
+          <status>1</status>
+          <position>50</position>
+        </block>
+        <block>
+          <block_txt_id>search</block_txt_id>
+          <status>1</status>
+          <position>70</position>
+        </block>
+        <block>
+          <block_txt_id>cart</block_txt_id>
+          <status>1</status>
+          <position>80</position>
+        </block>
+      </block>
+      <block>
+        <block_txt_id>header_bottom</block_txt_id>
+        <controller>common/header_bottom</controller>
+        <status>1</status>
+        <position>20</position>
+        <block>
+          <block_txt_id>breadcrumbs</block_txt_id>
+          <status>1</status>
+          <position>10</position>
+        </block>
+      </block>
+      <block>
+        <block_txt_id>column_left</block_txt_id>
+        <controller>common/column_left</controller>
+        <status>0</status>
+        <position>30</position>
+      </block>
+      <block>
+        <block_txt_id>content_top</block_txt_id>
+        <controller>common/content_top</controller>
+        <status>1</status>
+        <position>40</position>
+      </block>
+      <block>
+        <block_txt_id>content_bottom</block_txt_id>
+        <controller>common/content_bottom</controller>
+        <status>1</status>
+        <position>50</position>
+      </block>
+      <block>
+        <block_txt_id>column_right</block_txt_id>
+        <controller>common/column_right</controller>
+        <status>0</status>
+        <position>60</position>
+      </block>
+      <block>
+        <block_txt_id>footer_top</block_txt_id>
+        <controller>common/footer_top</controller>
+        <status>1</status>
+        <position>70</position>
+      </block>
+      <block>
+        <block_txt_id>footer</block_txt_id>
+        <controller>common/footer</controller>
+        <status>1</status>
+        <position>80</position>
+        <block>
+          <custom_block_txt_id>contactus_19</custom_block_txt_id>
+          <kind>custom</kind>
+          <type>html_block</type>
+          <block_descriptions>
+            <block_description>
+              <language>english</language>
+              <name><![CDATA[Contact us]]></name>
+              <title><![CDATA[Contact Us]]></title>
+              <block_wrapper><![CDATA[0]]></block_wrapper>
+              <block_framed><![CDATA[1]]></block_framed>
+              <description><![CDATA[]]></description>
+              <content><![CDATA[&lt;address&gt;
+&lt;ul &gt;
+&lt;li&gt;&lt;i class=&quot;fa fa-building-o fa-fw&quot;&gt;&lt;/i&gt; Our address, NY 11000 USA &lt;/li&gt;
+&lt;li&gt;&lt;i class=&quot;fa fa-phone fa-fw&quot;&gt;&lt;/i&gt; +123 456 7890, +123 456 7890&lt;/li&gt;
+&lt;li&gt;&lt;i class=&quot;fa fa-fax fa-fw&quot;&gt;&lt;/i&gt; +123 456 7890, +123 456 78900&lt;/li&gt;
+&lt;li&gt;&lt;i class=&quot;fa fa-envelope-o fa-fw&quot;&gt;&lt;/i&gt; &lt;a href=&quot;mailto:myemail@myemail.com&quot;&gt;myemail@myemail.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/address&gt;]]></content>
+            </block_description>
+          </block_descriptions>
+          <installed>
+            <placeholder>footer</placeholder>
+          </installed>
+          <status>1</status>
+          <position>10</position>
+        </block>
+        <block>
+          <custom_block_txt_id>socialicons_17</custom_block_txt_id>
+          <kind>custom</kind>
+          <type>html_block</type>
+          <block_descriptions>
+            <block_description>
+              <language>english</language>
+              <name><![CDATA[Social Icons]]></name>
+              <title><![CDATA[Social Icons]]></title>
+              <block_wrapper><![CDATA[0]]></block_wrapper>
+              <block_framed><![CDATA[0]]></block_framed>
+              <description><![CDATA[This is a an HTML block to show social icons and link.
+NOTE: Need to edit HTML in block content to add  personal link to social media sites]]></description>
+              <content><![CDATA[&lt;ul class=&quot;social-icons&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; target=&quot;_blank&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; title=&quot;Facebook&quot;&gt;&lt;i class=&quot;fa fa-facebook&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; target=&quot;_blank&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; title=&quot;Twitter&quot;&gt;&lt;i class=&quot;fa fa-twitter&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; target=&quot;_blank&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; title=&quot;Google Plus&quot;&gt;&lt;i class=&quot;fa fa-google-plus&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; target=&quot;_blank&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; title=&quot;Instagram&quot;&gt;&lt;i class=&quot;fa fa-instagram&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; target=&quot;_blank&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; title=&quot;Flickr&quot;&gt;&lt;i class=&quot;fa fa-flickr&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+]]></content>
+            </block_description>
+          </block_descriptions>
+          <installed>
+            <placeholder>footer</placeholder>
+          </installed>
+          <status>1</status>
+          <position>20</position>
+        </block>
+        <block>
+          <block_txt_id>content</block_txt_id>
+          <controller>blocks/content</controller>
+          <templates>
+            <template>
+              <parent_block>footer</parent_block>
+              <template_name>blocks/content_footer.tpl</template_name>
+            </template>
+          </templates>
+          <status>1</status>
+          <position>30</position>
+        </block>
+        <block>
+          <block_txt_id>newsletter_signup</block_txt_id>
+          <status>1</status>
+          <position>40</position>
+        </block>
+        <block>
+          <custom_block_txt_id>footerlogo_26</custom_block_txt_id>
+          <kind>custom</kind>
+          <type>html_block</type>
+          <block_descriptions>
+            <block_description>
+              <language>english</language>
+              <name><![CDATA[Footer Logo]]></name>
+              <title><![CDATA[Footer Logo]]></title>
+              <block_wrapper><![CDATA[blocks/html_block_footer.tpl]]></block_wrapper>
+              <block_framed><![CDATA[0]]></block_framed>
+              <description><![CDATA[Logo included in the footer. ]]></description>
+              <content><![CDATA[&lt;div class=&quot;footer_logo&quot;&gt;&lt;/div&gt;]]></content>
+            </block_description>
+          </block_descriptions>
+          <installed>
+            <placeholder>footer</placeholder>
+          </installed>
+          <status>1</status>
+          <position>50</position>
+        </block>
+        <block>
+          <custom_block_txt_id>creditcardicons_27</custom_block_txt_id>
+          <kind>custom</kind>
+          <type>html_block</type>
+          <block_descriptions>
+            <block_description>
+              <language>english</language>
+              <name><![CDATA[Credit Card Icons]]></name>
+              <title><![CDATA[Credit Card Icons]]></title>
+              <block_wrapper><![CDATA[0]]></block_wrapper>
+              <block_framed><![CDATA[0]]></block_framed>
+              <description><![CDATA[HTML Block with credit card icons. ]]></description>
+              <content><![CDATA[&lt;ul class=&quot;card-icons&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; target=&quot;_blank&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; title=&quot;Paypal&quot;&gt;&lt;i class=&quot;fa fa-cc-paypal&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; target=&quot;_blank&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; title=&quot;Mastercard&quot;&gt;&lt;i class=&quot;fa fa-cc-mastercard&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; target=&quot;_blank&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; title=&quot;Visa&quot;&gt;&lt;i class=&quot;fa fa-cc-visa&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; target=&quot;_blank&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; title=&quot;Discover&quot;&gt;&lt;i class=&quot;fa fa-cc-discover&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; target=&quot;_blank&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; title=&quot;AMEX&quot;&gt;&lt;i class=&quot;fa fa-cc-amex&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+]]></content>
+            </block_description>
+          </block_descriptions>
+          <installed>
+            <placeholder>footer</placeholder>
+          </installed>
+          <status>1</status>
+          <position>60</position>
+        </block>
+      </block>
+    </blocks>
+  </layout>
+  <layout>
+    <name>Default Product Page</name>
+    <template_id>example_template</template_id>
+    <type>Active</type>
+    <pages>
+      <page>
+        <controller>pages/product/product</controller>
+        <page_descriptions>
+          <page_description>
+            <language>english</language>
+            <name><![CDATA[Default Product Page]]></name>
+          </page_description>
+        </page_descriptions>
+      </page>
+    </pages>
+    <blocks>
+      <block>
+        <block_txt_id>header</block_txt_id>
+        <controller>common/header</controller>
+        <status>1</status>
+        <position>10</position>
+        <block>
+          <block_txt_id>customer</block_txt_id>
+          <status>1</status>
+          <position>10</position>
+        </block>
+        <block>
+          <block_txt_id>menu</block_txt_id>
+          <status>1</status>
+          <position>20</position>
+        </block>
+        <block>
+          <block_txt_id>language</block_txt_id>
+          <status>1</status>
+          <position>30</position>
+        </block>
+        <block>
+          <block_txt_id>currency</block_txt_id>
+          <status>1</status>
+          <position>40</position>
+        </block>
+        <block>
+          <block_txt_id>category</block_txt_id>
+          <status>1</status>
+          <position>50</position>
+        </block>
+        <block>
+          <block_txt_id>search</block_txt_id>
+          <status>1</status>
+          <position>70</position>
+        </block>
+        <block>
+          <block_txt_id>cart</block_txt_id>
+          <status>1</status>
+          <position>80</position>
+        </block>
+      </block>
+      <block>
+        <block_txt_id>header_bottom</block_txt_id>
+        <controller>common/header_bottom</controller>
+        <status>1</status>
+        <position>20</position>
+        <block>
+          <block_txt_id>breadcrumbs</block_txt_id>
+          <status>1</status>
+          <position>10</position>
+        </block>
+      </block>
+      <block>
+        <block_txt_id>column_left</block_txt_id>
+        <controller>common/column_left</controller>
+        <status>0</status>
+        <position>30</position>
+      </block>
+      <block>
+        <block_txt_id>content_top</block_txt_id>
+        <controller>common/content_top</controller>
+        <status>1</status>
+        <position>40</position>
+      </block>
+      <block>
+        <block_txt_id>content_bottom</block_txt_id>
+        <controller>common/content_bottom</controller>
+        <status>1</status>
+        <position>50</position>
+      </block>
+      <block>
+        <block_txt_id>column_right</block_txt_id>
+        <controller>common/column_right</controller>
+        <status>1</status>
+        <position>60</position>
+        <block>
+          <custom_block_txt_id>sideadred_25</custom_block_txt_id>
+          <kind>custom</kind>
+          <type>html_block</type>
+          <block_descriptions>
+            <block_description>
+              <language>english</language>
+              <name><![CDATA[Side Ad (red)]]></name>
+              <title><![CDATA[Ad]]></title>
+              <block_wrapper><![CDATA[blocks/html_block.tpl]]></block_wrapper>
+              <block_framed><![CDATA[0]]></block_framed>
+              <description><![CDATA[]]></description>
+              <content><![CDATA[									&lt;div class=&quot;ad-item-content-wrap&quot;&gt;
+										&lt;div class=&quot;ad-item-content&quot;&gt;
+											&lt;div class=&quot;ad-item-content-inner&quot;&gt;
+												&lt;p&gt;Fall 2016&lt;/p&gt;
+												&lt;h3&gt;&lt;a href=&quot;#&quot;&gt;Latest arrivals in Fashion&lt;/a&gt;&lt;/h3&gt;
+												&lt;p&gt;&lt;a href=&quot;#&quot;&gt;See the collection&lt;/a&gt;&lt;/p&gt;
+											&lt;/div&gt;
+										&lt;/div&gt;
+									&lt;/div&gt;]]></content>
+            </block_description>
+          </block_descriptions>
+          <installed>
+            <placeholder>column_right</placeholder>
+          </installed>
+          <status>1</status>
+          <position>10</position>
+        </block>
+        <block>
+          <block_txt_id>latest</block_txt_id>
+          <status>1</status>
+          <position>20</position>
+        </block>
+        <block>
+          <block_txt_id>bestsellers</block_txt_id>
+          <status>1</status>
+          <position>30</position>
+        </block>
+        <block>
+          <block_txt_id>special</block_txt_id>
+          <status>1</status>
+          <position>40</position>
+        </block>
+      </block>
+      <block>
+        <block_txt_id>footer_top</block_txt_id>
+        <controller>common/footer_top</controller>
+        <status>1</status>
+        <position>70</position>
+        <block>
+          <custom_block_txt_id>productdetailsad_28</custom_block_txt_id>
+          <kind>custom</kind>
+          <type>html_block</type>
+          <block_descriptions>
+            <block_description>
+              <language>english</language>
+              <name><![CDATA[Product Details Ad]]></name>
+              <title><![CDATA[Product Details Ad]]></title>
+              <block_wrapper><![CDATA[blocks/html_block_footer.tpl]]></block_wrapper>
+              <block_framed><![CDATA[0]]></block_framed>
+              <description><![CDATA[Promotion banners in product details page]]></description>
+              <content><![CDATA[&lt;div class=&quot;container-fluid&quot;&gt;
+    &lt;div class=&quot;row row-fluid&quot;&gt;
+    	&lt;div class=&quot;col-sm-6 storelocation-wrap equal-height&quot;&gt;
+    		&lt;div class=&quot;storelocation&quot;&gt;
+    			&lt;h2&gt;Store Location&lt;/h2&gt;
+    			&lt;address&gt;
+    				123 Broadway, New York, NY 10011
+    			&lt;/address&gt;
+    			&lt;span class=&quot;divider&quot;&gt;&lt;/span&gt;
+    			&lt;p&gt;&lt;strong&gt;Opening hours&lt;/strong&gt;&lt;/p&gt;
+    			&lt;p&gt;Monday to Friday: 9am - 6pm&lt;br&gt;
+    			Saturday to Sunday: 10am - 4pm&lt;/p&gt;
+    		&lt;/div&gt;
+    	&lt;/div&gt;
+    	&lt;div class=&quot;col-sm-6 contact-info-wrap  equal-height&quot;&gt;
+    		&lt;div class=&quot;contact-info-form&quot;&gt;
+    			&lt;h2&gt;Have a question?&lt;/h2&gt;
+    			&lt;p&gt;Contact our team for any product related questions&lt;/p&gt;
+    			&lt;span class=&quot;divider&quot;&gt;&lt;/span&gt;          
+    				&lt;div class=&quot;text-center&quot;&gt;
+    				&lt;a href=&quot;/index.php?rt=content/contact&quot; class=&quot;btn btn-default&quot;&gt;Contact Us&lt;/a&gt;
+    				&lt;/div&gt;
+    		&lt;/div&gt;
+    	&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;]]></content>
+            </block_description>
+           </block_descriptions>
+          <installed>
+            <placeholder>footer_top</placeholder>
+          </installed>
+          <status>1</status>
+          <position>10</position>
+        </block>
+      </block>
+      <block>
+        <block_txt_id>footer</block_txt_id>
+        <controller>common/footer</controller>
+        <status>1</status>
+        <position>80</position>
+        <block>
+          <custom_block_txt_id>contactus_19</custom_block_txt_id>
+          <kind>custom</kind>
+          <type>html_block</type>
+          <block_descriptions>
+            <block_description>
+              <language>english</language>
+              <name><![CDATA[Contact us]]></name>
+              <title><![CDATA[Contact Us]]></title>
+              <block_wrapper><![CDATA[0]]></block_wrapper>
+              <block_framed><![CDATA[1]]></block_framed>
+              <description><![CDATA[]]></description>
+              <content><![CDATA[&lt;address&gt;
+&lt;ul &gt;
+&lt;li&gt;&lt;i class=&quot;fa fa-building-o fa-fw&quot;&gt;&lt;/i&gt; Our address, NY 11000 USA &lt;/li&gt;
+&lt;li&gt;&lt;i class=&quot;fa fa-phone fa-fw&quot;&gt;&lt;/i&gt; +123 456 7890, +123 456 7890&lt;/li&gt;
+&lt;li&gt;&lt;i class=&quot;fa fa-fax fa-fw&quot;&gt;&lt;/i&gt; +123 456 7890, +123 456 78900&lt;/li&gt;
+&lt;li&gt;&lt;i class=&quot;fa fa-envelope-o fa-fw&quot;&gt;&lt;/i&gt; &lt;a href=&quot;mailto:myemail@myemail.com&quot;&gt;myemail@myemail.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/address&gt;]]></content>
+            </block_description>
+           </block_descriptions>
+          <installed>
+            <placeholder>footer</placeholder>
+          </installed>
+          <status>1</status>
+          <position>10</position>
+        </block>
+        <block>
+          <custom_block_txt_id>socialicons_17</custom_block_txt_id>
+          <kind>custom</kind>
+          <type>html_block</type>
+          <block_descriptions>
+            <block_description>
+              <language>english</language>
+              <name><![CDATA[Social Icons]]></name>
+              <title><![CDATA[Social Icons]]></title>
+              <block_wrapper><![CDATA[0]]></block_wrapper>
+              <block_framed><![CDATA[0]]></block_framed>
+              <description><![CDATA[This is a an HTML block to show social icons and link.
+NOTE: Need to edit HTML in block content to add  personal link to social media sites]]></description>
+              <content><![CDATA[&lt;ul class=&quot;social-icons&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; target=&quot;_blank&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; title=&quot;Facebook&quot;&gt;&lt;i class=&quot;fa fa-facebook&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; target=&quot;_blank&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; title=&quot;Twitter&quot;&gt;&lt;i class=&quot;fa fa-twitter&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; target=&quot;_blank&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; title=&quot;Google Plus&quot;&gt;&lt;i class=&quot;fa fa-google-plus&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; target=&quot;_blank&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; title=&quot;Instagram&quot;&gt;&lt;i class=&quot;fa fa-instagram&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; target=&quot;_blank&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; title=&quot;Flickr&quot;&gt;&lt;i class=&quot;fa fa-flickr&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+]]></content>
+            </block_description>
+          </block_descriptions>
+          <installed>
+            <placeholder>footer</placeholder>
+          </installed>
+          <status>1</status>
+          <position>20</position>
+        </block>
+        <block>
+          <block_txt_id>content</block_txt_id>
+          <controller>blocks/content</controller>
+          <templates>
+            <template>
+              <parent_block>footer</parent_block>
+              <template_name>blocks/content_footer.tpl</template_name>
+            </template>
+          </templates>
+          <status>1</status>
+          <position>30</position>
+        </block>
+        <block>
+          <block_txt_id>newsletter_signup</block_txt_id>
+          <status>1</status>
+          <position>40</position>
+        </block>
+        <block>
+          <custom_block_txt_id>footerlogo_26</custom_block_txt_id>
+          <kind>custom</kind>
+          <type>html_block</type>
+          <block_descriptions>
+            <block_description>
+              <language>english</language>
+              <name><![CDATA[Footer Logo]]></name>
+              <title><![CDATA[Footer Logo]]></title>
+              <block_wrapper><![CDATA[blocks/html_block_footer.tpl]]></block_wrapper>
+              <block_framed><![CDATA[0]]></block_framed>
+              <description><![CDATA[Logo included in the footer. ]]></description>
+              <content><![CDATA[&lt;div class=&quot;footer_logo&quot;&gt;&lt;/div&gt;]]></content>
+            </block_description>
+          </block_descriptions>
+          <installed>
+            <placeholder>footer</placeholder>
+          </installed>
+          <status>1</status>
+          <position>50</position>
+        </block>
+        <block>
+          <custom_block_txt_id>creditcardicons_27</custom_block_txt_id>
+          <kind>custom</kind>
+          <type>html_block</type>
+          <block_descriptions>
+            <block_description>
+              <language>english</language>
+              <name><![CDATA[Credit Card Icons]]></name>
+              <title><![CDATA[Credit Card Icons]]></title>
+              <block_wrapper><![CDATA[0]]></block_wrapper>
+              <block_framed><![CDATA[0]]></block_framed>
+              <description><![CDATA[HTML Block with credit card icons. ]]></description>
+              <content><![CDATA[&lt;ul class=&quot;card-icons&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; target=&quot;_blank&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; title=&quot;Paypal&quot;&gt;&lt;i class=&quot;fa fa-cc-paypal&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; target=&quot;_blank&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; title=&quot;Mastercard&quot;&gt;&lt;i class=&quot;fa fa-cc-mastercard&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; target=&quot;_blank&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; title=&quot;Visa&quot;&gt;&lt;i class=&quot;fa fa-cc-visa&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; target=&quot;_blank&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; title=&quot;Discover&quot;&gt;&lt;i class=&quot;fa fa-cc-discover&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; target=&quot;_blank&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; title=&quot;AMEX&quot;&gt;&lt;i class=&quot;fa fa-cc-amex&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+]]></content>
+            </block_description>
+          </block_descriptions>
+          <installed>
+            <placeholder>footer</placeholder>
+          </installed>
+          <status>1</status>
+          <position>60</position>
+        </block>
+      </block>
+    </blocks>
+  </layout>
+  <layout>
+    <name>Checkout Pages</name>
+    <template_id>example_template</template_id>
+    <type>Active</type>
+    <pages>
+      <page>
+        <controller>pages/checkout</controller>
+        <page_descriptions>
+          <page_description>
+            <language>english</language>
+            <name><![CDATA[Checkout Pages]]></name>
+          </page_description>
+        </page_descriptions>
+      </page>
+    </pages>
+    <blocks>
+      <block>
+        <block_txt_id>header</block_txt_id>
+        <controller>common/header</controller>
+        <status>1</status>
+        <position>10</position>
+        <block>
+          <block_txt_id>customer</block_txt_id>
+          <status>1</status>
+          <position>10</position>
+        </block>
+        <block>
+          <block_txt_id>menu</block_txt_id>
+          <status>1</status>
+          <position>20</position>
+        </block>
+        <block>
+          <block_txt_id>language</block_txt_id>
+          <status>1</status>
+          <position>30</position>
+        </block>
+        <block>
+          <block_txt_id>currency</block_txt_id>
+          <status>1</status>
+          <position>40</position>
+        </block>
+        <block>
+          <block_txt_id>category</block_txt_id>
+          <status>1</status>
+          <position>50</position>
+        </block>
+        <block>
+          <block_txt_id>search</block_txt_id>
+          <status>1</status>
+          <position>70</position>
+        </block>
+        <block>
+          <block_txt_id>cart</block_txt_id>
+          <status>1</status>
+          <position>80</position>
+        </block>
+      </block>
+      <block>
+        <block_txt_id>header_bottom</block_txt_id>
+        <controller>common/header_bottom</controller>
+        <status>1</status>
+        <position>20</position>
+        <block>
+          <block_txt_id>breadcrumbs</block_txt_id>
+          <status>1</status>
+          <position>10</position>
+        </block>
+      </block>
+      <block>
+        <block_txt_id>column_left</block_txt_id>
+        <controller>common/column_left</controller>
+        <status>0</status>
+        <position>30</position>
+      </block>
+      <block>
+        <block_txt_id>content_top</block_txt_id>
+        <controller>common/content_top</controller>
+        <status>1</status>
+        <position>40</position>
+      </block>
+      <block>
+        <block_txt_id>content_bottom</block_txt_id>
+        <controller>common/content_bottom</controller>
+        <status>1</status>
+        <position>50</position>
+      </block>
+      <block>
+        <block_txt_id>column_right</block_txt_id>
+        <controller>common/column_right</controller>
+        <status>1</status>
+        <position>60</position>
+      </block>
+      <block>
+        <block_txt_id>footer_top</block_txt_id>
+        <controller>common/footer_top</controller>
+        <status>1</status>
+        <position>70</position>
+      </block>
+      <block>
+        <block_txt_id>footer</block_txt_id>
+        <controller>common/footer</controller>
+        <status>1</status>
+        <position>80</position>
+        <block>
+          <custom_block_txt_id>contactus_19</custom_block_txt_id>
+          <kind>custom</kind>
+          <type>html_block</type>
+          <block_descriptions>
+            <block_description>
+              <language>english</language>
+              <name><![CDATA[Contact us]]></name>
+              <title><![CDATA[Contact Us]]></title>
+              <block_wrapper><![CDATA[0]]></block_wrapper>
+              <block_framed><![CDATA[1]]></block_framed>
+              <description><![CDATA[]]></description>
+              <content><![CDATA[&lt;address&gt;
+&lt;ul &gt;
+&lt;li&gt;&lt;i class=&quot;fa fa-building-o fa-fw&quot;&gt;&lt;/i&gt; Our address, NY 11000 USA &lt;/li&gt;
+&lt;li&gt;&lt;i class=&quot;fa fa-phone fa-fw&quot;&gt;&lt;/i&gt; +123 456 7890, +123 456 7890&lt;/li&gt;
+&lt;li&gt;&lt;i class=&quot;fa fa-fax fa-fw&quot;&gt;&lt;/i&gt; +123 456 7890, +123 456 78900&lt;/li&gt;
+&lt;li&gt;&lt;i class=&quot;fa fa-envelope-o fa-fw&quot;&gt;&lt;/i&gt; &lt;a href=&quot;mailto:myemail@myemail.com&quot;&gt;myemail@myemail.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/address&gt;]]></content>
+            </block_description>
+          </block_descriptions>
+          <installed>
+            <placeholder>footer</placeholder>
+          </installed>
+          <status>1</status>
+          <position>10</position>
+        </block>
+        <block>
+          <custom_block_txt_id>socialicons_17</custom_block_txt_id>
+          <kind>custom</kind>
+          <type>html_block</type>
+          <block_descriptions>
+            <block_description>
+              <language>english</language>
+              <name><![CDATA[Social Icons]]></name>
+              <title><![CDATA[Social Icons]]></title>
+              <block_wrapper><![CDATA[0]]></block_wrapper>
+              <block_framed><![CDATA[0]]></block_framed>
+              <description><![CDATA[This is a an HTML block to show social icons and link.
+NOTE: Need to edit HTML in block content to add  personal link to social media sites]]></description>
+              <content><![CDATA[&lt;ul class=&quot;social-icons&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; target=&quot;_blank&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; title=&quot;Facebook&quot;&gt;&lt;i class=&quot;fa fa-facebook&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; target=&quot;_blank&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; title=&quot;Twitter&quot;&gt;&lt;i class=&quot;fa fa-twitter&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; target=&quot;_blank&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; title=&quot;Google Plus&quot;&gt;&lt;i class=&quot;fa fa-google-plus&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; target=&quot;_blank&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; title=&quot;Instagram&quot;&gt;&lt;i class=&quot;fa fa-instagram&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; target=&quot;_blank&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; title=&quot;Flickr&quot;&gt;&lt;i class=&quot;fa fa-flickr&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+]]></content>
+            </block_description>
+          </block_descriptions>
+          <installed>
+            <placeholder>footer</placeholder>
+          </installed>
+          <status>1</status>
+          <position>20</position>
+        </block>
+        <block>
+          <block_txt_id>content</block_txt_id>
+          <controller>blocks/content</controller>
+          <templates>
+            <template>
+              <parent_block>footer</parent_block>
+              <template_name>blocks/content_footer.tpl</template_name>
+            </template>
+          </templates>
+          <status>1</status>
+          <position>30</position>
+        </block>
+        <block>
+          <block_txt_id>newsletter_signup</block_txt_id>
+          <status>1</status>
+          <position>40</position>
+        </block>
+        <block>
+          <custom_block_txt_id>footerlogo_26</custom_block_txt_id>
+          <kind>custom</kind>
+          <type>html_block</type>
+          <block_descriptions>
+            <block_description>
+              <language>english</language>
+              <name><![CDATA[Footer Logo]]></name>
+              <title><![CDATA[Footer Logo]]></title>
+              <block_wrapper><![CDATA[blocks/html_block_footer.tpl]]></block_wrapper>
+              <block_framed><![CDATA[0]]></block_framed>
+              <description><![CDATA[Logo included in the footer. ]]></description>
+              <content><![CDATA[&lt;div class=&quot;footer_logo&quot;&gt;&lt;/div&gt;]]></content>
+            </block_description>
+          </block_descriptions>
+          <installed>
+            <placeholder>footer</placeholder>
+          </installed>
+          <status>1</status>
+          <position>50</position>
+        </block>
+        <block>
+          <custom_block_txt_id>creditcardicons_27</custom_block_txt_id>
+          <kind>custom</kind>
+          <type>html_block</type>
+          <block_descriptions>
+            <block_description>
+              <language>english</language>
+              <name><![CDATA[Credit Card Icons]]></name>
+              <title><![CDATA[Credit Card Icons]]></title>
+              <block_wrapper><![CDATA[0]]></block_wrapper>
+              <block_framed><![CDATA[0]]></block_framed>
+              <description><![CDATA[HTML Block with credit card icons. ]]></description>
+              <content><![CDATA[&lt;ul class=&quot;card-icons&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; target=&quot;_blank&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; title=&quot;Paypal&quot;&gt;&lt;i class=&quot;fa fa-cc-paypal&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; target=&quot;_blank&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; title=&quot;Mastercard&quot;&gt;&lt;i class=&quot;fa fa-cc-mastercard&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; target=&quot;_blank&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; title=&quot;Visa&quot;&gt;&lt;i class=&quot;fa fa-cc-visa&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; target=&quot;_blank&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; title=&quot;Discover&quot;&gt;&lt;i class=&quot;fa fa-cc-discover&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; target=&quot;_blank&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; title=&quot;AMEX&quot;&gt;&lt;i class=&quot;fa fa-cc-amex&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+]]></content>
+            </block_description>
+          </block_descriptions>
+          <installed>
+            <placeholder>footer</placeholder>
+          </installed>
+          <status>1</status>
+          <position>60</position>
+        </block>
+      </block>
+    </blocks>
+  </layout>
+  <layout>
+    <name>Maintanance Page</name>
+    <template_id>example_template</template_id>
+    <type>Active</type>
+    <pages>
+      <page>
+        <controller>pages/index/maintenance</controller>
+        <page_descriptions>
+          <page_description>
+            <language>english</language>
+            <name><![CDATA[Maintenance Page]]></name>
+          </page_description>
+        </page_descriptions>
+      </page>
+    </pages>
+    <blocks>
+      <block>
+        <block_txt_id>header</block_txt_id>
+        <controller>common/header</controller>
+        <status>1</status>
+        <position>10</position>
+      </block>
+      <block>
+        <block_txt_id>header_bottom</block_txt_id>
+        <controller>common/header_bottom</controller>
+        <status>1</status>
+        <position>20</position>
+        <block>
+          <block_txt_id>breadcrumbs</block_txt_id>
+          <status>1</status>
+          <position>20</position>
+        </block>
+      </block>
+      <block>
+        <block_txt_id>column_left</block_txt_id>
+        <controller>common/column_left</controller>
+        <status>1</status>
+        <position>30</position>
+      </block>
+      <block>
+        <block_txt_id>content_top</block_txt_id>
+        <controller>common/content_top</controller>
+        <status>1</status>
+        <position>40</position>
+      </block>
+      <block>
+        <block_txt_id>content_bottom</block_txt_id>
+        <controller>common/content_bottom</controller>
+        <status>1</status>
+        <position>50</position>
+      </block>
+      <block>
+        <block_txt_id>column_right</block_txt_id>
+        <controller>common/column_right</controller>
+        <status>1</status>
+        <position>60</position>
+      </block>
+      <block>
+        <block_txt_id>footer_top</block_txt_id>
+        <controller>common/footer_top</controller>
+        <status>1</status>
+        <position>70</position>
+      </block>
+      <block>
+        <block_txt_id>footer</block_txt_id>
+        <controller>common/footer</controller>
+        <status>1</status>
+        <position>80</position>
+      </block>
+    </blocks>
+  </layout>
+  <layout>
+    <name>Customer Account Pages</name>
+    <template_id>example_template</template_id>
+    <type>Active</type>
+    <pages>
+      <page>
+        <controller>pages/account</controller>
+        <page_descriptions>
+          <page_description>
+            <language>english</language>
+            <name><![CDATA[Customer Account Pages]]></name>
+          </page_description>
+        </page_descriptions>
+      </page>
+    </pages>
+    <blocks>
+      <block>
+        <block_txt_id>header</block_txt_id>
+        <controller>common/header</controller>
+        <status>1</status>
+        <position>10</position>
+        <block>
+          <block_txt_id>customer</block_txt_id>
+          <status>1</status>
+          <position>10</position>
+        </block>
+        <block>
+          <block_txt_id>menu</block_txt_id>
+          <status>1</status>
+          <position>20</position>
+        </block>
+        <block>
+          <block_txt_id>language</block_txt_id>
+          <status>1</status>
+          <position>30</position>
+        </block>
+        <block>
+          <block_txt_id>currency</block_txt_id>
+          <status>1</status>
+          <position>40</position>
+        </block>
+        <block>
+          <block_txt_id>category</block_txt_id>
+          <status>1</status>
+          <position>50</position>
+        </block>
+        <block>
+          <block_txt_id>search</block_txt_id>
+          <status>1</status>
+          <position>70</position>
+        </block>
+        <block>
+          <block_txt_id>cart</block_txt_id>
+          <status>1</status>
+          <position>80</position>
+        </block>
+      </block>
+      <block>
+        <block_txt_id>header_bottom</block_txt_id>
+        <controller>common/header_bottom</controller>
+        <status>1</status>
+        <position>20</position>
+        <block>
+          <block_txt_id>breadcrumbs</block_txt_id>
+          <status>1</status>
+          <position>10</position>
+        </block>
+      </block>
+      <block>
+        <block_txt_id>column_left</block_txt_id>
+        <controller>common/column_left</controller>
+        <status>0</status>
+        <position>30</position>
+      </block>
+      <block>
+        <block_txt_id>content_top</block_txt_id>
+        <controller>common/content_top</controller>
+        <status>1</status>
+        <position>40</position>
+      </block>
+      <block>
+        <block_txt_id>content_bottom</block_txt_id>
+        <controller>common/content_bottom</controller>
+        <status>1</status>
+        <position>50</position>
+      </block>
+      <block>
+        <block_txt_id>column_right</block_txt_id>
+        <controller>common/column_right</controller>
+        <status>1</status>
+        <position>60</position>
+        <block>
+          <block_txt_id>account</block_txt_id>
+          <status>1</status>
+          <position>10</position>
+        </block>
+      </block>
+      <block>
+        <block_txt_id>footer_top</block_txt_id>
+        <controller>common/footer_top</controller>
+        <status>1</status>
+        <position>70</position>
+      </block>
+      <block>
+        <block_txt_id>footer</block_txt_id>
+        <controller>common/footer</controller>
+        <status>1</status>
+        <position>80</position>
+        <block>
+          <custom_block_txt_id>contactus_19</custom_block_txt_id>
+          <kind>custom</kind>
+          <type>html_block</type>
+          <block_descriptions>
+            <block_description>
+              <language>english</language>
+              <name><![CDATA[Contact us]]></name>
+              <title><![CDATA[Contact Us]]></title>
+              <block_wrapper><![CDATA[0]]></block_wrapper>
+              <block_framed><![CDATA[1]]></block_framed>
+              <description><![CDATA[]]></description>
+              <content><![CDATA[&lt;address&gt;
+&lt;ul &gt;
+&lt;li&gt;&lt;i class=&quot;fa fa-building-o fa-fw&quot;&gt;&lt;/i&gt; Our address, NY 11000 USA &lt;/li&gt;
+&lt;li&gt;&lt;i class=&quot;fa fa-phone fa-fw&quot;&gt;&lt;/i&gt; +123 456 7890, +123 456 7890&lt;/li&gt;
+&lt;li&gt;&lt;i class=&quot;fa fa-fax fa-fw&quot;&gt;&lt;/i&gt; +123 456 7890, +123 456 78900&lt;/li&gt;
+&lt;li&gt;&lt;i class=&quot;fa fa-envelope-o fa-fw&quot;&gt;&lt;/i&gt; &lt;a href=&quot;mailto:myemail@myemail.com&quot;&gt;myemail@myemail.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/address&gt;]]></content>
+            </block_description>
+          </block_descriptions>
+          <installed>
+            <placeholder>footer</placeholder>
+          </installed>
+          <status>1</status>
+          <position>10</position>
+        </block>
+        <block>
+          <custom_block_txt_id>socialicons_17</custom_block_txt_id>
+          <kind>custom</kind>
+          <type>html_block</type>
+          <block_descriptions>
+            <block_description>
+              <language>english</language>
+              <name><![CDATA[Social Icons]]></name>
+              <title><![CDATA[Social Icons]]></title>
+              <block_wrapper><![CDATA[0]]></block_wrapper>
+              <block_framed><![CDATA[0]]></block_framed>
+              <description><![CDATA[This is a an HTML block to show social icons and link.
+NOTE: Need to edit HTML in block content to add  personal link to social media sites]]></description>
+              <content><![CDATA[&lt;ul class=&quot;social-icons&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; target=&quot;_blank&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; title=&quot;Facebook&quot;&gt;&lt;i class=&quot;fa fa-facebook&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; target=&quot;_blank&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; title=&quot;Twitter&quot;&gt;&lt;i class=&quot;fa fa-twitter&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; target=&quot;_blank&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; title=&quot;Google Plus&quot;&gt;&lt;i class=&quot;fa fa-google-plus&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; target=&quot;_blank&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; title=&quot;Instagram&quot;&gt;&lt;i class=&quot;fa fa-instagram&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; target=&quot;_blank&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; title=&quot;Flickr&quot;&gt;&lt;i class=&quot;fa fa-flickr&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+]]></content>
+            </block_description>
+          </block_descriptions>
+          <installed>
+            <placeholder>footer</placeholder>
+          </installed>
+          <status>1</status>
+          <position>20</position>
+        </block>
+        <block>
+          <block_txt_id>content</block_txt_id>
+          <controller>blocks/content</controller>
+          <templates>
+            <template>
+              <parent_block>footer</parent_block>
+              <template_name>blocks/content_footer.tpl</template_name>
+            </template>
+          </templates>
+          <status>1</status>
+          <position>30</position>
+        </block>
+        <block>
+          <block_txt_id>newsletter_signup</block_txt_id>
+          <status>1</status>
+          <position>40</position>
+        </block>
+        <block>
+          <custom_block_txt_id>footerlogo_26</custom_block_txt_id>
+          <kind>custom</kind>
+          <type>html_block</type>
+          <block_descriptions>
+            <block_description>
+              <language>english</language>
+              <name><![CDATA[Footer Logo]]></name>
+              <title><![CDATA[Footer Logo]]></title>
+              <block_wrapper><![CDATA[blocks/html_block_footer.tpl]]></block_wrapper>
+              <block_framed><![CDATA[0]]></block_framed>
+              <description><![CDATA[Logo included in the footer. ]]></description>
+              <content><![CDATA[&lt;div class=&quot;footer_logo&quot;&gt;&lt;/div&gt;]]></content>
+            </block_description>
+          </block_descriptions>
+          <installed>
+            <placeholder>footer</placeholder>
+          </installed>
+          <status>1</status>
+          <position>50</position>
+        </block>
+        <block>
+          <custom_block_txt_id>creditcardicons_27</custom_block_txt_id>
+          <kind>custom</kind>
+          <type>html_block</type>
+          <block_descriptions>
+            <block_description>
+              <language>english</language>
+              <name><![CDATA[Credit Card Icons]]></name>
+              <title><![CDATA[Credit Card Icons]]></title>
+              <block_wrapper><![CDATA[0]]></block_wrapper>
+              <block_framed><![CDATA[0]]></block_framed>
+              <description><![CDATA[HTML Block with credit card icons. ]]></description>
+              <content><![CDATA[&lt;ul class=&quot;card-icons&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; target=&quot;_blank&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; title=&quot;Paypal&quot;&gt;&lt;i class=&quot;fa fa-cc-paypal&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; target=&quot;_blank&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; title=&quot;Mastercard&quot;&gt;&lt;i class=&quot;fa fa-cc-mastercard&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; target=&quot;_blank&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; title=&quot;Visa&quot;&gt;&lt;i class=&quot;fa fa-cc-visa&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; target=&quot;_blank&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; title=&quot;Discover&quot;&gt;&lt;i class=&quot;fa fa-cc-discover&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; target=&quot;_blank&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; title=&quot;AMEX&quot;&gt;&lt;i class=&quot;fa fa-cc-amex&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+]]></content>
+            </block_description>
+          </block_descriptions>
+          <installed>
+            <placeholder>footer</placeholder>
+          </installed>
+          <status>1</status>
+          <position>60</position>
+        </block>
+      </block>
+    </blocks>
+  </layout>
+</template_layouts>

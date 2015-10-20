@@ -473,8 +473,8 @@
       url: /pages/developer/extension_dev.html 
     - text: Advanced Extension dev
       url: /pages/developer/developing_extensions_and_extension_api.html 
-    - text: Developing Templates
-      url: /pages/developer/developing_templates_as_extensions.html
+    - text: Templates Overview
+      url: /pages/developer/templates_overview.html
     - text: Template development guide 
       url: /pages/developer/template_customization_or_development_guide.html 
     - text: Developer Tools
@@ -487,3 +487,5 @@
       url: /pages/developer/rl_system.html
     - text: Translating Process
       url: /pages/developer/translating_process.html
+    - text: Tasks Processing
+      url: /pages/developer/tasks_processing.html
