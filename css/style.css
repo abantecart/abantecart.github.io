@@ -7648,9 +7648,9 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   margin-bottom: 15px;
 }
 .search-icon {
-  position: absolute;
-  top: 8px;
-  right: 8px;
+  position: relative;
+  top: -7px;
+  right: 25px;
   color: #808488;
 }
 .search-input {
@@ -8758,6 +8758,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   text-align: center;
   line-height: 1.2;
   font-weight: 100;
+  padding-bottom: 20px;
 }
 #content.panels {
   padding: 100px 0;
@@ -11409,7 +11410,7 @@ textarea.contacts-input {
 }
 
 .main_page_search {
-	padding: 20px 0 0 10px;
+	padding: 0 0 0 10px;
 }
 .main_page_search form {
     width:50%; 
