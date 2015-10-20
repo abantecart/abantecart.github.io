@@ -477,6 +477,8 @@
       url: /pages/developer/developing_templates_as_extensions.html
     - text: Template development guide 
       url: /pages/developer/template_customization_or_development_guide.html 
+    - text: Developer Tools
+      url: /pages/developer/template_dev_tools.html 
     - text: Import/Export AData
       url: /pages/developer/adata.html 
     - text: Storefront API
