@@ -3,7 +3,7 @@ layout: default
 title: Upgrade manually
 description: Upgrade your AbanteCart eCommerce application core version once in a while, since important fixes or new features will be released.
 tags: [
-    ['pages_tool_updater', 'Run upgrade in admin'],
+    ['auto_update', 'Run upgrade in admin'],
     ['troubleshoot', 'Troubleshoot']
 ]
 redirect_from: "/tag/manual.html"
@@ -24,16 +24,16 @@ If you are made Core modifications in any of the files that changed, they may ne
 </p>
 						</div>
 						<!-- End of Note -->
-						
-						
-						
+
+
+
 						<!-- Steps -->
 							<ul class="steps">
 								<li class="step">
 									<span class="step-number">1</span>
 									<h4 class="step-title">Download upgrade package</h4>
 									<div class="step-content"> Download upgrade package from&nbsp;<a href="https://drive.google.com/folderview?id=0B64_ELUMJQjJfms3U2Y5WDZycmQ2bXFkY2JxNmY1Qkp6QmpNUGo2ck5UYWF0ek44bnBiNVE&amp;usp=drive_web#list" target="_blank">Google Drive</a> or for older versions <a href="http://sourceforge.net/projects/abantecart/files/" target="_blank">http://sourceforge.net/projects/abantecart/files/</a> and <a href="http://code.google.com/p/abantecart/downloads/list" target="_blank">http://code.google.com/p/abantecart/downloads/list</a>. </div>
-            
+
 								</li>
 								<li class="step">
 									<span class="step-number">2</span>
@@ -45,7 +45,7 @@ If you are made Core modifications in any of the files that changed, they may ne
 									<span class="step-number">3</span>
 									<h4 class="step-title">Decompress the upgrade package</h4>
 									<div class="step-content"> Open archive and copy all contents of "code" directory to your AbanteCart directory. You need to override directories and files if your copy process request confirmation.  </div>
-                                
+
                                 						<!-- File Tree -->
 						<div class="file-tree">
 							<div class="file-tree-title"> AbanteCart file hierarchy - if you see this files you are in right place
@@ -72,29 +72,29 @@ If you are made Core modifications in any of the files that changed, they may ne
 										</li>
 									</ul>
 								</li>
-								<li class="is-folder">core 
+								<li class="is-folder">core
 									<span class="file-tree-description"></span>
-				
+
 								</li>
-								<li class="is-folder">download 
+								<li class="is-folder">download
 									<span class="file-tree-description"></span>
-									
+
 								</li>
 								<li class="is-folder">extensions -
 									<span class="file-tree-description"> All AbanteCart extensions are located in this folder.</span>
-								
+
 								</li>
-								<li class="is-folder">image 
+								<li class="is-folder">image
 									<span class="file-tree-description"></span>
-									
+
 								</li>
 								<li class="is-folder">install -
 									<span class="file-tree-description">folder should be removed when AbanteCart is installed.</span>
 									<ul>
-										<li class="is-file">abantecart_database.sql 
+										<li class="is-file">abantecart_database.sql
 											<span class="file-tree-description"></span>
 										</li>
-										<li class="is-file">... 
+										<li class="is-file">...
 										<span class="file-tree-description"></span>
 										</li>
 									</ul>
@@ -114,28 +114,28 @@ If you are made Core modifications in any of the files that changed, they may ne
 								<li class="is-file">robots.txt -
 									<span class="file-tree-description"> is a text file to instruct search engine robots how to crawl and index pages on their website.</span>
 								</li>
-								<li class="is-folder">static_pages 
+								<li class="is-folder">static_pages
 									<span class="file-tree-description"></span>
 								</li>
 								<li class="is-folder">storefront -
 									<span class="file-tree-description"> storefront template files</span>
 								</li>
-								<li class="is-folder">system 
+								<li class="is-folder">system
 									<span class="file-tree-description"></span>
 								</li>
-								<li class="is-file">task.php 
+								<li class="is-file">task.php
 									<span class="file-tree-description"></span>
 								</li>
-								<li class="is-file">... 
+								<li class="is-file">...
 									<span class="file-tree-description"></span>
 								</li>
-								
-							
+
+
 							</ul>
 						</div>
-						<!-- End of FIle Tree -->   
+						<!-- End of FIle Tree -->
 								</li>
-								
+
 								<li class="step">
 									<span class="step-number">4</span>
 									<h4 class="step-title">Change MySQL database tables prefix</h4>
@@ -146,9 +146,9 @@ If you are made Core modifications in any of the files that changed, they may ne
 								<li class="step">
 									<span class="step-number">5</span>
 									<h4 class="step-title">Run modified upgrade.sql </h4>
-									<div class="step-content"> Finally run modified upgrade.sql file in MySQL (command line, phpMyAdmin or other ) 
+									<div class="step-content"> Finally run modified upgrade.sql file in MySQL (command line, phpMyAdmin or other )
 </div>
 								</li>
-								
+
 							</ul>
 							<!-- End of Steps -->
