@@ -1,0 +1,91 @@
+---
+layout: default
+title: Troubleshooting
+description: This troubleshooter has basic steps to help you to fix some common issues on AbanteCart
+tags: [
+    ['installation_options', 'Installation Options'],
+    ['download', 'Download  & Source Code']
+]
+redirect_from: 
+-/tag/troubleshooting.html
+---
+
+<div class="category-info helper pt40">
+    <h3 class="category-title">General tips to keep in mind</h3>
+    <h4 class="category-description">
+There are many different things that could cause a problem with your AbanteCart installation.</h4>
+</div>
+
+<div class="list-view ">
+    <div class="list-item">
+    	<div class="list-item-header">
+    		<h3 class="list-item-title">
+    			<a href="#">Mod_security</a>
+    		</h3>
+    		<span class="list-item-meta">
+    			<a href="#">hosting related</a>
+    		</span>
+    	</div>
+    	<div class="list-item-content"> Mod_security is an apache module that helps to protect your website from various attacks.
+        mod_security has certain rules for the words "pattern" used in requested URL's.
+        If any pattern match with the requested URL under your site mod_security false positive and deny the access to it. 
+        Many people are experiencing problems because of this. Problems include "403", "500" or access denied errors, login problems, and similar.
+        Ask your hosting support to disable individual mod_security rules or try to disable it 
+    	<!-- HTML Highlight -->
+						<div class="code-highlight">
+							<span class="js-copy-to-clipboard copy-code">Try adding this in a .htaccess file in the /admin/ folder</span>
+                            <pre><code class="language-markup">
+	<IfModule mod_security.c>
+SecFilterInheritance Off
+</IfModule>
+</code></pre></div>
+	<!-- End of HTML Highlight -->
+    	</div>
+    </div>
+    <div class="list-item">
+    	<div class="list-item-header">
+    		<h3 class="list-item-title">
+    			<a href="#">MySQL </a>
+    		</h3>
+    		<span class="list-item-meta">
+    			<a href="#">database</a>
+    		</span>
+    	</div>
+    	<div class="list-item-content"> MySQL database version 5.0+ or above, MySQLi. </div>
+    </div>
+    <div class="list-item">
+    	<div class="list-item-header">
+    		<h3 class="list-item-title">
+    			<a href="#">cURL support</a>
+    		</h3>
+    		<span class="list-item-meta">
+    			<a href="#">PHP extension</a>
+    		</span>
+    	</div>
+    	<div class="list-item-content"> PHP CURL is required for operation of several payment gateways and systems
+(such as PayPal, Authorize.NET etc) and real-time shipping services (FedEx, UPS). </div>
+    </div>
+    <div class="list-item">
+    	<div class="list-item-header">
+    		<h3 class="list-item-title">
+    			<a href="#">GD</a>
+    		</h3>
+    		<span class="list-item-meta">
+    			<a href="#">library</a>
+    		</span>
+    	</div>
+    	<div class="list-item-content"> GD php library is installed </div>
+    </div>
+    <div class="list-item">
+    	<div class="list-item-header">
+    		<h3 class="list-item-title">
+    			<a href="#">ZIP</a>
+    		</h3>
+    		<span class="list-item-meta">
+    			<a href="#">extension</a>
+    		</span>
+    	</div>
+    	<div class="list-item-content"> ZipArchive extension is enabled </div>
+    </div>
+    <p>AbanteCart will not work properly (or at all) without these technologies.</p>
+</div>
