@@ -10,9 +10,9 @@ tags: [
 ---
 
 <div class="category-info helper pt40">
-    <h3 class="category-title">General tips to keep in mind</h3>
+    <h3 class="category-title">Troubleshooting Common Problems</h3>
     <h4 class="category-description">
-There are many different things that could cause a problem with your AbanteCart installation.</h4>
+Debugging technical issues online can be tricky. There are many moving pieces; it can be an isolated network connection with the ISP, an issue with your server.</h4>
 </div>
 
 <div class="list-view ">
@@ -29,12 +29,12 @@ There are many different things that could cause a problem with your AbanteCart 
         mod_security has certain rules for the words "pattern" used in requested URL's.
         If any pattern match with the requested URL under your site mod_security false positive and deny the access to it. 
         Many people are experiencing problems because of this. Problems include "403", "500" or access denied errors (forbidden access), login problems, and similar.
-        Ask your hosting support to disable individual mod_security rules or try to disable it 
+        Ask your hosting support to disable individual mod_security rules or try to disable it manually. <b>We strongly recommend you contact your hosting provider and work with them to resolve the server issue. </b>
     	<!-- HTML Highlight -->
-						<div class="code-highlight">
-							<span class="js-copy-to-clipboard copy-code">Try adding this in a .htaccess file in the /admin/ folder</span>
-                            <pre><code class="language-markup">
-	&lt;IfModule mod_security.c&gt;
+		<div class="code-highlight">
+			<span class="js-copy-to-clipboard copy-code">Try adding this in a .htaccess file</span>
+            <pre><code class="language-markup">
+&lt;IfModule mod_security.c&gt;
 SecFilterInheritance Off
 &lt;/IfModule&gt;
 </code></pre></div>
@@ -51,7 +51,10 @@ SecFilterInheritance Off
     			<a href="#">server related</a>
     		</span>
     	</div>
-    	<div class="list-item-content"> Most of the time, a 503 error occurs because the server is too busy or because there's maintenance being performed on it. </div>
+    	<div class="list-item-content"> Most of the time, a 503 error occurs because the server is too busy or because there's maintenance being performed on it. 
+        <br>
+        Contact your hosting provider and work with them to resolve the server issue.
+         </div>
     </div>
 
 
@@ -64,30 +67,39 @@ SecFilterInheritance Off
     			<a href="#">PHP accelerators</a>
     		</span>
     	</div>
-    	<div class="list-item-content"> PHP accelerators can substantially increase websites speed but apparently caching plugins sometimes causes problems with shopping carts.</div>
+    	<div class="list-item-content"> PHP accelerators can substantially increase websites speed but apparently caching plugins sometimes causes problems with shopping carts.<br>
+        Contact your hosting provider and work with them to resolve the server issue.</div>
     </div>
 
     <div class="list-item">
     	<div class="list-item-header">
     		<h3 class="list-item-title">
-    			<a href="#">Code changes not visible</a>
+    			<a href="#">The changes I made to my website aren't appearing</a>
     		</h3>
     		<span class="list-item-meta">
     			<a href="#"> (CDN)</a>
     		</span>
     	</div>
-    	<div class="list-item-content"> The content delivery network “CDN” will deliver cached images and other bits of your website (but not the HTML) to your visitors from one of the several Cloudflare data-centers located around the world instead of from your webserver. Some minifications and asynchronous loading added by CDN can break your webpages. Also your code changes can be visible after manually purge CDN cache</div>
+    	<div class="list-item-content"> If you're making changes to the static content cached with CDN on your site, including changes to JavaScript, CSS or images, it can be very easy to forget that you need to purge CDN cache. The content delivery network “CDN”  (Cloudflare, MaxCDN) will deliver cached images and other bits of your website to your visitors from one of the several data-centers located around the world instead of from your webserver. Some minifications and asynchronous loading added by CDN can break your webpages. 
+        <br/>
+        To resolve issues purge all CDN cache in the CDN admin panel and try to set caching level to cache static content only: images and css.
+        Make sure you have disabled javascript and css Auto Minify.
+        </div>
     </div>
     <div class="list-item">
     	<div class="list-item-header">
     		<h3 class="list-item-title">
-    			<a href="#">ZIP</a>
+    			<a href="#">session save path is not writable</a>
     		</h3>
     		<span class="list-item-meta">
-    			<a href="#">extension</a>
+    			<a href="#">server related</a>
     		</span>
     	</div>
-    	<div class="list-item-content"> ZipArchive extension is enabled </div>
+    	<div class="list-item-content"> If you can not login  and get errors in the log like 'session_start failed', 'Failed to write session data', save_path is not writable. 
+        Session_save_path is a PHP variable that is set in php.ini, and on many shared hosting setups it’s actually set to a location that’s not writable.
+        <br>
+        Contact your host to solve this.
+        </div>
     </div>
-    <p>AbanteCart will not work properly (or at all) without these technologies.</p>
+    <p>.</p>
 </div>
