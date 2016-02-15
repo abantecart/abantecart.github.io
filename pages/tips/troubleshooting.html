@@ -28,8 +28,8 @@ Debugging technical issues online can be tricky. There are many moving pieces; i
     	<div class="list-item-content"> Mod_security is an apache module that helps to protect your website from various attacks.
         mod_security has certain rules for the words "pattern" used in requested URL's.
         If any pattern match with the requested URL under your site mod_security false positive and deny the access to it. 
-        Many people are experiencing problems because of this. Problems include "403", "500" or access denied errors (forbidden access), login problems, and similar.
-        Ask your hosting support to disable individual mod_security rules or try to disable it manually. <b>We strongly recommend you contact your hosting provider and work with them to resolve the server issue. </b>
+        Many people are experiencing problems because of this. Problems include "403", "500" or access denied errors (forbidden access), login problems, and similar.<br>
+        <span class="step-number"><i class="fa fa-wrench"></i></span>Ask your hosting support to disable individual mod_security rules or try to disable it manually. <b>We strongly recommend you contact your hosting provider and work with them to resolve the server issue. </b>
     	<!-- HTML Highlight -->
 		<div class="code-highlight">
 			<span class="js-copy-to-clipboard copy-code">Try adding this in a .htaccess file</span>
@@ -53,7 +53,7 @@ SecFilterInheritance Off
     	</div>
     	<div class="list-item-content"> Most of the time, a 503 error occurs because the server is too busy or because there's maintenance being performed on it. 
         <br>
-        Contact your hosting provider and work with them to resolve the server issue.
+        <span class="step-number"><i class="fa fa-wrench"></i></span>Contact your hosting provider and work with them to resolve the server issue.
          </div>
     </div>
 
@@ -68,7 +68,7 @@ SecFilterInheritance Off
     		</span>
     	</div>
     	<div class="list-item-content"> PHP accelerators can substantially increase websites speed but apparently caching plugins sometimes causes problems with shopping carts.<br>
-        Contact your hosting provider and work with them to resolve the server issue.</div>
+        <span class="step-number"><i class="fa fa-wrench"></i></span>Contact your hosting provider and work with them to resolve the server issue.</div>
     </div>
 
     <div class="list-item">
@@ -82,10 +82,11 @@ SecFilterInheritance Off
     	</div>
     	<div class="list-item-content"> If you're making changes to the static content cached with CDN on your site, including changes to JavaScript, CSS or images, it can be very easy to forget that you need to purge CDN cache. The content delivery network “CDN”  (Cloudflare, MaxCDN) will deliver cached images and other bits of your website to your visitors from one of the several data-centers located around the world instead of from your webserver. Some minifications and asynchronous loading added by CDN can break your webpages. 
         <br/>
-        To resolve issues purge all CDN cache in the CDN admin panel and try to set caching level to cache static content only: images and css.
+        <span class="step-number"><i class="fa fa-wrench"></i></span>To resolve issues purge all CDN cache in the CDN admin panel and try to set caching level to cache static content only: images and css.
         Make sure you have disabled javascript and css Auto Minify.
         </div>
     </div>
+
     <div class="list-item">
     	<div class="list-item-header">
     		<h3 class="list-item-title">
@@ -95,11 +96,47 @@ SecFilterInheritance Off
     			<a href="#">server related</a>
     		</span>
     	</div>
-    	<div class="list-item-content"> If you can not login  and get errors in the log like 'session_start failed', 'Failed to write session data', save_path is not writable. 
+    	<div class="list-item-content"> If you can not login  and Products are not stored in the shopping cart or get errors in the log like 'session_start failed', 'Failed to write session data', 'save_path is not writable', 'Invalid token session. Please login again'. 
         Session_save_path is a PHP variable that is set in php.ini, and on many shared hosting setups it’s actually set to a location that’s not writable.
         <br>
-        Contact your host to solve this.
+        <span class="step-number"><i class="fa fa-wrench"></i></span>Contact your host to solve this.
         </div>
     </div>
-    <p>.</p>
+
+
+
+     <div class="list-item">
+        <div class="list-item-header">
+            <h3 class="list-item-title">
+                <a href="#">Allowed memory size exhausted</a>
+            </h3>
+            <span class="list-item-meta">
+                <a href="#">server related</a>
+            </span>
+        </div>
+        <div class="list-item-content"> This issue related to limited memory set on your server or host.
+            The standard PHP memory requirements for AbanteCart are a bare minimum. Try to increase the memory to 128M or more. 
+        <br>
+        <span class="step-number"><i class="fa fa-wrench"></i></span>
+        If you have access to the server's php.ini please edit the memory_limit parameter.
+         <!-- HTML Highlight -->
+        <div class="code-highlight">
+            <span class="js-copy-to-clipboard copy-code">php.ini file</span>
+            <pre><code class="language-markup">
+            memory_limit = 128M  ;
+        </code></pre></div>
+        <!-- End of HTML Highlight -->
+         If there is no section already for this, place the above line at the end of the file. <br>
+         In case PHP is running as an Apache module you may try to edit .htacess file
+         <!-- HTML Highlight -->
+        <div class="code-highlight">
+            <span class="js-copy-to-clipboard copy-code">php.ini file</span>
+            <pre><code class="language-markup">
+            php_value memory_limit 64M
+        </code></pre></div>
+        <!-- End of HTML Highlight -->
+        This will not be possible in some shared hosting environments, though your host may be able to adjust it for you.
+        </div>
+    </div>
+    <p></p>
 </div>
