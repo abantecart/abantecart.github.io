@@ -452,7 +452,9 @@
   icon: '<i class="fa fa-life-ring fa-fw"></i>'
   subitems:
     - text: Global search
-      url: /pages/tips/global_search.html      
+      url: /pages/tips/global_search.html 
+    - text: Troubleshooting
+	  url: /pages/tips/troubleshooting.html	  
     - text: Side Panels  
       url: /pages/tips/side_panels.html   
     - text: Getting more help 
