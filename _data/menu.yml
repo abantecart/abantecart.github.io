@@ -136,7 +136,7 @@
       url: /pages/customers/transactions.html
     - text: Customer Groups
       url: /pages/customers/groups.html
-    - text: Send Mail
+    - text: Send Mail/SMS
       url: /pages/customers/send_mails.html
 
 - text: Managing Orders
