@@ -303,21 +303,21 @@ php_value memory_limit 64M
                             </span>
                             <h4 class="note-title"> Note </h4>
                             <p class="note-description">
-                            If you installed AbanteCart yourself, you likely DO need to modify file permissions. Some files and directories should be "hardened" with stricter permissions, specifically, the /system/config.php and /index.php files. This file is initially created with 644 or 640 permissions, and it's a hazard to leave it like that.
+                            If you installed AbanteCart yourself, you likely DO need to modify file permissions. Some files and directories should be "hardened" with stricter permissions, specifically, the /system/config.php and /index.php files. This file should be set with 644 or 640 permissions.
                             </p>
                         </div>
                         <!-- End of Note -->
         <p>To change permissions use your hosting cPanel filemanager or an FTP Client. FTP programs ("clients") allow you to set permissions for files and directories on your remote host. This function is often called chmod (chmod is a unix command that means "change mode" on a file.) or set permissions in the program menu. Right-click 'file' and select 'File Permissions'</p>
 
         <p>Permissions will be different from host to host, so this only general principles.</p>
-        <pre style="font-size: 1.1em; font-weight: bold; border: 1px solid rgb(128, 201, 255); width: 45%; color: rgb(0, 0, 0); padding: 0.5em; background-color: rgb(191, 233, 253);">  7       5     5
+        <pre style="font-size: 0.8em; font-weight: normal; border: 1px solid rgb(128, 201, 255); width: 40%; color: rgb(0, 0, 0); padding: 0.5em; background-color: rgb(191, 233, 253);">  7       5     5
  user   group  world
  r+w+x  r+x    r+x
  4+2+1  4+0+1  4+0+1  = 755
         </pre>
         <p>
                             <div class="table-responsive">
-                            <table class="table table-striped" cellpadding="8" border="">
+                            <table class="table table-striped" cellpadding="" border="0">
                             <tbody><tr>
                                 <td><em>Value</em></td>
 
