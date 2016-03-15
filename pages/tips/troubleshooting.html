@@ -296,11 +296,26 @@ php_value memory_limit 64M
 
         Each file and directory on your server is assigned access rights for the owner of the file, the members of a group of related users, and everybody else. Rights can be assigned to read a file, to write a file, and to execute a file (i.e., run the file as a program). This is important because AbanteCart may need access to write to files to enable certain functions or disable access to write for the public users (world). 
         <br>
+                                <!-- Note -->
+                        <div class="note js-note blue note-pulse">
+                            <span class="note-close js-close">
+                                <i class="fa fa-times"></i>
+                            </span>
+                            <h4 class="note-title"> Note </h4>
+                            <p class="note-description">
+                            If you installed AbanteCart yourself, you likely DO need to modify file permissions. Some files and directories should be "hardened" with stricter permissions, specifically, the /system/config.php and /index.php files. This file is initially created with 644 or 640 permissions, and it's a hazard to leave it like that.
+                            </p>
+                        </div>
+                        <!-- End of Note -->
+        <p>To change permissions use your hosting cPanel filemanager or an FTP Client. FTP programs ("clients") allow you to set permissions for files and directories on your remote host. This function is often called chmod or set permissions in the program menu. Right-click 'file' and select 'File Permissions'</p>
+        
+        Permissions will be different from host to host, so this only general principles.
         <pre style="font-size: 1.1em; font-weight: bold; border: 1px solid rgb(128, 201, 255); width: 45%; color: rgb(0, 0, 0); padding: 0.5em; background-color: rgb(191, 233, 253);">  7       5     5
  user   group  world
  r+w+x  r+x    r+x
  4+2+1  4+0+1  4+0+1  = 755
         </pre>
+        <p>Typically, all files should be owned by your user (ftp) account on your web server, and should be writable by that account. Any file that needs write access from AbanteCart should be owned or group-owned by the user account used by the AbanteCart (which may be different than the server account). For example, you may have a user account that lets you FTP files back and forth to your server, but your server itself may run using a separate user, in a separate usergroup, such as dhapache or nobody. If AbanteCart is running as the FTP account, that account needs to have write access, i.e., be the owner of the files, or belong to a group that has write access. In the latter case, that would mean permissions are set more permissively than default (for example, 775 rather than 755 for folders, and 664 instead of 644). </p>
         <br>
         <br><i class="fa fa-wrench"></i>&nbsp;Contact your host to solve this.
         </div>
