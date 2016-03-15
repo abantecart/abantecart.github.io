@@ -67,6 +67,11 @@ Debugging technical issues online can be tricky. There are many moving pieces; i
                                     <h4 class="step-title"><a href="#mail">MAIL FROM not accepted from server</a></h4>
                                     <div class="step-content"> Issue related to server mail configuration.</div>
                                 </li>
+                                <li class="step">
+                                    <span class="step-number"><i class="fa fa-hand-o-right"></i></span>
+                                    <h4 class="step-title"><a href="#permissions">Incorrect file permission warnings</a></h4>
+                                    <div class="step-content"> Issue related to AbanteCart system check.</div>
+                                </li>
 
                                 
                             </ul>
@@ -263,6 +268,39 @@ php_value memory_limit 64M
             </span>
         </div>
         <div class="list-item-content"> Your email provider has SPF policy (Sender Policy Framework) verifying the FROM address and other mail parameters. With SPF policy, you cannot put anything you want in the FROM field, it needs to match your account address or at least your email domain.
+        <br>
+        <br><i class="fa fa-wrench"></i>&nbsp;Contact your host to solve this.
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <div class="list-item">
+        <div class="list-item-header">
+            <h3 class="list-item-title">
+                <a href="#permissions">Warning: Incorrect index.php file permissions!</a>
+            </h3>
+            <span class="list-item-meta">
+                <a name="permissions"></a><a href="#"></a>
+            </span>
+        </div>
+        <div class="list-item-content"> This warnings appear in your admin messages when AbanteCart's System Check is Enabled. To disable it go to the Admin > System > Settings > System.<br>
+
+        Each file and directory on your server is assigned access rights for the owner of the file, the members of a group of related users, and everybody else. Rights can be assigned to read a file, to write a file, and to execute a file (i.e., run the file as a program). This is important because AbanteCart may need access to write to files to enable certain functions or disable access to write for the public users (world). 
+        <br>
+        <pre style="font-size: 1.1em; font-weight: bold; border: 1px solid rgb(128, 201, 255); width: 45%; color: rgb(0, 0, 0); padding: 0.5em; background-color: rgb(191, 233, 253);">  7       5     5
+ user   group  world
+ r+w+x  r+x    r+x
+ 4+2+1  4+0+1  4+0+1  = 755
+        </pre>
         <br>
         <br><i class="fa fa-wrench"></i>&nbsp;Contact your host to solve this.
         </div>
