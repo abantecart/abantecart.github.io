@@ -300,7 +300,7 @@
       level: /pages/settings/
       icon: '<i class="fa fa-cog fa-fw"></i>'
       subitems:
-       - text: Details
+       - text: Store Details
          url: /pages/settings/details.html
        - text: General
          url: /pages/settings/general.html
