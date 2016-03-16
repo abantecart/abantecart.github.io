@@ -87,7 +87,7 @@ Speeding up your website is critical—not just to ranking well with Google, but
 
 
 		 <p>
-        Compression.
+        You can use the Apache mod_deflate module to compress output from your web site that is sent to client browsers. 
         </p>
             	<!-- HTML Highlight -->
 				<div class="code-highlight">
@@ -125,7 +125,8 @@ Speeding up your website is critical—not just to ranking well with Google, but
 
 
 		 <p>
-        Browser Caching.
+        When a new visitor enters your website all the files like scripts, CSS styles and images are downloaded – there is no way to avoid it and it naturally produces several requests to your server. But what if this visitor comes back to your website later? We can tell the user’s browser to store these files in its cache; then, when the user returns to your site it will reload the files from the cache rather than downloading them all again. <br>
+        In order to add browser caching to your website, you will need to set the date for when the cache expires.
         </p>
             	<!-- HTML Highlight -->
 				<div class="code-highlight">
@@ -155,7 +156,7 @@ Speeding up your website is critical—not just to ranking well with Google, but
 
 
 		 <p>
-        Browser Caching.
+        Browser cache control is directly related with the header expires date and according to the Apache documentation provides directives to control and modify HTTP request and response headers. Headers can be merged, replaced or removed. You can use this feature by including this code in your htaccess
         </p>
             	<!-- HTML Highlight -->
 				<div class="code-highlight">
