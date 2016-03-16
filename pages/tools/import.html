@@ -20,7 +20,7 @@ tags: [
 
 <p><a class="anchorlink" href="#Example1:update">Example 1: Update products</a><br />
 <a class="anchorlink" href="#Example2:insert">Example 2: Insert Products</a> <br />
-<a class="anchorlink" href="#Example3:insert">Example 3: Insert Products with Images</a></p>
+<a class="anchorlink" href="#Example3:insert">Example 3: Insert Products with Images</a><br />
 <a class="anchorlink" href="#Example4:inserturl">Example 4: Import Product Media by URLs</a></p>
 
 <p></p>
@@ -225,7 +225,7 @@ Some of fields are required for a successful import, yet nearly almost all field
 
 						<a name="Example4:inserturl"></a>
                             <div class="category-info ">
-							<h3 class="category-title">Example 4: Import Images and Other Resources by URL</h3>
+							<h3 class="category-title">Example 4: Import Resources by URL</h3>
 							<h4 class="category-description"> For AbanteCart 1.2.6 and higher!</h4>
 							</div>
 
@@ -233,34 +233,24 @@ Some of fields are required for a successful import, yet nearly almost all field
 						<ul class="steps">
 							<li class="step">
 								<span class="step-number">1</span>
-								<h4 class="step-title">simply add set of the following to csv file</h4>
-								<div class="step-content">  </div>
-							</li>
-						    <li class="step">
-								<span class="step-number">2</span>
-								<h4 class="step-title">update permission for this folder to 777 (or 755)</h4>
-								<div class="step-content">  </div>
-							</li>
-							<li class="step">
-								<span class="step-number">3</span>
 								<h4 class="step-title">change/add this columns in your csv file</h4>
 								<div class="step-content">
 								resource_map[0].type           = image<br />
 								resource_map[0].source_url     = http://www.abantecart.com/images/devices.png<br />
 								resource_map[0].source_path    = leave empty<br />
 								resource_map[0].html_code      = &lt;i class=&quot;fa fa-optin-monster&quot;&gt;</i>  (if you want to add html resource or leave empty)<br />
-								<br />------------------------------------------------------------------------------------<br />in case If you need to add multiply images to one product please add more columns<br /><br />resource_map[1].type             = image<br />
-								resource_map[1].source_url       = http://www.abantecart.com/images/banners/admin_iphone.jpg<br />
-								resource_map[2].type             = pdf<br />
-								resource_map[2].source_url       = http://www.pdf995.com/samples/pdf.pdf<br />
+								<br />------------------------------------------------------------------------------------<br />in case If you need to add multiply images to one product please add more columns<br /><br />resource_map[1].type          = image<br />
+								resource_map[1].source_url    = http://www.abantecart.com/images/banners/admin_iphone.jpg<br />
+								resource_map[2].type          = pdf<br />
+								resource_map[2].source_url    = http://www.pdf995.com/samples/pdf.pdf<br />
 								<br />You can and more and more images for one product with similar way
 								
 								</div>
 							</li>
 						</ul>
 
-<p>products with images CSV COMMA delimited examples <a class="button green " href="/img/other/abantecart_import_test_new.csv" target="_blank" title="CSV file">Download</a>
-<a class="button green " href="/img/other/abantecart_import_test_existing.csv" target="_blank" title="CSV file">Download</a>
+<p>products with images CSV COMMA delimited examples <a class="button green " href="/img/other/abantecart_import_test_new.csv" target="_blank" title="CSV file">Download New Product Example</a>
+<a class="button green " href="/img/other/abantecart_import_test_existing.csv" target="_blank" title="CSV file">Download Update Product Example</a>
 </p>
 
 
