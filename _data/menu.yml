@@ -457,6 +457,8 @@
       url: /pages/tips/global_search.html
     - text: Troubleshooting
       url: /pages/tips/troubleshooting.html
+    - text: Performance
+      url: /pages/tips/performance.html
     - text: Side Panels
       url: /pages/tips/side_panels.html
     - text: Getting more help

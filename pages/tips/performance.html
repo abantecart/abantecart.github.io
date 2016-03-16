@@ -1,0 +1,145 @@
+---
+layout: default
+title: Performance Optimization
+description: AbanteCart Website Speed and Performance Optimization
+tags: [
+    ['system', 'System Settings'],
+    ['download', 'Download  & Source Code']
+]
+
+---
+
+<div class="category-info helper pt40">
+    <h3 class="category-title">AbanteCart Performance Optimization</h3>
+    <h4 class="category-description">
+Speeding up your website is critical—not just to ranking well with Google, but to keep your bottom-line profits high.</h4>
+</div>
+
+
+
+
+
+
+							<!-- Steps -->
+                            <ul class="steps">
+                                <li class="step">
+                                    <span class="step-number"><i class="fa fa-hand-o-right"></i></span>
+                                    <h4 class="step-title"><a href="#htaccess">.htaccess file</a></h4>
+                                    <div class="step-content"> Improving web site performance with Apache .htaccess </div>
+                                </li>
+                                <li class="step">
+                                    <span class="step-number"><i class="fa fa-hand-o-right"></i></span>
+                                    <h4 class="step-title"><a href="#cdn">Try content delivery network (CDN)</a></h4>
+                                    <div class="step-content"> Shorter proximity amounts to faster load time. </div>
+                                </li>
+                                <li class="step">
+                                    <span class="step-number"><i class="fa fa-hand-o-right"></i></span>
+                                    <h4 class="step-title"><a href="#hosting">Change Hosting plan</a></h4>
+                                    <div class="step-content"> Review your hosting service plan. </div>
+                                </li>
+                            
+                                
+                            </ul>
+                            <!-- End of Steps -->
+
+<div class="separator"></div>
+
+
+<div class="list-view ">
+    
+       <div class="list-item">
+        <div class="list-item-header">
+            <h3 class="list-item-title">
+                <a name="htaccess"></a><a href="#htaccess">Improving web site performance with Apache .htaccess</a>
+            </h3>
+            <span class="list-item-meta">
+                <a href="#">file</a>
+            </span>
+        </div>
+        <div class="list-item-content"> <p>
+        Speed optimizations can be easily done with simple .htaccess rules. These rules can make any website faster by compressing content and enabling browser cache. 
+        .htaccess is a special configuration file which you should be able to dig up in the root of your server directory. 
+        With .htaccess file you can create redirects, rewrite URLs on your website, create password protected directories and other technical things, but you can also use them to improve your site’s page loading speed by taking advantage of some Apache server features. 
+        </p>
+        <p>
+        Compression reduces response times by reducing the size of the HTTP response. It’s worthwhile to gzip your HTML documents, scripts and stylesheets. Gzip compression helps to reduce the amount of data your server needs to send to your users, which in turn speeds up the load time of your site.
+        </p>
+            	<!-- HTML Highlight -->
+				<div class="code-highlight">
+					<span class="js-copy-to-clipboard copy-code">Try adding this in a .htaccess file</span>
+		            <pre><code class="language-markup">
+					&lt;IfModule mod_gzip.c&gt;
+  mod_gzip_on Yes
+  mod_gzip_dechunk Yes
+  mod_gzip_item_include file .(html?|txt|css|js|php|pl)$
+  mod_gzip_item_include handler ^cgi-script$
+  mod_gzip_item_include mime ^text/.*
+  mod_gzip_item_include mime ^application/x-javascript.*
+  mod_gzip_item_exclude mime ^image/.*
+  mod_gzip_item_exclude rspheader ^Content-Encoding:.*gzip.*
+&lt;/IfModule&gt;
+					</code></pre></div>
+				<!-- End of HTML Highlight -->
+
+
+
+
+         </div>
+
+                         <!-- Note -->
+                        <div class="note js-note red note-pulse">
+                            
+                            <h4 class="note-title"> How do I enable .htaccess in AbanteCart? </h4>
+                            <p class="note-description"> 
+                            After installing AbanteCart an .htaccess file is already created, but it’s called htaccess.txt and looks like a regular text file. The reason for this? Compatibility. There’s no guarantee that every server that AbanteCart is installed on will support .htaccess’ features. Don’t worry though; most modern servers that are built to support AbanteCart will also support .htaccess<br>
+                            You just need to rename the htaccess.txt file to .htaccess (remember about the dot that comes before “htaccess”!).
+                            </p>
+                        </div>
+                        <!-- End of Note -->
+    </div>
+
+
+    <div class="list-item">
+    	<div class="list-item-header">
+    		<h3 class="list-item-title">
+    			<a name="cdn"></a><a href="#cdn">CDN</a>
+    		</h3>
+    		<span class="list-item-meta">
+    			<a href="#">hosting related</a>
+    		</span>
+    	</div>
+    	<div class="list-item-content"> <p>
+    	A content delivery network is a way of taking a websites static files, like CSS, images, and JavaScript, and delivering them through web servers that are closer to the user’s physical location. Shorter proximity amounts to faster load time.
+    	</p>
+    	</div>
+    </div>
+
+
+
+
+
+
+    <div class="list-item">
+    	<div class="list-item-header">
+    		<h3 class="list-item-title">
+    			<a name="hosting"></a><a href="#mod_security">Review your hosting service plan</a>
+    		</h3>
+    		<span class="list-item-meta">
+    			<a href="#">hosting related</a>
+    		</span>
+    	</div>
+    	<div class="list-item-content"> <p>
+    	Check with your hosting provider to see whether you have shared or dedicated hosting. A shared hosting account often involves sharing server space with dozens of other companies where website speed is impacted by the number of people using the servers. If this is the case, then it may be time to consider a dedicated plan where you have sole access to the server.
+    	</p>
+    	</div>
+    </div>
+
+    
+
+
+
+
+
+
+    <p></p>
+</div>
