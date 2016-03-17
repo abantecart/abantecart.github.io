@@ -164,15 +164,16 @@ SecFilterInheritance Off
         yourdomainname.com/index.php?s=[your_admin]
         <br><i class="fa fa-wrench"></i>&nbsp;[your_admin] is provided during installation and can be located in system/config.php AFTER installation.
          </div>
+         <br>
 
                          <!-- Note -->
-                        <div class="note js-note red note-pulse">
+                        <div class="note js-note blue">
                             
                             <h4 class="note-title"> Note </h4>
                             <p class="note-description"> 
                             If you lost your password try to reset it. In case your cannot restore your email try <a href="http://forum.abantecart.com/index.php/topic,547.msg1688.html#msg1688" target="_new">this tip</a><br>
-                            Also login fail may be caused if server is unable to create a session. Please contact with your hosting support or change session path manually<br>
-                            php-directive "session.save_path" in your php.ini (on redhat-based linux distributives it have empty value). Just uncomment it and set value "/tmp".  
+                            Also login fail may be caused if server is unable to create a session. Please contact with your hosting support or modify session path on shared hosting by creating/editing a php.ini file<br>
+                            Include this in your file: session.save_path = "/tmp"  
                             </p>
                         </div>
                         <!-- End of Note -->
