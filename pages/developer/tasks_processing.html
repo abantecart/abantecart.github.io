@@ -67,9 +67,9 @@ Now let's look into task creation and execution process and data with more detai
 	<p class="box-description">
 To create a new task in the code, you need instantiate class ATaskManager in admin controller or model and run addTask() method with required parameters to create the task.  
 </p>
-<!-- HTML Highlight -->
+						<!-- HTML Highlight -->
 						<div class="code-highlight">
-							<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">
+							<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
 		$tm = new ATaskManager();
 
 
@@ -98,7 +98,7 @@ To create a new task in the code, you need instantiate class ATaskManager in adm
 			)
 
 		);
- 		</code>
+ </code>
  		</pre>
 </div>
 <!-- HTML Highlight -->
@@ -111,25 +111,72 @@ In the task creation you can specify details for this task. <br>
 
 Description of task parameters: 
 
-name -> Task name. This can be any name your. 
+<!-- Table -->
+								<div class="table-responsive">
+									<table class="table table-striped">
+										<thead>
+											<tr>
+												<th>Property</th>
+												<th>Default</th>
+												<th>Description</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr class="">
+												<th scope="row">name</th>
+												<td>-></td>
+												<td>Task name. This can be any name your.</td>
+											</tr>
+											<tr class="">
+												<th scope="row">starter</th>
+												<td>-></td>
+												<td>Who will start the task Admin (1) or Storefront (0)</td>
+											</tr>
+											<tr class="">
+												<th scope="row">created_by</th>
+												<td>-></td>
+												<td>User ID who creates this task</td>
+											</tr>
+											<tr class="">
+												<th scope="row">status</th>
+												<td>-></td>
+												<td>Status of the task 0 - disabled, 1 - scheduled, 2 - active</td>
+											</tr>
+											<tr class="">
+												<th scope="row">start_time</th>
+												<td>-></td>
+												<td>time to start task with Mysql date time format</td>
+											</tr>
+											<tr class="">
+												<th scope="row">last_time_run</th>
+												<td>-></td>
+												<td>last time task ran</td>
+											</tr>
+											<tr class="">
+												<th scope="row">progress</th>
+												<td>-></td>
+												<td>Percentage of task progress</td>
+											</tr>
+											<tr class="">
+												<th scope="row">last_result</th>
+												<td>-></td>
+												<td>Status of last task ran  0 - success, 1 - failed, 2 - interrupted</td>
+											</tr>
+											<tr class="">
+												<th scope="row">run_interval</th>
+												<td>-></td>
+												<td>interval in seconds since last run, 0 - without interval or run once</td>
+											</tr>
+											<tr class="">
+												<th scope="row">max_execution_time</th>
+												<td>-></td>
+												<td>maximum execution time for this task before it gets terminated.</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<!-- End of Table -->
 
-starter -> Who will start the task Admin (1) or Storefront (0)
-
-created_by -> User ID who creates this task
-
-status -> Status of the task 0 - disabled, 1 - scheduled, 2 - active
-
-start_time -> time to start task with Mysql date time format 
-
-last_time_run -> last time task ran 
-
-progress -> Percentage of task progress
-
-last_result -> Status of last task ran  0 - success, 1 - failed, 2 - interrupted
-
-run_interval -> interval in seconds since last run, 0 - without interval or run once
-
-max_execution_time -> maximum execution time for this task before it gets terminated.
 </p>
 </div>
 
@@ -144,7 +191,7 @@ max_execution_time -> maximum execution time for this task before it gets termin
 	<p class="box-description">
 At least one step is required to be created for task to be executed. To create a step use addStep() method. Before creating a step, task should be already created and there should be task ID available.
 </p>
-	<!-- HTML Highlight -->
+				<!-- HTML Highlight -->
 						<div class="code-highlight">
 							<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
 				$step_id = $tm-&gt;addStep( array(
