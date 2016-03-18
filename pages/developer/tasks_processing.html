@@ -308,11 +308,11 @@ After all needed steps are created task can be executed.
 <div class="category-info helper">
 	<h4 id="Stepcontroller" class="box-title">Step controller</h4>
 	<p class="box-description">
-Each step should have a controller that will be called during task and this step execution. 
+Each step should have a controller that will be called during task and this step execution. <br>
 
-This is a basic response controller that is developed to perform some work required by this step. 
+This is a basic response controller that is developed to perform some work required by this step. <br>
 
-In example of backup, "task/tool/backup/dumptables" controller performs task of dumping tables data. Each step is a process of damping data for one table. 
+In example of backup, "task/tool/backup/dumptables" controller performs task of dumping tables data. Each step is a process of damping data for one table. <br>
 
 Step response controller is expected to return appropriate Jason string with error is step has failed. 
 </p>
@@ -327,20 +327,24 @@ Step response controller is expected to return appropriate Jason string with err
 	<h4 id="Taskexecution" class="box-title">Task Execution</h4>
 	<p class="box-description">
 Task execution can be initiated 2 different ways. 
-
-1. Start from running task.php script from browser or from command line. Request to this script will put all scheduled tasks in the queue and will process them one by one.
-
-
--> link to /task.php file in github
-
-
-2. Start task from UI with explicitly requesting task to start with button click or some other browser/user action. This is done using admin JavaScript function available in admin/view/default/javascript/general.js
-
-
--> link to public_html/admin/view/default/javascript/general.js
-
-
-Example of button to run the task:
+</p>
+						<!-- Steps -->
+						<ul class="steps">
+							<li class="step">
+								<span class="step-number">1</span>
+								<h4 class="step-title">Start from running task.php script from browser or from command line. Request to this script will put all scheduled tasks in the queue and will process them one by one.</h4>
+								<div class="step-content"> -> link to /task.php file in github<br>
+core/engine/task.php - Core class ATypeTask. </div>
+							</li>
+							<li class="step">
+								<span class="step-number">1</span>
+								<h4 class="step-title">Start task from UI with explicitly requesting task to start with button click or some other browser/user action. This is done using admin JavaScript function available in admin/view/default/javascript/general.js</h4>
+								<div class="step-content"> -> link to public_html/admin/view/default/javascript/general.js
+								 </div>
+							</li>
+						</ul>
+						<!-- Steps -->
+<p>Example of button to run the task:
 </p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
