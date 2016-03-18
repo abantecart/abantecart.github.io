@@ -19,29 +19,32 @@ redirect_from: "/tag/tasks_processing.html"
 	<p>Currently, tasks are used in 2 places of core AbanteCart. <br>
 
 Task is used in a backup and in bulk messaging. We these places as example in this manual.</p>
+						<!-- Steps -->
+						<ul class="steps">
+							<li class="step">
+								<!--<span class="step-number">1</span>-->
+								<h4 class="step-title">Task core files:</h4>
+								<div class="step-content"> core/lib/task_manager.php - Admin class ATaskManager<br>
+core/engine/task.php - Core class ATypeTask. </div>
+							</li>
+							<li class="step">
+								<!--<span class="step-number">1</span>-->
+								<h4 class="step-title">Task related database tables:</h4>
+								<div class="step-content"> 
+[pefix]tasks - Main table for task information and status <br>
+
+[pefix]task_details - Task details table for settings <br>
+
+[pefix]task_steps - Task steps with settings for execution  </div>
+							</li>
+						</ul>
+						<!-- Steps -->
 		<p>
-		Task core files:
+Task is an organizational process to handle execution of created requests (steps). Execution of each step is passed to specified controller with provided settings in this given step. <br>
 
-core/lib/task_manager.php - Admin class ATaskManager
+Task can be execute right away or postponed to specified time. <br>
 
-core/engine/task.php - Core class ATypeTask
-
-
-Task related database tables:
-
-[pefix]tasks - Main table for task information and status 
-
-[pefix]task_details - Task details table for settings 
-
-[pefix]task_steps - Task steps with settings for execution 
-
-
-Task is an organizational process to handle execution of created requests (steps). Execution of each step is passed to specified controller with provided settings in this given step. 
-
-Task can be execute right away or postponed to specified time. 
-
-Each task consists of steps that are organized in a sequence in which they are executed. Each task must have at least one step. 
-
+Each task consists of steps that are organized in a sequence in which they are executed. Each task must have at least one step.<br> 
 
 Now let's look into task creation and execution process and data with more details.
 		</p>
@@ -101,10 +104,10 @@ To create a new task in the code, you need instantiate class ATaskManager in adm
 <!-- HTML Highlight -->
 
 <p>
-	Once task is creates with addTask() method, it returns new task ID. Using this task ID, tasks steps can be created with addStep() method. 
+	Once task is creates with addTask() method, it returns new task ID. Using this task ID, tasks steps can be created with addStep() method. <br>
 
 
-In the task creation you can specify details for this task. 
+In the task creation you can specify details for this task. <br>
 
 Description of task parameters: 
 
@@ -143,7 +146,7 @@ At least one step is required to be created for task to be executed. To create a
 </p>
 	<!-- HTML Highlight -->
 						<div class="code-highlight">
-							<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">
+							<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
 				$step_id = $tm-&gt;addStep( array(
 
 				&#39;task_id&#39; =&gt; $task_id,
