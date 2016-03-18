@@ -109,16 +109,16 @@ To create a new task in the code, you need instantiate class ATaskManager in adm
 
 In the task creation you can specify details for this task. <br>
 
-Description of task parameters: 
 
-<!-- Table -->
+
+								<!-- Table -->
 								<div class="table-responsive">
 									<table class="table table-striped">
 										<thead>
 											<tr>
-												<th>Property</th>
-												<th>Default</th>
-												<th>Description</th>
+												<th></th>
+												<th></th>
+												<th>Description of task parameters</th>
 											</tr>
 										</thead>
 										<tbody>
@@ -225,26 +225,65 @@ At least one step is required to be created for task to be executed. To create a
  		</pre>
 </div>
 <!-- HTML Highlight -->
+
+								<!-- Table -->
+								<div class="table-responsive">
+									<table class="table table-striped">
+										<thead>
+											<tr>
+												<th></th>
+												<th></th>
+												<th>Following parameters need are specified during step creation:</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr class="">
+												<th scope="row">task_id</th>
+												<td>-></td>
+												<td>Unique task ID provided by addTask() method</td>
+											</tr>
+											<tr class="">
+												<th scope="row">sort_order</th>
+												<td>-></td>
+												<td>Sequence of the step. This sequence starts from lower integer to higher</td>
+											</tr>
+											<tr class="">
+												<th scope="row">status</th>
+												<td>-></td>
+												<td>Step status 0 - disabled, 1 - scheduled, 2 - active</td>
+											</tr>
+											<tr class="">
+												<th scope="row">last_time_run</th>
+												<td>-></td>
+												<td>last time task ran </td>
+											</tr>
+											<tr class="">
+												<th scope="row">last_result</th>
+												<td>-></td>
+												<td>Status of last task ran  0 - success, 1 - failed, 2 - interrupted</td>
+											</tr>
+											<tr class="">
+												<th scope="row">max_execution_time</th>
+												<td>-></td>
+												<td>maximum execution time for this task before it gets terminated</td>
+											</tr>
+											<tr class="">
+												<th scope="row">controller</th>
+												<td>-></td>
+												<td>Controller path to be executed in this step</td>
+											</tr>
+											<tr class="">
+												<th scope="row">settings</th>
+												<td>-></td>
+												<td>Data values to be passed to controller at execution time</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<!-- End of Table -->
+	
 <p>
-	Following parameters need are specified during step creation:
-
-task_id -> Unique task ID provided by addTask() method
-
-sort_order -> Sequence of the step. This sequence starts from lower integer to higher.
-
-status -> Step status 0 - disabled, 1 - scheduled, 2 - active
-
-last_time_run -> last time task ran 
-
-last_result -> Status of last task ran  0 - success, 1 - failed, 2 - interrupted
-
-max_execution_time -> maximum execution time for this task before it gets terminated.
-
-controller -> Controller path to be executed in this step
-
-settings -> Data values to be passed to controller at execution time.
-
-One special setting, that is important mentioning, is interrupt_on_step_fault. If given step has interrupt_on_step_fault set to true, task execution will stop if that step returns a failure.   
+One special setting, that is important mentioning, is interrupt_on_step_fault. If given step has interrupt_on_step_fault set to true, task execution will stop if that step returns a failure.  <br> 
 
 
 After all needed steps are created task can be executed.
