@@ -159,10 +159,35 @@ SecFilterInheritance Off
                 <a href="#">do not panic</a>
             </span>
         </div>
-        <div class="list-item-content"> The correct ink to admin is based on what is set during installation process of the AbanteCart. 
-        <br>
-        yourdomainname.com/index.php?s=[your_admin]
-        <br><i class="fa fa-wrench"></i>&nbsp;[your_admin] is provided during installation and can be located in system/config.php AFTER installation.
+        <div class="list-item-content"> 
+
+        				<!-- Steps -->
+						<ul class="steps">
+							<li class="step">
+								<span class="step-number">A</span>
+								<h4 class="step-title">Find link to admin</h4>
+								<div class="step-content"> The correct ink to admin is based on what is set during installation process of the AbanteCart. <br>
+        						yourdomainname.com/index.php?s=[your_admin]
+        						<br>&nbsp;[your_admin] is provided during installation and can be located in system/config.php AFTER installation. </div>
+							</li>
+							<li class="step">
+								<span class="step-number">B</span>
+								<h4 class="step-title">Login fail may be caused if server is unable to create a session</h4>
+								<div class="step-content"> Please contact with your hosting support or modify session path on shared hosting by creating/editing a php.ini file<br>
+                            	Include this in your file: session.save_path = "/tmp"  </div>
+							</li>
+						</ul>
+						<!-- Steps -->
+
+
+
+
+
+
+
+
+
+        
          </div>
          <br>
 
@@ -171,9 +196,8 @@ SecFilterInheritance Off
                             
                             <h4 class="note-title"> Note </h4>
                             <p class="note-description"> 
-                            If you lost your password try to reset it. In case your cannot restore your email try <a href="http://forum.abantecart.com/index.php/topic,547.msg1688.html#msg1688" target="_new">this tip</a><br>
-                            Also login fail may be caused if server is unable to create a session. Please contact with your hosting support or modify session path on shared hosting by creating/editing a php.ini file<br>
-                            Include this in your file: session.save_path = "/tmp"  
+                            If you lost your password try to reset it. In case your cannot restore your email try <a href="http://forum.abantecart.com/index.php/topic,547.msg1688.html#msg1688" target="_new">this tip</a>
+                              
                             </p>
                         </div>
                         <!-- End of Note -->
