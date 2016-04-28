@@ -45,58 +45,64 @@ tags: [
 								</li>
 								<li class="step">
 									<span class="step-number">5</span>
+									<h4 class="step-title">Reset invoice start number.</h4>
+									<div class="step-content"> System > Settings > Checkout.</div>
+								</li>
+								<li class="step">
+									<span class="step-number">6</span>
+									<h4 class="step-title">Reset Order start number.</h4>
+									<div class="step-content"> System > Settings > Checkout. Note: some online payment processors like PayPal may cause duplicate orders ID problem in case you reinstall cart (AbanteCart order id numbers being the same as invoice numbers already used in Paypal with old cart installation).</div>
+								</li>
+								<li class="step">
+									<span class="step-number">7</span>
 									<h4 class="step-title">Test placing an order, check tax, subtotal, totals.</h4>
 									<div class="step-content"> You must configure the tax rate for your business before accepting sales.  The moment your online store is activated, we recommend you complete an "end to end" test of the payment process. </div>
 								</li>
 								<li class="step">
-									<span class="step-number">6</span>
+									<span class="step-number">8</span>
 									<h4 class="step-title">Confirm order is placed.</h4>
 									<div class="step-content"> Once an order is completed and payment is taken by the payment gateway, full details of the order will appear in your list of orders Sales > Orders  </div>
 								</li>
 								<li class="step">
-									<span class="step-number">7</span>
-									<h4 class="step-title">Reset invoice start number.</h4>
-									<div class="step-content"> System > Settings > Checkout. Note: some online payment processors like PayPal may cause duplicate invoice ID problem in case you reinstall cart (AbanteCart order id numbers being the same as invoice numbers already used in Paypal with old cart installation). To avoid this problem  you need to go into database and manually set the order number higher. This will be improved in future AbanteCart version.</div>
-								</li>
-								<li class="step">
-									<span class="step-number">8</span>
+									<span class="step-number">9</span>
 									<h4 class="step-title">Verify New Customer Registration.</h4>
 									<div class="step-content"> When a customer submits an online registration, a new account is created immediately. Make sure that the customer record exists in Sales > Customers </div>
 								</li>
 								<li class="step">
-									<span class="step-number">9</span>
+									<span class="step-number">10</span>
 									<h4 class="step-title">Clear out dummy records and test orders.</h4>
 									<div class="step-content"> Delete test orders in Sales > Orders section  </div>
 								</li>
 								<li class="step">
-									<span class="step-number">10</span>
+									<span class="step-number">11</span>
 									<h4 class="step-title">Make sure you have a privacy policy and Terms & Conditions.</h4>
 									<div class="step-content"> Add or edit your polices in Design > Content </div>
 								</li>
 								<li class="step">
-									<span class="step-number">11</span>
+									<span class="step-number">12</span>
 									<h4 class="step-title">Configure Google Analytics</h4>
 									<div class="step-content"> Save your Google Analytics Account Number in System > Settings > General </div>
 								</li>
 								<li class="step">
-									<span class="step-number">12</span>
+									<span class="step-number">13</span>
 									<h4 class="step-title">Test email to customer and to merchant.</h4>
 									<div class="step-content"> When a sale is made on your site, you will be notified by email. This will often happen twice - one email from your payment processor, and one from AbanteCart for confirmation in case you have enabled Alert Mail setting in System > Settings > Mail. </div>
 								</li>
 								<li class="step">
-									<span class="step-number">13</span>
+									<span class="step-number">14</span>
 									<h4 class="step-title">Make sure you have contacts of the merchant, including phone number.</h4>
 									<div class="step-content"> System > Settings > Details  </div>
 								</li>
 								<li class="step">
-									<span class="step-number">14</span>
+									<span class="step-number">15</span>
 									<h4 class="step-title">Make sure your currencies exchange rates are up to date.</h4>
 									<div class="step-content"> System > Localization > Currencies  </div>
 								</li>
 								<li class="step">
-									<span class="step-number">15</span>
-									<h4 class="step-title">Set secure permission for /system/config.php file</h4>
-									<div class="step-content"> Needs to be set to read and execute modes (0444) to keep it secured from editing!</div>
+									<span class="step-number">16</span>
+									<h4 class="step-title">Check Security</h4>
+									<div class="step-content"> Set secure permission for /system/config.php file. Needs to be set to read and execute modes (0444) to keep it secured from editing!<br>
+									Also make sure you remove INSTALL folder in your site root directory.</div>
 								</li>
 							</ul>
 							<!-- End of Steps -->

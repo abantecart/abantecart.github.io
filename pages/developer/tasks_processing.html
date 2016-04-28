@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Tasks Processing System 
+title: Tasks API 
 description: AbanteCart allows to schedule and execute tasks created in the code.
 tags: [
 	['architecture', 'AbanteCart Architecture'],
@@ -10,9 +10,469 @@ redirect_from: "/tag/tasks_processing.html"
 ---
 
 <div class="category-info helper pt40">
-	<h3 class="category-title">Tasks Processing System </h3>
-	<h4 class="category-description">
-	Manual is coming soon.
+	<h3 class="category-title">Tasks API</h3>
+	<h4 class="category-description"> 
 	</h4>
-	<br />
+	<p class="box-description">
+	Starting with version 1.2.0 AbanteCart core provides tasks API to to create and run tasks. Task can be used to break large or long processes into smaller steps that can be ran with AJAX or with backend script. Using task/steps you can show progress to user and prevent browser or connection from timing out in longer processes. 
+	</p>
+	<p>Currently, tasks are used in 2 places of core AbanteCart. <br>
+
+Task is used in a backup and in bulk messaging. We use these places as example in this manual.</p>
+						<!-- Steps -->
+						<ul class="steps">
+							<li class="step">
+								<!--<span class="step-number">1</span>-->
+								<h4 class="step-title">Task core files:</h4>
+								<div class="step-content"><a href="https://github.com/abantecart/abantecart-src/blob/master/public_html/core/lib/task_manager.php" target="_new">core/lib/task_manager.php</a> - Admin class ATaskManager<br>
+<a href="https://github.com/abantecart/abantecart-src/blob/master/public_html/core/engine/task.php" target="_new">core/engine/task.php</a> - Core class ATypeTask. </div>
+							</li>
+							<li class="step">
+								<!--<span class="step-number">1</span>-->
+								<h4 class="step-title">Task related database tables:</h4>
+								<div class="step-content"> 
+[pefix]tasks - Main table for task information and status <br>
+
+[pefix]task_details - Task details table for settings <br>
+
+[pefix]task_steps - Task steps with settings for execution  </div>
+							</li>
+						</ul>
+						<!-- Steps -->
+		<p>
+Task is an organizational process to handle execution of created requests (steps). Execution of each step is passed to specified controller with provided settings in this given step. <br>
+
+Task can be execute right away or postponed to specified time. <br>
+
+Each task consists of steps that are organized in a sequence in which they are executed. Each task must have at least one step.<br> 
+
+Now let's look into task creation and execution process and data with more details.
+		</p>
+</div>
+
+<div class="note js-note blue-light">
+	<h4 class="note-title">Document Content</h4>
+	<ul>
+	<li class="toclevel-1 tocsection-3"><a href="#Task"> <span class="toctext">Task</span></a></li>
+	<li class="toclevel-1 tocsection-4"><a href="#Steps"> <span class="toctext">Steps</span></a></li>
+	<li class="toclevel-1 tocsection-5"><a href="#Stepcontroller"><span class="toctext">Step controller</span></a></li>
+	<li class="toclevel-1 tocsection-6"><a href="#Taskexecution"><span class="toctext">Task Execution</span></a></li>
+	<li class="toclevel-1 tocsection-6"><a href="#api"><span class="toctext">API Reference</span></a></li>
+	</ul>
+</div>
+
+
+
+<div class="category-info helper">
+	<h4 id="Task" class="box-title">Task</h4>
+	<p class="box-description">
+To create a new task in the code, you need instantiate class ATaskManager in admin controller or model and run addTask() method with required parameters to create the task.  
+</p>
+						<!-- HTML Highlight -->
+						<div class="code-highlight">
+							<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+		$tm = new ATaskManager();
+
+
+		$task_id = $tm-&gt;addTask(
+
+			array( &#39;name&#39; =&gt; $task_name,
+
+					&#39;starter&#39; =&gt; 1, //admin-side is starter
+
+					&#39;created_by&#39; =&gt; $this-&gt;user-&gt;getId(), //get starter id
+
+					&#39;status&#39; =&gt; 1, // schedule it!
+
+					&#39;start_time&#39; =&gt; date(&#39;Y-m-d H:i:s&#39;, mktime(0,0,0, date(&#39;m&#39;), date(&#39;d&#39;)+1, date(&#39;Y&#39;)) ),
+
+					&#39;last_time_run&#39; =&gt; &#39;0000-00-00 00:00:00&#39;,
+
+					&#39;progress&#39; =&gt; &#39;0&#39;,
+
+					&#39;last_result&#39; =&gt; &#39;0&#39;,
+
+					&#39;run_interval&#39; =&gt; &#39;0&#39;,
+
+					&#39;max_execution_time&#39; =&gt; &#39;0&#39;
+
+			)
+
+		);
+ </code>
+ 		</pre>
+</div>
+<!-- HTML Highlight -->
+
+<p>
+	Once task is creates with addTask() method, it returns new task ID. Using this task ID, tasks steps can be created with addStep() method. <br>
+
+
+In the task creation you can specify details for this task. <br>
+
+
+
+								<!-- Table -->
+								<div class="table-responsive">
+									<table class="table table-striped">
+										<thead>
+											<tr>
+												<th></th>
+												<th></th>
+												<th>Description of task parameters</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr class="">
+												<th scope="row">name</th>
+												<td>-></td>
+												<td>Task name. This can be any name your.</td>
+											</tr>
+											<tr class="">
+												<th scope="row">starter</th>
+												<td>-></td>
+												<td>Who will start the task Admin (1) or Storefront (0)</td>
+											</tr>
+											<tr class="">
+												<th scope="row">created_by</th>
+												<td>-></td>
+												<td>User ID who creates this task</td>
+											</tr>
+											<tr class="">
+												<th scope="row">status</th>
+												<td>-></td>
+												<td>Status of the task 0 - disabled, 1 - scheduled, 2 - active</td>
+											</tr>
+											<tr class="">
+												<th scope="row">start_time</th>
+												<td>-></td>
+												<td>time to start task with Mysql date time format</td>
+											</tr>
+											<tr class="">
+												<th scope="row">last_time_run</th>
+												<td>-></td>
+												<td>last time task ran</td>
+											</tr>
+											<tr class="">
+												<th scope="row">progress</th>
+												<td>-></td>
+												<td>Percentage of task progress</td>
+											</tr>
+											<tr class="">
+												<th scope="row">last_result</th>
+												<td>-></td>
+												<td>Status of last task ran  0 - success, 1 - failed, 2 - interrupted</td>
+											</tr>
+											<tr class="">
+												<th scope="row">run_interval</th>
+												<td>-></td>
+												<td>interval in seconds since last run, 0 - without interval or run once</td>
+											</tr>
+											<tr class="">
+												<th scope="row">max_execution_time</th>
+												<td>-></td>
+												<td>maximum execution time for this task before it gets terminated.</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<!-- End of Table -->
+
+</p>
+</div>
+
+
+
+
+
+
+
+<div class="category-info helper">
+	<h4 id="Steps" class="box-title">Steps</h4>
+	<p class="box-description">
+At least one step is required to be created for task to be executed. To create a step use addStep() method. Before creating a step, task should be already created and there should be task ID available.
+</p>
+				<!-- HTML Highlight -->
+						<div class="code-highlight">
+							<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+				$step_id = $tm-&gt;addStep( array(
+
+				&#39;task_id&#39; =&gt; $task_id,
+
+				&#39;sort_order&#39; =&gt; 1,
+
+				&#39;status&#39; =&gt; 1,
+
+				&#39;last_time_run&#39; =&gt; &#39;0000-00-00 00:00:00&#39;,
+
+				&#39;last_result&#39; =&gt; &#39;0&#39;,
+
+				&#39;max_execution_time&#39; =&gt; ceil($db_size/2794843)*4,
+
+				&#39;controller&#39; =&gt; &#39;task/tool/backup/dumptables&#39;,
+
+				&#39;settings&#39; =&gt; array(
+
+								&#39;table_list&#39; =&gt; $data[&#39;table_list&#39;],
+
+								&#39;sql_dump_mode&#39;=&gt; $data[&#39;sql_dump_mode&#39;],
+
+								&#39;backup_name&#39; =&gt; $backup_filename
+
+								)
+
+			));
+ 		</code>
+ 		</pre>
+</div>
+<!-- HTML Highlight -->
+
+								<!-- Table -->
+								<div class="table-responsive">
+									<table class="table table-striped">
+										<thead>
+											<tr>
+												<th></th>
+												<th></th>
+												<th>Following parameters need are specified during step creation:</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr class="">
+												<th scope="row">task_id</th>
+												<td>-></td>
+												<td>Unique task ID provided by addTask() method</td>
+											</tr>
+											<tr class="">
+												<th scope="row">sort_order</th>
+												<td>-></td>
+												<td>Sequence of the step. This sequence starts from lower integer to higher</td>
+											</tr>
+											<tr class="">
+												<th scope="row">status</th>
+												<td>-></td>
+												<td>Step status 0 - disabled, 1 - scheduled, 2 - active</td>
+											</tr>
+											<tr class="">
+												<th scope="row">last_time_run</th>
+												<td>-></td>
+												<td>last time task ran </td>
+											</tr>
+											<tr class="">
+												<th scope="row">last_result</th>
+												<td>-></td>
+												<td>Status of last task ran  0 - success, 1 - failed, 2 - interrupted</td>
+											</tr>
+											<tr class="">
+												<th scope="row">max_execution_time</th>
+												<td>-></td>
+												<td>maximum execution time for this task before it gets terminated</td>
+											</tr>
+											<tr class="">
+												<th scope="row">controller</th>
+												<td>-></td>
+												<td>Controller path to be executed in this step</td>
+											</tr>
+											<tr class="">
+												<th scope="row">settings</th>
+												<td>-></td>
+												<td>Data values to be passed to controller at execution time</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<!-- End of Table -->
+	
+<p>
+One special setting, that is important mentioning, is interrupt_on_step_fault. If given step has interrupt_on_step_fault set to true, task execution will stop if that step returns a failure.  <br> 
+
+
+After all needed steps are created task can be executed.
+</p>
+						<!-- Note -->
+						<div class="note js-note blue">
+							<span class="note-close js-close">
+								<i class="fa fa-times"></i>
+							</span>
+							<h4 class="note-title"> Note </h4>
+							<p class="note-description"> Task execution is considered successful only if all steps in that task executed sucessfuly. </p>
+						</div>
+						<!-- End of Note -->
+</div>
+
+
+
+
+
+
+
+<div class="category-info helper">
+	<h4 id="Stepcontroller" class="box-title">Step controller</h4>
+	<p class="box-description">
+Each step should have a controller that will be called during task and this step execution. <br>
+
+This is a basic response controller that is developed to perform some work required by this step. <br>
+
+In example of backup, "task/tool/backup/dumptables" controller performs task of dumping tables data. Each step is a process of damping data for one table. <br>
+
+Step response controller is expected to return appropriate Jason string with error is step has failed. 
+</p>
+</div>
+
+
+
+
+
+
+<div class="category-info helper">
+	<h4 id="Taskexecution" class="box-title">Task Execution</h4>
+	<p class="box-description">
+Task execution can be initiated 2 different ways. 
+</p>
+						<!-- Steps -->
+						<ul class="steps">
+							<li class="step">
+								<span class="step-number">1</span>
+								<h4 class="step-title">Start from running task.php script from browser or from command line. Request to this script will put all scheduled tasks in the queue and will process them one by one.</h4>
+								<div class="step-content"> <a href="https://github.com/abantecart/abantecart-src/blob/master/public_html/task.php" target="_new">/task.php</a> file in github </div>
+							</li>
+							<li class="step">
+								<span class="step-number">2</span>
+								<h4 class="step-title">Start task from UI with explicitly requesting task to start with button click or some other browser/user action. This is done using admin JavaScript function available in admin/view/default/javascript/general.js</h4>
+								<div class="step-content"> <a href="https://github.com/abantecart/abantecart-src/blob/master/public_html/admin/view/default/javascript/general.js" target="_new">public_html/admin/view/default/javascript/general.js</a> file in github.
+								 </div>
+							</li>
+						</ul>
+						<!-- Steps -->
+<p>Example of button to run the task:
+</p>
+<!-- HTML Highlight -->
+<div class="code-highlight">
+	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
+&lt;button class=&quot;btn btn-primary task_run&quot; data-run-task-url=&quot;&lt;?php echo $form[&#39;build_task_url&#39;]?&gt;&quot; data-complete-task-url=&quot;&lt;?php echo $form[&#39;complete_task_url&#39;]?&gt;&quot;&gt;
+
+	&lt;i class=&quot;fa fa-database&quot;&gt;&lt;/i&gt; &lt;?php echo $form[&#39;backup_now&#39;]-&gt;text; ?&gt;
+
+&lt;/button&gt;
+</code>
+ 	</pre>
+</div>
+<!-- HTML Highlight -->
+
+<p>
+
+
+
+
+
+								<!-- Table -->
+								<div class="table-responsive">
+									<table class="table table-striped">
+										<thead>
+											<tr>
+												<th></th>
+												<th></th>
+												<th></th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr class="">
+												<th scope="row">task_run</th>
+												<td>-></td>
+												<td>class that start last even is blinded to</td>
+											</tr>
+											<tr class="">
+												<th scope="row">data-run-task-url</th>
+												<td>-></td>
+												<td>URL to the task process creation response controller</td>
+											</tr>
+											<tr class="">
+												<th scope="row">data-complete-task-url</th>
+												<td>-></td>
+												<td>URL to the task/steps execution response controller that completes the task</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<!-- End of Table -->	
+
+<p>
+
+Example of task creation and execution can be seen in store back up and bulk email 
+
+See:<br>
+<a href="https://github.com/abantecart/abantecart-src/blob/master/public_html/admin/controller/responses/tool/backup.php" target="_new">public_html/admin/controller/responses/tool/backup.php</a><br>
+
+<a href="https://github.com/abantecart/abantecart-src/blob/master/public_html/admin/model/tool/backup.php" target="_new">public_html/admin/model/tool/backup.php</a><br>
+
+And <br>
+
+<a href="https://github.com/abantecart/abantecart-src/blob/master/public_html/admin/controller/responses/sale/contact.php" target="_new">public_html/admin/controller/responses/sale/contact.php</a><br>
+
+<a href="https://github.com/abantecart/abantecart-src/blob/master/public_html/admin/model/sale/contact.php" target="_new">public_html/admin/model/sale/contact.php</a></p>
+
+</div>
+
+
+
+
+<div class="category-info helper">
+	<h4 id="api" class="box-title">API Reference:</h4>
+	<p class="box-description">
+ATaskManager class API methods in <a href="https://github.com/abantecart/abantecart-src/blob/master/public_html/core/lib/task_manager.php" target="_new">task_manager.php</a> file
+</p>
+<p class="box-description"> 
+
+
+<a href="https://github.com/abantecart/abantecart-src/blob/master/public_html/core/lib/task_manager.php#L52" target="_new">runTasks</a><br>
+
+
+<a href="https://github.com/abantecart/abantecart-src/blob/master/public_html/core/lib/task_manager.php#L69" target="_new">runTask</a><br>
+
+
+<a href="https://github.com/abantecart/abantecart-src/blob/master/public_html/core/lib/task_manager.php#L197" target="_new">addTask</a><br>
+
+
+<a href="https://github.com/abantecart/abantecart-src/blob/master/public_html/core/lib/task_manager.php#L230" target="_new">updateTask</a><br>
+
+
+<a href="https://github.com/abantecart/abantecart-src/blob/master/public_html/core/lib/task_manager.php#L285" target="_new">updateTaskDetails</a><br>
+
+
+<a href="https://github.com/abantecart/abantecart-src/blob/master/public_html/core/lib/task_manager.php#L316" target="_new">addStep</a><br>
+
+
+<a href="https://github.com/abantecart/abantecart-src/blob/master/public_html/core/lib/task_manager.php#L338" target="_new">updateStep</a><br>
+
+
+<a href="https://github.com/abantecart/abantecart-src/blob/master/public_html/core/lib/task_manager.php#L382" target="_new">deleteTask</a><br>
+
+
+<a href="https://github.com/abantecart/abantecart-src/blob/master/public_html/core/lib/task_manager.php#L391" target="_new">deleteStep</a><br>
+
+
+<a href="https://github.com/abantecart/abantecart-src/blob/master/public_html/core/lib/task_manager.php#L397" target="_new">getTaskById</a><br>
+
+
+<a href="https://github.com/abantecart/abantecart-src/blob/master/public_html/core/lib/task_manager.php#L417" target="_new">getTaskByName</a><br>
+
+
+<a href="https://github.com/abantecart/abantecart-src/blob/master/public_html/core/lib/task_manager.php#L438" target="_new">getTaskSteps</a><br>
+
+
+<a href="https://github.com/abantecart/abantecart-src/blob/master/public_html/core/lib/task_manager.php#L455" target="_new">getScheduledTaskSteps</a><br>
+
+
+<a href="https://github.com/abantecart/abantecart-src/blob/master/public_html/core/lib/task_manager.php#L469" target="_new">getTotalTasks</a><br>
+
+
+<a href="https://github.com/abantecart/abantecart-src/blob/master/public_html/core/lib/task_manager.php#L487" target="_new">getTasks</a>
+</p>
+
+
+
+
+
+
+
 </div>

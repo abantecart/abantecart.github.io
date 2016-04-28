@@ -8,15 +8,15 @@
       icon: '<i class="fa fa-magic fa-fw"></i>'
       subitems:
        - text: Click Installation
-         url: /pages/install/options/click_installation.html    
+         url: /pages/install/options/click_installation.html
        - text: Cpanel Installation
-         url: /pages/install/options/cpanel_installation.html    
+         url: /pages/install/options/cpanel_installation.html
        - text: Cloud Installation
-         url: /pages/install/options/cloud_installation.html    
+         url: /pages/install/options/cloud_installation.html
        - text: Localhost Installation
-         url: /pages/install/options/localhost_installation.html    
+         url: /pages/install/options/localhost_installation.html
        - text: Regular installation
-         url: /pages/install/options/regular_installation.html    
+         url: /pages/install/options/regular_installation.html
     - text: System requirements
       url: /pages/install/system_requirements.html
     - text: Download
@@ -30,7 +30,7 @@
         - text: Upgrade manually
           url: /pages/upgrade/manual.html
         - text: Troubleshoot
-          url: /pages/upgrade/troubleshoot.html      
+          url: /pages/upgrade/troubleshoot.html
 - text: Getting Started
   level: /pages/quickstart/
   icon: '<i class="fa fa-bicycle fa-fw"></i>'
@@ -38,7 +38,7 @@
     - text: Basic Setup Checklist
       url: /pages/quickstart/checklist.html
     - text: Common Store settings
-      url: /pages/quickstart/settings.html      
+      url: /pages/quickstart/settings.html
     - text: Enable Payments
       url: /pages/quickstart/payment_quick_start.html
     - text: Enable Shipping
@@ -62,27 +62,27 @@
       icon: '<i class="fa fa-file-text fa-fw"></i>'
       subitems:
        - text: List & search categories
-         url: /pages/catalog/categories/search.html      
+         url: /pages/catalog/categories/search.html
        - text: Add & edit categories
-         url: /pages/catalog/categories/edit.html      
+         url: /pages/catalog/categories/edit.html
     - text: Manage Products
       level: /pages/catalog/products/
       icon: '<i class="fa fa-files-o fa-fw"></i>'
       subitems:
        - text: List & search products
-         url: /pages/catalog/products/search.html      
+         url: /pages/catalog/products/search.html
        - text: Add & edit products
-         url: /pages/catalog/products/edit.html      
+         url: /pages/catalog/products/edit.html
        - text: Manage product Media
-         url: /pages/catalog/products/media.html      
+         url: /pages/catalog/products/media.html
        - text: Manage product options
-         url: /pages/catalog/products/attributes.html      
+         url: /pages/catalog/products/attributes.html
        - text: Manage product files
-         url: /pages/catalog/products/files.html 
+         url: /pages/catalog/products/files.html
        - text: Manage product relations
-         url: /pages/catalog/products/relations.html 
+         url: /pages/catalog/products/relations.html
        - text: Manage product page layout
-         url: /pages/catalog/products/product_layout.html      
+         url: /pages/catalog/products/product_layout.html
        - text: Manage product inventory
          url: /pages/catalog/products/inventory.html
     - text: Manage Manufacturers
@@ -90,9 +90,9 @@
       icon: '<i class="fa fa-bookmark fa-fw"></i>'
       subitems:
        - text: List & search Manufacturers
-         url: /pages/catalog/manufacturers/search.html      
+         url: /pages/catalog/manufacturers/search.html
        - text: Add & edit Manufacturers
-         url: /pages/catalog/manufacturers/edit.html      
+         url: /pages/catalog/manufacturers/edit.html
     - text: Global Downloads
       url: /pages/catalog/global_downloads.html
     - text: Product Reviews
@@ -108,37 +108,37 @@
   icon: '<i class="fa fa-tags fa-fw"></i>'
   subitems:
     - text: Manage Specials
-      url: /pages/promotions/specials.html      
+      url: /pages/promotions/specials.html
     - text: Set Quantity discounts
-      url: /pages/promotions/discounts.html      
+      url: /pages/promotions/discounts.html
     - text: Set Features Products
-      url: /pages/promotions/featured.html      
+      url: /pages/promotions/featured.html
     - text: Place banners
-      url: /pages/promotions/banners.html      
+      url: /pages/promotions/banners.html
     - text: Manage Coupons
       icon: '<i class="fa fa-ticket fa-fw"></i>'
       subitems:
        - text: List & search coupons
-         url: /pages/promotions/search_coupons.html      
+         url: /pages/promotions/search_coupons.html
        - text: Add & edit coupons
-         url: /pages/promotions/edit_coupons.html      
+         url: /pages/promotions/edit_coupons.html
 - text: Managing Customers
   level: /pages/customers/
   icon: '<i class="fa fa-users fa-fw"></i>'
   subitems:
     - text: List & search customers
-      url: /pages/customers/search.html      
+      url: /pages/customers/search.html
     - text: Add & edit customer
-      url: /pages/customers/edit.html      
+      url: /pages/customers/edit.html
     - text: Add & edit address
-      url: /pages/customers/address.html   
+      url: /pages/customers/address.html
     - text: Add & edit transactions
-      url: /pages/customers/transactions.html      
+      url: /pages/customers/transactions.html
     - text: Customer Groups
       url: /pages/customers/groups.html
-    - text: Send Mail
-      url: /pages/customers/send_mails.html      
-      
+    - text: Send Mail/SMS
+      url: /pages/customers/send_mails.html
+
 - text: Managing Orders
   level: /pages/orders/
   icon: '<i class="fa fa-money fa-fw"></i>'
@@ -158,7 +158,7 @@
         - text: Order Files
           url: /pages/orders/order_files.html
         - text: Order History
-          url: /pages/orders/order_history.html      
+          url: /pages/orders/order_history.html
     - text: Modify Orders
       url: /pages/orders/modify.html
     - text: Manage Order Totals
@@ -168,11 +168,11 @@
   icon: '<i class="fa fa-file-text fa-fw"></i>'
   subitems:
     - text: Sales Report
-      url: /pages/reports/sales.html      
+      url: /pages/reports/sales.html
     - text: Customers Report
-      url: /pages/reports/customers.html      
+      url: /pages/reports/customers.html
     - text: Products Report
-      url: /pages/reports/products.html      
+      url: /pages/reports/products.html
 - text: Design Guide
   level: /pages/design/
   icon: '<i class="fa fa-tint fa-fw"></i>'
@@ -182,13 +182,13 @@
       icon: '<i class="fa fa-files-o fa-fw"></i>'
       subitems:
        - text: Select template
-         url: /pages/design/templates/select.html      
+         url: /pages/design/templates/select.html
        - text: Edit template
-         url: /pages/design/templates/edit.html      
+         url: /pages/design/templates/edit.html
        - text: Template files
-         url: /pages/design/templates/files.html      
+         url: /pages/design/templates/files.html
     - text: Layouts
-      url: /pages/design/layouts.html      
+      url: /pages/design/layouts.html
     - text: Blocks
       level: /pages/design/blocks/
       icon: '<i class="fa fa-th-large fa-fw"></i>'
@@ -196,23 +196,23 @@
        - text: List & search blocks
          url: /pages/design/blocks/search.html
        - text: HTML block
-         url: /pages/design/blocks/html_block.html 
+         url: /pages/design/blocks/html_block.html
        - text: Data Listing
-         url: /pages/design/blocks/data_listing.html 
+         url: /pages/design/blocks/data_listing.html
        - text: Banner block
          url: /pages/design/blocks/banner_block.html
        - text: Forms Block
          url: /pages/design/blocks/forms_block.html
     - text: Menu
-      url: /pages/design/menu.html      
+      url: /pages/design/menu.html
     - text: Content Pages
-      url: /pages/design/content_pages.html      
+      url: /pages/design/content_pages.html
     - text: Banners
       url: /pages/design/banners.html
     - text: Banner Slider Management
-      url: /pages/design/banner_slider.html      
+      url: /pages/design/banner_slider.html
     - text: Forms
-      url: /pages/design/forms.html      
+      url: /pages/design/forms.html
 - text: Shippings & Payments
   level: /pages/ship_and_pay/
   icon: '<i class="fa fa-money fa-fw"></i>'
@@ -260,15 +260,15 @@
      - text: PayPal Express Checkout
        url: /pages/ship_and_pay/payments/paypal_payments_express.html
      - text: Cheque / Money Order
-       url: /pages/ship_and_pay/payments/check_money_order.html    
+       url: /pages/ship_and_pay/payments/check_money_order.html
      - text: Authorize.Net (AIM)
-       url: /pages/ship_and_pay/payments/authorize_net.html 
+       url: /pages/ship_and_pay/payments/authorize_net.html
      - text: Payza
-       url: /pages/ship_and_pay/payments/payza.html  
+       url: /pages/ship_and_pay/payments/payza.html
      - text: Realex
-       url: /pages/ship_and_pay/payments/realex.html    
+       url: /pages/ship_and_pay/payments/realex.html
      - text: LIQPAY
-       url: /pages/ship_and_pay/payments/liqpay.html 
+       url: /pages/ship_and_pay/payments/liqpay.html
      - text: WorldPay
        url: /pages/ship_and_pay/payments/worldpay.html
      - text: 2Checkout
@@ -278,19 +278,19 @@
      - text: SagePay US Payments
        url: /pages/ship_and_pay/payments/sagepay_us.html
      - text: SagePay Direct
-       url: /pages/ship_and_pay/payments/sagepay_direct.html   
+       url: /pages/ship_and_pay/payments/sagepay_direct.html
      - text: PayPoint
-       url: /pages/ship_and_pay/payments/paypoint.html  
+       url: /pages/ship_and_pay/payments/paypoint.html
      - text: Paymate
-       url: /pages/ship_and_pay/payments/paymate.html 
+       url: /pages/ship_and_pay/payments/paymate.html
      - text: CashFlows
-       url: /pages/ship_and_pay/payments/cashflows.html 
+       url: /pages/ship_and_pay/payments/cashflows.html
      - text: Skrill
-       url: /pages/ship_and_pay/payments/skrill.html   
+       url: /pages/ship_and_pay/payments/skrill.html
      - text: Cash on Delivery
-       url: /pages/ship_and_pay/payments/cash_on_delivery.html  
+       url: /pages/ship_and_pay/payments/cash_on_delivery.html
      - text: Bank Transfer
-       url: /pages/ship_and_pay/payments/banktransfer.html    
+       url: /pages/ship_and_pay/payments/banktransfer.html
 - text: Settings & Tools
   level: /pages/settings/
   icon: '<i class="fa fa-wrench fa-fw"></i>'
@@ -300,8 +300,8 @@
       level: /pages/settings/
       icon: '<i class="fa fa-cog fa-fw"></i>'
       subitems:
-       - text: Details
-         url: /pages/settings/details.html      
+       - text: Store Details
+         url: /pages/settings/details.html
        - text: General
          url: /pages/settings/general.html
        - text: Checkout
@@ -310,6 +310,8 @@
          url: /pages/settings/appearance.html
        - text: Mail
          url: /pages/settings/mail.html
+       - text: IM
+         url: /pages/settings/im.html
        - text: API
          url: /pages/settings/api.html
        - text: System
@@ -323,7 +325,7 @@
        - text: Users
          url: /pages/users/users.html
        - text: Edit User
-         url: /pages/users/edit_user.html      
+         url: /pages/users/edit_user.html
        - text: User Groups
          url: /pages/users/user_groups.html
        - text: Permissions
@@ -339,7 +341,7 @@
       icon: '<i class="fa fa-upload fa-fw"></i>'
       subitems:
        - text: Export
-         url: /pages/tools/export.html      
+         url: /pages/tools/export.html
        - text: Import
          url: /pages/tools/import.html
     - text: File Uploads
@@ -348,11 +350,11 @@
       level: /pages/tools/logs/
       icon: '<i class="fa fa-cog fa-fw"></i>'
       subitems:
-       - text: install/Upgrade History 
-         url: /pages/tools/logs/install_history.html      
+       - text: install/Upgrade History
+         url: /pages/tools/logs/install_history.html
        - text: Error logs
          url: /pages/tools/logs/error_logs.html
-       - text: Scheduled Tasks 
+       - text: Scheduled Tasks
          url: /pages/tools/logs/sheduled_tasks.html
     - text: Stock configuration
       url: /pages/catalog/products/inventory.html
@@ -366,8 +368,8 @@
       level: /pages/localization/languages/
       icon: '<i class="fa fa-language fa-fw"></i>'
       subitems:
-       - text: Languages List 
-         url: /pages/localization/languages/languages.html      
+       - text: Languages List
+         url: /pages/localization/languages/languages.html
        - text: Edit Language
          url: /pages/localization/languages/edit_language.html
        - text: Create Language
@@ -378,42 +380,42 @@
       level: /pages/localization/currencies/
       icon: '<i class="fa fa-usd fa-fw"></i>'
       subitems:
-       - text: List Currencies 
-         url: /pages/localization/currencies/currencies.html      
+       - text: List Currencies
+         url: /pages/localization/currencies/currencies.html
        - text: Edit Currency
          url: /pages/localization/currencies/edit_currency.html
     - text: Stock and Order Statuses
       level: /pages/localization/statuses/
       icon: '<i class="fa fa-suitcase fa-fw"></i>'
       subitems:
-       - text: List Stock Statuses 
-         url: /pages/localization/statuses/stock_status_list.html      
+       - text: List Stock Statuses
+         url: /pages/localization/statuses/stock_status_list.html
        - text: Edit Stock Status
          url: /pages/localization/statuses/edit_stock_status.html
-       - text: List Order Statuses 
-         url: /pages/localization/statuses/order_status_list.html      
+       - text: List Order Statuses
+         url: /pages/localization/statuses/order_status_list.html
        - text: Edit Order Status
          url: /pages/localization/statuses/edit_order_status.html
     - text: Countries and Zones
       icon: '<i class="fa fa-map-marker fa-fw"></i>'
       subitems:
-       - text: List Countries 
-         url: /pages/localization/country_and_zone/country_list.html      
+       - text: List Countries
+         url: /pages/localization/country_and_zone/country_list.html
        - text: Edit Country
          url: /pages/localization/country_and_zone/edit_country.html
-       - text: List Zones 
-         url: /pages/localization/country_and_zone/zone_list.html      
+       - text: List Zones
+         url: /pages/localization/country_and_zone/zone_list.html
        - text: Edit Zone
          url: /pages/localization/country_and_zone/edit_zone.html
     - text: Locations and Taxes
       icon: '<i class="fa fa-location-arrow fa-fw"></i>'
       subitems:
-       - text: List Locations 
-         url: /pages/localization/locations_and_taxes/locations_list.html      
+       - text: List Locations
+         url: /pages/localization/locations_and_taxes/locations_list.html
        - text: Edit Location
          url: /pages/localization/locations_and_taxes/edit_location.html
-       - text: List Tax Classes 
-         url: /pages/localization/locations_and_taxes/tax_classes_list.html      
+       - text: List Tax Classes
+         url: /pages/localization/locations_and_taxes/tax_classes_list.html
        - text: Edit Tax Class
          url: /pages/localization/locations_and_taxes/edit_tax_class.html
        - text: Add Rates to Tax Class
@@ -421,12 +423,12 @@
     - text: Length & Weight classes
       icon: '<i class="fa fa-truck fa-fw"></i>'
       subitems:
-       - text: List Length Classes 
-         url: /pages/localization/length_and_weight/length_list.html      
+       - text: List Length Classes
+         url: /pages/localization/length_and_weight/length_list.html
        - text: Edit Length Class
          url: /pages/localization/length_and_weight/edit_length.html
-       - text: List Weight Classes 
-         url: /pages/localization/length_and_weight/weight_list.html      
+       - text: List Weight Classes
+         url: /pages/localization/length_and_weight/weight_list.html
        - text: Edit Weight Class
          url: /pages/localization/length_and_weight/edit_weight.html
     - text: Language Auto Translate
@@ -440,49 +442,51 @@
   icon: '<i class="fa fa-puzzle-piece fa-fw"></i>'
   subitems:
     - text: Find extension
-      url: /pages/extensions/find.html      
+      url: /pages/extensions/find.html
     - text: Install new extension
-      url: /pages/extensions/install.html      
+      url: /pages/extensions/install.html
     - text: Managing extensions
-      url: /pages/extensions/edit.html 
+      url: /pages/extensions/edit.html
     - text: Connect store to Marketplace
-      url: /pages/extensions/connect.html      
+      url: /pages/extensions/connect.html
 - text: Helpful Tips
   level: /pages/tips/
   icon: '<i class="fa fa-life-ring fa-fw"></i>'
   subitems:
     - text: Global search
-      url: /pages/tips/global_search.html 
+      url: /pages/tips/global_search.html
     - text: Troubleshooting
-      url: /pages/tips/troubleshooting.html 
-    - text: Side Panels  
-      url: /pages/tips/side_panels.html   
-    - text: Getting more help 
+      url: /pages/tips/troubleshooting.html
+    - text: Performance
+      url: /pages/tips/performance.html
+    - text: Side Panels
+      url: /pages/tips/side_panels.html
+    - text: Getting more help
       url: /pages/tips/more_help.html
-    - text: Changing Domain Name 
+    - text: Changing Domain Name
       url: /pages/tips/change_domain.html
-    - text: Enable Seo Urls 
+    - text: Enable Seo Urls
       url: /pages/tips/enable_seo.html
-    - text: Clear AbanteCart cache 
+    - text: Clear AbanteCart cache
       url: /pages/tips/cache.html
-- text: Developer Guide 
+- text: Developer Guide
   level: /pages/developer/
   icon: '<i class="fa fa-code fa-fw"></i>'
   subitems:
     - text: AbanteCart Architecture
-      url: /pages/developer/architecture.html      
+      url: /pages/developer/architecture.html
     - text: Extension Development
-      url: /pages/developer/extension_dev.html 
+      url: /pages/developer/extension_dev.html
     - text: Advanced Extension dev
-      url: /pages/developer/developing_extensions_and_extension_api.html 
+      url: /pages/developer/developing_extensions_and_extension_api.html
     - text: Templates Overview
       url: /pages/developer/templates_overview.html
-    - text: Template development guide 
-      url: /pages/developer/template_customization_or_development_guide.html 
+    - text: Template development guide
+      url: /pages/developer/template_customization_or_development_guide.html
     - text: Developer Tools
-      url: /pages/developer/template_dev_tools.html 
+      url: /pages/developer/template_dev_tools.html
     - text: Import/Export AData
-      url: /pages/developer/adata.html 
+      url: /pages/developer/adata.html
     - text: Storefront API
       url: /pages/developer/sf_api.html
     - text: Resource Library System

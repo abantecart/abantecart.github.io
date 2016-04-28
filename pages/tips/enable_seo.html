@@ -21,6 +21,7 @@ tags: [
 								<li>Products</li>
 								<li>Categories</li>
 								<li>Manufacturers</li>
+								<li>Content pages</li>
 							</ul>
 							
 							<!-- Note -->
@@ -38,5 +39,78 @@ tags: [
 
 <p><strong>Use SEO URLs:</strong> To use SEO URL's Apache module mod-rewrite must be installed and you need to rename the htaccess.txt file to <strong>.htaccess</strong><br /> 
 Search Engine Friendly URLs allows you to activate categories and product's SEO Keyword setting. For each product and category you can assign seo keyword visible in url. This will better describe a product's page to visitors and search engines.</p>
-<p><strong> mod_rewrite</strong> is something that is installed on your server by your web host. You need to ask your host (or look in their help guide) to find out if you have it.<br>
-<em>Note: If you access store with sub-folder like http://www.mydomain/subfolder make sure to change <strong>RewriteBase /</strong> to <strong>RewriteBase /subfolder/</strong> in the .htaccess file.</em></p>
+<p><strong> mod_rewrite</strong> is something that is installed on your server by your web host. You need to ask your host (or look in their help guide) to find out if you have it.</p>
+
+						<!-- Note -->
+						<div class="note js-note blue">
+							<span class="note-close js-close">
+								<i class="fa fa-times"></i>
+							</span>
+							<h4 class="note-title"> Note </h4>
+							<p class="note-description"> If you access store with sub-folder like http://www.mydomain/subfolder make sure to change <strong>RewriteBase /</strong> to <strong>RewriteBase /subfolder/</strong> in the .htaccess file. </p>
+						</div>
+						<!-- End of Note -->
+
+
+						<!-- File Tree -->
+						<div class="file-tree">
+							<div class="file-tree-title"> AbanteCart file hierarchy. Where is my .htaccess file?
+								<ul class="file-tree-buttons">
+									<li class="js-expand">
+										<i class="fa fa-plus"></i> Expand all</li>
+									<li class="js-collapse">
+										<i class="fa fa-minus"></i> Collapse all</li>
+								</ul>
+							</div>
+							<ul class="file-tree-list js-file-tree" data-expanded="">
+							<li class="is-folder">public_html -
+								<span class="file-tree-description">Folder where AbanteCart files located on your server. Can be 'www' or 'htdocs'...etc </span>
+									<ul>
+								<li class="is-folder">admin 
+									<span class="file-tree-description"></span>
+								</li>
+								<li class="is-folder">core 
+									<span class="file-tree-description"></span>
+
+								</li>
+								<li class="is-folder">download 
+									<span class="file-tree-description"></span>
+
+								</li>
+								<li class="is-folder">extensions 
+									<span class="file-tree-description"></span>
+
+								</li>
+								<li class="is-folder">image 
+									<span class="file-tree-description"></span>
+
+								</li>
+								<li class="is-folder">install -
+									<span class="file-tree-description">folder should be removed when AbanteCart is installed.</span>
+								</li>
+								<li class="is-file">index.php 
+									<span class="file-tree-description"></span>
+								</li>
+								<li class="is-file"><strong>.htaccess.txt</strong> -
+									<span class="file-tree-description"> this file should be renamed to .htaccess<br>&nbsp;&nbsp;&nbsp;If your .htaccess file didn't exist you can download it <a href="https://github.com/abantecart/abantecart-src/blob/master/public_html/.htaccess.txt" target="_new">here</a>.</span>
+								</li>
+								<li class="is-file">php.ini 
+									<span class="file-tree-description"></span>
+								</li>
+								<li class="is-folder">storefront 
+									<span class="file-tree-description"></span>
+								</li>
+								<li class="is-folder">system 
+									<span class="file-tree-description"></span>
+								</li>
+								<li class="is-file">task.php 
+									<span class="file-tree-description"></span>
+								</li>
+								<li class="is-file">... -
+									<span class="file-tree-description"></span>
+								</li>
+								</ul>
+								</li>
+							</ul>
+						</div>
+						<!-- End of FIle Tree -->
