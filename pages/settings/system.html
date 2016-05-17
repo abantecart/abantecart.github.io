@@ -34,7 +34,7 @@ tags: [
 
 <p><strong> mod_rewrite</strong> is something that is installed on your server by your web host. You need to ask your host (or look in their help guide) to find out if you have it.<br>
 </p>
-<p><strong>Generate high-res (retina) images:</strong> Easy serve high-resolution images to devices with retina displays. To use this apache module <em>mod-rewrite</em> must be installed and you need to rename the .htaccess.txt to .htaccess  After enabling please clear the AbanteCart images <a class="crosslink" href="/pages/tips/cache.html" target="_blank">cache</a>.</p><br>
+<p><a name="hi-res"></a><strong>Generate high-res (retina) images:</strong> Easy serve high-resolution images to devices with retina displays. To use this apache module <em>mod-rewrite</em> must be installed and you need to rename the .htaccess.txt to .htaccess  After enabling please clear the AbanteCart images <a class="crosslink" href="/pages/tips/cache.html" target="_blank">cache</a>.</p><br>
 						<!-- Note -->
 						<div class="note js-note red">
 							
@@ -46,7 +46,9 @@ tags: [
 <p><strong> Jpeg Images Compression Level</strong> Set .jpeg images quality level for new thumbnails generation. Best quality, biggest file. There is no single "best" JPEG compression setting, and depending on the type and complexity of image detail (or lack of complexity and detail), you may find yourself using 40-60, 70-80, or 90-100 as appropriate for the product photos.</p>
 
 <p><strong>Output Compression Level:</strong> GZIP for more efficient transfer to requesting clients. Compression level must be between 0 - 9. Enabling GZIP compression increases your server resource usage.</p>
-<p><strong>Cache enabled:</strong> Please be careful when disable <a class="crosslink" href="/pages/tips/cache.html" target="_blank">caching</a>. Cached pages will not be re-created until at least this much time has elapsed. Default cache FILE driver. Other drivers available for configuration are APC, APCU, FILE, MEMCACHE, MEMCACHED, XCACHE</p>
+
+
+<p><a name="cache"></a><strong>Cache enabled:</strong> Please be careful when disable <a class="crosslink" href="/pages/tips/cache.html" target="_blank">caching</a>. Cached pages will not be re-created until at least this much time has elapsed. Default cache FILE driver. Other drivers available for configuration are APC, APCU, FILE, MEMCACHE, MEMCACHED, XCACHE</p>
 <br>
 						<!-- Note -->
 						<div class="note js-note red">
@@ -58,15 +60,15 @@ tags: [
 							</p>
 						</div>
 						<!-- End of Note -->
-<p><strong>HTML Cache:</strong> Enabled HTML pages and blocks caching to get better speed for your pages. This is additional caching to regular data caching enabled in system/config.php file.</p>
+<p><a name="html_cache"></a><strong>HTML Cache:</strong> Enabled HTML pages and blocks caching to get better speed for your pages. This is additional caching to regular data caching enabled in system/config.php file (see above). </p>
 <p><strong>Resource Library Upload Max File Size, kB:</strong> File size Limit for uploaded files. Please note some servers have PHP configuration to limit upload size. <span style="text-decoration: underline;">Check with your hosting provider</span> or change manually php.ini or .htaccess file settings like post_max_size, upload_max_filesize.</p>
 <p><strong>Display Errors:</strong> Set to yes if you want to see the exceptions and errors.</p>
 <p><strong>Log Errors:</strong> Set to yes if you want to save the exceptions and errors to the log. To access error log in AbanteCart Admin go to System-&gt;Logs-&gt;Error Logs</p>
 <p><strong>Show Debug Info:</strong> Set this SHOW if you want to see the execution details and show debug details. Set this LOG if you want to write the execution details and debug details to the log file.</p>
 <p><strong>Debug Level:</strong> Select the depth of the details you need to see in the debug output.</p>
-<p><strong>Template debug: </strong>Enable this setting if you need to check issues with template in storefront and control panel.</p>
+<p><a name="debug"></a><strong>Template debug: </strong>Enable this setting if you need to check issues with template in storefront and control panel.</p>
 <p><em>Note : after set setting to ON the links will appear. Use it to access debug.</em><img src="/img/other/debug.png" border="0" alt="" /></p>
 <p>*<strong>Error Log Filename:</strong> Default is error.txt.</p>
-<p><strong>System Check:</strong> Recommended is ON. Enable this setting if you want to check your system condition in respect to AbanteCart functionlaity. System issues effecting AbanteCart will be reported as messages visible in admin.</p>
+<p><a name="check"></a><strong>System Check:</strong> Recommended is ON. Enable this setting if you want to check your system condition in respect to AbanteCart functionlaity. System issues effecting AbanteCart will be reported as messages visible in admin.</p>
 <p>After you have made your changes, select the save button</p>
 </div>
