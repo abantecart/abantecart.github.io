@@ -29,7 +29,20 @@ tags: [
 <p><strong>Control Panel Session Expiration:</strong> This value controls time interval in minutes before you will be asked to login again due to no activity. There is also related to PHP session expiration time configured on the server.</p>
 <p><strong>Maintenance Mode:</strong> Prevents customers from browsing your store. They will instead see a maintenance message. If logged in as admin, you will see the store as normal.</p>
 <p><strong>Voice Control:</strong> Enable admin voice control to activate voice commands feature. Currently only supported in Chrome browser version 25 or later.</p>
-<p><strong>Encryption Key:</strong> Please provide a secret key that will be used to encrypt private information when processing orders.</p>
+<p><strong>Encryption Key:</strong> A secret key that will be used to encrypt private information when processing orders. </p>
+						<!-- Note -->
+						<div class="note js-note blue">
+							<span class="note-close js-close">
+								<i class="fa fa-times"></i>
+							</span>
+							<h4 class="note-title"> Encryption Key </h4>
+							<p class="note-description"> In AbanteCart versions higher than 1.2.2 this setting moved to the /system/config.php file </p>
+						</div>
+						<!-- End of Note -->
+
+
+
+
 <p><strong>Use SEO URLs:</strong> To use SEO URL's Apache module mod-rewrite must be installed and you need to rename the htaccess.txt file to <strong>.htaccess<br /> </strong> Search Engine Friendly URLs allows you to activate categories and product's SEO Keyword setting. For each product and category you can assign seo keyword visible in url. This will better describe a product's page to visitors and search engines.</p>
 
 <p><strong> mod_rewrite</strong> is something that is installed on your server by your web host. You need to ask your host (or look in their help guide) to find out if you have it.<br>
@@ -69,6 +82,6 @@ tags: [
 <p><a name="debug"></a><strong>Template debug: </strong>Enable this setting if you need to check issues with template in storefront and control panel.</p>
 <p><em>Note : after set setting to ON the links will appear. Use it to access debug.</em><img src="/img/other/debug.png" border="0" alt="" /></p>
 <p>*<strong>Error Log Filename:</strong> Default is error.txt.</p>
-<p><a name="check"></a><strong>System Check:</strong> Recommended is ON. Enable this setting if you want to check your system condition in respect to AbanteCart functionlaity. System issues effecting AbanteCart will be reported as messages visible in admin.</p>
+<p><a name="check"></a><strong>System Check:</strong> Recommended is ON. Enable this setting if you want to check your system condition in respect to AbanteCart functionality. System issues effecting AbanteCart will be reported as messages visible in admin.</p>
 <p>After you have made your changes, select the save button</p>
 </div>
