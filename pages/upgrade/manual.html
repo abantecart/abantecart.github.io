@@ -154,7 +154,8 @@ If you are made Core modifications in any of the files that changed, they may ne
 									<h4 class="step-title">If upgrade.php file present in upgrade archive </h4>
 									<div class="step-content"> Finally include upgrade.php file somewhere in admin controller. Say in /folder_where_cart_installed/admin/controller/common/head.php in about line 30.
 									<pre>include('/yourpathtofile/upgrade.php');  </pre>
-Load admin page once! This will execute PHP update script and will run commands from upgrade.php file
+Load admin page once! This will execute PHP update script and will run commands from upgrade.php file<br>
+					Remove the include line. 
 									</div>
 								</li>
 
