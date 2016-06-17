@@ -14,9 +14,22 @@ tags: [
 							<h4 class="category-description">System > Cache </h4>
 						</div>
 						<!-- End of Caregory Info -->
-<p><a class="jcepopup" href="/img/other/abantecart-cache.png"><img src="/img/other/abantecart-cache.png" border="0" alt="" width="650"/></a></p>
+<p><a class="jcepopup" href="/img/other/abantecart-cache.png"><img src="/img/other/abantecart-cache.png" border="0" alt="" width="640"/></a></p>
 <p>AbanteCart is set up to be fast performing eCommerce solution with optimized resources use and execution time. To achieve great performance AbanteCart utilize caching of commonly used database queries and requests.
 
 This page will allow you to clear cache settings for different internal AbanteCart aspects.
 
 To use this tool, select cache and click the Clear Selected Cache button.</p>
+
+<p><a name="cache"></a> Please be careful when disable <a class="crosslink" href="/pages/settings/system.html" target="_blank">caching</a>. Cached pages will not be re-created and site might start loading slow. Default cache FILE driver. Starting AbanteCart 1.2.7 other drivers available for configuration are APC, APCU, FILE, MEMCACHE, MEMCACHED, XCACHE</p>
+<br>
+						<!-- Note -->
+						<div class="note js-note red">
+							
+							<h4 class="note-title"> Cache drivers </h4>
+							<p class="note-description"> Change driver in the /system/config.php file<br>
+							Please modify this line <pre>define('CACHE_DRIVER', 'file');</pre><br>
+							All available drivers located in the /core/cache/ folder
+							</p>
+						</div>
+						<!-- End of Note -->
