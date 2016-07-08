@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Setting up a new store
-description: Ceate a new store and manage store settings.
+description: Create a new store and manage store settings.
 tags: [
     ['setting_listing', 'All Settings'],
     ['system', 'System Settings'],
@@ -15,7 +15,7 @@ redirect_from: "/tag/stores.html"
 							<h4 class="category-description"> AbanteCart has multi-store abilities which allow you to manage multiple stores from one admin interface.</h4>
 						</div>
 <p>To setup multi-store first of all setup your main store with main domain name.</p>
-<p>if You need to create multistore you DON’T NEED to install cart again or anything do with files. Only you need is two things:<br /> 1. setup additional domain (addon domain) or subdomain in your hosting provider admin panel<br /> 2. set up second store in the admin of main store. At the end you should have 1 cart admin and 2 (or more) storefronts  </p>
+<p>if You need to create multi-store you DON’T NEED to install cart again or anything do with files. Only you need is two things:<br /> 1. setup additional domain (addon domain) or sub-domain in your hosting provider admin panel<br /> 2. set up second store in the admin of main store. At the end you should have 1 cart admin and 2 (or more) storefronts  </p>
 						<!-- Note -->
 						<div class="note js-note green note-pulse">
 							<span class="note-close js-close">
@@ -37,12 +37,12 @@ redirect_from: "/tag/stores.html"
 							<h4 class="category-description"> </h4>
 						</div>
 <p>Set up two or more domains in your hosting service control panel. This is very important to make sure that the second domain is routed to the correct folder.</p>
-<p>There is several ways in Cpanel - subdomain or addon domain.</p>
+<p>There is several ways in Cpanel - sub domain or addon domain.</p>
 
-<h3 class="heading_gray"> Here is short example for subdomain setup</h3>
-<p>In your Cpanel click on subdomains icon<br>
+<h3 class="heading_gray"> Here is short example for sub-domain setup</h3>
+<p>In your Cpanel click on sub-domains icon<br>
 <img src="/img/other/abantecart-multistore-cpanel1.png" border="0" width="501" /></p>
-<p>Create a subdomain<br>
+<p>Create a sub-domain<br>
 <img src="/img/other/abantecart-multistore-cpanel2.png" border="0" width="736" /></p>
 						<!-- Note -->
 						<div class="note js-note blue">
@@ -53,16 +53,16 @@ redirect_from: "/tag/stores.html"
 							<p class="note-description">   Very important - Document Root value should be same with main domain!!! If you have AbanteCart installed in some folder for example /public_html/somefolder/mycartfolder/ subdomain Root should be the same.  </p>
 						</div>
 						<!-- End of Note -->
-						<p> Also a lot of other problems here not AbanteCart related:<br />• some hosting provider limit or don't allow subdomains<br />• if you are using a content delivery network you should edit A record in DNS zone editor manually and/or modify additional settings</p>
+						<p> Also a lot of other problems here not AbanteCart related:<br />• some hosting provider limit or don't allow sub-domains<br />• if you are using a content delivery network you should edit A record in DNS zone editor manually and/or modify additional settings</p>
 <p> </p>
 
 <p>Anyway a lot of beginners have issues with this step because:
 <ul> 
-<li>Due to DNS propagation, the subdomain can take up to 24 hours and more to start working</li>
-<li>make sure to link the subdomain to the path where the default store was installed to</li>
+<li>Due to DNS propagation, the sub-domain can take up to 24 hours and more to start working</li>
+<li>make sure to link the sub-domain to the path where the default store was installed to</li>
 <li>make sure there is no redirection setup for new subdomain/domain</li>
 <li>usually user may need to clear browser cache and DNS cache on local computer to resolve new or reconfigured domains/subdomains</li>
-<li>also possible some settings in .htacess file or file permissions issue prevent correct work</li> 
+<li>also possible some settings in .htaccess file or file permissions issue prevent correct work</li> 
 </ul>
 <p>Please contact with your hosting service provider to make sure your domain/subdomain configured correctly</p>
 <p> </p>
@@ -87,10 +87,10 @@ redirect_from: "/tag/stores.html"
 <a class="jcepopup" href="/img/other/multistore3.png"><img src="/img/other/multistore3.png" border="0" width="400" /></a>
 <p>click <strong>Save</strong> button, the page will reload and you will be able to edit all other store settings.</p>
 
-<p>Once setup complete you can use multistore in several ways:</p>
+<p>Once setup complete you can use multi-store in several ways:</p>
 
 <ul>
-<li>one backend to manage all stores</li>
+<li>one back-end to manage all stores</li>
 
 <li>use different templates on each store</li>
 
@@ -110,7 +110,7 @@ redirect_from: "/tag/stores.html"
 								<i class="fa fa-times"></i>
 							</span>
 							<h4 class="note-title"> non www websites </h4>
-							<p class="note-description"> In AbanteCart when you use domain for default store without www your default store url cover ALL subdomains of your domain. In order to operate multistore plese add www into store url setting for your default store configuration. </p>
+							<p class="note-description"> In AbanteCart when you use domain for default store without www your default store url cover ALL sub-domains of your domain. In order to operate multi-store please add www into store url setting for your default store configuration. </p>
 						</div>
 						<!-- End of Note -->
 
@@ -123,7 +123,7 @@ redirect_from: "/tag/stores.html"
 							<h3 class="category-title">How to delete store</h3>
 							<h4 class="category-description"> in AbanteCart admin go to System > Settings</h4>
 						</div>
-<p>select store in the <em>Edit Settings:</em> dropdown</p>
+<p>select store in the <em>Edit Settings:</em> drop down</p>
 <p>click <em>Edit Store</em> button</p>
 <p><img src="/img/other/multistore4.png" border="0"  /></p>
 <p>the trash bin icon appear, click on it to completely remove store</p>
