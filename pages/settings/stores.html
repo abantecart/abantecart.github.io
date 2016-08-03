@@ -57,7 +57,7 @@ redirect_from: "/tag/stores.html"
 <p> </p>
 
 <p>Anyway a lot of beginners have issues with this step because:
-<ul> 
+<ul>
 <li>Due to DNS propagation, the sub-domain can take up to 24 hours and more to start working</li>
 <li>make sure to link the sub-domain to the path where the default store was installed to</li>
 <li>make sure there is no redirection setup for new subdomain/domain</li>
@@ -109,8 +109,10 @@ redirect_from: "/tag/stores.html"
 							<span class="note-close js-close">
 								<i class="fa fa-times"></i>
 							</span>
-							<h4 class="note-title"> non www websites </h4>
-							<p class="note-description"> In AbanteCart when you use domain for default store without www your default store url cover ALL sub-domains of your domain. In order to operate multi-store please add www into store url setting for your default store configuration. </p>
+							<h4 class="note-title"> single domain note </h4>
+							<p class="note-description"> If you use domain.com as main store, it will work as *.domain.com and other stores can not use same domain<br>
+If you need to use subdomain store1.domain.com as an additional store, please make sure main store use subdomain in settings (example: www.domain.com)
+ </p>
 						</div>
 						<!-- End of Note -->
 
@@ -129,7 +131,3 @@ redirect_from: "/tag/stores.html"
 <p>the trash bin icon appear, click on it to completely remove store</p>
 <p><img src="/img/other/multistore5.png" border="0"  /></p>
 <br />
-
-
-
-
