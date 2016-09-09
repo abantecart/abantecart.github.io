@@ -469,6 +469,8 @@
       url: /pages/tips/enable_seo.html
     - text: Clear AbanteCart cache
       url: /pages/tips/cache.html
+    - text: Template Debug
+      url: /pages/tips/template_debug.html
 - text: Developer Guide
   level: /pages/developer/
   icon: '<i class="fa fa-code fa-fw"></i>'
