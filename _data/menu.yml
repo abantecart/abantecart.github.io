@@ -361,6 +361,7 @@
     - text: Encryption Data Manager
       url: /pages/settings/encryption_data.html
 - text: Manage Localization
+  url: /pages/localization/index.html
   level: /pages/localization/
   icon: '<i class="fa fa-globe fa-fw"></i>'
   subitems:
