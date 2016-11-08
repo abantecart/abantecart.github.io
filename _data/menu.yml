@@ -437,7 +437,7 @@
   url: /pages/embed/embed.html
   level: /pages/embed/
   icon: '<i class="fa fa-code-fork fa-fw"></i>'
-- text: Extend Functionally
+- text: Extend Functionality
   level: /pages/extensions/
   icon: '<i class="fa fa-puzzle-piece fa-fw"></i>'
   subitems:
