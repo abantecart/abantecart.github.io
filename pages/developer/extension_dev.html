@@ -11,14 +11,14 @@ redirect_from: "/tag/extension_dev.html"
 
 <div class="category-info helper pt40">
 	<h3 class="category-title">AbanteCart Extension’s Developer Guide</h3>
-	<h4 class="category-description"> 
+	<h4 class="category-description">
 	</h4>
 	<p class="box-description">
 	The extension subsystem of the AbanteCart is an essential part of shopping cart application. Extensions allow efficient way to add new features to the cart and allow scalability and flexibility of ecommerce application.
 The extension subsystem of the AbanteCart allows shopping cart project grow indefinitely together with rapidly changing technologies, standards and techniques.<br>
 Lots of effort lays on the development of the system and extensions to allow shopping cart administrators and owners smooth and worry free cart experience.<br>
 Extension can be installed and managed in the control panel of AbanteCart. If you use market place to purchase extensions inside the control panel, extensions are downloaded and installed seamlessly without leaving your control panel and web browser. <br>
-Our extension architecture is partially based on Plexus API concept (http://code.google.com/p/phpplexus/ ) and blend with our own concepts described below. 
+Our extension architecture is partially based on Plexus API concept (http://code.google.com/p/phpplexus/ ) and blend with our own concepts described below.
 	</p>
 </div>
 
@@ -72,7 +72,7 @@ This paragraph to give you a generic idea about AbanteCart extension system and 
 AbanteCart architecture is designed around flexibility and expandability in mind. We believe that application architecture should provide sufficient flexibility to be able extended with new features and configured or adjusted to rapidly changing technology. To do so we introduce concept of fully extension based system and empower developers to create extensions for any new features or functionality.<br>
 Extension can be installed and managed in the control panel of the AbanteCart. Marketplace is available to purchase, download and install extensions right in the control panel. In addition, any AbanteCart extension can be installed manually by simple upload of extension folder to AbanteCart and easy activation process.<br>
 Extension itself is a collection of files that modify or add functionality of AbanteCart. Extension files include installation scripts, configuration settings, extension MVC file.<br>
-Dependency concept is present to make sure that dependent extensions are installed to make extensions that depend on them work properly. 
+Dependency concept is present to make sure that dependent extensions are installed to make extensions that depend on them work properly.
 Important stages in extension to understand:<br>
 <b>Extension load:</b> This is the step of getting extension directory (content with files) in to the AbanteCart extensions directory. This is essential before step before you can install and use extension.<br>
 <b>Extension Installation:</b>  This is a process of loading extension configuration to the system and making extension visible to the system. This stage does dependency validation and error checking. Install script provided in the extension is executed. Note: Installation is not to be confused with downloading extension or loading extension to the directory. This is done prior to installation. This step also allows you to edit extension configuration and settings.<br>
@@ -105,11 +105,11 @@ All Extensions are located in <b>extensions</b> folder. Bellow is the set of fil
     </div>
     <ul class="file-tree-list js-file-tree" data-expanded="true">
     <li class="is-folder">extensions -
-    	<span class="file-tree-description">All Extensions are located in extensions folder. 
+    	<span class="file-tree-description">All Extensions are located in extensions folder.
     	<a href="https://github.com/abantecart/abantecart-src/tree/master/public_html/extensions" target="_github"><i class="fa fa-code fa-fw"></i></a>
     	</span>
     	<ul>
-    	<li class="is-folder">[extension unique name] 
+    	<li class="is-folder">[extension unique name]
     		<span class="file-tree-description"> </span>
     		<ul>
     			<li class="is-file">config.xml -
@@ -119,10 +119,10 @@ All Extensions are located in <b>extensions</b> folder. Bellow is the set of fil
     		<span class="file-tree-description">Required file that contain init instructions for extension.</span>
     </li>
     <li class="is-folder">admin -
-    		<span class="file-tree-description">admin directory structure and contain files for admin section (directory structure under this directory resembles main admin directory for AbaneteCart)</span>
+    		<span class="file-tree-description">admin directory structure and contain files for admin section (directory structure under this directory resembles main admin directory for AbanteCart)</span>
     	</li>
     <li class="is-folder">storefront -
-    		<span class="file-tree-description">storefront directory structure and contain files for storefront section (directory structure under this directory resembles main storefront directory for AbaneteCart)</span>
+    		<span class="file-tree-description">storefront directory structure and contain files for storefront section (directory structure under this directory resembles main storefront directory for AbanteCart)</span>
     	</li>
     <li class="is-folder">core -
     		<span class="file-tree-description">directory that contain some core addon classes that implement additional functionality ( if needed )</span>
@@ -152,7 +152,7 @@ All Extensions are located in <b>extensions</b> folder. Bellow is the set of fil
 								<i class="fa fa-times"></i>
 							</span>
 							<h4 class="note-title"> Note </h4>
-							<p class="note-description"> you can use PHP or SQL or mixed depending on the requirents. </p>
+							<p class="note-description"> you can use PHP or SQL or mixed depending on the requirements. </p>
 						</div>
 						<!-- End of Note -->
 
@@ -215,7 +215,7 @@ Bellow is the description of all items that are available in configuration file
         	 &lt;item&gt;curl&lt;/item&gt;
   &lt;/phpmodules&gt;
   &lt;layout&gt;&lt;/layout&gt;
-  &lt;priority&gt;10&lt;/priority&gt;  
+  &lt;priority&gt;10&lt;/priority&gt;
   &lt;type&gt;template&lt;/type&gt;
   &lt;category&gt;template&lt;/category&gt;
   &lt;dependencies&gt;
@@ -244,7 +244,7 @@ Bellow is the description of all items that are available in configuration file
   	  	&lt;type&gt;input&lt;/type&gt;
   	  	&lt;default_value&gt;Old price: %s, You save: %s&lt;/default_value&gt;
   	&lt;/item&gt;
-&lt;/settings&gt;   
+&lt;/settings&gt;
 &lt;additional_settings&gt;&lt;![CDATA[setting/setting&amp;active=store]]&gt;&lt;/additional_settings&gt;
 &lt;note&gt;true&lt;/note&gt;
 &lt;preview&gt;
@@ -281,7 +281,7 @@ Bellow is the description of all items that are available in configuration file
 <div class="code-highlight">
 	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">
 &lt;dependencies&gt;
-  	&lt;item prior_version=&quot;0.9&quot; version=&quot;1.0&quot;&gt;slideshow&lt;/item&gt; 
+  	&lt;item prior_version=&quot;0.9&quot; version=&quot;1.0&quot;&gt;slideshow&lt;/item&gt;
 &lt;/dependencies&gt;
  	</code>
  	</pre>
@@ -299,7 +299,7 @@ Required extension. Current extension can not work without dependant extension i
 &lt;item required=&quot;true&quot; prior_version=&quot;0.9&quot; version=&quot;1.0&quot;&gt;default_cod&lt;/item&gt; - extension.
 &lt;/dependencies&gt;
 
-&lt;phpmodules&gt; 
+&lt;phpmodules&gt;
   	&lt;item&gt;gd&lt;/item&gt;
 &lt;/phpmodules&gt; - Given extension depends on following php modules
  	</code>
@@ -309,10 +309,10 @@ Required extension. Current extension can not work without dependant extension i
 
 
 
-<p class="box-description"><b>&lt;priority&gt;10&lt;/priority&gt;</b> - Extension priority. This will set when current extension needs to be included and ran compare to other extensions installed.<br> 
-Higher number will make extension with higher priority. 
+<p class="box-description"><b>&lt;priority&gt;10&lt;/priority&gt;</b> - Extension priority. This will set when current extension needs to be included and ran compare to other extensions installed.<br>
+Higher number will make extension with higher priority.
 </p><p class="box-description"><b>&lt;type&gt;template&lt;/type&gt;</b> - extension type. can be 'extensions', 'payment', 'shipping', 'template'. New types might be added in the future.
-</p><p class="box-description"><b>&lt;category&gt;template&lt;/category&gt;</b> - extension category. This mostly used for grouping extensions and not used in AbanteCart itself. 
+</p><p class="box-description"><b>&lt;category&gt;template&lt;/category&gt;</b> - extension category. This mostly used for grouping extensions and not used in AbanteCart itself.
 </p><p class="box-description"><b>&lt;settings&gt;.. &lt;/settings&gt;</b>  - contains extension settings<br>
 See allowed settings types below. <br>
 Example:
@@ -342,9 +342,9 @@ Example:
 <!-- HTML Highlight -->
 
 
-<p class="box-description">Starting from version 1.1.5 global settings have been implemented.  Now common settings such as status, sort_order etc. are not required to be included. <br> 
-If common settings are still included in given extension configuration file, they will override global settings.<br>  
-If global setting is not needed, it can be disabled with adding &lt;disabled&gt;true&lt;/disabled&gt;<br> 
+<p class="box-description">Starting from version 1.1.5 global settings have been implemented.  Now common settings such as status, sort_order etc. are not required to be included. <br>
+If common settings are still included in given extension configuration file, they will override global settings.<br>
+If global setting is not needed, it can be disabled with adding &lt;disabled&gt;true&lt;/disabled&gt;<br>
 Example:
 </p>
 
@@ -359,8 +359,8 @@ Example:
 </div>
 <!-- HTML Highlight -->
 
-<p class="box-description">Global settings are located in core/extension/ directory and attached to top or bottom of the settings page. <br> 
-Global settings available for any extension (default section) and for extension type as well, such as shipping and payment. <br> 
+<p class="box-description">Global settings are located in core/extension/ directory and attached to top or bottom of the settings page. <br>
+Global settings available for any extension (default section) and for extension type as well, such as shipping and payment. <br>
 </p><p class="box-description"><br>
 <b>&lt;additional_settings&gt;...&lt;/additional_settings&gt;</b> - you can add link to additional extension settings. It could be controller inside extension or any existing admin controller. By default button title will be ‘Additional Settings’. If you want to change it - you should add language definition with key = ‘text_additional_settings’ to your language file - it will define button title<br>
 Example:
@@ -377,7 +377,7 @@ Example:
 <!-- HTML Highlight -->
 
 <p class="box-description"><br>
-<b>&lt;note&gt;true&lt;/note&gt;</b> - define if extensions have notes or not. notes defined in language file with key = ‘&lt;extension_name&gt;_note’. note will be shown on extension edit page. This note can help with additional information to users how to manage extension or extra steps to set up extension. 
+<b>&lt;note&gt;true&lt;/note&gt;</b> - define if extensions have notes or not. notes defined in language file with key = ‘&lt;extension_name&gt;_note’. note will be shown on extension edit page. This note can help with additional information to users how to manage extension or extra steps to set up extension.
 </p><p class="box-description"><b>&lt;preview&gt;...&lt;/preview&gt;</b> - extension preview images. stored in <i>[extension_id]/image/</i> folder<br>
 Example:
 </p>
@@ -446,14 +446,14 @@ Example:
 <div class="category-info helper">
 	<h4 id="validation" class="box-title">Settings Values Validation (Starting v1.1.4)</h4>
 	<p class="box-description">
-In some cases there is a need to validate settings values provided by user. It is a developers responsobility to maintain stability of extension and AbanteCart core as a result of extension functionality. For this reason important to validate settings not only for required fields, but also for actual values and allowed value types. 
-Validation is possible with 2 methods. 
+In some cases there is a need to validate settings values provided by user. It is a developers responsibility to maintain stability of extension and AbanteCart core as a result of extension functionality. For this reason important to validate settings not only for required fields, but also for actual values and allowed value types.
+Validation is possible with 2 methods.
 </p>
-<pre>1. Pattern (regular expressions) based validation  
-2. Code side validation in custom function  
+<pre>1. Pattern (regular expressions) based validation
+2. Code side validation in custom function
 </pre>
 <h3> <span class="mw-headline" id="Pattern_based_validation">  Pattern based validation </span></h3>
-<p class="box-description">This is a quick way to set validation to given setting field.  Regular expression can be set per each setting filed  to allow only specified value in the field. 
+<p class="box-description">This is a quick way to set validation to given setting field.  Regular expression can be set per each setting filed  to allow only specified value in the field.
 </p><p class="box-description">Example of email validation:
 </p>
 
@@ -477,8 +477,8 @@ Validation is possible with 2 methods.
 <p class="box-description">Note: Error text needs to be added to language XML with key like this: [extention_id]_[item_id]_validation_error or [extention_id]_email_validation_error in example above.
 </p>
 <h3> <span class="mw-headline" id="Code_side_validation">  Code side validation </span></h3>
-<p class="box-description">In case more advanced settings values validation required, you need to provide your own code to validate input and generate errors. 
-This is done in a special validate.php file included on the main extension directory level. This file will be automatically included 
+<p class="box-description">In case more advanced settings values validation required, you need to provide your own code to validate input and generate errors.
+This is done in a special validate.php file included on the main extension directory level. This file will be automatically included
 Function inside the file have to be named settingsValidation () { …
 </p><p class="box-description">Example:
 </p>
@@ -489,7 +489,7 @@ Function inside the file have to be named settingsValidation () { …
 	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
 function settingsValidation ( $settings_data = array()) {
     $error_items = array(); // array with failed validation data keys
-  
+
     foreach($settings_data as $item_id=&gt;$item_value){
         if( !isset($item_value)){
             $error_items[$item_id] = $language-&gt;get(&#39;errot_text_key&#39;) ;
@@ -505,8 +505,8 @@ function settingsValidation ( $settings_data = array()) {
 </div>
 <!-- HTML Highlight -->
 
-<p class="box-description">Input: 
-settingsValidation function will get an array with settings and values submitted by user. 
+<p class="box-description">Input:
+settingsValidation function will get an array with settings and values submitted by user.
 </p><p class="box-description">Example of input array:
 </p>
 
@@ -540,7 +540,7 @@ array (
 								<i class="fa fa-times"></i>
 							</span>
 							<h4 class="note-title"> Note </h4>
-							<p class="note-description"> settingsValidation function will be call in all settings save and individual (quick) save. Keep in mind that validation needs to be done on each field separately. 
+							<p class="note-description"> settingsValidation function will be call in all settings save and individual (quick) save. Keep in mind that validation needs to be done on each field separately.
 Required values handled by core and  required="true"  setting in the config </p>
 						</div>
 						<!-- End of Note -->
@@ -563,7 +563,7 @@ array( &#39;result&#39;=&gt;true );
 <!-- HTML Highlight -->
 <div class="code-highlight">
 	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
-array( &#39;result&#39;=&gt;false , &#39;errors&#39; =&gt; array( &#39;field_name&#39; =&gt; &#39;Missing Name&#39; ) );	
+array( &#39;result&#39;=&gt;false , &#39;errors&#39; =&gt; array( &#39;field_name&#39; =&gt; &#39;Missing Name&#39; ) );
  	</code>
  	</pre>
 </div>
@@ -608,7 +608,7 @@ if ( !defined ( &#39;DIR_CORE&#39; )) {
 }
 include(&#39;core/template2.php&#39;);
 include(&#39;core/template2_pagination.php&#39;);
- 
+
 $languages = array(
   	&#39;storefront&#39; =&gt; array(
 	  &#39;template2/template2&#39;,
@@ -649,7 +649,7 @@ $templates = array(
 	<h4 id="install" class="box-title">Install or Uninstall scripts</h4>
 	<p class="box-description">
 	There are 2 types of install or removal scripts that can be used. SQL and PHP.<br>
-SQL needs to have SQL commands that will be executed on extension install or uninstall respectivly.<br>
+SQL needs to have SQL commands that will be executed on extension install or uninstall respectively.<br>
 PHP can have code that will be executed during extension install and removal process. PHP files can include all the methods and classes available in the AbanteCart.</p>
 						<!-- Note -->
 						<div class="note js-note note-bounce">
@@ -657,7 +657,7 @@ PHP can have code that will be executed during extension install and removal pro
 								<i class="fa fa-times"></i>
 							</span>
 							<h4 class="note-title"> IMPORTANT </h4>
-							<p class="note-description"> Be very careful with updating database and altering tables. Please account for data integrity. If update existing table, account for speed of SQL execution in case of large data in the tables you effect. If uninstall, be careful with data removal. Do not delete altered fields and drop tables that are not created by given extension.<br> 
+							<p class="note-description"> Be very careful with updating database and altering tables. Please account for data integrity. If update existing table, account for speed of SQL execution in case of large data in the tables you effect. If uninstall, be careful with data removal. Do not delete altered fields and drop tables that are not created by given extension.<br>
 Consider validation for data if you do multiple SQL insert or updates that depends on each other.  </p>
 						</div>
 						<!-- End of Note -->
@@ -771,7 +771,7 @@ $this-&gt;extensions-&gt;hkMethodName($object, $param1, $param2);
 
 <a href="/img/developer/ext_flowchart.png" title="Extension FlowChart">Extension_FlowChart<br>
 <img width="650" height="603" src="/img/developer/ext_flowchart.png" alt="Extension_FlowChart">
-</a> 
+</a>
 </p><p class="box-description">Some of the hooks may seem very similar, but they help to serve different purposes.
 </p><p class="box-description">Extension automatically has access to the current controller object (class instance) loaded during the hooking process. Current controller instance used in the extension class will be available via <b>$this-&gt;baseObject</b> and provides access to all public methods and properties in the extended controller. This also includes access to global structures. Refer to developer’s manual for global data structures and controller public methods and properties.</p>
 
@@ -819,7 +819,7 @@ class ExtensionName extends Extension {
 <!-- HTML Highlight -->
 <div class="code-highlight">
 	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
-class ExtensionName extends Extension { 
+class ExtensionName extends Extension {
             	public function beforeClassNameMethodName($param1, $param2)
             	{
    	// ...
@@ -863,7 +863,7 @@ class ExtensionName extends Extension {
 
 
 
-<p class="box-description">When it is a Extension that is being hooked, the base object is not changed. This is usually the desired functionallity, but may not always be. However, if one Extension wants to access another Extension, it can do so through its Extension Api:
+<p class="box-description">When it is a Extension that is being hooked, the base object is not changed. This is usually the desired functionality, but may not always be. However, if one Extension wants to access another Extension, it can do so through its Extension Api:
 </p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
@@ -893,7 +893,7 @@ class ExtensionDefaultExtensionLogger extends Extension {
             	protected function log($message) {
                            	$this-&gt;log .= &#39;[&#39; . date(&#39;Y-m-d H:i:s&#39;) . &quot;] $message\n&quot;;
             	}
- 
+
             	public function __call($method, $args) {
                            	$this-&gt;log(&quot;called Extension::$method()&quot;);
             	}
@@ -946,16 +946,16 @@ $this-&gt;extensions-&gt;hk_UpdateData($this);
 
 // an extension that use these hooks could look like this
 &lt;?php
-class ExtensionName extends Extension {	
- 
+class ExtensionName extends Extension {
+
    public function onClassNameMethodName_InitData()
-   {  
+   {
    	// add message variable
    	$this-&gt;baseObject-&gt;data[&#39;message&#39;] = $message;
    }
- 
+
    public function onClassNameMethodName_UpdateData()
-   {  
+   {
    	// update message variable
    	$this-&gt;baseObject-&gt;data[&#39;message&#39;] = ucfirst($message);
    }
@@ -965,7 +965,7 @@ class ExtensionName extends Extension {
 </div>
 <!-- HTML Highlight -->
 
-           	
+
 <p class="box-description">If you need to create a hook for some method of a class, for example you need to hook to Cart::getProducts method
 you can do following:
 </p>
@@ -981,11 +981,11 @@ public function getProducts() {
    	// call extensions api
    	return $registry-&gt;get(&#39;extensions&#39;)-&gt;hk_getProducts($this);
    }
- 
+
 // rename the original function, now it will be called
 // by extensions api if not overrided
 public function _getProducts() {}
- 
+
 and call function as
 $this-&gt;extensions-&gt;hk_getProducts();</code>
  	</pre>
@@ -1006,22 +1006,22 @@ $this-&gt;extensions-&gt;hk_getProducts();</code>
 	<p class="box-description">
 	In order to add new data (HTML or just text) to template (.tpl) files from extension AbanteCart allows hook template variables that are placed in .tpl files as regular PHP variables. <br>
 Template Hook Variables look like this:  <b>&lt;?php echo $this-&gt;getHookVar('hook_name');&nbsp;?&gt;</b><br>
-These Template Hook Variables can be used in the extension. To add variable use <b>$this-&gt;view&gt;addHookVar()</b> method. 
+These Template Hook Variables can be used in the extension. To add variable use <b>$this-&gt;view&gt;addHookVar()</b> method.
 To locate appropriate template hook variable look into the template file, where you want to add values too. <br>
-Example:  
+Example:
 </p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
 	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
 // an extension that access  and modify template hook variables:
 &lt;?php
-class ExtensionName extends Extension {	
+class ExtensionName extends Extension {
    public function onClassNameMethodName_UpdateData()
-   {     	
+   {
 	// Set new value with appending  new data to $hook_message
 	$this-&gt;baseObject-&gt;view-&gt;addHookVar(&#39;hook_message&#39;, &#39;Confirmation Massage&#39;);
    }
- 
+
  }</code>
  	</pre>
 </div>
@@ -1038,8 +1038,8 @@ class ExtensionName extends Extension {
 							<p class="note-description"> Can not add or change values in the base template file or controller? No Problem. Contact us in a forum.abantecart.com  and we will help to find solution. If you discover that you need to add something to base template files in AbanteCart storefront or admin, and there is no way to do this or no hook variable available let us know. We can add hooks to current development version and next release.  </p>
 						</div>
 						<!-- End of Note -->
-						
-	
+
+
 
 </div>
 
@@ -1093,7 +1093,7 @@ Let us show how to develop extension based on the example that will apply discou
    &lt;dependencies&gt;&lt;/dependencies&gt;
    &lt;phpmodules&gt;&lt;/phpmodules&gt;
    &lt;layout&gt;&lt;/layout&gt;
-   &lt;priority&gt;10&lt;/priority&gt;  
+   &lt;priority&gt;10&lt;/priority&gt;
    &lt;type&gt;extensions&lt;/type&gt;
    &lt; category&gt;discount&lt;/ category&gt;
    &lt;settings&gt;
@@ -1113,7 +1113,7 @@ Let us show how to develop extension based on the example that will apply discou
            &lt;type&gt;input&lt;/type&gt;
            &lt;default_value&gt;Old price: %s, You save: %s&lt;/default_value&gt;
        &lt;/item&gt;
-   &lt;/settings&gt;	
+   &lt;/settings&gt;
 &lt;/extension&gt;</code>
  	</pre>
 </div>
@@ -1131,14 +1131,14 @@ include(&#39;core/discount.php&#39;);
 if ( !defined ( &#39;DIR_CORE&#39; )) {
 	header ( &#39;Location: static_pages/&#39; );
 }
- 
+
 $languages = array(
   	&#39;admin&#39; =&gt; array(
 	  &#39;discount/discount&#39;
   	),
   	&#39;storefront&#39; =&gt; array(),
 );
- 
+
 $templates = array(
   	&#39;admin&#39; =&gt; array(),
   	&#39;storefront&#39; =&gt; array(
@@ -1210,12 +1210,12 @@ class ExtensionDiscount extends Extension {
    public function  __construct() {
    	$this-&gt;registry = Registry::getInstance();
    }
- 
+
 }
 </code>
  	</pre>
 </div>
-<!-- HTML Highlight -->	
+<!-- HTML Highlight -->
 
 
 
@@ -1226,8 +1226,8 @@ class ExtensionDiscount extends Extension {
 <!-- HTML Highlight -->
 <div class="code-highlight">
 	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
-public function onControllerPagesCheckoutCart_InitData() {  
-$discount_message = $this-&gt;registry-&gt;get(&#39;config&#39;)-&gt;get(&#39;discount_message&#39;); 	
+public function onControllerPagesCheckoutCart_InitData() {
+$discount_message = $this-&gt;registry-&gt;get(&#39;config&#39;)-&gt;get(&#39;discount_message&#39;);
 	$this-&gt;baseObject-&gt;view-&gt;addHookVar(&#39;additional_message&#39;, $discount_message);
  } 	</code>
  	</pre>
@@ -1263,7 +1263,7 @@ extensions/discount/storefront/view/default/template/pages/checkout/
  	</pre>
 </div>
 <!-- HTML Highlight -->
-	
+
 
 
 
@@ -1278,13 +1278,13 @@ public function getProducts() {
    $registry = Registry::getInstance();
    return $registry-&gt;get(&#39;extensions&#39;)-&gt;do_getProducts($this);
 }
- 
-// rename original function   	
+
+// rename original function
 public function _getProducts() {
 </code>
  	</pre>
 </div>
-<!-- HTML Highlight -->	
+<!-- HTML Highlight -->
 
 
 
@@ -1309,9 +1309,9 @@ public function _getProducts() {
  	</pre>
 </div>
 <!-- HTML Highlight -->
-	
-	
-	
+
+
+
 <p class="box-description">3. edit <b>storefront\controller\checkout\cart.php</b>
 add these lines
 </p>
@@ -1320,7 +1320,7 @@ add these lines
 	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
 //use to update product data before render
 $this-&gt;extensions-&gt;do_UpdateProduct($this, $result);
- 
+
 after
 $this-&gt;data[&#39;product&#39;] = array(
 .....
@@ -1356,9 +1356,9 @@ public function onControllerPagesCheckoutCart_UpdateData() {
               	   $currency-&gt;format($tax-&gt;calculate($product[&#39;original_price&#39;] - $product[&#39;price&#39;], $product[&#39;tax_class_id&#39;], $config_tax))
         	   );
    	}
- 
+
    	$controller-&gt;view-&gt;assign(&#39;products&#39;, $data[&#39;products&#39;]);
- 
+
   	}
 	</code>
  	</pre>
@@ -1384,7 +1384,7 @@ public function onControllerPagesCheckoutCart_UpdateData() {
 <!-- HTML Highlight -->
 
 
-<p class="box-description"><br> 
+<p class="box-description"><br>
 And insert before &lt;?php }&nbsp;?&gt;
 </p>
 <!-- HTML Highlight -->
@@ -1399,21 +1399,21 @@ And insert before &lt;?php }&nbsp;?&gt;
  	</pre>
 </div>
 <!-- HTML Highlight -->
-	
-	
+
+
 	</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1432,7 +1432,7 @@ All styles and scripts loaded in head controller. It use <b>document</b> class. 
 public function addStyle(array($href, $rel = &#39;stylesheet&#39;, $media = &#39;screen&#39;))</code>
  	</pre>
 </div>
-<!-- HTML Highlight -->	
+<!-- HTML Highlight -->
 <p class="box-description">To add script use
 </p>
 <!-- HTML Highlight -->
@@ -1453,14 +1453,14 @@ public function addScript($script)
 $document = $registry-&gt;get(‘document’);
 $document-&gt;addStyle(array(RDIR_TEMPLATE.&#39;stylesheet/some.css&#39;));
 $document-&gt;addScript(RDIR_TEMPLATE.&#39;javascript/some.js&#39;);
- 
+
 // in controller you can use this
 $this-&gt;document-&gt;addStyle(array(RDIR_TEMPLATE.&#39;stylesheet/some.css&#39;));
 $this-&gt;document-&gt;addScript(RDIR_TEMPLATE.&#39;javascript/some.js&#39;);</code>
  	</pre>
 </div>
 <!-- HTML Highlight -->
-	
+
 </div>
 
 
@@ -1490,7 +1490,7 @@ $this-&gt;document-&gt;addScript(RDIR_TEMPLATE.&#39;javascript/some.js&#39;);</c
 </li><li> pdf
 </li><li> archive
 </li></ul>
-		
+
 </div>
 
 
@@ -1573,7 +1573,7 @@ CREATE TABLE IF NOT EXISTS `ac_slides` (
   	`slide_url` varchar(128) COLLATE utf8_bin NOT NULL DEFAULT &#39;&#39;,
   	PRIMARY KEY (`slide_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1;
- 
+
 INSERT INTO `ac_slides` ( `slide_img`, `slide_url` ) VALUES ( &#39;slides/slide1.jpg&#39;, &#39;http://google.com&#39; );
 INSERT INTO `ac_slides` ( `slide_img`, `slide_url` ) VALUES ( &#39;slides/slide2.jpg&#39;, &#39;http://bing.com&#39; );
 INSERT INTO `ac_slides` ( `slide_img`, `slide_url` ) VALUES ( &#39;slides/slide3.jpg&#39;, &#39;http://msn.com&#39; );</code>
@@ -1601,7 +1601,7 @@ DROP TABLE IF EXISTS `ac_slides`;</code>
 if ( !defined ( &#39;DIR_CORE&#39; )) {
   	header ( &#39;Location: static_pages/&#39; );
 }
- 
+
 $layout = new ALayoutManager();
 $block_data = array(
     &#39;block_txt_id&#39; =&gt; &#39;slideshow&#39;,
@@ -1632,7 +1632,7 @@ $layout-&gt;saveBlock( $block_data );
 if ( !defined ( &#39;DIR_CORE&#39; )) {
   	header ( &#39;Location: static_pages/&#39; );
 }
- 
+
 // delete block
 $layout = new ALayoutManager();
 $layout-&gt;deleteBlock(&#39;slideshow&#39;);
@@ -1653,7 +1653,7 @@ o    slides/slide1.jpg, slides/slide2.jpg, slides/slide3.jpg – default slides
 if ( !defined ( &#39;DIR_CORE&#39; )) {
   	header ( &#39;Location: static_pages/&#39; );
 }
- 
+
 $controllers = array(
     &#39;storefront&#39; =&gt; array(
         &#39;blocks/slideshow&#39;,
@@ -1662,7 +1662,7 @@ $controllers = array(
         &#39;pages/blocks/slideshow&#39;,
 	),
 );
- 
+
 $models = array(
     &#39;storefront&#39; =&gt; array(
         &#39;slideshow/slideshow&#39;,
@@ -1671,14 +1671,14 @@ $models = array(
         &#39;slideshow/slideshow&#39;,
 	),
 );
- 
+
 $languages = array(
     &#39;storefront&#39; =&gt; array(),
     &#39;admin&#39; =&gt; array(
         &#39;slideshow/slideshow&#39;,
 	),
 );
- 
+
 $templates = array(
     &#39;storefront&#39; =&gt; array(
         &#39;blocks/slideshow.tpl&#39;,
@@ -1691,8 +1691,8 @@ $templates = array(
  	</pre>
 </div>
 <!-- HTML Highlight -->
-	
-<p class="box-description"><br> 
+
+<p class="box-description"><br>
 Our extension will have
 </p>
 <ul><li> 2 controllers – one for admin to manage slides, one for storefront to prepare data for slideshow
@@ -1700,7 +1700,7 @@ Our extension will have
 </li><li> A couple of templates
 </li><li> Two models. Model for storefront has only methods to retrieve data. Model for admin has methods to add/edit/delete items
 </li></ul>
-<p class="box-description"><br> 
+<p class="box-description"><br>
 </p>
 <ul><li> Create language file – <b>extensions/slideshow/admin/language/english/slideshow/slideshow.xml</b>
 </li></ul>
@@ -1787,7 +1787,7 @@ Our extension will have
 &lt;/definitions&gt;</code>
  	</pre>
 </div>
-<!-- HTML Highlight -->	
+<!-- HTML Highlight -->
 
 
 <p class="box-description"><br>
@@ -1816,11 +1816,11 @@ if (! defined ( &#39;DIR_CORE&#39; )) {
   	header ( &#39;Location: static_pages/&#39; );
 }
 class ModelSlideshowSlideshow extends Model {
- 
+
     protected $model_tool_image;
     protected $slide;
     protected $rm;
- 
+
     public function __construct($registry) {
         parent::__construct($registry);
         $this-&gt;model_tool_image = $this-&gt;registry-&gt;get(&#39;model_tool_image&#39;);
@@ -1830,25 +1830,25 @@ class ModelSlideshowSlideshow extends Model {
   		);
         $this-&gt;rm = new AResource(&#39;image&#39;);
   	}
- 
+
     public function getSlides() {
         $query = $this-&gt;db-&gt;query(&quot;SELECT * FROM &quot; . DB_PREFIX . &quot;slides&quot;);
   		$result = $query-&gt;rows;
   		foreach ( $result as $key =&gt; $img ) {
               	$result[$key][&#39;slide_img&#39;] = $this-&gt;_getSlideUrl($img[&#39;slide_img&#39;]);
         }
- 
+
         	return $result;
 	}
- 
+
     public function getSlide($slide_id) {
         $query = $this-&gt;db-&gt;query(&quot;SELECT * FROM &quot; . DB_PREFIX . &quot;slides WHERE slide_id = &#39;&quot;.(int)$slide_id.&quot;&#39; &quot;);
   		$query-&gt;row[&#39;preview&#39;] = $this-&gt;_getSlideUrl($query-&gt;row[&#39;slide_img&#39;]);
         	return $query-&gt;row;
 	}
- 
+
   	private function _getSlideUrl( $img ) {
- 
+
         	if(!is_file(DIR_RESOURCE . $img)){
               	if(!is_file(DIR_EXT . &#39;slideshow/image/&#39; . $img)){
                     	$result = $this-&gt;model_tool_image-&gt;resize(&#39;no_image.jpg&#39;, $this-&gt;slide[&#39;x&#39;], $this-&gt;slide[&#39;y&#39;]);
@@ -1856,23 +1856,23 @@ class ModelSlideshowSlideshow extends Model {
                     	$result = HTTP_EXT.&#39;slideshow/image/&#39; . $img;
               	}
         	}else{
- 
+
             $id = $this-&gt;rm-&gt;getIdFromHexPath( str_replace($this-&gt;rm-&gt;getTypeDir(), &#39;&#39;, $img) );
             $result = $this-&gt;rm-&gt;getResourceThumb($id, $this-&gt;slide[&#39;x&#39;], $this-&gt;slide[&#39;y&#39;]);
             if ( !$result )
               		$result = $this-&gt;model_tool_image-&gt;resize(&#39;no_image.jpg&#39;, $this-&gt;slide[&#39;x&#39;], $this-&gt;slide[&#39;y&#39;]);
         	}
- 
+
         	return $result;
   	}
- 
+
 }
 </code>
  	</pre>
 </div>
 <!-- HTML Highlight -->
 
-<p class="box-description"><br> 
+<p class="box-description"><br>
 This model has two methods to fetch data<br>
 also note _getSlideUrl method. Since we have default images we should check if image passed in function is exist in resource directory. If so we try to get resource id from its path and create a thumbnail with width/height defined in extension settings
 </p><p class="box-description">-          Now add model for admin - <b>extensions\slideshow\admin\model\slideshow\slideshow.php</b>
@@ -1885,11 +1885,11 @@ if (! defined ( &#39;DIR_CORE&#39; )) {
   	header ( &#39;Location: static_pages/&#39; );
 }
 class ModelSlideshowSlideshow extends Model {
- 
+
     protected $model_tool_image;
     protected $slide;
     protected $rm;
- 
+
     public function __construct($registry) {
         parent::__construct($registry);
         $this-&gt;model_tool_image = $this-&gt;registry-&gt;get(&#39;model_tool_image&#39;);
@@ -1899,24 +1899,24 @@ class ModelSlideshowSlideshow extends Model {
   		);
         $this-&gt;rm = new AResource(&#39;image&#39;);
   	}
- 
+
     public function getSlides() {
         $query = $this-&gt;db-&gt;query(&quot;SELECT * FROM &quot; . DB_PREFIX . &quot;slides&quot;);
   		$result = $query-&gt;rows;
   		foreach ( $result as $key =&gt; $img ) {
               	$result[$key][&#39;slide_img&#39;] = $this-&gt;_getSlideUrl($img[&#39;slide_img&#39;]);
         }
- 
+
         	return $result;
 	}
- 
+
     public function addSlide($data) {
         $this-&gt;db-&gt;query(
             &quot;INSERT INTO &quot; . DB_PREFIX . &quot;slides
             SET slide_img = &#39;&quot;.$this-&gt;db-&gt;escape( $data[&#39;slide_img&#39;] ).&quot;&#39;,
                 slide_url = &#39;&quot;.$this-&gt;db-&gt;escape( $data[&#39;slide_url&#39;] ).&quot;&#39;  &quot;);
 	}
- 
+
     public function editSlide($slide_id, $data) {
         $this-&gt;db-&gt;query(
             &quot;UPDATE &quot; . DB_PREFIX . &quot;slides
@@ -1924,19 +1924,19 @@ class ModelSlideshowSlideshow extends Model {
                 slide_url = &#39;&quot;.$this-&gt;db-&gt;escape( $data[&#39;slide_url&#39;] ).&quot;&#39;
             WHERE slide_id = &#39;&quot;.(int)$slide_id.&quot;&#39; &quot;);
 	}
- 
+
     public function getSlide($slide_id) {
         $query = $this-&gt;db-&gt;query(&quot;SELECT * FROM &quot; . DB_PREFIX . &quot;slides WHERE slide_id = &#39;&quot;.(int)$slide_id.&quot;&#39; &quot;);
   		$query-&gt;row[&#39;preview&#39;] = $this-&gt;_getSlideUrl($query-&gt;row[&#39;slide_img&#39;]);
         	return $query-&gt;row;
 	}
- 
+
     public function deleteSlide($slide_id) {
         $this-&gt;db-&gt;query(&quot;DELETE FROM &quot; . DB_PREFIX . &quot;slides WHERE slide_id = &#39;&quot;.(int)$slide_id.&quot;&#39; &quot;);
 	}
- 
+
   	private function _getSlideUrl( $img ) {
- 
+
         	if(!is_file(DIR_RESOURCE . $img)){
               	if(!is_file(DIR_EXT . &#39;slideshow/image/&#39; . $img)){
         	        	$result = $this-&gt;model_tool_image-&gt;resize(&#39;no_image.jpg&#39;, $this-&gt;slide[&#39;x&#39;], $this-&gt;slide[&#39;y&#39;]);
@@ -1944,23 +1944,23 @@ class ModelSlideshowSlideshow extends Model {
                     	$result = HTTP_EXT.&#39;slideshow/image/&#39; . $img;
               	}
         	}else{
- 
+
             $id = $this-&gt;rm-&gt;getIdFromHexPath( str_replace($this-&gt;rm-&gt;getTypeDir(), &#39;&#39;, $img) );
             $result = $this-&gt;rm-&gt;getResourceThumb($id, $this-&gt;slide[&#39;x&#39;], $this-&gt;slide[&#39;y&#39;]);
             if ( !$result )
               		$result = $this-&gt;model_tool_image-&gt;resize(&#39;no_image.jpg&#39;, $this-&gt;slide[&#39;x&#39;], $this-&gt;slide[&#39;y&#39;]);
         	}
- 
+
         	return $result;
   	}
- 
+
 }
 </code>
  	</pre>
 </div>
 <!-- HTML Highlight -->
-	
-<p class="box-description"><br> 
+
+<p class="box-description"><br>
 This model has methods to manage slideshow items – add / edit / delete<br>
 Now all ready to create a controller to manage slides in admin<br>
 <b>extensions\slideshow\admin\controller\pages\blocks\slideshow.php</b>
@@ -1972,28 +1972,28 @@ Now all ready to create a controller to manage slides in admin<br>
 if ( !defined ( &#39;DIR_CORE&#39; )) {
   	header ( &#39;Location: static_pages/&#39; );
 }
- 
+
 class ControllerPagesBlocksSlideshow extends AController {
- 
+
   	private $error = array();
   	public $data = array();
- 
+
   	public function main() {
- 
+
           //init controller data
         $this-&gt;extensions-&gt;hk_InitData($this);
- 
+
 	  $this-&gt;loadLanguage(&#39;extension/extensions&#39;);
 	  $this-&gt;loadLanguage(&#39;slideshow/slideshow&#39;);
 	  $this-&gt;loadModel(&#39;slideshow/slideshow&#39;);
         $this-&gt;document-&gt;setTitle( $this-&gt;language-&gt;get(&#39;heading_title&#39;) );
- 
+
         	$this-&gt;view-&gt;assign(&#39;error_warning&#39;, $this-&gt;error[&#39;warning&#39;]);
         	$this-&gt;view-&gt;assign(&#39;success&#39;, $this-&gt;session-&gt;data[&#39;success&#39;]);
         	if (isset($this-&gt;session-&gt;data[&#39;success&#39;])) {
               	unset($this-&gt;session-&gt;data[&#39;success&#39;]);
         	}
- 
+
 	  $this-&gt;document-&gt;initBreadcrumb( array (
    	       	&#39;href&#39;  	=&gt; $this-&gt;html-&gt;getSecureURL(&#39;index/home&#39;),
    	       	&#39;text&#39;  	=&gt; $this-&gt;language-&gt;get(&#39;text_home&#39;),
@@ -2014,13 +2014,13 @@ class ControllerPagesBlocksSlideshow extends AController {
    	       	&#39;text&#39;  	=&gt; $this-&gt;language-&gt;get(&#39;slides_title&#39;),
   	        	&#39;separator&#39; =&gt; &#39; :: &#39;
         	 ));
- 
+
         	$this-&gt;data[&#39;images&#39;] = $this-&gt;model_slideshow_slideshow-&gt;getSlides();
- 
+
         	$this-&gt;data[&#39;delete&#39;] = $this-&gt;html-&gt;getSecureURL(&#39;blocks/slideshow/delete&#39;, &#39;&amp;slide_id=%ID%&#39; );
         	$this-&gt;data[&#39;update&#39;] = $this-&gt;html-&gt;getSecureURL(&#39;blocks/slideshow/update&#39;, &#39;&amp;slide_id=%ID%&#39; );
         	$this-&gt;data[&#39;insert&#39;] = $this-&gt;html-&gt;getSecureURL(&#39;blocks/slideshow/insert&#39; );
- 
+
         	$this-&gt;data[&#39;button_remove&#39;] = $this-&gt;html-&gt;buildButton(array(
               	&#39;text&#39; =&gt; $this-&gt;language-&gt;get(&#39;button_remove&#39;),
               	&#39;style&#39; =&gt; &#39;button2&#39;,
@@ -2033,25 +2033,25 @@ class ControllerPagesBlocksSlideshow extends AController {
               	&#39;text&#39; =&gt; $this-&gt;language-&gt;get(&#39;button_add_slide&#39;),
               	&#39;style&#39; =&gt; &#39;button1&#39;,
         	));
- 
+
         $this-&gt;view-&gt;batchAssign(  $this-&gt;language-&gt;getASet() );
         	$this-&gt;view-&gt;batchAssign( $this-&gt;data );
- 
+
         	$this-&gt;processTemplate(&#39;pages/blocks/slideshow_list.tpl&#39; );
- 
+
           //update controller data
         $this-&gt;extensions-&gt;hk_UpdateData($this);
   	}
- 
+
   	public function insert() {
- 
+
         //init controller data
         $this-&gt;extensions-&gt;hk_InitData($this);
- 
+
 	  $this-&gt;loadLanguage(&#39;slideshow/slideshow&#39;);
         $this-&gt;loadModel(&#39;slideshow/slideshow&#39;);
 	  $this-&gt;document-&gt;setTitle($this-&gt;language-&gt;get(&#39;heading_title&#39;));
- 
+
 	  if (($this-&gt;request-&gt;server[&#39;REQUEST_METHOD&#39;] == &#39;POST&#39;)) {
     	    $this-&gt;request-&gt;post[&#39;slide_img&#39;] = html_entity_decode($this-&gt;request-&gt;post[&#39;slide_img&#39;], ENT_COMPAT, &#39;UTF-8&#39;);
             $this-&gt;model_slideshow_slideshow-&gt;addSlide($this-&gt;request-&gt;post);
@@ -2059,16 +2059,16 @@ class ControllerPagesBlocksSlideshow extends AController {
               	$this-&gt;redirect( $this-&gt;html-&gt;getSecureURL(&#39;blocks/slideshow&#39;) );
 	  }
 	  $this-&gt;_getForm();
- 
+
         //update controller data
         $this-&gt;extensions-&gt;hk_UpdateData($this);
   	}
- 
+
   	public function update() {
- 
+
         //init controller data
         $this-&gt;extensions-&gt;hk_InitData($this);
- 
+
 	  $this-&gt;loadLanguage(&#39;slideshow/slideshow&#39;);
         $this-&gt;loadModel(&#39;slideshow/slideshow&#39;);
 	  $this-&gt;document-&gt;setTitle($this-&gt;language-&gt;get(&#39;heading_title&#39;));
@@ -2079,41 +2079,41 @@ class ControllerPagesBlocksSlideshow extends AController {
               	$this-&gt;redirect( $this-&gt;html-&gt;getSecureURL(&#39;blocks/slideshow&#39;) );
         	}
 	  $this-&gt;_getForm();
- 
+
    	 //update controller data
         $this-&gt;extensions-&gt;hk_UpdateData($this);
   	}
- 
+
   	public function delete() {
- 
+
         //init controller data
         $this-&gt;extensions-&gt;hk_InitData($this);
- 
+
 	  $this-&gt;loadLanguage(&#39;slideshow/slideshow&#39;);
         $this-&gt;loadModel(&#39;slideshow/slideshow&#39;);
 	  $this-&gt;model_slideshow_slideshow-&gt;deleteSlide($this-&gt;request-&gt;get[&#39;slide_id&#39;]);
         $this-&gt;session-&gt;data[&#39;success&#39;] = $this-&gt;language-&gt;get(&#39;text_success&#39;);
         	$this-&gt;redirect( $this-&gt;html-&gt;getSecureURL(&#39;blocks/slideshow&#39;) );
- 
+
         	//update controller data
         $this-&gt;extensions-&gt;hk_UpdateData($this);
   	}
- 
+
   	private function _getForm() {
- 
+
         	$this-&gt;view-&gt;assign(&#39;error_warning&#39;, $this-&gt;error[&#39;warning&#39;]);
         	$this-&gt;view-&gt;assign(&#39;success&#39;, $this-&gt;session-&gt;data[&#39;success&#39;]);
         	if (isset($this-&gt;session-&gt;data[&#39;success&#39;])) {
               	unset($this-&gt;session-&gt;data[&#39;success&#39;]);
         	}
         	$this-&gt;view-&gt;batchAssign(  $this-&gt;language-&gt;getASet() );
- 
+
 	  $this-&gt;data = array();
         	$this-&gt;data[&#39;error&#39;] = $this-&gt;error;
         	$this-&gt;data[&#39;cancel&#39;] = $this-&gt;html-&gt;getSecureURL(&#39;blocks/slideshow&#39;);
- 
+
         	$this-&gt;data[&#39;heading_title&#39;] = $this-&gt;language-&gt;get(&#39;slides_title&#39;);
- 
+
         	$this-&gt;document-&gt;initBreadcrumb( array (
    	       	&#39;href&#39;  	=&gt; $this-&gt;html-&gt;getSecureURL(&#39;index/home&#39;),
    	       	&#39;text&#39;  	=&gt; $this-&gt;language-&gt;get(&#39;text_home&#39;),
@@ -2134,12 +2134,12 @@ class ControllerPagesBlocksSlideshow extends AController {
    	       	&#39;text&#39;  	=&gt; $this-&gt;language-&gt;get(&#39;slides_title&#39;),
   	        	&#39;separator&#39; =&gt; &#39; :: &#39;
         	 ));
- 
- 
+
+
         	if (isset($this-&gt;request-&gt;get[&#39;slide_id&#39;]) &amp;&amp; ($this-&gt;request-&gt;server[&#39;REQUEST_METHOD&#39;] != &#39;POST&#39;)) {
   	        	$item_info = $this-&gt;model_slideshow_slideshow-&gt;getSlide($this-&gt;request-&gt;get[&#39;slide_id&#39;]);
 	  }
- 
+
         	$fields = array(&#39;slide_img&#39;, &#39;slide_url&#39;);
         	foreach ( $fields as $f ) {
               	if (isset ( $this-&gt;request-&gt;post [$f] )) {
@@ -2150,7 +2150,7 @@ class ControllerPagesBlocksSlideshow extends AController {
                     	$this-&gt;data[$f] = &#39;&#39;;
               	}
         	}
- 
+
         if (!isset($this-&gt;request-&gt;get[&#39;slide_id&#39;])) {
               	$this-&gt;data[&#39;action&#39;] = $this-&gt;html-&gt;getSecureURL(&#39;blocks/slideshow/insert&#39; );
               	$this-&gt;data[&#39;form_title&#39;] = $this-&gt;language-&gt;get(&#39;text_insert&#39;) . $this-&gt;language-&gt;get(&#39;text_slide&#39;);
@@ -2158,20 +2158,20 @@ class ControllerPagesBlocksSlideshow extends AController {
               	$this-&gt;data[&#39;action&#39;] = $this-&gt;html-&gt;getSecureURL(&#39;blocks/slideshow/update&#39;, &#39;&amp;slide_id=&#39; . $this-&gt;request-&gt;get[&#39;slide_id&#39;] );
               	$this-&gt;data[&#39;form_title&#39;] = $this-&gt;language-&gt;get(&#39;text_edit&#39;) . $this-&gt;language-&gt;get(&#39;text_slide&#39;);
         	}
- 
+
         $form = new AForm(&#39;ST&#39;);
- 
+
         	$this-&gt;document-&gt;addBreadcrumb( array (
               	&#39;href&#39;  	=&gt; $this-&gt;data[&#39;action&#39;],
               	&#39;text&#39;  	=&gt; $this-&gt;data[&#39;form_title&#39;],
               	&#39;separator&#39; =&gt; &#39; :: &#39;
         	 ));
- 
+
         	$form-&gt;setForm(array(
         		&#39;form_name&#39; =&gt; &#39;frm&#39;,
               	&#39;update&#39; =&gt; &#39;&#39;,
   		));
- 
+
         $this-&gt;data[&#39;form&#39;][&#39;id&#39;] = &#39;frm&#39;;
         $this-&gt;data[&#39;form&#39;][&#39;form_open&#39;] = $form-&gt;getFieldHtml(array(
         		&#39;type&#39; =&gt; &#39;form&#39;,
@@ -2190,7 +2190,7 @@ class ControllerPagesBlocksSlideshow extends AController {
         		&#39;text&#39; =&gt; $this-&gt;language-&gt;get(&#39;button_cancel&#39;),
         		&#39;style&#39; =&gt; &#39;button2&#39;,
   		));
- 
+
         $this-&gt;data[&#39;form&#39;][&#39;fields&#39;][&#39;img&#39;] = $form-&gt;getFieldHtml(
             array(
                 &#39;type&#39; =&gt; &#39;hidden&#39;,
@@ -2206,7 +2206,7 @@ class ControllerPagesBlocksSlideshow extends AController {
                 &#39;attr&#39; =&gt; &#39;class=&quot;large-field&quot;&#39;,
         		)
         );
- 
+
         $resources_scripts = $this-&gt;dispatch(
             &#39;responses/common/resource_library/get_resources_scripts&#39;,
             array(
@@ -2228,12 +2228,12 @@ class ControllerPagesBlocksSlideshow extends AController {
             );
             $this-&gt;view-&gt;assign( &#39;thumb&#39;, $thumb);
         	}
- 
+
         $this-&gt;view-&gt;batchAssign( $this-&gt;data );
         $this-&gt;processTemplate(&#39;pages/blocks/slideshow_form.tpl&#39; );
   	}
- 
- 
+
+
 }
 </code>
  	</pre>
@@ -2244,8 +2244,8 @@ Main method – fetch all slides and give ability to add/edit/delete slides<br>
 <b>Insert</b> – insert new slide<br>
 <b>Update</b> – edit slide image/url<br>
 <b>Delete</b> – delete slide
-</p><p class="box-description"><br> 
-</p><p class="box-description"><br> 
+</p><p class="box-description"><br>
+</p><p class="box-description"><br>
 </p><p class="box-description">Lets look in details how we include resource library scripts
 </p>
 <!-- HTML Highlight -->
@@ -2278,18 +2278,18 @@ $resources_scripts-&gt;dispatchGetOutput(); - return controller output, which is
 <!-- HTML Highlight -->
 <div class="code-highlight">
 	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
-&lt;?php 
+&lt;?php
 if (! defined ( &#39;DIR_CORE&#39; )) {
   	header ( &#39;Location: static_pages/&#39; );
 }
- 
+
 class ControllerBlocksSlideshow extends AController {
   	public function main() {
- 
+
         //init controller data
         $this-&gt;extensions-&gt;hk_InitData($this);
         $this-&gt;loadModel(&#39;slideshow/slideshow&#39;);
- 
+
         if ( !$this-&gt;registry-&gt;has(&#39;jcycle&#39;) ) {
             $this-&gt;document-&gt;addScript( $this-&gt;view-&gt;templateResource(&#39;/javascript/jquery/jquery.cycle.js&#39;) );
             $this-&gt;registry-&gt;set(&#39;jcycle&#39;, true);
@@ -2301,14 +2301,14 @@ class ControllerBlocksSlideshow extends AController {
                     	 &#39;media&#39; =&gt; &#39;screen&#39;,
               	)
         	);
- 
+
         	$this-&gt;view-&gt;assign(&#39;images&#39;, $this-&gt;model_slideshow_slideshow-&gt;getSlides());
-        	
+
         $this-&gt;processTemplate(&#39;blocks/slideshow.tpl&#39;);
- 
+
         //init controller data
         $this-&gt;extensions-&gt;hk_UpdateData($this);
-        	
+
   	}
 }
 </code>
@@ -2336,7 +2336,7 @@ Please note that
 </p><p class="box-description">You can take a look at full code by downloading our free template. This extension is a part of template.
 </p>
 
-	
+
 </div>
 
 
@@ -2355,7 +2355,7 @@ Please note that
 <div class="category-info helper">
 	<h4 id="listingblock" class="box-title">Example of extension with listing block wrapper (appearance controller)</h4>
 	<p class="box-description">
-	1. Load custom listing block settings to the layout. Best way to do this is via XML load. Please see <a rel="nofollow" href="/pages/developer/developing_templates_as_extensions.html#Example_of_adding_template">Developing Templates as Extensions</a>
+	1. Load custom listing block settings to the layout. Best way to do this is via XML load.
 </p><p class="box-description">2. Add a hook into your extension on ControllerPagesDesignBlocks (Control Panel side).
 This will add controller(wrapper) to selection in control panel and show listing on storefront using your templates. For details see <a rel="nofollow" class="external autonumber" href="/pages/developer/extension_dev.html#examples">Basic Examples</a>
 </p>
@@ -2371,15 +2371,15 @@ $this-&gt;baseObject-&gt;data[ &#39;block_wrappers&#39; ][&#39;blocks/extension_
 <!-- HTML Highlight -->
 
 <p class="box-description">3. In main.php file of your extension add list of templates which will be used in list view.
-Number of templates depends on your block listing extensions controller. 
+Number of templates depends on your block listing extensions controller.
 </p>
 <!-- HTML Highlight -->
 <div class="code-highlight">
 	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
 $templates = array(
-    &#39;storefront&#39; =&gt; array(&#39;blocks/some-template-name1.tpl&#39;, 
- &#39;blocks/some-template-name2.tpl&#39;, 
- &#39;blocks/some-template-name3.tpl&#39;, 
+    &#39;storefront&#39; =&gt; array(&#39;blocks/some-template-name1.tpl&#39;,
+ &#39;blocks/some-template-name2.tpl&#39;,
+ &#39;blocks/some-template-name3.tpl&#39;,
  &#39;blocks/some-template-name4.tpl&#39;,....));</code>
  	</pre>
 </div>
@@ -2390,7 +2390,7 @@ $templates = array(
 <!-- HTML Highlight -->
 <div class="code-highlight">
 	<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-php">
-&lt;?php 
+&lt;?php
 if (! defined ( &#39;DIR_CORE&#39; )) {
 	header ( &#39;Location: static_pages/&#39; );
 }
@@ -2432,7 +2432,7 @@ class ControllerBlocksExtensionName extends AController {
 ?&gt;</code>
  	</pre>
 </div>
-<!-- HTML Highlight -->	
+<!-- HTML Highlight -->
 <p class="box-description">6. Add your controller into main.php to $controllers array:
 </p>
 <!-- HTML Highlight -->
@@ -2443,9 +2443,9 @@ $controllers = array(
 </code>
  	</pre>
 </div>
-<!-- HTML Highlight -->	
-	
-	
+<!-- HTML Highlight -->
+
+
 </div>
 
 
@@ -2500,7 +2500,7 @@ if (! defined ( &#39;DIR_CORE&#39; )) {
 </li><li> documentation ( any documentation needed for extension)
 </li></ul>
 <p class="box-description">Details about most of extension components are covered in extension API development documentation.<br>
-In image directory include icon and preview images for your extension. Icon will be shown in market place and the extension menu and preview will be shown in extension details page before download and in the extension configuration section. 
+In image directory include icon and preview images for your extension. Icon will be shown in market place and the extension menu and preview will be shown in extension details page before download and in the extension configuration section.
 Naming for icon and preview images:<br>
 </p>
 <pre>       	icon image:            	<b>image/icon.png</b> (Size: 57x57 px)
@@ -2565,8 +2565,8 @@ Final completed package needs to be archived to zip format with all files/direct
 						</div>
 						<!-- End of Note -->
 <p class="box-description">If you intend to resale extension via AbanteCart market place, please make sure you are compliant with requirements as much as possible. This will help your extension to be approved faster and get better ranking.
-</p>	
-	
-	
-	
+</p>
+
+
+
 </div>
