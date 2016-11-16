@@ -13,7 +13,7 @@ tags: [
 							<h4 class="category-description">Admin > Extensions > Order Totals</h4>
 						</div>
 						<!-- Category Info -->
-							
+
 <div><a class="anchorlink" href="#Coupon"><h6 class="category-description">Coupon</a></h6>
  <a class="anchorlink" href="#Handling Fee"><h6 class="category-description">Handling Fee</a> </h6>
  <a class="anchorlink" href="#Low Order Fee"><h6 class="category-description">Low Order Fee</a></h6>
@@ -24,7 +24,7 @@ tags: [
 <p><em>Order Totals</em> are the screens that appear to the customer during checkout. </span>Some require additional setup in other menus. Not every menu is required to appear during check-out.</p>
 <p> <a class="jcepopup" href="/img/other/order-total-grid.png"><img src="/img/other/order-total-grid.png" border="0" width="400" /></a></p>
 <p>To install any Order Totals module click install button. Then You can edit or uninstall it.</p>
-<p><em>note: You able to change Status and/or Sort Order directly from the Extensions-&gt;Order Totals listing</em></p>
+<p><em>note: You able to change Status and/or Sort Order directly from the Extensions > Order Totals listing</em></p>
 
 
 
@@ -64,13 +64,14 @@ tags: [
 						</div>
 						<!-- Category Info -->
 
-<p>Charge an extra fee to customer during checkout. Handling charges are typically used by merchants as a way of recouping order shipping costs. For example, costs for packaging supplies like shipping peanuts, air/bubble wrapping, tape, etc.</p>
+<p>Charge an extra fee to customer during checkout. Handling charges are typically used by merchants as a way of recouping order payment costs.</p>
 <a class="jcepopup" href="/img/other/abantecart-handling-fee.png"><img src="/img/other/abantecart-handling-fee.png" border="0" alt="" width="500" /></a>
 <p>Fill in the following fields:</p>
-<p><strong>Order Total:</strong> - --.</p>
-<p><strong>Fee:</strong> - the cost value.</p>
-<p><strong>Tax Class:</strong> - Select <a class="crosslink" href="/pages/localization/locations_and_taxes/tax_classes_list.html">Tax Class</a>.</p>
 <p><strong>Status:</strong> - MUST be "ON" for the order total extension is displayed when checking out.</p>
+<p><strong>Order Total:</strong> Minimum order amount to be reached to apply the fee. If customer order total will exceed this amount, handling feee will not be applied. This is main value but overridden with payment specific settings.</p>
+<p><strong>Fee:</strong> - Free to be added to order total if minimum amount condition is not met. This amount is overridden by payment specific setting.</p>
+<p><strong>Payments:</strong> - Select a specific payment you need to add the fee to. These settings will override the main settings if selected payment is used by customer.</p>
+<p><strong>Tax Class:</strong> - Select <a class="crosslink" href="/pages/localization/locations_and_taxes/tax_classes_list.html">Tax Class</a>. Select if you need tax to be applied on-top of the handling fee.</p>
 <p><strong>Type:</strong> - select type to display.</p>
 <p><strong>Sort Order:</strong> - Sort Order set's the order of which the Order Total extension will be displayed amongst others.</p>
 <p><strong>Calculation Order:</strong> - set's the order of which the Order Total extension will be calculated amongst others.</p>
