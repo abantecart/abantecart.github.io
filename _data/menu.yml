@@ -473,6 +473,7 @@
     - text: Template Debug
       url: /pages/tips/template_debug.html
 - text: Developer Guide
+  url: /pages/developer/index.html
   level: /pages/developer/
   icon: '<i class="fa fa-code fa-fw"></i>'
   subitems:
