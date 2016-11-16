@@ -54,6 +54,7 @@
     - text: Enable Taxes
       url: /pages/quickstart/setup_taxes.html
 - text: Managing Product Catalog
+  url: /pages/catalog/index.html
   level: /pages/catalog/
   icon: '<i class="fa fa-cubes fa-fw"></i>'
   subitems:
