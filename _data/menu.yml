@@ -177,6 +177,7 @@
     - text: Products Report
       url: /pages/reports/products.html
 - text: Design Guide
+  url: /pages/design/index.html
   level: /pages/design/
   icon: '<i class="fa fa-tint fa-fw"></i>'
   subitems:
