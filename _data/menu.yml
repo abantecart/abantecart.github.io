@@ -124,6 +124,7 @@
        - text: Add & edit coupons
          url: /pages/promotions/edit_coupons.html
 - text: Managing Customers
+  url: /pages/customers/index.html
   level: /pages/customers/
   icon: '<i class="fa fa-users fa-fw"></i>'
   subitems:
@@ -141,13 +142,13 @@
       url: /pages/customers/send_mails.html
 
 - text: Managing Orders
+  url: /pages/orders/index.html
   level: /pages/orders/
   icon: '<i class="fa fa-money fa-fw"></i>'
   subitems:
     - text: Search and filter
       url: /pages/orders/search.html
     - text: View Orders
-      url: /pages/orders/index.html
       level: /pages/orders/
       icon: '<i class="fa fa-shopping-cart fa-fw"></i>'
       subitems:
