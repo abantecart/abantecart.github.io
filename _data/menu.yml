@@ -147,6 +147,7 @@
     - text: Search and filter
       url: /pages/orders/search.html
     - text: View Orders
+      url: /pages/orders/index.html
       level: /pages/orders/
       icon: '<i class="fa fa-shopping-cart fa-fw"></i>'
       subitems:
