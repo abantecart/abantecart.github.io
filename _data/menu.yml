@@ -443,6 +443,7 @@
   level: /pages/embed/
   icon: '<i class="fa fa-code-fork fa-fw"></i>'
 - text: Extend Functionality
+  url: /pages/extensions/index.html
   level: /pages/extensions/
   icon: '<i class="fa fa-puzzle-piece fa-fw"></i>'
   subitems:
