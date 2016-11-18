@@ -295,6 +295,7 @@
      - text: Bank Transfer
        url: /pages/ship_and_pay/payments/banktransfer.html
 - text: Settings & Tools
+  url: /pages/settings/index.html
   level: /pages/settings/
   icon: '<i class="fa fa-wrench fa-fw"></i>'
   subitems:
