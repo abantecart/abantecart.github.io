@@ -458,6 +458,7 @@
     - text: Connect store to Marketplace
       url: /pages/extensions/connect.html
 - text: Helpful Tips
+  url: /pages/tips/index.html
   level: /pages/tips/
   icon: '<i class="fa fa-life-ring fa-fw"></i>'
   subitems:
