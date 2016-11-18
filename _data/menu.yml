@@ -105,6 +105,7 @@
     - text: Page Layout
       url: /pages/catalog/page_layout.html
 - text: Managing Promotions
+  url: /pages/promotions/index.html
   level: /pages/promotions/
   icon: '<i class="fa fa-tags fa-fw"></i>'
   subitems:
