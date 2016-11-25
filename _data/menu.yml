@@ -168,6 +168,7 @@
     - text: Manage Order Totals
       url: /pages/orders/order_totals.html
 - text: Store Reports
+  url: /pages/reports/index.html
   level: /pages/reports/
   icon: '<i class="fa fa-file-text fa-fw"></i>'
   subitems:
