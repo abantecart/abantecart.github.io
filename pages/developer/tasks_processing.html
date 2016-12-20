@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Tasks API 
+title: Tasks API
 description: AbanteCart allows to schedule and execute tasks created in the code.
 tags: [
 	['architecture', 'AbanteCart Architecture'],
@@ -11,10 +11,10 @@ redirect_from: "/tag/tasks_processing.html"
 
 <div class="category-info helper pt40">
 	<h3 class="category-title">Tasks API</h3>
-	<h4 class="category-description"> 
+	<h4 class="category-description">
 	</h4>
 	<p class="box-description">
-	Starting with version 1.2.0 AbanteCart core provides tasks API to to create and run tasks. Task can be used to break large or long processes into smaller steps that can be ran with AJAX or with backend script. Using task/steps you can show progress to user and prevent browser or connection from timing out in longer processes. 
+	Starting with version 1.2.0 AbanteCart core provides tasks API to to create and run tasks. Task can be used to break large or long processes into smaller steps that can be ran with AJAX or with backend script. Using task/steps you can show progress to user and prevent browser or connection from timing out in longer processes.
 	<br>
 	<div class="button-list helper"><a target="_blank" href="/img/other/AbanteCart_tasks_run_flow.pdf" class="button button-icon stroke small green"><i class="fa fa-home"></i>AbanteCart Scheduled Tasks Run Flow.Pdf</a></div>
 	</p>
@@ -32,7 +32,7 @@ Task is used in a backup and in bulk messaging. We use these places as example i
 							<li class="step">
 								<!--<span class="step-number">1</span>-->
 								<h4 class="step-title">Task related database tables:</h4>
-								<div class="step-content"> 
+								<div class="step-content">
 [pefix]tasks - Main table for task information and status <br>
 
 [pefix]task_details - Task details table for settings <br>
@@ -46,7 +46,7 @@ Task is an organizational process to handle execution of created requests (steps
 
 Task can be execute right away or postponed to specified time. <br>
 
-Each task consists of steps that are organized in a sequence in which they are executed. Each task must have at least one step.<br> 
+Each task consists of steps that are organized in a sequence in which they are executed. Each task must have at least one step.<br>
 
 Now let's look into task creation and execution process and data with more details.
 		</p>
@@ -68,7 +68,7 @@ Now let's look into task creation and execution process and data with more detai
 <div class="category-info helper">
 	<h4 id="Task" class="box-title">Task</h4>
 	<p class="box-description">
-To create a new task in the code, you need instantiate class ATaskManager in admin controller or model and run addTask() method with required parameters to create the task.  
+To create a new task in the code, you need instantiate class ATaskManager in admin controller or model and run addTask() method with required parameters to create the task.
 </p>
 						<!-- HTML Highlight -->
 						<div class="code-highlight">
@@ -284,9 +284,9 @@ At least one step is required to be created for task to be executed. To create a
 									</table>
 								</div>
 								<!-- End of Table -->
-	
+
 <p>
-One special setting, that is important mentioning, is interrupt_on_step_fault. If given step has interrupt_on_step_fault set to true, task execution will stop if that step returns a failure.  <br> 
+One special setting, that is important mentioning, is interrupt_on_step_fault. If given step has interrupt_on_step_fault set to true, task execution will stop if that step returns a failure.  <br>
 
 
 After all needed steps are created task can be executed.
@@ -317,7 +317,7 @@ This is a basic response controller that is developed to perform some work requi
 
 In example of backup, "task/tool/backup/dumptables" controller performs task of dumping tables data. Each step is a process of damping data for one table. <br>
 
-Step response controller is expected to return appropriate Jason string with error is step has failed. 
+Step response controller is expected to return appropriate Jason string with error is step has failed.
 </p>
 </div>
 
@@ -329,7 +329,7 @@ Step response controller is expected to return appropriate Jason string with err
 <div class="category-info helper">
 	<h4 id="Taskexecution" class="box-title">Task Execution</h4>
 	<p class="box-description">
-Task execution can be initiated 2 different ways. 
+Task execution can be initiated 2 different ways.
 </p>
 						<!-- Steps -->
 						<ul class="steps">
@@ -396,11 +396,11 @@ Task execution can be initiated 2 different ways.
 										</tbody>
 									</table>
 								</div>
-								<!-- End of Table -->	
+								<!-- End of Table -->
 
 <p>
 
-Example of task creation and execution can be seen in store back up and bulk email 
+Example of task creation and execution can be seen in store back up and bulk email
 
 See:<br>
 <a href="https://github.com/abantecart/abantecart-src/blob/master/public_html/admin/controller/responses/tool/backup.php" target="_new">public_html/admin/controller/responses/tool/backup.php</a><br>
@@ -423,52 +423,50 @@ And <br>
 	<p class="box-description">
 ATaskManager class API methods in <a href="https://github.com/abantecart/abantecart-src/blob/master/public_html/core/lib/task_manager.php" target="_new">task_manager.php</a> file
 </p>
-<p class="box-description"> 
+<p class="box-description">
 
 
-<a href="https://github.com/abantecart/abantecart-src/blob/master/public_html/core/lib/task_manager.php#L52" target="_new">runTasks</a><br>
+<a href="https://github.com/abantecart/abantecart-src/blob/master/public_html/core/lib/task_manager.php#L81" target="_new">runTasks</a><br>
 
 
-<a href="https://github.com/abantecart/abantecart-src/blob/master/public_html/core/lib/task_manager.php#L69" target="_new">runTask</a><br>
+<a href="https://github.com/abantecart/abantecart-src/blob/master/public_html/core/lib/task_manager.php#L105" target="_new">runTask</a><br>
 
 
-<a href="https://github.com/abantecart/abantecart-src/blob/master/public_html/core/lib/task_manager.php#L197" target="_new">addTask</a><br>
+<a href="https://github.com/abantecart/abantecart-src/blob/master/public_html/core/lib/task_manager.php#L384" target="_new">addTask</a><br>
 
 
-<a href="https://github.com/abantecart/abantecart-src/blob/master/public_html/core/lib/task_manager.php#L230" target="_new">updateTask</a><br>
+<a href="https://github.com/abantecart/abantecart-src/blob/master/public_html/core/lib/task_manager.php#L433" target="_new">updateTask</a><br>
 
 
-<a href="https://github.com/abantecart/abantecart-src/blob/master/public_html/core/lib/task_manager.php#L285" target="_new">updateTaskDetails</a><br>
+<a href="https://github.com/abantecart/abantecart-src/blob/master/public_html/core/lib/task_manager.php#L489" target="_new">updateTaskDetails</a><br>
 
 
-<a href="https://github.com/abantecart/abantecart-src/blob/master/public_html/core/lib/task_manager.php#L316" target="_new">addStep</a><br>
+<a href="https://github.com/abantecart/abantecart-src/blob/master/public_html/core/lib/task_manager.php#L529" target="_new">addStep</a><br>
 
 
-<a href="https://github.com/abantecart/abantecart-src/blob/master/public_html/core/lib/task_manager.php#L338" target="_new">updateStep</a><br>
+<a href="https://github.com/abantecart/abantecart-src/blob/master/public_html/core/lib/task_manager.php#L564" target="_new">updateStep</a><br>
 
 
-<a href="https://github.com/abantecart/abantecart-src/blob/master/public_html/core/lib/task_manager.php#L382" target="_new">deleteTask</a><br>
+<a href="https://github.com/abantecart/abantecart-src/blob/master/public_html/core/lib/task_manager.php#L613" target="_new">deleteTask</a><br>
 
 
-<a href="https://github.com/abantecart/abantecart-src/blob/master/public_html/core/lib/task_manager.php#L391" target="_new">deleteStep</a><br>
+<a href="https://github.com/abantecart/abantecart-src/blob/master/public_html/core/lib/task_manager.php#L625" target="_new">deleteStep</a><br>
 
 
-<a href="https://github.com/abantecart/abantecart-src/blob/master/public_html/core/lib/task_manager.php#L397" target="_new">getTaskById</a><br>
+<a href="https://github.com/abantecart/abantecart-src/blob/master/public_html/core/lib/task_manager.php#L634" target="_new">getTaskById</a><br>
 
 
-<a href="https://github.com/abantecart/abantecart-src/blob/master/public_html/core/lib/task_manager.php#L417" target="_new">getTaskByName</a><br>
+<a href="https://github.com/abantecart/abantecart-src/blob/master/public_html/core/lib/task_manager.php#L660" target="_new">getTaskByName</a><br>
 
 
-<a href="https://github.com/abantecart/abantecart-src/blob/master/public_html/core/lib/task_manager.php#L438" target="_new">getTaskSteps</a><br>
+<a href="https://github.com/abantecart/abantecart-src/blob/master/public_html/core/lib/task_manager.php#L687" target="_new">getTaskSteps</a><br>
 
 
-<a href="https://github.com/abantecart/abantecart-src/blob/master/public_html/core/lib/task_manager.php#L455" target="_new">getScheduledTaskSteps</a><br>
+
+<a href="https://github.com/abantecart/abantecart-src/blob/master/public_html/core/lib/task_manager.php#L755" target="_new">getTotalTasks</a><br>
 
 
-<a href="https://github.com/abantecart/abantecart-src/blob/master/public_html/core/lib/task_manager.php#L469" target="_new">getTotalTasks</a><br>
-
-
-<a href="https://github.com/abantecart/abantecart-src/blob/master/public_html/core/lib/task_manager.php#L487" target="_new">getTasks</a>
+<a href="https://github.com/abantecart/abantecart-src/blob/master/public_html/core/lib/task_manager.php#L776" target="_new">getTasks</a>
 </p>
 
 
