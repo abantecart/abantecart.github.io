@@ -5,11 +5,11 @@ description: Configure PayPal Payments Pro payment.
 redirect_from: "/tag/paypal_payments_pro.html"
 tags: [
 	['enable_shipping', 'Setup Shippings'],
-	['pages_tool_package_installer', 'Install Extensions'], 
+	['pages_tool_package_installer', 'Install Extensions'],
 	['enable_payment', 'All Payments'],
 	['paypal_payments_std', 'PayPal Payments Standard'],
 	['paypal_payments_pro_uk', 'PayPal Payments Pro (UK)'],
-	['paypal_payments_express', 'PayPal Express Checkout'], 
+	['paypal_payments_express', 'PayPal Express Checkout'],
 ]
 
 ---
@@ -21,7 +21,7 @@ tags: [
 							<p></p>
 						</div>
 						<!-- End of Caregory Info -->
-						
+
 
 <p>Fill in the following fields:</p>
 <p><strong>Status:</strong> - MUST be "ON" for Payment module to appear in your store. Please fill API <span class="help">credentials</span> first</p>
@@ -29,6 +29,13 @@ tags: [
 <p><strong>API Password:</strong> - your PayPal Pro API password</p>
 <p><strong>API Signature:</strong> - enter your signature (you can find it on the API Access page of your personal account at <a href="http://www.paypal.com" target="_blank">http://www.paypal.com</a> web site)</p>
 <p><strong>Test Your Connection</strong>: - click to test<span class="help"> if API credentials that you've entered are correct.</span></p>
+<!-- Note -->
+<div class="note js-note red">
+
+	<h4 class="note-title"> Note </h4>
+	<p class="note-description"> To continue PayPal policy of ensuring the highest level of security for merchants, developers, and consumers, PayPal is require upgraded SSL certificates on all Live and Sandbox endpoints. If you receive a handshake error, check the merchant keystone to see if the PayPal VeriSign G5 root certification is present. Next, update your SSL software to process SHA-256 certificates. </p>
+</div>
+<!-- End of Note -->
 <p><strong>Sandbox (Test) Mode:</strong> - Use the live or testing (sandbox) gateway server to process transactions.</p>
 <p><strong>Transaction Method:</strong> - <span class="help">PayPal transaction to run at customer's checkout before order status is set. Authorization only or capture.</span></p>
 <p><strong>Order Status:</strong> - Select the Order Status of all new Orders created using this payment method from the drop-down. The recommended status is Processing, as this is intended to apply to Orders which have not had any actions performed on them, however you can change this to whichever status you prefer.</p>
@@ -41,4 +48,3 @@ tags: [
 <p><strong>Sort Order:</strong> - Sort Order set's the order of which the Payment will be displayed amongst others.</p>
 <p>On <a class="crosslink" href="/pages/orders/order_details.html" target="_blank">order edit page</a> PayPal Pro now has capture/refund features.</p>
 <p>After you have made your changes, click the SAVE</p>
-					
