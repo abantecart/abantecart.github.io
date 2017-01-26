@@ -89,7 +89,7 @@ Debugging technical issues on-line can be tricky. There are many moving pieces; 
                                     <div class="step-content"> Issue related to incorrect configuration.</div>
                                 </li>
 
-                                
+
                             </ul>
                             <!-- End of Steps -->
 
@@ -97,7 +97,7 @@ Debugging technical issues on-line can be tricky. There are many moving pieces; 
 
 
 <div class="list-view ">
-    
+
        <div class="list-item">
         <div class="list-item-header">
             <h3 class="list-item-title">
@@ -107,14 +107,14 @@ Debugging technical issues on-line can be tricky. There are many moving pieces; 
                 <a href="#">do not panic</a>
             </span>
         </div>
-        <div class="list-item-content"> If your AbanteCart stopped functioning do not panic. AbanteCart application is running on the server operating system and many small things that can cause issues for all your web applications. 
+        <div class="list-item-content"> If your AbanteCart stopped functioning do not panic. AbanteCart application is running on the server operating system and many small things that can cause issues for all your web applications.
         <br>
         <br><i class="fa fa-wrench"></i>&nbsp;Follow <a href="http://forum.abantecart.com/index.php/topic,3197.0.html" target="_blank">this steps</a> and identify problem you might have and quick resolution. Go though this list and understand what is happening.<br>
          </div>
          <br>
                          <!-- Note -->
                         <div class="note js-note red note-pulse">
-                            
+
                             <h4 class="note-title"> Note </h4>
                             <p class="note-description"> Majority of unexpected issues are happening due to hosting/server related issues/changes or code modifications.</p>
                         </div>
@@ -133,9 +133,9 @@ Debugging technical issues on-line can be tricky. There are many moving pieces; 
     	</div>
     	<div class="list-item-content"> Mod_security is an apache module that helps to protect your website from various attacks.
         mod_security has certain rules for the words "pattern" used in requested URL's.
-        If any pattern match with the requested URL under your site mod_security false positive and deny the access to it. 
+        If any pattern match with the requested URL under your site mod_security false positive and deny the access to it.
         Many people are experiencing problems because of this. Problems include "403", "500" or access denied errors (forbidden access), login problems, and similar.<br>
-        <br><i class="fa fa-wrench"></i>&nbsp;Ask your hosting support to disable individual mod_security rules or try to disable it manually. 
+        <br><i class="fa fa-wrench"></i>&nbsp;Ask your hosting support to disable individual mod_security rules or try to disable it manually.
         <br><b>We strongly recommend you contact your hosting provider and work with them to resolve the server module issue. </b>
     	<!-- HTML Highlight -->
 		<div class="code-highlight">
@@ -164,7 +164,7 @@ SecFilterInheritance Off
                 <a href="#">do not panic</a>
             </span>
         </div>
-        <div class="list-item-content"> 
+        <div class="list-item-content">
 
         				<!-- Steps -->
 						<ul class="steps">
@@ -198,14 +198,14 @@ SecFilterInheritance Off
 
 
 
-        
+
          </div>
          <br>
 
                          <!-- Note -->
                         <div class="note js-note blue">
                             <h4 class="note-title"> Note </h4>
-                            <p class="note-description"> 
+                            <p class="note-description">
                             If you lost your password try to reset it. In case your cannot restore your email try <a href="http://forum.abantecart.com/index.php/topic,547.msg1688.html#msg1688" target="_new">this tip</a>
                             </p>
                         </div>
@@ -228,7 +228,7 @@ SecFilterInheritance Off
     			<a href="#">server related</a>
     		</span>
     	</div>
-    	<div class="list-item-content"> Most of the time, a 503 error occurs because the server is too busy or because there's maintenance being performed on it. 
+    	<div class="list-item-content"> Most of the time, a 503 error occurs because the server is too busy or because there's maintenance being performed on it.
         <br>
         <br><i class="fa fa-wrench"></i>&nbsp;Contact your hosting provider and work with them to resolve the server issue.
          </div>
@@ -257,7 +257,7 @@ SecFilterInheritance Off
     			<a href="#"> (CDN)</a>
     		</span>
     	</div>
-    	<div class="list-item-content"> If you're making changes to the static content cached with CDN on your site, including changes to JavaScript, CSS or images, it can be very easy to forget that you need to purge CDN cache. The content delivery network “CDN”  (Cloudflare, MaxCDN) will deliver cached images and other bits of your website to your visitors from one of the several data-centers located around the world instead of from your web-server. Some minifications and asynchronous loading added by CDN can break your web-pages. 
+    	<div class="list-item-content"> If you're making changes to the static content cached with CDN on your site, including changes to JavaScript, CSS or images, it can be very easy to forget that you need to purge CDN cache. The content delivery network “CDN”  (Cloudflare, MaxCDN) will deliver cached images and other bits of your website to your visitors from one of the several data-centers located around the world instead of from your web-server. Some minifications and asynchronous loading added by CDN can break your web-pages.
         <br/>
         <br><i class="fa fa-wrench"></i>&nbsp;To resolve issues purge all CDN cache in the CDN admin panel and try to set caching level to cache static content only: images and css.
         Make sure you have disabled javascript and css Auto Minify.
@@ -273,7 +273,7 @@ SecFilterInheritance Off
     			<a name="session"></a><a href="#">server related</a>
     		</span>
     	</div>
-    	<div class="list-item-content"> If you can not login or products are not stored in the shopping cart or get errors in the log like 'session_start failed', 'Failed to write session data', 'save_path is not writable', 'Invalid token session. Please login again'. 
+    	<div class="list-item-content"> If you can not login or products are not stored in the shopping cart or get errors in the log like 'session_start failed', 'Failed to write session data', 'save_path is not writable', 'Invalid token session. Please login again'.
         Session_save_path is a PHP variable that is set in php.ini, and on many shared hosting setups it’s actually set to a location that’s not writable.
         <br>
         <br><i class="fa fa-wrench"></i>&nbsp;Contact your host to solve this.
@@ -292,7 +292,7 @@ SecFilterInheritance Off
             </span>
         </div>
         <div class="list-item-content"> This issue related to limited memory set on your server or host.
-            The standard PHP memory requirements for AbanteCart are a bare minimum. Try to increase the memory to 128M or more. 
+            The standard PHP memory requirements for AbanteCart are a bare minimum. Try to increase the memory to 128M or more.
         <br>
         <br><i class="fa fa-wrench"></i>&nbsp;
         If you have access to the server's php.ini please edit the memory_limit parameter.
@@ -380,7 +380,7 @@ php_value memory_limit 64M
         </div>
         <div class="list-item-content"> This warnings appear in your admin messages when AbanteCart's System Check is Enabled. To disable it go to the Admin > System > Settings > <a target="" href="/pages/settings/system.html" class="crosslink">System</a>.<br>
 
-        Each file and directory on your server is assigned access rights for the owner of the file, the members of a group of related users, and everybody else. Rights can be assigned to read a file, to write a file, and to execute a file (i.e., run the file as a program). This is important because AbanteCart may need access to write to files to enable certain functions or disable access to write for the public users (world). 
+        Each file and directory on your server is assigned access rights for the owner of the file, the members of a group of related users, and everybody else. Rights can be assigned to read a file, to write a file, and to execute a file (i.e., run the file as a program). This is important because AbanteCart may need access to write to files to enable certain functions or disable access to write for the public users (world).
         <br>
                                 <!-- Note -->
                         <div class="note js-note blue note-pulse">
@@ -487,12 +487,12 @@ php_value memory_limit 64M
                                 owner wants to keep private.</p>
                                 </td>
                             </tr>
-                        </tbody></table>  
-                        </div>  
+                        </tbody></table>
+                        </div>
 
         </p>
         <p>Typically, all files should be owned by your user (FTP) account on your web server, and should be writable by that account. Any file that needs write access from AbanteCart should be owned or group-owned by the user account used by the AbanteCart (which may be different than the server account). For example, you may have a user account that lets you FTP files back and forth to your server, but your server itself may run using a separate user, in a separate user-group, such as Apache or nobody. If AbanteCart is running as the FTP account, that account needs to have write access, i.e., be the owner of the files, or belong to a group that has write access. In the latter case, that would mean permissions are set more permissively than default (for example, 775 rather than 755 for folders, and 664 instead of 644). </p>
-        
+
         <i class="fa fa-wrench"></i>&nbsp;Use FTP client to change permissions or contact your host to solve this.
         </div>
     </div>
@@ -517,7 +517,7 @@ php_value memory_limit 64M
         <div class="list-item-content">
         <p> This warnings appear in your admin messages when AbanteCart's System Check is Enabled in Admin > System > Settings > <a target="" href="/pages/settings/system.html" class="crosslink">System</a>.<br>
 
-        Each file and directory on your server is assigned access rights for the owner of the file, the members of a group of related users, and everybody else. Rights can be assigned to read a file, to write a file, and to execute a file (i.e., run the file as a program). This is important because AbanteCart may need access to write to files to enable certain functions or disable access to write for the public users (world). 
+        Each file and directory on your server is assigned access rights for the owner of the file, the members of a group of related users, and everybody else. Rights can be assigned to read a file, to write a file, and to execute a file (i.e., run the file as a program). This is important because AbanteCart may need access to write to files to enable certain functions or disable access to write for the public users (world).
         </p>
                                 <!-- Note -->
                         <div class="note js-note blue note-pulse">
@@ -531,7 +531,7 @@ php_value memory_limit 64M
                         </div>
                         <!-- End of Note -->
         <p>To change permissions use your hosting cPanel file-manager or an FTP Client. FTP programs ("clients") allow you to set permissions for files and directories on your remote host. This function is often called chmod (chmod is a UNIX command that means "change mode" on a file.) or set permissions in the program menu. Right-click 'file' and select 'File Permissions'</p>
-        
+
         <i class="fa fa-wrench"></i>&nbsp;Use FTP client to change permissions or contact your host to solve this.
         </div>
     </div>
