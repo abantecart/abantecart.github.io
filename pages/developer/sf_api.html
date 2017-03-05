@@ -1900,9 +1900,50 @@ Example request:<br> POST: firstname=First+Name , lastname=Last+Name , email=tes
  	</pre>
 </div>
 
+<h5 class="box-title"><span class="mw-headline">Update product quantity in the cart (basket) </span></h5>
+
+<p class="box-description">You can update a quantity in the cart for particular product/options combination.</p>
+
+<p class="box-description">Route: <b>a/checkout/cart</b></p>
+
+<p class="box-description">Method: <b>POST</b></p>
+
 <p class="box-description">Example quantity update request:<br>POST: rt=a/checkout/cart , token=58fb1592f0c59b8dc1d5541aebdff8da, product_id=53, quantity[53:ee705d4ae7846adb2c3e17d441a1009f]=2</p>
 
+
+<h5 class="box-title"><span class="mw-headline">Bulk add products into cart </span></h5>
+
+<p class="box-description">Similar to adding one product into cart, you can send a request to add multiple products into the cart.</p>
+
+<p class="box-description">Route: <b>a/checkout/cart</b></p>
+
+<p class="box-description">Method: <b>POST</b></p>
+
+<p class="box-description">Example of the request:<br>
+Request type: POST<br>
+rt=a/checkout/cart, products[0][product_id]=120, products[0][quantity]=1, products[0][option][349]=772, products[1][product_id]=120, products[1][quantity]=2, products[1][option][349]=773, token=c64b58bb51e40a3b1808592909
+
+</p>
+
+<h5 class="box-title"><span class="mw-headline">Clear Cart</span></h5>
+
+<p class="box-description">Remove all products from the cart with one request</p>
+
+<p class="box-description">Route: <b>a/checkout/cart</b></p>
+
+<p class="box-description">Method: <b>POST</b></p>
+
+<p class="box-description">Example of the request:<br>
+Request type: POST<br>
+rt=a/checkout/cart, remove_all=true, token=c64b58bb51e40a3b1808592909
+
+</p>
+
 <br/>
+
+
+
+
 
 <!-- HTML Highlight -->
 
