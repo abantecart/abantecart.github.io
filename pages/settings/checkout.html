@@ -14,7 +14,19 @@ tags: [
 						<div class="category-info ">
 							<h3 class="category-title">List Checkout Settings</h3>
 							<h4 class="category-description">This page can be accessed by going to System > Settings > Checkout</h4>
-<p><strong>Display Prices With Tax :</strong> turn it On if you are required to display prices with tax. If set to Off then taxes will only be included in the order totals on the checkout confirmation page. <br /> <em>By default Guest users with unknown shipping address will see Prices with Tax rate applied to default store address. Please check your <a class="crosslink" href="/pages/localization/locations_and_taxes/tax_classes_list.html" target="_blank">Tax</a> and <a class="crosslink" href="/pages/localization/locations_and_taxes/locations_list.html" target="_blank">Location</a> settings if you setting not work for you.</em></p>
+<p><strong>Display Prices With Tax :</strong> turn it On if you are required to display prices with tax. If set to Off then taxes will only be included in the order totals on the checkout confirmation page. <br />Starting AbanteCart 1.2.10 Tax Inc. text will be added to taxable product's prices </p>
+
+  <!-- Note -->
+  <div class="note js-note blue-light">
+    <span class="note-close js-close">
+      <i class="fa fa-times"></i>
+    </span>
+    <h4 class="note-title">Guest customers</h4>
+    <p class="note-description"> By default Guest customers with unknown shipping address will see Prices with Tax rate applied to default store address. Please check your <a class="crosslink" href="/pages/localization/locations_and_taxes/tax_classes_list.html" target="_blank">Tax</a> and <a class="crosslink" href="/pages/localization/locations_and_taxes/locations_list.html" target="_blank">Location</a> settings if you setting not work for you.
+    </p>
+  </div>
+  <!-- End of Note -->
+
 <p><strong>Default Store Tax Rate :</strong> Select "Store Default Zone" to apply store address Tax rate for unknown not requested users.</p>
 <p><strong>Use Customer Tax Address :</strong> select customers Address to use in tax calculations. Shipping or Payment address.</p>
 <p><strong>Order Start No. :</strong> Set the starting number the orders will begin from. The next order placed will have the new number.</p>
@@ -42,7 +54,7 @@ tags: [
 						</div>
 						<!-- End of Note -->
 
-						
+
 <p><strong>Allow Customer to Cancel Order on Status :</strong> Select one or several Order Statuses to allow Customers request order cancellation on the order page.</p>
 <p><strong>Incomplete Order Expiration :</strong> This value controls time interval in days before incomplete orders will be deleted. Empty value means that no orders will be to deleted. Please note order cleanup runs on next new order created.</p>
 <p><strong>Display Weight on Cart Page :</strong> Show the cart weight on the cart page.</p>
