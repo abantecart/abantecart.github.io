@@ -850,7 +850,7 @@ NOTE: Need to edit HTML in block content to add  personal link to social media s
               <content><![CDATA[									&lt;div class=&quot;ad-item-content-wrap&quot;&gt;
 										&lt;div class=&quot;ad-item-content&quot;&gt;
 											&lt;div class=&quot;ad-item-content-inner&quot;&gt;
-												&lt;p&gt;Fall 2016&lt;/p&gt;
+												&lt;p&gt;Fall 2017&lt;/p&gt;
 												&lt;h3&gt;&lt;a href=&quot;#&quot;&gt;Latest arrivals in Fashion&lt;/a&gt;&lt;/h3&gt;
 												&lt;p&gt;&lt;a href=&quot;#&quot;&gt;See the collection&lt;/a&gt;&lt;/p&gt;
 											&lt;/div&gt;
@@ -915,7 +915,7 @@ NOTE: Need to edit HTML in block content to add  personal link to social media s
     		&lt;div class=&quot;contact-info-form&quot;&gt;
     			&lt;h2&gt;Have a question?&lt;/h2&gt;
     			&lt;p&gt;Contact our team for any product related questions&lt;/p&gt;
-    			&lt;span class=&quot;divider&quot;&gt;&lt;/span&gt;          
+    			&lt;span class=&quot;divider&quot;&gt;&lt;/span&gt;
     				&lt;div class=&quot;text-center&quot;&gt;
     				&lt;a href=&quot;/index.php?rt=content/contact&quot; class=&quot;btn btn-default&quot;&gt;Contact Us&lt;/a&gt;
     				&lt;/div&gt;
