@@ -88,6 +88,11 @@ Debugging technical issues on-line can be tricky. There are many moving pieces; 
                                     <h4 class="step-title"><a href="#nopayment">No payment at checkout</a></h4>
                                     <div class="step-content"> Issue related to incorrect configuration.</div>
                                 </li>
+                                <li class="step">
+                                    <span class="step-number"><i class="fa fa-hand-o-right"></i></span>
+                                    <h4 class="step-title"><a href="#undefinedfunction">Call to undefined function</a></h4>
+                                    <div class="step-content"> Issue related to PHP extension on your server.</div>
+                                </li>
 
 
                             </ul>
@@ -566,6 +571,28 @@ php_value memory_limit 64M
 <li>And the last one - please check your AbanteCart error log (Admin > System > Logs) for the payment related errors.</li>
 </ul>
         <i class="fa fa-wrench"></i>&nbsp;Check your settings.
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <div class="list-item">
+        <div class="list-item-header">
+            <h3 class="list-item-title">
+                <a href="#undefinedfunction">Call to undefined function</a>
+            </h3>
+            <span class="list-item-meta">
+                <a name="undefinedfunction"></a><a href="#">server configuration related</a>
+            </span>
+        </div>
+        <div class="list-item-content"> If you have Fatal error: Call to undefined function mb_internal_encoding() or similar this mean mbstring module is not installed on you server. If it was installed, it would be displayed on your phpinfo page Admin > System > Settings > System > <i class="fa fa-lg fa-info-circle"></i>&nbsp;PHP Info
+        <p></p>
+        <i class="fa fa-wrench"></i>&nbsp;You must explicitly enable the module on server configuration or contact your host to solve this.
         </div>
     </div>
 
