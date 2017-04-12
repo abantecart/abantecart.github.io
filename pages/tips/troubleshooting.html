@@ -558,13 +558,11 @@ php_value memory_limit 64M
                 <a name="nopayment"></a><a href="#">configuration related</a>
             </span>
         </div>
-        <div class="list-item-content"> First of all please check your payment settings:
+        <div class="list-item-content"> First of all please check your enabled payment methods settings in Admin > Extensions > Payments:
         <ul>
-<li>1. Total Order Minimum/Maximum - values should be empty to allow any order amount to checkout with your Payment</li>
-<li>2. Location - please set it to 'All Locations', in case you need to limit Payment checkout for some location - make sure your customer address is within selected Location.</li>
-<li>
-Check all your Shipping methods installed because every shipping has 'Allowed payments' settings - if you set this setting this can be reason why your payment not shown at checkout.</li>
-
+<li>Total Order Minimum/Maximum - values should be empty to allow any order amount to checkout with your Payment</li>
+<li>Payment Location setting - please set it to 'All Locations', in case you need to limit Payment checkout for some location - make sure your customer address is within selected Location.</li>
+<li>Check all your Shipping methods installed because every shipping methods has 'Allowed payments' settings - if you limit your shipping methods to work on only with selected payments this can be reason why your payment method not shown at checkout.</li>
 <li>And the last one - please check your AbanteCart error log (Admin > System > Logs) for the payment related errors.</li>
 </ul>
         <i class="fa fa-wrench"></i>&nbsp;Check your settings.
