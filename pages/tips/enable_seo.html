@@ -38,7 +38,17 @@ tags: [
 						<!-- End of Category Info -->
 
 <p><strong>Use SEO URLs:</strong> To use SEO URL's Apache module mod-rewrite must be installed and you need to rename the htaccess.txt file to <strong>.htaccess</strong><br />
-Search Engine Friendly URLs allows you to activate categories and product's SEO Keyword setting. For each product and category you can assign seo keyword visible in url. This will better describe a product's page to visitors and search engines.</p>
+Search Engine Friendly URLs allows you to activate categories and product's SEO Keyword setting. For each product and category you can assign SEO keyword visible in url. This will better describe a product's page to visitors and search engines.</p>
+<!-- Note -->
+<div class="note js-note blue">
+  <span class="note-close js-close">
+    <i class="fa fa-times"></i>
+  </span>
+  <h4 class="note-title"> htaccess note </h4>
+  <p class="note-description"> The dot in front of “.htaccess” indicates that this file is ‘invisible’. Therefore you may have to configure the FTP application or hosting file manager you’re using to show invisible files. “.htaccess” on an Apache based web server, will allow you to configure specific settings for how you’d like your website, or certain files within your website, to behave</p>
+</div>
+<!-- End of Note -->
+
 <p><strong> mod_rewrite</strong> is something that is installed on your server by your web host. You need to ask your host (or look in their help guide) to find out if you have it.</p>
 
 						<!-- Note -->
@@ -47,7 +57,7 @@ Search Engine Friendly URLs allows you to activate categories and product's SEO 
 								<i class="fa fa-times"></i>
 							</span>
 							<h4 class="note-title"> Note </h4>
-							<p class="note-description"> If you access store with sub-folder like http://www.mydomain/subfolder make sure to change <strong>RewriteBase /</strong> to <strong>RewriteBase /subfolder/</strong> in the .htaccess file. </p>
+							<p class="note-description"> If you access store with sub-folder like http://www.mydomain/subfolder make sure to change <strong>RewriteBase&nbsp;/</strong> to <strong>RewriteBase /subfolder/</strong> in the .htaccess file. </p>
 						</div>
 						<!-- End of Note -->
 
