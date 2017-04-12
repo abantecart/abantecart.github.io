@@ -31,7 +31,7 @@ Debugging technical issues on-line can be tricky. There are many moving pieces; 
                                 <li class="step">
                                     <span class="step-number"><i class="fa fa-hand-o-right"></i></span>
                                     <h4 class="step-title"><a href="#mod_security">Mod_security</a></h4>
-                                    <div class="step-content"> Problems include "403", "500" or access denied errors (forbidden access), login problems </div>
+                                    <div class="step-content"> Problems include "406", "403", "500" or access denied errors (forbidden access), login problems </div>
                                 </li>
                                 <li class="step">
                                     <span class="step-number"><i class="fa fa-hand-o-right"></i></span>
@@ -139,7 +139,7 @@ Debugging technical issues on-line can be tricky. There are many moving pieces; 
     	<div class="list-item-content"> Mod_security is an apache module that helps to protect your website from various attacks.
         mod_security has certain rules for the words "pattern" used in requested URL's.
         If any pattern match with the requested URL under your site mod_security false positive and deny the access to it.
-        Many people are experiencing problems because of this. Problems include "403", "500" or access denied errors (forbidden access), login problems, and similar.<br>
+        Many people are experiencing problems because of this. Problems include "406 Not Acceptable error", 403", "500", "501 Method Not Implemented" or access denied errors (forbidden access), login problems, and similar.<br>
         <br><i class="fa fa-wrench"></i>&nbsp;Ask your hosting support to disable individual mod_security rules or try to disable it manually.
         <br><b>We strongly recommend you contact your hosting provider and work with them to resolve the server module issue. </b>
     	<!-- HTML Highlight -->
@@ -587,10 +587,10 @@ php_value memory_limit 64M
                 <a href="#undefinedfunction">Call to undefined function</a>
             </h3>
             <span class="list-item-meta">
-                <a name="undefinedfunction"></a><a href="#">server configuration related</a>
+                <a name="undefinedfunction"></a><a href="#">server configuration</a>
             </span>
         </div>
-        <div class="list-item-content"> If you have Fatal error: Call to undefined function mb_internal_encoding() or similar this mean mbstring module is not installed on you server. If it was installed, it would be displayed on your phpinfo page Admin > System > Settings > System > <i class="fa fa-lg fa-info-circle"></i>&nbsp;PHP Info
+        <div class="list-item-content"> If you have Fatal error: Call to undefined function mb_internal_encoding() or similar this mean mbstring module is not installed on you server. If it was installed, it would be displayed on your phpinfo page Admin > System > Settings > System > <i class="fa fa-info-circle"></i>&nbsp;PHP Info
         <p></p>
         <i class="fa fa-wrench"></i>&nbsp;You must explicitly enable the module on server configuration or contact your host to solve this.
         </div>
