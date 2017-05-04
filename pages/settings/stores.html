@@ -15,7 +15,9 @@ redirect_from: "/tag/stores.html"
 							<h4 class="category-description"> AbanteCart has multi-store abilities which allow you to manage multiple stores from one admin interface.</h4>
 						</div>
 <p>To setup multi-store first of all setup your main store with main domain name.</p>
-<p>if You need to create multi-store you DON’T NEED to install cart again or anything do with files. Only you need is two things:<br /> 1. setup additional domain (addon domain) or sub-domain in your hosting provider admin panel<br /> 2. set up second store in the admin of main store. At the end you should have 1 cart admin and 2 (or more) storefronts  </p>
+<p>if You need to create multi-store you DON’T NEED to install cart again or anything do with files. Only you need is two things:<br />
+  1. setup additional domain (addon domain) or sub-domain in your hosting provider admin panel<br />
+  2. set up second store in the admin of main store. At the end you should have 1 cart admin and 2 (or more) storefronts  </p>
 						<!-- Note -->
 						<div class="note js-note green note-pulse">
 							<span class="note-close js-close">
@@ -42,8 +44,12 @@ redirect_from: "/tag/stores.html"
 <h3 class="heading_gray"> Here is short example for sub-domain setup</h3>
 <p>In your cPanel click on sub-domains icon<br>
 <img src="/img/other/abantecart-multistore-cpanel1.png" border="0" width="501" /></p>
-<p>Create a sub-domain<br>
-<img src="/img/other/abantecart-multistore-cpanel2.png" border="0" width="736" /></p>
+<p>Create a sub-domain. Document Root to be the same<br>
+<img src="/img/other/abantecart-multistore-cpanel2.png" border="0" width="650" /></p>
+<p>Example if AbanteCart installed not in root folder. Document Root to be the same.  <br>
+<img src="/img/other/abantecart-multistore-cpanel3.png" border="0" width="650" /></p>
+<p>You can change document root after subdomain created! <br>
+<img src="/img/other/multistore-cpanel-root.png" border="0" width="650" /></p>
 						<!-- Note -->
 						<div class="note js-note blue">
 							<span class="note-close js-close">
@@ -59,7 +65,7 @@ redirect_from: "/tag/stores.html"
 <p>Anyway a lot of beginners have issues with this step because:
 <ul>
 <li>Due to DNS propagation, the sub-domain can take up to 24 hours and more to start working</li>
-<li>make sure to link the sub-domain to the path where the default store was installed to</li>
+<li>make sure to link the sub-domain to the path where the default store was installed to. The Document Root is the same in the default store and the multistore</li>
 <li>make sure there is no redirection setup for new subdomain/domain</li>
 <li>usually user may need to clear browser cache and DNS cache on local computer to resolve new or reconfigured domains/subdomains</li>
 <li>also possible some settings in .htaccess file or file permissions issue prevent correct work</li> 
