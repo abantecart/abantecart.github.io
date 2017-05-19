@@ -170,12 +170,13 @@ redirect_from: "/tag/regular_install.html"
 						<!-- Category Info -->
 						<div class="category-info ">
 							<h4 class="category-description">For Linux/Unix based server make sure the following folders and files are writable <br />
-              (<b>only for the installation!</b> After installation, you should remove the /install/ directory and set more secure permissions directories 755, files 644. Few files like index.php and /system/config.php should be disable for writing based on your server configuration set 644 or 444)</h4>
+              (<b>only for the installation!</b> After installation, you should remove the /install/ directory and set more secure permissions directories 755, files 644. Files like index.php and /system/config.php should be disabled for writing, based on your server configuration set 644 or 444)</h4>
 						</div>
 						<!-- End of Category Info -->
 						<!-- HTML Highlight -->
 						<div class="code-highlight">
-							<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">chmod 0777 system/config.php
+							<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup">
+chmod 0755 or 0777 system/config.php
 chmod 0755 or 0777 system/
 chmod 0755 or 0777 system/cache/
 chmod 0755 or 0777 system/logs/
