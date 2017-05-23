@@ -12,12 +12,13 @@ tags: [
 						<!-- Category Info -->
 						<div class="category-info ">
 							<h3 class="category-title">Changing Domain Name</h3>
-						
+
 						</div>
 						<!-- End of Category Info -->
 <p>If you are moving AbanteCart to a different domain name, or switching from server pathways to your domain name, then you must update AbanteCart with the new domain name.
 </p>
-<p><a class="anchorlink" href="#MoveDirectory">Move site from a sub-directory</a><br /> 
+<p>
+<a class="anchorlink" href="#MoveDirectory">Move site from a sub-directory</a><br />
 <a class="anchorlink" href="#ChangeHosting">Move to another hosting</a><br />
 </p>
 
@@ -29,7 +30,7 @@ tags: [
 						<!-- Category Info -->
 						<div class="category-info ">
 							<h3 class="category-title">Move site from a sub-directory</h3>
-							
+
 						</div>
 						<!-- End of Category Info -->
 
@@ -47,7 +48,7 @@ Also if you changed .htaccess, you will need to change it</p>
 						<!-- Category Info -->
 						<div class="category-info ">
 							<h3 class="category-title">Move to another hosting</h3>
-							
+
 						</div>
 						<!-- End of Category Info -->
 
@@ -77,10 +78,8 @@ NOTE: You need to select the same MySQL database prefix as on your current Abant
 							</li>
 							<li class="step">
 								<span class="step-number">5</span>
-								<h4 class="step-title">Replace salt key</h4>
-								<div class="step-content"> You will need to replace salt key from your original installation into new configuration file. It is in system/config.php file</div>
+								<h4 class="step-title">Replace ENCRYPTION_KEY, UNIQUE_ID and SERVER_NAME in config.php</h4>
+								<div class="step-content"> You will need to replace unique keys from your original installation into new configuration file. It is in system/config.php file</div>
 							</li>
 						</ul>
 						<p>See also AbanteCart community <a href="http://forum.abantecart.com/index.php/topic,4901.msg21189.html#msg21189" target="new">solution with FTP</a> and manual Database import</p>
-
-
