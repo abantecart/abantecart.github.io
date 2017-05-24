@@ -35,9 +35,9 @@ tags: [
 						<!-- End of Category Info -->
 
 <p>No need to change configuration file.
-Change <strong>Store URL</strong> setting to have correct URL in Admin->System->Settings-><a class="crosslink" href="/pages/settings/details.html">Details</a>.
+Change <strong>Store URL</strong> setting to have correct URL in Admin > System > Settings > <a class="crosslink" href="/pages/settings/details.html">Details</a>.
 If you put any full paths in any of your <a class="crosslink" href="/pages/design/blocks/search.html">HTML blocks</a> or content you will need to change this.
-Also if you changed .htaccess, you will need to change it</p>
+Also if you changed .htaccess file, you will need to change it too</p>
 <p></p>
 
 
@@ -58,28 +58,35 @@ Also if you changed .htaccess, you will need to change it</p>
 								<span class="step-number">1</span>
 								<h4 class="step-title">Install new AbanteCart</h4>
 								<div class="step-content"> Install new AbanteCart with normal process on the new host (do not load demo data)</em><br>
-NOTE: You need to select the same MySQL database prefix as on your current AbanteCart instance. How do I find the database prefix for my sql database? Log in to the AbanteCart backend, go to System-Data-Backup/Restore section. Another way is using a Database Interface (Requires Access to the Database, e.g. phpMyAdmin for MySQL)<br>
+NOTE: You need to select the same MySQL database prefix as on your current AbanteCart instance. <br />
+How to find the database prefix for the database? Log in to the AbanteCart backend, go to System> Data > Backup/Restore section. Another way is using a Database Interface (Requires Access to the Database, e.g. phpMyAdmin tool)<br>
  <a class="jcepopup" href="/img/other/abantecart-database-prefix.png"><img src="/img/other/abantecart-database-prefix.png" border="0" width="350" /></a></div>
 							</li>
 							<li class="step">
 								<span class="step-number">2</span>
 								<h4 class="step-title">Backup AbanteCart</h4>
-								<div class="step-content"> On existing AbanteCart instance, do backup of database, code and resource library (do not include config)</div>
+								<div class="step-content"> On existing AbanteCart instance, do backup of database, code and resource library (do not include system/config.php)</div>
 							</li>
 							<li class="step">
 								<span class="step-number">3</span>
 								<h4 class="step-title">Download backup</h4>
-								<div class="step-content"> Download backup in the backup history</div>
+								<div class="step-content"> Download backup archive from the the backup history</div>
 							</li>
 							<li class="step">
 								<span class="step-number">4</span>
 								<h4 class="step-title">Load backup to newly installed AbanteCart.</h4>
-								<div class="step-content"> To unpack a tar.gz file (A tarball 'tar.gz file' is nothing but compressed tar archive) extract backup.tar.gz then extract backup.tar</div>
+								<div class="step-content"> To unpack a tar.gz file (A tarball 'tar.gz file' is nothing but compressed tar archive) extract backup.tar.gz then extract backup.tar<br />
+                Use free 7-zip for Windows or Keka app for OS X</div>
 							</li>
 							<li class="step">
 								<span class="step-number">5</span>
-								<h4 class="step-title">Replace ENCRYPTION_KEY, UNIQUE_ID and SERVER_NAME in config.php</h4>
+								<h4 class="step-title">Replace ENCRYPTION_KEY, UNIQUE_ID (SALT for older versions) and SERVER_NAME in config.php</h4>
 								<div class="step-content"> You will need to replace unique keys from your original installation into new configuration file. It is in system/config.php file</div>
+							</li>
+              <li class="step">
+								<span class="step-number">6</span>
+								<h4 class="step-title">Clear AbanteCart cache</h4>
+								<div class="step-content"> If you cannot see your products in the storefront, clear the cache from the admin panel of Abantecart</div>
 							</li>
 						</ul>
 						<p>See also AbanteCart community <a href="http://forum.abantecart.com/index.php/topic,4901.msg21189.html#msg21189" target="new">solution with FTP</a> and manual Database import</p>
