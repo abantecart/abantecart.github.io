@@ -133,7 +133,7 @@ Some of fields are required for a successful import, yet nearly almost all field
 <a class="jcepopup" href="/img/other/export4.png"><img src="/img/other/export4.png" border="0" alt="" width="500" /></a>
 <p>After processing the message will be shown. Normally <em>0 errors</em> should be displayed.</p>
 <img src="/img/other/abantecart-import-exampleone-8.png" border="0" alt="" />
-<p>Insert complete. See CSV (TAB delimeted) examples for insert :</p>
+<p>Insert complete. See CSV (TAB delimited) examples for insert :</p>
 
                         <div class="row">
 							<div class="col-md-4">
@@ -176,9 +176,9 @@ Some of fields are required for a successful import, yet nearly almost all field
 
 
 
-						<a name="Example:insert"></a>
-														<div class="category-info ">
-							<h3 class="category-title">Example 3: Product insert </h3>
+						<a name="Example3:insert"></a>
+							<div class="category-info ">
+							<h3 class="category-title">Example 3: Product minimum insert </h3>
 							<h4 class="category-description"> Very minimum example</h4>
 							</div>
 
@@ -187,6 +187,18 @@ Some of fields are required for a successful import, yet nearly almost all field
 
 						<p>products minimum CSV TAB delimited example <a class="button green " href="/img/other/abantecart_import_minimum.csv" target="_blank" title="CSV file">Download New Product Example (Insert)</a>
 						</p>
+
+						<!-- Note -->
+						<div class="note js-note red note-pulse">
+
+							<h4 class="note-title"> Note </h4>
+							<p class="note-description">
+							In this example you can see some very important columns like products_to_stores[0].store_id For most cases it is 0 (unless you have multiple stores).<br />
+							products_to_categories[0].category_id is required to assign product to a storefront category.
+
+							</p>
+						</div>
+						<!-- End of Note -->
 
 
 
@@ -306,7 +318,7 @@ Some of fields are required for a successful import, yet nearly almost all field
 							   <li>The first row must include column headers and the column headers must match those given in the documentation.</li>
 							   <li>Values must be separated by a delimiter, which is expected to be a tab, comma “,” by default, though this can be set during the import process to any other character, so long as you are consistent within your file.</li>
 							   <li>Each imported item (Products, Category) belongs on its own row</li>
-							   <li>Some CSV file editor like MS Excel may automaticly change price or date fields format and broke your file.</li>
+							   <li>Some CSV file editor like MS Excel may automatically change price or date fields format and broke your file.</li>
 							   </ul>
 							   </div>
 
