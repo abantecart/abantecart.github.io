@@ -20,21 +20,22 @@ tags: [
 
 <p><a class="anchorlink" href="#Example1:update">Example 1: Update products</a><br />
 <a class="anchorlink" href="#Example2:insert">Example 2: Insert Products</a> <br />
-<a class="anchorlink" href="#Example3:insert">Example 3: Insert Products with Images</a><br />
-<a class="anchorlink" href="#Example4:inserturl">Example 4: Import Product Media by URLs</a></p>
+<a class="anchorlink" href="#Example2:insert">Example 3: Insert Products (minimum example)</a> <br />
+<a class="anchorlink" href="#Example3:insert">Example 4: Insert Products with Images</a><br />
+<a class="anchorlink" href="#Example4:inserturl">Example 5: Import Product Media by URLs</a></p>
 
 <p></p>
 
-<p>You able to import data into your AbanteCart store using '.xml' or '.csv' files. 
+<p>You able to import data into your AbanteCart store using '.xml' or '.csv' files.
 Some of fields are required for a successful import, yet nearly almost all fields are supported, allowing you to determine the level of detail you wish to import.<br>
-    
+
     This is particularly useful when migrating and importing from a different eCommerce platform.
 </p>
 						<!-- Note -->
 						<div class="note js-note red note-pulse">
 
 							<h4 class="note-title"> Note </h4>
-							<p class="note-description"> 
+							<p class="note-description">
 							<ul>
 							<li>Please select correct CSV delimiter.</li>
 							<li>You can run import in Test Mode to prevent any unexpected results.</li>
@@ -175,11 +176,46 @@ Some of fields are required for a successful import, yet nearly almost all field
 
 
 
+						<a name="Example4:inserturl"></a>
+														<div class="category-info ">
+							<h3 class="category-title">Example 3: Product insert </h3>
+							<h4 class="category-description"> Very minimum example</h4>
+							</div>
+
+						<p>Very minimum CSV file with columns allowing you to insert product with basic settings like name, weight, price, description, blurb, category id to assign, store id, tax class, quantity etc</p>
+
+
+						<p>products minimum CSV TAB delimited example <a class="button green " href="/img/other/abantecart_import_minimum.csv" target="_blank" title="CSV file">Download New Product Example (Insert)</a>
+						</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
                             <a name="Example3:insert"></a>
                             <div class="category-info ">
-							<h3 class="category-title">Example 3: Insert products with Images</h3>
+							<h3 class="category-title">Example 4: Insert products with Images</h3>
 							<h4 class="category-description"> </h4>
 							</div>
 
@@ -200,7 +236,7 @@ Some of fields are required for a successful import, yet nearly almost all field
 								<h4 class="step-title">change/add this columns in your csv file</h4>
 								<div class="step-content">
 								resource_map[0].resource_id              = leave empty<br />resource_map[0].object_name            = products<br />resource_library[0][0].type_id            = 1<br />resource_descriptions[0][0][0].language_id      = 1  (the id of installed language)<br />resource_descriptions[0][0][0].name             =    anyname (usually imagefile name)<br />resource_descriptions[0][0][0].title            =    leave empty or fill if you need title<br />resource_descriptions[0][0][0].description      =    leave empty or fill if you need description for the resource<br />resource_descriptions[0][0][0].resource_path    =    somefolder/product_image_1.jpg<br /><br />in case You have 2 languages installed in your cart add next columns<br />resource_descriptions[0][0][1].language_id      = 9  (the correct id of second installed language)<br />resource_descriptions[0][0][1].name             =    anyname (usually imagefile name)<br />resource_descriptions[0][0][1].title            =    leave empty or fill if you need it<br />resource_descriptions[0][0][1].description      =    leave empty or fill if you need it<br />resource_descriptions[0][0][1].resource_path    =    somefolder/product_image_1.jpg<br /><br />------------------------------------------------------------------------------------<br />in case If you need to add multiply images to one product please add more columns<br /><br />resource_map[1].resource_id              = leave empty<br />resource_map[1].object_name           = products<br />resource_library[1][0].type_id            = 1<br />resource_descriptions[1][0][0].language_id   = 1 (the id of installed language)<br />resource_descriptions[1][0][0].name          = sometext (any resource name to second image)<br />resource_descriptions[1][0][0].title            =    leave empty or fill if you need it<br />resource_descriptions[1][0][0].description      =    leave empty or fill if you need it<br />resource_descriptions[1][0][0].resource_path = somefolder/product_image_2.jpg   (path to second image)<br /><br />same for second language if you have it installed<br />resource_descriptions[1][0][1].language_id   = 9 (the correct id of second installed language)<br />resource_descriptions[1][0][1].name          = sometext (any resource name to second image)<br />resource_descriptions[1][0][1].title            =    leave empty or fill if you need it<br />resource_descriptions[1][0][1].description      =    leave empty or fill if you need it<br />resource_descriptions[1][0][1].resource_path = somefolder/product_image_2.jpg   (path to second image)<br /><br /><br />---------------------------------------------------------------------------------------<br />and to add one more image <br />resource_map[2].resource_id                     = leave empty<br />resource_map[2].object_name            = products<br />resource_library[2][0].type_id            = 1<br />resource_descriptions[2][0][0].language_id   = 1 (the id of installed language)<br />resource_descriptions[2][0][0].name          = sometext (any resource name to 3rd image)<br />resource_descriptions[2][0][0].title            =    leave empty or fill if you need it<br />resource_descriptions[2][0][0].description      =    leave empty or fill if you need it<br />resource_descriptions[2][0][0].resource_path = somefolder/product_image_3.jpg   (path to second image)<br /><br />resource_descriptions[2][0][1].language_id   = 9 (the id of second installed language)<br />resource_descriptions[2][0][1].name          = sometext (any resource name to 3rd image)<br />resource_descriptions[2][0][1].title            =    leave empty or fill if you need it<br />resource_descriptions[2][0][1].description      =    leave empty or fill if you need it<br />resource_descriptions[2][0][1].resource_path = somefolder/product_image_3.jpg   (path to second image)<br /><br />You can and more and more images for one product with similar way
-								
+
 								</div>
 							</li>
 						</ul>
@@ -225,7 +261,7 @@ Some of fields are required for a successful import, yet nearly almost all field
 
 						<a name="Example4:inserturl"></a>
                             <div class="category-info ">
-							<h3 class="category-title">Example 4: Import Resources by URL</h3>
+							<h3 class="category-title">Example 5: Import Resources by URL</h3>
 							<h4 class="category-description"> For AbanteCart 1.2.6 and higher!</h4>
 							</div>
 
@@ -244,7 +280,7 @@ Some of fields are required for a successful import, yet nearly almost all field
 								resource_map[2].type          = pdf<br />
 								resource_map[2].source_url    = http://www.pdf995.com/samples/pdf.pdf<br />
 								<br />You can and more and more images for one product with similar way
-								
+
 								</div>
 							</li>
 						</ul>
@@ -273,18 +309,18 @@ Some of fields are required for a successful import, yet nearly almost all field
 							   <li>Some CSV file editor like MS Excel may automaticly change price or date fields format and broke your file.</li>
 							   </ul>
 							   </div>
-							   
-							   
-							   
-							   
-							   
-							   
-							   
-							   
-							   
-							   
-							   
-							   
+
+
+
+
+
+
+
+
+
+
+
+
                             <p></p>
                             <a name="trouble"></a>
                             <div class="category-info ">

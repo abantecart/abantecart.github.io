@@ -1,0 +1,7 @@
+action	products.product_id	products.model	products.quantity	products.stock_status_id	products.manufacturer_id	products.shipping	products.price	products.tax_class_id	products.weight	products.weight_class_id	products.status	products.subtract	products.minimum	product_descriptions[0].language_id	product_descriptions[0].name	product_descriptions[0].description	product_descriptions[0].blurb	products_to_categories[0].category_id	products_to_stores[0].store_id
+insert		558003	99	1	11	1	29.5	1	75	2	1	0	1	1	Product name one	"&lt;p&gt;
+	Bronzes, shapes and sculpts the face. Sheer-to-medium buildable coverage that looks naturally radiant and sunny. Stashable - and with its M·A·C Surf, Baby look – way cool. Limited edition.&lt;/p&gt;
+"		40	0
+insert		380440	1000	3	15	1	38.5	1	100	2	1	1	1	1	product name two	"&lt;p&gt;
+	Precious earths, exclusively selected for their luxurious silky texture and gentle quality, are layered with mineral pigments in this lightweight powder to mimic the true color of tanned skin. Unique technology with inalterable earths ensures exquisite wear all day. Mineral blend smoothes complexion, while Aloe Vera helps protect skin from dryness.&lt;/p&gt;
+"		36	0
