@@ -174,24 +174,29 @@ SecFilterInheritance Off
         				<!-- Steps -->
 						<ul class="steps">
 							<li class="step">
-								<span class="step-number">A</span>
+
+
+                <li class="step">
+  								<span class="step-number">A</span>
+  								<h4 class="step-title">Login may fail in your browser only</h4>
+  								<div class="note-description"> Clear browser cache and cookies. In case this not help try to login in other browsers. Follow <a href="https://support.mozilla.org/en-US/kb/fix-login-issues-on-websites-require-passwords" target="_new">this guide</a> to fix browser related issues </div>
+  							</li>
+
+
+								<span class="step-number">B</span>
 								<h4 class="step-title">Find link to admin</h4>
 								<div class="note-description"> The correct ink to admin is based on what is set during installation process of the AbanteCart. <br>
         						yourdomainname.com/index.php?s=[your_admin]
         						<br>&nbsp;[your_admin] is provided during installation and can be located in system/config.php AFTER installation. </div>
 							</li>
 							<li class="step">
-								<span class="step-number">B</span>
+								<span class="step-number">C</span>
 								<h4 class="step-title">Login fail may be caused if server is unable to create a session</h4>
 								<div class="note-description"> Please contact with your hosting support or modify session path on shared hosting by creating/editing a php.ini file<br>
-                            	Include this in your file: session.save_path = "/tmp"  <br>
-                                or session.save_path = /tmp/php_sessions;</div>
+                  Include this in your file: session.save_path = "/tmp"  <br>
+                  or session.save_path = /tmp/php_sessions;</div>
 							</li>
-							<li class="step">
-								<span class="step-number">С</span>
-								<h4 class="step-title">Login may fail in your browser only</h4>
-								<div class="note-description"> Try to login in other browsers. Follow <a href="https://support.mozilla.org/en-US/kb/fix-login-issues-on-websites-require-passwords" target="_new">this guide</a> to fix browser related issues </div>
-							</li>
+
 						</ul>
 						<!-- Steps -->
 
